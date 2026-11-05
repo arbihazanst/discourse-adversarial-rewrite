@@ -1,0 +1,2071 @@
+PAGE 1
+Highlights
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-
+Based vs LLM-Based Attacks
+Arbi Haza Nasution, Winda Monika, Kemas Muslim Lhaksmana, Deshinta Arrova Dewi, Aytug Onan, Yohei Murakami
+•Classical GAN rewriting is largely ineffective against larger instruction-following LLM spam classifiers.
+•Adaptive two-step LLM rewriting achieves significantly higher evasion rates under black-box, label-only access.
+•Smaller open-weight LLMs are markedly more vulnerable to adversarial rewriting than larger models.
+•Successful LLM attacks preserve semantics while reducing lexical overlap through discourse-level reformulation.
+•LLM rewrites retain far more message content than GAN rewrites, which often collapse into truncated outputs.
+
+PAGE 2
+Discourse-Level Adversarial Rewriting Against Instruction-Following
+LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Arbi Haza Nasutiona, Winda Monikab, Kemas Muslim Lhaksmanac,∗, Deshinta Arrova Dewib,
+Aytug Onane and Yohei Murakamif
+aDepartment of Informatics Engineering, Universitas Islam Riau, , Pekanbaru, 28284, Riau, Indonesia
+bFaculty of Data Science and Information Technology, INTI International University, , Nilai, 71800, Negeri Sembilan, Malaysia
+cDepartment of Informatics, School of Computing, Telkom University, , Bandung, 40265, , Indonesia
+eDepartment of Computer Engineering, Faculty of Engineering, Izmir Institute of Technology, , Izmir, 35430, , Turkey
+fFaculty of Information Science and Engineering, Ritsumeikan University, , Kusatsu, 525-8577, Shiga Prefecture, Japan
+ARTICLE INFO
+Keywords:
+large language models
+adversarial robustness
+adversarial rewriting
+cybercrime
+process innovation
+ABSTRACT
+Instruction-followinglargelanguagemodels(LLMs)areincreasinglyusedaszero-shottextclassifiers,
+including in email spam detection. However, adversarial robustness evaluation for such systems is
+still largely shaped by legacy attack paradigms developed for conventional neural classifiers rather
+than prompt-conditioned LLMs. This paper investigates whether classical GAN-based adversarial
+rewriting remains effective in the LLM era and compares it with a two-step adaptive LLM-based
+rewriting attacker under a realistic black-box, label-only threat model. We evaluate nine victim
+modelsspanningproprietaryAPI-basedsystemsandopen-weightlocallydeployedmodels:GPT-5.2,
+DeepSeek-V3.1,Llama-4-Maverick:17B,Qwen-2.5:32B,Gemma-3:27B,GPT-OSS:20B,DeepSeek-
+R1:1.5B, Gemma-3:1B, and Qwen-2.5:0.5B. Experiments are conducted on a balanced dataset of
+3,000 emails (1,500 spam and 1,500 non-spam). Adversarial rewriting is applied only to the true-
+positive spam pool of each model, yielding attack sets ranging from 332 to 1,479 samples. Results
+show that the classical GAN-based attack has limited effectiveness against most larger instruction-
+following LLM classifiers, with attack success rates below 2% for five models and near-zero
+vulnerability for Gemma-3:27B and Llama-4-Maverick:17B. In contrast, the adaptive LLM-based
+attacker consistently achieves higher evasion rates, reaching 5.22%–12.93% on stronger models and
+substantially higher rates on smaller models. To examine whether attack success is associated with
+semanticdegradation,wefurtherevaluateadversarialrewritesusingSBERT,BLEU,ROUGE-L,and
+Jaccard similarity. The results show that SBERT similarity remains relatively high across models,
+while lexical overlap decreases more noticeably, especially after the second rewrite step. Outcome-
+basedanalysisfurthershowsthatsuccessfuladversarialrewritestypicallyexhibitnegativeconditional
+similaritydifferencesforlexicalmetrics,indicatingloweroverlapwiththeoriginalemailsthanfailed
+attacks,whileSBERTdifferencesremainrelativelysmall.Thispatternsuggeststhateffectiveevasion
+is achieved primarily through discourse-level and surface-form reformulation rather than semantic
+deletion. This indicates that successful attacks are primarily achieved through discourse-level and
+surface-form transformations rather than semantic deletion. Overall, the findings suggest that legacy
+GAN-based attacks underestimate the practical evasion risk faced by instruction-following LLM
+classifiers, whereas adaptive LLM-based rewriting provides a more realistic robustness benchmark
+for LLM-based text classification.
+1. Introduction
+Email spam remains a persistent and evolving threat,
+enabling fraud, phishing, and malware distribution at scale.
+While classical machine learning pipelines for spam de-
+tection have matured over decades, recent system trends
+increasingly incorporate Large Language Models (LLMs)
+aszero-shotorfew-shotclassifiersviaprompting,motivated
+byrapiddeployment,improvedsemanticgeneralization,and
+reduced feature engineering overhead. Yet, the adversarial
+robustness of LLM-based spam classifiers remains under-
+explored under realistic threat models.
+∗Corresponding author
+arbi@eng.uir.ac.id(A.H. Nasution);
+i26042650@student.newinti.edu.my(W. Monika);
+kemasmuslim@telkomuniversity.ac.id(K.M. Lhaksmana);
+deshinta.ad@newinti.edu.my(D.A. Dewi);aytug.onan@ikcu.edu.tr(A.
+Onan);yohei@fc.ritsumei.ac.jp(Y. Murakami)
+ORCID(s):
+Adversarial NLP research has established that text clas-
+sifiers can be manipulated through carefully crafted pertur-
+bations and paraphrases Goodfellow, Shlens and Szegedy
+(2014); Alzantot, Sharma, Elgohary, Ho, Srivastava and
+Chang (2018); Jin, Jin, Zhou and Szolovits (2020); Li, Ma,
+Guo, Xue and Qiu (2020). Toolkits such as TextAttack
+and OpenAttack enable standardized evaluation of multiple
+attack families Morris, Lifland, Yoo, Grigsby, Jin and Qi
+(2020);Zeng,Qi,Zhou,Zhang,Ma,Hou,Zang,LiuandSun
+(2021).
+Adversarial machine learning has also been extensively
+studied in broader cybersecurity contexts, particularly in
+intrusion detection systems (IDS) deployed in industrial
+control systems (ICS). In such environments, attackers may
+manipulate sensor data or system inputs to evade detec-
+tion by machine-learning-based IDS models. Recent work
+has explored adversarial attack detection mechanisms using
+:Preprint submitted to Elsevier Page 1 of 22
+
+PAGE 3
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+neural architectures such as LSTM-based intrusion detec-
+tion models and black-box defense strategies, demonstrat-
+ing that adversarial manipulation can significantly affect
+the reliability of automated security monitoring systems
+Almedires, Elkhalil and Amin (2025). These studies high-
+light the practical importance of evaluating adversarial ro-
+bustness in security-critical machine learning deployments.
+However, many classical attacks were developed for
+staticneural classifiers and rely on perturbation mecha-
+nisms (e.g., token substitution, gradient-guided triggers,
+or template-based paraphrasing) that do not directly align
+with the behavior of instruction-following LLMs deployed
+throughpromptinginterfacesorAPIs.Unliketraditionalad-
+versarial perturbations that operate primarily at the token or
+sentence level, rewriting-based attacks can manipulate dis-
+coursestructureandstylisticcueswhilepreservingsemantic
+intent, making them particularly relevant for evaluating the
+robustness of instruction-following LLM classifiers.
+Consequently, robustness evaluation for modern LLM
+classifiers requires adversarial strategies that operate at the
+discourselevelratherthanrelyingsolelyonlocaltoken-level
+perturbations.DespitethesuccessofGenerativeAdversarial
+Network(GAN)-basedmethodsfordataaugmentationincy-
+bersecuritytasks,theireffectivenessasadversarialrewriting
+mechanismsagainstmodernLLM-basedclassifiersremains
+largely unexplored.
+This paper is motivated by a practical gap:Does a
+classicalsentence-levelGAN-basedrewritingattackremain
+effectiveagainstmodernLLMspamclassifiers?Ifnot,what
+isaminimal,low-compute,butmorerealisticattackermodel
+for LLM-era spam filtering?In particular, attackers in real-
+worldspamoperationsfrequentlyrephraseandreframemes-
+sagestoavoidheuristiccuesandmoderationtriggers.LLMs
+have made such rewriting scalable and fluent; therefore, an
+LLM-based adversarial rewriteris a plausible attacker for
+practical security evaluation.
+Thisstudymakesseveralkeycontributionstotheevalua-
+tionofadversarialrobustnessinLLM-basedspamdetection.
+First, we establish a nine-model benchmark for zero-shot
+LLM spam classification, evaluating both proprietary and
+open-source large language models under a unified classi-
+fication prompt on a balanced dataset of 3,000 emails. This
+providesaconsistentandcomparablefoundationforrobust-
+ness analysis across heterogeneous deployments. Second,
+we conduct a systematic comparison between a classical
+GAN-based rewriting attack and an adaptive LLM-based
+adversarial attacker. Specifically, we measure and contrast
+attack success rates when applying a sentence-level GAN
+rewritingmethodovereachmodel’strue-positivespampool
+andwhendeployingatwo-stepadaptiveLLMattacker,using
+Gemma-3:27Bastheadversarialgenerator.Thiscomparison
+enablesustoexaminewhetherlegacyadversarialtechniques
+remaineffectiveintheLLMeraandwhetherLLM-nativeat-
+tackers represent a stronger and more realistic threat model.
+Third, we analyze the robustness of instruction-following
+LLM classifiers under iterative adversarial rewriting by de-
+composing the attack process into two sequential steps.
+This step-wise analysis provides insight into how adaptive
+rewriting progressively alters surface-level linguistic cues
+while preserving the semantic content of the original email.
+Finally, we present a transparent and reproducible eval-
+uation protocol, described step by step, while responsibly
+redacting exact attacker prompt strings to prevent direct
+misuseforreal-worldspamevasion.Thisapproachbalances
+reproducibility for authorized research with ethical consid-
+erations in security-sensitive domains.
+2. Background and Related Work
+The adversarial robustness of text classification systems
+hasevolvedthroughmultipleparadigmshifts,fromclassical
+feature-basedspamfilteringtotransformer-basedcontextual
+models and, most recently, prompt-driven large language
+model (LLM) classifiers. In this section, we review the
+historicalprogressionofspamdetection,thedevelopmentof
+adversarial NLP methods, generation-based attacks such as
+GAN rewriting, and emerging LLM-native security threats.
+We situate our work at the intersection of adversarial NLP
+and LLM-based security evaluation.
+2.1. Spam Detection: From Statistical Models to
+LLM-Based Classification
+Email spam detection has been a foundational problem
+in applied machine learning for over two decades. Early
+approachesreliedonrule-basedfilteringandstatisticalclas-
+sifiers such as Naïve Bayes, logistic regression, and support
+vector machines Sahami, Dumais, Heckerman and Horvitz
+(1998); Androutsopoulos, Koutsias, Chandrinos and Spy-
+ropoulos(2000).Thesesystemstypicallydependedonhand-
+craftedlexicalfeatures,tokenfrequencystatistics,andman-
+ually curated heuristics.
+More recent phishing-detection research demonstrates
+that conventional supervised learning pipelines can remain
+highly effective when feature engineering, class balanc-
+ing, and ensemble learning are carefully integrated. Ra-
+maiah et al. Ramaiah, Chandrasekaran, Chand, Vasudevan,
+Mohamma, Soon, Shambour and Alshurideh (2024) com-
+binedURL-,JavaScript-,andanomaly-basedindicatorswith
+SMOTE-based class balancing and DT-RFECV feature se-
+lection, followed by an ensemble stacking classifier, achiev-
+ing high detection accuracy across two benchmark datasets.
+Althoughthisapproachtargetsphishingwebsitesratherthan
+prompt-conditioned email classification, it illustrates the
+continuedeffectivenessofcarefullyengineeredconventional
+detection pipelines and provides a useful contrast to the
+zero-shot LLM-based classification setting considered in
+this study.
+Theintroductionofdistributedwordrepresentationsand
+deeplearningarchitecturesimprovedsemanticmodelingca-
+pabilities Mikolov, Chen, Corrado and Dean (2013). Trans-
+former architectures Vaswani, Shazeer, Parmar, Uszkoreit,
+Jones, Gomez, Kaiser and Polosukhin (2017) further ad-
+vanced contextual representation learning, enabling pre-
+trained language models such as BERT Devlin, Chang, Lee
+:Preprint submitted to Elsevier Page 2 of 22
+
+PAGE 4
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+and Toutanova (2019) and RoBERTa to significantly im-
+provetextclassificationaccuracyacrossdomains.Spamde-
+tection systems increasingly adopted fine-tuned transformer
+encodersforsemanticrobustnessJamal,WimmerandSarker
+(2024); Uddin, Mahiuddin and Sarker (2026).
+More recently, large-scale generative language models
+have been used as zero-shot or few-shot classifiers through
+prompting Brown, Mann, Ryder, Subbiah, Kaplan, Dhari-
+wal,Neelakantan,Shyam,Sastry,Askell,Agarwal,Herbert-
+Voss,Krueger,Henighan,Child,Ramesh,Ziegler,Wu,Win-
+ter,Hesse,Chen,Sigler,Litwin,Gray,Chess,Clark,Berner,
+McCandlish, Radford,Sutskeverand Amodei(2020). Inthe
+cybersecurity domain, Nasution et al. Nasution, Monika,
+Onan and Murakami (2025) benchmarked 21 open-source
+LLMs for phishing-link detection under zero-shot, role-
+playing,chain-of-thought,andfew-shotprompting,showing
+that large open-source models can exceed 90% F1 with-
+out task-specific fine-tuning while also demonstrating that
+prompting strategy can substantially affect both classifica-
+tion performance and computational cost. Instead of task-
+specific fine-tuning, LLM-based classification leverages
+instruction-following capabilities. This shift reduces feature
+engineering and retraining overhead while improving gen-
+eralization across heterogeneous spam formats. However,
+robustness evaluation methodologies for LLM-based clas-
+sifiers remain underdeveloped compared to classical neural
+classifiers.
+As noted in recent security-focused evaluations Liu,
+Deng, Li, Wang, Wang, Wang, Zhang, Liu, Wang, Zheng,
+Zhang and Liu (2025); Greshake, Abdelnabi, Mishra, En-
+dres, Holz and Fritz (2023), LLM-integrated systems intro-
+duce new threat surfaces due to their instruction-following
+nature and sensitivity to discourse framing. Yet, systematic
+adversarial benchmarking for LLM-based spam detection
+remains sparse.
+Whileclassificationarchitectureshaveevolvedfromsta-
+tistical models to instruction-following LLMs, robustness
+evaluation methodologies have not evolved at the same
+pace. To understand this gap, we review the progression of
+adversarialattackstrategiesinNaturalLanguageProcessing
+(NLP).
+2.2. Character / Word-Level Adversarial Attacks
+To understand how robustness has traditionally been
+evaluated,wefirstreviewadversarialattackmethodsinNLP.
+Adversarial machine learning was initially studied in com-
+putervisionGoodfellowetal.(2014),wheresmallperturba-
+tionscoulddrasticallychangeclassifieroutputs.InNLP,the
+discrete nature of text complicates gradient-based perturba-
+tions,leadingtosearch-basedandsubstitution-basedattacks.
+Early textual adversarial methods focused on character-
+level perturbations Ebrahimi, Rao, Lowd and Dou (2018)
+andsynonymsubstitutionsAlzantotetal.(2018).TextFooler
+Jin et al. (2020) demonstrated that semantically constrained
+word replacements could reliably flip neural classifier pre-
+dictions. Contextual attacks such as BERT-Attack Li et al.
+(2020)leveragedmaskedlanguagemodelstogeneratefluent
+adversarial tokens.
+Universal adversarial triggers Wallace, Feng, Kandpal,
+Gardner and Singh (2019) further demonstrated the vulner-
+ability of NLP systems to systematic token manipulations.
+Frameworks such as TextAttack Morris et al. (2020) and
+OpenAttack Zeng et al. (2021) standardized benchmarking
+across multiple attack families.
+However,mostclassicalattacksweredesignedforstatic,
+fine-tuned classifiers with accessible logits or gradients.
+LLM-basedspamclassifiers,especiallyAPI-deployedmod-
+els, operate under black-box, label-only conditions and rely
+heavily on discourse-level semantics rather than token-level
+features. Consequently, legacy attacks may not reflect real-
+istic threat models in modern LLM deployments.
+Although these attacks demonstrated vulnerability in
+staticneuralclassifiers,theirrelevancetomoderninstruction-
+following LLMs remains unclear. This motivates the exam-
+ination of higher-level rewriting strategies.
+2.3. Sentence-Level Adversarial Attacks
+Beyond token-level substitutions, generation-based at-
+tacks aim to produce fully rewritten adversarial examples
+while preserving semantic intent. Sequence generative ad-
+versarial networks (SeqGAN) Yu, Zhang, Wang and Yu
+(2017) introduced reinforcement-learning-based sequence
+generation for discrete tokens. Subsequent work explored
+generative approaches for adversarial rewriting Zhao, Dua
+and Singh (2017).
+Zhaoetal.Zhaoetal.(2017)proposedgeneratingnatural
+and legible adversarial examples through generative mod-
+eling, highlighting that fluent adversarial texts can evade
+detection while preserving meaning. GAN-based rewriting
+methods were widely adopted for adversarial evaluation in
+text classification tasks Iyyer, Wieting, Gimpel and Zettle-
+moyer (2018); Ribeiro, Singh and Guestrin (2018).
+Nevertheless, sentence-level generation methods often
+struggle with long documents due to coherence constraints
+and exposure bias. As noted in the SEA framework Ribeiro
+et al. (2018), paraphrase models tend to preserve sentence
+structure and may fail to generate certain adversarial trans-
+formations. These limitations become more pronounced in
+long-form emails, where discourse structure and pragmatic
+cues influence classification.
+Previous studies highlight that adversarial attacks in
+natural language processing must carefully preserve seman-
+tic coherence while still perturbing the model’s decision
+boundary, which makes the generation of effective textual
+adversarial examples significantly more challenging than in
+continuousdomainssuchascomputervisionQiu,Liu,Zhou
+and Huang (2022). Because textual data are discrete and se-
+manticallystructured,successfulattacksmustoperatewithin
+linguisticconstraintswhilestillinfluencingtheinternalrep-
+resentationusedbythetargetmodel.Asaresult,adversarial
+examplegenerationmethodsareoftencategorizedaccording
+totheirsemanticgranularityandgenerationstrategy,ranging
+from token-level perturbations to sentence-level rewriting.
+:Preprint submitted to Elsevier Page 3 of 22
+
+PAGE 5
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+However, when classification decisions rely on higher-level
+pragmatic signals, discourse structure, or contextual intent
+rather than simple lexical cues, sentence-level GAN-based
+rewritingmayfailtosufficientlyaltertheunderlyingseman-
+ticrepresentationusedbytheclassifier,limitingitseffective-
+ness against modern instruction-following LLM systems.
+However, even sentence-level generative attacks were
+largelydevelopedforfine-tunedtransformerclassifiersrather
+thanzero-shot,prompt-conditionedLLMsystems.Theemer-
+gence of instruction-following LLMs introduces new rea-
+soningdynamicsandthreatsurfaces,whichwediscussnext.
+2.4. LLM-Based and Adaptive Adversarial
+Attacks
+As classification systems evolve toward instruction-
+following LLMs, adversarial strategies must also adapt
+to these new reasoning dynamics. LLMs introduce new
+operational characteristics compared to traditional classi-
+fiers. Rather than relying solely on latent embeddings and
+classification heads, instruction-following LLMs integrate
+semantic reasoning, contextual framing, and discourse in-
+terpretation.
+Prompt injection attacks Liu et al. (2025); Greshake
+et al. (2023) demonstrate that LLM outputs can be manipu-
+latedthroughcarefullystructuredinputcontent.Whilespam
+detection is a classification problem rather than a gener-
+ative application, adversarial rewriting can be interpreted
+as manipulating the input discourse to alter the model’s
+classification reasoning.
+Furthermore, adaptive black-box attacks using LLMs as
+adversarial generators have begun to emerge Perez, Huang,
+Song, Cai, Ring, Aslanides, Glaese, McAleese and Irving
+(2022); Zou, Wang, Kolter and Fredrikson (2023). These
+approaches leverage the generative fluency of LLMs to
+produce high-quality adversarial inputs under query-limited
+settings. Compared to classical token substitution, LLM-
+basedrewritingenablesdiscourse-levelreframingthatbetter
+matches how modern classifiers interpret intent and tone.
+Recent studies highlight that adversarial attacks against
+LLMs exploit several architectural characteristics unique to
+these models. In particular, instruction-following models
+oftenstruggletoclearlydistinguishbetweeninstructionsand
+contextual data within input sequences. This ambiguity al-
+lowsmaliciousinputstoembedadversarialdirectiveswithin
+seeminglybenigntext,enablingpromptinjectionandrelated
+manipulation strategies Geng, Xu, Qu and Wong (2026);
+Gulyamov, Gulyamov, Rodionov, Khursanov, Mekhmonov,
+Babaev and Rakhimjonov (2026). Additionally, token-level
+perturbations can exploit vulnerabilities in attention mecha-
+nisms,alteringhowmodelsallocateattentionweightsacross
+input tokens and thereby influencing the final reasoning
+outcome Esmradi, Yip and Chan (2023).
+Beyond staticattacks, theliterature increasinglyempha-
+sizes adaptive adversarial strategies that evolve in response
+todeployeddefenses.Theseadaptiveattacksmayiteratively
+probe model responses, refine adversarial prompts, and ex-
+ploit feedback signals to improve attack success rates over
+time. Such dynamics create a continuous attack–defense
+cycle, in which attackers refine strategies while defenders
+introduce hybrid detection pipelines, adversarial training
+methods, and multi-layer security mechanisms Al Kuwaiti
+and Ismail (2025); Liao, Chen, Lin, Li, Liu, Chen, Huang
+and Yu (2025). The resulting cat-and-mouse dynamic high-
+lights the importance of evaluating adversarial robustness
+under realistic adaptive threat models rather than static per-
+turbation scenarios.
+ArecentsurveybyNasutionetal.Nasution,EmreErgün,
+Onan and Monika (2026b) further systematizes this emerg-
+ing threat landscape by reviewing adversarial prompt gen-
+eration strategies ranging from direct input manipulation to
+semanticandstructuraldistortions,togetherwithbenchmark
+datasets, robustness metrics, and preprocessing-, model-,
+postprocessing-, and hybrid-defense strategies. The survey
+emphasizes that adversarial evaluation must account for
+evolving attack strategies rather than treating robustness
+as a static property of an LLM. This perspective further
+motivates adaptive evaluation settings in which adversarial
+inputs can be reformulated in response to model behavior.
+Complementary work has examined the defensive side
+of this problem by detecting adversarial behavior directly
+from LLM-generated responses. Nasution et al. Nasution,
+Emre Ergün, Onan and Monika (2026a) compared lexical,
+contrastive,andcontextualrepresentationsforresponse-only
+adversarial classification and showed that adversarial char-
+acteristicscanbedetectedevenwhentheoriginatingprompt
+isunavailable,althoughperformancedecreasessubstantially
+under cross-model evaluation. Their results also show that
+lexical and contextual representations capture different as-
+pects of adversarial behavior and that generalization to un-
+seen LLMs remains challenging. Although response-only
+adversarialdetectiondiffersfromtheinput-sideevasionset-
+ting considered here, these findings underscore the broader
+difficulty of identifying adversarial behavior that transfers
+across heterogeneous LLMs.
+Taken together, these findings suggest that adversarial
+robustness in instruction-following LLM classifiers must be
+studied not only at the token level but also at the discourse
+andreasoninglevels.LLM-basedrewritingattackstherefore
+represent a particularly relevant threat model for modern
+classification pipelines, as they exploit the same contextual
+reasoningcapabilitiesthatenableLLMstoperformcomplex
+language understanding tasks.
+2.5. Black-Box, Label-Only Threat Models
+Given that most LLM deployments are accessed via
+APIs, adversarial evaluation must be framed under realistic
+black-box constraints. In practical deployments, spam clas-
+sifiers are typically accessed via APIs with no exposure to
+logits,gradients,orintermediaterepresentations.Thismoti-
+vates black-box, label-only adversarial evaluation Papernot,
+McDaniel, Goodfellow, Jha, Celik and Swami (2017).
+Underthisconstraint,attackersmustrelyonoutputfeed-
+back to iteratively refine inputs. Such adaptive attacks align
+:Preprint submitted to Elsevier Page 4 of 22
+
+PAGE 6
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+with realistic adversarial scenarios where spammers itera-
+tively test messages against filtering systems. Importantly,
+minimal-query adaptive attacks are more reflective of oper-
+ational constraints than unlimited iterative perturbations.
+Recent surveys emphasize the importance of realistic
+threatmodelinginadversarialNLPbenchmarkingZhou,Liu
+and Huang (2023). Evaluations that rely solely on legacy
+white-box assumptions may underestimate practical vulner-
+abilities in LLM-based systems.
+2.6. Positioning of This Work
+Existing adversarial NLP literature has primarily evalu-
+atedclassicalneuralclassifiersusingtoken-levelorsentence-
+level perturbations. Meanwhile, LLM security research has
+focusedonpromptinjectionandjailbreakattacksratherthan
+classification evasion.
+To our knowledge, systematic comparisons between
+classical GAN-based rewriting and adaptive LLM-based
+adversarial attackers on modern zero-shot LLM spam clas-
+sifiersremainlimited.Existingstudiesoftenevaluateadver-
+sarial robustness using legacy attack paradigms developed
+forconventionalneuraltextclassifiers,whichmaynotreflect
+the behavior of instruction-following LLM classifiers. This
+work addresses this gap by comparing classicalGAN-based
+rewriting with an adaptive LLM-based attacker under a
+unified black-box evaluation protocol.
+This work bridges adversarial NLP and LLM security
+evaluationbybenchmarkingninemodernLLMspamclassi-
+fiersunderaunifiedprompt,systematicallycomparingclas-
+sical GAN-based rewriting with a minimal adaptive LLM
+attacker, and jointly reporting attack effectiveness under a
+realistic black-box, label-only threat model.
+Collectively, this background motivates the need for
+LLM-native adversarial benchmarking methodologies that
+reflect modern deployment realities.
+3. Threat Model
+We formalize a realistic adversarial setting tailored to
+API-deployed, prompt-based large language model (LLM)
+spam classifiers. Unlike classical adversarial NLP scenarios
+thatassumewhite-boxaccess,gradientavailability,orprob-
+ability scores, our threat model reflects the operational con-
+straints of modern LLM-based filtering systems deployed
+through cloud APIs.
+The primary objective of this threat modeling exercise
+is to ensure that robustness evaluation aligns with realis-
+tic adversarial capabilities rather than idealized laboratory
+assumptions. In practical spam ecosystems, attackers do
+not have access to model weights or internal confidence
+scores. Instead, they observe binary accept/reject behavior
+and iteratively refine content accordingly. Our formulation
+is intentionally grounded in this operational reality.
+3.1. System Overview
+Let𝑥denote an input email consisting of a subject line
+andbodytext.AvictimLLMclassifierreceives𝑥through
+a fixed classification prompt and outputs a discrete label:
+(𝑥)∈{SPAM,NOT_SPAM}(1)
+Theclassifieroperatesinazero-shotconfigurationandis
+accessed exclusively through an API interface. The attacker
+cannot modify the classification prompt used by the victim
+modelandcannotaltersystem-levelinstructionsormodera-
+tion policies.
+Inourdeploymentabstraction,theclassificationpipeline
+consists of three stages:
+1. Theemailcontentisembeddedintoafixedinstruction
+template.
+2. The LLM processes the combined instruction and
+email.
+3. The model returns a deterministic label output.
+ThisabstractioncaptureshowmodernLLM-basedmod-
+eration or filtering systems are deployed in production envi-
+ronments.Importantly,allvictimmodelsareevaluatedunder
+an identical classification instruction prompt to eliminate
+prompt variability as a confounding factor.
+3.2. Victim Model Assumptions
+The victim classifier satisfies several constraints that
+define the defensive environment. The victim classifier op-
+erates under four constraints: (i) prompt-conditioned zero-
+shot classification using a fixed instruction template; (ii) no
+task-specific fine-tuning; (iii) strict black-box access with-
+out exposure to architecture, parameters, logits, or hidden
+representations; and (iv) label-only feedback returning only
+SPAM or NOT_SPAM. These constraints reflect realistic
+API-based deployments and prevent reliance on gradient or
+score-based adversarial optimization.
+3.3. Adversary Objective
+The adversary’s objective is targeted evasion. Given an
+input email𝑥∈such that
+(𝑥)=SPAM,(2)
+theadversaryseeks togenerateanadversarial example𝑥 ′∈
+satisfying
+(𝑥′)=NOT_SPAM,(3)
+while preserving the semantic content of𝑥.
+3.3.1. Semantic Preservation Constraint
+To avoid trivial manipulation (e.g., deleting the entire
+message), the rewritten email must preserve core informa-
+tionalcontent,namedentities,numericalvalues,andoverall
+communicativeintent,whileallowingmodificationsintone,
+stylistic framing, and discourse structure.
+The attacker may modify tone (e.g., urgency, capitaliza-
+tion,promotionalemphasis),stylisticframing,anddiscourse
+structure, while preserving core informational content. This
+reflects realistic spammer adaptation, where evasion occurs
+by softening persuasive cues rather than altering the un-
+derlying offer, ensuring that attack success corresponds to
+decision-boundary manipulation rather than content dele-
+tion.
+:Preprint submitted to Elsevier Page 5 of 22
+
+PAGE 7
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+3.4. Attack Scope: True-Positive Spam Pool
+Let the evaluation dataset be defined as
+={(𝑥 𝑖, 𝑦𝑖)}𝑁
+𝑖=1,(4)
+where𝑥 𝑖 ∈denotes the𝑖-th email sample and𝑦 𝑖 ∈
+{SPAM,NOT_SPAM}denotes its ground-truth label.
+To isolate adversarial robustness from baseline mis-
+classification error, we define the true-positive spam set in
+Equation 5. Only samples inare attacked.
+= {𝑥𝑖∣𝑦 𝑖=SPAM,(𝑥 𝑖)=SPAM
+} .(5)
+This design choice is crucial. If we attacked all spam-
+labeled ground truth samples regardless of baseline pre-
+diction, attack success could be inflated by baseline recall
+errors. By restricting evaluation to correctly classified spam
+samples, we isolate pure evasion capability, ensure that
+robustness reflects decision-boundary sensitivity, and avoid
+confounding results with baseline classifier weakness.
+The size ofvaries per model due to different recall
+levels, providing an implicit measure of baseline strength
+prior to adversarial evaluation.
+3.5. Adversary Knowledge and Capabilities
+Wemodelapartiallyinformedadversaryconsistentwith
+real-world spammers. The attacker is aware that the task is
+spam classification and understands the binary output label
+space (SPAM vs. NOT_SPAM). However, the adversary is
+model-agnostic and lacks knowledge of whether the victim
+is proprietary or open-source, its architecture or size, and
+the composition of its training data, preventing overfitting
+tospecificinternalmechanisms.Furthermore,manipulation
+is restricted to rewriting the email text only; system-level
+prompts,classifierinstructions,andmetadatasuchassender
+IP or domain remain unchanged. This design isolates input-
+level semantic rewriting and excludes prompt injection or
+jailbreak-style exploitation.
+3.6. Query Budget Constraints
+Query constraints are essential for realistic benchmark-
+ing. The classical GAN-based rewriting attack is applied
+using its standard generative mechanism over the full true-
+positivespampool.Incontrast,theadaptiveLLMattackeris
+restricted to at most two rewrite attempts: an initial rewrite
+followed by a single refinement if necessary. No further
+iterations are permitted. This bounded protocol limits the
+number of rewriting attempts and enables controlled com-
+parison between attack strategies. The two-step design re-
+flects a realistic black-box interaction in which the attacker
+receives only the classifier label as feedback and performs a
+limited refinement of the rewritten email.
+3.7. Attack Success and Robustness Metrics
+For each attacked sample𝑥∈, adversarial success is
+defined as:
+(𝑥′)=NOT_SPAM.(6)
+Attack Success Rate (ASR) is:
+ASR= #{𝑥∈∣(𝑥 ′)=NOT_SPAM}
+|| .(7)
+For the LLM attacker experiment, robust accuracy is
+defined as:
+RobustAcc=1−ASR.(8)
+By reporting attack success rate (ASR) together with
+step-wise attack outcomes and similarity analysis, we pro-
+vide a comprehensive view of adversarial robustness for
+instruction-following LLM classifiers.
+3.8. Practical Interpretation
+This threat model captures a realistic spammer work-
+flow in which rejected emails are iteratively rewritten to
+neutralize persuasive cues and resubmitted under bounded
+queryconstraints.IntheLLMera,generativerewritingtools
+automate this adaptation loop at scale. Therefore, evalu-
+ating only classical perturbation-based attacks underesti-
+mates real-world adversarial risk. By formalizing a black-
+box,label-only,rewrite-constrainedadversarywithbounded
+queries,ourthreatmodelreflectscontemporarydeployment
+realitiesandprovidesaprincipledfoundationforcomparing
+classical GAN-based rewriting and adaptive LLM-based
+adversarial strategies.
+4. Methodology
+Thissectiondescribestheexperimentalpipelinestep-by-
+step to ensure clarity and reproducibility.
+4.1. Dataset Construction
+The dataset is obtained from the publicly released cor-
+pus introduced by Al-Subaiey et al. Al-Subaiey, Al-Thani,
+Abdullah Alam, Antora, Khandakar and Uz Zaman (2024),
+which accompanies their peer-reviewed study on a novel
+interpretable and robust AI platform for phishing email
+detection.Ratherthanusinganarbitrarycollectionofonline
+samples, we adopt this officially curated dataset, which
+was constructed to support large-scale, real-world phishing
+detection research and reported a state-of-the-art F1 score
+of0.99intheoriginalstudy.Toensurefairevaluationacross
+models, we construct a balanced subset consisting of 1,500
+spam and 1,500 non-spam emails. This controlled class
+distribution prevents performance inflation due to majority-
+classdominanceandenablesconsistentcross-modelrobust-
+ness comparison.
+4.2. Victim Model Selection and Access
+We evaluate a diverse set of instruction-following large
+languagemodels(LLMs)asvictimclassifiers.Theselection
+spans proprietary API-deployed systems and open-weight
+models executed locally via Ollama, enabling comparison
+across heterogeneous deployment settings and parameter
+scales.
+:Preprint submitted to Elsevier Page 6 of 22
+
+PAGE 8
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+4.2.1. Proprietary Models (Azure AI Foundry)
+GPT-5.2(OpenAI).GPT-5.2isaproprietaryinstruction-
+followingLLMdevelopedbyOpenAIandaccessedthrough
+Azure AI Foundry. It is optimized for multi-purpose rea-
+soning, text understanding, and zero-shot task execution via
+prompting. As a closed-weight model, internal architecture
+and training data details are not publicly disclosed. The
+model is designed for enterprise deployment and supports
+deterministic classification through structured prompting.
+DeepSeek-V3.1 (DeepSeek AI).DeepSeek-V3.1 is a
+proprietary large language model developed by DeepSeek
+AI.Itisoptimizedforreasoning-intensivetasksandgeneral-
+purpose text understanding.The model is designed to sup-
+port strong zero-shot and instruction-following capabilities.
+Inthisstudy,itisaccessedthroughAzureAIFoundryunder
+API-based black-box constraints.
+Llama-4-Maverick:17B(Meta).Llama-4-Maverick:17B
+ispartofMeta’sLlamafamilyoflargelanguagemodels.The
+Maverick variant emphasizes improved instruction follow-
+ing and generalization. Although based on an open model
+family, the deployed instance in this study is accessed via
+Azure AI Foundry as an API service. The 17B parameter
+scale represents a mid-to-large model size within modern
+LLM deployments.
+4.2.2. Open-Source Models (Ollama Deployment)
+Qwen-2.5:32B (Alibaba Cloud).Qwen-2.5:32B is an
+open-weight instruction-tuned LLM developed by Alibaba
+Cloud. The model supports multilingual capabilities and
+strong reasoning performance at the 32B parameter scale.
+In this study, it is deployed locally via Ollama, enabling
+controlled evaluation under identical prompting conditions
+without API latency variability.
+Gemma-3:27B (Google DeepMind).Gemma-3:27B is
+anopen-weightmodelreleasedbyGoogleDeepMindaspart
+of the Gemma family. It is instruction-tuned and optimized
+for efficient deployment relative to its parameter size. In
+additiontoservingasavictimmodel,Gemma-3:27Bisalso
+usedastheadaptiveadversarialgeneratorintheLLM-based
+attack experiments due to its strong generative fluency and
+stability.
+GPT-OSS:20B(OpenAI).GPT-OSS:20Bisacommunity-
+released open-weight model with approximately 20 billion
+parameters. It is instruction-tuned and designed for general-
+purpose text generation and classification via prompting.
+ThemodelisexecutedlocallyviaOllamaunderdeterminis-
+tic decoding settings.
+DeepSeek-R1:1.5B(DeepSeekAI).DeepSeek-R1:1.5B
+is a compact open-weight reasoning model developed by
+DeepSeek AI. It is optimized for structured reasoning and
+efficient inference at smaller parameter scales. Despite its
+relatively modest size, it supports instruction-following
+behavior and zero-shot classification via prompting. Its
+inclusion enables analysis of robustness characteristics in
+lightweight reasoning-oriented architectures.
+Gemma-3:1B (Google DeepMind).Gemma-3:1B is a
+compact variant of the Gemma model family, optimized for
+lightweight deployment and lower computational overhead.
+Despite its smaller parameter count, it supports instruction-
+following and zero-shot classification. Including this model
+enables analysis of scale-dependent robustness behavior.
+Qwen-2.5:0.5B (Alibaba Cloud).Qwen-2.5:0.5B is a
+small-scale open-weight model designed for efficient infer-
+ence under constrained computational environments. While
+significantly smaller than the 32B variant, it maintains
+instruction-following capabilities. Its inclusion allows eval-
+uation of robustness sensitivity across extreme parameter
+scales.
+4.2.3. Rationale for Model Diversity
+The selected models vary across parameter scale (0.5B
+to32B+),deploymentmodality(API-basedvs.localexecu-
+tion), and developer origin (OpenAI, DeepSeek AI, Meta,
+Google DeepMind, and Alibaba Cloud). This diversity en-
+ables robustness benchmarking across heterogeneous archi-
+tectural families and practical deployment configurations,
+ensuring that conclusions are not tied to a single vendor or
+model scale.
+4.3. Baseline Zero-Shot Classification
+All models were evaluated under an identical zero-
+shot classification instruction requiring output of SPAM or
+NOT_SPAMwithoutexplanation.Eachemail𝑥 𝑖isclassified
+usingafixedvictimpromptshownintheAppendix.Thepre-
+dictedlabel̂ 𝑦𝑖 iscomparedtothegroundtruth𝑦 𝑖 tocompute
+baseline accuracy and class-specific precision/recall/F1.
+4.4. Constructing the Attack Set (True-Positive
+Spam Pool)
+For each victim model, we construct the attack pool
+following Equation 5 in Section 3.4. Only these emails are
+attacked to avoid conflating baseline errors with adversarial
+evasion.
+4.5. Classical Attack Evaluation (GAN)
+For each victim model, the GAN attack is applied to
+the full true-positive spam set. We record the number of
+attacked samples (||), the number of label flips (SPAM→
+NOT_SPAM), and the resulting attack success rate (ASR =
+flips /||).
+4.6. Adaptive LLM Attacker (Gemma-3:27B as
+Attacker)
+Motivated by Gemma’s strong robustness under GAN
+(very low GAN ASR as victim), we select Gemma-3:27B
+as attacker.
+4.6.1. Why choose Gemma as attacker?
+This choice supports a key experimental logic: a model
+that is robust against legacy attacks may still be highly
+:Preprint submitted to Elsevier Page 7 of 22
+
+PAGE 9
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+capable as a generator of fluent adversarial rewrites. Us-
+ing Gemma as attacker also avoids privileging proprietary
+modelsasattackers,makingevaluationmoreaccessibleand
+reproducible.
+4.6.2. Two-step refinement protocol
+TheadaptiveLLMattackerisappliedtoalltrue-positive
+spampoolunderthetwo-stepconstraintdefinedinSection3.
+Specifically, an initial rewrite is generated and evaluated;
+if misclassification is not achieved, a single refinement is
+attempted.
+Responsible disclosure note:We do not publish the
+literal prompt strings for the attacker in this manuscript
+becausetheycouldbedirectlymisusedtoevadespamfilters.
+Instead, we provide redacted templates and methodological
+descriptions in the Appendix.
+4.7. Metrics
+Wereportbaselineaccuracyoverthe3,000-emaildataset;
+spam-class precision, recall, and F1 (label=1); the true-
+positive spam count (TP =||); and attack success rate
+(ASR) for both GAN and LLM attacks.
+4.8. Semantic Preservation Evaluation Protocol
+Adversarial rewriting attacks aim to alter classifier pre-
+dictionswhilepreservingtheunderlyingsemanticcontentof
+the original message. To ensure that attack success reflects
+decision-boundary manipulation rather than trivial content
+deletionorsemanticdrift,weconductasystematicsemantic
+preservation evaluation between each original spam email
+and its corresponding adversarial rewrites.
+4.8.1. Motivation
+Whilerewriting-basedattacksconstrainmodificationsto
+stylistic framing, tone, and discourse structure, it remains
+necessary to verify empirically that successful label flips
+are not primarily caused by degradation of core commu-
+nicative intent. In particular, an adversarial example should
+retainnamedentities,numericalvalues,offers,requests,and
+overall semantic objective, even if persuasive cues such
+as urgency or capitalization are softened. Without explicit
+semantic validation, attack success could be misinterpreted
+as content removal rather than robustness failure.
+4.8.2. Similarity Metrics
+We evaluate semantic preservation using a combination
+of embedding-based and lexical similarity metrics.
+Embedding-Based Semantic Similarity.We compute
+cosine similarity between sentence embeddings of the orig-
+inal email and each rewritten version using a pretrained
+Sentence-BERT (SBERT) model. Let𝑥denote the original
+email and𝑥′ its adversarial rewrite. Let𝐞(𝑥)and𝐞(𝑥 ′)be
+their normalized embedding vectors. Semantic similarity is
+defined as:
+SimSBERT(𝑥, 𝑥′)=cos (𝐞(𝑥),𝐞(𝑥′)).(9)
+SBERT is treated as the primary semantic preservation
+metricduetoitsabilitytocapturecontextualandparaphras-
+tic similarity beyond surface-level token overlap.
+Lexical Similarity Metrics.For completeness, we also
+report lexical overlap metrics, including BLEU, ROUGE-
+L (F1), and Jaccard similarity. BLEU evaluates n-gram
+precisionoverlap,ROUGE-Lcaptureslongestcommonsub-
+sequence alignment, and Jaccard similarity measures token
+set overlap:
+Jaccard(𝑥, 𝑥′)= |𝑇(𝑥)∩𝑇(𝑥 ′)|
+|𝑇(𝑥)∪𝑇(𝑥 ′)| ,(10)
+where𝑇(⋅)denotesthesetofuniquetokensafternormal-
+ization.
+Embedding-based metrics primarily assess semantic
+preservation, whereas lexical metrics quantify surface vari-
+ation. Together, they allow distinction between discourse-
+level reframing and semantic deletion.
+4.8.3. Evaluation Scope
+Similarity is computed for both the first rewrite and the
+second rewrite (when applicable) for each victim model.
+Becausethesizeofthetrue-positivespampoolvariesacross
+models,similaritystatisticsarereportedperdefendermodel
+and per attack step.
+4.8.4. Outcome-Based Separation
+To examine whether attack success is associated with
+semantic degradation, we separate adversarial samples into
+two groups:
+•Successful flips:={𝑥 ′∣(𝑥 ′)=NOT_SPAM},
+•Failed attacks:={𝑥 ′∣(𝑥 ′)=SPAM}.
+For each group, we compute mean similarity and stan-
+dard deviation. We then evaluate whether differences in
+SBERT similarity between successful and failed attacks
+are statistically significant using independent two-sample t-
+tests.
+This separation enables analysis of whether classifica-
+tion flips occur primarily when semantic similarity drops
+substantially, or whether decision-boundary sensitivity is
+driven by discourse-level reframing while preserving core
+meaning.
+4.8.5. Interpretation Criteria
+We interpret SBERT similarity values above 0.80 as
+indicatingstrongsemanticpreservation,valuesbetween0.75
+and0.80asmoderatepreservation,andvaluesbelow0.75as
+potential semantic drift. These thresholds are used descrip-
+tivelytoidentifyoutliersanddonotdirectlyinfluenceattack
+success measurement.
+By incorporating embedding-based similarity, lexical
+overlap analysis, and outcome-based separation, this proto-
+col ensures that adversarial evaluation reflects genuine ro-
+bustnessassessmentratherthantrivialcontentmodification.
+:Preprint submitted to Elsevier Page 8 of 22
+
+PAGE 10
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 1
+Baseline Zero-Shot Classification Performance Across Victim Models
+Model Precision (%) Recall (%) F1-score (%) Accuracy (%)
+GPT-5.2 87.21 85.93 85.81 85.93
+DeepSeek-V3.1 87.47 86.23 86.12 86.23
+Qwen-2.5:32B 89.39 88.30 88.22 88.30
+Gemma-3:27B94.86 94.57 94.56 94.57
+GPT-OSS:20B 89.32 89.07 89.05 89.07
+Llama-4-Maverick:17B 86.59 85.07 84.91 85.07
+DeepSeek-R1:1.5B 58.66 54.93 49.50 54.93
+Gemma-3:1B 65.10 59.70 55.74 59.70
+Qwen-2.5:0.5B 51.56 51.53 51.32 51.53
+Table 2
+Spam-Class Detection Metrics and True-Positive Spam Pool Sizes for Adversarial Evaluation
+Model Precision (%) Recall (%) F1-score (%) TP Pool
+GPT-5.2 94.11 76.67 84.50 1150
+DeepSeek-V3.1 94.30 77.13 84.86 1157
+Qwen-2.5:32B95.9280.00 87.24 1200
+Gemma-3:27B 91.2498.60 94.78 1479
+GPT-OSS:20B 92.46 85.07 88.61 1276
+Llama-4-Maverick:17B 94.05 74.87 83.37 1123
+DeepSeek-R1:1.5B 64.34 22.13 32.94 332
+Gemma-3:1B 56.07 89.60 68.98 1344
+Qwen-2.5:0.5B 51.35 58.13 54.53 872
+5. Results
+5.1. Baseline Zero-Shot Classification
+Performance
+Table1summarizeszero-shotclassificationperformance
+for each victim model on the full email dataset (𝑁=
+3000). Gemma-3:27B achieves the highest overall accuracy
+(94.57%), followed by GPT-OSS:20B and Qwen-2.5:32B,
+whichalsodemonstratestrongbalancedprecisionandrecall.
+In contrast, smaller-scale models which are DeepSeek-
+R1:1.5B, Gemma-3:1B and Qwen-2.5:0.5B exhibit sub-
+stantially lower performance, with accuracy values near
+50–60%. These results indicate considerable variation in
+baseline classification strength across model scales and
+architectural families.
+Because adversarial evaluation targets evasion of spam
+detection specifically, Table 2 reports class-specific metrics
+for the spam label (label=1). Spam recall differs markedly
+across models, ranging from above 98% (Gemma-3:27B)
+to below 25% (DeepSeek-R1:1.5B). This variation directly
+determines the size of the true-positive spam pool used for
+adversarialrewriting,therebyinfluencingboththestatistical
+power and robustness interpretation of subsequent attack
+experiments.
+5.2. Robustness to Classical GAN and Adaptive
+LLM-Based Adversarial Rewriting
+Table 3 compares the effectiveness of a classical GAN-
+basedrewritingattackandanadaptiveLLM-basedrewriting
+attack across all victim models. For each model, the attack
+isappliedtothefulltrue-positivespampool(TPPool),con-
+sistingofemailscorrectlyclassifiedasSPAMpriortoadver-
+sarialmodification.Thetablereportsthenumberofsamples
+whosepredictionflippedfromSPAMtoNOT_SPAM(Label
+Changed) and the corresponding attack success rate (ASR).
+UndertheclassicalGAN-basedattack,mostinstruction-
+following LLM classifiers demonstrate strong robustness.
+Five of the nine models exhibit ASR values below 2%, and
+several models show near-zero vulnerability despite large
+true-positive pools. For example, Qwen-2.5:32B, Gemma-
+3:27BandLlama-4-Maverick:17Bshowonlyasingleflipped
+prediction, corresponding to ASR values of 0.08%, 0.06%
+and 0.09%, respectively. These results indicate that legacy
+GAN-based rewriting methods, originally designed for tra-
+ditional neural text classifiers, have limited effectiveness
+againstmoderninstruction-followingLLM-basedspamclas-
+sifiers.
+In contrast, the adaptive LLM-based attacker consis-
+tentlyproducessubstantiallyhigherattacksuccessrates.For
+example, DeepSeek-V3.1 increases from 1.64% under GAN
+rewriting to 12.53% under adaptive LLM rewriting, while
+Qwen-2.5:32Bincreasesfrom0.08%to12.42%.Similarpat-
+terns are observed for GPT-5.2 and GPT-OSS:20B, where
+the adaptive attacker achieves ASR values exceeding 5%
+and12%,respectively.Theseresultssuggestthatinstruction-
+following adversarial rewriting is significantly more effec-
+tive at bypassing LLM-based spam classifiers than classical
+GAN-based approaches.
+:Preprint submitted to Elsevier Page 9 of 22
+
+PAGE 11
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 3
+Comparison of classical GAN-based and adaptive LLM-based adversarial rewriting on the full true-positive spam pool.
+Victim Model TP Pool GAN Attack LLM Attack
+Label Changed a ASR (%) b Label Changed a ASR (%) b
+GPT-5.2 1150 19 1.65 60 5.22
+DeepSeek-V3.1 1157 19 1.64 145 12.53
+Qwen-2.5:32B 1200 1 0.08 149 12.42
+Gemma-3:27Bc 1479 1 0.06 - -
+GPT-OSS:20B 1276 115 9.01 165 12.93
+Llama-4-Maverick:17B 1123 1 0.09 74 6.59
+DeepSeek-R1:1.5B 332 39 11.75 318 95.78
+Gemma-3:1B 1344 51 3.79 577 42.93
+Qwen-2.5:0.5B 872 242 27.75 469 53.78
+a Label Changed denotes the number of adversarial samples whose prediction flipped from SPAM to
+NOT_SPAM.
+b Attack Success Rate is computed as the percentage of flipped samples relative to the total true-positive
+spam pool attacked.
+c Gemma-3:27B is excluded as a victim in the adaptive LLM attack comparison because it is used as the
+adversarial generator.
+A notable pattern emerges across model scales. Smaller
+modelssuchasDeepSeek-R1:1.5B,Gemma-3:1B,andQwen-
+2.5:0.5B exhibit dramatically higher vulnerability to both
+attacktypes,withtheadaptiveLLMattackerachievingASR
+values of 95.78%, 42.93%, and 53.78%, respectively. This
+indicates that robustness varies substantially across model
+sizes and architectures, with larger instruction-following
+modelsgenerallyprovidingstrongerresistancetoadversarial
+rewriting.
+Overall, the comparison demonstrates that classical
+GAN-based attacks substantially underestimate the evasion
+riskfacedbymodernLLM-basedspamclassifiers.Adaptive
+LLM-based rewriting, which operates at the discourse level
+and aligns with the instruction-following paradigm of the
+victim models, produces markedly higher evasion rates and
+therefore provides a more realistic evaluation of classifier
+robustness.
+5.3. Statistical Significance Analysis
+To assess whether the performance differences between
+classical GAN-based rewriting and the proposed adaptive
+LLM-basedattackarestatisticallysignificant,weconducted
+a two-proportion z-test comparing the attack success rates
+(ASR) of the two approaches.
+Additionally, we estimated 95% confidence intervals for
+the LLM attack success rates using bootstrap resampling.
+The bootstrap procedure repeatedly sampled the attack out-
+comes from the true-positive spam pool to estimate the
+stability of the ASR estimates.
+Table 4 presents the statistical comparison between
+GAN-basedandLLM-basedadversarialrewritingacrossall
+victim models. The results show that the adaptive LLM at-
+tack consistently achieves significantly higher success rates
+than the classical GAN approach (p < 0.01 for all models).
+These findings confirm that the observed improvements
+are not due to random variation but reflect a systematic
+advantage of adaptive LLM-based rewriting in black-box
+spam evasion.
+To further illustrate the magnitude and statistical reli-
+ability of the difference between the two attack strategies,
+Figure1comparestheattacksuccessratesofclassicalGAN-
+basedrewritingandadaptiveLLM-basedrewritingacrossall
+victim models. Error bars denote 95% binomial confidence
+intervals of the attack success rate (ASR) for the adaptive
+LLM attack. The figure shows that the adaptive LLM strat-
+egy consistently achieves substantially higher success rates
+thantheclassicalGANbaselineacrossallevaluatedmodels.
+Moreover, the confidence intervals remain well separated
+from the GAN results, indicating that the performance gap
+is statistically robust rather than attributable to sampling
+variation. This pattern suggests that modern instruction-
+following LLMs exhibit a discourse-level vulnerability that
+isnoteffectivelyexploitedbyclassicalGAN-basedrewriting
+methods.
+5.4. Step-wise Contribution of the Two-Step
+Adaptive LLM Attack
+Table5firstreportsthestep-wiseoutcomedistributionof
+the adaptive LLM attack across the full true-positive spam
+pool. For each victim model, the table shows the number
+of samples that flip from SPAM to NOT_SPAM (label 0)
+and those that remain classified as SPAM (label 1) after
+eachrewritingstep.Thesecountsprovidetheempiricalbasis
+for both the attack success rate (ASR) analysis and the
+similarity-based error analysis presented later. In particular,
+the number of samples in each label category is required
+to compute weighted similarity averages, since successful
+and unsuccessful adversarial samples may exhibit different
+similarity characteristics.
+Buildingonthisdistribution,Table6quantifiesthecon-
+tribution of each rewriting stage by reporting the number
+of successful evasions obtained in Step 1 and the additional
+:Preprint submitted to Elsevier Page 10 of 22
+
+PAGE 12
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 4
+Attacksuccessrate(ASR)with95%bootstrapconfidenceintervalsandstatisticalcomparisonbetweenGAN-basedandLLM-based
+adversarial rewriting.
+Model GAN ASR (%) LLM ASR (%) p-value
+GPT-5.2 1.65 5.22 <0.001
+DeepSeek-V3.1 1.64 12.53 <0.001
+Qwen-2.5:32B 0.08 12.42 <0.001
+GPT-OSS:20B 9.01 12.93 0.002
+Llama-4-Maverick:17B 0.09 6.59 <0.001
+DeepSeek-R1:1.5B 11.75 95.78 <0.001
+Gemma-3:1B 3.79 42.93 <0.001
+Qwen-2.5:0.5B 27.75 53.78 <0.001
+Figure 1:Comparison of attack success rates (ASR) between classical GAN-based rewriting and adaptive LLM-based rewriting
+across victim models. Error bars represent 95% bootstrap confidence intervals estimated from the true-positive spam pool. The
+results show that adaptive LLM-based rewriting consistently achieves substantially higher evasion rates than classical GAN-based
+rewriting.
+successes achieved in Step 2. The first rewriting attempt is
+applied to the entire true-positive spam pool, while the sec-
+ondattempttargetsonlythosesamplesthatremainclassified
+as SPAM after the initial rewrite.
+Across most victim models, the majority of successful
+evasions occur during the first rewriting attempt. For ex-
+ample, Step 1 alone achieves success rates above 9% for
+DeepSeek-V3.1, Qwen-2.5:32B, and GPT-OSS:20B. Nev-
+ertheless, the second rewriting step consistently provides
+additional gains by targeting the remaining difficult cases.
+Although the incremental improvement is relatively small
+for stronger models (e.g., GPT-5.2 increases from 4.52% to
+a final ASR of 5.22%), it remains observable across nearly
+all victims.
+The contribution of the second step becomes substan-
+tially more pronounced for smaller models. For instance,
+Qwen-2.5:0.5B obtains an additional 205 successful eva-
+sionsduringStep2,increasingthetotalASRfrom30.28%to
+53.78%. Similarly, DeepSeek-R1:1.5B reaches a final ASR
+of 95.78%, indicating that iterative rewriting can dramati-
+cally amplify evasion effectiveness when the victim model
+exhibits weaker baseline robustness.
+Overall,theseresultsdemonstratethatadversarialrewrit-
+ing benefits from iterative refinement. Even minimal feed-
+back from the victim classifier enables the attacker to
+progressively modify the email text and improve evasion
+success, highlighting the importance of evaluating robust-
+ness under multi-step adaptive attack settings.
+5.5. Semantic Similarity Analysis
+Although the attack success rate (ASR) quantifies the
+ability of adversarial rewriting to flip the classifier decision,
+it does not directly indicate whether the rewritten email
+:Preprint submitted to Elsevier Page 11 of 22
+
+PAGE 13
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 5
+Step-wise outcome distribution of the adaptive LLM attack across the full true-positive spam pool.
+Victim Model TP Pool Step 1 Step 2 Label Changed
+0 (Success) 1 (Fail) 0 (Success) 1 (Fail)
+GPT-5.2 1150 52 1088 8 1080 60
+DeepSeek-V3.1 1157 119 1011 26 981 145
+Qwen-2.5:32B 1200 125 1075 24 1051 149
+GPT-OSS:20B 1276 125 1151 40 1111 165
+Llama-4-Maverick:17B 1123 58 972 16 899 74
+DeepSeek-R1:1.5B 332 265 67 53 14 318
+Gemma-3:1B 1344 438 905 139 766 577
+Qwen-2.5:0.5B 872 264 603 205 398 469
+Table 6
+Step-wise contribution of the two-step adaptive LLM adversarial attack.
+Victim Model a TP Pool Step 1 Success b Step 1 ASR (%) c Step 2 Additional d Step 2 Gain (%) e T otal Successf Final ASR (%) g
+GPT-5.2 1150 52 4.52 8 0.73 60 5.22
+DeepSeek-V3.1 1157 119 10.29 26 2.50 145 12.53
+Qwen-2.5:32B 1200 125 10.42 24 2.24 149 12.42
+GPT-OSS:20B 1276 125 9.80 40 3.46 165 12.93
+Llama-4-Maverick:17B 1123 58 5.16 16 1.50 74 6.59
+DeepSeek-R1:1.5B 332 265 79.82 53 79.10 318 95.78
+Gemma-3:1B 1344 438 32.59 139 15.36 577 42.93
+Qwen-2.5:0.5B 872 264 30.28 205 33.99 469 53.78
+a Gemma-3:27B is excluded as a victim in the adaptive LLM attack comparison because it is used as the adversarial generator.
+bStep 1 Success denotes the number of adversarial samples whose prediction flipped from SPAM to NOT_SPAM after the first rewriting
+attempt by the adaptive LLM attacker.
+c Step 1 ASR is computed as the percentage of Step 1 successes relative to the total true-positive spam pool attacked.
+dStep 2 Additional denotes the number of additional adversarial samples whose prediction flipped from SPAM to NOT_SPAM during the
+second rewriting attempt, applied only to samples that remained classified as SPAM after Step 1.
+e Step 2 Gain represents the percentage of Step 2 successes relative to the remaining samples after Step 1 (i.e., conditional success rate of the
+second attempt).
+f Total Success denotes the total number of flipped predictions after both rewriting attempts, computed as Step 1 Success + Step 2 Additional.
+gFinal ASR is computed as the percentage of Total Success relative to the total true-positive spam pool attacked.
+preserves the semantic content of the original spam mes-
+sage.Inrewriting-basedattacks,semanticpreservationisan
+important constraint because the attacker aims to disguise
+the spam while maintaining its underlying communicative
+intent. Therefore, beyond measuring attack effectiveness,
+it is necessary to verify whether successful evasions arise
+from genuine paraphrastic transformation or from semantic
+deletion and content removal.
+To investigate this aspect, we analyze the similarity be-
+tweentheoriginalspamemailsandtheiradversarialrewrites
+using both embedding-based and lexical similarity metrics.
+Specifically,weevaluateSBERTcosinesimilarityasthepri-
+mary semantic metric, complemented by BLEU, ROUGE-
+L, and Jaccard scores to capture surface-level lexical over-
+lap. Because the similarity statistics may vary depending
+on whether the attack succeeds or fails, we compute the
+Table 7
+Overall semantic similarity (all samples) between original spam emails and GAN-based adversarial rewrites.
+Defender SBERT BLEU ROUGE-L Jaccard
+0 1 Overall a 0 1 Overall a 0 1 Overall a 0 1 Overall a
+GPT-5.2 0.125 0.1151 0.1202 0.000 0.1082 0.0566 0.010 0.0465 0.0297 0.010 0.0354 0.0211
+DeepSeek-V3.1 0.117 0.1114 0.1125 0.000 0.3446 0.2728 0.020 0.0396 0.0355 0.010 0.0277 0.0244
+Qwen-2.5:32B 0.091 0.0533 0.0784 0.000 0.0257 0.0414 0.000 0.0312 0.0104 0.000 0.0390 0.0130
+Gemma-3:27B – 0.0469 0.0469 – 0.0111 0.0111 – 0.0164 0.0164 – 0.0133 0.0133
+GPT-OSS:20B 0.112 0.0979 0.0984 0.300 0.1732 0.1790 0.090 0.0450 0.0466 0.070 0.0318 0.0330
+Llama-4-Maverick:17B – 0.1093 0.1093 – 0.0466 0.0466 – 0.0451 0.0451 – 0.0513 0.0513
+DeepSeek-R1:1.5B 0.115 0.0969 0.1100 0.400 0.4555 0.4182 0.060 0.0624 0.0614 0.050 0.0459 0.0458
+Gemma-3:1B 0.118 0.0916 0.1165 0.400 0.2479 0.3489 0.060 0.0527 0.0562 0.040 0.0417 0.0413
+Qwen-2.5:0.5B 0.109 0.1068 0.1078 0.300 0.3078 0.2990 0.060 0.0513 0.0536 0.040 0.0395 0.0399
+a Overall similarity scores are computed across all adversarial rewrites without conditioning on attack outcomes.
+:Preprint submitted to Elsevier Page 12 of 22
+
+PAGE 14
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 8
+Overall semantic similarity (all samples) between original spam emails and LLM-based adversarial rewrites for Step 1 and Step 2.
+Model SBERT BLEU ROUGE-L Jaccard
+Step1 Step2 Step1 Step2 Step1 Step2 Step1 Step2
+GPT-5.2 0.726 0.719 26.37 25.60 0.446 0.428 0.358 0.341
+DeepSeek-V3.1 0.731 0.727 28.89 27.60 0.472 0.454 0.381 0.363
+Qwen-2.5:32B 0.703 0.702 25.16 24.63 0.423 0.411 0.335 0.322
+GPT-OSS:20B 0.714 0.697 27.57 23.87 0.452 0.405 0.368 0.318
+Llama-4-Maverick:17B 0.725 0.716 27.11 25.87 0.456 0.435 0.365 0.345
+DeepSeek-R1:1.5B 0.737 0.747 29.66 21.26 0.478 0.376 0.402 0.323
+Gemma-3:1B 0.737 0.742 32.09 25.89 0.496 0.429 0.412 0.350
+Qwen-2.5:0.5B 0.760 0.711 36.88 18.09 0.555 0.339 0.486 0.296
+Similarity scores are computed across all adversarial rewrites for each attack step without conditioning
+on attack outcomes.
+metrics separately for successful attacks (label 0) and failed
+attacks (label 1). The overall similarity scores in Table 7
+and Table 8 are computed across all adversarial rewrites
+without separating successful and failed attacks. Outcome-
+based similarity analysis is presented in Tables 9–12 to
+examine whether attack success correlates with semantic
+degradation.Theoverallsimilarityvaluesarethencalculated
+asweightedaveragesbasedonthenumberofsamplesineach
+outcome category, using the step-wise outcome distribution
+reported in Table 5. This outcome-aware analysis allows
+us to examine whether adversarial success correlates with
+semantic degradation or whether attacks succeed despite
+preserving the underlying semantic meaning.
+Before turning to the adaptive LLM attack, Table 7 re-
+ports the overall semantic similarity between original spam
+emails and GAN-based adversarial rewrites. These scores
+are computed across all GAN-generated adversarial sam-
+ples without conditioning on attack outcomes. Across most
+victim models, the GAN-based rewrites exhibit relatively
+low SBERT and lexical similarity values, suggesting that
+the legacy GAN attack often fails to preserve semantic
+fidelity as effectively as the adaptive LLM attacker. This
+contrast provides an important baseline for interpreting the
+strongerdiscourse-levelbehaviorofLLM-basedrewritingin
+the subsequent analysis.
+5.5.1. Overall Similarity (Aggregated)
+Table 8 reports the overall semantic similarity between
+theoriginalspamemailsandtheLLM-generatedadversarial
+rewrites across all victim models for Step 1 and Step 2.
+Unlike the outcome-based analysis presented later, the sim-
+ilarity scores in Table 7 are computed across all adversarial
+rewriteswithineachattackstep,withoutseparatingsuccess-
+ful and failed attacks. The analysis includes both rewriting
+stages, Step 1 and Step 2. SBERT cosine similarity is used
+as the primary semantic preservation metric, while BLEU,
+ROUGE-L,andJaccardmeasurelexicaloverlapbetweenthe
+original and rewritten texts.
+Because Table 8 aggregates all adversarial rewrites
+within each step, it provides a global estimate of semantic
+preservation during the adaptive attack process. This allows
+us to compare the overall semantic fidelity of the first
+and second rewriting stages before examining outcome-
+conditioned differences in Tables 9–12.
+For the outcome-based analysis in Tables 9–12, the
+overall similarity is computed as a weighted average over
+successful(label0)andfailed(label1)attacks.Specifically,
+the outcome-based overall similarity is defined as
+𝑆overall= 𝑛0𝑆0+𝑛1𝑆1
+𝑛0+𝑛1
+,(11)
+where𝑆 0 and𝑆 1 denote the mean similarity scores of
+successfulandfailedattacks,respectively,and𝑛 0 and𝑛1 are
+thecorrespondingsamplecountsderivedfromthestep-wise
+outcome distribution in Table 4. In addition, we report a
+conditional similarity difference,Δ =𝑆success−𝑆 failure, to
+directlymeasurewhethersuccessfulattackspreservelessor
+more similarity than failed attacks.
+Across all victim models, SBERT similarity remains
+consistently high, generally within the range of approxi-
+mately 0.70 to 0.76. This indicates that adversarial rewrites
+preserve a substantial portion of the original semantic con-
+tent. In contrast, lexical overlap metrics such as BLEU,
+ROUGE-L, and Jaccard exhibit larger reductions, particu-
+larlyinStep2rewrites.Thispatternsuggeststhatthesecond
+rewriting step introduces stronger surface-level variations
+while maintaining the underlying semantic meaning.
+The divergence between embedding-based similarity
+and lexical metrics supports the interpretation that the
+adaptive LLM attacker performs discourse-level reframing
+rather than semantic deletion. In other words, adversarial
+successisachievedprimarilythroughstylisticandpragmatic
+transformations, rather than through removal of critical
+information from the original email.
+5.5.2. Embedding-Based Semantic Similarity
+(SBERT)
+SBERTcosinesimilarityremainsconsistentlyhighacross
+bothrewritingstagesandoutcomecategories.Overallscores
+generally fall within the range of approximately 0.70–0.76,
+indicatingstrongsemanticpreservationbetweentheoriginal
+spam emails and their adversarial rewrites. Importantly,
+:Preprint submitted to Elsevier Page 13 of 22
+
+PAGE 15
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 9
+Outcome-based semantic similarity (SBERT cosine) between original spam emails and adversarial
+rewrites across attack outcomes for Step 1 and Step 2.
+Model Step 1 Step 2
+0 1 Overall a Δb 0 1 Overall a Δb
+GPT-5.2 0.601 0.732 0.726 -0.131 0.681 0.719 0.719 -0.038
+DeepSeek-V3.1 0.643 0.741 0.731 -0.098 0.639 0.729 0.727 -0.090
+Qwen-2.5:32B 0.591 0.716 0.703 -0.125 0.549 0.706 0.702 -0.157
+GPT-OSS:20B 0.733 0.712 0.714 +0.021 0.697 0.697 0.697 0.000
+Llama-4-Maverick:17B 0.651 0.730 0.725 -0.079 0.633 0.717 0.716 -0.084
+DeepSeek-R1:1.5B 0.725 0.782 0.737 -0.057 0.754 0.722 0.747 +0.032
+Gemma-3:1B 0.690 0.760 0.737 -0.070 0.711 0.748 0.742 -0.037
+Qwen-2.5:0.5B 0.764 0.758 0.760 +0.006 0.738 0.698 0.711 +0.040
+a Outcome-based overall scores are computed as weighted averages based on the number of successful
+(label 0) and failed (label 1) attacks, enabling analysis of whether attack success correlates with
+semantic degradation.
+b Conditional similarity (Δ) indicates the difference between successful and failed attacks.
+Δ =𝑆 𝑠𝑢𝑐𝑐𝑒𝑠𝑠 −𝑆 𝑓 𝑎𝑖𝑙𝑢𝑟𝑒. Negative values indicate that successful attacks slightly reduce semantic
+similarity compared with failed attacks.
+successful attacks (label 0) do not exhibit substantially
+lower SBERT similarity compared to failed attacks (la-
+bel 1). As shown in Table 9, the conditional similarity
+differences are negative for most models, indicating that
+successful attacks often reduce SBERT similarity slightly
+relative to failed attacks. However, the magnitude of these
+differencesremainssmall,andinseveralcases,suchasGPT-
+OSS:20B in Step 1 and DeepSeek-R1:1.5B in Step 2, the
+differences are near zero or slightly positive, suggesting
+that successful evasion can still occur without meaningful
+semantic drift. In several cases, such as GPT-OSS:20B and
+DeepSeek-R1:1.5B, the similarity values are comparable or
+even slightly higher for successful adversarial examples.
+This observation suggests that adversarial success is not
+primarily driven by semantic degradation. Instead, Table 9
+indicates that semantic preservation remains broadly stable
+even when the classifier decision changes, reinforcing the
+interpretation that the attack operates through discourse-
+levelreframingratherthanmeaningremoval.Theattackeris
+able to preserve the semantic intent of the original message
+while still altering the textual form sufficiently to evade the
+classifier.
+Across most models, Step 2 similarity remains close to
+Step 1 similarity, indicating that the second rewriting stage
+introduces additional surface-level modifications without
+significantlyalteringthesemanticcontentoftheemail.This
+patternsupportstheinterpretationthattheadaptiveLLMat-
+tacker performs discourse-level transformations rather than
+meaning deletion.
+5.5.3. Lexical Overlap Analysis Using BLEU
+BLEU scores reveal stronger divergence between suc-
+cessful and unsuccessful adversarial examples compared
+with SBERT similarity. In most models, successful attacks
+(label0)tendtoexhibitlowerBLEUscores,particularlydur-
+ingStep2rewriting.Thisindicatesthatsuccessfuladversar-
+ial rewrites typically involve greater lexical transformation
+relative to the original email text.
+Table 10 further shows that the conditional BLEU dif-
+ferences are negative for most models, especially in Step 2,
+meaningthatsuccessfulattacksgenerallyhavelowerlexical
+overlap than failed attacks. The largest negative differences
+are observed for Qwen-2.5:32B, GPT-OSS:20B, Llama-4-
+Maverick:17B, and DeepSeek-R1:1.5B during Step 2, indi-
+catingthatstrongerlexicalreformulationisoftenassociated
+with successful evasion.
+The reduction in BLEU scores between Step 1 and Step
+2 is particularly evident for models such as Qwen-2.5:32B
+and GPT-OSS:20B, where Step 2 introduces substantially
+largersurface-levelmodifications.Theseresultssuggestthat
+the second rewriting stage increases paraphrastic diversity
+and reduces n-gram overlap with the original spam email.
+Importantly, the simultaneous preservation of high SBERT
+similarity indicates that these lexical transformations do not
+correspond to major semantic changes.
+5.5.4. Structural Similarity Analysis Using ROUGE-L
+ROUGE-L results exhibit a similar pattern to BLEU,
+showing that successful adversarial examples often have
+lower lexical overlap with the original email text. The de-
+crease is particularly evident in Step 2 rewrites, indicating
+that the second rewriting stage introduces stronger struc-
+tural transformations in the sentence composition. Because
+ROUGE-Lmeasureslongestcommonsubsequences,reduc-
+tions in this metric indicate that successful attacks often
+restructurethesentenceorganizationratherthansimplysub-
+stituting individual words.
+This tendency is also reflected in Table 11, where the
+conditional ROUGE-L differences are negative for most
+models,particularlyinStep2.Thesenegativevaluesindicate
+thatsuccessfulattackstypicallypreservelesssequence-level
+overlapthanfailedattacks,supportingtheviewthateffective
+adversarial rewrites increasingly restructure the phrasing
+and discourse organization of the original emails.
+Despite these reductions in lexical overlap, the SBERT
+results indicate that semantic similarity remains largely
+:Preprint submitted to Elsevier Page 14 of 22
+
+PAGE 16
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 10
+Outcome-based lexical similarity (BLEU) between original spam emails and adversarial rewrites
+across attack outcomes for Step 1 and Step 2.
+Model Step 1 Step 2
+0 1 Overall a Δb 0 1 Overall a Δb
+GPT-5.2 22.27 26.56 26.37 -4.29 33.84 25.54 25.60 +8.30
+DeepSeek-V3.1 27.13 29.10 28.89 -1.97 22.42 27.73 27.60 -5.31
+Qwen-2.5:32B 18.92 25.89 25.16 -6.97 14.02 24.87 24.63 -10.85
+GPT-OSS:20B 41.61 26.04 27.57 +15.57 9.54 24.39 23.87 -14.85
+Llama-4-Maverick:17B 27.73 27.08 27.11 +0.65 14.49 26.07 25.87 -11.58
+DeepSeek-R1:1.5B 28.78 33.14 29.66 -4.36 18.90 30.19 21.26 -11.29
+Gemma-3:1B 35.72 30.33 32.09 +5.39 26.48 25.78 25.89 +0.70
+Qwen-2.5:0.5B 35.95 37.29 36.88 -1.34 17.22 18.54 18.09 -1.32
+a Outcome-based overall scores are computed as weighted averages based on the number of successful
+(label 0) and failed (label 1) attacks, enabling analysis of whether attack success correlates with
+semantic degradation.
+b Conditional similarity (Δ) indicates the difference between successful and failed attacks.
+Δ =𝑆 𝑠𝑢𝑐𝑐𝑒𝑠𝑠 −𝑆 𝑓 𝑎𝑖𝑙𝑢𝑟𝑒. Negative values indicate that successful attacks slightly reduce semantic
+similarity compared with failed attacks.
+Table 11
+Outcome-based lexical similarity (ROUGE-L) between original spam emails and adversarial
+rewrites across attack outcomes for Step 1 and Step 2.
+Model Step 1 Step 2
+0 1 Overall a Δb 0 1 Overall a Δb
+GPT-5.2 0.399 0.448 0.446 -0.049 0.485 0.428 0.428 +0.057
+DeepSeek-V3.1 0.435 0.477 0.472 -0.042 0.384 0.456 0.454 -0.072
+Qwen-2.5:32B 0.342 0.433 0.423 -0.091 0.280 0.414 0.411 -0.134
+GPT-OSS:20B 0.589 0.437 0.452 +0.152 0.254 0.411 0.405 -0.157
+Llama-4-Maverick:17B 0.441 0.457 0.456 -0.016 0.339 0.437 0.435 -0.098
+DeepSeek-R1:1.5B 0.469 0.515 0.478 -0.046 0.354 0.459 0.376 -0.105
+Gemma-3:1B 0.516 0.487 0.496 +0.029 0.419 0.431 0.429 -0.012
+Qwen-2.5:0.5B 0.543 0.560 0.555 -0.017 0.329 0.345 0.339 -0.016
+a Outcome-based overall scores are computed as weighted averages based on the number of successful
+(label 0) and failed (label 1) attacks, enabling analysis of whether attack success correlates with
+semantic degradation.
+b Conditional similarity (Δ) indicates the difference between successful and failed attacks.
+Δ =𝑆 𝑠𝑢𝑐𝑐𝑒𝑠𝑠 −𝑆 𝑓 𝑎𝑖𝑙𝑢𝑟𝑒. Negative values indicate that successful attacks slightly reduce semantic
+similarity compared with failed attacks.
+preserved. This divergence between semantic and lexical
+metrics further supports the interpretation that adversarial
+rewriting primarily relies on paraphrasing and discourse
+restructuring.
+5.5.5. Token-Level Similarity Using Jaccard
+Jaccard similarity reflects the overlap of unique tokens
+between the original and rewritten texts. Similar to BLEU
+and ROUGE-L, successful adversarial examples gener-
+ally exhibit lower Jaccard similarity, particularly in Step
+2 rewrites. This suggests that the attacker introduces new
+lexical items or replaces existing tokens to reduce direct
+vocabulary overlap with the original spam email.
+As reported in Table 12, the conditional Jaccard dif-
+ferences are likewise negative for most models, especially
+during Step 2, indicating that successful attacks tend to
+achieve lower token-set overlap than failed attacks. This
+provides additional evidence that lexical variation is an
+important mechanism of adversarial success in rewriting-
+based attacks.
+However, the reductions remain moderate and do not
+correspondtomajorsemanticshifts,asevidencedbytherel-
+atively stable SBERT scores. The combined evidence from
+SBERT, BLEU, ROUGE-L, and Jaccard therefore indicates
+thatadversarialrewritingpreservessemanticmeaningwhile
+altering surface-level lexical and structural features of the
+email.
+Taken together, the similarity results provide impor-
+tant insight into the mechanism behind adversarial suc-
+cess in rewriting-based attacks. Across all victim models,
+embedding-based similarity (SBERT) remains relatively
+highforbothsuccessfulandunsuccessfuladversarialexam-
+ples, indicating that the underlying semantic intent of the
+spamemailsislargelypreservedafterrewriting.Incontrast,
+lexical similarity metrics such as BLEU, ROUGE-L, and
+Jaccard show more noticeable reductions, particularly in
+:Preprint submitted to Elsevier Page 15 of 22
+
+PAGE 17
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Table 12
+Outcome-based lexical similarity (Jaccard) between original spam emails and adversarial rewrites
+across attack outcomes for Step 1 and Step 2.
+Model Step 1 Step 2
+0 1 Overall a Δb 0 1 Overall a Δb
+GPT-5.2 0.320 0.360 0.358 -0.040 0.441 0.340 0.341 +0.101
+DeepSeek-V3.1 0.353 0.384 0.381 -0.031 0.293 0.364 0.363 -0.071
+Qwen-2.5:32B 0.273 0.343 0.335 -0.070 0.217 0.324 0.322 -0.107
+GPT-OSS:20B 0.546 0.349 0.368 +0.197 0.238 0.321 0.318 -0.083
+Llama-4-Maverick:17B 0.367 0.365 0.365 +0.002 0.250 0.346 0.345 -0.096
+DeepSeek-R1:1.5B 0.391 0.448 0.402 -0.057 0.310 0.376 0.323 -0.066
+Gemma-3:1B 0.435 0.402 0.412 +0.033 0.350 0.350 0.350 0.000
+Qwen-2.5:0.5B 0.470 0.494 0.486 -0.024 0.289 0.300 0.296 -0.011
+a Outcome-based overall scores are computed as weighted averages based on the number of successful
+(label 0) and failed (label 1) attacks, enabling analysis of whether attack success correlates with
+semantic degradation.
+b Conditional similarity (Δ) indicates the difference between successful and failed attacks.
+Δ =𝑆 𝑠𝑢𝑐𝑐𝑒𝑠𝑠 −𝑆 𝑓 𝑎𝑖𝑙𝑢𝑟𝑒. Negative values indicate that successful attacks slightly reduce semantic
+similarity compared with failed attacks.
+Table 13
+Content retention analysis comparing classical GAN-based rewriting and adaptive LLM-based rewriting. Length Ratio measures
+the relative length of the adversarial text compared to the original email, while Keyword Retention measures the proportion of
+salient keywords preserved after rewriting.
+Model Length Ratio Keyword Retention
+GAN LLM Step 1 LLM Final GAN LLM Step 1 LLM Final
+GPT-5.2 0.008 1.142 1.077 0.00009 0.492 0.468
+DeepSeek-V3.1 0.004 1.074 1.021 0.00017 0.501 0.471
+Qwen-2.5:32B 0.0002 1.137 1.092 0.00008 0.457 0.433
+Llama-4-Maverick:17B 0.0002 1.128 1.004 0.00000 0.480 0.432
+DeepSeek-R1:1.5B 0.162 1.154 1.134 0.0027 0.522 0.498
+Gemma-3:1B 0.236 1.085 1.043 0.0035 0.531 0.501
+Qwen-2.5:0.5B 0.147 1.100 0.983 0.0034 0.591 0.481
+Step 2 rewrites. The conditional similarity analysis in Ta-
+bles9–12clarifiesthispatternfurther.WhileSBERTdiffer-
+ences remain relatively small, the lexical metrics frequently
+yieldnegativeΔvalues,showingthatsuccessfuladversarial
+rewrites often preserve less lexical overlap than failed at-
+tacks.ThisindicatesthattheadaptiveLLMattackerdoesnot
+need to substantially alter semantic content to succeed; in-
+stead,itprimarilygainsadvantagebyreformulatingsurface-
+level wording, sequence structure, and vocabulary choice.
+This divergence between semantic and lexical similarity
+suggests that the adaptive LLM attacker primarily operates
+by modifying surface-level realization rather than altering
+thecoremeaningofthemessage.Inotherwords,successful
+adversarial examples remain semantically equivalent to the
+original spam emails while exhibiting sufficient lexical and
+stylisticvariationtocrosstheclassifier’sdecisionboundary.
+These findings highlight a key vulnerability of instruction-
+following LLM classifiers, which may rely on surface-level
+discourse cues that can be manipulated through relatively
+subtle paraphrastic transformations.
+5.6. Content Retention Analysis
+To better understand the qualitative differences between
+classical GAN-based rewriting and adaptive LLM-based
+rewriting, we analyze how much of the original message
+content is preserved in the generated adversarial samples.
+Two complementary metrics are used:length ratioandkey-
+wordretention.Thelengthratiomeasurestherelativelength
+oftheadversarialtextcomparedtotheoriginalemail,while
+keyword retention measures the proportion of salient key-
+words preserved after rewriting.
+Table13summarizesthecontent-retentionresultsacross
+individual victim models, while Figure 2 provides an ag-
+gregated comparison between the two rewriting strategies.
+Thecontrastissubstantial.GAN-basedadversarialrewriting
+produces extremely short outputs, with length ratios often
+close to zero; for several larger victim models, the average
+ratio falls below 0.01. Correspondingly, keyword retention
+for GAN outputs is nearly zero, typically below 0.004,
+indicating that the generated rewrites preserve very little of
+the original textual content.
+In contrast, adaptive LLM-based rewriting maintains
+substantially higher content fidelity. The length ratios for
+LLM-generated adversarial samples remain close to 1.0,
+indicating that the rewritten emails preserve approximately
+the same length as the original messages. Furthermore,
+keyword retention values typically range between 0.43 and
+:Preprint submitted to Elsevier Page 16 of 22
+
+PAGE 18
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Figure 2:Aggregated comparison of content retention between
+GAN-based and LLM-based adversarial rewriting across victim
+models. GAN rewrites exhibit substantially lower length ratios
+and near-zero keyword retention, whereas LLM rewrites main-
+tain approximately the original message length and retain a
+substantially larger proportion of salient keywords.
+Figure 3:Semantic collapse versus semantic preservation in ad-
+versarial rewriting. Each point represents an adversarial email.
+GAN-based rewrites frequently collapse toward extremely short
+outputs, indicating severe semantic loss. In contrast, LLM-
+based rewrites cluster near the diagonal line, indicating that
+the rewritten emails preserve approximately the same length as
+the original messages while still achieving successful evasion.
+0.59,demonstratingthatasignificantportionoftheoriginal
+semantic content is retained.
+Figure 2 visualizes this contrast. While GAN-based
+rewrites often succeed by drastically reducing the textual
+content, LLM-based attacks preserve both message length
+and key semantic elements. This observation suggests that
+classical GAN-based rewriting tends to succeed by gen-
+erating content-degraded messages, whereas LLM-based
+attacks achieve evasion through more subtle discourse-level
+transformationsthatpreservemeaningwhilealteringlexical
+patterns.
+5.7. Semantic Collapse vs Semantic Preservation
+To visually examine the structural effects of adversarial
+rewriting, we analyze the relationship between the original
+email length and the length of the adversarially rewritten
+message.
+Figure 3 further illustrates the structural differences be-
+tween the two adversarial rewriting strategies. Each point
+represents a single adversarial email plotted according to its
+original length and rewritten length. The dashed diagonal
+line indicates perfect length preservation between the origi-
+nal and adversarial texts.
+GAN-based rewrites are strongly concentrated near the
+bottom of the plot, indicating that the generated messages
+aretypicallyextremelyshortregardlessoftheoriginalemail
+length. This pattern suggests that classical GAN attacks
+frequently succeed by drastically reducing the amount of
+textual content, often removing most semantic information
+from the message.
+In contrast, LLM-generated adversarial samples are dis-
+tributed across a much broader region of the plot and fre-
+quently appear near the diagonal line. This indicates that
+the rewritten emails tend to preserve the overall structure
+and length of the original messages while modifying their
+lexicalrealization.AlthoughsomeLLMrewritesareshorter
+than the original emails, they still retain substantial textual
+content compared to GAN outputs.
+Overall, the figure provides clear visual evidence that
+classical GAN-based rewriting often leads to semantic col-
+lapse, whereas adaptive LLM-based rewriting preserves
+meaningful message structure while introducing discourse-
+level transformations that enable successful evasion.
+5.8. Attack Success vs Semantic Preservation
+Figure 4 illustrates the relationship between attack suc-
+cessandsemanticpreservation,measuredasthelengthratio
+between the adversarial message and the original email.
+Each point represents an adversarial example, while the
+dashed horizontal line separates failed and successful at-
+tacks.
+GAN-basedrewritesareconcentratedatverylowpreser-
+vation ratios, typically below 0.4. This indicates that GAN-
+generated adversarial messages tend to be substantially
+shorter than the original emails. Even when the attack
+succeeds, the generated text often contains only a small
+fraction of the original content, suggesting that classical
+GANattacksfrequentlyrelyonseveresemanticdegradation
+to evade the spam classifier.
+In contrast, LLM-based rewrites are distributed across
+amuchbroaderpreservationrangeandclusteraroundratios
+closeto1.0.ThisindicatesthatmanyLLM-generatedadver-
+sarialmessagesretainasimilarlengthtotheoriginalemails
+while modifying their wording. Successful LLM attacks
+occurthroughoutthispreservationrange,demonstratingthat
+evasion can be achieved without discarding the underlying
+message content.
+Furthermore, a noticeable portion of LLM-generated
+adversarial samples exhibit preservation ratios greater than
+:Preprint submitted to Elsevier Page 17 of 22
+
+PAGE 19
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Figure 4:Relationship between attack success and semantic
+preservation measured by the length ratio between adversarial
+and original emails. The x-axis is truncated at 3.0 to improve
+visualization of the main distribution. GAN-based rewrites
+concentrate at very low preservation ratios, while LLM-based
+rewrites cluster around ratios near one and sometimes exceed
+it due to semantic expansion.
+Table 14
+Semantic Collapse Rate (SCR) of adversarial rewriting meth-
+ods under different preservation thresholds. SCR measures the
+proportion of adversarial samples whose semantic preservation
+ratio falls below a specified threshold.
+Threshold GAN SCR LLM SCR
+SCR(0.5) 0.126 0.032
+SCR(0.3) 0.084 0.001
+one,indicatingsemanticexpansionwheretherewrittenmes-
+sagebecomeslonger thantheoriginalthroughparaphrasing
+or elaboration. This pattern suggests that adaptive LLM-
+basedadversarialrewritingoperatesthroughdiscourse-level
+transformations rather than simple lexical deletion. Over-
+all, the figure highlights a fundamental difference between
+the two attack paradigms: while GAN-based attacks fre-
+quently induce semantic collapse, LLM-based attacks pre-
+serve meaningful message structure while still achieving
+successful evasion.
+5.9. Semantic Collapse Rate
+To further quantify semantic degradation in adversarial
+rewrites, we compute theSemantic Collapse Rate(SCR),
+defined as the proportion of adversarial samples whose
+semantic preservation ratio falls below a specified thresh-
+old.Twothresholdsareconsidered:0.5,representingsevere
+semantic collapse, and 0.3, representing extreme semantic
+collapse.
+Table 14 reports the SCR values for GAN-based and
+LLM-based rewriting. The results reveal a consistent differ-
+encebetweenthetwoattackparadigms.Atthe0.5threshold,
+approximately 12.6% of GAN-generated adversarial sam-
+ples exhibit severe semantic collapse, compared to only
+3.2% for LLM-generated rewrites. The contrast becomes
+substantially stronger under the stricter 0.3 threshold: while
+8.4%ofGANoutputsexhibitextremesemanticcollapse,this
+phenomenonoccursinlessthan0.1%ofLLM-generatedad-
+versarial samples. These findings indicate that GAN-based
+rewriting is significantly more likely to produce heavily
+truncated or semantically degraded messages. In contrast,
+adaptive LLM-based adversarial rewriting almost always
+preserves substantial semantic content while still achieving
+successful evasion.
+6. Discussion
+Thestatisticalanalysisfurtherconfirmsthatthesediffer-
+encesarenotduetorandomvariation.Bootstrapconfidence
+intervalsshowthattheestimatedattacksuccessratesremain
+stable under repeated resampling of the true-positive spam
+pool. Furthermore, two-proportion significance tests indi-
+cate that the adaptive LLM-based attack significantly out-
+performsclassicalGAN-basedrewritingacrossallevaluated
+victim models. These results provide statistical evidence
+thattheimprovedevasioncapabilityofinstruction-following
+LLM attacks represents a systematic and reproducible ad-
+vantage rather than an artifact of the dataset.
+The content retention analysis further indicates that
+classical GAN-based attacks often succeed by generating
+severely truncated or content-degraded messages, whereas
+LLM-based adversarial rewriting preserves both message
+length and key semantic elements, suggesting that modern
+attacks operate primarily at the discourse level rather than
+through simple lexical perturbations.
+The extremely low extreme-collapse rate observed for
+LLM-generatedadversarialsamplesfurthersupportsthehy-
+pothesis that modern adversarial rewriting techniques oper-
+ate primarily through discourse-level transformations rather
+than through semantic degradation.
+6.1. Why Legacy GAN-Based Attacks
+Underestimate LLM-Era Vulnerability
+ThecomparisonbetweenGAN-basedandadaptiveLLM-
+based attacks shows a consistent gap in adversarial effec-
+tiveness across most victim models. Classical GAN-based
+rewriting achieves very low attack success rates for most
+larger instruction-following LLMs, whereas adaptive LLM-
+based rewriting yields substantially higher evasion rates.
+This contrast suggests that legacy sentence-level generation
+attacks do not sufficiently target the discourse-level and
+pragmatic cues that modern prompt-based classifiers rely
+on. In other words, when the decision boundary depends
+not only on lexical triggers but also on tone, framing, and
+communicative style, an instruction-following adversarial
+rewriter is better aligned with the victim model’s reasoning
+process than a legacy GAN-based generator.
+:Preprint submitted to Elsevier Page 18 of 22
+
+PAGE 20
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+6.2. Robustness is Strongly Scale-Dependent
+Aclearrobustnessgradientemergesacrossmodelscales.
+Larger models such as GPT-5.2, DeepSeek-V3.1, Qwen-
+2.5:32B, and Llama-4-Maverick:17B remain relatively re-
+sistant to both attack types, although they still exhibit non-
+trivial vulnerability under adaptive LLM-based rewriting.
+In contrast, smaller models such as DeepSeek-R1:1.5B,
+Gemma-3:1B,andQwen-2.5:0.5Bshowsubstantiallyhigher
+attack success rates, especially under the two-step adaptive
+attack. This pattern suggests that scale is associated not
+onlywithbetterbaselineclassificationperformance,butalso
+with stronger robustness to paraphrastic and discourse-level
+adversarialmanipulation.Thefindingisparticularlyrelevant
+for practical deployment, where lightweight models may
+be attractive for efficiency reasons but considerably weaker
+under adversarial stress.
+6.3. Iterative Rewriting Matters
+The step-wise analysis further shows that adversarial
+effectiveness is not solely determined by a single rewrite
+attempt. The first rewriting step accounts for the majority
+of successful evasions in most models, but the second step
+consistentlyprovidesadditionalgains,especiallyforsmaller
+victims. This indicates that even minimal feedback in a
+black-box, label-only setting can be exploited effectively.
+From a benchmarking perspective, this result is important
+becauseasingle-stepattackwouldunderestimatethevulner-
+ability of some models, particularly those whose decision
+boundaries can be crossed only after iterative reduction of
+spam-associated cues.
+6.4. Semantic Preservation Versus Surface
+Transformation
+The similarity analysis provides an important interpre-
+tive layer for the attack results. SBERT similarity remains
+relatively high across successful and unsuccessful adversar-
+ialsamples,indicatingthatthesemanticcontentoftheorig-
+inal spam message is largely preserved. In contrast, BLEU,
+ROUGE-L, and Jaccard show more substantial reductions,
+particularly in Step 2. This divergence suggests that the
+adaptive attacker succeeds primarily by altering lexical and
+structural realization rather than by deleting or replacing
+the underlying communicative intent. The conditional sim-
+ilarity results strengthen this interpretation. Across most
+models,thelexicalmetricsinTables10–12exhibitnegative
+Δvalues, indicating that successful attacks usually produce
+lower lexical overlap than failed attacks, particularly during
+the second rewrite step. In contrast, SBERT differences in
+Table9remainrelativelysmall,suggestingthatthesemantic
+intentoftheoriginalspammessageislargelypreservedeven
+when lexical and structural realization changes enough to
+flip the classifier decision. In practical terms, the classifier
+is fooled not because the message ceases to be spam in
+meaning,butbecauseitsdiscourse-levelrealizationbecomes
+less overtly spam-like.
+6.5. Implications for Robustness Benchmarking in
+NLP
+These findings have broader implications beyond spam
+detection.First,robustnessevaluationforinstruction-following
+LLM classifiers should not rely exclusively on legacy ad-
+versarial attacks inherited from pre-LLM text classification
+settings. Second, semantic preservation analysis should be
+treated as an essential component of adversarial evaluation,
+particularly for rewriting-based attacks. Third, adaptive
+multi-step rewriting under black-box feedback provides a
+realistic and scalable benchmark for modern LLM-based
+classifiers. Taken together, the results support a shift from
+token-level or sentence-template adversarial testing toward
+discourse-aware, LLM-native robustness evaluation proto-
+cols.
+7. Conclusion
+This paper presented a comparative robustness evalua-
+tion of instruction-following LLM classifiers under two ad-
+versarial rewriting paradigms: classical GAN-based rewrit-
+ing and a two-step adaptive LLM-based attacker. Using
+nine victim models and a balanced spam detection dataset,
+we showed that legacy GAN-based attacks have limited
+effectiveness against most larger modern LLM classifiers,
+whereasadaptiveLLM-basedrewritingconsistentlyachieves
+higher evasion rates and therefore reveals a substantially
+stronger practical threat.
+The results also show that robustness varies markedly
+across model scales. Larger models remain comparatively
+resistant, while smaller open-weight models exhibit much
+higher vulnerability, particularly under iterative rewriting.
+The step-wise analysis further demonstrates that a second
+rewriteattemptcanprovidemeaningfuladditionalgains,in-
+dicating that even minimal black-box feedback can improve
+adversarial effectiveness.
+Importantly, the semantic preservation analysis shows
+that successful attacks generally maintain relatively high
+embedding-based similarity while reducing lexical over-
+lap. Outcome-based conditional similarity analysis further
+shows that successful attacks typically exhibit only small
+SBERT differences but more consistently negative lexical
+differences, indicating that effective evasion is associated
+more with surface-form reformulation than with semantic
+drift. This reinforces the interpretation that modern LLM-
+based adversarial rewriting operates primarily at the dis-
+course and stylistic levels. This suggests that adversarial
+success is driven primarily by discourse-level and surface-
+form transformation rather than semantic deletion. Taken
+together, these findings indicate that legacy adversarial at-
+tacks can underestimate the vulnerability of prompt-based
+LLM classifiers, and that adaptive LLM-based rewriting
+provides a more realistic robustness benchmark for modern
+NLP classification systems.
+:Preprint submitted to Elsevier Page 19 of 22
+
+PAGE 21
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Our content retention analysis further reveals that suc-
+cessful LLM-based attacks preserve substantially more se-
+mantic content than classical GAN-based rewriting, indi-
+cating that modern adversarial strategies exploit discourse-
+level vulnerabilities in spam classifiers while maintaining
+the original message meaning.
+Future work should extend this evaluation to additional
+attacker models, include human assessment of semantic
+preservation, and investigate defense strategies that explic-
+itly reduce sensitivity to surface-level discourse manipula-
+tion while preserving classification accuracy.
+8. Statements
+Funding.The author(s) received no specific funding for
+this study.
+Availability of Data and Materials.The data that sup-
+port the findings of this study are openly available in Kag-
+gle athttps://www.kaggle.com/datasets/naserabdullahalam/
+phishing-email-dataset. To support transparency and re-
+producibility, the implementation code used to conduct the
+adversarial rewriting experiments, model evaluation, and
+robustness analysis is publicly available upon request. The
+repositoryincludesthefullexperimentalpipeline,including
+scripts for dataset preprocessing, adversarial sample gen-
+eration using both GAN-based and LLM-based rewriting
+strategies, prompt templates for the attacker models, evalu-
+ation scripts for computing attack success rate and semantic
+similarity metrics, as well as configuration files required to
+reproduce the reported experiments.
+Conflicts of Interest.The authors declare no conflicts of
+interest.
+Appendix A: Prompts and Reproducibility
+Notes (Responsible Disclosure)
+A.1 Victim Prompt (Published)
+We publish the victim classification prompt as it is
+defensive and does not enable wrongdoing beyond normal
+classification:
+You are a cybersecurity analyst responsible for assessing email security
+risks. Your task is only to determine whether the following email is
+Spam or Not Spam. Answer only SPAM or NOT SPAM. Do not provide any
+explanation.
+↪
+↪
+↪
+A.2 Attacker Prompts
+For transparency and reproducibility, we publish the
+exact attacker prompt strings used in our experiments. The
+prompts are provided solely for research purposes to enable
+independent verification of the experimental setup and to
+facilitate future robustness evaluation studies. Although ad-
+versarial prompting techniques may have dual-use implica-
+tions, we release the prompts in the context of responsible
+scientificdisclosureandemphasizethatthegoalofthiswork
+is to better understand and mitigate vulnerabilities in LLM-
+based classification systems.
+Attacker Prompt 1 (Redacted Template).
+You are a rewriting assistant in a research setting.
+Rewrite the email so that it appears more neutral and less
+promotional in tone, while strictly preserving its original
+meaning and communicative objective.
+Constraints:
+- Preserve all named entities, dates, amounts, contact details,
+and factual information.
+- Preserve the core request or call-to-action.
+- Do NOT remove essential information.
+- Do NOT add new claims, links, attachments, payment
+instructions, or contact details.
+- Do NOT change the underlying offer, request, or intent.
+- Reduce excessive urgency, exaggerated claims, or overly
+promotional phrasing.
+- Avoid excessive capitalization or repeated punctuation.
+Return ONLY the rewritten email text, with no explanation.
+Attacker Prompt 2 (Redacted Template).
+You are a rewriting assistant in a research setting.
+The first rewrite of the email was still classified as SPAM.
+Produce a refined second rewrite that further improves
+neutrality of tone, while strictly preserving meaning and
+communicative intent.
+Context:
+ORIGINAL EMAIL (do not change its meaning):
+{original_email}
+FIRST REWRITE (improve tone without altering intent):
+{first_modified}
+Constraints:
+- Preserve all named entities, dates, amounts, contact details,
+and factual information.
+- Preserve the original core request and call-to-action.
+- Do NOT remove essential information.
+- Do NOT add new URLs, phone numbers, payment instructions,
+or claims.
+- Maintain the same underlying offer, request, or objective.
+- Further reduce urgency markers, exaggerated phrasing,
+excessive capitalization, or persuasive emphasis.
+- Avoid introducing new semantic content.
+Return ONLY the final rewritten email text, with no explanation.
+A.3 Example Email (High-Level Description Only)
+We refrain from publishing full spam samples and full
+rewritten outputs. In our evaluation logs, typical successful
+adversarialrewritesreduced:(i)aggressivemarketingphras-
+ing,(ii)urgencycues,(iii)all-capsemphasis,and(iv)repet-
+itive promotional claims, while preserving overall meaning.
+References
+Al Kuwaiti, M., Ismail, H., 2025. Adversarial attacks on large language
+models: A survey, in: Proceedings of Eighth International Conference
+on Information System Design and Intelligent Applications, Springer.
+pp. 529–547.
+Al-Subaiey, A., Al-Thani, M., Abdullah Alam, N., Antora, K.F.,
+Khandakar, A., Uz Zaman, S.A., 2024. Novel interpretable
+and robust web-based ai platform for phishing email detection.
+Computers and Electrical Engineering 120, 109625. URL:https:
+//www.sciencedirect.com/science/article/pii/S0045790624005524,
+doi:https://doi.org/10.1016/j.compeleceng.2024.109625.
+Almedires, M., Elkhalil, A., Amin, M., 2025. Adversarial attack detection
+in industrial control systems using lstm-based intrusion detection and
+black-box defense strategies. Journal of Cyber Security and Risk
+Auditing 2025, 4–22. doi:10.63180/jcsra.thestap.2025.3.2.
+:Preprint submitted to Elsevier Page 20 of 22
+
+PAGE 22
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Alzantot, M., Sharma, Y., Elgohary, A., Ho, B.J., Srivastava, M., Chang,
+K.W., 2018. Generating natural language adversarial examples, in:
+Riloff, E., Chiang, D., Hockenmaier, J., Tsujii, J. (Eds.), Proceedings of
+the 2018 Conference on Empirical Methods in Natural Language Pro-
+cessing, Association for Computational Linguistics, Brussels, Belgium.
+pp. 2890–2896. URL:https://aclanthology.org/D18-1316/, doi:10.
+18653/v1/D18-1316.
+Androutsopoulos, I., Koutsias, J., Chandrinos, K.V., Spyropoulos, C.D.,
+2000. An experimental comparison of naive bayesian and keyword-
+basedanti-spamfilteringwithpersonale-mailmessages,in:Proceedings
+of the 23rd annual international ACM SIGIR conference on Research
+and development in information retrieval, pp. 160–167.
+Brown, T.B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P.,
+Neelakantan,A.,Shyam,P.,Sastry,G.,Askell,A.,Agarwal,S.,Herbert-
+Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler,
+D.M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M.,
+Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford,
+A., Sutskever, I., Amodei, D., 2020. Language models are few-shot
+learners,in:Proceedingsofthe34thInternationalConferenceonNeural
+Information Processing Systems, Curran Associates Inc., Red Hook,
+NY, USA.
+Devlin, J., Chang, M.W., Lee, K., Toutanova, K., 2019. Bert: Pre-training
+ofdeepbidirectionaltransformersforlanguageunderstanding,in:North
+American Chapter of the Association for Computational Linguistics.
+URL:https://api.semanticscholar.org/CorpusID:52967399.
+Ebrahimi, J., Rao, A., Lowd, D., Dou, D., 2018. HotFlip: White-box
+adversarial examples for text classification, in: Gurevych, I., Miyao, Y.
+(Eds.), Proceedings of the 56th Annual Meeting of the Association for
+Computational Linguistics (Volume 2: Short Papers), Association for
+Computational Linguistics, Melbourne, Australia. pp. 31–36. URL:
+https://aclanthology.org/P18-2006/, doi:10.18653/v1/P18-2006.
+Esmradi, A., Yip, D.W., Chan, C.F., 2023. A comprehensive survey of
+attack techniques, implementation, and mitigation strategies in large
+language models, in: International conference on ubiquitous security,
+Springer. pp. 76–95.
+Geng, T., Xu, Z., Qu, Y., Wong, W.E., 2026. Prompt injection attacks on
+large language models: A survey of attack methods, root causes, and
+defense strategies. Computers, Materials & Continua 87.
+Goodfellow, I.J., Shlens, J., Szegedy, C., 2014. Explaining and harnessing
+adversarial examples. arXiv preprint arXiv:1412.6572 .
+Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., Fritz, M.,
+2023. Not what you’ve signed up for: Compromising real-world llm-
+integrated applications with indirect prompt injection. Proceedings of
+the 16th ACM Workshop on Artificial Intelligence and Security URL:
+https://api.semanticscholar.org/CorpusID:258546941.
+Gulyamov, S., Gulyamov, S., Rodionov, A., Khursanov, R., Mekhmonov,
+K., Babaev, D., Rakhimjonov, A., 2026. Prompt injection attacks in
+large language models and ai agent systems: A comprehensive review
+of vulnerabilities, attack vectors, and defense mechanisms. Information
+17, 54.
+Iyyer, M., Wieting, J., Gimpel, K., Zettlemoyer, L., 2018. Adversarial ex-
+ample generation with syntactically controlled paraphrase networks, in:
+Walker,M.,Ji,H.,Stent,A.(Eds.),Proceedingsofthe2018Conference
+of the North American Chapter of the Association for Computational
+Linguistics: Human Language Technologies, Volume 1 (Long Papers),
+AssociationforComputationalLinguistics,NewOrleans,Louisiana.pp.
+1875–1885. URL:https://aclanthology.org/N18-1170/, doi:10.18653/
+v1/N18-1170.
+Jamal,S.,Wimmer,H.,Sarker,I.H.,2024. Animprovedtransformer-based
+model for detecting phishing, spam and ham emails: A large language
+model approach. Security and privacy 7, e402.
+Jin,D.,Jin,Z.,Zhou,J.T.,Szolovits,P.,2020. Isbertreallyrobust?astrong
+baselinefornaturallanguageattackontextclassificationandentailment,
+in: Proceedings of the AAAI conference on artificial intelligence, pp.
+8018–8025.
+Li, L., Ma, R., Guo, Q., Xue, X., Qiu, X., 2020. Bert-attack: Adversarial
+attackagainstbertusingbert,in:Proceedingsofthe2020conferenceon
+empiricalmethodsinnaturallanguageprocessing(EMNLP),pp.6193–
+6202.
+Liao, Z., Chen, K., Lin, Y., Li, K., Liu, Y., Chen, H., Huang, X., Yu, Y.,
+2025. Attackanddefensetechniquesinlargelanguagemodels:Asurvey
+and new perspectives. Neural Networks , 108388.
+Liu,Y.,Deng,G.,Li,Y.,Wang,K.,Wang,Z.,Wang,X.,Zhang,T.,Liu,Y.,
+Wang,H.,Zheng,Y.,Zhang,L.Y.,Liu,Y.,2025. Promptinjectionattack
+against llm-integrated applications. arXiv preprint arXiv:2306.05499
+URL:https://arxiv.org/abs/2306.05499,arXiv:2306.05499.
+Mikolov, T., Chen, K., Corrado, G., Dean, J., 2013. Efficient estimation of
+wordrepresentationsinvectorspace. ProceedingsofWorkshopatICLR
+2013.
+Morris, J., Lifland, E., Yoo, J.Y., Grigsby, J., Jin, D., Qi, Y., 2020. Tex-
+tattack: A framework for adversarial attacks, data augmentation, and
+adversarial training in nlp, in: Proceedings of the 2020 conference on
+empirical methods in natural language processing: System demonstra-
+tions, pp. 119–126.
+Nasution, A.H., Emre Ergün, A., Onan, A., Monika, W., 2026a. Response-
+onlyadversarialdetectionofllmoutputs:Acomparativestudyoflexical,
+contrastive, and contextual representations. IEEE Access 14, 104875–
+104891. doi:10.1109/ACCESS.2026.3709307.
+Nasution, A.H., Emre Ergün, A., Onan, A., Monika, W., 2026b. Survey on
+adversarialpromptgenerationandrobustnessanalysisinlargelanguage
+models. IEEE Access 14, 101063–101096. doi:10.1109/ACCESS.2026.
+3708061.
+Nasution,A.H.,Monika,W.,Onan,A.,Murakami,Y.,2025. Benchmarking
+21 open-source large language models for phishing link detection with
+prompt engineering. Information 16, 366. doi:10.3390/info16050366.
+Papernot, N., McDaniel, P., Goodfellow, I., Jha, S., Celik, Z.B., Swami,
+A., 2017. Practical black-box attacks against machine learning, in:
+Proceedings of the 2017 ACM on Asia conference on computer and
+communications security, pp. 506–519.
+Perez, E., Huang, S., Song, F., Cai, T., Ring, R., Aslanides, J., Glaese, A.,
+McAleese, N., Irving, G., 2022. Red teaming language models with
+language models, in: Proceedings of the 2022 Conference on Empirical
+Methods in Natural Language Processing, pp. 3419–3448.
+Qiu,S.,Liu,Q.,Zhou,S.,Huang,W.,2022. Adversarialattackanddefense
+technologiesinnaturallanguageprocessing:Asurvey. Neurocomputing
+492, 278–307.
+Ramaiah, M., Chandrasekaran, V., Chand, V., Vasudevan, A., Mohamma,
+S.I., Soon, E.E.H., Shambour, Q., Alshurideh, M.T., 2024. Enhanced
+phishing detection: An ensemble stacking model with dt-rfecv and
+smote. Applied Mathematics & Information Sciences 18, 1481–1493.
+doi:10.18576/amis/180624.
+Ribeiro, M.T., Singh, S., Guestrin, C., 2018. Semantically equivalent
+adversarial rules for debugging NLP models, in: Gurevych, I., Miyao,
+Y. (Eds.), Proceedings of the 56th Annual Meeting of the Association
+forComputationalLinguistics(Volume1:LongPapers),Associationfor
+Computational Linguistics, Melbourne, Australia. pp. 856–865. URL:
+https://aclanthology.org/P18-1079/, doi:10.18653/v1/P18-1079.
+Sahami, M., Dumais, S., Heckerman, D., Horvitz, E., 1998. A bayesian
+approach to filtering junk e-mail, in: Learning for Text Categorization:
+Papers from the 1998 workshop, Madison, Wisconsin. pp. 98–105.
+Uddin, M.A., Mahiuddin, M., Sarker, I.H., 2026. An explainable
+transformer-basedmodelforphishingemaildetection:Alargelanguage
+model approach. Computer Networks , 112061.
+Vaswani,A.,Shazeer,N.,Parmar,N.,Uszkoreit,J.,Jones,L.,Gomez,A.N.,
+Kaiser, Ł., Polosukhin, I., 2017. Attention is all you need. Advances in
+neural information processing systems 30.
+Wallace,E.,Feng,S.,Kandpal,N.,Gardner,M.,Singh,S.,2019. Universal
+adversarial triggers for attacking and analyzing nlp, in: Proceedings of
+the 2019 conference on empirical methods in natural language pro-
+cessing and the 9th international joint conference on natural language
+processing (EMNLP-IJCNLP), pp. 2153–2162.
+Yu, L., Zhang, W., Wang, J., Yu, Y., 2017. Seqgan: Sequence generative
+adversarial nets with policy gradient, in: Proceedings of the AAAI
+conference on artificial intelligence.
+:Preprint submitted to Elsevier Page 21 of 22
+
+PAGE 23
+Discourse-Level Adversarial Rewriting Against Instruction-Following LLM Classifiers: GAN-Based vs LLM-Based Attacks
+Zeng,G.,Qi,F.,Zhou,Q.,Zhang,T.,Ma,Z.,Hou,B.,Zang,Y.,Liu,Z.,Sun,
+M.,2021. Openattack:Anopen-sourcetextualadversarialattacktoolkit,
+in: Proceedings of the 59th Annual Meeting of the Association for
+Computational Linguistics and the 11th International Joint Conference
+onNaturalLanguageProcessing:SystemDemonstrations,pp.363–371.
+Zhao,Z.,Dua,D.,Singh,S.,2017.Generatingnaturaladversarialexamples.
+arXiv preprint arXiv:1710.11342 .
+Zhou,Y.,Liu,J.,Huang,L.,2023. Adversarialattacksanddefensesinnlp:
+A survey. ACM Computing Surveys 56.
+Zou, A., Wang, Z., Kolter, J., Fredrikson, M., 2023. Universal and
+transferable adversarial attacks on aligned language models. arXiv
+preprint arXiv:2307.15043 doi:10.48550/arXiv.2307.15043.
+:Preprint submitted to Elsevier Page 22 of 22

@@ -1,0 +1,9 @@
+﻿raw_result_row_1based,old_ceas_id,source_label,fresh_match_type,identity_status,candidate_ceas_ids,old_id_in_fresh_candidates,present_in_combined,step1_label,step1_text_nonempty,step2_label,step2_text_nonempty,original_text_sha256
+39,37760,1,exact,MATCHED,37760,1,0,,0,,0,b813e06ce66ddce6bf79d8193c77afa67e7a0f0124abf8177ef11587eee43d28
+48,38170,1,exact,MATCHED,38170,1,0,,0,,0,9ead6ec2d07c7d76acea4d1efbb3fae892b31ed99dedc16a477330de387a6db1
+87,3136,1,whitespace_case,MATCHED,3136,1,0,,0,,0,b93e871377e3cd1b8f49f6bfc9c47494bf4b7525b2dc5df418f9b5a6e63b1887
+217,6864,1,exact,MATCHED,6864,1,0,,0,,0,ad8446a47f0900e02ebb9fba5009c7853b043ea09123a2c1d1ae7cfe938cc479
+322,9251,1,whitespace_case,MATCHED,9251,1,0,SPAM,1,SPAM,1,551706bad8b528b17dee4a01bf3f05ee00b80a45f8112f6fdea1e372a66bdb6c
+389,9559,1,exact,MATCHED,9559,1,0,SPAM,1,SPAM,1,b6a25b1e7923a4c47e49e00ab0f414943b559ded925d0de2e43dc410a3a4f2c8
+636,17631,1,exact,MATCHED,17631,1,0,,0,,0,3bf9ccb196f8cba9a70b499bd5e5bc6efedb3ee7f7a66b4a7b7330596d9253c2
+910,18200,1,exact,MATCHED,18200,1,0,SPAM,1,SPAM,1,6958551305f0461637a028b3431f6f279b991d8cc2986f104e9724d69215db72

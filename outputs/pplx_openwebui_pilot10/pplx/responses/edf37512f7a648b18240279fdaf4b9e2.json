@@ -1,0 +1,88 @@
+{
+  "request": {
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output."
+      },
+      {
+        "role": "user",
+        "content": "Use the PPLX decision tool to classify this email only. Email follows:\nSubject: Re: [Python-Dev] Documentation reorganization [was: ... for ability\tto execute zipfiles & directories]\n\nOn Tue, Mar 4, 2008 at 5:04 PM, Steve Holden  wrote:\n> Greg Ewing wrote:\n>  > Adam Olsen wrote:\n>  >> Such a division would make it unnecessarily hard to find documentation\n>  >> on True, False, None, etc.  They've become keywords for pragmatic\n>  >> purposes (to prevent accidental modification), not because we think\n>  >> they ideally should be syntax instead of builtins.\n>  >\n>  > Maybe the solution is to rename the Library Reference\n>  > to the Class and Module Reference or something like\n>  > that.\n>  >\n>  Although DRY is fine as a programming principle, it fails for pedagogic\n>  purposes. We should therefore be prepared to repeat the same material in\n>  different contexts (hopefully by including some common documentation\n>  source rather than laborious and error-prone copy-and-paste).\n>\n>  Document things where people expect to find them. (Now *there's* a\n>  usability study screaming to be done ... and SoC is coming up).\n\nPython's usage of import makes it clear when something is imported\nfrom a library, as opposed to being an integral part of the language.\nTo me, this is an obvious basis on whether to look in the language\nreference or in the stdlib reference.\n\nThat said, it would be useful to also have a link for major builtin\ntypes in the stdlib section, if only for people who learned to look\nfor them there.\n\n\n-- \nAdam Olsen, aka Rhamphoryncus\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com"
+      }
+    ],
+    "tool_ids": [
+      "server:pplxdeciderflash"
+    ],
+    "params": {
+      "function_calling": "legacy"
+    },
+    "stream": false
+  },
+  "response": {
+    "sources": [
+      {
+        "source": {
+          "name": "server:pplxdeciderflash/classify_with_pplx_decider"
+        },
+        "document": [
+          "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.004193255888704041,\n        \"not_spam\": 0.995806744111296\n      },\n      \"choice\": \"not_spam\",\n      \"confidence\": 0.991613488222592\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 563,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}"
+        ],
+        "metadata": [
+          {
+            "source": "server:pplxdeciderflash/classify_with_pplx_decider",
+            "parameters": {
+              "state": "Subject: Re: [Python-Dev] Documentation reorganization [was: ... for ability\tto execute zipfiles & directories]\n\nOn Tue, Mar 4, 2008 at 5:04 PM, Steve Holden  wrote:\n> Greg Ewing wrote:\n>  > Adam Olsen wrote:\n>  >> Such a division would make it unnecessarily hard to find documentation\n>  >> on True, False, None, etc.  They've become keywords for pragmatic\n>  >> purposes (to prevent accidental modification), not because we think\n>  >> they ideally should be syntax instead of builtins.\n>  >\n>  > Maybe the solution is to rename the Library Reference\n>  > to the Class and Module Reference or something like\n>  > that.\n>  >\n>  > Although DRY is fine as a programming principle, it fails for pedagogic\n>  > purposes. We should therefore be prepared to repeat the same material in\n>  > different contexts (hopefully by including some common documentation\n>  > source rather than laborious and error-prone copy-and-paste).\n> >\n> >  Document things where people expect to find them. (Now *there's* a\n> >  usability study screaming to be done ... and SoC is coming up).\n>\n> Python's usage of import makes it clear when something is imported\n> from a library, as opposed to being an integral part of the language.\n> To me, this is an obvious basis on whether to look in the language\n> reference or in the stdlib reference.\n>\n> That said, it would be useful to also have a link for major builtin\n> types in the stdlib section, if only for people who learned to look\n> for them there.\n>\n\n-- \nAdam Olsen, aka Rhamphoryncus\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+              "instructions": "Classify whether the email is spam or not spam.",
+              "criteria": {
+                "spam": "The email is unsolicited, promotional, or malicious content.",
+                "not_spam": "The email is a legitimate discussion, personal correspondence, or relevant to the recipient."
+              }
+            }
+          }
+        ],
+        "tool_result": true
+      }
+    ],
+    "id": "2fc106e5f77e4618940d72779dfdb5c5",
+    "object": "chat.completion",
+    "created": 1793771713,
+    "model": "openai/gpt-oss-120b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.004193255888704041,\n        \"not_spam\": 0.995806744111296\n      },\n      \"choice\": \"not_spam\",\n      \"confidence\": 0.991613488222592\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 563,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}",
+          "reasoning_content": "The user asks: \"Use the PPLX decision tool to classify this email only. Email follows: ...\". The system context includes a source with id=1 containing the decision result: spam probability 0.004..., not_spam 0.995..., choice \"not_spam\". So we need to output the tool output. Probably we just output that classification. The instruction: \"Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output.\" So we should return the JSON from the source? The tool output is the JSON shown. So we should output that JSON. We must not add anything else. Just the tool output. Probably exactly the content of the source. So output:\n\n{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.004193255888704041,\n        \"not_spam\": 0.995806744111296\n      },\n      \"choice\": \"not_spam\",\n      \"confidence\": 0.991613488222592\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 563,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}\n\nMake sure no extra text."
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 200002
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 979,
+      "total_tokens": 1379,
+      "completion_tokens": 400,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 281
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 400
+        }
+      ]
+    }
+  },
+  "reparse_provenance": {
+    "original_artifact": "pplx\\responses\\398f07625e744f3ba128fc23643101ef.json",
+    "original_sha256": "6512a4ddde2f99a7f226747e70a3fbf0f104da2b41f404934bff589131321748",
+    "parser_sha256": "569f21f86fb89a4f2d7bf7656a780406480ddc1a63c47d13c6e2efac8c34e21c",
+    "note": "Recovered from saved tool output; no inference. Missing original timing stays missing."
+  }
+}

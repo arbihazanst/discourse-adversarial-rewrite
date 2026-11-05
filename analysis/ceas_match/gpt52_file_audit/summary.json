@@ -1,0 +1,74 @@
+{
+  "raw_rows": 1150,
+  "combined_rows": 1142,
+  "raw_same_bytes_as_previously_audited": true,
+  "combined_keys_equal_reproduced_inner_join": true,
+  "combined_unknown_original_keys": 0,
+  "combined_rows_llm_texts_labels_reproduced": 1142,
+  "combined_originals_with_encoding_differences": 21,
+  "distinct_historically_mapped_ceas_ids": 1143,
+  "extra_occurrences_of_mapped_source_ids": 7,
+  "all_mapped_source_labels": {
+    "1": 1150
+  },
+  "fresh_match_counts": {
+    "unresolved": 25,
+    "whitespace_case": 908,
+    "exact": 210,
+    "body_only_whitespace_case": 7
+  },
+  "identity_status_counts": {
+    "REVIEW_REQUIRED": 32,
+    "MATCHED": 1108,
+    "AMBIGUOUS_DUPLICATES": 10
+  },
+  "dropped_rows": 8,
+  "dropped_raw_row_numbers": [
+    39,
+    48,
+    87,
+    217,
+    322,
+    389,
+    636,
+    910
+  ],
+  "dropped_step1_labels": {
+    "": 5,
+    "SPAM": 3
+  },
+  "first_result_counts": {
+    "SPAM": 1088,
+    "NOT SPAM": 52,
+    "": 10
+  },
+  "second_result_counts": {
+    "SPAM": 1080,
+    "": 62,
+    "NOT SPAM": 8
+  },
+  "blank_first_result_rows": [
+    39,
+    48,
+    87,
+    217,
+    268,
+    340,
+    412,
+    636,
+    799,
+    946
+  ],
+  "blank_step1_texts": 5,
+  "conditional_step2_not_spam": 8,
+  "input_sha256": {
+    "C:\\Users\\prase\\Downloads\\marifahmad\\adversarialattack\\results\\LLM_gpt-5.2-chat.csv": "868fa10cf8055a8aad063d4bb286f1ca757833f69d893f9c96cc3f0cd79f374a",
+    "C:\\Users\\prase\\Downloads\\marifahmad\\adversarialattack\\combined_with_analysis\\combined_with_analysis_gpt-5.2-chat.csv": "51b8d60a6e6b50d57f320e12bb0835b0d744709d75b5b9d1ee61ebde958f368a",
+    "C:\\Users\\prase\\Downloads\\marifahmad\\adversarialattack\\results\\GAN_gpt-5.2-chat.csv": "8d8413636d20caf5e8120d17a2645977e2ca9ccb8ff301c7a6284dde7d58a352",
+    "C:\\Users\\prase\\Downloads\\marifahmad\\decision_research_handoff\\historical\\raw_six_models\\LLM_gpt-5.2-chat.csv": "868fa10cf8055a8aad063d4bb286f1ca757833f69d893f9c96cc3f0cd79f374a",
+    "C:\\Users\\prase\\Downloads\\marifahmad\\adversarialattack\\merge.py": "9734f1ee5281eafdc42e6540ef6c573153c5858bfcf110203f9c39df8e8fbe0a",
+    "C:\\Users\\prase\\Downloads\\marifahmad\\decision_research_handoff\\analysis\\ceas_match\\CEAS_08.csv": "22375e7d5f5a8229dbe987914ee9b3705656c590038662a7df6054629b376074",
+    "C:\\Users\\prase\\Downloads\\marifahmad\\decision_research_handoff\\analysis\\ceas_match\\historical_matches.csv": "ec70d9b1137a6039ecccc199aecac999bb40d106b53f119008f4ad3966e0d602"
+  },
+  "original_3000_baseline_recovered": false
+}

@@ -1,0 +1,82 @@
+{
+  "request": {
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output."
+      },
+      {
+        "role": "user",
+        "content": "Use the PPLX decision tool to classify this email only. Email follows:\nSubject: The Most Trustworthy Online Drugstore\n\nCanadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.\n\n100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.\nhttp://mineintuition.com\n\nVerified by VISA and sell FDA Approved Pills only."
+      }
+    ],
+    "tool_ids": [
+      "server:pplxdeciderflash"
+    ],
+    "params": {
+      "function_calling": "legacy"
+    },
+    "stream": false
+  },
+  "response": {
+    "sources": [
+      {
+        "source": {
+          "name": "server:pplxdeciderflash/classify_with_pplx_decider"
+        },
+        "document": [
+          "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.995271521073322,\n        \"not_spam\": 0.004728478926678058\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.9905430421466439\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 204,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}"
+        ],
+        "metadata": [
+          {
+            "source": "server:pplxdeciderflash/classify_with_pplx_decider",
+            "parameters": {
+              "state": "Subject: The Most Trustworthy Online Drugstore\n\nCanadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.\n\n100% safety at the lowest price you’ve ever seen. Only generic drugs on sale.\nhttp://mineintuition.com\n\nVerified by VISA and sell FDA Approved Pills only.",
+              "instructions": "Classify whether the email is spam or not spam.",
+              "criteria": {
+                "spam": "The email is unsolicited commercial content, likely advertising or fraudulent pharmaceutical offers.",
+                "not_spam": "The email is a legitimate, non‑commercial communication."
+              }
+            }
+          }
+        ],
+        "tool_result": true
+      }
+    ],
+    "id": "76bba8e0d131487d84006925c2292179",
+    "object": "chat.completion",
+    "created": 1793771683,
+    "model": "openai/gpt-oss-120b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.995271521073322,\n        \"not_spam\": 0.004728478926678058\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.9905430421466439\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 204,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}",
+          "reasoning_content": "We need to invoke the specified PPLX spam-classification tool exactly once on the full email. The tool output is already in context: a JSON with decision \"spam\" with high probability. So we should return the tool output. The instruction: \"Return the tool output.\" So just output the JSON content? Probably just the JSON as given. Should not add anything else. So output that."
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 200002
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 655,
+      "total_tokens": 857,
+      "completion_tokens": 202,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 84
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 202
+        }
+      ]
+    }
+  }
+}

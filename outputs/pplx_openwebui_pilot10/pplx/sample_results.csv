@@ -1,0 +1,11 @@
+﻿sample_id,true_label,baseline_label,eligible,step1_label,step2_label,state,baseline_time_sec,step1_time_sec,step2_time_sec,classification_time_sec
+PAPER3000-0001,SPAM,SPAM,1,,,attack_pending_or_error,,,,
+PAPER3000-0002,SPAM,SPAM,1,,,attack_pending_or_error,,,,
+PAPER3000-0003,SPAM,SPAM,1,,,attack_pending_or_error,,,,
+PAPER3000-0008,SPAM,NOT_SPAM,0,,,not_eligible,,,,
+PAPER3000-0010,SPAM,SPAM,1,,,attack_pending_or_error,,,,
+PAPER3000-0004,NOT_SPAM,NOT_SPAM,0,,,not_eligible,,,,
+PAPER3000-0005,NOT_SPAM,NOT_SPAM,0,,,not_eligible,,,,
+PAPER3000-0006,NOT_SPAM,NOT_SPAM,0,,,not_eligible,,,,
+PAPER3000-0007,NOT_SPAM,NOT_SPAM,0,,,not_eligible,,,,
+PAPER3000-0009,NOT_SPAM,NOT_SPAM,0,,,not_eligible,,,,

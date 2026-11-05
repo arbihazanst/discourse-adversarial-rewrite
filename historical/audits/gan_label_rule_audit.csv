@@ -1,0 +1,9 @@
+model,Model,source_rows,manuscript_TP_pool,published_GAN_success,is_modified_0,is_modified_1,output_missing_total,unmodified_missing_output,unmodified_nonblank_output,modified_missing_output,modified_nonblank_output,nonblank_predicted_0,nonblank_predicted_1,manuscript_matches_nonblank_label_1,mean_length_ratio_all_rows_blanks_zero,mean_length_ratio_generated_only,generated_ratio_below_0_5,generated_ratio_below_0_5_denominator,generated_ratio_below_0_3
+deepseek_r1_1_5b,DeepSeek-R1:1.5B,332,332,39,191,141,191,191,0,0,141,102,39,True,0.16247444249493062,0.38256393551997847,105,141,66
+deepseek_v3_1,DeepSeek-V3.1,1150,1157,19,1113,37,1126,1113,0,13,24,5,19,True,0.004037181169864261,0.19344826438932916,22,24,20
+gemma3_1b,Gemma-3:1B,1344,1344,51,513,831,518,513,0,5,826,775,51,True,0.2358734529322782,0.38379409290675776,602,826,394
+gpt_5_2,GPT-5.2,1142,1150,19,1093,49,1102,1093,0,9,40,21,19,True,0.008474796345216992,0.2419554356559451,39,40,35
+gpt_oss_20b,GPT-OSS:20B,1275,1276,115,1148,127,1156,1148,0,8,119,4,115,True,0.018371373508929534,0.19683614473853064,105,119,89
+llama_4_maverick_17b_128e_i,Llama-4-Maverick:17B,1118,1123,1,1117,1,1117,1117,0,0,1,0,1,True,0.00022783272015391366,0.25471698113207547,1,1,1
+qwen2_5_0_5b,Qwen-2.5:0.5B,872,872,242,449,423,451,449,0,2,421,179,242,True,0.14661549283969288,0.3036786455016917,332,421,235
+qwen2_5_32b,Qwen-2.5:32B,1200,1200,1,1182,18,1197,1182,0,15,3,2,1,True,0.0002413273001508296,0.09653092006033183,3,3,3

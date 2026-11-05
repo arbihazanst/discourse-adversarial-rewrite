@@ -1,0 +1,5 @@
+﻿cohort,models,model_count,shared_unique_CEAS_ids,note
+all_eight_llm,GPT-5.2;DeepSeek-V3.1;Qwen-2.5:32B;GPT-OSS:20B;Llama-4-Maverick;Gemma-3:1B;Qwen-2.5:0.5B;DeepSeek-R1:1.5B,8,89,Same original source IDs only; model-specific generated rewrites can differ.
+five_stronger_baseline_llms,GPT-5.2;DeepSeek-V3.1;Qwen-2.5:32B;GPT-OSS:20B;Llama-4-Maverick,5,785,Same original source IDs only; model-specific generated rewrites can differ.
+six_with_gemma3_1b,GPT-5.2;DeepSeek-V3.1;Qwen-2.5:32B;GPT-OSS:20B;Llama-4-Maverick;Gemma-3:1B,6,742,Same original source IDs only; model-specific generated rewrites can differ.
+seven_without_deepseek_r1,GPT-5.2;DeepSeek-V3.1;Qwen-2.5:32B;GPT-OSS:20B;Llama-4-Maverick;Gemma-3:1B;Qwen-2.5:0.5B,7,392,Same original source IDs only; model-specific generated rewrites can differ.

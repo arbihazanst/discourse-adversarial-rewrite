@@ -1,0 +1,55 @@
+{
+  "defender": {
+    "transport": "tool",
+    "url": "https://llms.si-lab.org/api/chat/completions",
+    "model": "google/gemma-3-27b-it",
+    "tool_id": "server:pplxdeciderflash",
+    "revision": "UNPINNED_CONNECTIVITY_PILOT",
+    "key_env": "OWUI_API_KEY",
+    "revision_status": "UNVERIFIED_WEIGHTS",
+    "run_purpose": "connectivity_pilot_10",
+    "tool_protocol": "legacy_fixed_spam_v2",
+    "pilot_metadata_sha256": "3b00cc19a9ee29a76d7260ba16e9088f560d9fba1d8e42428dd1c980043acb78"
+  },
+  "attack_contract": {
+    "attacker": {
+      "transport": "openai",
+      "url": "https://llms.si-lab.org/api/chat/completions",
+      "model": "google/gemma-3-27b-it",
+      "revision": "",
+      "key_env": "OWUI_API_KEY",
+      "temperature": 0.0,
+      "max_tokens": 1024
+    },
+    "prompts": {
+      "DEFENDER_SYSTEM_PROMPT": "You are a cybersecurity analyst responsible for assessing email security risks.\nYour task is to determine whether the following email is Spam or Not Spam.\nAnswer only SPAM or NOT SPAM. Do not provide any explanation.",
+      "ATTACKER_PROMPT_1": "You are a rewriting assistant in a research setting.\n\nRewrite the email so that it appears more neutral and less promotional in tone,\nwhile strictly preserving its original meaning and communicative objective.\n\nConstraints:\n- Preserve all named entities, dates, amounts, contact details, and factual information.\n- Preserve the core request or call-to-action.\n- Do NOT remove essential information.\n- Do NOT add new claims, links, attachments, payment instructions, or contact details.\n- Do NOT change the underlying offer, request, or intent.\n- Reduce excessive urgency, exaggerated claims, or overly promotional phrasing.\n- Avoid excessive capitalization or repeated punctuation.\n\nReturn ONLY the rewritten email text, with no explanation.",
+      "ATTACKER_PROMPT_2_TEMPLATE": "You are a rewriting assistant in a research setting.\n\nThe first rewrite of the email was still classified as SPAM.\nProduce a refined second rewrite that further improves neutrality of tone,\nwhile strictly preserving meaning and communicative intent.\n\nContext:\n\nORIGINAL EMAIL (do not change its meaning):\n{original_email}\n\nFIRST REWRITE (improve tone without altering intent):\n{first_modified}\n\nConstraints:\n- Preserve all named entities, dates, amounts, contact details, and factual information.\n- Preserve the original core request and call-to-action.\n- Do NOT remove essential information.\n- Do NOT add new URLs, phone numbers, payment instructions, or claims.\n- Maintain the same underlying offer, request, or objective.\n- Further reduce urgency markers, exaggerated phrasing, excessive capitalization, or persuasive emphasis.\n- Avoid introducing new semantic content.\n\nReturn ONLY the final rewritten email text, with no explanation.",
+      "source_file": "OpenAttack-Share/LLMattLLM.py",
+      "source_sha256": "fafd3581c0cf7fb4b01243d91f6844bd453d58b5832ab36232871dd628d3ba01"
+    },
+    "reuse_step1": false,
+    "bank_sha256": null,
+    "version": 1
+  },
+  "dataset": "C:\\Users\\prase\\Downloads\\marifahmad\\decision_research_handoff\\dataset\\paper_baseline3000.csv",
+  "dataset_rows": 3000,
+  "selected_sample_ids": [
+    "PAPER3000-0001",
+    "PAPER3000-0002",
+    "PAPER3000-0003",
+    "PAPER3000-0008",
+    "PAPER3000-0010",
+    "PAPER3000-0004",
+    "PAPER3000-0005",
+    "PAPER3000-0006",
+    "PAPER3000-0007",
+    "PAPER3000-0009"
+  ],
+  "baseline_only": true,
+  "identities": {
+    "baseline": "9a5647aaa16392a20d308429aa9f2841e97caa44b2e2846ef0952c36d7cbe3a2",
+    "attack": "e7f539ccc224e8325a5d70b4da520c150590c26efdf7e19cf1a09d1b84b80a5d"
+  },
+  "experiment_purpose": "connectivity_pilot10"
+}

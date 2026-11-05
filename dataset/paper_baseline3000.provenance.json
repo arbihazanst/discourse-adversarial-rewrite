@@ -1,0 +1,17 @@
+{
+  "source": "analysis\\ceas_match\\baseline_recovery\\CEAS_08_gpt_oss_latest_transparent_20260220_185010.csv",
+  "source_sha256": "1e3d19bd9382897e1059eec2a7e6d9bd5982f32a59d31e1856834da4cc164ee9",
+  "baseline_sha256": "5dc1950d2aeb1d5243322fd6dd58e9b21b51b52132f7fab257b78607ae699d8a",
+  "bank_sha256": "d7bfceeab5dd83d7b0eb0fde71257fbaaff06db7b2f8a5aa4e5475eef940a099",
+  "baseline_rows": 3000,
+  "spam_rows": 1500,
+  "ham_rows": 1500,
+  "historical_step1_candidates": 1408,
+  "selection": "lexicographic source CSV, then first source record; no outcome filtering",
+  "limitations": "Recovered GPT-OSS cohort, not proof of identical cohorts for all historical models. Preserves original input text/order/duplicates. Bank reuse is a declared hybrid experiment; historical prompt/checkpoint and semantic validity are not independently established.",
+  "lineage_inputs": {
+    "analysis\\ceas_match\\baseline_recovery\\baseline_3000_manifest.csv": "0514b4bb75b949005e26cf40847ebdf81e880e01312efe6fc247d055ad07bce8",
+    "historical\\all_eight_models_recorded_results.csv": "d329a52cbd645df19ff86d91b18be7bb6778e6c4b715e95a178defdce8ad6b8c",
+    "analysis\\ceas_match\\historical_matches.csv": "ec70d9b1137a6039ecccc199aecac999bb40d106b53f119008f4ad3966e0d602"
+  }
+}

@@ -1,0 +1,31 @@
+﻿defender,sample_id,true_label,original_text,baseline_label,candidate_text,candidate_label,candidate_status,returned_text,used_text,is_modified,attack_status,return_status,predicted_label,classification_status,label_flip,baseline_time_sec,probe_time_sec,classification_time_sec,gan_search_elapsed_sec,error
+pplx,PAPER3000-0001,SPAM,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",SPAM,  and with with to the to to to of the the,NOT_SPAM,OK,  and with with to the to to to of the the,  and with with to the to to to of the the,1,OK,RETURNED,NOT_SPAM,OK,1,18.2069,15.99158,19.79445,16.19702,
+pplx,PAPER3000-0002,SPAM,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/",SPAM,"it and many be it the in n't , it its  and it for",NOT_SPAM,OK,"it and many be it the in n't , it its  and it for","it and many be it the in n't , it its  and it for",1,OK,RETURNED,NOT_SPAM,OK,1,21.70264,16.01747,16.10803,16.07695,
+pplx,PAPER3000-0003,SPAM,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only.",SPAM, and  of of of of of too  of of the with about with with,NOT_SPAM,OK, and  of of of of of too  of of the with about with with, and  of of of of of too  of of the with about with with,1,OK,RETURNED,NOT_SPAM,OK,1,22.63211,18.87965,15.57212,18.94199,
+pplx,PAPER3000-0010,SPAM,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",SPAM,  and and to to  the   much  the the of ,NOT_SPAM,OK,  and and to to  the   much  the the of ,  and and to to  the   much  the the of ,1,OK,RETURNED,NOT_SPAM,OK,1,16.94285,20.08916,19.10219,20.14711,

@@ -1,0 +1,8 @@
+{
+  "baseline_spam_rows": 1500,
+  "with_nonempty_step1_fulltext_source_match": 1408,
+  "only_review_required_step1_candidates": 29,
+  "without_step1_candidate_in_six_model_archive": 63,
+  "with_at_least_one_historical_conditional_step2_chain": 1258,
+  "scope": "Six primary archived historical defenders; excludes tiny-model archives and new pilot CSVs. Counts input rows including baseline duplicates. Nonempty text is not semantic validity or verified prompt/checkpoint provenance."
+}

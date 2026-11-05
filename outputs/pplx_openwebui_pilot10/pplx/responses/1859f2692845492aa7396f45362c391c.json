@@ -1,0 +1,82 @@
+{
+  "request": {
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output."
+      },
+      {
+        "role": "user",
+        "content": "Use the PPLX decision tool to classify this email only. Email follows:\nSubject: Re:\n\n\nHe taught me how to love, but not how to stop. http://dombv.winforgiveness.com"
+      }
+    ],
+    "tool_ids": [
+      "server:pplxdeciderflash"
+    ],
+    "params": {
+      "function_calling": "legacy"
+    },
+    "stream": false
+  },
+  "response": {
+    "sources": [
+      {
+        "source": {
+          "name": "server:pplxdeciderflash/classify_with_pplx_decider"
+        },
+        "document": [
+          "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.8977013358182508,\n        \"not_spam\": 0.10229866418174915\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.7954026716365017\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 123,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}"
+        ],
+        "metadata": [
+          {
+            "source": "server:pplxdeciderflash/classify_with_pplx_decider",
+            "parameters": {
+              "state": "Subject: Re:\n\nHe taught me how to love, but not how to stop. http://dombv.winforgiveness.com",
+              "instructions": "Classify the email as spam or not spam.",
+              "criteria": {
+                "spam": "The email is spam",
+                "not_spam": "The email is not spam"
+              }
+            }
+          }
+        ],
+        "tool_result": true
+      }
+    ],
+    "id": "c34f61ce5fde45d4b6074577290e0b88",
+    "object": "chat.completion",
+    "created": 1793771696,
+    "model": "openai/gpt-oss-120b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.8977013358182508,\n        \"not_spam\": 0.10229866418174915\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.7954026716365017\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 123,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}",
+          "reasoning_content": "The user asks: \"Use the PPLX decision tool to classify this email only.\" The system's instruction: Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output.\n\nWe have a context containing the tool output for a classification. It already shows output: decision choice \"spam\" with probabilities. So we must return that tool output exactly. The instruction: \"Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output.\"\n\nThus we should just output the JSON from the source. Likely just the content inside the source. That is:\n\n{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.8977013358182508,\n        \"not_spam\": 0.10229866418174915\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.7954026716365017\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 123,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}\n\nWe should return exactly that. Since no extra text."
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 200002
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 596,
+      "total_tokens": 989,
+      "completion_tokens": 393,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 274
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 393
+        }
+      ]
+    }
+  }
+}

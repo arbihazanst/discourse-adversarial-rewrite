@@ -1,0 +1,9 @@
+﻿model,historical_rows,recorded_text_found,historically_linked_source_found,historically_linked_source_missing,linked_to_unambiguous_gptoss_baseline_predicted_0,historical_unique_source_ids
+DeepSeek-R1:1.5B,332,327,332,0,,332
+DeepSeek-V3.1,1157,877,899,258,,1150
+GPT-5.2,1150,857,878,272,,1143
+GPT-OSS:20B,1276,1248,1276,0,0,1272
+Gemma-3:1B,1344,1318,1344,0,,1340
+Llama-4-Maverick,1123,858,880,243,,1116
+Qwen-2.5:0.5B,872,861,872,0,,869
+Qwen-2.5:32B,1200,1173,1200,0,,1196

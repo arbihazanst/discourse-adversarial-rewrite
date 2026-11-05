@@ -1,0 +1,1 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error

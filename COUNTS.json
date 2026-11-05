@@ -1,0 +1,59 @@
+{
+  "input_CEAS_total_records": 39154,
+  "input_CEAS_spam_records": 21842,
+  "input_CEAS_ham_records": 17312,
+  "primary_historical_LLM_models": 6,
+  "excluded_archived_LLM_models": 2,
+  "common_spam_CEAS_ids": 742,
+  "new_ham_CEAS_ids": 742,
+  "clean_balanced_binary_rows": 1484,
+  "common742_history_model_rows": 4452,
+  "all_historical_LLM_attack_rows": 8454,
+  "primary_frozen_step1_rows": 742,
+  "fixed_benchmark_inputs": 2226,
+  "all_six_nonempty_step1_rows": 4430,
+  "all_six_nonempty_conditional_step2_rows": 3915,
+  "all_six_step_pooled_rows": 8345,
+  "new_decision_prediction_template_rows": 6678,
+  "decision_model_completed_predictions": 0,
+  "primary_frozen_step1_attack_source_distribution": {
+    "DeepSeek-V3.1": 121,
+    "Gemma-3:1B": 136,
+    "GPT-5.2": 145,
+    "Qwen-2.5:32B": 116,
+    "Llama-4-Maverick": 104,
+    "GPT-OSS:20B": 120
+  },
+  "duplicate_same_source_id_rows_dropped_for_common742_comparison": {
+    "GPT-5.2": 7,
+    "DeepSeek-V3.1": 7,
+    "Qwen-2.5:32B": 4,
+    "GPT-OSS:20B": 4,
+    "Llama-4-Maverick": 7,
+    "Gemma-3:1B": 4
+  },
+  "source_encodings": {
+    "LLM_gpt-5.2-chat.csv": "mixed_utf8_cp1252_fallback_604_bytes",
+    "LLM_DeepSeek-V3.1.csv": "mixed_utf8_cp1252_fallback_659_bytes",
+    "LLM_qwen2.5_32b.csv": "mixed_utf8_cp1252_fallback_719_bytes",
+    "LLM_gpt_oss_20B.csv": "mixed_utf8_cp1252_fallback_714_bytes",
+    "LLM_Llama-4-Maverick-17B-128E-I.csv": "mixed_utf8_cp1252_fallback_663_bytes",
+    "LLM_gemma3_1b.csv": "mixed_utf8_cp1252_fallback_918_bytes",
+    "LLM_qwen2.5_0.5b.csv": "mixed_utf8_cp1252_fallback_482_bytes",
+    "LLM_deepseek_r1_1.5b.csv": "mixed_utf8_cp1252_fallback_90_bytes"
+  },
+  "ham_selection": "Deterministic random sample of 742 unique normalized-text CEAS label=0 records, seed 20261102; not the original paper ham sample",
+  "primary_rewrite_selection": "SHA256(CEAS08:<source_id>) integer modulo six model positions; cyclic fallback ONLY if Step1 rewrite empty, never choose by evasion outcome",
+  "current_default_experiment": {
+    "dataset": "dataset/paper_baseline3000.csv",
+    "original_rows": 3000,
+    "spam_rows": 1500,
+    "ham_rows": 1500,
+    "cohort": "Recovered GPT-OSS baseline; not proof of identical historical cohorts",
+    "historical_step1_candidates": 1408,
+    "max_rewrite_candidates_per_eligible_original": 2,
+    "eligible": "ground truth SPAM and current defender baseline SPAM",
+    "real_inference_performed_by_this_update": false,
+    "legacy_counts_scope": "All preceding 742/1484/2226 counts describe the preserved transfer experiment"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "request": {
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output."
+      },
+      {
+        "role": "user",
+        "content": "Use the PPLX decision tool to classify this email only. Email follows:\nSubject: Technology Review Research Panel: Server Appliance Survey \n\nDear Ted,\n\nWe're inviting you to participate in a new survey about server appliances.\n\nAs our way of saying Thank You, those who qualify and complete the entire survey will receive $3, which will be immediately credited to your reward account.  If you do not qualify to participate in the entire survey, just for trying, you will still be entered into our monthly drawing to win $100.\n\nThe survey is easy to complete and should take no more than 10 minutes of your time. \n\nTo begin the survey, simply click on the link below or copy and paste the URL into the address bar of a new browser window.\n\nhttp://survey.sotech.com/666001/start.asp?m=21969\n\nThank you for your participation!\n\nSincerely,\n\nHelen  Jenkins\nTechnology Review Research Panel\nhttp://www.technologyreviewresearchpanel.com\n\n\nPRIVACY AND CONFIDENTIALITY\n\nYou are receiving this email because you are a registered member of the Technology Review Research Panel, hosted and managed by Socratic Technologies.  We are a full-service market research firm that values your privacy.  All of your responses will be kept confidential and only reported in aggregate.  Your personal information will not be sold or traded to any direct-mail companies.  For more information about Socratic's privacy policy, please visit http://www.sotech.com/main2007/eval.asp?pID=24\n\nFor more information about the drawing, please visit http://www.sotech.com/htmlemail/promotion.htm\n\nIf you have questions about the survey, please contact the Member Services Manager, Helen  Jenkins, at mc.919806@al2.sotech.com and reference project 666-001.  Helen  Jenkins can also be reached at 1-800-5-SOCRATIC (1-800-576-2728), or 001-415-430-2200 outside USA.\n\nSocratic Technologies, Inc. subscribes to the privacy policies and code of research ethics of the Interactive Marketing Research Organization (IMRO), a division of the Marketing Research  Association (MRA).  You can visit\nIMRO at www.imro.org for more information.\n\n\n\nIf you would like to be removed from our contact list, please reply to this email and type \"Remove - Technology Review Research Panel\" in the subject line, or call 1-800-5-SOCRATIC (1-800-576-2728) or 001-415-430-2200 outside USA.  You may also request your removal by writing to: Socratic Technologies, Inc., 2505 Mariposa Street, San Francisco, CA 94110 USA."
+      }
+    ],
+    "tool_ids": [
+      "server:pplxdeciderflash"
+    ],
+    "params": {
+      "function_calling": "legacy"
+    },
+    "stream": false
+  },
+  "response": {
+    "sources": [
+      {
+        "source": {
+          "name": "server:pplxdeciderflash/classify_with_pplx_decider"
+        },
+        "document": [
+          "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.4104779362678528,\n        \"not_spam\": 0.5895220637321472\n      },\n      \"choice\": \"not_spam\",\n      \"confidence\": 0.17904412746429443\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 716,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}"
+        ],
+        "metadata": [
+          {
+            "source": "server:pplxdeciderflash/classify_with_pplx_decider",
+            "parameters": {
+              "state": "Subject: Technology Review Research Panel: Server Appliance Survey \n\nDear Ted,\n\nWe're inviting you to participate in a new survey about server appliances.\n\nAs our way of saying Thank You, those who qualify and complete the entire survey will receive $3, which will be immediately credited to your reward account.  If you do not qualify to participate in the entire survey, just for trying, you will still be entered into our monthly drawing to win $100.\n\nThe survey is easy to complete and should take no more than 10 minutes of your time. \n\nTo begin the survey, simply click on the link below or copy and paste the URL into the address bar of a new browser window.\n\nhttp://survey.sotech.com/666001/start.asp?m=21969\n\nThank you for your participation!\n\nSincerely,\n\nHelen  Jenkins\nTechnology Review Research Panel\nhttp://www.technologyreviewresearchpanel.com\n\n\nPRIVACY AND CONFIDENTIALITY\n\nYou are receiving this email because you are a registered member of the Technology Review Research Panel, hosted and managed by Socratic Technologies.  We are a full-service market research firm that values your privacy.  All of your responses will be kept confidential and only reported in aggregate.  Your personal information will not be sold or traded to any direct-mail companies.  For more information about Socratic's privacy policy, please visit http://www.sotech.com/main2007/eval.asp?pID=24\n\nFor more information about the drawing, please visit http://www.sotech.com/htmlemail/promotion.htm\n\nIf you have questions about the survey, please contact the Member Services Manager, Helen  Jenkins, at mc.919806@al2.sotech.com and reference project 666-001.  Helen  Jenkins can also be reached at 1-800-5-SOCRATIC (1-800-576-2728), or 001-415-430-2200 outside USA.\n\nSocratic Technologies, Inc. subscribes to the privacy policies and code of research ethics of the Interactive Marketing Research Organization (IMRO), a division of the Marketing Research  Association (MRA).  You can visit\nIMRO at www.imro.org for more information.\n\n\nIf you would like to be removed from our contact list, please reply to this email and type \"Remove - Technology Review Research Panel\" in the subject line, or call 1-800-5-SOCRATIC (1-800-576-2728) or 001-415-430-2200 outside USA.  You may also request your removal by writing to: Socratic Technologies, Inc., 2505 Mariposa Street, San Francisco, CA 94110 USA.",
+              "instructions": "Classify this email as either spam or not_spam.",
+              "criteria": {
+                "spam": "Unwanted promotional or scam email",
+                "not_spam": "Legitimate or wanted email"
+              }
+            }
+          }
+        ],
+        "tool_result": true
+      }
+    ],
+    "id": "884a59e847b74f52918a862764e11ae2",
+    "object": "chat.completion",
+    "created": 1793771752,
+    "model": "openai/gpt-oss-120b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.4104779362678528,\n        \"not_spam\": 0.5895220637321472\n      },\n      \"choice\": \"not_spam\",\n      \"confidence\": 0.17904412746429443\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 716,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}",
+          "reasoning_content": "The user asks: \"Use the PPLX decision tool to classify this email only.\" The context provides the tool output JSON, which says decision choice \"not_spam\". So we must return the tool output exactly? The instruction: \"Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output.\" So just output the JSON as is. Probably just copy the content from the source. So answer with that JSON."
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 200002
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1123,
+      "total_tokens": 1350,
+      "completion_tokens": 227,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 106
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 227
+        }
+      ]
+    }
+  }
+}

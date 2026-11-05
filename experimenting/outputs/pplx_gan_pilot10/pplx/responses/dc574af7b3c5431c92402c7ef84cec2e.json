@@ -1,0 +1,8 @@
+{
+  "original_sha256": "79d706fe28a1bb6bf74199cef97d648a92c727fe64a2d2787897b906216f66d9",
+  "candidate_text": "  and and to to  the   much  the the of ",
+  "returned_text": "  and and to to  the   much  the the of ",
+  "used_text": "  and and to to  the   much  the the of ",
+  "is_modified": true,
+  "return_status": "RETURNED"
+}

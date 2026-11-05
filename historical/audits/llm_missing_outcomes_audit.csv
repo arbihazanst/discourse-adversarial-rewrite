@@ -1,0 +1,9 @@
+model,Model,source_rows,manuscript_TP_pool,first_spam,first_not_spam,first_missing_label,first_missing_label_with_text,first_missing_label_without_text,first_not_spam_without_text,second_not_spam_after_first_spam,second_spam_after_first_spam,second_missing_label_after_first_spam,second_not_spam_without_text,total_unparsed_attempt_responses,recorded_raw_flip_count,first_nonempty_not_spam,second_nonempty_not_spam_after_first_spam,total_nonempty_label_flips,manuscript_stepwise_counts_match,manuscript_LLM_success,published_step1_success,published_step1_fail,published_step2_success,published_step2_fail
+deepseek_r1_1_5b,DeepSeek-R1:1.5B,332,332,67,265,0,0,0,0,53,14,0,0,0,318,265,53,318,True,318,265,67,53,14
+deepseek_v3_1,DeepSeek-V3.1,1157,1157,1011,125,21,12,9,6,26,981,4,0,25,151,119,26,145,True,145,119,1011,26,981
+gemma3_1b,Gemma-3:1B,1344,1344,905,438,1,0,1,0,139,766,0,0,1,577,438,139,577,True,577,438,905,139,766
+gpt_5_2,GPT-5.2,1150,1150,1088,52,10,5,5,0,8,1080,0,0,10,60,52,8,60,True,60,52,1088,8,1080
+gpt_oss_20b,GPT-OSS:20B,1276,1276,1151,125,0,0,0,0,40,1111,0,0,0,165,125,40,165,True,165,125,1151,40,1111
+llama_4_maverick_17b_128e_i,Llama-4-Maverick:17B,1123,1123,972,59,92,66,26,1,16,899,57,0,149,75,58,16,74,True,74,58,972,16,899
+qwen2_5_0_5b,Qwen-2.5:0.5B,872,872,603,264,5,0,5,0,205,398,0,0,5,469,264,205,469,True,469,264,603,205,398
+qwen2_5_32b,Qwen-2.5:32B,1200,1200,1075,125,0,0,0,0,24,1051,0,0,0,149,125,24,149,True,149,125,1075,24,1051

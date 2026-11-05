@@ -1,0 +1,56 @@
+{
+  "request": {
+    "model": "google/gemma-3-27b-it",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a rewriting assistant in a research setting.\n\nThe first rewrite of the email was still classified as SPAM.\nProduce a refined second rewrite that further improves neutrality of tone,\nwhile strictly preserving meaning and communicative intent.\n\nContext:\n\nORIGINAL EMAIL (do not change its meaning):\nSubject: fashionable replica watches\n\n\nWe only sell premium watches. \n\nMost reliable replica from Patek Philippe ...   \n\nis ROLEX under 199 $ good for you? \n\nhttp://fetessteersit.com/\n\nFIRST REWRITE (improve tone without altering intent):\nSubject: Replica Watches\n\nWe offer replica watches.\n\nWe have replicas available from Patek Philippe and other brands.\n\nIs a Rolex replica priced under $199 of interest to you?\n\nhttp://fetessteersit.com/\n\nConstraints:\n- Preserve all named entities, dates, amounts, contact details, and factual information.\n- Preserve the original core request and call-to-action.\n- Do NOT remove essential information.\n- Do NOT add new URLs, phone numbers, payment instructions, or claims.\n- Maintain the same underlying offer, request, or objective.\n- Further reduce urgency markers, exaggerated phrasing, excessive capitalization, or persuasive emphasis.\n- Avoid introducing new semantic content.\n\nReturn ONLY the final rewritten email text, with no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Subject: Replica Watches\n\nWe offer replica watches.\n\nWe have replicas available from Patek Philippe and other brands.\n\nIs a Rolex replica priced under $199 of interest to you?\n\nhttp://fetessteersit.com/"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "stream": false
+  },
+  "response": {
+    "id": "cb88573349da4f0ea56ef32254a22c00",
+    "object": "chat.completion",
+    "created": 1793848433,
+    "model": "google/gemma-3-27b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Subject: Replica Watches\n\nWe offer replica watches.\n\nReplicas are available from brands including Patek Philippe and Rolex.\n\nWould a Rolex replica priced under $199 be of interest?\n\nhttp://fetessteersit.com/",
+          "reasoning_content": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 106
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 344,
+      "total_tokens": 396,
+      "completion_tokens": 52,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 52
+        }
+      ]
+    }
+  },
+  "request_sha256": "957d4286ea9a4ea22fb9a48ab20e2c083d5ab7ec60b4c754ebf79c7bbcaafde4",
+  "text": "Subject: Replica Watches\n\nWe offer replica watches.\n\nReplicas are available from brands including Patek Philippe and Rolex.\n\nWould a Rolex replica priced under $199 be of interest?\n\nhttp://fetessteersit.com/"
+}

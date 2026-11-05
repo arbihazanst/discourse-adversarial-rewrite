@@ -1,0 +1,73 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error
+pplx,PAPER3000-0001,2,SPAM,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/","Subject: Replica Watches
+
+We offer replica watches.
+
+We have replicas available from Patek Philippe and other brands.
+
+Is a Rolex replica priced under $199 of interest to you?
+
+http://fetessteersit.com/","Subject: Replica Watches
+
+We offer replica watches.
+
+Replicas are available from brands including Patek Philippe and Rolex.
+
+Would a Rolex replica priced under $199 be of interest?
+
+http://fetessteersit.com/",SPAM,OK,OK,SPAM,6.35377,20.16099,generated,,
+pplx,PAPER3000-0002,2,SPAM,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/","Subject: Information Regarding Penis Enlargement
+
+A customer, Lindsay from California, USA, reported experiencing a 3-inch increase in penis size over a period of two months. She also noted increased sexual satisfaction.
+
+http://jumpwill.com/","Subject: Information Regarding Penis Enlargement
+
+A customer, Lindsay, located in California, USA, reported a 3-inch increase in penis size after two months of use. She also reported increased sexual satisfaction.
+
+http://jumpwill.com/",SPAM,OK,OK,SPAM,5.40071,19.30343,generated,,
+pplx,PAPER3000-0003,2,SPAM,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only.","Subject: Information Regarding Canadian Healthcare
+
+Canadian Healthcare is an international online store with full licensing and experience in providing pharmaceutical products. We offer generic medications from established manufacturers known for their quality.
+
+Our products are available at competitive prices. We currently offer only generic drugs. 
+http://mineintuition.com
+
+We are verified by VISA and sell FDA-approved medications.","Subject: Information Regarding Canadian Healthcare
+
+Canadian Healthcare is an internationally licensed online store providing pharmaceutical products. We offer generic medications from established manufacturers.
+
+These products are competitively priced, and we currently offer only generic drugs.
+http://mineintuition.com
+
+We are verified by VISA and sell FDA-approved medications.",SPAM,OK,OK,SPAM,6.48877,19.30297,generated,,
+pplx,PAPER3000-0010,2,SPAM,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com","Subject: Re:
+
+Please consider exploring resources that may be helpful. http://dombv.winforgiveness.com","Subject: Re:
+
+Information and resources are available at the following link: http://dombv.winforgiveness.com",SPAM,OK,OK,SPAM,2.66389,17.71775,generated,,

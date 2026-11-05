@@ -1,0 +1,24 @@
+{
+  "source_root": "C:\\KERJA DANI\\vscode\\OPEN ATTACK\\OpenAttack-Share",
+  "scope": "Default SST GANAttacker implementation and SGAN loader; no legacy API credentials or executable experiment scripts copied.",
+  "files": [
+    {
+      "source": "OpenAttack/attackers/gan/__init__.py",
+      "source_sha256": "0b6fec982f1286786f13cf0da0da9ddc2bb691a81065c1be54499cd23fa483f1",
+      "vendored": "attacker.py",
+      "vendored_sha256": "f80deb999d1e67e3e0ca35ce947b3b93162f66597442f955de194ff8257590ab"
+    },
+    {
+      "source": "OpenAttack/data/sgan.py",
+      "source_sha256": "9075ea0a3b4386fc4c65d3d9daf4b81a9b2f2fc1b204ed5801674b9059f069d7",
+      "vendored": "sgan.py",
+      "vendored_sha256": "7d40f4862e9ad4f641429c036b15b6efa2aced40fe4dec12aefecf4adf9629a3"
+    }
+  ],
+  "changes": [
+    "Replace package-wide imports with minimal compatibility interfaces for the direct .attack() call.",
+    "Load state dictionaries on CPU with weights_only=True; retain SST generation/search logic.",
+    "Automatic resource downloads are handled explicitly by prepare_gan.py."
+  ],
+  "experiment_source_sha256": "214250e6ee02a57496aa6be14185332c2d077b8745ada5d619bda65eb2b3c317"
+}

@@ -1,0 +1,17 @@
+﻿attack_file,rows,whitespace_case,exact,unresolved,body_only_whitespace_case,ambiguous_rows,review_required_rows,old_id_in_candidates
+GAN_DeepSeek-V3.1.csv,1150,894,222,27,7,10,34,1123
+GAN_Llama-4-Maverick-17B-128E-I.csv,1118,864,221,26,7,10,33,1092
+GAN_deepseek_r1_1.5b.csv,332,242,85,4,1,1,5,328
+GAN_gemma3_1b.csv,1344,986,331,24,3,7,27,1320
+GAN_gpt-5.2-chat.csv,1142,906,204,25,7,10,32,1117
+GAN_gpt-oss_latest.csv,1275,954,292,25,4,7,29,1250
+GAN_qwen2.5_0.5b.csv,872,542,318,11,1,7,12,861
+GAN_qwen2.5_32b.csv,1200,944,228,24,4,7,28,1176
+LLM_DeepSeek-V3.1.csv,1157,900,223,27,7,10,34,1130
+LLM_Llama-4-Maverick-17B-128E-I.csv,1123,868,222,26,7,10,33,1097
+LLM_deepseek_r1_1.5b.csv,332,242,85,4,1,1,5,328
+LLM_gemma3_1b.csv,1344,986,331,24,3,7,27,1320
+LLM_gpt-5.2-chat.csv,1150,908,210,25,7,10,32,1125
+LLM_gpt_oss_20B.csv,1276,955,292,25,4,7,29,1251
+LLM_qwen2.5_0.5b.csv,872,542,318,11,1,7,12,861
+LLM_qwen2.5_32b.csv,1200,944,228,24,4,7,28,1176

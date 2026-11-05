@@ -1,0 +1,31 @@
+{
+  "profile": "experimenting",
+  "dataset": "dataset/paper_baseline3000.csv",
+  "step1_bank": "dataset/paper_step1_bank.csv",
+  "output_dir": "experimenting/outputs/paper3000_adaptive",
+  "attacker": {
+    "transport": "openai",
+    "url": "https://llms.si-lab.org/api/chat/completions",
+    "model": "gemma3:27b",
+    "revision": "",
+    "key_env": "OWUI_API_KEY",
+    "temperature": 0.0,
+    "max_tokens": 1024
+  },
+  "defenders": {
+    "pplx": {
+      "transport": "ollama",
+      "url": "http://127.0.0.1:11435/v1/systemone",
+      "model": "server:pplxdeciderflash:latest",
+      "revision": "",
+      "key_env": ""
+    },
+    "clef": {
+      "transport": "ollama",
+      "url": "http://127.0.0.1:11435/v1/systemone",
+      "model": "clef:27b",
+      "revision": "",
+      "key_env": ""
+    }
+  }
+}

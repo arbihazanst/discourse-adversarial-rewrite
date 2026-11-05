@@ -1,0 +1,25 @@
+{
+  "state": "complete",
+  "identities": {
+    "baseline": "b394c983254409f17598f549d3660ea6ca53d3dc660a65a0aaad7022c34f07a2",
+    "attack": "f0f13a50af0e2dcc7b8bfe24aa2d9fb251556310a13bdf197b572d7e3ae14136"
+  },
+  "selected_count": 10,
+  "selected_sample_ids": [
+    "PAPER3000-0001",
+    "PAPER3000-0002",
+    "PAPER3000-0003",
+    "PAPER3000-0008",
+    "PAPER3000-0010",
+    "PAPER3000-0004",
+    "PAPER3000-0005",
+    "PAPER3000-0006",
+    "PAPER3000-0007",
+    "PAPER3000-0009"
+  ],
+  "stage": null,
+  "ok_stages": 10,
+  "error_stages": 0,
+  "authoritative_log": "events.csv",
+  "updated_utc": "2026-11-04T08:27:56+00:00"
+}

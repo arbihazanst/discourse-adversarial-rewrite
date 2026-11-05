@@ -1,0 +1,7 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error
+pplx,PAPER3000-0010,1,SPAM,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",,"Subject: Re:
+
+Please consider exploring resources that may be helpful. http://dombv.winforgiveness.com",SPAM,OK,OK,SPAM,3.04101,15.32308,generated,,

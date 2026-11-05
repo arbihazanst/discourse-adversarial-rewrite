@@ -1,0 +1,3 @@
+﻿cohort,n_models,shared_source_ids,identical_original_text_after_whitespace_normalization,all_nonblank_first_rewrites,identical_first_rewrite_across_all_models,fraction_identical_of_all_nonblank_first_rewrites,duplicate_model_source_id_assignments_dropped_global
+all_eight_llm,8,89,89,85,3,0.03529,36
+five_stronger_baseline_llms,5,785,785,761,48,0.06307,36

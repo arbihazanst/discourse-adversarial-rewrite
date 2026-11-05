@@ -1,0 +1,17 @@
+model,method,filename,source_rows,gan_predicted_0,gan_predicted_1,gan_unparsed,step1_spam,step1_not_spam,step1_unparsed,step2_not_spam,step2_unparsed,step2_conditional_not_spam,step2_conditional_spam,step2_conditional_unparsed,first_blank_text,second_blank_text
+deepseek_r1_1_5b,GAN,GAN_deepseek_r1_1.5b.csv,332,256.0,76.0,0.0,,,,,,,,,,
+deepseek_r1_1_5b,LLM,LLM_deepseek_r1_1.5b.csv,332,,,,67.0,265.0,0.0,53.0,265.0,53.0,14.0,0.0,0.0,265.0
+deepseek_v3_1,GAN,GAN_DeepSeek-V3.1.csv,1150,23.0,1127.0,0.0,,,,,,,,,,
+deepseek_v3_1,LLM,LLM_DeepSeek-V3.1.csv,1157,,,,1011.0,125.0,21.0,26.0,150.0,26.0,981.0,4.0,15.0,146.0
+gemma3_1b,GAN,GAN_gemma3_1b.csv,1344,800.0,544.0,0.0,,,,,,,,,,
+gemma3_1b,LLM,LLM_gemma3_1b.csv,1344,,,,905.0,438.0,1.0,139.0,439.0,139.0,766.0,0.0,1.0,439.0
+gpt_5_2,GAN,GAN_gpt-5.2-chat.csv,1142,34.0,1108.0,0.0,,,,,,,,,,
+gpt_5_2,LLM,LLM_gpt-5.2-chat.csv,1150,,,,1088.0,52.0,10.0,8.0,62.0,8.0,1080.0,0.0,5.0,62.0
+gpt_oss_20b,GAN,GAN_gpt-oss_latest.csv,1275,26.0,1249.0,0.0,,,,,,,,,,
+gpt_oss_20b,LLM,LLM_gpt_oss_20B.csv,1276,,,,1151.0,125.0,0.0,40.0,125.0,40.0,1111.0,0.0,0.0,125.0
+llama_4_maverick_17b_128e_i,GAN,GAN_Llama-4-Maverick-17B-128E-I.csv,1118,0.0,1118.0,0.0,,,,,,,,,,
+llama_4_maverick_17b_128e_i,LLM,LLM_Llama-4-Maverick-17B-128E-I.csv,1123,,,,972.0,59.0,92.0,16.0,208.0,16.0,899.0,57.0,27.0,151.0
+qwen2_5_0_5b,GAN,GAN_qwen2.5_0.5b.csv,872,308.0,564.0,0.0,,,,,,,,,,
+qwen2_5_0_5b,LLM,LLM_qwen2.5_0.5b.csv,872,,,,603.0,264.0,5.0,205.0,269.0,205.0,398.0,0.0,5.0,269.0
+qwen2_5_32b,GAN,GAN_qwen2.5_32b.csv,1200,17.0,1183.0,0.0,,,,,,,,,,
+qwen2_5_32b,LLM,LLM_qwen2.5_32b.csv,1200,,,,1075.0,125.0,0.0,24.0,125.0,24.0,1051.0,0.0,0.0,125.0

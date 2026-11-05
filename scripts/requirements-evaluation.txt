@@ -1,0 +1,3 @@
+# Optional full paper evaluation. Classification and lexical-only evaluation use stdlib.
+sentence-transformers==3.4.1
+scipy>=1.10,<2

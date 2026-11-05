@@ -1,0 +1,82 @@
+{
+  "request": {
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Invoke the specified PPLX spam-classification tool exactly once on the full email supplied next. Do not classify the email yourself. Return the tool output."
+      },
+      {
+        "role": "user",
+        "content": "Use the PPLX decision tool to classify this email only. Email follows:\nSubject: How To Enlarge Penis Size\n\n\nSize DOES matter - change your life today!\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\nhttp://jumpwill.com/"
+      }
+    ],
+    "tool_ids": [
+      "server:pplxdeciderflash"
+    ],
+    "params": {
+      "function_calling": "legacy"
+    },
+    "stream": false
+  },
+  "response": {
+    "sources": [
+      {
+        "source": {
+          "name": "server:pplxdeciderflash/classify_with_pplx_decider"
+        },
+        "document": [
+          "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.9934884360657878,\n        \"not_spam\": 0.0065115639342121796\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.9869768721315757\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 181,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}"
+        ],
+        "metadata": [
+          {
+            "source": "server:pplxdeciderflash/classify_with_pplx_decider",
+            "parameters": {
+              "state": "Subject: How To Enlarge Penis Size\n\nSize DOES matter - change your life today!\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\nhttp://jumpwill.com/",
+              "instructions": "Classify the email as spam or not spam.",
+              "criteria": {
+                "spam": "Email is unsolicited, promotional, and likely spam.",
+                "not_spam": "Email is legitimate and not spam."
+              }
+            }
+          }
+        ],
+        "tool_result": true
+      }
+    ],
+    "id": "062bb153ec9b4880bf35d859bc0fe758",
+    "object": "chat.completion",
+    "created": 1793771678,
+    "model": "openai/gpt-oss-120b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"answers\": {\n    \"decision\": {\n      \"type\": \"choice\",\n      \"probabilities\": {\n        \"spam\": 0.9934884360657878,\n        \"not_spam\": 0.0065115639342121796\n      },\n      \"choice\": \"spam\",\n      \"confidence\": 0.9869768721315757\n    }\n  },\n  \"usage\": {\n    \"input_tokens\": 181,\n    \"output_tokens\": 0,\n    \"sequences\": 1\n  }\n}",
+          "reasoning_content": "We need to invoke the PPLX spam-classification tool exactly once on the full email. The tool output is given in the context: a JSON with decision spam, probability 0.993..., etc. We need to return the tool output. So we just output the JSON? Probably they want the tool output as is. So we should output the JSON answer.\n\nThus the answer: the JSON provided."
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 200002
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 643,
+      "total_tokens": 849,
+      "completion_tokens": 206,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 86
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 206
+        }
+      ]
+    }
+  }
+}
