@@ -1,9 +1,0 @@
-﻿defender,sample_id,true_label,original_text,baseline_label,candidate_text,candidate_label,candidate_status,returned_text,used_text,is_modified,attack_status,return_status,predicted_label,classification_status,label_flip,baseline_time_sec,probe_time_sec,classification_time_sec,gan_search_elapsed_sec,error
-pplx,PAPER3000-0002,SPAM,"Subject: How To Enlarge Penis Size
-
-
-Size DOES matter - change your life today!
-
-""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
-
-http://jumpwill.com/",SPAM,"it and many be it the in n't , it its  and it for",NOT_SPAM,OK,"it and many be it the in n't , it its  and it for","it and many be it the in n't , it its  and it for",1,OK,RETURNED,NOT_SPAM,OK,1,21.70264,16.01747,16.10803,16.07695,

@@ -1,0 +1,11 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+pplx,PAPER3000-0001,1,SPAM,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",,  and with with to the the the the of the the 's its,SPAM,OK,SKIPPED_INVALID,,0.039402,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,139.827506,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,139.866908

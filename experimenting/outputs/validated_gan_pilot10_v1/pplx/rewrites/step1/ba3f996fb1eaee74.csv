@@ -1,0 +1,9 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+pplx,PAPER3000-0003,1,SPAM,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only.",," and   of of of , the  of of the with  with with the",SPAM,OK,SKIPPED_INVALID,,0.040283,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,168.859485,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,168.899768

@@ -1,0 +1,56 @@
+{
+  "request": {
+    "model": "google/gemma-3-27b-it",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a rewriting assistant in a research setting.\n\nThe first rewrite of the email was still classified as SPAM.\nProduce a refined second rewrite that further improves neutrality of tone,\nwhile strictly preserving meaning and communicative intent.\n\nContext:\n\nORIGINAL EMAIL (do not change its meaning):\nSubject: How To Enlarge Penis Size\n\n\nSize DOES matter - change your life today!\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\nhttp://jumpwill.com/\n\nFIRST REWRITE (improve tone without altering intent):\nSubject: Information Regarding Penis Enlargement\n\nA customer, Lindsay from California, USA, reported experiencing a 3-inch increase in penis size over a period of two months. She also noted increased sexual satisfaction.\n\nhttp://jumpwill.com/\n\nConstraints:\n- Preserve all named entities, dates, amounts, contact details, and factual information.\n- Preserve the original core request and call-to-action.\n- Do NOT remove essential information.\n- Do NOT add new URLs, phone numbers, payment instructions, or claims.\n- Maintain the same underlying offer, request, or objective.\n- Further reduce urgency markers, exaggerated phrasing, excessive capitalization, or persuasive emphasis.\n- Avoid introducing new semantic content.\n\nReturn ONLY the final rewritten email text, with no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Subject: Information Regarding Penis Enlargement\n\nA customer, Lindsay from California, USA, reported experiencing a 3-inch increase in penis size over a period of two months. She also noted increased sexual satisfaction.\n\nhttp://jumpwill.com/"
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "stream": false
+  },
+  "response": {
+    "id": "e15ac34602fe41558e1ea68be2e1b09a",
+    "object": "chat.completion",
+    "created": 1793941801,
+    "model": "google/gemma-3-27b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Subject: Information Regarding Penis Enlargement\n\nA customer, Lindsay, located in California, USA, reported a 3-inch increase in penis size after two months of use. She also reported increased sexual satisfaction.\n\nhttp://jumpwill.com/",
+          "reasoning_content": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 106
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 375,
+      "total_tokens": 426,
+      "completion_tokens": 51,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 51
+        }
+      ]
+    }
+  },
+  "request_sha256": "b4dee26254e30e7501bd5655ea5150b83784feae60573c666c5e1ad5499133c2",
+  "text": "Subject: Information Regarding Penis Enlargement\n\nA customer, Lindsay, located in California, USA, reported a 3-inch increase in penis size after two months of use. She also reported increased sexual satisfaction.\n\nhttp://jumpwill.com/"
+}

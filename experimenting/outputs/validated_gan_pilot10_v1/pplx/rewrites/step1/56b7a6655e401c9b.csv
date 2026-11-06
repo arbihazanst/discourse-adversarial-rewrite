@@ -1,0 +1,5 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+pplx,PAPER3000-0010,1,SPAM,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",,  and its from to make the its  much  the the of,SPAM,OK,SKIPPED_INVALID,,0.037003,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,130.673203,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,130.710206
