@@ -129,6 +129,8 @@ def main(argv=None):
     if args.dry_run and (args.check_server or args.list_tools):raise ValueError('Offline dry-run cannot query the server')
     config=json.loads(args.config.read_text(encoding='utf-8-sig'))
     if config.get('profile') not in {'main','experimenting'}:raise ValueError('Choose a main or experimenting profile')
+    if config.get('protocol')=='validity_gated_v1' and config['profile']!='experimenting':
+        raise ValueError('PPLX pilot is experimenting-only. Main uses Clef/d3 via run_cli.')
     config=copy.deepcopy(config);defender=config['defenders']['pplx']
     if defender.get('transport')!='tool':raise ValueError('PPLX pilot requires transport=tool in this profile')
     # Preserve a terminal chat-model alias over a differently named .env alias.
@@ -200,6 +202,8 @@ def main(argv=None):
             if len(matches)!=1:raise ValueError('Attacker model is not registered: '+attacker['model']+'. Check the server model ID.')
             attacker['pilot_metadata_sha256']=pipeline.fingerprint({k:matches[0][k] for k in ('id','digest','ollama','info') if k in matches[0]})
             print('Attacker catalog verified:',attacker['model'],'|',url)
+        if args.check_server and config.get('rewrite_evaluator') and args.attack!='none':
+            resolve_route(config['rewrite_evaluator'],args.timeout)
         if args.list_tools or args.check_server:
             if args.check_server and args.attack=='gan':
                 from gan_engine import GanEngine
@@ -207,6 +211,20 @@ def main(argv=None):
                 print('GAN weights and Python runtime verified; no inference.')
             if args.check_server:print('Catalog check passed; actual tool execution is checked by the 10-email pilot.')
             return 0
+    if config.get('rewrite_evaluator') and args.attack!='none':
+        evaluator=config['rewrite_evaluator']
+        pipeline.validate_endpoint(evaluator,live=False)
+        if not evaluator.get('revision'):
+            evaluator.update(revision='UNPINNED_VALIDITY_PILOT',revision_status='UNVERIFIED_WEIGHTS')
+        if not args.dry_run:
+            resolve_route(evaluator,args.timeout)
+        else:
+            saved_path=output/'pplx/run.json'
+            if saved_path.exists():
+                previous=json.loads(saved_path.read_text(encoding='utf-8')).get('attack_contract',{}).get('validity',{}).get('evaluator',{})
+                without_hash=lambda v:{k:x for k,x in v.items() if k!='pilot_metadata_sha256'}
+                if without_hash(evaluator)==without_hash(previous) and 'pilot_metadata_sha256' in previous:
+                    evaluator['pilot_metadata_sha256']=previous['pilot_metadata_sha256']
     # Pass a resolved, secret-free profile in memory to the shared controller.
     # Clear only PPLX overrides so they cannot undo the verified runtime IDs.
     overrides={name:os.environ.pop(name) for name in ('PPLX_URL','PPLX_MODEL_ID','PPLX_CHECKPOINT_ID','PPLX_TOOL_ID',

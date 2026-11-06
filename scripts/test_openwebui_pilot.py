@@ -51,6 +51,7 @@ class PilotTests(unittest.TestCase):
         self.temp=tempfile.TemporaryDirectory(prefix='pilot test ',dir=core.ROOT/'experimenting');self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);self.output=self.root/'pilot';self.profile=self.root/'config.json'
         config=json.loads((core.ROOT/'experimenting/adaptive_config.json').read_text())
+        config.pop('rewrite_evaluator',None);config.pop('protocol',None)
         config['defenders']['pplx'].update(model='mock/orchestrator',tool_id='pplx-decider',revision='')
         # Deliberately keep inactive unreachable models to prove isolation.
         config['defenders']['clef']={'transport':'direct','url':'http://unreachable.invalid','model':'clef','revision':'','key_env':''}
@@ -136,28 +137,28 @@ class PilotTests(unittest.TestCase):
             pilot.select_tool([{'id':'a','name':'PPLX Decider'},{'id':'b','name':'PPLX Decider'}],'server:pplxdeciderflash')
 
     def test_active_models_and_shared_payload(self):
-        config=json.loads((core.ROOT/'decision_models/adaptive_main.json').read_text())
+        config=json.loads((core.ROOT/'experimenting/adaptive_config.json').read_text())
         self.assertEqual(core.selected_models(config,'all'),['pplx'])
-        self.assertEqual(core.selected_models(config,'clef'),['clef'])
         defender=config['defenders']['pplx'];text='Full email\nSubject and body'
         self.assertEqual(core.defender_payload(defender,text),api.tool_payload(defender['model'],defender['tool_id'],text))
         with patch.dict(os.environ,{'PPLX_TOOL_ID':'old'}):
             self.assertNotIn('PPLX_TOOL_ID',experiment_cli.child_environment(config))
 
-    def test_both_profiles_use_clef_d3_pipes_and_keep_pplx_active(self):
-        for path in ('decision_models/adaptive_main.json','experimenting/adaptive_config.json'):
-            config=json.loads((core.ROOT/path).read_text())
-            self.assertEqual(core.selected_models(config,'all'),['pplx'])
-            for name in ('clef','d3'):
-                defender=config['defenders'][name]
-                self.assertEqual(defender['transport'],'openwebui')
-                self.assertEqual(defender['url'],'https://llms.si-lab.org/api/chat/completions')
-                payload=core.defender_payload(defender,'Original email')
-                self.assertEqual(payload,{'model':'decision_spam.'+name,'messages':[{'role':'user','content':'Original email'}],'stream':False})
+    def test_profiles_separate_classifier_and_evaluator_roles(self):
+        main=json.loads((core.ROOT/'decision_models/adaptive_main.json').read_text())
+        exp=json.loads((core.ROOT/'experimenting/adaptive_config.json').read_text())
+        self.assertEqual(core.selected_models(main,'all'),['clef','d3'])
+        self.assertEqual(set(exp['defenders']),{'pplx'})
+        for config in (main,exp):self.assertEqual(config['rewrite_evaluator']['role'],'pplx_validity')
+        for name,port in [('clef',30005),('d3',30006)]:
+            defender=main['defenders'][name]
+            self.assertEqual(defender['transport'],'direct')
+            self.assertEqual(defender['url'],f'http://127.0.0.1:{port}/v1/systemone')
+            self.assertEqual(core.defender_payload(defender,'Original email'),api.systemone_payload('Original email'))
 
     def test_menu_connection_pilot_uses_profile(self):
         with patch('builtins.input',side_effect=['1','1','1','0']),patch.object(experiment_cli,'run_command',return_value=0) as run,contextlib.redirect_stdout(io.StringIO()):
-            self.assertEqual(experiment_cli.main(['--config',str(core.ROOT/'decision_models/adaptive_main.json')]),0)
+            self.assertEqual(experiment_cli.main(['--profile','experimenting','--config',str(core.ROOT/'experimenting/adaptive_config.json')]),0)
         self.assertIn(str(core.ROOT/'scripts/pilot_openwebui.py'),run.call_args.args[0])
 
     def test_llm_pilot_reuses_baseline_and_two_paper_prompts(self):

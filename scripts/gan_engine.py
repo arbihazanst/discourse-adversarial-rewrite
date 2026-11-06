@@ -42,6 +42,22 @@ class GanEngine:
         DataManager.resource_dir=core.rooted(config.get('resource_dir',DEFAULT_DIR))
         self.attacker=GANAttacker(gan_dataset='sst')
 
+    def generate(self, original, sample_id):
+        # SST produces one candidate immediately before its first victim query.
+        # Abort at that boundary: no fabricated label and no defender inference.
+        class CandidateReady(Exception):
+            pass
+        class Capture:
+            def get_pred(self, texts):
+                if len(texts)!=1 or not isinstance(texts[0],str):
+                    raise ValueError('Unexpected SST candidate interface')
+                raise CandidateReady(texts[0])
+        try:
+            self.attack(original,sample_id,Capture())
+        except CandidateReady as candidate:
+            return candidate.args[0]
+        raise ValueError('SST returned without emitting a candidate')
+
     def attack(self, original, sample_id, victim):
         # Stable replay after interruption; independent of row ordering or defender.
         seed=int(hashlib.sha256((str(self.contract['seed'])+'\0'+sample_id+'\0'+original).encode()).hexdigest()[:8],16)

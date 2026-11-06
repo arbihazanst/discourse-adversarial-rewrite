@@ -50,12 +50,15 @@ class CliTests(unittest.TestCase):
 
     def test_failed_stage_stops_remaining_plan(self):
         with patch.object(cli,'run_command',side_effect=[0,2]) as run,contextlib.redirect_stdout(io.StringIO()):
-            self.assertEqual(cli.execute_plan(cli.MAIN,self.main,'pplx','pilot','all'),2)
+            self.assertEqual(cli.execute_plan(cli.MAIN,self.main,'clef','pilot','all'),2)
         self.assertEqual(run.call_count,2)
 
     def test_profile_and_output_isolation(self):
-        with self.assertRaisesRegex(ValueError,'khusus PPLX'):
-            cli.build_plan(cli.MAIN,self.main,'clef','pilot','llm')
+        plan=cli.build_plan(cli.MAIN,self.main,'clef','pilot','llm')
+        self.assertIn('--pilot',plan[0][1])
+        self.assertNotIn('pilot_openwebui.py',plan[0][1][1])
+        with self.assertRaises(ValueError):
+            cli.build_plan(cli.MAIN,self.main,'pplx','pilot','llm')
         bad=copy.deepcopy(self.exp);bad['output_dir']='outputs/wrong'
         with self.assertRaises(ValueError):cli.validate_paths(bad)
         bad=copy.deepcopy(self.main);bad['output_dir']='experimenting/outputs/wrong'

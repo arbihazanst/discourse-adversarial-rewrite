@@ -23,6 +23,10 @@ def load_profile(path):
     value=json.loads(path.read_text(encoding='utf-8-sig'))
     if value.get('profile') not in {'main','experimenting'}:raise ValueError('Profil harus main atau experimenting')
     if not value.get('defenders'):raise ValueError('Configure at least one defender')
+    if value.get('protocol')!='validity_gated_v1' or not value.get('rewrite_evaluator'):
+        raise ValueError('Profil lama tanpa validity gate. Gunakan --config decision_models/adaptive_main.json atau --config experimenting/adaptive_config.json; pindahkan pengaturan lokal secara eksplisit.')
+    from validity_pipeline import configuration
+    configuration(value)
     for name in value['defenders']:pipeline.validate_model_key(name)
     return value
 
@@ -65,12 +69,12 @@ def child_environment(config):
     # Child runners can load .env credentials without restoring route overrides
     # that the menu intentionally removed in favor of the displayed profile.
     env['DECISION_ENV_KEYS_ONLY']=','.join(sorted({item.get('key_env','') for item in
-        [*config['defenders'].values(),config.get('attacker',{})] if item.get('key_env')}))
+        [*config['defenders'].values(),config.get('attacker',{}),config.get('rewrite_evaluator',{})] if item.get('key_env')}))
     # Values displayed in the menu are authoritative; retain API-key variables,
     # but remove route overrides that would silently supersede this profile.
     for key in ('ATTACKER_URL','ATTACKER_MODEL','ATTACKER_REVISION','ATTACKER_API_KEY_ENV'):
         env.pop(key,None)
-    for name in config['defenders']:
+    for name in set(config['defenders'])|{'pplx'}:
         for suffix in ('URL','MODEL_ID','CHAT_MODEL','CHECKPOINT_ID','TOOL_ID'):env.pop(name.upper()+'_'+suffix,None)
     return env
 
@@ -95,8 +99,8 @@ def output_for(config,attack_kind):
 
 EXPERIMENT=pipeline.ROOT/'experimenting'
 TASKS=[('baseline','Baseline saja - klasifikasi original, tanpa rewrite'),
-       ('llm','Gemma - baseline + rewrite maksimal 2 langkah'),
-       ('gan','GAN SST - baseline + kandidat + klasifikasi akhir'),
+       ('llm','Gemma - maksimal 2 rewrite + validasi PPLX + klasifikasi'),
+       ('gan','GAN SST - maksimal 2 rewrite + validasi PPLX + klasifikasi'),
        ('all','Gemma + GAN - dua cabang, baseline dipakai ulang')]
 OUTPUT_KEYS={
     ('pilot','baseline'):'tool_pilot_output_dir',
@@ -160,6 +164,10 @@ def show_profile(config,path,selected):
         field('Defender '+name,d.get('model') or '(model belum diisi)')
         field('Endpoint',d['url'])
     field('Attacker Gemma',config['attacker']['model']+' | '+config['attacker']['url'])
+    if config.get('rewrite_evaluator'):
+        evaluator=config['rewrite_evaluator']
+        field('Evaluator validitas','PPLX | '+evaluator['url'])
+        print('Invalid: simpan alasan, hentikan data; hanya VALID dikirim ke defender.')
     print('GAN: model SST lokal di CPU. Label spam/ham tetap berasal dari defender.')
     print('Pilot: 10 original (5 spam + 5 ham). Benchmark: seluruh dataset.')
 
@@ -167,12 +175,12 @@ def show_profile(config,path,selected):
 def build_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
     validate_paths(config)
     pipeline.selected_models(config,selected)
-    if mode=='pilot' and selected!='pplx':
+    if mode=='pilot' and config['profile']=='experimenting' and selected!='pplx':
         raise ValueError('Pilot koneksi 10 data saat ini khusus PPLX. Pilih PPLX di Pengaturan; model lain tersedia di benchmark.')
     steps=['baseline']+(['llm','gan'] if task=='all' else [task] if task!='baseline' else [])
     plan=[]
     for step in steps:
-        if mode=='pilot':
+        if mode=='pilot' and config['profile']=='experimenting':
             command=[sys.executable,str(HERE/'pilot_openwebui.py'),'--config',str(path),
                      '--profile-routes','--attack','none' if step=='baseline' else step]
         else:
@@ -181,6 +189,11 @@ def build_plan(path,config,selected,mode,task,retry=False,dry=False,check=False)
             if step=='baseline':
                 command=[item for item in command if item!='--reuse-step1']
                 command.append('--baseline-only')
+        if config.get('rewrite_evaluator') and not (mode=='pilot' and config['profile']=='experimenting'):
+            command+=['--output-dir',str(destination(config,mode,step))]
+            if mode=='pilot':command.append('--pilot')
+            if step!='baseline' and destination(config,mode,'baseline')!=destination(config,mode,step):
+                command+=['--baseline-from',str(destination(config,mode,'baseline'))]
         if retry:command.append('--retry-errors')
         if dry:command.append('--dry-run')
         if check:command.append('--check-server')
@@ -270,15 +283,16 @@ def save_profile(path,config):
     if config['profile']=='main' and path.is_relative_to(EXPERIMENT.resolve()):
         raise ValueError('Profil lokal main harus terpisah dari experimenting.')
     validate_paths(config)
+    from validity_pipeline import configuration
+    configuration(config)
     pipeline.atomic_json(path,config)
     print('Pengaturan tersimpan. Perubahan model/endpoint memerlukan folder output baru.')
 
 
 def settings(path,save_path,config,selected):
     options=[('select','Pilih defender'),('defender','Edit model / endpoint defender'),
-             ('attacker','Edit model / endpoint attacker Gemma'),('outputs','Ganti folder hasil'),
-             ('gan','Bobot GAN dan seed'),('prepare','Siapkan bobot GAN'),
-             ('add','Tambah defender'),('history','Gunakan rewrite Step 1 historis (lanjutan)')]
+             ('attacker','Edit model / endpoint attacker Gemma'),('evaluator','Edit endpoint evaluator PPLX'),('outputs','Ganti folder hasil'),
+             ('gan','Bobot GAN dan seed'),('prepare','Siapkan bobot GAN')]
     while True:
         choice=choose('PENGATURAN | '+config['profile'],options)
         if choice is None:return path,config,selected
@@ -298,6 +312,7 @@ def settings(path,save_path,config,selected):
             if candidate['defenders'][name]['transport']=='direct' and name=='pplx' and not candidate['defenders'][name].get('template'):
                 raise ValueError('Direct PPLX memerlukan template request terverifikasi.')
         elif choice=='attacker':candidate['attacker']=edit_endpoint(candidate['attacker'],True)
+        elif choice=='evaluator':candidate['rewrite_evaluator']=edit_endpoint(candidate['rewrite_evaluator'])
         elif choice=='outputs':
             key=choose('Folder hasil',[ (OUTPUT_KEYS[m,t],m+' / '+t+' - '+str(destination(config,m,t)))
                       for m,t in [('pilot','baseline'),('pilot','llm'),('pilot','gan'),('full','llm'),('full','gan')]])
@@ -327,8 +342,8 @@ def settings(path,save_path,config,selected):
 def help_text(config):
     banner('CARA KERJA')
     print('1. Klasifikasi original. HAM dan spam yang lolos baseline tidak di-attack.')
-    print('2. Gemma: rewrite 1 -> klasifikasi -> jika masih SPAM, rewrite 2.')
-    print('3. GAN: kandidat SST -> probe -> klasifikasi akhir.')
+    print('2. Gemma dan GAN: rewrite -> validasi PPLX -> hanya VALID diklasifikasikan.')
+    print('3. Invalid berhenti; valid masih SPAM lanjut Step 2. Maksimal dua step per cabang.')
     print('4. CSV, waktu, dan checkpoint disimpan; hasil OK dilewati saat resume.')
     print('\nMulai: menu 1 -> Gemma + GAN -> Jalankan.')
     print('Lanjutkan error: menu 3 -> ukuran data yang sama -> pekerjaan yang sama.')
@@ -345,7 +360,7 @@ def main(argv=None):
     parser.add_argument('--show',action='store_true',help='Tampilkan profil saja; tanpa API')
     parser.add_argument('--mode',choices=('pilot','full'),default='pilot')
     parser.add_argument('--task',choices=('baseline','llm','gan','all'),help='Jalankan tanpa menu interaktif')
-    parser.add_argument('--model',help='Defender untuk benchmark; pilot koneksi khusus pplx')
+    parser.add_argument('--model',help='Defender: experimenting=pplx, main=clef/d3/all')
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--check-server',action='store_true')
     parser.add_argument('--retry-errors',action='store_true')

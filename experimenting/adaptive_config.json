@@ -2,7 +2,7 @@
   "profile": "experimenting",
   "dataset": "dataset/paper_baseline3000.csv",
   "step1_bank": "dataset/paper_step1_bank.csv",
-  "output_dir": "experimenting/outputs/paper3000_adaptive",
+  "output_dir": "experimenting/outputs/paper3000_validated_llm_v1",
   "attacker": {
     "transport": "openai",
     "url": "https://llms.si-lab.org/api/chat/completions",
@@ -20,30 +20,29 @@
       "tool_id": "server:pplxdeciderflash",
       "revision": "",
       "key_env": "OWUI_API_KEY"
-    },
-    "clef": {
-      "transport": "openwebui",
-      "url": "https://llms.si-lab.org/api/chat/completions",
-      "model": "decision_spam.clef",
-      "revision": "",
-      "key_env": "OWUI_API_KEY"
-    },
-    "d3": {
-      "transport": "openwebui",
-      "url": "https://llms.si-lab.org/api/chat/completions",
-      "model": "decision_spam.d3",
-      "revision": "",
-      "key_env": "OWUI_API_KEY"
     }
   },
   "default_model": "pplx",
   "active_models": [
     "pplx"
   ],
-  "tool_pilot_output_dir": "experimenting/outputs/pplx_gemma_fixed_pilot10",
-  "gan_output_dir": "experimenting/outputs/paper3000_gan",
+  "tool_pilot_output_dir": "experimenting/outputs/validated_baseline_pilot10_v1",
+  "gan_output_dir": "experimenting/outputs/paper3000_validated_gan_v1",
   "gan": {
     "resource_dir": ".cache/openattack_gan/AttackAssist.SGAN",
     "seed": 20261104
-  }
+  },
+  "rewrite_evaluator": {
+    "transport": "tool",
+    "url": "https://llms.si-lab.org/api/chat/completions",
+    "model": "google/gemma-3-27b-it",
+    "tool_id": "server:pplxdeciderflash",
+    "revision": "",
+    "key_env": "OWUI_API_KEY",
+    "role": "pplx_validity",
+    "rubric_version": "rewrite_validity_v1"
+  },
+  "protocol": "validity_gated_v1",
+  "tool_llm_pilot_output_dir": "experimenting/outputs/validated_llm_pilot10_v1",
+  "tool_gan_pilot_output_dir": "experimenting/outputs/validated_gan_pilot10_v1"
 }

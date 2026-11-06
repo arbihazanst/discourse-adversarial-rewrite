@@ -1,143 +1,108 @@
-# Decision Research — Main
+# Decision-model adversarial rewrite — main/server
 
-Pipeline server untuk mengklasifikasikan **3.000 email**, membuat rewrite dengan **Gemma atau GAN**, lalu menguji perubahan label **SPAM → NOT_SPAM**.
+Main menjalankan **Clef dan d3 sebagai defender**, **PPLX sebagai evaluator validitas**, serta dua jalur rewrite terpisah: **Gemma 3** dan **GAN SST**. Setiap jalur maksimal dua step. PPLX tidak menjadi classifier spam/ham pada profil main.
 
-## Mulai
+## Mulai di server
 
-Gunakan Python 3.10+ pada environment yang sama untuk CLI dan dependensi. Jika belum ada .env, salin [.env.example](.env.example), lalu isi **OWUI_API_KEY**. Jangan menimpa file yang sudah berisi key.
+Dari root proyek, gunakan Python 3.10+:
 
-| Terminal                  | Perintah dari root proyek |
-| ------------------------- | ------------------------- |
-| Linux / server / Git Bash | bash run_cli.sh           |
-| PowerShell / CMD          | .\run_cli.bat             |
+```bash
+python -m pip install -r requirements.txt
+cp .env.example .env
+bash run_cli.sh
+```
 
-Hanya dua launcher main tersebut yang diperlukan. Launcher lama per model/metode sudah dihapus; semua pilihan tersedia dalam CLI.
+Isi `OWUI_API_KEY` pada `.env`. Script membaca file ini otomatis; jangan masukkan API key ke JSON konfigurasi.
 
-## Menu
+Pada menu **5 — Pengaturan**, periksa endpoint dan isi revision/checkpoint + quantization yang sebenarnya untuk setiap model. Endpoint dan model mengikuti profil JSON yang ditampilkan CLI. Main memerlukan revision yang terverifikasi, termasuk untuk pilot server; jangan mengisi revision palsu hanya untuk melewati pemeriksaan.
+
+| Peran | Layanan default |
+|---|---|
+| Defender Clef | llama.cpp System One: `http://127.0.0.1:30005/v1/systemone` |
+| Defender d3 | llama.cpp System One: `http://127.0.0.1:30006/v1/systemone` |
+| Attacker Gemma 3 | SGLang: `http://127.0.0.1:30007/v1/chat/completions` |
+| Evaluator PPLX | Open WebUI: `https://llms.si-lab.org/api/chat/completions`, tool `server:pplxdeciderflash` |
+
+Model penghubung Open WebUI adalah `google/gemma-3-27b-it`; keputusan validitas harus berasal dari output tool PPLX yang terverifikasi, bukan jawaban chat Gemma. Clef/d3 dapat diubah ke Pipe Open WebUI jika Pipe sudah tersedia. CLI tidak menyalakan atau memindahkan container GPU.
+
+Konfigurasi dasar: `decision_models/adaptive_main.json`. Perubahan menu disimpan pada `decision_models/adaptive_local.json`, yang mendapat prioritas. Untuk memilih konfigurasi dasar secara eksplisit, tambahkan `--config decision_models/adaptive_main.json`.
+
+## Menu dan perintah
+
+1. **Pilot:** 10 original, terdiri dari 5 SPAM + 5 NOT_SPAM.
+2. **Benchmark:** seluruh dataset.
+3. **Resume/retry:** lanjutkan pekerjaan yang sama; ulangi hanya tahap error.
+4. **Hasil/evaluasi:** lihat CSV dan hitung metrik kemiripan tanpa memanggil attacker/defender.
+5. **Pengaturan:** model, endpoint, evaluator, folder output, seed dan persiapan bobot GAN.
+6. **Bantuan.**
+
+```bash
+# Pemeriksaan offline: tidak menghubungi model atau mengunduh bobot
+bash run_cli.sh --mode pilot --task all --model all --dry-run
+
+# Pilot server: baseline + Gemma + GAN
+bash run_cli.sh --mode pilot --task all --model clef
+
+# Benchmark penuh setelah konfigurasi dan pilot diverifikasi
+bash run_cli.sh --mode full --task all --model all
+
+# Lanjutkan dan ulangi hanya error
+bash run_cli.sh --mode full --task all --model all --retry-errors
+```
+
+`--task` menerima `baseline`, `llm`, `gan`, atau `all`. Dua cabang memakai ulang baseline yang identitas dataset/modelnya cocok. Windows memakai `run_cli.bat` dengan argumen yang sama. Tidak ada launcher tambahan per model.
+
+## Dataset dan alur
+
+Input adalah `dataset/paper_baseline3000.csv`: 3.000 original, 1.500 SPAM + 1.500 NOT_SPAM. Baseline mengklasifikasikan semua input terpilih. Rewrite hanya berlaku untuk original berlabel SPAM yang juga diprediksi SPAM oleh defender terkait. Pool Clef dan d3 dapat berbeda.
 
 ```text
-1. Pilot 10 data - mulai di sini
-2. Benchmark seluruh 3.000 data
-3. Resume / ulangi tahap yang error
-4. Hasil CSV dan evaluasi
-5. Pengaturan model, endpoint, output, dan GAN
-6. Panduan singkat
-0. Keluar
+Baseline Clef/d3
+  -> pilih true-positive SPAM
+  -> Gemma ATAU GAN: rewrite 1
+  -> validasi PPLX terhadap ORIGINAL
+       INVALID / UNCERTAIN / NO_CHANGE -> catat -> selesai untuk data/jalur ini
+       VALID -> klasifikasi defender
+           NOT_SPAM -> flip valid -> selesai
+           SPAM -> rewrite 2 dari kandidat pertama
+               -> validasi PPLX terhadap ORIGINAL
+                   INVALID / UNCERTAIN / NO_CHANGE -> catat -> selesai
+                   VALID -> klasifikasi defender -> selesai
 ```
 
-**Pilot lengkap:** pilih **1 → 4 (Gemma + GAN) → 1 (Jalankan)**. Pilot PPLX mengambil 5 spam dan 5 ham dari dataset utama. Pilih **Periksa konfigurasi offline** untuk pemeriksaan tanpa API.
+Error teknis tidak berarti INVALID: simpan error, jangan klasifikasikan, lalu gunakan resume/retry. Invalid Step 1 tidak mendapat Step 2. Tidak ada percobaan rewrite ketiga.
 
-**Baseline saja:** pilih **1 → 1 → 1**. Pilihan ini tidak menghasilkan rewrite.
+Rubrik berada di `scripts/rewrite_validity.py`: tujuan komunikasi, informasi penting, konsistensi makna, tidak menambah klaim material, dan koherensi. Masing-masing dinilai dengan kategori `PASS/FAIL/UNCERTAIN`. Semua PASS menghasilkan VALID; satu FAIL menghasilkan INVALID; tanpa FAIL tetapi ada UNCERTAIN menghasilkan UNCERTAIN. Lima panggilan tool per kandidat disimpan dalam cache per kriteria. Alasan penolakan adalah nama kriteria yang gagal, bukan penjelasan buatan model chat.
 
-**Benchmark penuh:** isi revision/checkpoint sebenarnya melalui Pengaturan, lalu pilih **2**, metode, dan Jalankan. Model lain dapat dipilih di Pengaturan; pilot koneksi khusus PPLX.
+## Gemma dan GAN
 
-Sebelum eksekusi, CLI memperlihatkan ukuran data, defender, urutan tahap, dan folder hasil. Jika satu tahap error, tahap berikutnya berhenti.
+Prompt Gemma tetap berasal dari `decision_models/paper_prompts.json`, sesuai prompt sumber yang sudah ada. Rubrik validasi merupakan tambahan protokol baru, tidak mengganti prompt attacker.
 
-## Model dan endpoint
+GAN memakai generator SST dari sumber OpenAttack yang disertakan. Kandidat diambil **sebelum** query defender internal; kemudian melewati PPLX dan baru boleh diklasifikasikan. Step 2 GAN adalah perluasan protokol, bukan klaim reproduksi identik dengan eksperimen sumber yang satu langkah. Seed dibedakan menurut sampel dan step. Kualitas bahasa GAN tidak dijamin; teks rusak dapat ditolak evaluator.
 
-| Peran               | Konfigurasi main                                         |
-| ------------------- | -------------------------------------------------------- |
-| Pemanggil PPLX Tool | google/gemma-3-27b-it melalui Open WebUI                 |
-| Tool classifier     | server:pplxdeciderflash                                  |
-| Open WebUI          | https://llms.si-lab.org/api/chat/completions             |
-| Attacker Gemma      | SGLang http://127.0.0.1:30007/v1/chat/completions        |
-| Attacker model ID   | google/gemma-3-27b-it; cocokkan dengan /v1/models server |
-| GAN                 | Bobot SST lokal di CPU                                   |
-| Clef / d3           | Open WebUI Pipe decision_spam.clef / decision_spam.d3    |
-
-PPLX adalah defender aktif bawaan. Clef/d3 belum diaktifkan untuk pilihan semua model. Pipe Clef/d3 menargetkan **llama.cpp /v1/systemone**, port host **30005 / 30006**; pada jaringan Docker gunakan nama container dan port internal 8080. Layanan ini tidak memakai Ollama. CLI tidak mengelola Docker.
-
-Gemma pemanggil tool dan Gemma attacker mempunyai peran berbeda. Label hanya diterima dari hasil PPLX Tool terverifikasi; request rewrite tidak meminta tool.
-
-Profil bawaan: [adaptive_main.json](decision_models/adaptive_main.json). Perubahan menu disimpan ke **decision_models/adaptive_local.json**, lalu otomatis dipakai saat membuka CLI lagi. Model/endpoint/revision pada profil menjadi acuan; .env menyediakan kredensial. Ubah route melalui menu. API key tidak ditampilkan atau disimpan dalam JSON.
+Siapkan bobot melalui menu 5 — Siapkan bobot GAN, atau:
 
 ```bash
-# Memilih profil eksplisit
-bash run_cli.sh --config decision_models/adaptive_main.json
+python scripts/prepare_gan.py
 ```
 
-## Alur sesuai source eksperimen
+Pip tidak mengunduh bobot GAN. Run akan memberi pesan jika bobot belum tersedia.
 
-Input: [paper_baseline3000.csv](dataset/paper_baseline3000.csv), **1.500 spam + 1.500 ham**. Teks, urutan, dan duplikat cohort yang dipulihkan dipertahankan. Prediksi GPT-OSS lama tidak menjadi prediksi defender baru. [Provenance](dataset/paper_baseline3000.provenance.json).
+## Output, checkpoint, dan evaluasi
 
-```text
-Original -> klasifikasi baseline
-  |
-  +-- true SPAM + prediksi SPAM -> eligible
-  |      |
-  |      +-- Gemma: rewrite 1 -> klasifikasi
-  |      |             jika masih SPAM -> rewrite 2 -> klasifikasi
-  |      |
-  |      +-- GAN SST: kandidat -> probe -> klasifikasi akhir
-  |
-  +-- HAM / spam yang lolos baseline -> tidak di-attack
-```
+Pilot disimpan pada `outputs/validated_baseline_pilot10_v1`, `outputs/validated_llm_pilot10_v1`, dan `outputs/validated_gan_pilot10_v1`. Benchmark menggunakan `outputs/paper3000_validated_llm_v1` dan `outputs/paper3000_validated_gan_v1`, dengan subfolder defender.
 
-Gemma menggunakan dua prompt dari **OpenAttack-Share/LLMattLLM.py**. Step 2 hanya berjalan bila Step 1 masih SPAM. GAN mengikuti default SST **GANAttacker()** pada GANSSILAB.py; kandidat yang ditolak tetap tercatat dan original digunakan jika tidak ada adversarial yang dikembalikan.
+| File | Isi |
+|---|---|
+| `step1_rewrites.csv`, `step2_rewrites.csv` | Kandidat, status/kriteria validitas, klasifikasi jika dilakukan, dan waktu per tahap |
+| `rewrites/step1/*.csv`, `rewrites/step2/*.csv` | Satu CSV tersendiri per sampel dan step |
+| `validity_summary.csv` | Jumlah valid/invalid/uncertain/error/no-change dan alasan per step |
+| `sample_results.csv` | Status akhir setiap original dan waktu proses |
+| `metrics.json`, `metrics.csv` | Baseline, valid flip, acceptance rate dan ASR |
+| `events.csv`, `responses/`, `checkpoint.json`, `run.json` | Log tahap, respons mentah, identitas run, dan resume |
 
-Kedua cabang independen dan memakai original yang sama. **GAN tidak menyerang hasil Gemma.**
+CSV individual ditulis setiap tahap; ringkasan diperbarui berkala dan pada akhir/interupsi. Resume memakai event log yang disimpan setelah tiap tahap. Identitas mencakup dataset, konfigurasi model, prompt, rubrik dan kontrak generator. Gunakan folder baru jika kontrak berubah. Hasil lama tanpa validasi tetap terpisah.
 
-## Persiapan GAN
+ASR keseluruhan = jumlah original unik dengan flip VALID dalam maksimal dua step / pool true-positive SPAM. ASR kandidat valid dilaporkan terpisah. Denominator nol ditulis kosong/null; error yang belum selesai menghasilkan batas bawah/atas, bukan ASR final. Waktu pada CSV adalah waktu tahap yang diamati, termasuk overhead/cache; bukan waktu GPU murni atau total seluruh retry historis.
 
-Di environment Python yang digunakan CLI:
-
-```bash
-python -m pip install -r scripts/requirements-gan.txt
-```
-
-Buka **5 Pengaturan → 6 Siapkan bobot GAN**. Enter pada folder sumber mengunduh resource resmi; isi folder jika bobot sudah tersedia. Folder bobot dan seed dapat diubah melalui Pengaturan.
-
-## Resume dan hasil
-
-Gunakan **3 Resume**, pilih ukuran run dan metode yang sama, lalu Lanjutkan + ulangi error. Hasil OK tidak diulang. Ctrl+C menghentikan proses dengan checkpoint. Simpan folder output beserta events.csv dan responses/.
-
-Perubahan dataset, model, endpoint, revision, atau prompt memerlukan output baru. Jangan menghapus checkpoint untuk mencampur eksperimen.
-
-| Pekerjaan                  | Folder default                         |
-| -------------------------- | -------------------------------------- |
-| Pilot baseline             | outputs/pplx_gemma_fixed_pilot10/pplx/ |
-| Pilot Gemma                | outputs/pplx_llm_pilot10/pplx/         |
-| Pilot GAN                  | outputs/pplx_gan_pilot10/pplx/         |
-| Benchmark Gemma / baseline | outputs/paper3000_adaptive/<model>/    |
-| Benchmark GAN              | outputs/paper3000_gan/<model>/         |
-
-File utama: **sample_results.csv**, **metrics.csv**, **step1_rewrites.csv**, **step2_rewrites.csv**, atau **gan_rewrites.csv**. CSV individual berada di rewrites/step1/, rewrites/step2/, dan rewrites/gan/. Waktu klasifikasi/generation tersimpan di CSV; latency API mencakup jaringan, orchestration, dan tool.
-
-**4 Hasil CSV dan evaluasi** menampilkan run tersimpan. Pilih evaluasi leksikal tanpa model embedding, atau evaluasi lengkap untuk SBERT. Evaluasi tidak memanggil classifier/attacker lagi. [Definisi metrik](decision_models/EVALUATION.md).
-
-## Tanpa menu interaktif
-
-```bash
-# Tanpa API atau inferensi
-bash run_cli.sh --task all --dry-run
-
-# Pilot baseline + Gemma + GAN
-bash run_cli.sh --task all
-
-# Lanjutkan pilot, ulangi hanya ERROR
-bash run_cli.sh --task all --retry-errors
-
-# Benchmark penuh setelah revision siap
-bash run_cli.sh --mode full --task all
-
-# Satu model yang sudah tersedia
-bash run_cli.sh --mode full --task gan --model clef
-```
-
-Opsi sama tersedia pada run_cli.bat. **--task**: baseline, llm, gan, all. **--mode**: pilot (default), full. **--show** menampilkan profil tanpa API. **--check-server** bersama --task memeriksa layanan/dependensi; pada benchmark penuh pemeriksaannya hanya konfigurasi/revision/resume, bukan bukti inferensi berhasil.
-
-## Jika ada masalah
-
-| Gejala                   | Tindakan                                                                        |
-| ------------------------ | ------------------------------------------------------------------------------- |
-| Tidak ada rewrite        | Pilih Gemma/GAN, bukan baseline; periksa jumlah eligible                        |
-| Key tidak terbaca        | Isi OWUI_API_KEY dalam .env root; nilai terminal nonkosong lebih diprioritaskan |
-| Timeout                  | Lanjutkan melalui menu 3; hasil valid tetap tersimpan                           |
-| Parameter tool berbeda   | Periksa raw response; teks dan kategori harus sama dengan kontrak SPAM/NOT_SPAM |
-| Identitas resume berbeda | Kembalikan konfigurasi yang sama atau pilih output baru                         |
-| GAN belum siap           | Instal dependensi, siapkan bobot melalui Pengaturan                             |
-| CSV terkunci             | Tutup file di Excel, lalu resume                                                |
-
-Pilot mengizinkan revision belum diketahui dengan penanda **UNVERIFIED_WEIGHTS**. Itu bukan benchmark dengan bobot terpin. Label flip belum membuktikan makna tetap terjaga. Layanan SGLang GPU server harus tersedia saat main dijalankan.
-
-Detail: [konfigurasi](decision_models/ADAPTIVE_README.md) · [GAN](decision_models/GAN.md) · [evaluasi](decision_models/EVALUATION.md).
+Menu 4 menyediakan evaluasi SBERT, BLEU, ROUGE-L, Jaccard, length ratio dan keyword retention dari teks tersimpan. Evaluasi leksikal dapat berjalan tanpa unduhan SBERT. Hasil validasi PPLX tetap dibedakan dari skor kemiripan dan validasi manusia. Kalibrasikan rubrik dengan audit manual sebelum benchmark penuh.

@@ -167,7 +167,10 @@ def baseline_source(root,name,baseline_id,valid_ids):
     saved=json.loads(path.read_text(encoding='utf-8'))
     if saved['identities']['baseline']!=baseline_id:
         raise ValueError(f'{name}: baseline source uses a different dataset/model/endpoint/revision; choose the matching source or --no-reuse-baseline')
-    cls=GanLedger if saved.get('attack_kind')=='gan' else core.Ledger
+    if saved.get('protocol')=='validity_gated_v1':
+        from validity_pipeline import ValidityLedger
+        cls=ValidityLedger
+    else:cls=GanLedger if saved.get('attack_kind')=='gan' else core.Ledger
     return cls(root,name,saved['identities'],valid_ids)
 
 
@@ -200,6 +203,9 @@ def main(argv=None,config_override=None):
         raise ValueError('Invalid limit/retries/timeout/delay')
     if args.pilot and args.limit:raise ValueError('Choose pilot or limit')
     config=copy.deepcopy(config_override) if config_override is not None else json.loads(args.config.read_text(encoding='utf-8-sig'))
+    if config.get('rewrite_evaluator'):
+        from validity_pipeline import main as gated_main
+        return gated_main(argv,config_override=config,attack_kind='gan')
     dataset=core.rooted(args.dataset or config['dataset'])
     output=core.rooted(args.output_dir or config.get('gan_output_dir','outputs/paper3000_gan'))
     if config['profile']=='experimenting' and not output.is_relative_to((core.ROOT/'experimenting').resolve()):

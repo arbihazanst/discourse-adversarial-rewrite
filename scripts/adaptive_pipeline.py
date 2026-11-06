@@ -361,13 +361,15 @@ def execute_stage(ledger,rows,stage,defender,attacker,prompts,bank,args):
             event['status']='OK'
         except Exception as exc:
             event.update(status='ERROR',error=str(exc)[:1000])
+        if getattr(ledger,'validity_gated',False):
+            event['latency_ms']=round((time.perf_counter()-start)*1000,3)
         ledger.commit(event,artifact,selected)
-        if stage!='baseline':
+        if stage!='baseline' and not getattr(ledger,'validity_gated',False):
             save_individual_rewrite(ledger,row,1 if stage.endswith('1') else 2)
         measured+=time.perf_counter()-start
         print(f'{sid} {stage} {event["status"]} {event["label"]} | '+api.progress(n,len(pending),measured,args.delay),flush=True)
         if args.delay and n<len(pending):time.sleep(args.delay)
-    if stage!='baseline':export_rewrites(ledger,args.selected)
+    if stage!='baseline' and not getattr(ledger,'validity_gated',False):export_rewrites(ledger,args.selected)
 
 
 def report(ledger,rows,baseline_only):
@@ -454,6 +456,9 @@ def main(argv=None,config_override=None):
         raise ValueError('Invalid limit/retry/timeout/delay')
     if args.pilot and args.limit:raise ValueError('Choose pilot or limit, not both')
     config=copy.deepcopy(config_override) if config_override is not None else json.loads(args.config.read_text(encoding='utf-8-sig'))
+    if config.get('rewrite_evaluator'):
+        from validity_pipeline import main as gated_main
+        return gated_main(argv,config_override=config,attack_kind='llm')
     dataset=rooted(args.dataset or config['dataset']);output=rooted(args.output_dir or config['output_dir'])
     source=rooted(args.baseline_from) if args.baseline_from else None
     if source==output:raise ValueError('Baseline source and output must differ')

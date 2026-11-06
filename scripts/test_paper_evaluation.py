@@ -83,7 +83,7 @@ class PaperTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=menu.pipeline.ROOT/'scripts') as tmp:
             save=Path(tmp)/'local profile.json'
             # Select d3, save a different output directory, then offline check.
-            answers=['5','1','3','4','4','outputs/menu_test','0','2','1','2','0']
+            answers=['5','1','2','5','4','outputs/menu_test','0','2','1','2','0']
             with patch('builtins.input',side_effect=answers),patch.object(menu,'run_command',return_value=0) as run:
                 self.assertEqual(menu.main(['--config',str(menu.MAIN),'--save-config',str(save)]),0)
             self.assertEqual(menu.load_profile(save)['output_dir'],'outputs/menu_test')

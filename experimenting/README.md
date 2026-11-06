@@ -1,129 +1,102 @@
-# Experimenting — pilot PPLX, Gemma, dan GAN
+# Pilot lokal — PPLX classifier dan evaluator
 
-Uji pipeline pada **10 original** (5 spam + 5 ham), dari dataset yang sama dengan main. Hasil selalu disimpan di folder experimenting.
+Profil ini untuk menguji pipeline sebelum Clef/d3 tersedia di server. **PPLX memiliki dua peran dengan permintaan yang terpisah**:
 
-## Buka CLI
+| Peran | Model/layanan |
+|---|---|
+| Classifier SPAM/NOT_SPAM | Tool PPLX `server:pplxdeciderflash` |
+| Evaluator validitas rewrite | Tool PPLX yang sama, dengan rubrik dan kategori PASS/FAIL/UNCERTAIN |
+| Attacker LLM | `google/gemma-3-27b-it` melalui Open WebUI |
+| Attacker GAN | Generator SST lokal di CPU |
 
-Dari root proyek:
+Open WebUI menggunakan `https://llms.si-lab.org/api/chat/completions`. Model penghubung tool PPLX adalah `google/gemma-3-27b-it`. Tidak ada panggilan Clef/d3, Ollama, atau port GPU lokal dari profil ini. Hasil pilot tidak mewakili robustness Clef/d3; classifier dan evaluator berbagi backend PPLX sehingga bukan penilaian yang independen.
 
-~~~powershell
+## Jalankan pilot 10 data
+
+Dari **root proyek**, aktifkan lingkungan Python 3.10+, lalu:
+
+```powershell
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+```
+
+Jika `.env` sudah ada, cukup edit file itu; jangan menimpanya. Isi `OWUI_API_KEY` dengan key sendiri. Script membaca `.env` root secara otomatis.
+
+```powershell
 .\experimenting\run_cli.bat
-~~~
+```
 
-Git Bash / Linux:
+Pada Git Bash/Linux:
 
-~~~bash
+```bash
 bash experimenting/run_cli.sh
-~~~
+```
 
-Dari dalam folder ini cukup run_cli.bat atau bash run_cli.sh. Gunakan Python 3.10+. Isi **OWUI_API_KEY** di **.env root proyek**; file dimuat otomatis.
+Pilih **1 — Pilot 10 data**, lalu **Gemma + GAN**. Pilihan ini menjalankan baseline, cabang Gemma, dan cabang GAN. Siapkan bobot GAN sekali melalui **5 — Pengaturan → Siapkan bobot GAN** sebelum memilih kedua cabang.
 
-Hanya kedua launcher CLI ini diperlukan. Launcher lama per model/metode sudah digantikan oleh menu.
+Tanpa menu:
 
-## Cara paling mudah
-
-1. Buka CLI, pilih **1 — Pilot 10 data**.
-2. Pilih **4 — Gemma + GAN**.
-3. Periksa folder hasil, pilih **1 — Jalankan / lanjutkan**.
-
-Urutannya **baseline → Gemma → GAN**. Kedua cabang menggunakan ulang baseline. Jika hasil sudah selesai, pilihan yang sama tidak mengulang inferensi.
-
-Untuk baseline saja: **1 → 1 → 1**. Untuk satu cabang, pilih Gemma atau GAN pada langkah 2.
-
-## Menu
-
-~~~text
-1. Pilot 10 data
-2. Benchmark seluruh 3.000 data
-3. Resume / ulangi tahap yang error
-4. Hasil CSV dan evaluasi
-5. Pengaturan model, endpoint, output, dan GAN
-6. Panduan singkat
-0. Keluar
-~~~
-
-Pilih **Periksa konfigurasi offline** sebelum eksekusi untuk pemeriksaan tanpa API. **Cek layanan** pada pilot memeriksa katalog model/tool; inferensi hanya dibuktikan oleh run nyata. Menu 2 menjalankan seluruh dataset dan memerlukan revision sebenarnya.
-
-## Model dan alur
-
-| Peran | Pengaturan |
-| --- | --- |
-| API | https://llms.si-lab.org/api/chat/completions |
-| Pemanggil PPLX Tool | google/gemma-3-27b-it |
-| Tool classifier | server:pplxdeciderflash |
-| Attacker rewrite | google/gemma-3-27b-it melalui Open WebUI |
-| GAN | Model SST lokal di CPU |
-| Defender aktif | PPLX; Clef/d3 belum dijalankan |
-
-Gemma memanggil PPLX untuk klasifikasi. Request terpisah membuat rewrite tanpa tool. Label berasal dari hasil PPLX Tool; parameter SPAM/NOT_SPAM diverifikasi dari metadata eksekusi.
-
-Attacker profil ini memakai Open WebUI, sedangkan main memakai SGLang port 30007. Profil ini tidak membutuhkan Ollama port 11435.
-
-~~~text
-10 original -> baseline PPLX
-  |
-  +-- true SPAM + prediksi SPAM -> dua cabang independen
-        |
-        +-- Gemma: rewrite 1 -> klasifikasi
-        |             jika masih SPAM -> rewrite 2 -> klasifikasi
-        |
-        +-- GAN SST: kandidat -> probe -> klasifikasi akhir
-~~~
-
-Prompt Gemma sama dengan source **LLMattLLM.py**; GAN mengikuti default SST **GANAttacker()** dari GANSSILAB.py. HAM dan false negative baseline tidak ditulis ulang. GAN tidak menyerang hasil Gemma.
-
-## Persiapan GAN satu kali
-
-Dari root proyek, pada environment Python yang digunakan CLI:
-
-~~~powershell
-python -m pip install -r scripts/requirements-gan.txt
-~~~
-
-Buka **5 Pengaturan → 6 Siapkan bobot GAN**. Enter mengunduh resource resmi; isi folder jika bobot sudah tersedia. EXPERIMENT_PYTHON dapat menunjuk executable tertentu; default launcher memakai environment terminal.
-
-## Folder hasil
-
-Path berikut relatif terhadap experimenting/:
-
-| Hasil | Folder |
-| --- | --- |
-| Baseline pilot | outputs/pplx_gemma_fixed_pilot10/pplx/ |
-| Gemma pilot | outputs/pplx_llm_pilot10/pplx/ |
-| GAN pilot | outputs/pplx_gan_pilot10/pplx/ |
-| Benchmark Gemma | outputs/paper3000_adaptive/<model>/ |
-| Benchmark GAN | outputs/paper3000_gan/<model>/ |
-
-**Gemma:** step1_rewrites.csv, step2_rewrites.csv; CSV individual di rewrites/step1/ dan rewrites/step2/.
-
-**GAN:** gan_rewrites.csv; CSV individual di rewrites/gan/. candidate_text menyimpan kandidat termasuk yang ditolak. returned_text kosong berarti tidak ditemukan adversarial yang lolos, bukan generator tidak berjalan.
-
-**Semua run:** sample_results.csv, metrics.csv, events.csv, checkpoint.json, serta raw response di responses/. CSV menyimpan waktu generation/klasifikasi.
-
-## Resume dan pengaturan
-
-- **Menu 3:** pilih ukuran run/metode yang sama; lanjutkan pekerjaan belum selesai dan ulangi ERROR.
-- **Menu 4:** pilih run tersimpan untuk melihat lokasi CSV dan evaluasi. Evaluasi leksikal tanpa model embedding; SBERT membutuhkan embedding. Tidak ada inferensi ulang.
-- **Menu 5:** pilih model, edit endpoint, dan ganti output. Disimpan ke **experimenting/adaptive_local.json**, terpisah dari main.
-
-CLI memakai route/model/revision dari profil; .env menyediakan kredensial. Jangan mengubah model/dataset/prompt lalu memakai output lama. Ctrl+C menyimpan progres; tutup CSV di Excel bila file terkunci.
-
-## Tanpa menu
-
-~~~powershell
-.\experimenting\run_cli.bat --show
+```powershell
+# Offline; tidak memanggil API dan tidak mengunduh bobot
 .\experimenting\run_cli.bat --task all --dry-run
+
+# Baseline + Gemma + GAN + metrik validitas/klasifikasi/ASR
 .\experimenting\run_cli.bat --task all
-.\experimenting\run_cli.bat --task all --retry-errors
-.\experimenting\run_cli.bat --task baseline
+
+# Hanya baseline dan Gemma
 .\experimenting\run_cli.bat --task llm
+
+# Hanya baseline dan GAN
 .\experimenting\run_cli.bat --task gan
-~~~
 
-Bash memakai opsi sama setelah bash experimenting/run_cli.sh. Gunakan --mode full hanya untuk seluruh dataset.
+# Resume dan ulangi tahap error saja
+.\experimenting\run_cli.bat --task all --retry-errors
+```
 
-## Hasil sebelumnya
+Dataset sama dengan main: `dataset/paper_baseline3000.csv`. Pilot memilih 5 SPAM + 5 NOT_SPAM original. Hanya SPAM yang terdeteksi SPAM oleh PPLX yang masuk rewrite; jumlah rewrite dapat kurang dari lima. Tidak ada penyeimbangan ulang untuk memaksa jumlah serangan tertentu.
 
-Pilot live: 10 baseline valid, 4 spam eligible, 8 rewrite Gemma (0 label flip), dan 4 kandidat GAN (4 label flip). [Catatan validasi](VALIDATION.md). Hasil lama tetap disimpan.
+## Alur masing-masing cabang
 
-Pilot ditandai **UNVERIFIED_WEIGHTS**. Ini bukan benchmark publikasi; label flip belum membuktikan makna tetap terjaga.
+```text
+Baseline PPLX -> true-positive SPAM
+  -> rewrite 1 (Gemma ATAU GAN)
+  -> PPLX evaluator membandingkan original dengan rewrite
+      INVALID -> catat kriteria gagal -> berhenti -> data berikutnya
+      UNCERTAIN / NO_CHANGE -> catat terpisah -> berhenti
+      VALID -> PPLX classifier SPAM/NOT_SPAM
+          NOT_SPAM -> flip valid -> berhenti
+          SPAM -> rewrite 2 dari kandidat pertama
+              -> PPLX evaluator membandingkan ORIGINAL dengan rewrite 2
+                  INVALID / UNCERTAIN / NO_CHANGE -> catat -> berhenti
+                  VALID -> PPLX classifier -> berhenti
+```
+
+Maksimal dua step berlaku untuk Gemma dan GAN. Error API atau respons tidak terverifikasi dicatat sebagai ERROR, bukan INVALID. Tidak ada klasifikasi jika validasi belum berhasil.
+
+Rubrik tetap: tujuan komunikasi, informasi penting, makna, tidak menambah klaim material, dan koherensi. Semua lima kriteria harus PASS. Kode dan instruksi evaluator: `scripts/rewrite_validity.py`. Prompt attacker Gemma: `decision_models/paper_prompts.json`, tetap memakai prompt sumber. Teks email diperlakukan sebagai data, bukan instruksi evaluator.
+
+Untuk audit per kriteria, satu kandidat memerlukan hingga lima panggilan PPLX evaluator. Jadi pilot 10 original bukan hanya 10 panggilan API. Respons per kriteria dicache; resume tidak mengulang kriteria yang sudah selesai. Output assistant biasa tidak diterima sebagai keputusan PPLX. Jika model penghubung mengubah argumen tool, run menyimpan ERROR agar tidak menggunakan keputusan untuk rubrik yang salah.
+
+GAN menghasilkan kandidat sebelum query defender internal. Dua step dan validity gate merupakan perluasan eksperimen sumber. Generator SST dapat menghasilkan teks tidak koheren; teks tersebut tetap disimpan dan ditolak sesuai rubrik, bukan dihitung sebagai serangan berhasil.
+
+## Hasil yang diperiksa
+
+Folder default, masing-masing dengan subfolder `pplx`:
+
+- `experimenting/outputs/validated_baseline_pilot10_v1`
+- `experimenting/outputs/validated_llm_pilot10_v1`
+- `experimenting/outputs/validated_gan_pilot10_v1`
+
+Kedua cabang menghasilkan `step1_rewrites.csv`, `step2_rewrites.csv`, `validity_summary.csv`, `sample_results.csv`, `metrics.json`, dan CSV individual di `rewrites/step1` serta `rewrites/step2`. Kolom mencakup hasil setiap kriteria, alasan penolakan, status klasifikasi/skipped, serta waktu generation/validation/classification. Waktu adalah durasi tahap, bukan waktu GPU murni.
+
+Metrik klasifikasi, acceptance rate dan ASR dihitung otomatis. **Evaluasi kemiripan paper yang lengkap** (SBERT, BLEU, ROUGE-L, Jaccard, length ratio dan keyword retention) dijalankan lewat **menu 4 — Hasil/evaluasi**, tanpa mengulangi inference. Pilihan leksikal tidak membutuhkan SBERT. Invalid/uncertain tetap dapat dianalisis sebagai teks, tetapi tidak dihitung sebagai flip valid.
+
+## Resume dan konfigurasi
+
+Jalankan perintah yang sama untuk resume. `--retry-errors` hanya mengulang tahap error; INVALID tidak diulang. Checkpoint serta raw response disimpan per tahap. Hasil lama tanpa validity gate tidak dimasukkan otomatis ke run baru.
+
+Konfigurasi dasar berada pada `experimenting/adaptive_config.json`; perubahan menu disimpan pada `experimenting/adaptive_local.json`. Profil lokal lama tanpa evaluator ditolak dengan petunjuk memilih konfigurasi baru. Gunakan `--config experimenting/adaptive_config.json` untuk memilih konfigurasi dasar secara eksplisit.
+
+Pilot mengizinkan revision backend belum terverifikasi dan menandainya `UNVERIFIED_WEIGHTS`. Metadata katalog tidak sama dengan revision bobot. Untuk hasil penelitian, audit manual sekitar 50 pasangan rewrite terlebih dahulu, lalu bekukan rubrik dan konfigurasi. Main memakai Clef/d3 untuk klasifikasi, sementara PPLX tetap evaluator.
+
+Status validasi implementasi: tersedia pengujian offline dengan respons model simulasi untuk gate, dua step, retry, resume, parser tool dan pemisahan peran. Keberhasilan respons layanan nyata dan kualitas keputusan PPLX harus diverifikasi melalui pilot Anda.

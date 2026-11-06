@@ -15,7 +15,7 @@ import paper_evaluation as metrics
 DEFAULT_SBERT = 'sentence-transformers/all-MiniLM-L6-v2'
 DEFAULT_REVISION = '1110a243fdf4706b3f48f1d95db1a4f5529b4d41'
 PAIR_FIELDS = ['defender','sample_id','stage','source_step','outcome','predicted_label',
-               'original_sha256','rewrite_sha256',*metrics.METRICS,'semantic_band',
+               'validation_status','original_sha256','rewrite_sha256',*metrics.METRICS,'semantic_band',
                'original_tokens','rewrite_tokens','sbert_original_truncated','sbert_rewrite_truncated',
                'sbert_status','source','cache_key']
 
@@ -74,7 +74,10 @@ def load_run(root, model, dataset_override=None):
         selected=list(by_id)
     if not selected or len(set(selected))!=len(selected) or not set(selected)<=by_id.keys():
         raise ValueError('Invalid saved selection')
-    if saved.get('attack_kind')=='gan':
+    if saved.get('protocol')=='validity_gated_v1':
+        from validity_pipeline import ValidityLedger
+        ledger=ValidityLedger(root,model,saved['identities'],set(by_id))
+    elif saved.get('attack_kind')=='gan':
         from gan_pipeline import GanLedger
         ledger=GanLedger(root,model,saved['identities'],set(by_id))
     else:ledger=pipeline.Ledger(root,model,saved['identities'],set(by_id))
@@ -83,7 +86,8 @@ def load_run(root, model, dataset_override=None):
 
 def evaluate_run(ledger, rows, saved, scorer=None, lexical_only=True):
     folder=ledger.folder/'evaluation'
-    is_gan=saved.get('attack_kind')=='gan'
+    gated=saved.get('protocol')=='validity_gated_v1'
+    is_gan=saved.get('attack_kind')=='gan' and not gated
     contract=dict(evaluation_version=metrics.VERSION,
         lexical='lowercase ASCII alphanumeric tokens; BLEU4 uniform method1 epsilon=.1; ROUGE-L F1 no stemming',
         content_retention='top10 frequency tokens length>2; supplied archive stopwords; empty keyword set missing',
@@ -127,7 +131,9 @@ def evaluate_run(ledger, rows, saved, scorer=None, lexical_only=True):
                         dict(sbert=None,sbert_status='EMPTY_TEXT' if not rewrite.strip() else 'NOT_COMPUTED',sbert_original_truncated=None,sbert_rewrite_truncated=None))
                     pipeline.atomic_json(cached,dict(key=key,values=values,sha256=pipeline.fingerprint(values)))
             outcome=('success' if decision['label']=='NOT_SPAM' else 'failure') if decision else 'unresolved'
-            pair=dict(defender=ledger.folder.name,sample_id=sid,stage=stage,source_step=step,
+            validation=(ledger.get(sid,'validate'+str(step)) or {}).get('label','NOT_ASSESSED') if gated else 'NOT_ASSESSED'
+            if gated and validation in {'INVALID','UNCERTAIN','NO_CHANGE'}:outcome=validation.lower()
+            pair=dict(validation_status=validation,defender=ledger.folder.name,sample_id=sid,stage=stage,source_step=step,
                 outcome=outcome,predicted_label=decision['label'] if decision else '',original_sha256=oh,rewrite_sha256=rh,
                 **values,semantic_band=metrics.semantic_band(values['sbert']),source=source,cache_key=key)
             pairs.append(pair); stages[step]=pair
@@ -135,25 +141,28 @@ def evaluate_run(ledger, rows, saved, scorer=None, lexical_only=True):
         # Final candidate is Step1 success or a classified Step2. Never fall
         # back to Step1 failure while Step2 is missing/unresolved.
         final=stages.get(1) if stages.get(1,{}).get('outcome')=='success' else stages.get(2)
-        if not is_gan and final and final['outcome']!='unresolved':pairs.append({**final,'stage':'final'})
+        if not is_gan and final and final['outcome'] in {'success','failure'}:pairs.append({**final,'stage':'final'})
     summaries=metrics.similarity_summary(pairs,scorer.ttest if scorer else None,
         stages=('gan_candidate','gan_returned') if is_gan else ('step1','step2','final'))
     pipeline.atomic_csv(folder/'similarity_per_rewrite.csv',pairs,PAIR_FIELDS)
     pipeline.atomic_csv(folder/'similarity_summary.csv',summaries,list(summaries[0]))
     # Rebuild base/attack metrics and CSV exports from the validated ledger only.
     baseline_only=saved.get('baseline_only',not any(stage!='baseline' for _,stage in ledger.events))
-    if is_gan:
+    if gated:
+        from validity_pipeline import report
+        report(ledger,rows,baseline_only)
+    elif is_gan:
         from gan_pipeline import report
         report(ledger,rows,baseline_only)
     else:pipeline.report(ledger,rows,baseline_only)
     current=json.loads((ledger.folder/'metrics.json').read_text(encoding='utf-8'))
-    summary=dict(contract=contract,evaluation_id=identity,model=ledger.folder.name,selected_rows=len(rows),attack_kind='gan' if is_gan else 'llm',
+    summary=dict(contract=contract,evaluation_id=identity,model=ledger.folder.name,selected_rows=len(rows),attack_kind=saved.get('attack_kind','llm'),
         source_events_sha256=hashlib.sha256(ledger.path.read_bytes()).hexdigest(),
         scored_step1=sum(r['stage']=='step1' for r in pairs),scored_step2=sum(r['stage']=='step2' for r in pairs),
         final_candidates=sum(r['stage']=='final' for r in pairs),
         gan_candidates=sum(r['stage']=='gan_candidate' for r in pairs),gan_returned=sum(r['stage']=='gan_returned' for r in pairs),
         sbert_status='NOT_COMPUTED' if lexical_only else 'COMPUTED',
-        semantic_validity='NOT_ASSESSED_BY_HUMAN',
+        semantic_validity='PPLX_RUBRIC_V1_NOT_HUMAN_VALIDATED' if gated else 'NOT_ASSESSED_BY_HUMAN',
         statistical_limitations=('Descriptive unadjusted tests; preserved duplicates violate strict independence; '
                                 +('GAN returned candidates are selected by probe success' if is_gan else 'Step2 is conditional')),
         baseline_and_attack_metrics=current)

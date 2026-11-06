@@ -1,0 +1,49 @@
+{
+  "profile": "experimenting",
+  "dataset": "dataset/paper_baseline3000.csv",
+  "step1_bank": "dataset/paper_step1_bank.csv",
+  "output_dir": "experimenting/outputs/paper3000_adaptive",
+  "attacker": {
+    "transport": "openai",
+    "url": "https://llms.si-lab.org/api/chat/completions",
+    "model": "google/gemma-3-27b-it",
+    "revision": "",
+    "key_env": "OWUI_API_KEY",
+    "temperature": 0.0,
+    "max_tokens": 1024
+  },
+  "defenders": {
+    "pplx": {
+      "transport": "tool",
+      "url": "https://llms.si-lab.org/api/chat/completions",
+      "model": "google/gemma-3-27b-it",
+      "tool_id": "server:pplxdeciderflash",
+      "revision": "",
+      "key_env": "OWUI_API_KEY"
+    },
+    "clef": {
+      "transport": "openwebui",
+      "url": "https://llms.si-lab.org/api/chat/completions",
+      "model": "decision_spam.clef",
+      "revision": "",
+      "key_env": "OWUI_API_KEY"
+    },
+    "d3": {
+      "transport": "openwebui",
+      "url": "https://llms.si-lab.org/api/chat/completions",
+      "model": "decision_spam.d3",
+      "revision": "",
+      "key_env": "OWUI_API_KEY"
+    }
+  },
+  "default_model": "pplx",
+  "active_models": [
+    "pplx"
+  ],
+  "tool_pilot_output_dir": "experimenting/outputs/pplx_gemma_fixed_pilot10",
+  "gan_output_dir": "experimenting/outputs/paper3000_gan",
+  "gan": {
+    "resource_dir": ".cache/openattack_gan/AttackAssist.SGAN",
+    "seed": 20261104
+  }
+}
