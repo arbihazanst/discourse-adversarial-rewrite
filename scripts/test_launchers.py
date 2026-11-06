@@ -22,6 +22,8 @@ class CliTests(unittest.TestCase):
     def setUp(self):
         self.main=cli.load_profile(cli.MAIN)
         self.exp=cli.load_profile(ROOT/'experimenting/adaptive_config.json')
+        for name in ('prepare_gan_before_run','publish_results'):
+            mocked=patch.object(cli,name,return_value=0);mocked.start();self.addCleanup(mocked.stop)
 
     def test_only_four_launchers_remain(self):
         actual={p.relative_to(ROOT).as_posix() for folder in (ROOT,ROOT/'scripts',ROOT/'experimenting')

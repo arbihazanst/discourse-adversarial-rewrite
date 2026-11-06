@@ -32,7 +32,7 @@ Pada Git Bash/Linux:
 bash experimenting/run_cli.sh
 ```
 
-Pilih **1 — Pilot 10 data**, lalu **Gemma + GAN**. Pilihan ini menjalankan baseline, cabang Gemma, dan cabang GAN. Siapkan bobot GAN sekali melalui **5 — Pengaturan → Siapkan bobot GAN** sebelum memilih kedua cabang.
+Pilih **1 — Pilot 10 data**, lalu **Gemma + GAN**. Pilihan ini menjalankan baseline, cabang Gemma, dan cabang GAN. CLI memeriksa bobot serta runtime GAN sebelum baseline. Jika bobot belum tersedia, CLI menyiapkannya sekali secara otomatis; jika runtime gagal, belum ada panggilan classifier. Persiapan manual tetap tersedia melalui **5 — Pengaturan → Siapkan bobot GAN**.
 
 Tanpa menu:
 
@@ -80,6 +80,28 @@ Untuk audit per kriteria, satu kandidat memerlukan hingga lima panggilan PPLX ev
 GAN menghasilkan kandidat sebelum query defender internal. Dua step dan validity gate merupakan perluasan eksperimen sumber. Generator SST dapat menghasilkan teks tidak koheren; teks tersebut tetap disimpan dan ditolak sesuai rubrik, bukan dihitung sebagai serangan berhasil.
 
 ## Hasil yang diperiksa
+
+**Buka `experimenting/outputs/BUKA_HASIL.md` atau langsung `experimenting/outputs/hasil_pilot10/RINGKASAN.md`.** Semua CSV utama sudah dikumpulkan di folder `hasil_pilot10`:
+
+| File | Dibaca untuk |
+|---|---|
+| `RINGKASAN.md` | Status tiap tugas, termasuk GAN yang belum dijalankan |
+| `baseline.csv` | Klasifikasi original |
+| `rekap_per_email.csv` | Status akhir Gemma dan GAN dalam satu tabel |
+| `gemma_step1.csv`, `gemma_step2.csv` | Teks dan hasil rewrite Gemma |
+| `gan_step1.csv`, `gan_step2.csv` | Teks dan hasil rewrite GAN |
+| `validitas_per_step.csv` | Kriteria validitas dan jumlah penolakan |
+| `errors.csv` | Error tahap yang belum terselesaikan |
+
+Laporan diperbarui setelah tiap tugas. Untuk memperbarui hasil lama tanpa API, gunakan menu **4 → Perbarui ringkasan pilot** atau:
+
+```powershell
+.\experimenting\run_cli.bat --results
+```
+
+CSV kosong/header-only ditandai sebagai belum ada hasil, bukan hasil nol. `INVALID` merupakan keputusan validator, bukan error program. Jangan mengedit laporan untuk mengubah checkpoint.
+
+Folder berikut tetap menjadi **arsip teknis**; Anda tidak perlu membukanya untuk membaca hasil sehari-hari. Struktur dan identitas lama dipertahankan agar baseline/Gemma yang sudah selesai bisa di-resume tanpa mengulang inference.
 
 Folder default, masing-masing dengan subfolder `pplx`:
 

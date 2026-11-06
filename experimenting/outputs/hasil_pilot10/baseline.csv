@@ -1,0 +1,11 @@
+﻿defender,sample_id,true_label,baseline_label,baseline_time_sec,eligible,state,step1_validation,step1_label,step2_validation,step2_label,rewrite1_time_sec,validate1_time_sec,classify1_time_sec,rewrite2_time_sec,validate2_time_sec,classify2_time_sec,total_stage_elapsed_sec
+pplx,PAPER3000-0001,SPAM,SPAM,19.278997,1,baseline_only,NOT_REACHED,,NOT_REACHED,,,,,,,,19.278997
+pplx,PAPER3000-0002,SPAM,SPAM,20.22829,1,baseline_only,NOT_REACHED,,NOT_REACHED,,,,,,,,20.22829
+pplx,PAPER3000-0003,SPAM,SPAM,25.028243,1,baseline_only,NOT_REACHED,,NOT_REACHED,,,,,,,,25.028243
+pplx,PAPER3000-0008,SPAM,NOT_SPAM,29.764541,0,not_eligible,NOT_REACHED,,NOT_REACHED,,,,,,,,29.764541
+pplx,PAPER3000-0010,SPAM,SPAM,16.878737,1,baseline_only,NOT_REACHED,,NOT_REACHED,,,,,,,,16.878737
+pplx,PAPER3000-0004,NOT_SPAM,NOT_SPAM,54.750855,0,not_eligible,NOT_REACHED,,NOT_REACHED,,,,,,,,54.750855
+pplx,PAPER3000-0005,NOT_SPAM,NOT_SPAM,60.819675,0,not_eligible,NOT_REACHED,,NOT_REACHED,,,,,,,,60.819675
+pplx,PAPER3000-0006,NOT_SPAM,NOT_SPAM,195.251412,0,not_eligible,NOT_REACHED,,NOT_REACHED,,,,,,,,195.251412
+pplx,PAPER3000-0007,NOT_SPAM,NOT_SPAM,62.976962,0,not_eligible,NOT_REACHED,,NOT_REACHED,,,,,,,,62.976962
+pplx,PAPER3000-0009,NOT_SPAM,NOT_SPAM,77.433047,0,not_eligible,NOT_REACHED,,NOT_REACHED,,,,,,,,77.433047

@@ -1,0 +1,40 @@
+{
+  "updated_utc": "2026-11-06T08:06:51+00:00",
+  "profile": "experimenting",
+  "mode": "pilot",
+  "sources": [
+    {
+      "defender": "pplx",
+      "branch": "baseline",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\experimenting\\outputs\\validated_baseline_pilot10_v1\\pplx",
+      "identities": {
+        "baseline": "9a5647aaa16392a20d308429aa9f2841e97caa44b2e2846ef0952c36d7cbe3a2",
+        "attack": "5bff99a091457549a735c35ef83663b670ac0351e7ad0efd3f13f9ffea598c61"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-06T05:00:09.438206+00:00"
+    },
+    {
+      "defender": "pplx",
+      "branch": "llm",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\experimenting\\outputs\\validated_llm_pilot10_v1\\pplx",
+      "identities": {
+        "baseline": "9a5647aaa16392a20d308429aa9f2841e97caa44b2e2846ef0952c36d7cbe3a2",
+        "attack": "7768a68394b027bfb42d8377031251edf6a7c3d71614c9abd72b5d4cd89aa844"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-06T05:22:51.318527+00:00"
+    },
+    {
+      "defender": "pplx",
+      "branch": "gan",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\experimenting\\outputs\\validated_gan_pilot10_v1\\pplx",
+      "identities": {
+        "baseline": "9a5647aaa16392a20d308429aa9f2841e97caa44b2e2846ef0952c36d7cbe3a2",
+        "attack": "0be75ed8a8d8b45127d35ae0d17880b5561b5960991da4ec0bbc26c354043e7d"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-06T05:32:56.411797+00:00"
+    }
+  ]
+}

@@ -80,15 +80,24 @@ Prompt Gemma tetap berasal dari `decision_models/paper_prompts.json`, sesuai pro
 
 GAN memakai generator SST dari sumber OpenAttack yang disertakan. Kandidat diambil **sebelum** query defender internal; kemudian melewati PPLX dan baru boleh diklasifikasikan. Step 2 GAN adalah perluasan protokol, bukan klaim reproduksi identik dengan eksperimen sumber yang satu langkah. Seed dibedakan menurut sampel dan step. Kualitas bahasa GAN tidak dijamin; teks rusak dapat ditolak evaluator.
 
-Siapkan bobot melalui menu 5 — Siapkan bobot GAN, atau:
+Saat menjalankan tugas yang mencakup GAN, CLI memeriksa bobot dan memuat runtime GAN **sebelum baseline**. Jika bobot belum ada, CLI mengunduhnya sekali dari sumber resmi OpenAttack. Jika runtime belum siap, tugas berhenti sebelum memanggil classifier. `--dry-run` tidak menyiapkan bobot; `--check-server` hanya memverifikasi bobot yang sudah ada. Persiapan manual tetap tersedia melalui menu 5 atau:
 
 ```bash
 python scripts/prepare_gan.py
 ```
 
-Pip tidak mengunduh bobot GAN. Run akan memberi pesan jika bobot belum tersedia.
+Pip tidak mengunduh bobot GAN; persiapan otomatis dilakukan oleh CLI saat menjalankan tugas GAN. Skrip pipeline langsung tetap memerlukan bobot yang sudah disiapkan.
 
 ## Output, checkpoint, dan evaluasi
+
+**Mulai membaca dari `outputs/BUKA_HASIL.md`.** Laporan utama berada dalam satu folder `outputs/hasil_pilot10` (atau `outputs/hasil_benchmark`):
+
+- `RINGKASAN.md`: status baseline, Gemma dan GAN serta tautan CSV.
+- `baseline.csv`, `rekap_per_email.csv`: klasifikasi original dan status akhir kedua cabang.
+- `gemma_step1.csv`, `gemma_step2.csv`, `gan_step1.csv`, `gan_step2.csv`: rewrite beserta validasi, label dan waktu.
+- `validitas_per_step.csv`, `errors.csv`: rekap validitas dan error tahap yang belum pulih.
+
+CLI memperbarui laporan setelah tiap tugas, termasuk jika tugas mengembalikan error. Menu **4 → Perbarui ringkasan** atau `bash run_cli.sh --results` membangunnya dari hasil tersimpan tanpa inference. CSV kosong pada tugas yang belum dijalankan tidak berarti hasil nol. Laporan ini adalah salinan untuk dibaca; checkpoint dan artefak asli tetap di folder teknis berikut.
 
 Pilot disimpan pada `outputs/validated_baseline_pilot10_v1`, `outputs/validated_llm_pilot10_v1`, dan `outputs/validated_gan_pilot10_v1`. Benchmark menggunakan `outputs/paper3000_validated_llm_v1` dan `outputs/paper3000_validated_gan_v1`, dengan subfolder defender.
 

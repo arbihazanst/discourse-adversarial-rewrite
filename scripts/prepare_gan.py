@@ -30,9 +30,18 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir',type=Path,default=DEFAULT_DIR)
     parser.add_argument('--from-dir',type=Path,help='Import these five files from an existing trusted SGAN resource instead of downloading')
+    parser.add_argument('--check-runtime',action='store_true',help='Load the local GAN runtime after resource verification; no generation or API calls')
+    parser.add_argument('--verify-only',action='store_true',help='Check existing files only; never download or import')
     args=parser.parse_args(argv);folder=core.rooted(args.output_dir)
+    def finish():
+        if args.check_runtime:
+            from gan_engine import GanEngine
+            GanEngine({'resource_dir':str(folder)})
+            print('GAN runtime and weights verified; no model API calls.',flush=True)
+        return 0
     if (folder/'resource.json').exists():
-        resource_manifest(folder);print('GAN weights already prepared and verified:',folder);return 0
+        resource_manifest(folder);print('GAN weights already prepared and verified:',folder);return finish()
+    if args.verify_only:raise ValueError('GAN weights missing. Run prepare_gan.py or choose Run in the CLI to prepare them automatically.')
     folder.parent.mkdir(parents=True,exist_ok=True)
     with core.file_lock(folder.parent/'prepare.lock'):
         if any((folder/name).exists() for name in FILES):
@@ -68,10 +77,10 @@ def main(argv=None):
             for name in FILES:shutil.copyfile(weights/name,folder/name)
             core.atomic_json(folder/'resource.json',manifest)
     print('Prepared GAN weights:',folder)
-    return 0
+    return finish()
 
 
 if __name__=='__main__':
     try:sys.exit(main())
-    except (OSError,ValueError,KeyError,zipfile.BadZipFile) as exc:
+    except (OSError,ValueError,KeyError,ImportError,RuntimeError,zipfile.BadZipFile) as exc:
         print('GAN setup error:',exc,file=sys.stderr);sys.exit(2)

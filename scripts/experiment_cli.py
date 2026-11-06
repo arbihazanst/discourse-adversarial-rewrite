@@ -201,6 +201,25 @@ def build_plan(path,config,selected,mode,task,retry=False,dry=False,check=False)
     return plan
 
 
+def publish_results(config,mode):
+    from results_overview import refresh
+    try:
+        report=refresh(config,mode)
+        field('BUKA HASIL',report)
+        return report
+    except (OSError,ValueError,KeyError) as exc:
+        print('Laporan belum dapat diperbarui; checkpoint tetap tersimpan:',exc)
+        return None
+
+
+def prepare_gan_before_run(config,check=False):
+    folder=pipeline.rooted(config.get('gan',{}).get('resource_dir','.cache/openattack_gan/AttackAssist.SGAN'))
+    print('Pemeriksaan awal GAN: bobot + runtime, sebelum memanggil layanan klasifikasi.')
+    command=[sys.executable,str(HERE/'prepare_gan.py'),'--output-dir',str(folder),'--check-runtime']
+    if check:command.append('--verify-only')
+    return run_command(command,config)
+
+
 def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
     plan=build_plan(path,config,selected,mode,task,retry,dry,check)
     banner('RENCANA EKSPERIMEN')
@@ -209,16 +228,25 @@ def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=Fals
     field('Tindakan','Periksa offline (tanpa API)' if dry else 'Cek layanan (tanpa klasifikasi)' if check else
           'Resume + ulangi tahap ERROR' if retry else 'Jalankan / lanjutkan; hasil OK dilewati')
     for index,(step,_,output) in enumerate(plan,1):
-        field(f'{index}. '+dict(TASKS)[step],output)
+        print(f'{index}. '+dict(TASKS)[step])
     if task=='all':print('Gemma dan GAN menggunakan original yang sama; GAN tidak menyerang hasil Gemma.')
     if mode=='full':print('Benchmark memerlukan revision/checkpoint model yang sebenarnya.')
+    from results_overview import report_dir
+    field('Folder laporan',report_dir(config,mode))
+    if task in {'gan','all'} and not dry:
+        code=prepare_gan_before_run(config,check=check)
+        if code:
+            print('GAN belum siap. Baseline dan rewrite belum dijalankan pada pemanggilan ini.')
+            if not check:publish_results(config,mode)
+            return code
     for index,(step,command,output) in enumerate(plan,1):
         print(f'\n--- Tahap {index}/{len(plan)}: {step.upper()} ---')
         code=run_command(command,config)
+        if not dry and not check:publish_results(config,mode)
         if code:
             print('Tahap berikutnya tidak dijalankan. Gunakan menu 3 untuk melanjutkan.')
             return code
-        field('Lokasi hasil',output)
+        if dry or check:field('Arsip teknis',output)
     return 0
 
 
@@ -226,8 +254,8 @@ def workflow(path,config,selected,mode,retry=False):
     task=choose('Pilih pekerjaan',TASKS)
     if task is None:return
     print('\nBaseline diklasifikasikan lebih dahulu; hasil yang cocok dipakai ulang.')
-    for step in (['baseline','llm','gan'] if task=='all' else ['baseline',task] if task!='baseline' else ['baseline']):
-        field(step.upper(),destination(config,mode,step))
+    from results_overview import report_dir
+    field('Baca hasil di satu folder',report_dir(config,mode))
     action=choose('Tindakan',[('run','Lanjutkan + ulangi error' if retry else 'Jalankan / lanjutkan'),
                              ('dry','Periksa konfigurasi offline - tanpa API'),
                              ('check','Cek layanan / dependensi - tanpa klasifikasi')])
@@ -252,6 +280,15 @@ def saved_runs(config):
 
 
 def results_menu(config):
+    action=choose('HASIL - mulai dari ringkasan, tanpa panggilan model',[
+        ('pilot','Perbarui ringkasan pilot 10 + semua CSV utama'),
+        ('full','Perbarui ringkasan benchmark + semua CSV utama'),
+        ('technical','Evaluasi kemiripan / arsip teknis per run')])
+    if action in {'pilot','full'}:publish_results(config,action)
+    elif action=='technical':technical_results_menu(config)
+
+
+def technical_results_menu(config):
     runs=saved_runs(config)
     if not runs:
         print('\nBelum ada hasil. Mulai dari menu 1: Pilot 10 data.');return
@@ -358,6 +395,7 @@ def main(argv=None):
     parser.add_argument('--config',type=Path,help='Profil JSON; path relatif terhadap root proyek')
     parser.add_argument('--save-config',type=Path,help='File JSON lokal untuk perubahan menu')
     parser.add_argument('--show',action='store_true',help='Tampilkan profil saja; tanpa API')
+    parser.add_argument('--results',action='store_true',help='Build the flat results overview for --mode without any model calls')
     parser.add_argument('--mode',choices=('pilot','full'),default='pilot')
     parser.add_argument('--task',choices=('baseline','llm','gan','all'),help='Jalankan tanpa menu interaktif')
     parser.add_argument('--model',help='Defender: experimenting=pplx, main=clef/d3/all')
@@ -377,6 +415,7 @@ def main(argv=None):
     pipeline.selected_models(config,selected)
     save_path=pipeline.rooted(args.save_config) if args.save_config else local
     if args.show:show_profile(config,path,selected);return 0
+    if args.results:return 0 if publish_results(config,args.mode) else 2
     if args.task:return execute_plan(path,config,selected,args.mode,args.task,args.retry_errors,args.dry_run,args.check_server)
     while True:
         show_profile(config,path,selected)

@@ -415,6 +415,16 @@ Status event `OK` berarti tahap berhasil menghasilkan keputusan teknis, bukan be
 
 ## 9. Output CSV, waktu dan checkpoint
 
+### 9.1 Laporan utama untuk dibaca
+
+Buka `experimenting/outputs/BUKA_HASIL.md` untuk pilot lokal atau `outputs/BUKA_HASIL.md` untuk main. Folder `hasil_pilot10` mengumpulkan `RINGKASAN.md`, `baseline.csv`, `rekap_per_email.csv`, `gemma_step1.csv`, `gemma_step2.csv`, `gan_step1.csv`, `gan_step2.csv`, `validitas_per_step.csv`, `errors.csv`, dan provenance `sources.json`. Benchmark memiliki folder laporan `hasil_benchmark`.
+
+Laporan adalah tampilan baca dari checkpoint/CSV sumber, dibuat oleh `scripts/results_overview.py`. CLI memperbaruinya setelah tiap tugas. Menu 4 → Perbarui ringkasan atau opsi `--results` membangun ulang laporan tanpa memanggil model. Tugas yang belum menghasilkan run ditandai BELUM DIJALANKAN; CSV kosong tidak disajikan sebagai keberhasilan/kegagalan nol. `errors.csv` hanya memuat error tahap terakhir yang belum pulih.
+
+### 9.2 Arsip teknis dan sumber laporan
+
+Folder di bawah tetap dipertahankan untuk resume dan audit; tidak perlu menelusurinya untuk membaca hasil utama.
+
 Folder default pilot:
 
 | Cabang | Experimenting | Main |
@@ -492,7 +502,7 @@ Ringkasan menyertakan mean/SD dan, bila data serta dependensi mencukupi, Welch t
 
 ## 11. Cara menjalankan dan memeriksa hasil
 
-Dari root proyek, setelah dependensi, `.env` dan bobot GAN disiapkan:
+Dari root proyek, setelah dependensi dan `.env` disiapkan. Untuk tugas yang mencakup GAN, CLI menyiapkan bobot yang belum tersedia serta memuat runtime **sebelum baseline**. Kegagalan persiapan menghentikan tugas sebelum panggilan classifier. `--dry-run` tetap tanpa unduhan; `--check-server` hanya memverifikasi bobot yang sudah ada. Jika menjalankan skrip pipeline langsung, siapkan bobot terlebih dahulu:
 
 ```powershell
 # Pilot lokal: baseline + Gemma + GAN, hanya PPLX classifier/evaluator
@@ -520,7 +530,9 @@ Jumlah panggilan tergantung eligibility, validitas, early stop, cache dan retry.
 
 | File | Tanggung jawab |
 |---|---|
-| [scripts/experiment_cli.py](scripts/experiment_cli.py) | Menu, pemilihan profil dan urutan baseline/LLM/GAN |
+| [scripts/experiment_cli.py](scripts/experiment_cli.py) | Menu, pemeriksaan awal GAN, pemilihan profil dan urutan baseline/LLM/GAN |
+| [scripts/results_overview.py](scripts/results_overview.py) | Laporan utama dan CSV gabungan dari hasil tersimpan, tanpa inference |
+| [scripts/prepare_gan.py](scripts/prepare_gan.py) | Persiapan/verifikasi bobot dan pemeriksaan runtime GAN sebelum run |
 | [scripts/pilot_openwebui.py](scripts/pilot_openwebui.py) | Pilot PPLX 5 SPAM + 5 NOT_SPAM, pemeriksaan katalog, penandaan revision belum terverifikasi |
 | [scripts/validity_pipeline.py](scripts/validity_pipeline.py) | Controller dua step, gate, ekspor dan metrik baru |
 | [scripts/adaptive_pipeline.py](scripts/adaptive_pipeline.py) | Ledger, penyusunan request, generasi Gemma dan adapter klasifikasi |
