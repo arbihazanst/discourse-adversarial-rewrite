@@ -22,14 +22,14 @@
       "transport": "direct",
       "url": "http://127.0.0.1:30005/v1/systemone",
       "model": "clef",
-      "revision": "",
+      "revision": "clef-27b-q4_k_m",
       "key_env": ""
     },
     "d3": {
       "transport": "direct",
       "url": "http://127.0.0.1:30006/v1/systemone",
       "model": "d3",
-      "revision": "",
+      "revision": "d3-27b-q4_k_m",
       "key_env": ""
     }
   },
@@ -41,7 +41,7 @@
     "url": "http://127.0.0.1:30002/v1/systemone",
     "model": "perplexity-ai/pplx-decider-flash-v1.2",
     "tool_id": "",
-    "revision": "",
+    "revision": "pplx-decider-flash-v1.2",
     "key_env": "",
     "role": "pplx_validity",
     "rubric_version": "rewrite_validity_v1"
