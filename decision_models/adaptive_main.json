@@ -12,7 +12,7 @@
     "transport": "openai",
     "url": "http://127.0.0.1:30007/v1/chat/completions",
     "model": "google/gemma-3-27b-it",
-    "revision": "",
+    "revision": "google/gemma-3-27b-it",
     "key_env": "",
     "temperature": 0.0,
     "max_tokens": 1024
