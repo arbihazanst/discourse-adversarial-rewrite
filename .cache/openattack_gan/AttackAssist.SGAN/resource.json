@@ -1,0 +1,12 @@
+{
+  "resource": "AttackAssist.SGAN",
+  "source": "C:\\Users\\prase\\Downloads\\marifahmad\\decision_research_handoff\\.cache\\openattack_gan\\AttackAssist.SGAN",
+  "archive_sha256": null,
+  "files": {
+    "vocab.json": "bab0033f7d0a0d61e088c136cab9bdd9fa9506f7ab9dc6a06f10e26c7935a9c1",
+    "a.pkl": "4fafe376ace182f01bdc699c6f5ec514652b525c59dd04a14044adc43eb4a619",
+    "i.pkl": "a00443fe00d672003c8308705435bb8f8f9d2a235a3914b6eb3fc1aa798a56c1",
+    "g.pkl": "7b6aab46c4002debaaf2ad156eaea4edbdf9c9ca9182f0541e27eb95a2bf7fea",
+    "d.pkl": "4d5d2b210d7b54ec9118829f309a5e370c37625113e04a54ed521c9a2c45998f"
+  }
+}
