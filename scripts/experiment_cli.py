@@ -53,6 +53,32 @@ def edit_endpoint(current, attacker=False):
     if not attacker:pipeline.defender_payload(config,'__PREFLIGHT__')
     return config
 
+def edit_host_port(current):
+    from urllib.parse import urlsplit,urlunsplit
+    import ipaddress
+    config=copy.deepcopy(current);parsed=urlsplit(config['url'])
+    if parsed.scheme not in {'http','https'} or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError('Gunakan URL HTTP(S) tanpa username/password pada endpoint.')
+    print('Mengubah alamat layanan yang sama; transport dan path API dipertahankan.')
+    field('Endpoint saat ini',config['url'])
+    host=ask('Host / IP (tanpa http:// dan tanpa port)',parsed.hostname).strip('[]')
+    if not host or any(c.isspace() or c in '/?#@' for c in host):raise ValueError('Host/IP tidak valid')
+    if ':' in host:
+        try:ipaddress.IPv6Address(host)
+        except ValueError:raise ValueError('Masukkan host saja; port diisi terpisah')
+    current_port=parsed.port or (443 if parsed.scheme=='https' else 80)
+    raw_port=ask('Port (1-65535)',str(current_port))
+    if not raw_port.isdigit() or not 1<=int(raw_port)<=65535:raise ValueError('Port harus angka 1-65535')
+    port=int(raw_port);authority='['+host+']' if ':' in host else host
+    if parsed.port is not None or port!=current_port:authority+=':'+str(port)
+    config['url']=urlunsplit((parsed.scheme,authority,parsed.path,parsed.query,parsed.fragment))
+    if config.get('transport')=='native':
+        from native_pplx import RESOLVED_FIELDS,base_url
+        base_url(config['url'])
+        for key in RESOLVED_FIELDS:config.pop(key,None)
+    field('Endpoint baru',config['url'])
+    return config
+
 
 def build_command(config_path, model, action, reuse=False, attack_kind='llm'):
     command=[sys.executable,str(HERE/('gan_pipeline.py' if attack_kind=='gan' else 'adaptive_pipeline.py')),'--config',str(config_path),'--model',model]

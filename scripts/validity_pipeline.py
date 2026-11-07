@@ -21,7 +21,7 @@ class ValidityLedger(core.Ledger):
 
 def configuration(config):
     evaluator=config.get('rewrite_evaluator',{})
-    if evaluator.get('transport')!='tool' or evaluator.get('role')!='pplx_validity':
+    if evaluator.get('transport')!='direct' or evaluator.get('role')!='pplx_validity':
         raise ValueError('Configure rewrite_evaluator as the PPLX tool with role=pplx_validity')
     if config['profile']=='main' and (set(config['defenders'])-{'clef','d3'}):
         raise ValueError('Main defenders must be Clef/d3 only; PPLX belongs in rewrite_evaluator')

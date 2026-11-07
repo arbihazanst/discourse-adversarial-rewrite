@@ -6,7 +6,7 @@
       "engine": "native_pplx_decider",
       "status": "not_yet_evaluated_on_this_CEAS_package",
       "model_key": "pplx",
-      "host_url": "http://127.0.0.1:30002",
+      "host_url": "http://127.0.0.1:30002/v1/systemone",
       "docker_internal_port": 30002,
       "docker_name_hint": "pplx-flash-v12 (verify with docker ps -a)",
       "native_route_status": "not verified; FastAPI openapi.json or api.py required",
@@ -37,10 +37,7 @@
       "native_route_status": "configured; live inference still needs user-side verification"
     }
   ],
-  "label_options": [
-    "SPAM",
-    "NOT_SPAM"
-  ],
+  "label_options": ["SPAM", "NOT_SPAM"],
   "note": "PPLX native request adapter differs from llama.cpp systemone; benchmark app must normalize response shapes without changing semantic criteria.",
   "suggested_systemone": {
     "questions": {

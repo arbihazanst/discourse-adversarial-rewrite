@@ -40,12 +40,11 @@
   ],
   "tool_pilot_output_dir": "outputs/validated_baseline_pilot10_v1",
   "rewrite_evaluator": {
-    "transport": "tool",
-    "url": "https://llms.si-lab.org/api/chat/completions",
-    "model": "google/gemma-3-27b-it",
-    "tool_id": "server:pplxdeciderflash",
+    "transport": "direct",
+    "url": "http://127.0.0.1:30002/v1/systemone",
+    "model": "perplexity-ai/pplx-decider-flash-v1.2",
     "revision": "",
-    "key_env": "OWUI_API_KEY",
+    "key_env": "",
     "role": "pplx_validity",
     "rubric_version": "rewrite_validity_v1"
   },
