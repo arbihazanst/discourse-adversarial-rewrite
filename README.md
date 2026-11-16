@@ -1,6 +1,6 @@
 # Decision-model adversarial rewrite — main/server
 
-## Pilot empat layanan melalui SSH
+## Klasifikasi dan evaluasi empat layanan melalui SSH
 
 Dari root proyek jalankan `bash ./run_cli.sh --task services`, atau pilih **1 (Pilot) lalu 5 (Pilot layanan SSH)**. Di Windows gunakan launcher `.bat` dengan argumen yang sama. Pilot memilih lima SPAM dan lima NOT_SPAM pertama dari dataset 3.000 email.
 
@@ -11,7 +11,15 @@ Dari root proyek jalankan `bash ./run_cli.sh --task services`, atau pilih **1 (P
 | d3 | `d3-flash-q4` | 11440 | `/v1/systemone`, klasifikasi 10 original |
 | Gemma | `google/gemma-3-27b-it` | 11441 | `/v1/chat/completions`, satu pertanyaan RAG untuk memeriksa respons chat |
 
-Di PC lokal, buka tunnel berikut pada terminal tersendiri dan biarkan aktif selama pilot. Masukkan sandi melalui prompt SSH. Pada host yang sudah menyediakan keempat port di localhost, langsung jalankan pilot.
+Untuk seluruh dataset gunakan menu **2 → 5**, atau dari root proyek:
+
+```bash
+bash ./run_cli.sh --mode full --task services --run-id uji-01
+```
+
+Ganti ID untuk run baru. Gunakan ID yang sama untuk resume. Hasil mode full ada di `outputs/layanan_full/<id-run>/`. Clef dan d3 mengklasifikasikan semua email asli, PPLX mengevaluasi pasangan yang tersedia di bank rewrite, dan Gemma menerima satu pertanyaan uji. Opsi `--dry-run` memeriksa rencana secara offline.
+
+Launcher membuka tunnel untuk port loopback yang belum aktif. OpenSSH meminta password di terminal jika diperlukan dan launcher menutup tunnel miliknya ketika selesai. Tunnel atau layanan lokal yang sudah berjalan bisa langsung digunakan. Untuk membuka tunnel secara manual:
 
 ```bash
 ssh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:11438:127.0.0.1:11438 -L 127.0.0.1:11439:127.0.0.1:11439 -L 127.0.0.1:11440:127.0.0.1:11440 -L 127.0.0.1:11441:127.0.0.1:11441 -p 28659 rinaldi@37.60.243.124

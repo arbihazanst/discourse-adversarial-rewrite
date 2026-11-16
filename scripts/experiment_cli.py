@@ -183,7 +183,7 @@ def show_profile(config,path,selected):
     field('Profil',path)
     field('Dataset',config['dataset'])
     if config.get('service_pilot'):
-        print('Pilot layanan SSH (menu 1 lalu 5)')
+        print('Empat layanan SSH (pilot 1 lalu 5, seluruh dataset 2 lalu 5)')
         for name, route in config['service_pilot'].items():
             field(name,route['model']+' | '+route['url'])
         print('Pengaturan workflow adaptif:')
@@ -283,12 +283,12 @@ def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=Fals
 
 def workflow(path,config,selected,mode,retry=False):
     choices=list(TASKS)
-    if mode=='pilot' and 'service_pilot' in config:choices.append(('services','Pilot layanan SSH: 10 original + validasi pasangan tersimpan'))
+    if 'service_pilot' in config:choices.append(('services','Empat layanan SSH: klasifikasi original dan validasi pasangan tersimpan'))
     task=choose('Pilih pekerjaan',choices)
     if task=='services':
         from service_pilot import run
-        action=choose('Pilot layanan SSH',[('run','Jalankan / lanjutkan'),('dry','Periksa konfigurasi offline')])
-        if action:run(config,dry=action=='dry',retry=retry)
+        action=choose('Empat layanan SSH',[('run','Jalankan / lanjutkan'),('dry','Periksa konfigurasi offline')])
+        if action:run(config,dry=action=='dry',retry=retry,mode=mode)
         return
     if task is None:return
     print('\nBaseline diklasifikasikan lebih dahulu; hasil yang cocok dipakai ulang.')
@@ -454,7 +454,9 @@ def main(argv=None):
     parser.add_argument('--check-server',action='store_true')
     parser.add_argument('--retry-errors',action='store_true')
     parser.add_argument('--port',action='append',default=[],metavar='MODEL=PORT',help='Override port untuk --task services')
+    parser.add_argument('--run-id', help='Identitas run terpisah untuk --task services; pakai ID yang sama untuk resume')
     args=parser.parse_args(argv)
+    if args.run_id and args.task!='services':parser.error('--run-id digunakan bersama --task services')
     if args.port and args.task!='services':parser.error('--port digunakan bersama --task services')
     if args.dry_run and args.check_server:parser.error('Pilih offline atau cek layanan, bukan keduanya.')
     if not args.task and (args.dry_run or args.check_server or args.retry_errors):parser.error('Gunakan --task bersama opsi eksekusi.')
@@ -464,10 +466,10 @@ def main(argv=None):
     config=load_profile(path)
     if config['profile']!=args.profile:raise ValueError('Profil JSON tidak sesuai CLI yang dibuka.')
     if args.task=='services':
-        if args.mode!='pilot' or args.check_server or args.model:parser.error('Pilot layanan memakai --mode pilot dan empat model dari profil.')
+        if args.check_server or args.model:parser.error('Task services memakai empat model dari profil. Gunakan --dry-run untuk cek offline.')
         if 'service_pilot' not in config:parser.error('Profil ini belum memiliki service_pilot. Pilih konfigurasi dasar melalui --config.')
         from service_pilot import run
-        return run(config,args.port,args.dry_run,args.retry_errors)
+        return run(config,args.port,args.dry_run,args.retry_errors,args.mode,args.run_id)
     validate_paths(config)
     selected=args.model or config.get('default_model','pplx')
     pipeline.selected_models(config,selected)

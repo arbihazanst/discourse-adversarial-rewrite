@@ -1,7 +1,11 @@
 """Pilot of four local services using original emails and previously recorded text pairs."""
+from contextlib import contextmanager
 import hashlib
 import json
 from pathlib import Path
+import socket
+import subprocess
+import time
 from urllib.parse import urlsplit, urlunsplit
 
 import adaptive_pipeline as core
@@ -28,15 +32,69 @@ def set_ports(routes, overrides):
         routes[name]['url'] = endpoint(routes[name], int(value))
 
 
-def tasks(config, routes):
+REMOTE_PORTS = {'pplx': 11438, 'clef': 11439, 'd3': 11440, 'gemma': 11441}
+
+
+def listening(port):
+    try:
+        with socket.create_connection(('127.0.0.1', port), timeout=0.4):
+            return True
+    except OSError:
+        return False
+
+
+@contextmanager
+def service_connection(routes):
+    forwards = []
+    for name, route in routes.items():
+        url = urlsplit(endpoint(route))
+        if url.hostname != '127.0.0.1':
+            continue
+        port = url.port or (443 if url.scheme == 'https' else 80)
+        if not listening(port):
+            forwards.append((port, REMOTE_PORTS[name]))
+    if not forwards:
+        yield
+        return
+    args = ['ssh', '-N', '-o', 'ExitOnForwardFailure=yes', '-o', 'ConnectTimeout=12',
+            '-o', 'ServerAliveInterval=30', '-o', 'ServerAliveCountMax=3']
+    for local, remote in forwards:
+        args.extend(['-L', f'127.0.0.1:{local}:127.0.0.1:{remote}'])
+    args.extend(['-p', '28659', 'rinaldi@37.60.243.124'])
+    print('Membuka tunnel. Masukkan password di prompt OpenSSH jika diminta.', flush=True)
+    proc = subprocess.Popen(args)
+    try:
+        deadline = time.monotonic() + 120
+        while True:
+            if proc.poll() is not None:
+                raise OSError(f'SSH berhenti (exit {proc.returncode}). Periksa pesan OpenSSH di atas.')
+            if all(listening(local) for local, _ in forwards):
+                break
+            if time.monotonic() >= deadline:
+                raise OSError('Waktu tunggu login SSH habis.')
+            time.sleep(0.25)
+        yield
+    finally:
+        if proc.poll() is None:
+            proc.terminate()
+            try:
+                proc.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+                proc.wait()
+
+
+def tasks(config, routes, mode='pilot'):
     dataset = core.rooted(config['dataset'])
     rows = core.api.load_dataset(dataset, {'clean'})
-    sample = []
-    for label in ('SPAM', 'NOT_SPAM'):
-        group = [r for r in rows if r['true_label'] == label][:5]
-        if len(group) != 5:
-            raise ValueError(f'Dataset membutuhkan lima original {label}.')
-        sample.extend(group)
+    sample = rows
+    if mode == 'pilot':
+        sample = []
+        for label in ('SPAM', 'NOT_SPAM'):
+            group = [r for r in rows if r['true_label'] == label][:5]
+            if len(group) != 5:
+                raise ValueError(f'Dataset membutuhkan lima original {label}.')
+            sample.extend(group)
     bank = {r['sample_id']: r for r in core.read_csv(core.rooted(config['step1_bank']))}
     for row in sample:
         for name in ('clef', 'd3'):
@@ -72,13 +130,15 @@ def read_answer(response, question, body):
     return answer
 
 
-def run(config, overrides=(), dry=False, retry=False):
+def run(config, overrides=(), dry=False, retry=False, mode='pilot', run_id=None):
     routes = {name: dict(route) for name, route in config['service_pilot'].items()}
     set_ports(routes, overrides)
-    plan = list(tasks(config, routes))
+    plan = list(tasks(config, routes, mode))
     identity = core.fingerprint([routes, VERSION, plan])
     prefix = Path('experimenting/outputs') if config['profile'] == 'experimenting' else Path('outputs')
-    folder = core.rooted(prefix / 'pilot_layanan10' / identity[:12])
+    if run_id:
+        identity = core.fingerprint([identity, run_id])
+    folder = core.rooted(prefix / ('pilot_layanan10' if mode == 'pilot' else 'layanan_full') / identity[:12])
     for name, route in routes.items():
         print(f"{name}: {route['model']}  {endpoint(route)}")
     print(f'{len(plan)} pemeriksaan | {folder}', flush=True)
@@ -86,7 +146,7 @@ def run(config, overrides=(), dry=False, retry=False):
         return 0
     result_file = folder / 'hasil.csv'
     fields = ['service', 'sample_id', 'question', 'truth', 'answer', 'seconds', 'status', 'error']
-    with core.file_lock(folder / 'run.lock'):
+    with core.file_lock(folder / 'run.lock'), service_connection(routes):
         manifest = folder / 'run.json'
         if manifest.exists() and json.loads(manifest.read_text(encoding='utf-8'))['identity'] != identity:
             raise ValueError('Identitas checkpoint berbeda.')
@@ -122,5 +182,5 @@ def run(config, overrides=(), dry=False, retry=False):
                 verdicts[sid] = 'INVALID' if 'FAIL' in labels else 'UNCERTAIN' if 'UNCERTAIN' in labels else 'VALID'
         summary['pplx_saved_pairs'] = verdicts
         core.atomic_json(folder / 'ringkasan.json', summary)
-        print(json.dumps(summary, ensure_ascii=False))
+        print(f"{summary['ok']}/{len(plan)} pemeriksaan berhasil | {folder / 'ringkasan.json'}")
     return 0 if summary['ok'] == len(plan) else 2
