@@ -1,0 +1,5 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0010,clef,1,gemma_spam_warning,INVALID,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",Peringatan: email ini ditandai sebagai spam. Tautan yang mencurigakan mengindikasikan potensi upaya penipuan atau *phishing*.,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,3.6929,4.8885000000000005,,

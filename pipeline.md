@@ -1,4 +1,8 @@
-# Pipeline dan seluruh prompt eksperimen
+# Pipeline eksperimen
+
+Launcher main dan experimenting saat ini memakai protokol `warning_and_gan_replay_v1`. Opsi 4 mengevaluasi peringatan Gemma dan kandidat GAN arsip. Port, cakupan, hasil, serta contoh perintah tersedia di [README](README.md). Teks prompt Gemma aktif tersimpan di [paper_prompts.json](decision_models/paper_prompts.json). Rubrik PPLX tetap `rewrite_validity_v1`.
+
+## Arsip protokol November 2026 sebelum migrasi tunnel
 
 Dokumen ini menjelaskan **implementasi yang terpasang**, dari pemilihan data sampai evaluasi akhir, untuk protokol `validity_gated_v1` dan rubrik `rewrite_validity_v1`. Snapshot: **6 November 2026**. Teks prompt di bawah disalin dari konstanta kode/JSON, bukan ditulis ulang sebagai ringkasan. Placeholder dalam tanda `<...>` menjelaskan isi dinamis, bukan teks email yang dikirim secara literal.
 

@@ -1,0 +1,5 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0010,clef,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#4,INVALID,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",  and its from to make the its  much  the the of,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,5.7885,,

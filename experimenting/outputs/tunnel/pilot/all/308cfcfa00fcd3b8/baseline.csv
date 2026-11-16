@@ -1,0 +1,21 @@
+﻿sample_id,defender,true_label,label,seconds,error
+PAPER3000-0001,clef,SPAM,SPAM,1.1813,
+PAPER3000-0001,d3,SPAM,SPAM,0.7485,
+PAPER3000-0002,clef,SPAM,SPAM,0.8511,
+PAPER3000-0002,d3,SPAM,SPAM,0.7527,
+PAPER3000-0003,clef,SPAM,SPAM,0.81,
+PAPER3000-0003,d3,SPAM,SPAM,0.8379,
+PAPER3000-0008,clef,SPAM,SPAM,0.7757,
+PAPER3000-0008,d3,SPAM,SPAM,0.8074,
+PAPER3000-0010,clef,SPAM,SPAM,0.7644,
+PAPER3000-0010,d3,SPAM,NOT_SPAM,0.7359,
+PAPER3000-0004,clef,NOT_SPAM,NOT_SPAM,0.8381,
+PAPER3000-0004,d3,NOT_SPAM,NOT_SPAM,0.7922,
+PAPER3000-0005,clef,NOT_SPAM,,0.7386,"HTTP 500: {""error"":{""code"":500,""message"":""input (587 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0005,d3,NOT_SPAM,,0.7112,"HTTP 500: {""error"":{""code"":500,""message"":""input (554 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0006,clef,NOT_SPAM,,0.773,"HTTP 500: {""error"":{""code"":500,""message"":""input (1890 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0006,d3,NOT_SPAM,,0.7233,"HTTP 500: {""error"":{""code"":500,""message"":""input (1857 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0007,clef,NOT_SPAM,,0.7017,"HTTP 500: {""error"":{""code"":500,""message"":""input (558 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0007,d3,NOT_SPAM,,0.6852,"HTTP 500: {""error"":{""code"":500,""message"":""input (525 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0009,clef,NOT_SPAM,,0.7669,"HTTP 500: {""error"":{""code"":500,""message"":""input (776 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+PAPER3000-0009,d3,NOT_SPAM,,0.7063,"HTTP 500: {""error"":{""code"":500,""message"":""input (743 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"

@@ -1,0 +1,103 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0001,clef,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#1,INVALID,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",  and with with to the the the the of the the 's its,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,5.2604999999999995,,
+PAPER3000-0001,d3,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#1,INVALID,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",  and with with to the the the the of the the 's its,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,5.2604999999999995,,
+PAPER3000-0002,clef,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#2,INVALID,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/", and many get the the the n't the the an ,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,4.9864,,
+PAPER3000-0002,d3,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#2,INVALID,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/", and many get the the the n't the the an ,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,4.9864,,
+PAPER3000-0003,clef,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#3,INVALID,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only."," and   of of of , the  of of the with  with with the",INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,6.0976,,
+PAPER3000-0003,d3,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#3,INVALID,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only."," and   of of of , the  of of the with  with with the",INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,6.0976,,
+PAPER3000-0008,clef,1,,NO_ARCHIVE,"Subject: Reactivate Your AdWords Google Account.
+
+--------------------------------
+----------------------------
+-------------------------------
+Dear Advertiser,
+
+We were unable to process your payment.
+
+Your ads will be suspended soon unless we can process your payment.
+
+To prevent your ads from being suspended, please update your payment information.
+
+Please sign into your account and update your payment information.
+
+We look forward to providing you with the most effective advertising available.
+
+Thank you for advertising with Google AdWords.
+
+
+----------------------------------------------
+--------------------
+-------------------",,,,,,,,,,,,
+PAPER3000-0008,d3,1,,NO_ARCHIVE,"Subject: Reactivate Your AdWords Google Account.
+
+--------------------------------
+----------------------------
+-------------------------------
+Dear Advertiser,
+
+We were unable to process your payment.
+
+Your ads will be suspended soon unless we can process your payment.
+
+To prevent your ads from being suspended, please update your payment information.
+
+Please sign into your account and update your payment information.
+
+We look forward to providing you with the most effective advertising available.
+
+Thank you for advertising with Google AdWords.
+
+
+----------------------------------------------
+--------------------
+-------------------",,,,,,,,,,,,
+PAPER3000-0010,clef,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#4,INVALID,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",  and its from to make the its  much  the the of,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,5.7885,,

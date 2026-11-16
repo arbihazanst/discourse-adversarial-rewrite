@@ -1,0 +1,104 @@
+{
+  "baseline": {
+    "clef": {
+      "TP": 5,
+      "TN": 1,
+      "FP": 0,
+      "FN": 0,
+      "errors": 4,
+      "spam_precision": 1.0,
+      "spam_f1": 1.0,
+      "ham_precision": 1.0,
+      "ham_recall": 1.0,
+      "ham_f1": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "weighted_precision": 1.0,
+      "weighted_recall": 1.0,
+      "weighted_f1": 1.0,
+      "accuracy": 1.0,
+      "spam_recall": 1.0,
+      "macro_f1": 1.0
+    },
+    "d3": {
+      "TP": 4,
+      "TN": 1,
+      "FP": 0,
+      "FN": 1,
+      "errors": 4,
+      "spam_precision": 1.0,
+      "spam_f1": 0.8888888888888888,
+      "ham_precision": 0.5,
+      "ham_recall": 1.0,
+      "ham_f1": 0.6666666666666666,
+      "macro_precision": 0.75,
+      "macro_recall": 0.9,
+      "weighted_precision": 0.9166666666666666,
+      "weighted_recall": 0.8333333333333334,
+      "weighted_f1": 0.851851851851852,
+      "accuracy": 0.8333333333333334,
+      "spam_recall": 0.8,
+      "macro_f1": 0.7777777777777777
+    }
+  },
+  "steps": {
+    "gemma_1_clef": {
+      "status": {
+        "INVALID": 5
+      },
+      "validity": {
+        "INVALID": 5
+      },
+      "validated_label_flips": 0
+    },
+    "gemma_1_d3": {
+      "status": {
+        "INVALID": 4
+      },
+      "validity": {
+        "INVALID": 4
+      },
+      "validated_label_flips": 0
+    },
+    "gemma_2_clef": {
+      "status": {},
+      "validity": {},
+      "validated_label_flips": 0
+    },
+    "gemma_2_d3": {
+      "status": {},
+      "validity": {},
+      "validated_label_flips": 0
+    },
+    "gan_1_clef": {
+      "status": {
+        "INVALID": 4,
+        "NO_ARCHIVE": 1
+      },
+      "validity": {
+        "INVALID": 4
+      },
+      "validated_label_flips": 0
+    },
+    "gan_1_d3": {
+      "status": {
+        "INVALID": 3,
+        "NO_ARCHIVE": 1
+      },
+      "validity": {
+        "INVALID": 3
+      },
+      "validated_label_flips": 0
+    },
+    "gan_2_clef": {
+      "status": {},
+      "validity": {},
+      "validated_label_flips": 0
+    },
+    "gan_2_d3": {
+      "status": {},
+      "validity": {},
+      "validated_label_flips": 0
+    }
+  }
+}

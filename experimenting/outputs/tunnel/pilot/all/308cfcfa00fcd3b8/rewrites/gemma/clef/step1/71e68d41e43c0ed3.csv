@@ -1,0 +1,24 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0008,clef,1,gemma_spam_warning,INVALID,"Subject: Reactivate Your AdWords Google Account.
+
+--------------------------------
+----------------------------
+-------------------------------
+Dear Advertiser,
+
+We were unable to process your payment.
+
+Your ads will be suspended soon unless we can process your payment.
+
+To prevent your ads from being suspended, please update your payment information.
+
+Please sign into your account and update your payment information.
+
+We look forward to providing you with the most effective advertising available.
+
+Thank you for advertising with Google AdWords.
+
+
+----------------------------------------------
+--------------------
+-------------------","Peringatan: email ini ditandai sebagai spam. Email meminta pembaruan informasi pembayaran melalui tautan yang tidak dikenal, yang merupakan taktik umum dalam upaya *phishing*.",INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,5.3449,4.953,,

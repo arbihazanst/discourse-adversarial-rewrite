@@ -164,6 +164,13 @@ def main(argv=None,config_override=None,attack_kind='llm'):
     if args.limit<0 or args.attempts<1 or not math.isfinite(args.timeout) or args.timeout<=0 or not math.isfinite(args.delay) or args.delay<0:
         raise ValueError('Invalid limit, timeout, attempts or delay')
     config=copy.deepcopy(config_override) if config_override is not None else json.loads(args.config.read_text(encoding='utf-8-sig'))
+    if config.get('gan_archive'):
+        from tunnel_evaluation import run
+        if args.baseline_from:
+            raise ValueError('Profil tunnel menyimpan baseline sendiri dalam checkpoint run.')
+        return run(config,'pilot' if args.pilot else 'full','baseline' if args.baseline_only else attack_kind,
+                   args.model,dry=args.dry_run,check=args.check_server,retry=args.retry_errors,
+                   dataset=args.dataset,output=args.output_dir,limit=args.limit)
     configuration(config)
     dataset=core.rooted(args.dataset or config['dataset'])
     output=core.rooted(args.output_dir or config['gan_output_dir' if attack_kind=='gan' else 'output_dir'])

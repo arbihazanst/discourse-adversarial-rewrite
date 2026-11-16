@@ -1,0 +1,9 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0002,clef,1,experimenting/outputs/validated_gan_pilot10_v1/pplx/step1_rewrites.csv#2,INVALID,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/", and many get the the the n't the the an ,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,,4.9864,,

@@ -1,0 +1,9 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0003,d3,1,gemma_spam_warning,INVALID,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only.","Peringatan: email ini ditandai sebagai spam. Penawaran obat-obatan generik dengan harga sangat murah dan klaim ""FDA Approved"" tanpa informasi yang jelas merupakan indikasi potensi penipuan.",INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,6.6979,5.305400000000001,,

@@ -182,6 +182,12 @@ def show_profile(config,path,selected):
     banner('DECISION RESEARCH | '+config['profile'].upper())
     field('Profil',path)
     field('Dataset',config['dataset'])
+    if config.get('gan_archive'):
+        for name, route in config['service_pilot'].items():
+            field(name,route['model']+' | '+route['url'])
+        field('Defender',selected)
+        field('Arsip GAN',config['gan_archive'])
+        return
     if config.get('service_pilot'):
         print('Empat layanan SSH (pilot 1 lalu 5, seluruh dataset 2 lalu 5)')
         for name, route in config['service_pilot'].items():
@@ -252,6 +258,9 @@ def prepare_gan_before_run(config,check=False):
 
 
 def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
+    if config.get('gan_archive'):
+        from tunnel_evaluation import run
+        return run(config,mode,task,selected,retry=retry,dry=dry,check=check)
     plan=build_plan(path,config,selected,mode,task,retry,dry,check)
     banner('RENCANA EKSPERIMEN')
     field('Ukuran','Pilot 10 data' if mode=='pilot' else 'Benchmark seluruh dataset')
@@ -283,6 +292,9 @@ def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=Fals
 
 def workflow(path,config,selected,mode,retry=False):
     choices=list(TASKS)
+    if config.get('gan_archive'):
+        choices=[('baseline','Klasifikasi email asli'),('llm','Gemma: peringatan spam, validasi dan klasifikasi'),
+                 ('gan','GAN: validasi dan klasifikasi teks arsip'),('all','Semua: baseline + Gemma + arsip GAN')]
     if 'service_pilot' in config:choices.append(('services','Empat layanan SSH: klasifikasi original dan validasi pasangan tersimpan'))
     task=choose('Pilih pekerjaan',choices)
     if task=='services':
@@ -293,7 +305,9 @@ def workflow(path,config,selected,mode,retry=False):
     if task is None:return
     print('\nBaseline diklasifikasikan lebih dahulu; hasil yang cocok dipakai ulang.')
     from results_overview import report_dir
-    field('Baca hasil di satu folder',report_dir(config,mode))
+    if config.get('gan_archive'):
+        field('Hasil',pipeline.ROOT/('experimenting/outputs' if config['profile']=='experimenting' else 'outputs')/'tunnel'/mode/task)
+    else:field('Baca hasil di satu folder',report_dir(config,mode))
     action=choose('Tindakan',[('run','Lanjutkan + ulangi error' if retry else 'Jalankan / lanjutkan'),
                              ('dry','Periksa konfigurasi offline - tanpa API'),
                              ('check','Cek layanan / dependensi - tanpa klasifikasi')])
@@ -318,6 +332,12 @@ def saved_runs(config):
 
 
 def results_menu(config):
+    if config.get('gan_archive'):
+        root=pipeline.ROOT/('experimenting/outputs' if config['profile']=='experimenting' else 'outputs')/'tunnel'
+        summaries=sorted(root.glob('*/*/*/ringkasan.json'), key=lambda p:p.stat().st_mtime, reverse=True)
+        for p in summaries:print(p)
+        if not summaries:print('Belum ada ringkasan selesai di',root)
+        return
     action=choose('HASIL - mulai dari ringkasan, tanpa panggilan model',[
         ('pilot','Perbarui ringkasan pilot 10 + semua CSV utama'),
         ('full','Perbarui ringkasan benchmark + semua CSV utama'),
@@ -358,8 +378,11 @@ def save_profile(path,config):
     if config['profile']=='main' and path.is_relative_to(EXPERIMENT.resolve()):
         raise ValueError('Profil lokal main harus terpisah dari experimenting.')
     validate_paths(config)
-    from validity_pipeline import configuration
-    configuration(config)
+    if config.get('gan_archive'):
+        pipeline.selected_models(config,config['default_model'])
+    else:
+        from validity_pipeline import configuration
+        configuration(config)
     pipeline.atomic_json(path,config)
     print('Pengaturan tersimpan. Perubahan model/endpoint memerlukan folder output baru.')
 
@@ -369,6 +392,7 @@ def settings(path,save_path,config,selected):
              ('attacker','Edit model / endpoint attacker Gemma'),('evaluator','Edit endpoint evaluator PPLX'),('outputs','Ganti folder hasil'),
              ('gan','Bobot GAN dan seed'),('prepare','Siapkan bobot GAN')]
     if 'service_pilot' in config:options.append(('service_ports','Ubah port model untuk pilot layanan SSH'))
+    if config.get('gan_archive'):options=[('select','Pilih defender'),('service_ports','Ubah port tunnel untuk semua pekerjaan')]
     while True:
         choice=choose('PENGATURAN | '+config['profile'],options)
         if choice is None:return path,config,selected
@@ -397,9 +421,13 @@ def settings(path,save_path,config,selected):
             from urllib.parse import urlsplit
             value=ask('Port lokal',str(urlsplit(routes[name]['url']).port))
             set_ports(routes,[name+'='+value])
+            if candidate.get('gan_archive'):
+                target=(candidate['attacker'] if name=='gemma' else candidate['rewrite_evaluator'] if name=='pplx'
+                        else candidate['defenders'][name])
+                target['url']=routes[name]['url']
             validate_paths(candidate)
             pipeline.atomic_json(save_path,candidate)
-            print('Port pilot tersimpan di',save_path)
+            print('Port tunnel tersimpan di',save_path)
             config=candidate;path=save_path;continue
         elif choice=='outputs':
             key=choose('Folder hasil',[ (OUTPUT_KEYS[m,t],m+' / '+t+' - '+str(destination(config,m,t)))
@@ -429,6 +457,11 @@ def settings(path,save_path,config,selected):
 
 def help_text(config):
     banner('CARA KERJA')
+    if config.get('gan_archive'):
+        print('Pilih 1 untuk pilot atau 2 untuk seluruh dataset. Pekerjaan 4 menjalankan kedua cabang.')
+        print('Gemma memberi peringatan. GAN memakai teks tersimpan. PPLX memvalidasi setiap tahap.')
+        print('Clef/d3 mengklasifikasikan kandidat VALID. Pilih 4 dari menu utama untuk lokasi hasil.')
+        return
     print('1. Klasifikasi original. HAM dan spam yang lolos baseline tidak di-attack.')
     print('2. Gemma dan GAN: rewrite -> validasi PPLX -> hanya VALID diklasifikasikan.')
     print('3. Invalid berhenti; valid masih SPAM lanjut Step 2. Maksimal dua step per cabang.')
@@ -449,15 +482,14 @@ def main(argv=None):
     parser.add_argument('--results',action='store_true',help='Build the flat results overview for --mode without any model calls')
     parser.add_argument('--mode',choices=('pilot','full'),default='pilot')
     parser.add_argument('--task',choices=('baseline','llm','gan','all','services'),help='Jalankan tanpa menu interaktif')
-    parser.add_argument('--model',help='Defender: experimenting=pplx, main=clef/d3/all')
+    parser.add_argument('--model',help='Defender tunnel: clef/d3/all')
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--check-server',action='store_true')
     parser.add_argument('--retry-errors',action='store_true')
-    parser.add_argument('--port',action='append',default=[],metavar='MODEL=PORT',help='Override port untuk --task services')
-    parser.add_argument('--run-id', help='Identitas run terpisah untuk --task services; pakai ID yang sama untuk resume')
+    parser.add_argument('--port',action='append',default=[],metavar='MODEL=PORT',help='Override port lokal tunnel, misalnya --port gemma=12441')
+    parser.add_argument('--run-id', help='Identitas run terpisah; pakai ID yang sama untuk resume')
     args=parser.parse_args(argv)
-    if args.run_id and args.task!='services':parser.error('--run-id digunakan bersama --task services')
-    if args.port and args.task!='services':parser.error('--port digunakan bersama --task services')
+    if (args.port or args.run_id) and not args.task:parser.error('Gunakan --task bersama --port/--run-id.')
     if args.dry_run and args.check_server:parser.error('Pilih offline atau cek layanan, bukan keduanya.')
     if not args.task and (args.dry_run or args.check_server or args.retry_errors):parser.error('Gunakan --task bersama opsi eksekusi.')
     local=LOCAL if args.profile=='main' else EXPERIMENT/'adaptive_local.json'
@@ -470,6 +502,14 @@ def main(argv=None):
         if 'service_pilot' not in config:parser.error('Profil ini belum memiliki service_pilot. Pilih konfigurasi dasar melalui --config.')
         from service_pilot import run
         return run(config,args.port,args.dry_run,args.retry_errors,args.mode,args.run_id)
+    if config.get('gan_archive') and args.task:
+        from tunnel_evaluation import run
+        return run(config,args.mode,args.task,args.model or config['default_model'],args.port,args.dry_run,
+                   args.check_server,args.retry_errors,args.run_id)
+    if (args.port or args.run_id):parser.error('Profil lama ini tidak mendukung --port/--run-id.')
+    if config.get('gan_archive') and args.results:
+        results_menu(config)
+        return 0
     validate_paths(config)
     selected=args.model or config.get('default_model','pplx')
     pipeline.selected_models(config,selected)

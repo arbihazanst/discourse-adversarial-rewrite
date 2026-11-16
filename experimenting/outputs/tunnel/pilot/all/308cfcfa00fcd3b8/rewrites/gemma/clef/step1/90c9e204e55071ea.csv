@@ -1,0 +1,11 @@
+﻿sample_id,defender,step,source,status,original_text,candidate,validation,purpose,key_information,meaning,no_fabrication,coherence,label,generation_sec,validation_sec,classification_sec,error
+PAPER3000-0001,clef,1,gemma_spam_warning,INVALID,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",Peringatan: email ini ditandai sebagai spam. Penawaran barang replika dengan harga yang sangat rendah merupakan indikasi potensi penipuan.,INVALID,FAIL,FAIL,FAIL,FAIL,FAIL,,5.5125,5.1066,,

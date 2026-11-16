@@ -30,30 +30,20 @@ class CliTests(unittest.TestCase):
                 for p in folder.iterdir() if p.suffix in ('.bat','.sh')}
         self.assertEqual(actual,{'run_cli.bat','run_cli.sh','experimenting/run_cli.bat','experimenting/run_cli.sh'})
 
-    def test_all_pilot_orders_baseline_before_independent_attacks(self):
-        plan=cli.build_plan(Path('exp.json'),self.exp,'pplx','pilot','all',retry=True)
-        self.assertEqual([step for step,_,_ in plan],['baseline','llm','gan'])
-        self.assertEqual(len({out for _,_,out in plan}),3)
-        for (step,cmd,out),attack in zip(plan,('none','llm','gan')):
-            self.assertEqual(cmd[cmd.index('--attack')+1],attack)
-            self.assertIn('--profile-routes',cmd)
-            self.assertIn('--retry-errors',cmd)
-            self.assertTrue(out.is_relative_to(ROOT/'experimenting'))
+    def test_all_pilot_uses_one_tunnel_run(self):
+        for cfg in (self.main,self.exp):
+            with patch('tunnel_evaluation.run',return_value=0) as run:
+                self.assertEqual(cli.execute_plan(cli.MAIN,cfg,'all','pilot','all',retry=True),0)
+                run.assert_called_once_with(cfg,'pilot','all','all',retry=True,dry=False,check=False)
 
-    def test_full_plan_routes_selected_model_and_uses_resume(self):
-        plan=cli.build_plan(Path('main.json'),self.main,'d3','full','all')
-        self.assertIn('--baseline-only',plan[0][1])
-        self.assertIn('adaptive_pipeline.py',plan[1][1][1])
-        self.assertIn('gan_pipeline.py',plan[2][1][1])
-        for _,cmd,_ in plan:
-            self.assertIn('--resume',cmd)
-            self.assertEqual(cmd[cmd.index('--model')+1],'d3')
-            self.assertNotIn('--pilot',cmd)
+    def test_full_plan_routes_selected_model(self):
+        with patch('tunnel_evaluation.run',return_value=0) as run:
+            self.assertEqual(cli.main(['--task','gan','--mode','full','--model','d3','--dry-run']),0)
+            self.assertEqual(run.call_args.args[1:4],('full','gan','d3'))
 
-    def test_failed_stage_stops_remaining_plan(self):
-        with patch.object(cli,'run_command',side_effect=[0,2]) as run,contextlib.redirect_stdout(io.StringIO()):
+    def test_pipeline_error_reaches_caller(self):
+        with patch('tunnel_evaluation.run',return_value=2):
             self.assertEqual(cli.execute_plan(cli.MAIN,self.main,'clef','pilot','all'),2)
-        self.assertEqual(run.call_count,2)
 
     def test_profile_and_output_isolation(self):
         plan=cli.build_plan(cli.MAIN,self.main,'clef','pilot','llm')
@@ -74,19 +64,18 @@ class CliTests(unittest.TestCase):
         self.assertFalse((ROOT/'decision_models/should_not_exist.json').exists())
 
     def test_noninteractive_dry_run_and_retry_reach_every_stage(self):
-        with patch.object(cli,'run_command',return_value=0) as run,contextlib.redirect_stdout(io.StringIO()):
+        with patch('tunnel_evaluation.run',return_value=0) as run:
             code=cli.main(['--profile','experimenting','--task','all','--dry-run','--retry-errors'])
-        self.assertEqual(code,0);self.assertEqual(run.call_count,3)
-        for call in run.call_args_list:
-            self.assertIn('--dry-run',call.args[0]);self.assertIn('--retry-errors',call.args[0])
-            self.assertEqual(call.args[1]['profile'],'experimenting')
+        self.assertEqual(code,0)
+        self.assertEqual(run.call_args.args[0]['profile'],'experimenting')
+        self.assertEqual(run.call_args.args[1:8],('pilot','all','all',[],True,False,True))
 
     def test_menu_back_navigation_and_pilot_execution(self):
-        # Back out of the first task chooser, then execute both branches.
         answers=['1','0','1','4','1','0']
-        with patch('builtins.input',side_effect=answers),patch.object(cli,'run_command',return_value=0) as run,contextlib.redirect_stdout(io.StringIO()):
+        with patch('builtins.input',side_effect=answers),patch('tunnel_evaluation.run',return_value=0) as run,contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(cli.main(['--profile','experimenting']),0)
-        self.assertEqual(run.call_count,3)
+        self.assertEqual(run.call_count,1)
+        self.assertEqual(run.call_args.args[1:4],('pilot','all','all'))
 
     def test_saved_outputs_discovery_is_profile_scoped(self):
         with tempfile.TemporaryDirectory(dir=ROOT/'experimenting') as temp:
