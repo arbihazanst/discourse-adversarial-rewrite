@@ -1,0 +1,42 @@
+﻿service,sample_id,question,truth,answer,seconds,status,error
+clef,PAPER3000-0001,spam,SPAM,SPAM,0.86,OK,
+d3,PAPER3000-0001,spam,SPAM,SPAM,0.793,OK,
+clef,PAPER3000-0002,spam,SPAM,SPAM,0.795,OK,
+d3,PAPER3000-0002,spam,SPAM,SPAM,0.794,OK,
+clef,PAPER3000-0003,spam,SPAM,SPAM,0.801,OK,
+d3,PAPER3000-0003,spam,SPAM,SPAM,0.789,OK,
+clef,PAPER3000-0008,spam,SPAM,SPAM,0.799,OK,
+d3,PAPER3000-0008,spam,SPAM,SPAM,0.791,OK,
+clef,PAPER3000-0010,spam,SPAM,SPAM,0.795,OK,
+d3,PAPER3000-0010,spam,SPAM,NOT_SPAM,0.802,OK,
+clef,PAPER3000-0004,spam,NOT_SPAM,NOT_SPAM,0.887,OK,
+d3,PAPER3000-0004,spam,NOT_SPAM,NOT_SPAM,0.829,OK,
+clef,PAPER3000-0005,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (587 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+d3,PAPER3000-0005,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (554 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+clef,PAPER3000-0006,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (1890 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+d3,PAPER3000-0006,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (1857 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+clef,PAPER3000-0007,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (558 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+d3,PAPER3000-0007,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (525 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+clef,PAPER3000-0009,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (776 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+d3,PAPER3000-0009,spam,NOT_SPAM,,,ERROR,"HTTP 500: {""error"":{""code"":500,""message"":""input (743 tokens) is too large to process. increase the physical batch size (current batch size: 512)"",""type"":""server_error""}}"
+pplx,PAPER3000-0001,purpose,,PASS,0.844,OK,
+pplx,PAPER3000-0001,key_information,,PASS,1.28,OK,
+pplx,PAPER3000-0001,meaning,,PASS,1.216,OK,
+pplx,PAPER3000-0001,no_fabrication,,PASS,1.285,OK,
+pplx,PAPER3000-0001,coherence,,PASS,0.977,OK,
+pplx,PAPER3000-0002,purpose,,PASS,0.998,OK,
+pplx,PAPER3000-0002,key_information,,PASS,1.022,OK,
+pplx,PAPER3000-0002,meaning,,PASS,1.067,OK,
+pplx,PAPER3000-0002,no_fabrication,,PASS,1.191,OK,
+pplx,PAPER3000-0002,coherence,,PASS,1.005,OK,
+pplx,PAPER3000-0008,purpose,,PASS,0.984,OK,
+pplx,PAPER3000-0008,key_information,,PASS,1.015,OK,
+pplx,PAPER3000-0008,meaning,,PASS,0.979,OK,
+pplx,PAPER3000-0008,no_fabrication,,PASS,0.992,OK,
+pplx,PAPER3000-0008,coherence,,PASS,1.307,OK,
+pplx,PAPER3000-0010,purpose,,PASS,0.982,OK,
+pplx,PAPER3000-0010,key_information,,PASS,0.914,OK,
+pplx,PAPER3000-0010,meaning,,FAIL,1.377,OK,
+pplx,PAPER3000-0010,no_fabrication,,FAIL,0.984,OK,
+pplx,PAPER3000-0010,coherence,,PASS,0.994,OK,
+gemma,smoke,chat,,"Retrieval-Augmented Generation (RAG) combines the strengths of large language models with information retrieval systems: first, it **retrieves relevant documents from a knowledge source** (like a database or the internet), and then **uses those retrieved documents as context to inform and improve the generation of a response** by the language model. This allows the model to provide more accurate, up-to-date, and grounded answers, even on topics it wasn't explicitly trained on.",11.113,OK,

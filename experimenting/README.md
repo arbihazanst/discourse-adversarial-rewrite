@@ -1,5 +1,30 @@
 # Pilot lokal — PPLX classifier dan evaluator
 
+## Pilot empat layanan melalui SSH
+
+Dari root proyek jalankan `bash ./experimenting/run_cli.sh --task services`, atau pilih **1 (Pilot) lalu 5 (Pilot layanan SSH)**. Di Windows gunakan launcher `.bat` dengan argumen yang sama. Pilot memilih lima SPAM dan lima NOT_SPAM pertama dari dataset 3.000 email.
+
+| Layanan | ID model | Port lokal | API dan pengujian |
+|---|---|---:|---|
+| PPLX | `perplexity-ai/pplx-decider-flash-v1.2` | 11438 | `/v1/systemone`, lima kriteria validitas untuk setiap pasangan pilot yang tersedia di bank rewrite |
+| Clef | `clef-flash-q4` | 11439 | `/v1/systemone`, klasifikasi 10 original |
+| d3 | `d3-flash-q4` | 11440 | `/v1/systemone`, klasifikasi 10 original |
+| Gemma | `google/gemma-3-27b-it` | 11441 | `/v1/chat/completions`, satu pertanyaan RAG untuk memeriksa respons chat |
+
+Di PC lokal, buka tunnel berikut pada terminal tersendiri dan biarkan aktif selama pilot. Masukkan sandi melalui prompt SSH. Pada host yang sudah menyediakan keempat port di localhost, langsung jalankan pilot.
+
+```bash
+ssh -N -o ExitOnForwardFailure=yes -L 127.0.0.1:11438:127.0.0.1:11438 -L 127.0.0.1:11439:127.0.0.1:11439 -L 127.0.0.1:11440:127.0.0.1:11440 -L 127.0.0.1:11441:127.0.0.1:11441 -p 28659 rinaldi@37.60.243.124
+```
+
+Untuk mengganti port lokal pada satu run, sesuaikan port kiri pada `-L` lalu tambahkan misalnya `--port pplx=12438 --port gemma=12441` ke perintah pilot. Port kanan adalah port layanan di server. Untuk menyimpan perubahan, pilih menu 5 lalu **Ubah port model untuk pilot layanan SSH**, atau edit `service_pilot` pada JSON profil aktif. `--dry-run` menampilkan endpoint yang akan dipakai.
+
+Hasil dan checkpoint tersedia di `experimenting/outputs/pilot_layanan10/<id-run>/`. Buka `ringkasan.json` untuk jumlah klasifikasi benar dan verdict per pasangan, serta `hasil.csv` untuk label, waktu dan error tiap request. Perintah yang sama melanjutkan hasil tersimpan. Tambahkan `--retry-errors` untuk mengulang request yang gagal. Perubahan endpoint, model, input, atau pertanyaan menghasilkan ID run baru.
+
+Jika server mengembalikan HTTP 500 dengan pesan `increase the physical batch size`, periksa jumlah token yang disebutkan. Pada pilot ini batas Clef/d3 adalah 512 token dan input terpanjang memerlukan 1.890 token pada Clef. Sesudah kapasitas server disesuaikan, jalankan kembali perintah pilot dengan `--retry-errors` untuk memproses request yang gagal.
+
+Bagian berikut mendokumentasikan workflow adaptif lama. Pilihan **1 → 4** memakai konfigurasi workflow tersebut. Hasil pilot layanan mengukur klasifikasi dan validasi pasangan tetap.
+
 Profil ini untuk menguji pipeline sebelum Clef/d3 tersedia di server. **PPLX memiliki dua peran dengan permintaan yang terpisah**:
 
 | Peran | Model/layanan |

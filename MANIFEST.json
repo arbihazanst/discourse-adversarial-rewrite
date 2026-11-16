@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06",
+  "generated": "2026-11-16",
   "source": "Validity-gated v1 with flat results overview and GAN resource/runtime preflight. Main/experimenting roles and inference contracts unchanged. Outputs, secrets, weights, local profiles and backups excluded.",
   "files": [
     {
@@ -14,8 +14,8 @@
     },
     {
       "relative_path": "README.md",
-      "bytes": 8430,
-      "sha256": "7ece80a1788934e1e33dda9c84bacc37d556281f8aa6feee32ab2669b18c573a"
+      "bytes": 11126,
+      "sha256": "fe79848961562939146f00780666b381b3e8e33e111c36f54ae39a65e1b89aca"
     },
     {
       "relative_path": "analysis/ceas_match/baseline_recovery/CEAS_08_gpt_oss_latest_transparent_20260220_185010.csv",
@@ -174,8 +174,8 @@
     },
     {
       "relative_path": "decision_models/adaptive_main.json",
-      "bytes": 1595,
-      "sha256": "8dd93b044846901c108f0c94870bf3db45bbdcb33158990672d7773c796e9350"
+      "bytes": 2136,
+      "sha256": "954dae9125d1c8db5775d8c36bfff770bc299d0c3f69312c4652742f06e39632"
     },
     {
       "relative_path": "decision_models/decision_model_config.json",
@@ -204,8 +204,8 @@
     },
     {
       "relative_path": "experimenting/README.md",
-      "bytes": 7707,
-      "sha256": "760299a6e4c11b44433a470c0d03cfdea7c21a391f4dc9d43b45943724ba55f0"
+      "bytes": 10438,
+      "sha256": "0a2fe4c3ba4326acb5ec525848f839ff7deb2054cf8cc7056cc3b22f71a47b9e"
     },
     {
       "relative_path": "experimenting/VALIDATION.md",
@@ -214,8 +214,8 @@
     },
     {
       "relative_path": "experimenting/adaptive_config.json",
-      "bytes": 1588,
-      "sha256": "c43df2cd0f3cd0f95a90549f005aa74a0d3de45df132edd4bcfecf4ef0adef9c"
+      "bytes": 2083,
+      "sha256": "f6b71744dd94f9666a1d8f101c9f229fa2e1206f694df57402a3fb2f9358ca05"
     },
     {
       "relative_path": "experimenting/adaptive_ollama_config.json",
@@ -469,8 +469,8 @@
     },
     {
       "relative_path": "scripts/experiment_cli.py",
-      "bytes": 25331,
-      "sha256": "a4bb005e101ded05edd3f8b5344b53d28bf3551c79ab33998898f00182857919"
+      "bytes": 29015,
+      "sha256": "64bc0f4aa8f6bfaacec32cfadb982514ee3fcc5e57be508a5ff9259eab370dde"
     },
     {
       "relative_path": "scripts/gan_engine.py",
@@ -576,6 +576,11 @@
       "relative_path": "scripts/run_decision_benchmark.py",
       "bytes": 30116,
       "sha256": "bbf42fe11c98b820b8431e2b8246e7fa0f0bf95c5b8f9397d453e6ecc99041bb"
+    },
+    {
+      "relative_path": "scripts/service_pilot.py",
+      "bytes": 6775,
+      "sha256": "dff533a151a5b01733b68ffc0446e54f23b47b86e2b227fdc16ac2b9d941a189"
     },
     {
       "relative_path": "scripts/summarize_decision_results.py",

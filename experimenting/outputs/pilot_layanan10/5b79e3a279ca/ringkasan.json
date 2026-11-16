@@ -1,0 +1,19 @@
+{
+  "checks": 41,
+  "ok": 33,
+  "rubric": "rewrite_validity_v1",
+  "clef": {
+    "classified": 6,
+    "correct": 6
+  },
+  "d3": {
+    "classified": 6,
+    "correct": 5
+  },
+  "pplx_saved_pairs": {
+    "PAPER3000-0001": "VALID",
+    "PAPER3000-0002": "VALID",
+    "PAPER3000-0008": "VALID",
+    "PAPER3000-0010": "INVALID"
+  }
+}

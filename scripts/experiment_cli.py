@@ -25,8 +25,6 @@ def load_profile(path):
     if not value.get('defenders'):raise ValueError('Configure at least one defender')
     if value.get('protocol')!='validity_gated_v1' or not value.get('rewrite_evaluator'):
         raise ValueError('Profil lama tanpa validity gate. Gunakan --config decision_models/adaptive_main.json atau --config experimenting/adaptive_config.json; pindahkan pengaturan lokal secara eksplisit.')
-    from validity_pipeline import configuration
-    configuration(value)
     for name in value['defenders']:pipeline.validate_model_key(name)
     return value
 
@@ -184,6 +182,11 @@ def show_profile(config,path,selected):
     banner('DECISION RESEARCH | '+config['profile'].upper())
     field('Profil',path)
     field('Dataset',config['dataset'])
+    if config.get('service_pilot'):
+        print('Pilot layanan SSH (menu 1 lalu 5)')
+        for name, route in config['service_pilot'].items():
+            field(name,route['model']+' | '+route['url'])
+        print('Pengaturan workflow adaptif:')
     names=pipeline.selected_models(config,selected)
     for name in names:
         d=config['defenders'][name]
@@ -199,6 +202,8 @@ def show_profile(config,path,selected):
 
 
 def build_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
+    from validity_pipeline import configuration
+    configuration(config)
     validate_paths(config)
     pipeline.selected_models(config,selected)
     if mode=='pilot' and config['profile']=='experimenting' and selected!='pplx':
@@ -277,7 +282,14 @@ def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=Fals
 
 
 def workflow(path,config,selected,mode,retry=False):
-    task=choose('Pilih pekerjaan',TASKS)
+    choices=list(TASKS)
+    if mode=='pilot' and 'service_pilot' in config:choices.append(('services','Pilot layanan SSH: 10 original + validasi pasangan tersimpan'))
+    task=choose('Pilih pekerjaan',choices)
+    if task=='services':
+        from service_pilot import run
+        action=choose('Pilot layanan SSH',[('run','Jalankan / lanjutkan'),('dry','Periksa konfigurasi offline')])
+        if action:run(config,dry=action=='dry',retry=retry)
+        return
     if task is None:return
     print('\nBaseline diklasifikasikan lebih dahulu; hasil yang cocok dipakai ulang.')
     from results_overview import report_dir
@@ -356,6 +368,7 @@ def settings(path,save_path,config,selected):
     options=[('select','Pilih defender'),('defender','Edit model / endpoint defender'),
              ('attacker','Edit model / endpoint attacker Gemma'),('evaluator','Edit endpoint evaluator PPLX'),('outputs','Ganti folder hasil'),
              ('gan','Bobot GAN dan seed'),('prepare','Siapkan bobot GAN')]
+    if 'service_pilot' in config:options.append(('service_ports','Ubah port model untuk pilot layanan SSH'))
     while True:
         choice=choose('PENGATURAN | '+config['profile'],options)
         if choice is None:return path,config,selected
@@ -376,6 +389,18 @@ def settings(path,save_path,config,selected):
                 raise ValueError('Direct PPLX memerlukan template request terverifikasi.')
         elif choice=='attacker':candidate['attacker']=edit_endpoint(candidate['attacker'],True)
         elif choice=='evaluator':candidate['rewrite_evaluator']=edit_endpoint(candidate['rewrite_evaluator'])
+        elif choice=='service_ports':
+            from service_pilot import set_ports
+            routes=candidate['service_pilot']
+            name=choose('Pilih layanan',[(name, name+' | '+r['url']) for name,r in routes.items()])
+            if name is None:continue
+            from urllib.parse import urlsplit
+            value=ask('Port lokal',str(urlsplit(routes[name]['url']).port))
+            set_ports(routes,[name+'='+value])
+            validate_paths(candidate)
+            pipeline.atomic_json(save_path,candidate)
+            print('Port pilot tersimpan di',save_path)
+            config=candidate;path=save_path;continue
         elif choice=='outputs':
             key=choose('Folder hasil',[ (OUTPUT_KEYS[m,t],m+' / '+t+' - '+str(destination(config,m,t)))
                       for m,t in [('pilot','baseline'),('pilot','llm'),('pilot','gan'),('full','llm'),('full','gan')]])
@@ -423,12 +448,14 @@ def main(argv=None):
     parser.add_argument('--show',action='store_true',help='Tampilkan profil saja; tanpa API')
     parser.add_argument('--results',action='store_true',help='Build the flat results overview for --mode without any model calls')
     parser.add_argument('--mode',choices=('pilot','full'),default='pilot')
-    parser.add_argument('--task',choices=('baseline','llm','gan','all'),help='Jalankan tanpa menu interaktif')
+    parser.add_argument('--task',choices=('baseline','llm','gan','all','services'),help='Jalankan tanpa menu interaktif')
     parser.add_argument('--model',help='Defender: experimenting=pplx, main=clef/d3/all')
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--check-server',action='store_true')
     parser.add_argument('--retry-errors',action='store_true')
+    parser.add_argument('--port',action='append',default=[],metavar='MODEL=PORT',help='Override port untuk --task services')
     args=parser.parse_args(argv)
+    if args.port and args.task!='services':parser.error('--port digunakan bersama --task services')
     if args.dry_run and args.check_server:parser.error('Pilih offline atau cek layanan, bukan keduanya.')
     if not args.task and (args.dry_run or args.check_server or args.retry_errors):parser.error('Gunakan --task bersama opsi eksekusi.')
     local=LOCAL if args.profile=='main' else EXPERIMENT/'adaptive_local.json'
@@ -436,6 +463,11 @@ def main(argv=None):
     path=pipeline.rooted(args.config) if args.config else local if local.exists() else default
     config=load_profile(path)
     if config['profile']!=args.profile:raise ValueError('Profil JSON tidak sesuai CLI yang dibuka.')
+    if args.task=='services':
+        if args.mode!='pilot' or args.check_server or args.model:parser.error('Pilot layanan memakai --mode pilot dan empat model dari profil.')
+        if 'service_pilot' not in config:parser.error('Profil ini belum memiliki service_pilot. Pilih konfigurasi dasar melalui --config.')
+        from service_pilot import run
+        return run(config,args.port,args.dry_run,args.retry_errors)
     validate_paths(config)
     selected=args.model or config.get('default_model','pplx')
     pipeline.selected_models(config,selected)
