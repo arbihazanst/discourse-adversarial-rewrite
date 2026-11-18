@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] How does one save a rendered page?\n\nAnother way to go, screen cap the entire transaction with something\nlike Istanbul (linux)  or vnc2swf(a bit more clunky than a straight up\ndesktop screen cast grabber)\n\nWith the boom in screencasting you should be able to find something\nfor your distro of choice.\n\n\n-tom(say click, take a pic)higgins",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9566627965523075,
+          "SPAM": 0.04333720344769243
+        },
+        "confidence": 0.9133255931046149
+      }
+    },
+    "usage": {
+      "input_tokens": 253,
+      "output_tokens": 0
+    }
+  }
+}

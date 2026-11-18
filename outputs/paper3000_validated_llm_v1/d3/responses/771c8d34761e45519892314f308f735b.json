@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-3000] csv.Sniffer - delete in Python 3.0?\n\n\nThe csv module contains a Sniffer class which is supposed to deduce the\ndelimiter and quote character as well as the presence or absence of a header\nin a sample taken from the start of a purported CSV file.  I no longer\nremember who wrote it, and I've never been a big fan of it.  It determines\nthe delimiter based almost solely on character frequencies.  It doesn't\nconsider what the actual structure of a CSV file is or that delimiters and\nquote characters are almost always taken from the set of punctuation or\nwhitespace characters.  Consequently, it can cause some occasional\nhead-scratching:\n\n    >>> sample = \"\"\"\\\\\n    ... abc8def\n    ... def8ghi\n    ... ghi8jkl\n    ... \"\"\"\n    >>> import csv\n    >>> d = csv.Sniffer().sniff(sample)\n    >>> d.delimiter\n    '8'\n    >>> sample = \"\"\"\\\\\n    ... a8bcdef\n    ... ab8cdef\n    ... abc8def\n    ... abcd8ef\n    ... \"\"\"\n    >>> d = csv.Sniffer().sniff(sample)\n    >>> d.delimiter\n    'f'\n\nIt's not clear to me that people use letters or digits very often as\ndelimiters.  Both samples above probably represent data from single-column\nfiles, not double-column files with '8' or 'f' as the delimiter.\n\nI would be happy to get rid of it in 3.0, but I'm also aware that some\npeople use it.  I'd like feedback from the Python community about this.  If\nI removed it is there someone out there who wants it badly enough to\nmaintain it in PyPI?\n\nThanks,\n\n-- \nSkip Montanaro - iybz@pobox.com - http://www.webfast.com/~skip/\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005314997853027521,
+          "NOT_SPAM": 0.9994685002146972
+        },
+        "confidence": 0.9934519466436367
+      }
+    },
+    "usage": {
+      "input_tokens": 612,
+      "output_tokens": 0
+    }
+  }
+}

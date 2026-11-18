@@ -1,0 +1,6 @@
+{
+  "text": "  that own of on with with n't  be    on be to to with  've get",
+  "input_text": "Subject: Reactivate Your AdWords Google Account.\n\n--------------------------------\n----------------------------\n-------------------------------\nDear Advertiser,\n\nWe were unable to process your payment.\n\nYour ads will be suspended soon unless we can process your payment.\n\nTo prevent your ads from being suspended, please update your payment information.\n\nPlease sign into your account and update your payment information.\n\nWe look forward to providing you with the most effective advertising available.\n\nThank you for advertising with Google AdWords.\n\n\n----------------------------------------------\n--------------------\n-------------------",
+  "generation_policy": "capture SST candidate before defender query",
+  "step": 1
+}

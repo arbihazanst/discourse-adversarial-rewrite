@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [R] Greek characters in plots\n\nHi Brian Thanks again for the advice, it is appreciated. I had come across U0394 code through the character map, but I get: > \"\\\\u0394\" Error: invalid \\\\uxxxx sequence So when I execute your code, I get: > a <- \"A)\" > b <- \"stbA::cat\" > paste(a, \"\\\\u0394\", b) Error: invalid \\\\uxxxx sequence This is on both Rgui at home and at work (Windows Vista and R 2.6 at home, Windows XP and R 2.7 at work) Thanks again, Gabor's suggestion worked. -----Original Message----- From: Prof Brian Ripley [mailto:ripley@stats.ox.ac.uk] Sent: Tue 05/08/2008 7:44 PM To: michael watson (IAH-C) Cc: Henrique Dallazuanna; r-help@r-project.org Subject: RE: [R] Greek characters in plots   On Tue, 5 Aug 2008, michael watson (IAH-C) wrote: > OK, I am definitely struggling here. > > The text I am trying to plot isn't a mathematical expression, it's: > > A) ?stbA::cat OK, so you want a Greek character and not a Greek symbol.  As I said they  are different (different fonts, different shapes aka glyphs). > This is biological notation for a particular mutation.  The \"A)\" part is  > a tag identifying the graph, and the \"stbA::cat\" bit is the gene that is  > mutated.  Both the tag and gene are set as variables in a loop, and only  > the delta remains the same. > > As the text I am trying to plot isn't a mathematical expression, I seem  > to be having trouble getting substitute() and expression() to do what I  > want.  As plotmath states \"A mathematical expression must obey the  > normal rules of syntax for any R expression\", I fear I may be barking up  > the wrong tree! > > Thank you all for your help so far, but can someone please help me once  > more and tell me how I can get the capital Delta symbol so I can use it  > in non-mathematical text and strings for plotting? a <- \"A)\" b <- \"stbA::cat\" paste(a, \"\\\\u0394\", b) (Number from http://www.alanwood.net/unicode/greek.html .)  This should  work in a UTF-8 locale and also on Windows (in a windows() device or in  the Rgui console). > > Thanks once again > > Mick > > -----Original Message----- > From: Prof Brian Ripley [mailto:ripley@stats.ox.ac.uk] > Sent: 05 August 2008 12:40 > To: michael watson (IAH-C) > Cc: Henrique Dallazuanna; r-help@r-project.org > Subject: Re: [R] Greek characters in plots > > On Tue, 5 Aug 2008, michael watson (IAH-C) wrote: > >> Excellent!  I even tried DELTA but not Delta.... > > ?plotmath says > >       'Alpha' - 'Omega'               uppercase Greek symbols > > How could that be made clearer? > > (Note it carefully says Greek *symbols* not *character*: they are not the > same thing.) > >> Now, how do I go about pasting that with some text that I have in various other variables? > > Use substitute?  E.g. > > substitute(expression(foo*Delta), list(foo=3)) > > (Some people prefer bquote, but that is just a wrapper for substitute in > R.) > >> >> -----Original Message----- >> From: Henrique Dallazuanna [mailto:wwwhsd@gmail.com] >> Sent: 05 August 2008 12:17 >> To: michael watson (IAH-C) >> Cc: r-help@r-project.org >> Subject: Re: [R] Greek characters in plots >> >> Try, >> >> expression(Delta) >> >> On Tue, Aug 5, 2008 at 8:14 AM, michael watson (IAH-C) >>  wrote: >>> Hi >>> >>> I am running an R script that creates 100s of graphs, and I need to use >>> the greek CAPITAL letter delta in the mtext() function. >>> >>> I got as far as expression(delta) but this gives me the lowercase >>> version. >>> >>> Can anyone help?  I'm using R 2.7 on Windows XP >>> >>> Mick >>> >>> Head of Informatics >>> Institute for Animal Health >>> Compton >>> Berks >>> RG20 7NN >>> 01635 578411 >>> >>> http://www.iah.ac.uk/research/bioinformatics/bioinf.shtml >>> >>> The information contained in this message may be confide...{{dropped:14}} >>> >>> ______________________________________________ >>> R-help@r-project.org mailing list >>> https://stat.ethz.ch/mailman/listinfo/r-help >>> PLEASE do read the posting guide http://www.R-project.org/posting-guide.html >>> and provide commented, minimal, self-contained, reproducible code. >>> >> >> >> >> -- >> Henrique Dallazuanna >> Curitiba-Paraná-Brasil >> 25° 25' 40\" S 49° 16' 22\" O >> >> ______________________________________________ >> R-help@r-project.org mailing list >> https://stat.ethz.ch/mailman/listinfo/r-help >> PLEASE do read the posting guide http://www.R-project.org/posting-guide.html >> and provide commented, minimal, self-contained, reproducible code. >> > > --  > Brian D. Ripley,                  ripley@stats.ox.ac.uk > Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/ > University of Oxford,             Tel:  +44 1865 272861 (self) > 1 South Parks Road,                     +44 1865 272866 (PA) > Oxford OX1 3TG, UK                Fax:  +44 1865 272595 > --  Brian D. Ripley,                  ripley@stats.ox.ac.uk Professor of Applied Statistics,  http://www.stats.ox.ac.uk/~ripley/ University of Oxford,             Tel:  +44 1865 272861 (self) 1 South Parks Road,                     +44 1865 272866 (PA) Oxford OX1 3TG, UK                Fax:  +44 1865 272595 ______________________________________________ R-help@r-project.org mailing list https://stat.ethz.ch/mailman/listinfo/r-help PLEASE do read the posting guide http://www.R-project.org/posting-guide.html and provide commented, minimal, self-contained, reproducible code.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0003154669831164209,
+          "NOT_SPAM": 0.9996845330168835
+        },
+        "confidence": 0.9958759976673679
+      }
+    },
+    "usage": {
+      "input_tokens": 1676,
+      "output_tokens": 0
+    }
+  }
+}

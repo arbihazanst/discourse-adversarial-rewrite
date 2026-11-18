@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] iSCSI & Shared Storage Question\n\nActually, seeing as I have a few days of quite time, and this is\nalways an interesting area,  I think I will setup a lab and do some\nbenchmarking. Will send on the results.\n\nAJ\n\nOn Nov 14, 2007 5:10 PM, Paul Jakma  wrote:\n> On Wed, 14 Nov 2007, AJ McKee wrote:\n>\n> > Howdy Paul,\n>\n> > At the moment the shared storage is not used. However as I cluster\n> > (or virtualise) a few services (mostly web apps), I will want them\n> > to access a central file storage that all nodes can see and use,\n> > otherwise I am gonna be replicating the same data amonst the\n> > servers or virtual servers which I don't want to be doing. It would\n> > have to be aware of other systems writing to the same file,\n> > although unlikely, it may happen.\n>\n> Use NFS.\n>\n> (Unless there's some other, unstated, requirement?)\n>\n> regards,\n> --\n> Paul Jakma      evhq@clubi.ie   evhq@jakma.org  Key ID: 64A2FF6A\n> Fortune:\n> There are bugs and then there are bugs.  And then there are bugs.\n> -- Karl Lehenbauer\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9679162637466503,
+          "SPAM": 0.032083736253349635
+        },
+        "confidence": 0.9358325274933006
+      }
+    },
+    "usage": {
+      "input_tokens": 485,
+      "output_tokens": 0
+    }
+  }
+}

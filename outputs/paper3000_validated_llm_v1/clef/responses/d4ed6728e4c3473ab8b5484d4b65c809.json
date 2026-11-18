@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-Dev] RELEASED Python 2.6a2 and 3.0a4\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn behalf of the Python development team and the Python community, I'm  \nhappy to announce the second alpha release of Python 2.6, and the  \nfourth alpha release of Python 3.0.\n\nPlease note that these are alpha releases, and as such are not  \nsuitable for production environments.  We continue to strive for a  \nhigh degree of quality, but there are still some known problems and  \nthe feature sets have not been finalized.  These alphas are being  \nreleased to solicit feedback and hopefully discover bugs, as well as  \nallowing you to determine how changes in 2.6 and 3.0 might impact  \nyou.  If you find things broken or incorrect, please submit a bug  \nreport at\n\n    http://bugs.python.org\n\nFor more information and downloadable distributions, see the Python  \n2.6 web\nsite:\n\n    http://www.python.org/download/releases/2.6/\n\nand the Python 3.0 web site:\n\n    http://www.python.org/download/releases/3.0/\n\nWe are planning one more alpha release of each version, followed by  \ntwo beta releases, with the final releases planned for August 2008.   \nSee PEP 361 for release details:\n\n     http://www.python.org/dev/peps/pep-0361/\n\nEnjoy,\n- -Barry\n\nBarry Warsaw\npjaxq@python.org\nPython 2.6/3.0 Release Manager\n(on behalf of the entire python-dev team)\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.8 (Darwin)\n\niQCVAwUBR/WImHEjvBPtnXfVAQJmoQP+MzqNDI+Xt8zua/FE7Ca4TVXoIIy2uoOm\nI1i3+vmevZ9vtAb9hcGwfEgPY4LSwb9Js4KnJJWMPaMuFJK4NgGoiMdj+t42zDbQ\nbEzfBUOCoVkejLRxIQnWeJf1Hu8JocYyCHIRffv57/QdKpHuiSs8aE8GIT3STo3o\nI88H5NY1GgI=\n=WT2z\n-----END PGP SIGNATURE-----\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.934434320567163,
+          "SPAM": 0.06556567943283693
+        },
+        "confidence": 0.868868641134326
+      }
+    },
+    "usage": {
+      "input_tokens": 758,
+      "output_tokens": 0
+    }
+  }
+}

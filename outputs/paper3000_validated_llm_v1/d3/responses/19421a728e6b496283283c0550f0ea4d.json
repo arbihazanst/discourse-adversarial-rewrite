@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] how can be formated a external USB hard disk in konsole?\n\nVictor Antonio Chávez de Anda wrote:\n> i don't know the command for format a hard disk (i know thankx to god\n> isn't windows, but i try format and doesn't work) please, can anyone\n> help me?\n\nFirst, partition the disk:\n\n# fdisk /dev/sdX  (where X is the letter of the hard disk after\n                it is plugged in)\n\nafter that, use mkfs in whatever flavor you want for the\npartition(s) you create.\n\nPersonally, I prefer xfs, so, for example\n\n# mkfs.xfs -L put_label_here /dev/sdX1  (or 2, or 3 or whatever)\n\n\nThen, in your /etc/fstab, use LABEL=put_label_here in place\nof the device name (firset field) for this external disk,\nor you're going to be pulling your hair out every time\nyou plug in this disk, trying to figure out which letter\n(X in /dev/sdX) this drive is each time plug it in.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0008586019167507998,
+          "NOT_SPAM": 0.9991413980832492
+        },
+        "confidence": 0.9900163499209389
+      }
+    },
+    "usage": {
+      "input_tokens": 375,
+      "output_tokens": 0
+    }
+  }
+}

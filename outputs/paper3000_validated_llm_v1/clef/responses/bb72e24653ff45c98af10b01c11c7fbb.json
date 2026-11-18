@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse]  Re: LVM/EVMS\n\nPer Jessen wrote:\n> Aaron Kulkis wrote:\n> \n>>> But it forces to repartition the entire drive, and I don't feel LVM\n>>> is as safe.\n>> It's not, which is why I don't use it.\n>>\n>> All LVM partitions rely on the filesystem holding the LVM table\n>> to remain uncorrupted.  Corruption on *THAT* filesystem can\n>> very well destroy your LVM partitioning. :-/\n> \n> Any other suggestions for something that will let me expand my\n> filesystem on my systems that must be kept running 365x24? \n> \n\nNone.  And that's one of the only ways (the other being lots\nof Oracle or other database raw partitions) that I would advise\nusing LVM without any reservations.\n\n> LVM and EVMS are both actually used quite a lot because they solve a\n> real problem. Similar systems have been in use in e.g. AIX and HPUX for\n> over 10 years. \n\nI know.  I've been using them since 1996.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9561435670837128,
+          "SPAM": 0.043856432916287144
+        },
+        "confidence": 0.9122871341674257
+      }
+    },
+    "usage": {
+      "input_tokens": 418,
+      "output_tokens": 0
+    }
+  }
+}

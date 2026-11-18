@@ -1,0 +1,9 @@
+﻿branch,defender,step,VALID,INVALID,UNCERTAIN,NO_CHANGE,ERROR,PENDING,generated,generation_errors,classified,classification_errors,flips,acceptance_rate,flip_rate_among_classified_valid,failed_criteria
+gemma,clef,step1,4,1,0,0,0,0,5,0,4,0,0,0.8,0.0,"{""purpose"": 1, ""key_information"": 0, ""meaning"": 1, ""no_fabrication"": 1, ""coherence"": 0}"
+gemma,clef,step2,4,0,0,0,0,0,4,0,4,0,0,1.0,0.0,"{""purpose"": 0, ""key_information"": 0, ""meaning"": 0, ""no_fabrication"": 0, ""coherence"": 0}"
+gan,clef,step1,0,5,0,0,0,0,5,0,0,0,0,0.0,,"{""purpose"": 5, ""key_information"": 5, ""meaning"": 5, ""no_fabrication"": 5, ""coherence"": 5}"
+gan,clef,step2,0,0,0,0,0,0,0,0,0,0,0,,,"{""purpose"": 0, ""key_information"": 0, ""meaning"": 0, ""no_fabrication"": 0, ""coherence"": 0}"
+gemma,d3,step1,4,0,0,0,0,0,4,0,4,0,0,1.0,0.0,"{""purpose"": 0, ""key_information"": 0, ""meaning"": 0, ""no_fabrication"": 0, ""coherence"": 0}"
+gemma,d3,step2,4,0,0,0,0,0,4,0,4,0,1,1.0,0.25,"{""purpose"": 0, ""key_information"": 0, ""meaning"": 0, ""no_fabrication"": 0, ""coherence"": 0}"
+gan,d3,step1,0,4,0,0,0,0,4,0,0,0,0,0.0,,"{""purpose"": 4, ""key_information"": 4, ""meaning"": 4, ""no_fabrication"": 4, ""coherence"": 4}"
+gan,d3,step2,0,0,0,0,0,0,0,0,0,0,0,,,"{""purpose"": 0, ""key_information"": 0, ""meaning"": 0, ""no_fabrication"": 0, ""coherence"": 0}"

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Original und deren Wirkung\n\nNor could I do otherwise than agree with such a viewThe rule of thumb was supreme thereIf we had had the old net-  MY CO-WORKERS work, we should have lost our eastern territory in The negotia tions finally fell through, owing to the constantly more uncompromising attitude of England (Sir E THE KAISER'S MEMOIRS Among the Ministers whom I particularly esteemed His Excellency Miquel took first placeI had already had ex periences of my own with it The White Draw ing Room, originally merely provisional, had been put up without much attention to style it had been intended at first for an Indian mas querade, a Lalla Rookh n festival, in honor of the Grand Duchess Charlotte, daughter of Fred erick William III, and her husband, later Tsar Nicholas IAnother thing that struck me, in addition to the one-sidedness of the education in the schools, was the tendency, among youths planning their careers in those days, to turn their attention to becoming Government officials, and always con sider the profession of lawyer or judge the most worthy goalThe only means of communication with the east were the two antiquated trestle bridges at Dirschau and MarienburgSince the railways were considered a na tional pocketboofc, there was a desire to build only paying lines, which caused prejudice against outlays for military lines designed for the defense of the fatherland, since it diminished the fine surplus funds by which such great store was laidThe great invention of the telephone was utilized to the limit, was ap plied extensively to the public service, and was developed so as to facilitate it Likewise in the domain of building Stephan brought about a de- THE KAISER'S MEMOIRS cided Improvement, which received my approval and support All great state building projects depended on the vote of the investigating Academy of Build- ing, which, at that time, was a slow-moving, cum brous, and backward bodyWinston Churchill, Min ister of the Navy, since the question was a naval oneI described to him the entire course of the affair and !\n the disp\n\nutes in Berlin as to the introduction or nonintroduc- tion of the bill, and asked him then to tell me, with his usual complete frankness, what he thought the right thing to do in the interest of the national welfare, since I greatly desired to hear an objec tive opinion, uninfluenced by the rival camps of BerlinToward the end of March the fight about the bill took on such violence that finally the Chan cellor, on the d, asked me for his dismissal as I stepped out of the vault in the Charlottenburg ParkThe regiment, composed of four battalions, made an excellent impressionRealizing correctly what the military requirements were, he pushed forward the completion of the eastern rail waysI was present at sessions dealing with it, and was proud that this fundamental German work should have been brought to completion in my reignLater Ballin informed me from his hotel that Cassel had expressed himself as com pletely ied over the successful outcome of his mission, and that he would report to his Govern ment the good impression made upon himI happened at this time to meet at Cuxhaven Doctor von Burchard, President of the Hamburg Senate, whom I respected greatly, as he was the very model of an aristocratic citizen of a Hanseatic city, and who had often been con-  BETHMANN suited by me in political mattersThe Rhine, as far up as Mainz, was crossed by one railway bridge only; the Main could be crossed only at Frankfort For a long time the General Staff had been demanding the remedying of these conditionsThe negotia tions finally fell through, owing to the constantly more uncompromising attitude of England (Sir ETHE KAISER'S MEMOIRS When I met the Lord Chief Justice of Eng land, while I was on a visit to that country, at the home of Lord Haldane, I asked that great jurist what he thought of the administration and inter pretation of the law in Germany",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.2941925949441263,
+          "SPAM": 0.7058074050558737
+        },
+        "confidence": 0.4116148101117474
+      }
+    },
+    "usage": {
+      "input_tokens": 1002,
+      "output_tokens": 0
+    }
+  }
+}

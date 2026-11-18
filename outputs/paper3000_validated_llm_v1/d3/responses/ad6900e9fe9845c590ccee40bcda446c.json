@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [ie-rant] 50's Sci-fi head gear becomes reality\n\nWell, that's my headline but just look at the photo and make up your  \nown mind... Star Trek perhaps? Or Blake 7? Dr. Who?\n\nhttp://www.medgadget.com/archives/2007/10/ \nwireless_eeg_powered_by_body_heat.html",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.047161695611036294,
+          "NOT_SPAM": 0.9528383043889637
+        },
+        "confidence": 0.725784552024102
+      }
+    },
+    "usage": {
+      "input_tokens": 207,
+      "output_tokens": 0
+    }
+  }
+}

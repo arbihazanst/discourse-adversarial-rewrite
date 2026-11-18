@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Time to make multi.uribl.org optional rather than default?\n\nOn Tue, 19 Feb 2008, Dallas Engelken wrote:\n\n> Filtering the top 0.45% IPs results in 20% fewer queries/second to the\n> mirrors.  I dont see trying to limit excessive bandwidth usage on donated\n> mirrors as an \"obnoxious stance\".\n\nThe \"obnoxious stance\" comment is in demanding payment for reducing the \nload on your servers. All of the other RBLs that I'm aware of (could be \nwrong) are happy to provide data feeds free of charge. To be perfectly \nhonest with you, prior to the email, I wasn't even aware of uribl, just \nsurbl. It was merely included when we upgraded SA. We have our own local \nDCC server and local copies of several of the RBLs; it's a win-win, we \nreduce latency, you reduce bandwidth consumption.\n\nIt's certainly your right to charge, I'm not denying that. I just don't \nthink spamassassin should be promoting the use of services that ultimately \ndesire to be compensated for what is in reality a very medium volume of \nqueries, and which (I assume) is populated with data that is generated \ncompensation-free by your users. If you gave free data feeds like \neverybody else, I would applaud you, apologize for being unaware of our \nabuse of your servers, setup the feed, and thank you for your \ncontribution.\n\nWhen I got your email, I immediately went to your website to setup a data \nfeed and found myself disgusted that you wanted payment, just as I was \ndisgusted with MAPS so many years ago. \n\n> We asked you to shut off your queries on 2007-12-27 19:15:09.  Nearly 3 months\n> later and we still saw the same high volume queries from your systems.\n\nMy apologies, I actually never saw the initial request. I'm not sure what \nwas different about this mailing, or if the first somehow got caught up in \nthe holiday vacation situation.\n\nWhen our spamassassin rules recompile tonight, you'll no longer see the \nbulk of those requests. \n\n> > I really don't care much either way, for me it's a done deal, I'm disabling\n> > the tests on my mail servers and advising others to do the same.\n> > I'm just wondering if the community at large is aware of this and has an\n> > opinion.\n> >   \n> \n> Superb.  Thats all you had to do in the first place without raising a stink.\n> \n> If SA wants to completely remove uribl.com tests because we dont allow the\n> heavy hitters to query the public mirrors,  thats their choice.\n\nIf you think 500k queries a day is a heavy hitter, you're off your rocker. \nI suspect most of the heavy hitters have their load distributed among many \nsource IPs...do you aggregate query volume data by cidr block?\n\nFor instance, if we ran a cacheing nameserver on each of our mailservers, \nwould you have ever noticed us? \n\nAndy\n\n---\nAndy Dills\nXecunet, Inc.\nwww.xecu.net\n301-682-9972\n---",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9682520906225176,
+          "SPAM": 0.0317479093774824
+        },
+        "confidence": 0.9365041812450352
+      }
+    },
+    "usage": {
+      "input_tokens": 882,
+      "output_tokens": 0
+    }
+  }
+}

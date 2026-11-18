@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] amavisd warning failure?\n\n > [rest pruned]\n> \n> \n> You may be interested in reading the following (as first given in the\n> offtopic list):\n> \n> http://www.darkreading.com/document.asp?doc_id=144046&f_src=drweekly\n\nTnx, but beat you to it as I posted it on the 01/02/2008 :)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9670355375875394,
+          "SPAM": 0.0329644624124607
+        },
+        "confidence": 0.9340710751750787
+      }
+    },
+    "usage": {
+      "input_tokens": 262,
+      "output_tokens": 0
+    }
+  }
+}

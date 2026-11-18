@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Complexity documentation request\n\nAahz wrote:\n> * Other Python implementations (Jython, PyPy, IronPython) may not be\n> able to provide the same type implementations\n> \n> * Algorithmic information does sometimes change between versions, and\n> keeping the docs updated is not trivial\n\nStill, I think there are some general expectations one\nshould be able to have of any implementation, e.g. that\naccessing a list item is roughly O(1), and not O(n) as\nit would be if they were implemented as linked lists.\n\nDict access should probably be documented as no worse\nthan O(log n) to allow for tree implementations.\n\n-- \nGreg\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005634752480053454,
+          "NOT_SPAM": 0.9994365247519947
+        },
+        "confidence": 0.9931055148454595
+      }
+    },
+    "usage": {
+      "input_tokens": 330,
+      "output_tokens": 0
+    }
+  }
+}

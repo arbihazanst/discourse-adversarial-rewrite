@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: 6 Monthly Report\n\nHi Tony,\n\nIt sounds like we need a cover letter requesting a retrospective suspension for the thesis to be applied before the extension is granted. Can you cut and paste some of the extension request text for the letter for me to edit and then attach to the extension request and six monthly review.\n\nCheers\nChris\n\n-----Original Message-----\nFrom: Tony Meyer [mailto:user2.1@gvc.ceas-challenge.cc]\nSent: Thursday, 10 April 2008 4:43 p.m.\nTo: Messom, Chris\nSubject: Re: 6 Monthly Report\n\n\n> I'll add your signature from the last one if it's ok with you,\n\nSure.  One of these days they'll figure out that you can electronically sign things, no doubt ;)  (Or even fill in forms electronically!).\n\nCheers,\nTony",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00017165139626182027,
+          "NOT_SPAM": 0.9998283486037381
+        },
+        "confidence": 0.9976053253576582
+      }
+    },
+    "usage": {
+      "input_tokens": 313,
+      "output_tokens": 0
+    }
+  }
+}

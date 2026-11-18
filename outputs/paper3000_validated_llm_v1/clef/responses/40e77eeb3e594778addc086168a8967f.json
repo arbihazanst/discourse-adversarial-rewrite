@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] Overlay Icon Question and network drives\n\nHi Jurgen & All,\n\nOn Wed, Apr 16, 2008 at 12:07 PM,   wrote:\n> the code in my first link was from the mercurial extension TortoiseHG. They\n> found some issues that the icon overlay slows down network devices. See here:\n>\n> https://sourceforge.net/tracker/index.php?func=detail&aid=1892791&group_id=199155&atid=968354\n>\n> Could you please tell if you have the same issues with the code Roger posted ?\n\nI am still having some problem with this class... it's an incredible\namount of time/work spent on a very small issue, but that is what the\nusers want :-). Anyway, on my computer, Roger's version doesn't slow\ndown anything. Our 4 network drives are as fast as usual. However, I\nam not able to make it work from a compiled py2exe COM server. It\nworks only from a python script. For the compiled py2exe COM server, I\nhave looked into the file c:/comerror.txt, which says:\n\nPATH is ['D:\\\\\\\\ResWizard\\\\\\\\KSVR_COMServer.exe']\nRegistered: K-SVR.IShellIconOverlayIdentifier\n\nThe registry keys are correctly written but there is no icon overlay,\nnothing has changed visually :-( :-( . If I run it from a Python\nscript, the icon overlay works fine but every time I open a file\ndialog from one of my applications I get this nice error in the\napp.exe.log file created by py2exe:\n\npythoncom error: PythonCOM Server - The 'win32com.server.policy'\nmodule could not be loaded.\n\n: No module named server.policy\npythoncom error: CPyFactory::CreateInstance failed to create instance.\n(80004005)\n\nWhich, as usual, doesn't mean anything to me...\nSo, I don't see any slowdown but I can't make this little sweet thing\nplay nice :-( :-(\n\nAndrea.\n\n\"Imagination Is The Only Weapon In The War Against Reality.\"\nhttp://xoomer.alice.it/infinity77/\n_______________________________________________\npython-win32 mailing list\nkpitck-aew45@python.org\nhttp://mail.python.org/mailman/listinfo/python-win32",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9504689821650043,
+          "SPAM": 0.04953101783499568
+        },
+        "confidence": 0.9009379643300086
+      }
+    },
+    "usage": {
+      "input_tokens": 693,
+      "output_tokens": 0
+    }
+  }
+}

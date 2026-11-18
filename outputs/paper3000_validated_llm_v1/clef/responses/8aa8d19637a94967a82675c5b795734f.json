@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [PATCH] perlfunc/perldiag errors\n\nOn 27/10/2007, Father Chrysostomos  wrote:\n> Oops! I made a mistake in that last patch. This one should correct\n> it. Sorry about that.\n\nThanks, applied.\n\n> (I don't know where I got the idea that\n> 'delete' works on subroutines.)\n\nI know! in perltodo?",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9593856377095122,
+          "SPAM": 0.0406143622904877
+        },
+        "confidence": 0.9187712754190245
+      }
+    },
+    "usage": {
+      "input_tokens": 258,
+      "output_tokens": 0
+    }
+  }
+}

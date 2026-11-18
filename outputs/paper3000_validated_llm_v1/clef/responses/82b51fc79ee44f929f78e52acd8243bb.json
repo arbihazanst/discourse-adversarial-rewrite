@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] No __bases__ in dir()\n\nGuido van Rossum wrote:\n> This is because dir() special-cases classes, isn't it?\n\nAvoiding infinite recursion in dir(type) might be fun if that special \ncase was removed without due care and attention...\n\nCheers,\nNick.\n\n-- \nNick Coghlan   |   uytankmf@gmail.com   |   Brisbane, Australia\n---------------------------------------------------------------\n             http://www.boredomandlaziness.org\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9438219787603462,
+          "SPAM": 0.05617802123965372
+        },
+        "confidence": 0.8876439575206925
+      }
+    },
+    "usage": {
+      "input_tokens": 320,
+      "output_tokens": 0
+    }
+  }
+}

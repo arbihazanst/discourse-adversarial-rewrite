@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [opensuse] Apache HTTP server configuration to interact with a subversion repository\n\n  I need to configure an apache server in order to interact with a\nsubversion repository. In my initial configuration the repository should be\naccessed anonymously. However, when importing into a repository:\n\"svn import tmp/ModemModule/ http://localhost/repos/Modem/ModemModule\"\nI get the error message:\n\"svn: Can't create\ndirectory '/home/bogdan/svnrepo/Modem/db/transactions/0-1.txn': Permission\ndenied\nsvn: Your commit message was left in a temporary file:\nsvn:    'svn-commit.3.tmp' \"\nHow can I solve this issue?\n-- \nBogdan Cristea\nSoftware Engineer",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0010509628567291825,
+          "NOT_SPAM": 0.9989490371432708
+        },
+        "confidence": 0.9880862753156887
+      }
+    },
+    "usage": {
+      "input_tokens": 291,
+      "output_tokens": 0
+    }
+  }
+}

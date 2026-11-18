@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: attachment blocking with body_checks\n\nLeonardo Rodrigues Magalhães wrote:\n> \n> \n> Noel Jones escreveu:\n>> Leonardo Rodrigues Magalhães wrote:\n>>>\n>>>\n>>>    The question is ... is there something i can do for acchieving \n>>> bandwidth saving purposes as well as the attachment blocking ?? Is \n>>> there something i can do with postfix for blocking AND stopping the \n>>> message transmission ?\n>>>\n>>\n>> No, once the client starts sending DATA there is no valid mechanism to \n>> interrupt the client and tell it \"reject\".\n>>\n>> This is a limitation of the SMTP protocol.\n>>\n> \n>    I would be glad to accept some workaround even if that would \n> represent SMTP protocol violations ....\n> \n>    I'm receiving LOTS of email from places i cannot permanently block \n> (hotmail/gmail servers, for example) and in some customers that's eating \n> up some expensive bandwidth ....\n> \n\nThere is no workaround.  Any broken connection during DATA \nwill be interpreted as a transmission error and the mail will \nbe retried, increasing your bandwidth usage.\n\nThe only possibility is to break the connection and then \nreject the envelope sender on the next delivery attempt, but \nyou can't do that inside postfix.  There is also no guarantee \nthat the next attempt by the same sender address is the same \nmessage with objectionable content.\n\n\n-- \nNoel Jones",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9617405902408565,
+          "SPAM": 0.03825940975914349
+        },
+        "confidence": 0.9234811804817129
+      }
+    },
+    "usage": {
+      "input_tokens": 462,
+      "output_tokens": 0
+    }
+  }
+}

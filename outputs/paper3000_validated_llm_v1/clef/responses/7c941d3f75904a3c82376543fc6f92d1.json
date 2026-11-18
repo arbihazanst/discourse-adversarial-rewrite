@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] fixing tests on windows\n\n[re tests which fail because something's holding a file\nopen with SHARE_DELETE]\n\nWell I've tried my best, but I can't come up with a solution\nwhich guarantees to overcome this obstacle. I set up a fairly\naggressive directory watcher which, when it sees a test file\nbeing created, takes a SHARE_DELETE handle on it and releases\nit immediately. (Guessing that this is what the other apps\nare doing).\n\nRunning the test suite from HEAD, this generates all manner\nof access-denied type errors as per the original output.\n\nI used tempfile to generate a random TESTFN in the current directory\nrather than the static @test. And implemented the rename-shim\ndiscussed previously, renaming to a different random name, courtesy\nof mktemp. With those in place, most tests run without error. But\nI'm still getting errors in the same sort of areas which Steven B\noriginally reported.\n\nThe one error I can't see a way round is the access denied (which\nmanifests as Permission Error) which is the documented result of\nattempting to open a file with a pending delete -- ie the delete\nsucceeded but hasn't completed yet.\n\nAn additional complication is that there are hundreds of\ninstances throughout the tests where the test simply calls\nos.unlink/os.remove to undo the test file. To have some more\nrobust central deletion I had to go through and update 68 tests.\n\nI'll keep trying, but in the current state I'm not convinced\nthe situation's improved enough for me to bother uploading\na patch.\n\nTJG\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.939764422917539,
+          "SPAM": 0.06023557708246098
+        },
+        "confidence": 0.8795288458350781
+      }
+    },
+    "usage": {
+      "input_tokens": 560,
+      "output_tokens": 0
+    }
+  }
+}

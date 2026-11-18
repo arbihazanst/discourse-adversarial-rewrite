@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] range() issues\n\nOn Wed, Apr 30, 2008 at 5:10 PM, Benjamin Peterson\n wrote:\n> On Wed, Apr 30, 2008 at 6:41 PM, Guido van Rossum  wrote:\n>  >  I've come across situations where len() raising an exception was more\n>  >  inconvenient than returning a truncated value (e.g. when printing).\n>\n>  In those cases, shouldn't you be explicit, catch the overflow\n>  exception, and then use sys.maxsize?\n\nThat's what I did *after* a big run crashed. :-(\n\n>  >  But I didn't find a rationale. I'm sure it was PBP though.\n>\n>  What's PBP? (A search only turns up a bicycle race. :))\n\nPracticality Beats Purity, from the zen of Python.\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.93397660222948,
+          "SPAM": 0.0660233977705201
+        },
+        "confidence": 0.86795320445896
+      }
+    },
+    "usage": {
+      "input_tokens": 464,
+      "output_tokens": 0
+    }
+  }
+}

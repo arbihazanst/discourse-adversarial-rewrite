@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] Code freeze?\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn Feb 29, 2008, at 1:08 PM, Eric Smith wrote:\n\n> Barry Warsaw wrote:\n>> -----BEGIN PGP SIGNED MESSAGE-----\n>> Hash: SHA1\n>> On Feb 28, 2008, at 4:03 PM, Eric Smith wrote:\n>>> Barry Warsaw wrote:\n>>>> -----BEGIN PGP SIGNED MESSAGE-----\n>>>> Hash: SHA1\n>>>> On Feb 28, 2008, at 2:49 PM, Christian Heimes wrote:\n>>>>> Hey Barry!\n>>>> Hi Christian!\n>>>>> When are you planing to freeze the code of the trunk and  \n>>>>> branches/py3k\n>>>>> for the upcoming alpha releases? I'll merge the last  \n>>>>> modifications  from\n>>>>> 2.6 to 3.0 in a couple of minutes. All tests on Linux are  \n>>>>> looking  good,\n>>>>> except for the two profile tests on 3.0. I'm going to test  \n>>>>> Windows  later.\n>>>> Okay, let's go ahead and make it official.\n>>>> I plan on cutting the alphas for 2.6 and 3.0 at about 6pm  \n>>>> Eastern  (UTC-5) time or 2300 UTC.  Let's freeze the tree one  \n>>>> hour prior to  that: 2200 UTC Friday 29-Feb-2008.\n>>>\n>>> Argh!  I was going to check the last of the PEP 3127 changes in  \n>>> tonight, but I won't make it by 6 pm EST.  I have them finished,  \n>>> but no tests written, so I'm not comfortable checking them in  \n>>> yet.  I guess it's no big deal that they slip until the next alpha.\n>> Sorry, I notice my message might not have been clear.  As of this  \n>> writing, you have 23 hours and 54 minute before code freeze :).\n>> Code freeze: 2200 UTC 29-Feb-2008\n>> Alpha making: 2300 UTC 29-Feb-2008\n>\n> It turns out I'm not going to make this first alpha with the rest of  \n> the PEP 3127 changes.  The code doesn't handle all combinations of  \n> (int, long) and (str, unicode).  I'll get it finished before the  \n> next alpha.\n\nNo problem Eric.  You know when the next alpha is coming out anyway. :)\n\n- -Barry\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.8 (Darwin)\n\niQCVAwUBR8hbrnEjvBPtnXfVAQKRvgP/Qe5/vCtHPX5LKklLTtcD4pnR/AtRs/V2\n/VNeqkvXnr4Ooe8LwNKFMo4Yy0pdvjEQbLR/FGKojG2JIJ0kXyE2ObQXFsKCKAxV\nTCr8ZPeh5wqGLYuJAXtTz/UJzf5CzkgbKY9p32u5yy5qXiP7rgGpi8JvSZJKN3cP\nbApx/pGyNdU=\n=GaSZ\n-----END PGP SIGNATURE-----\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0002684751643231357,
+          "NOT_SPAM": 0.9997315248356768
+        },
+        "confidence": 0.9964278238089798
+      }
+    },
+    "usage": {
+      "input_tokens": 985,
+      "output_tokens": 0
+    }
+  }
+}

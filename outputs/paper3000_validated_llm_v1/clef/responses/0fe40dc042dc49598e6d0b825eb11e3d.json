@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Do you think that your alth is at risk?\n\nDear 475ece1e5fb47b9af39572528986b279,\n\nSummer is a right time to take a break off at work and think about your helth & personal life.\n\nAnd we are glad to aid you with it.\nFrom now on till 30th of September you can use our special proposal.\n\nCheck our site for further details.\n\nGood heth.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.029962295207435697,
+          "SPAM": 0.9700377047925642
+        },
+        "confidence": 0.9400754095851285
+      }
+    },
+    "usage": {
+      "input_tokens": 269,
+      "output_tokens": 0
+    }
+  }
+}

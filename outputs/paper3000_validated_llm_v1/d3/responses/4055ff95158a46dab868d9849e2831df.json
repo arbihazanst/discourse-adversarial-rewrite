@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Extracting attachments, filenames with spaces \n\nThis was probably obvious to most other people, but I figured out how \nto get exmh to open remote files when the filenames have spaces. In my \nmailcap, I have e.g.\n\napplication/msword; ooffice \"%s\"\n\ninstead of \n\napplication/msword; ooffice %s\n\n-- \nrick baartman\n\nTRIUMF\n4004 Wesbrook Mall\nVancouver, BC\nV6T2A3\n\n\n_______________________________________________\nExmh-users mailing list\nndqq-lmbvh@redhat.com\nhttps://www.redhat.com/mailman/listinfo/exmh-users",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005080811969366039,
+          "NOT_SPAM": 0.9994919188030633
+        },
+        "confidence": 0.9937074236324891
+      }
+    },
+    "usage": {
+      "input_tokens": 265,
+      "output_tokens": 0
+    }
+  }
+}

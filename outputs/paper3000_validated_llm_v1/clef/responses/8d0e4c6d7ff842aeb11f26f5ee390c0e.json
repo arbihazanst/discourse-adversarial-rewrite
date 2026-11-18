@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: smtp_host_lookup not working\n\nram schrieb:\n\n> I have a postfix 2.3.4 where I want to reject all unresolvable recipient\n> domains mails. But I want to use domains from /etc/hosts for some\n> domains which are not resolvable , but yet mails must be accepted for\n> \n> \n> I have put smtp_host_lookup = native \n> But yet postfix is rejecting domains listed in /etc/hosts\n\nhttp://www.postfix.org/postconf.5.html#smtp_host_lookup\n\n\"Postfix SMTP client\" != \"Postfix SMTP server\"\n\n-martin\n\n-- \nMartin Schmitt - Schmitt Systemberatung - http://www.scsy.de\nDE 35415 Pohlheim, Gießener Str. 18\nDE 65307 Bad Schwalbach, Am Bräunchesberg 9\nLinux/UNIX - Internet - E-Mail Infrastructure - Antispam/Antivirus\n- \"What goes up, must come down. Ask any system administrator.\" -",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9598894514110433,
+          "SPAM": 0.04011054858895658
+        },
+        "confidence": 0.9197789028220866
+      }
+    },
+    "usage": {
+      "input_tokens": 383,
+      "output_tokens": 0
+    }
+  }
+}

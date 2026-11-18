@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Advice on Anti-Spam Strategy/Blocking Software\n\n  | Date: Thu, 8 Nov 2007 09:42:15 +0000\n  | From: Kieran O'Sullivan \n  |\n  | I am looking for some advice on an anti-spam strategy.\n  | I have looked up spam blockers and from what I have read\n  | SpamAssassin seems to be [pretty] good.  However I am\n  | managing a webmaster and info account and I have come to\n  | the [conclusion] that some kind of e-mail verification\n  | method will be the best.\n\n it may be helpful if you explained why filtering (“blocking”)\n is inadequate (or whatever the issue is) for those two(?)\n e-maildrops;  and  why challenge-response (“verification”)\n is needed for those two(?) e-mail drops.   there's several\n BIG leaps — from filtering something isn't good or somesuch\n and hence challenging is better — that I'm not grokking.\n\n  |[ ... ]\n  | Another thought I had was to disable the info and webmaster\n  | accounts this however is not an option I like but I know\n  | some people who have done it and it certainly works.\n\n again, it'd really really help if you said what the problem\n is.  I'm getting the VERY vague impression the problem is\n those two(?) e-maildrops are receiving “too much” spam, and\n so you want to reduce the amount you(? someone?) must wade\n through.  plausible, but now I'm wondering why the other\n (and I assume there are other) e-maildrops don't have this\n problem?  (I can think of several reasons, but would prefer\n a clearer explanation of the problem rather than guessing.)\n\ncheers!\n\t-blf-\n-- \n▶ ▶  I AM CURRENTLY LOOKING FOR A JOB!  ◀ ◀ | Brian Foster\nExperienced (>25 yrs) software engineer:    |        Montpellier, FRANCE\n • Unix, Linux, embedded, design-for-test;  | Stop E$$o (ExxonMobile)!\n • Software/hardware co-design, debugging;  |     http:/www.stopesso.com\n • Kernels, drivers, filesystems, &tc    Résumé (CV) & contact details:\n • IDL, automated testing, process, &tc.   http://www.blf.utvinternet.ie",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0019980120781694097,
+          "NOT_SPAM": 0.9980019879218305
+        },
+        "confidence": 0.9792037476297845
+      }
+    },
+    "usage": {
+      "input_tokens": 658,
+      "output_tokens": 0
+    }
+  }
+}

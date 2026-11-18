@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: Workshop on Knowledge Discovery from Data Streams at ICML 2006\n\n(apologies for multiple postings)\n-----------------------------------------------------------------------\n                  Call for Papers and Participation              \n \n  3rd International Workshop on Knowledge Discovery from Data Streams   \n \n    At the 23rd International Conference on Machine Learning   \n                Carnegie Mellon University                 \n                       June 29, 2006                      \n-----------------------------------------------------------------------\n\nhttp://www.cs.cmu.edu/~jroure/iwkdds/iwkdds_icml06.html\n\nMany sources produce data continuously. Examples include customer click\nstreams, telephone records, large sets of web pages, multimedia data,\nand sets of retail chain transactions. These sources are called data\nstreams. If the process is not strictly stationary (as most of real\nworld applications), the target concept could gradually change over\ntime. This is an incremental task that requires incremental learning\nalgorithms that take drift into account. Data streams are increasingly\nimportant in the research community, as new algorithms are needed to\nprocess this streaming data in reasonable time. This is an important\nissue for different research areas like data mining, machine learning,\nOLAP, databases, etc. Many researches in these areas are designing new\napproaches or adapting some of the traditional algorithms to data\nstreams. \n\nThe goal of this workshop is to convene researchers who deal\nwith decision rules, decision trees, association rules, clustering,\nfiltering, preprocessing, post processing, feature selection,\nvisualization techniques, etc. from data streams and related themes.\n\nFor additional information and updates, please visit\nhttp://www.cs.cmu.edu/~jroure/iwkdds/iwkdds_icml06.html\n\nTopics\n------\nA data stream is an ordered sequence of instances that can be read only \nonce or a limited number of times. Topics include but are not limited\nto:\n * Data Stream Models\n * Clustering from Data Streams\n * Decision Trees from Data Streams\n * Association Rules from Data Streams\n * Decision Rules from Data Streams\n * Feature Selection from Data Streams\n * Visualization Techniques from Data Streams\n * Incremental on-line Learning Algorithms\n * Single-Pass Algorithms\n * Scalable Algorithms\n * Change Detection\n * Real-World Applications involving incremental, \n   on-line, or real-time learning\n\nInvited Speakers\n----------------\nTutorial: Next Generation Data Streams Algorithms\n    * S. Muthu Muthukrishnan Rutgers University and AT&T Research\n\nPanel: Open issues and emergent topics on Learning from Data Streams\n    * Pedro Domingos University of Washington\n    * S. Muthu Muthukrishnan Rutgers University and AT&T Research\n\nOrganizers\n----------\n* Joao Gama             University of Porto, Portugal\n* Jesús S. Aguilar-Ruiz University of Pablo de Olavide, Spain\n* Josep Roure           Carnegie Mellon University, US\n\nPaper Submission\n----------------\nAll submissions will be reviewed by 2 members of the program committee.\n\nThe papers must be in English and should be formatted according to the \nSpringer-Verlag Lecture Notes in Artificial Intelligence guidelines. \nAuthors instructions and style files can be downloaded at \nhttp://www.springer.de/comp/lncs/authors.html.\n\nThe maximum length of papers is 10 pages. Papers will be submitted in\nPDF by email to ALL the Workshop Chairs:\n\nJesus S. Aguilar-Ruiz, aguilar_@_lsi_us_es\nJoao Gama, jgama_@_fep_up_pt\nJosep Roure, jroure_@_cs_cmu_edu\n(Please replace _@_ with @ and _ with . respectively)\n\nImportant Dates\n---------------\nPaper submission deadline:  April 28, 2006 \nNotification of acceptance: June 2, 2006 \nCamera-ready copies:        June 16, 2006 \nWorkshop date:              June 29, 2006",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9376029163866842,
+          "SPAM": 0.062397083613315786
+        },
+        "confidence": 0.8752058327733685
+      }
+    },
+    "usage": {
+      "input_tokens": 996,
+      "output_tokens": 0
+    }
+  }
+}

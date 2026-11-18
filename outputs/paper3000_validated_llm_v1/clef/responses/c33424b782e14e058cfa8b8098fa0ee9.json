@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Have a separate resolv.conf per interface\n\nDoctor Who wrote: > On 2/14/08, Tommy Pham  wrote: >> Doc, >> >> Are you having problems connecting to *certain* DNS server for >> resolving because you're connecting to it via a different connection? >> The problem I had was my ISP refuses connection that doesn't originate >> from their subscribed line/network because their server doesn't use >> authentication.  If your ISP's DNS server(s) are doing the same also, >> you can route all traffic to certain (DNS server) IP via certain >> gateway.  That's how I can connect to both of my ISP's servers and >> still manage to _load balance_ the 99% of the out going connections via >> 2 connection. >> >> Regards, >> Tommy >> >  > The problem is this: >  > I'm at a client and need to be on their network to access their > machines.  I connect to their network via eth0 and am assigned an > address via DHCP. >  Why isn't DHCP assigning DNS as well? That's your problem. --  >From qjblkpidq@gmail.com  Sun Feb 24 10:30:11 2008 Message: 6 Date: Wed, 13 Feb 2008 08:03:17 -0200 From: \" Andr=E9 Pinz \"  Subject: [Wekalist] Problems with Mysql To: iuxxdkqk@list.scms.waikato.ac.nz Message-ID: \t<0u0m80656868175402w6806568iqt7r40uwm8ce5s86q@mail.gmail.com> Content-Type: text/plain; charset=3D\"iso-8859-1\" Hi, I am trying to use WEKA 3.4.11 with Mysql server 2005 in my computer but Weka show me some errors when I try to open the database. I edit the file DatabaseUtils.props, where I include these lines: jdbcDriver=3Dcom.microsoft.sqlserver.jdbc.SQLServerDriver jdbcURL=3Djdbc:sqlserver://localhost:1433 I edit the CLASSPATH, where I include the path of mysql-connector-java-5.1.5-bin.jar file. The problem is: when I try to load the database these message appear to me: \"PROBLEM CONNECTING TO DATABASE: NO SUITABLE DRIVER FOUND FOR jdbc:sqlserver://localhost:1433\" Do someone knows the soluction ? -- = Thanks, Andr=E9 Pinz Borges -------------- next part -------------- An HTML attachment was scrubbed...",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9489099585671127,
+          "SPAM": 0.051090041432887326
+        },
+        "confidence": 0.8978199171342254
+      }
+    },
+    "usage": {
+      "input_tokens": 755,
+      "output_tokens": 0
+    }
+  }
+}

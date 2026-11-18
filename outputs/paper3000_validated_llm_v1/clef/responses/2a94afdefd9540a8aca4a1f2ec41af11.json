@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Shark Survivors and Natural Weapons from HSW\n\nTo view this email as a web page, go to the link below, or copy and paste it into your browser's address window.\nhttp://view.exacttarget.com/?j=fe5615767d660c757611&m=feee16767c630d&ls=fdeb10767d62007f711c7671&l=fec61c7070660675&s=fdf8157176660c7b71127875&ju=  \n\n\nIf you are having trouble viewing the images in this email, go\nhttp://view.exacttarget.com/?j=fe5615767d660c757611&m=feee16767c630d&ls=fdeb10767d62007f711c7671&l=fec61c7070660675&s=fdf8157176660c7b71127875&ju= \nhere .\nTo ensure future delivery of emails, please add newsletter@howstuffworks.com to your safe sender list or address book.\nFor instructions on how to add this to your address book, please\nhttp://click.belkemail.com/?ju=fe5e1c727661027d7c14&ls=fe24117470620178771778&m=fef510767c6205&l=fec3107874600379&s=fe471d78716d0c7c7d1d&jb=ffcf14&t= \ngo here .\n\nhttp://view.exacttarget.com/ftaf.aspx?j=fe5615767d660c757611&m=feee16767c630d&ls=fdeb10767d62007f711c7671&jb=ffcf14 \nForward to a Friend \n\nhttp://www.howstuffworks.com \n\nAugust 7, 2008\n\nDear Gordon,\n\nin this issue\n\nhttp://adventure.howstuffworks.com/wilderness-weapon.htm \nWhat natural weapons could I find in the wilderness? \n\nhttp://videos.howstuffworks.com/discovery/6794-ocean-of-fear-donald-mccall-shark-survivor-video.htm \nOcean of Fear: Donald McCall, Shark Survivor \n\nhttp://adventure.howstuffworks.com/five-highest-waterfalls.htm \n5 Highest Waterfalls in the World \n\nhttp://adventure.howstuffworks.com/skydiving-quiz1.htm \nSkydiving Quiz \n\nhttp://adventure.howstuffworks.com/timeshare.htm \nHow Timeshares Work \n\nwhat's hot\n\nhttp://adventure.howstuffworks.com/wilderness-weapon.htm \n\nhttp://adventure.howstuffworks.com/wilderness-weapon.htm \nWhat natural weapons could I find in the wilderness? \n\nSkin a dead animal. Smash its leg bone into a blade. And use its tendons to tie that blade to a handle. Sound gruesome? That's how you'd make a knife in the wild.\n\nhttp://adventure.howstuffworks.com/how-to-build-a-shelter.htm \nHow to Build a Shelter \n\nhttp://adventure.howstuffworks.com/how-to-survive-the-freezing-cold.htm \nHow to Survive the Freezing Cold \n\nstaff picks\n\nhttp://static.howstuffworks.com/gif/five-highest-waterfalls-ch150.jpg \n\n \nhttp://static.howstuffworks.com/gif/five-highest-waterfalls-ch150.jpg \n5 Highest Waterfalls in the World \n\nNiagara Falls is the first waterfall that comes to mind for many of us. But is it even one of the biggest? Some of the highest falls have rarely been seen by human eyes.\n\nstuff you might like\n\nhttp://adventure.howstuffworks.com/skydiving-quiz1.htm \n\nhttp://adventure.howstuffworks.com/skydiving-quiz1.htm \nSkydiving Quiz \n\nSkydiving has been described as one of the greatest adrenaline rushes a human being can have. So what keeps skydivers safe as they plummet to Earth? And what happens if something goes wrong on your jump?\n\nhttp://people.howstuffworks.com/quizzes.htm \nWant more quizzes? \n\nTest your knowledge of a variety of subjects with our fun\nquizzes in several popular categories!\n\nhttp://twitter.com/howstuffworks_ \nLove to Tweet? \n\nHowStuffWorks.com is now on Twitter. Check us out and stay on top of today's stuff.\n\nhttp://adventure.howstuffworks.com/timeshare.htm \n\nhttp://adventure.howstuffworks.com/timeshare.htm \nHow Timeshares Work \n\nFor many of us, the first word that comes to mind at the mere mention of the simple term \"timeshare\" is -- \"Scam!\" Find out how timeshares work, if they're a good investment and how to spot the scams.\n\nvideo\n\nhttp://videos.howstuffworks.com/discovery/6794-ocean-of-fear-donald-mccall-shark-survivor-video.htm \nOcean of Fear: Donald McCall, Shark Survivor \n\nDonald McCall describes the sinking of the U.S.S. Indianapolis.\n\nhttp://videos.howstuffworks.com/discovery/6794-ocean-of-fear-donald-mccall-shark-survivor-video.htm \n\nhttp://ad.howstuffworks.com/RealMedia/ads/click_lx.ads/www.howstuffworks.com/newsletter/travel.htm/10514342/ESponBan/OasDefault/Discovery_Newsletter_Travel/dscCan_hol_160x600_mythbust.gif/1 \n\nHowStuffWorks.com has launched our new newsletter design. Let us know what you think\nmailto:newsletter@howstuffworks.com?subject=Feedback \nhere .\n\nThis email was sent to gvcormac@gvc.ceas-challenge.cc, by\nHowStuffWorks, Inc.\n3350 Peachtree Road, Suite 1500\nAtlanta, GA 30326\nUSA\n\nYou received this because your e-mail address was submitted to the HowStuffWorks, Inc. newsletter service. If this email has been sent to you in error or if you would like to be removed from the list, please\nhttp://cl.exct.net/unsub_center.aspx?s=fdf8157176660c7b71127875&j=fe5615767d660c757611∣=feee16767c630d&lid=fec61c7070660675&jb=ffcf14&ju= \nunsubscribe  here or change your preferences using our\nhttp://cl.exct.net/profile_center.aspx?s=fdf8157176660c7b71127875∣=feee16767c630d&j=fe5615767d660c757611&l=fec61c7070660675&jb=ffcf14&ju= \nprofile manager .\n\nHowStuffWorks, Inc . is a registered trademark of HowStuffWorks, Inc. (c) 2008, HowStuffWorks, Inc. All Rights Reserved.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8170975695038776,
+          "SPAM": 0.1829024304961225
+        },
+        "confidence": 0.6341951390077551
+      }
+    },
+    "usage": {
+      "input_tokens": 1875,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse]  [OT] How much power does a PC really consume?\n\nCarlos E. R. wrote:\n> -----BEGIN PGP SIGNED MESSAGE-----\n> Hash: SHA1\n> \n> \n> \n> The Friday 2008-02-15 at 16:07 +0100, Per Jessen wrote:\n> \n>>>> I would look for a device with a needle rather than\n>>>> a digital readout.\n>>>\n>>> I don't think you can measure true rms with a coil and needle. :-?\n>>> It was measured by thermal effects...\n>>\n>> Carlos, Aaron only said \"readout\", which is unrelated to how it is\n>> measured.  The advantage of an analog readout over a digital is that it\n>> is possible for a human to see spikes/changes more clearly.\n> \n> I know that. I've always liked analog multimeters for that reason.\n> \n> But I don't think you can get a needle movement with rms voltage \n> measurement. And the amp meter \"tweezers\" I have used did certainly work \n> badly with triac controlled motors and PC power supplies. So allow me \n> some doubt that a needle thing could measure ac power properly nowdays.\n> \n\nNot so much for \"accurate\" reading but looking for fluctuations,\nwhich are much easier to make sense of with a needle than with\na digital readout.\n\n> Your gadget is probably using a new chip that made the market probably \n> recently designed for the purpose of power measurement with complex \n> waveform. I wonder if power distributors are thinking on using such \n> chips on house meters instead of the mechanic meters they use now.\n> \n\nI doubt it.  The current meters measure total power (real\npower + imaginary power).  Since the generators see both\nthe real power and the imaginary power, it is in everyone's\nbest interest that power continue to be metered using the\ncurrent method which bills for both real and imaginary power.\n[Because of this, appliance manufacturers, especially electric\nmotor manufacturers, are motivated to design things so that\nimaginary power is kept to a minimum].\n\nReal power is current which is in phase with the supply voltage.\nImaginary power is current which is out of phase with the\nsupply voltage.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004628794892817856,
+          "NOT_SPAM": 0.9995371205107182
+        },
+        "confidence": 0.994205009471556
+      }
+    },
+    "usage": {
+      "input_tokens": 627,
+      "output_tokens": 0
+    }
+  }
+}

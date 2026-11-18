@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Perfect proportions are easily attained\n\nIf you've got a dimension below average, you should consult our store to choose your remedy!\nOur remedy really does work and provokes dramatic gains in length!\nhttp://milddear.com/\n\n\nunfolding near Budapest to the south: German tanks were movingof Jewish persecution elsewhere in Europe could not possibly be true,was afraid that he would make fun of me. I wanted to get back at him.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.027962035444980892,
+          "SPAM": 0.9720379645550191
+        },
+        "confidence": 0.9440759291100382
+      }
+    },
+    "usage": {
+      "input_tokens": 253,
+      "output_tokens": 0
+    }
+  }
+}

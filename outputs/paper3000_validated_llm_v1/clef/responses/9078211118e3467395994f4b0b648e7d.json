@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: 6 Monthly Report\n\nMASSEY UNIVERSITY \n\nDOCTORAL RESEARCH COMMITTEE\n\nDOCTORAL CANDIDATE REPORT - Six Monthly Progress Report Cover Sheet\n\nCandidates Name: Mr Tony Andrew Meyer \t              \n\nAcademic Unit: Institute of Information & Mathematical Science \n\nProgramme:  PhD(Sc)\n\nProvisional Registration Date : 20/09/2002 \t         \n\nRegistration:  Full Registration \n\nSubmission Date: 21/12/2007  \t\n\nThesis Title: \" Computer-Actors. \"\n\nSupervisor(s):  \nDr Christopher Hugh Messom\nDr Martin James Johnson\n\n\nINSTRUCTIONS: (Please read carefully)\n\nCANDIDATE:\n\n1.  Candidates should save the attached Word document.  A PDF version has\nalso been attached in case you have difficulties opening the Word document.\nThis form can also be downloaded from the Graduate Research School website.\n\n2.  Candidates should complete Part 1. Answers to questions 9 - 11 should\nbe kept brief (up to 250 words). \n\n3.  Please ensure you write your name and Student ID Number in the\nallocated space on page 1 of the report.\n\n4.  Candidates should then forward a copy of this email cover sheet and the\nreport to their supervisor.\n\nSUPERVISORS:\n\n5. Supervisor and co-supervisors to complete Part 2.\n\n6.  Supervisors should then obtain all signatures including the candidate's\nand co-supervisor(s) in Part 3.\n\n7.  Once all signatures have been obtained, the Supervisor should photocopy\nthe report twice, retain one copy and forward the second copy to the\ncandidate.\n\n8.  The Supervisor should then forward this email cover sheet and the\noriginal report to the Head of Academic Unit.\n\nHEAD OF ACADEMIC UNIT:\n\n9.  The Head of Academic Unit should complete Part 3, read the report and\nact on any problems outlined within the body of the report. \n\n10.  The Head of Academic Unit should sign and photocopy this email cover\nsheet and the report, retain the photocopy for their record and forward the\noriginal to the Graduate Research School (PN 713).\n\n\nThank you!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9638941957380643,
+          "SPAM": 0.036105804261935645
+        },
+        "confidence": 0.9277883914761287
+      }
+    },
+    "usage": {
+      "input_tokens": 635,
+      "output_tokens": 0
+    }
+  }
+}

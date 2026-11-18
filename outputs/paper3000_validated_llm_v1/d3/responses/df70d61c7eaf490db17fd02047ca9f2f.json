@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Database of cardiologists and dozens more specialties\n\nCurrently in Practice:  Physicians in the USA  788,399 in total <> 17,707 emails Many popular specialties like Emergency Medicine, Plastic Surgery, OBGYN, Oncology, Pediatrics and more Over a dozen sortable fields Price for new customers -  $397 ======= Receive the items below as a Bon.US if  you order this week ======= ++> List of US Pharma Companies   Personal email addresses (47,000 in total) and names for top level executives ++> Hospital Facilities in America   Complete contact information for the important jobs held at the hospitals ++> Database of American Dentists   A complete Directory or dentists and related services (valued at $399) ++> Listing of US Chiropractors   100,000 Chiropractors in the USA (worth $250 alone) email to:      charles.edmund.glenn@hotmail.com    exp. mar  August 08 to manage your subscription settings send an email to the address above with 900 in the subject --  To UNSUBSCRIBE, email to debian-mirrors-REQUEST@lists.debian.org with a subject of \"unsubscribe\". Trouble? Contact listmaster@lists.debian.org",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9966685977677673,
+          "NOT_SPAM": 0.0033314022322327493
+        },
+        "confidence": 0.9677855269767739
+      }
+    },
+    "usage": {
+      "input_tokens": 395,
+      "output_tokens": 0
+    }
+  }
+}

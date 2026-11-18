@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] [Distutils] PEP 365 (Adding the pkg_resources\tmodule)\n\nPaul Moore wrote:\n> On 20/03/2008, zooko  wrote:\n\n> I'll chime in here, too. I really want to like\n> setuptools/easy_install, but I don't. I'll try to be specific in my\n> reasons, in the hope that they can be addressed. I know some of these\n> are \"known about\", but one of my meta-dislikes of setuptools is that\n> known issues never seem to get addressed (I know, patches accepted,\n> but I haven't got the time either...)\n\nClearly explained problems with the existing arrangement is valuable as well \nas patches.  Thanks for taking the time to help us see your viewpoint.\n\n\n> 1. No integration with the system packager (Windows, in my case). If I\n> do easy_install nose, then nose does not show up in add/remove\n> programs. That significantly affects the way I manage my PC.\n\nPart of this stems from stretching of the original mission of setuptools, to \ninstall modules for Python, into a general-purpose application installation \ntool.  The buildout tool is more suited for application installation, although \nnot ideal yet.\n\nIn your scenario, what happens when one egg pulls in another and another, \nuntil you have a hundred entries in your add/remove menu?  And you don't \nunderstand the inter-relationship of those so you cannot do a clean uninstall?\n\nSimilarly, or what do you want to appear in that add/remove menu when you are \nusing independent sandboxes with various applications in them, some of which \nare accessible only to specific users who are not admins on that box?\n\n\n> 3. The pkg_resources documentation (in particular, that's the one I've\n> tried to follow) is extremely hard to read. Partly this is just style,\n> but it's partly because it is couched in very unfamiliar terms\n> (distributions, working sets, interfaces, providers, etc). It's also\n> *huge*. A tutorial style overview, supported by API detail, would be\n> far better.\n\nWe'll get better docs.  Of course, that module contains roughly five different \nsets of functionality, some of which can be used unrelated to the others so \nit's not just one API.\n\n\n> 4. Hard to use with limited connectivity. At work, I *only* have\n> access to the internet via Internet Explorer (MS based proxy). There\n> are workarounds, but ultimately \"download an installer, then run it\"\n> is a far simpler approach for me.\n\nThis is hard to address using independent eggs re setuptools but fits buildout \nwhich provides for deployment of a set of related eggs as a single entity. \nI'll add it as a use case and see what we can do though.\n\n\n> 5. Auto-discovery doesn't always work. I'm sorry, I really can't\n> recall the example at the moment, but sometimes easy_install says it\n> can't find a package I *know* is available.\n\nI've hit a few of these myself, although it wasn't an issue with the \nauto-discovery mechanism but rather quality problems with PyPI itself.  Some \nof the eggs only had binary distributions provided, and they were not for my \nplatform so couldn't be used.  Better error messages in this area would help, \nwith encouragement to nag the original author to provide better data on PyPI.\n\n\n> 6. Splitting the community. Windows users rely heavily on binary\n> installers (at least, I do). We're starting to get a situation where\n> some projects provide .egg files, and some provide traditional\n> (bdist_wininst/bdist_msi) installers. This is bad. One way to do it,\n> and all that :-)\n\nReporting and author nagging facilities built into PyPI could help encourage \nmore consistent behavior.\n\n-Jeff\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004306666812608951,
+          "NOT_SPAM": 0.9995693333187392
+        },
+        "confidence": 0.9945634683814019
+      }
+    },
+    "usage": {
+      "input_tokens": 1036,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: buildbot failure in mleisi-suse10.2-x86\n\nThe Buildbot has detected a new failure of mleisi-suse10.2-x86.\nFull details are available at:\n http://buildbot.spamassassin.org:8010/mleisi-suse10.2-x86/builds/494\n\nBuildbot URL: http://buildbot.spamassassin.org:8010/\n\nBuildslave for this Build: mleisi-suse10.2-x86\n\nBuild Reason: \nBuild Source Stamp: HEAD\nBlamelist: mmartinec\n\nBUILD FAILED: failed test test_3\n\nsincerely,\n -The Buildbot",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9474720961003257,
+          "SPAM": 0.0525279038996744
+        },
+        "confidence": 0.8949441922006514
+      }
+    },
+    "usage": {
+      "input_tokens": 313,
+      "output_tokens": 0
+    }
+  }
+}

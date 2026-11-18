@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [PATCH] Update CPANPLUS to 0.83_02\n\nGreetings,\n\nattached is the patch to CPANPLUS 0.83_02. This mostly contains the\nportability fixes as supplied by John M, which are unfortunately not\ncomplete yet. We're using this release to sync up blead with CPANPLUS\ndevelopment.\nFurthermore, it addresses a few outstanding bug reports, and a new\nfeature for custom sources.\n\nAs per usual, all tests successful against a recent copy of blead\non my development box. For completeness sake, here's the full changes\nentry:\n\nChanges for 0.83_02     Tue Oct  9 13:46:48 2007\n================================================\n* Add a /cs plugin to CPANPLUS::Shell::Default allowing you to add  \ncustom\n   sources from outside the CPAN. These custom sources are attributed  \nto the\n   author 'LOCAL' -- See '/cs --help' from the default shell.\n* Improved parsing for URI targets to parse_module: try to determine  \nmodule\n   name and version contained in the tarball if posible\n* Address #29796 (error with funktion 'o' after installing  \nAlien::wxWidgets)\n   File::Find dies when it encounters a dir or symlink twice, which  \nis what\n   A::wxWidgets does. Use follow_skip => 2 to get around this.\n* Address bug #29716: 20_CPANPLUS-Dist-MM.t fails (and leaves test files\n   installed) when EUMM options include INSTALL_BASE\n* Address #29430: Remove LWP as a dependency for  \nCPANPLUS::Internals::Report\n   it now uses File::Fetch, like the rest of CPANPLUS. Thanks to  \nBingOS for\n   reporting\n* Apply patch #29218: Patch to use YAML::Tiny instead of YAML for\n   test reporting\n* Apply Change 31800 by kdy@stcosmo to recognize 5.10 as a valid perl  \nversion\n* Require Module::Load::Conditional 0.18 -- this uses version.pm for\n   version comparisons\n* Depend on T::Reporter 1.34 due to many bug fixes\n* Enable verbose mode in tests if ENV{PERL5_CPANPLUS_TEST_VERBOSE} is  \ntrue\n* Load the module tree before attempting to write a bundle, just in case\n   we chdir and things go haywire\n* Allow passing of a $Conf to C::S::Default->new\n* Delay plugin initialization until C::S::Default->new time\n* Delay loading of CPANPLUS::Configure as long as we can, so we can  \nstill\n   pass our own $Conf iif possible\n* Add test cases for CPANPLUS::Shell::Default->dispatch_on_input\n* Disable pager during tests\n* Use absolute path to our dummy-cpan dir, as some of the underlying  \ncode\n   may chdir\n* Add constant for author name to be used in tests\n* Replace 'print' and 'printf' calls with '$self->__print' and '- \n >__printf',\n   so we can do proper tests on the output\n* Don't use ~0 as a max version number, but divide by two, so we don't\n   get integer overflows in version.pm\n* Add C::I::Utils->_uri_decode and C::I::Utils->_uri_encode for URI  \nencoding\n   to be used by the 'custom sources' code.\n* Make C::I::Utils->_host_to_uri properly unixify a path\n* Make sure $cb->installed works on vms by dealing with filenames and\n   case sensitivity correctly. This is another patch from John M.\n* Fix up _safe_path for VMS, this can now be released\n* Move all distributions under dummy-CPAN down two levels (from\n   authors/id/E/EU/EUNOXS to authors/id/EUNOXS) to get around VMS/VAX 8\n   directoy level depth\n* Another vms fix by John M: 'Makefile' is called 'DESCRIP.MMS' on VMS,\n   depending on what 'make' was used to build perl\n* Weird Unix vs VMS file type issues on VMS, add a work around provided\n   by John M.\n* Use a search on VMS when figuring out what moduels are installed,  \nas the OS\n   doesn't retain case, so we can't do a direct lookup in the module  \ntree\n* 1 while unlink fixes from John M. for VMS\n* Proper %ENV restore fix on VMS from John M.\n* Apply a VMS patch from John Malmber as offered in his mail to p5p\n   3rd of Sept. 2007 [patch@31780] fixes for cpanplus on VMS:\n   In lib/CPANPLUS/Internals/Extract.pm, catdir on VMS can not deal\n   with directory components with dots in them.  Need to translate\n   them as VMS.C in the default mode expects them.  This is a temporary\n   hack that will need to be revised as ODS-5 support is integrated  \nin to Perl.\n* Reset %ENV explicitly on VMS. John Malmberg reports (on 3/9/07) that\n   changes to %ENV persist on VMS, causing an overflow after a few runs,\n   since we append to it.\n* Be case tolerant -- especially VMS seems to suffer from this. In\n   the end, almost all FS, except some UNIX ones are case tolerant,\n   so just use a qr//i\n* Apply Change 31776 by craigb@craigb-brianor on 2007/08/31 22:42:43\n   catdir was used where catfile was meant in C::I::Extract\n\n--\n\n   Jos Boumans\n\n   How do I prove I'm not crazy to people who are?",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9455654175738618,
+          "SPAM": 0.05443458242613824
+        },
+        "confidence": 0.8911308351477236
+      }
+    },
+    "usage": {
+      "input_tokens": 1479,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] from .foo import *\n\nOn Tue, Mar 18, 2008 at 10:49 AM, Aahz  wrote: > On Tue, Mar 18, 2008, \"Martin v. L?wis\" wrote: > > > > When I do a relative star import, I current get > > > > SyntaxError: 'import *' not allowed with 'from .' > > > > What's the reason for this restriction? > > It was the first step in removing the ability to use \"from *\" at all.  I > don't have time right now to find the discussion, but I can do that later > if you want. I suppose issue 2400 should be closed, then. > > > > Is it ok to remove it? > > As always, that's up to Guido. > -- > Aahz (tlxa@pythoncraft.com)           <*> > http://www.pythoncraft.com/ > > \"It is easier to optimize correct code than to correct optimized code.\" > --Bill Harlan > _______________________________________________ > Python-3000 mailing list > smsbmo-9552@python.org > http://mail.python.org/mailman/listinfo/python-3000 > Unsubscribe: > http://mail.python.org/mailman/options/python-3000/musiccomposition%40gmail.com >",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9507972308606433,
+          "SPAM": 0.04920276913935678
+        },
+        "confidence": 0.9015944617212865
+      }
+    },
+    "usage": {
+      "input_tokens": 467,
+      "output_tokens": 0
+    }
+  }
+}

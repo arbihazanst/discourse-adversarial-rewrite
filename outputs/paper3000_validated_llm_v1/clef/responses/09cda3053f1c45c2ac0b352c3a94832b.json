@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Fwd: Re: No SPF_FAIL flag, why?]\n\nIt is completely accurate and copied and pasted from the message file \nitself.\n\nI am running Exim. What configuration should I be looking at on how to \nblock messages with return paths like that?\n\nDave Funk wrote:\n> On Wed, 27 Feb 2008, Matt wrote:\n>\n>> The MTA never really sees whats in the headers.  It only adds to the\n>> headers.  When an SMTP connection first begins the connecting MTA says\n>> helo this such-and-such@such-n-such-domain.com.  Thats what SPF looks\n>> at.  The MTA then adds that as the return path to the headers.\n>\n> Actually there is a \"HELO hostname.domain\" field and then the\n> \"RECPT FROM: rywc-kyo-zhrv@such-n-such-domain.com\" field.\n> Both can be tested with SPF but it is the second (AKA envelope-from)\n> which results in the Return-path header\n>\n>>>> Return-path: \n>>\n>> That return path looks flaky.  I would think spamassassin would have\n>> some way of since its not a valid domain consider it suspect.  Not\n>> sure though.\n>\n> If that accuratly represents the messages's envelope-from address\n> then the OP has a problem at the MTA level. The MTA should do the most\n> basic validation of the envelope-from (make sure that the domain name\n> represents a valid domain via DNS).\n> In that case the message should have been blocked at the MTA and never\n> even made it to SA.\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9727649016813343,
+          "SPAM": 0.027235098318665527
+        },
+        "confidence": 0.9455298033626687
+      }
+    },
+    "usage": {
+      "input_tokens": 530,
+      "output_tokens": 0
+    }
+  }
+}

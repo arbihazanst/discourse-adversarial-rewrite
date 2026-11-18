@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [ spambayes-Bugs-1600821 ] Classifier UnicodeDecodeError on wrong\ttransfer encoding\n\nBugs item #1600821, was opened at 2006-11-21 17:59\nMessage generated for change (Comment added) made by montanaro\nYou can respond by visiting: \nhttps://sourceforge.net/tracker/?func=detail&atid=498103&aid=1600821&group_id=61702\n\nPlease note that this message will contain a full copy of the comment thread,\nincluding the initial issue submission, for this request,\nnot just the latest update.\nCategory: imapfilter\nGroup: 1.0.1\nStatus: Open\nResolution: None\nPriority: 5\nPrivate: No\nSubmitted By: Ivan Vilata i Balaguer (ivilata)\nAssigned to: Tony Meyer (anadelonbrin)\nSummary: Classifier UnicodeDecodeError on wrong transfer encoding\n\nInitial Comment:\nRunning ``sb_imapfilter.py`` 1.0.1 seems to raise the following ``UnicodeDecodeError`` when it comes across a mail with 7-bit content transfer encoding with 8-bit characters in it while classifying::\n\n    Traceback (most recent call last):\n    File \"/usr/bin/sb_imapfilter.py\", line 924, in ?\n      run()\n    File \"/usr/bin/sb_imapfilter.py\", line 914, in run\n      imap_filter.Filter()\n    File \"/usr/bin/sb_imapfilter.py\", line 785, in Filter\n      self.unsure_folder)\n    File \"/usr/bin/sb_imapfilter.py\", line 703, in Filter\n      evidence=True)\n    File \"/usr/lib/python2.4/site-packages/spambayes/classifier.py\", line 190, in chi2_spamprob\n      clues = self._getclues(wordstream)\n    File \"/usr/lib/python2.4/site-packages/spambayes/classifier.py\", line 496, in _getclues\n      clues.sort()\n  UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 1: ordinal not in range(128)\n\nI'm attaching the mail which caused this.  I know it is not properly-formatted, but it is a legitimate mail produced by a popular MUA (Thunderbird 1.5).  Spam surely is worsely formatted\n\nSomeone talked about the same problem in the list: http://www.mail-archive.com/ttrbkgvhb@python.org/msg04543.html\n\n----------------------------------------------------------------------\n\n>Comment By: Skip Montanaro (montanaro)\nDate: 2007-09-25 21:48\n\nMessage:\nLogged In: YES \nuser_id=44345\nOriginator: NO\n\njcea,\n\nDo you have an email message I can work with?  If so, zip it and send it\nto me as an attachment (iybz@pobox.com).\n\nThx,\n\nSkip\n\n\n----------------------------------------------------------------------\n\nComment By: Jes�s Cea Avi�n (jcea)\nDate: 2007-09-25 21:02\n\nMessage:\nLogged In: YES \nuser_id=97460\nOriginator: NO\n\nMy version is 1.0.4 and the traceback is:\n\n\"\"\"\nTraceback (most recent call last):\n  File \"/usr/local/lib/python2.5/site-packages/Milter/__init__.py\", line\n203, in \n    milter.set_eom_callback(lambda ctx: ctx.getpriv().eom())\n  File \"antispam.py\", line 513, in eom\n    prob=hammiedb.score(msg)\n  File \"/usr/local/lib/python2.5/site-packages/spambayes/hammie.py\", line\n62, in score\n    return self._scoremsg(msg, evidence)\n  File \"/usr/local/lib/python2.5/site-packages/spambayes/hammie.py\", line\n38, in _scoremsg\n    return self.bayes.spamprob(tokenize(msg), evidence)\n  File \"/usr/local/lib/python2.5/site-packages/spambayes/classifier.py\",\nline 190, in chi2_spamprob\n    clues = self._getclues(wordstream)\n  File \"/usr/local/lib/python2.5/site-packages/spambayes/classifier.py\",\nline 496, in _getclues\n    clues.sort()\nUnicodeDecodeError: 'ascii' codec can't decode byte 0xfa in position 0:\nordinal not in range(128)\n\"\"\"\n\n\n----------------------------------------------------------------------\n\nComment By: Jes�s Cea Avi�n (jcea)\nDate: 2007-09-17 10:37\n\nMessage:\nLogged In: YES \nuser_id=97460\nOriginator: NO\n\nMy version is 1.0.4.\n\n----------------------------------------------------------------------\n\nComment By: Skip Montanaro (montanaro)\nDate: 2007-09-06 21:11\n\nMessage:\nLogged In: YES \nuser_id=44345\nOriginator: NO\n\nI ran the submitted email through the current sb_filter.py in Subversion\n(probably the same classifier as in 1.1a4).  It worked for me.  While I\ndon't use the IMAP filter, any of the SpamBayes applications should use the\nsame classifier code.  I'm not sure this is a problem in the current code. \nWhat version of SpamBayes are you using?\n\n\n----------------------------------------------------------------------\n\nComment By: Skip Montanaro (montanaro)\nDate: 2007-09-05 12:23\n\nMessage:\nLogged In: YES \nuser_id=44345\nOriginator: NO\n\nDo you have a traceback?  What version of SpamBayes are you using?\n\n\n----------------------------------------------------------------------\n\nComment By: Jes�s Cea Avi�n (jcea)\nDate: 2007-09-05 09:59\n\nMessage:\nLogged In: YES \nuser_id=97460\nOriginator: NO\n\nI'm seeing a lot (>1 per hour in my system) of current spam crashing\nspambayes because they are marked as \"ascii\" but body is 8-bit actually.\n\nSince my milter spam filter crashes and sendmail disables the milter\nfiltering for 50 seconds because the failure (my configuration, and I\nwouldn't like to touch it), a lot of spam is getting thru. About 30-100\nspams, everytime this bug hits.\n\nPlease, increase the priority of this bug a bit... It is hitting. Hard.\n\n\n----------------------------------------------------------------------\n\nYou can respond by visiting: \nhttps://sourceforge.net/tracker/?func=detail&atid=498103&aid=1600821&group_id=61702",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.010751115706168901,
+          "NOT_SPAM": 0.9892488842938312
+        },
+        "confidence": 0.9142675757107407
+      }
+    },
+    "usage": {
+      "input_tokens": 1701,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Deployed Medical Decision Support Systems\n\nI am querying once again about the current status of deployed medical \ndecision support systems. I would greatly appreciate any updates.\nThanks,\nRich\n\nRichard E. Neapolitan\nProfessor and Chair of Computer Science\nNortheastern Illinois University\n5500 N. St. Louis\nChicago, Illinois 60625",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0015420090516728587,
+          "NOT_SPAM": 0.9984579909483271
+        },
+        "confidence": 0.9833732022891577
+      }
+    },
+    "usage": {
+      "input_tokens": 208,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Bayes: What am I missing\n\n\n\n\ncomparity wrote:\n> \n> spamis wrote:\n> \n>  \n> Hi comparity,\n> has you could fix the problem updating SA? \n> \n> ----\n> \n> No, not as far as I can tell. I still get the same spam, and no\n> indication that bayes has been applied. \n> \n> -- \n> \n> \n\nI'm using an older version of qmail-scanner-st. I have saw in the change log\na fixed issue wich maybe produce our problem (i don't know if you are using\nqmail-scanner with spamassassin). I will test the new version as soon as I\nhave configured a test server. I will post my result in few days.\n\nIf I forget put here my result and you are interested, please remember me\nit: spamis in pobladores (.com)\n\n-- \nView this message in context: http://www.nabble.com/Bayes%3A-What-am-I-missing-tp15542012p15630417.html\nSent from the SpamAssassin - Users mailing list archive at Nabble.com.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.006778072945675826,
+          "NOT_SPAM": 0.9932219270543241
+        },
+        "confidence": 0.9414191236575561
+      }
+    },
+    "usage": {
+      "input_tokens": 384,
+      "output_tokens": 0
+    }
+  }
+}

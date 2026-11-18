@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: J&R Weekend Sale - Last Day for Savings!\n\nJ&R Weekend Sale\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/weeksale-3\n========================================================================\n\nTomtom ONE GPS 3rd Edition - Silver Bezel\nOrig. $249.99\nTHIS WEEKEND ONLY $169.99 and Free Shipping!\nSave 32%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr30-3 \n\nOlympus Stylus 1200 12-Megapixel Digital Camera - Black\nOrig. $349.99\nTHIS WEEKEND ONLY $199.99\nSave 42%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr22-3\n\nSandisk 1GB XD-PictureCard Digital Memory Card SDXDM1024A1\nOrig. $19.99\nTHIS WEEKEND ONLY $14.99\nSave 25%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr14-3\n\nMotorola L6I i-Mode Version Cellular Phone - Unlocked\nOrig. $119.99\nTHIS WEEKEND ONLY $79.99\nSave 33%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr27-3\n\nBlu Ray Blowout\nBuy 2 and Save!!\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr31-3\n\nHP GN556AA Pavilion A6200N Desktop PC - REFURBISHED\nOrig. $609.99\nTHIS WEEKEND ONLY $399.99\nSave 34%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr28-3\n\nAT&T 984 Speakerphone and Answering System\nOrig. $199.99\nTHIS WEEKEND ONLY $159.99\nSave 20%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr11-3\n\nWestinghouse SK-26H590D 26\" HDTV/DVD Combo Television Set\nOrig. $649.00\nTHIS WEEKEND ONLY $579.99\nSave 10%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr20-3\n\nTurtle Beach ANR-15 Active Noise Reduction Earphone Buds\nOrig. $79.99\nTHIS WEEKEND ONLY $29.99\nSave 62%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr17-3\n\nSimpleTech SP-U25/250L SimpleDrive 250GB Deluxe Portable 2.5\" Hard Drive - Blue\nOrig. $159.99\nTHIS WEEKEND ONLY $129.99\nSave 18%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr29-3\n\nApple iWork 08 Single User\nOrig. $99.99\nTHIS WEEKEND ONLY $49.99\nSave 50%\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr21-3\n\nPlanon Systems DPEN-R700 DocuPen Handheld Pen-Size Scanner\nOrig. $169.99\nTHIS WEEKEND ONLY $139.99\nSave 18% after $20 mail in rebate\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr9-3\n\nHP Deskjet 6988 Printer\nOrig. $129.99\nTHIS WEEKEND ONLY $99.99\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/jr25-3 23%\n\n---------------------------------------------------------------------\nSee All The Savings At The J&R Weekend Sale    \nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/weeksale-3\n---------------------------------------------------------------------\n\nReal New Yorkers Know - www.RNYK.com\nJ&R blogs on Gadgets, Games, Gotham, Music & More!\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/blog-3\n\nPrices, availability & terms of offers may change without notice. Unless\nspecifically stated, prices do not include shipping or applicable taxes.\n========================================================================\nNEED HELP? \nOur professional staff is available seven days a week to answer your\nquestions. Call toll free 1-800-806-1115 or contact us online at\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/contact-3\n \nUpdate your name, email address or subscription options:\nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/change-3\nUnsubscribe from our newsletter.  \nhttp://jr.chtah.com/a/tBHuEKhAJMkGtByKtAnAFqBnPIr/unsub-3\n\nJ&R Music and Computer World\n23 Park Row | New York, NY 10038 | USA \nTEL: 1-800-426-6027 | FAX: 1-212-238-6396 \nAlways online at www.jr.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.891874519015205,
+          "NOT_SPAM": 0.10812548098479506
+        },
+        "confidence": 0.5057641775244497
+      }
+    },
+    "usage": {
+      "input_tokens": 1546,
+      "output_tokens": 0
+    }
+  }
+}

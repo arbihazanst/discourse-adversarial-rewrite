@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [perl #47576] Safe.pm problem when regex does an implicit 'use utf8'\n\nOn 18 Nov 2007 20:53:43 +0100, Slaven Rezic  wrote:\n> > Using Safe.pm uncovered an implicit 'use utf8' when a regex\n> > /i flag is used. This is blocked because of the 'require' opcode.\n> > There seems to be no way around this other than issuing\n> > permit('require'), which pretty much is not a good Safe practice.\n> > Workarounds welcome.\n>\n> This still fails with perl5.10.0 RC1.\n>\n> For a workaround, throw something into your code which triggers\n> loading of some unicode-related .pl files (utf8_heavy.pl,\n> unicore/To/Fold.pl etc.) at compile time, e.g. with\n>\n>     qr{\\\\x{0100}}i;\n>\n> Note that the unicode codepoint must be 0x100 or higher.\n\nAnother option would be to patch Safe so that it itself requires utf8\nand the rest. However we surely don't want to load all unicore files,\nso some preparatory loading would be needed anyway if you use named\ncharacters or the like. That's why I'm tempted to mark this bug as\n\"won't fix\".",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9602709786247557,
+          "SPAM": 0.039729021375244374
+        },
+        "confidence": 0.9205419572495115
+      }
+    },
+    "usage": {
+      "input_tokens": 471,
+      "output_tokens": 0
+    }
+  }
+}

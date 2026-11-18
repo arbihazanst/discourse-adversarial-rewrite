@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: [E-voting] Swiss Votes to Use 'Unbreakable' Code\n\nDavid\n \nthe buzz is the same as the buzz in the papers whenever you see a headline like\n\"Scientists find gene for ... \"\n \nIt sounds cool and sexy. \n \nOf course there are lots of problems i.e. you rightly point out it only encrypts the channel\nSo I can attack any other number of places.\n \nAnd again assuming the channel is secure may also be a bit problematic\nhttp://www.engadget.com/2007/05/01/quantum-cryptography-kinda-sorta-hacked/\n \n \nDermot\n \n \n\n________________________________\n\nFrom: y-vmnajx-cgagjwg@lists.stdlib.net on behalf of David GLAUDE (PourEVA)\nSent: Sun 10/14/2007 9:15 PM\nTo: Patrick OBeirne\nCc: t-iycauh@lists.stdlib.net\nSubject: Re: [E-voting] Swiss Votes to Use 'Unbreakable' Code\n\n\n\nThis quantum cryptography usage in Swiss vote is pure marketting.\n\nThe only thing they secure is a single link between a counting site and\nthe place were the result are accumulated.\nThe company/university spinoff providing the \"encryptor\" is from the\ncountry and plan to use it for marketting.\nThe eVoting promotor also use it in a way... saying they use to of the\nart technology.\n\nMaybe it is important to encrypt this link... maybe it is not.\nEven if it is, any other encryption would be good enough.\n\nI believe that (except for vote secrecy) the encryption of this link is\nnot usefull... The result of the election is not a secret. What is\nimportant is for the data not to be modified.\n\nI really do not understand this fuzz/buzz.\n\nDavid GLAUDE\n\nPatrick OBeirne wrote:\n> http://news.wired.com/dynamic/stories/V/VOTING_SECURITY\n> Oct 11, 3:56 PM EDT\n> Swiss Votes to Use 'Unbreakable' Code\n>\n> By FRANK JORDANS\n> Associated Press Writer\n>\n> The city-state will use quantum technology to encrypt election results\n> as they are sent to the capital on Oct. 21, said Nicolas Gisin of the\n> University of Geneva.\n>\n> \"If anyone tries to even read the message it will explode like a soap\n> bubble,\" said Gisin, the physics professor who led the team that\n> developed the technology.\n>\n>\n> _______________________________________________\n> E-voting mailing list\n> t-iycauh@lists.stdlib.net\n> http://lists.stdlib.net/mailman/listinfo/e-voting\n> http://evoting.cs.may.ie/\n>\n>\n\n_______________________________________________\nE-voting mailing list\nt-iycauh@lists.stdlib.net\nhttp://lists.stdlib.net/mailman/listinfo/e-voting\nhttp://evoting.cs.may.ie/\n\n\n\n_______________________________________________\nE-voting mailing list\nt-iycauh@lists.stdlib.net\nhttp://lists.stdlib.net/mailman/listinfo/e-voting\nhttp://evoting.cs.may.ie/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9582910724293422,
+          "SPAM": 0.04170892757065783
+        },
+        "confidence": 0.9165821448586844
+      }
+    },
+    "usage": {
+      "input_tokens": 866,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Your receipt #5830325642\n\nApple Tax Invoice\n-----------------------------------------------------------\n\n\nBilled to:\nuser2.1@gvc.ceas-challenge.cc\nTony Meyer\n2 Apsley Rise\n\n\nWaitakere, 0612\n\n\n\n        Order Number: M1VWLS547L    \n        Receipt Date: 01/04/08\n         Order Total: $23.36    \n           Billed To: Visa .... 4104\n\n\n\n\n\n\nItem Number     Description                                        Unit Price        \n-----------------------------------------------------------------------------\nQ0002           Piece of Me                                             $1.79\nQ0002           Love Song                                               $1.79\nQ0002           I Am Serious About Weight Loss                          $1.79\nQ0053           Weight Loss Hypnosis: Relax Your Way to Thin!          $17.99\n\n-----------------------------------------------------------------------------\n\n                                                 Payment Card Total:   $23.36\n-----------------------------------------------------------------------------\n                                                        Order Total:   $23.36\n\n\nPlease retain for your records\nPlease See Below For Terms And Conditions Pertaining To This Order.\n \n\nApple Pty Ltd\nYou can find the iTunes Store Terms of Sale and Sales Policies by launching your iTunes application and clicking on http://www.apple.com/nz/support/itunes/legal/policies.html\n\n\n\nAnswers to frequently asked questions regarding the iTunes Store can be found at\nhttp://www.apple.com/nz/support/itunes/musicstore/\n\n\nAccount Information: https://phobos.apple.com/WebObjects/MZFinance.woa/wa/accountSummary\nPurchase History: https://phobos.apple.com/WebObjects/MZFinance.woa/wa/purchaseHistory\n\nApple respects your privacy\nInformation regarding your personal information can be viewed at\nhttp://www.apple.com/nz/legal/privacy/\n\nCopyright X (C) 2008 Apple Pty Ltd All rights reserved\nhttp://www.apple.com/legal/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9396599246715185,
+          "NOT_SPAM": 0.06034007532848157
+        },
+        "confidence": 0.671206585413313
+      }
+    },
+    "usage": {
+      "input_tokens": 540,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [ILUG] Job: Data Centre Technician\n\nHi guys,\nI received the go ahead to put up an ad here for a job. Below is a\ndescription of the job, the company is Amazon Ireland, or if you prefer,\namazon.com\n\nPlease mail any replies to me off list. Feel free to ask questions about the\nposition, and I'll do my best to answer them.\n\nData Center Technician,\n\n\nNetworking\n•Experience with Cisco's CAT & Native IOS\n• Switch Configuration and Troubleshooting\n• Copper Cable Termination\n• Understanding of Fiber Optic Cabling\n• Experience with Cisco 6500, 3700 and 7600 Series Equipment\n\nSystems\n• General knowledge of Linux/Unix with Troubleshooting Experience\n• Operational Knowledge of Microsoft Windows 2003 Server & Windows XP Pro\n• Base Operating System Install\n• System Administration\n• Scripting; Perl, Python, Bash\n\nComputer/Server Hardware\n• HP/Compaq Proliant Servers – possess or obtain within three months of\nhire, an APS certification on the Proliant products\n• Knowledge of the x86 platform & SAN architecture\n\nHVAC (Heating, Ventilating, and Air-Conditioning)\n• Power Distribution Units (PDUs) & Uninterrupted Power Supplies (UPS)\n• Fire Suppression Systems\n• Diesel Generators\n• Air Handlers and Chillers\n\nCandidates need not be experts in all of the above, but the ideal candidate\nwould have experience with at least two of the above and show the\nwillingness and aptitude to learn what is required to become adequately\nskilled in the other competencies.\n\nA qualified candidate would be described as an individual who is a team\nplayer, self-motivated and looking for a challenge. Strong communications\nskills are a must; in a given shift the Data Center Technician is the Data\nCenter's primary point of contact for both internal customers (Network\nEngineers, System Engineers & Administrators, Software Engineers, Database\nEngineers and Systems/Networking Operations Center) and external customers\n(Vendors & Contractors).\n\n\nThe responsibilities of the Data Center Technician extend beyond day to day\nData Center operations to include; process improvements, peer training, and\nprojects worked in conjunction with other groups.\n\n24x7 environments and are staffed with Data Center Technicians around the\nclock who are required to work twelve hour shifts that either start or end\non a weekend and rotate between three and four day work weeks.\n\nEamonn",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9265171449295115,
+          "SPAM": 0.07348285507048843
+        },
+        "confidence": 0.8530342898590231
+      }
+    },
+    "usage": {
+      "input_tokens": 691,
+      "output_tokens": 0
+    }
+  }
+}

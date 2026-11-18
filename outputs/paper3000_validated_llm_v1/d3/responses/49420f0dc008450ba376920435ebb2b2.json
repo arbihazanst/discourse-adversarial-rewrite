@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [ spambayes-Feature Requests-1463905 ] Junk E-Mail & Action Button\n\nFeature Requests item #1463905, was opened at 2006-04-03 16:38\nMessage generated for change (Comment added) made by plusaf\nYou can respond by visiting: \nhttps://sourceforge.net/tracker/?func=detail&atid=498106&aid=1463905&group_id=61702\n\nPlease note that this message will contain a full copy of the comment thread,\nincluding the initial issue submission, for this request,\nnot just the latest update.\nCategory: Outlook\nGroup: None\nStatus: Open\nPriority: 5\nPrivate: No\nSubmitted By: dasnetsys (dasnetsys)\nAssigned to: Nobody/Anonymous (nobody)\nSummary: Junk E-Mail & Action Button\n\nInitial Comment:\nFirst off, this is one of the best programs for Anti-\nSPAM I've seen.  Kudos to all...\n\nWhen in Junk E-Mail the available Button is [Recover \nfrom Spam] which I've clicked I really meant to DELETE \nthem from Junk E-Mail Folder.  (Done this several \ntimes and may be due to contantly using the [Delete As \nSpam] while in Inbox.)\n\nCould there be a warning that I'm restoring junk \nemails into Inbox or add a [Delete Junk] along with \n[Recover...].\n\nJust though I mention it.\n\nThanks for all your work...\n\n\n\n----------------------------------------------------------------------\n\nComment By: plusaf (plusaf)\nDate: 2008-04-09 20:01\n\nMessage:\nLogged In: YES \nuser_id=1083896\nOriginator: NO\n\nperhaps that could be a spambayes OPTION to display a popup warning or not\nfor that action?\n\n----------------------------------------------------------------------\n\nComment By: Tony Meyer (anadelonbrin)\nDate: 2006-05-10 22:31\n\nMessage:\nLogged In: YES \nuser_id=552329\n\nThis sounds terrible to me.  I would hate to have a\nconfirmation dialog pop up every time that I used the \"Not\nSpam\" button to correct any mistakes.\n\n----------------------------------------------------------------------\n\nYou can respond by visiting: \nhttps://sourceforge.net/tracker/?func=detail&atid=498106&aid=1463905&group_id=61702",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.013852531036183212,
+          "NOT_SPAM": 0.9861474689638169
+        },
+        "confidence": 0.8946326249069108
+      }
+    },
+    "usage": {
+      "input_tokens": 687,
+      "output_tokens": 0
+    }
+  }
+}

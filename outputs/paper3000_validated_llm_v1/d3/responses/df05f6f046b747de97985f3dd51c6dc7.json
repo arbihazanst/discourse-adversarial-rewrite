@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: How to make her your slave\n\n\nYou do not need to be fat to have a fat pecker, check out here for an upgrage.\nhttp://www.feelscore.com/\n\n--\nUsing Opera's revolutionary e-mail client: http://www.opera.com/mail/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9788287303033805,
+          "NOT_SPAM": 0.02117126969661959
+        },
+        "confidence": 0.8520326694290805
+      }
+    },
+    "usage": {
+      "input_tokens": 186,
+      "output_tokens": 0
+    }
+  }
+}

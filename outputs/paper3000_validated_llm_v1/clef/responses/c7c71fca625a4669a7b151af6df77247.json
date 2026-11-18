@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] PEP: Cleaning out sys and the \"interpreter\" module\n\nOn Tue, Apr 8, 2008 at 4:07 PM, Guido van Rossum  wrote:\n> On Tue, Apr 8, 2008 at 1:34 PM, Benjamin Peterson\n>   >  Another thought: Even if other\n>\n> implementations provide these\n>  >  functions, it doesn't really mean they are compatible. Allowing each\n>  >  implementation to have their own interpreter module can clear up\n>  >  confusion regarding how much they support what is returned.\n>\n>  That's not the Python spirit. The spirit is that *if* they support\n>  similar enough functionality the APIs should be named the same, in the\n>  same module, and have the same signature. E.g. the os module is built\n>  on this principle. Many APIs there are optional, but if they exist,\n>  they have a known name and spec. (The posix/nt underlying modules are\n>  implementation details that most users never need to know about.)\nYou can't expect people to write the same implementation as you,\nthough. Take an implementation (imaginary for the moment) that has a\nframe-like object, but is barred from exposing it because it doesn't\nhave the same API as the CPython one. You could argue too that\nexposing an internal object with the ugly name _getframe is hardly\npythonic to begin with. ;)\n>\n>  --\n>\n>\n> --Guido van Rossum (home page: http://www.python.org/~guido/)\n>\n\n\n\n-- \nCheers,\nBenjamin Peterson\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9445893145917689,
+          "SPAM": 0.05541068540823124
+        },
+        "confidence": 0.8891786291835377
+      }
+    },
+    "usage": {
+      "input_tokens": 607,
+      "output_tokens": 0
+    }
+  }
+}

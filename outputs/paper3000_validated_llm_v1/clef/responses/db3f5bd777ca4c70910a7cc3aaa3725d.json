@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [perl #46459] Perl threads + HTTPS = Crash\n\nMoin,\n\nOn Tuesday 16 October 2007 16:59:15 Jerry D. Hedden wrote:\n> Danett song wrote:\n> > The program work perfectly when i'm requesting only\n> > HTTP pages with multiple threads, however when I\n> > change HTTP to HTTPS with multiple threads the program\n> > crash (segmentation fault / access violation). If I\n> > use HTTPS and only one thread the program work\n> > perfectly.\n> >\n> > That's looks like really strange for me, which come to\n> > my mind is that HTTPS is not thread safe in perl?\n>\n> It has nothing to do with the protocol per se, but with the\n> modules that implement it.\n>\n> > I have SSL modules instaled...\n> >\n> > libcrypt-ssleay-perl            0.51-5\n> > libio-socket-ssl-perl           1.01-1\n> > libnet-ssleay-perl              1.30-1\n>\n> Most likely, one or more of these modules is not\n> thread-safe.  You need to file bug reports against whichever\n> of these you can determine is the problem (or all if you can\n> not).\n>\n> If you read the POD for the 'threads' module, it discusses\n> possible work arounds for non-thread-safe modules.\n>\n> This is not a bug with the Perl interpreter.  As such, this\n> bug report should be closed.\n\nNot so fast. I remember there was a bug in blead fixed very recently \nthat showed that if you grabbed enough things with LWP fast enough (or \nloaded enough modules fast enough?), it would go *boom*. Sorry, but I \ncan't remeber which bug that was.\n\nTels\n\n-- \n Signed on Tue Oct 16 17:09:22 2007 with key 0x93B84C15.\n Get one of my photo posters: http://bloodgate.com/posters\n PGP key on http://bloodgate.com/tels.asc or per email.\n\n \"Build a man a fire, and he'll be warm for a day. Set a man on fire, \nand\n he'll be warm for the rest of his life.\"\n\n  -- Terry Pratchett",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9549872561565234,
+          "SPAM": 0.045012743843476734
+        },
+        "confidence": 0.9099745123130467
+      }
+    },
+    "usage": {
+      "input_tokens": 697,
+      "output_tokens": 0
+    }
+  }
+}

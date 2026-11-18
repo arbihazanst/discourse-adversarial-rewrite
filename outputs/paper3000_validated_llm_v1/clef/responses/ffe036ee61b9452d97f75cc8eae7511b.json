@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: V, Produktbeschreibungen ..\n\nThen came the labor-protective legislationAs the head of my court I appointed a man known to me from his youth, the former Court Marshal of my father, Count August Eulenburg, who remained at the head of the Ministry of the Royal House until his death in June, , at the age of eighty-two yearsBut I marveled even more at a question asked by the English Govern ment, through the channel of the English Em- bajssy, on the same subject, which betrayed an abso- tytely amazing lack of knowledge of the progress made in Germany in the province of social reformI feel no grudge against him for the third volume of his reminiscencesThis generation, through its dealings with Crown Prince Frederick William, was imbued with many liberal ideas and projects of reform which were to be carried out under the direction of the Emperor FrederickHIS ATTITUDE TOWARD PARTIES The later periods of my reign proved that I was not hostile to any party, with the exception of the Ultra-Socialists; also, that I was not anti-LiberaL My most important Finance Minister was the Liberal, Miquel; my Minister of Commerce was the Liberal, Moeller; the leader of the Liberals, Herr von Benaigsen, was Chief President of Han overYou can trust me,   THE KAISER'S MEMOIRS marck's Russian policy, one thing must be ac knowledged: the Prince, despite the Congress of Berlin and the rapprochement of France to Rus sia, was able to avoid serious frictionI often pointed out that the National Liberals in the Empire were true to the Empire and to the Emperor, for which reason they should be thoroughly welcome to the Conservatives as allies; that I could not and did not wish to govern without them in the Em pire, and was unwilling to govern against them; that North German conserva tism was misunderstood in some parts of the Empire because of differences in historical de velopment; and that, therefore, the National Liberals were the alliesBoth the Prussian Liberals and the Conservatives, I continued, made the mistake of remembering too well the old period of conflict of  -; and, at elections and other political fights, they were prone to fall back into the habits of those daysAs for me personally, I have the of recalling that Bismarck intrusted to me in  the very delicate Brest mission, and said of meSome day that man will be his own Chancellor/' This shows that Bismarck must have had some belief in meI am objective enough to ask myself to what extent the courtesy of one ruler to another and possibly, in addition, the at the elimination of a statesman of Bismarck's importance, can have influenced the Tsar, con sciously or unconsciously, in making the above- mentioned statement Prince Bismarck's belief in the Tsar's trust in him was, subjectively, undoubt edly genuine; and, moreover, there can be no doubt as to the esteem in which Alexander III held Bismarck's ability as a statesmanThe ambassador replied that the same thing had also occurred to him and caused him to have the earlier records of the Embassy investigated, whereupon it had transpired that the Embassy had sent the full est reports on the subject to London and that thor ough reports had been forwarded home concerning every important stage in the progress of social re form; but, because they came from Germany, nobody ever read them ; they were simply pigeon holed and remained there ever since ; it is a down right shame ; Germany does not interest people at home/  Thus the Briton, with a shrug of his shouldersHe never made a secret of his Prussian loyalty to his KingNeverthless, it stood to reason that I was deeply hurt by what had occurredHerr von Lucanus took over his post from His Excel lency von WilmowskiMy deep grief and sor row were all the greater because it was almost impossible for me to speak alone with my beloved fatherThere were sharp differences of opinionI took the liberty of observing that the opportunity to postpone such  THE KAISER'S MEMOIRS an understanding for a long time lay ready to hand in -, when the Russians might have been allowed to occupy Constantinople had this been done, the English fleet would have sailed in without further ado to defend Constantinople and the Russo-English conflict would have been onIn doing this, it struck me that Prince Bismarck spoke quite disdainfully of Turkey, of the men in high position there, and of conditions in that landThis afforded me and filled up my whole life",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.22323704540501527,
+          "SPAM": 0.7767629545949847
+        },
+        "confidence": 0.5535259091899694
+      }
+    },
+    "usage": {
+      "input_tokens": 1111,
+      "output_tokens": 0
+    }
+  }
+}

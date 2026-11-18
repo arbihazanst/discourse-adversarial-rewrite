@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Men's Swim trunks with UPF 50 just $25\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHaving problems viewing this e-mail? Please click here.\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n        \n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeel free to share! Forward this e-mail to a friend.This is an e-mail advertisement from Lands' End, Inc., 1 Lands' End Lane, Dodgeville, WI 53595To subscribe, modify, or unsubscribe from the e-mail list, click here. You can also modify or cancel your subscription by calling 1-800-288-9091Are you receiving our free catalogs? Sign up to get your favorite Lands' End catalogs delivered to your mailbox! We have specialty catalogs for MEN, KIDS, HOME, WOMEN'S PLUS SIZE and more. Contact us at talkback@landsend.com to share your thoughts on our e-mail updates.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.1002957707702342,
+          "SPAM": 0.8997042292297659
+        },
+        "confidence": 0.7994084584595318
+      }
+    },
+    "usage": {
+      "input_tokens": 346,
+      "output_tokens": 0
+    }
+  }
+}

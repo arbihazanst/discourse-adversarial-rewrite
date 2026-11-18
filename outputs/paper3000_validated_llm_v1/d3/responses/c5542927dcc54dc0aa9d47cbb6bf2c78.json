@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Get more pleasure in love\n\nThis preparation will help you pride yourself upon the measurements of your main muscle\nGain additional  inches and magically change your life!\nhttp://falldear.com/\n\n\nservices after the organization made a trade with thecareer. Carr was the first overall draft pick of thethe gaolers and the prisoners.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9961415622864179,
+          "NOT_SPAM": 0.003858437713582063
+        },
+        "confidence": 0.9635081475976299
+      }
+    },
+    "usage": {
+      "input_tokens": 196,
+      "output_tokens": 0
+    }
+  }
+}

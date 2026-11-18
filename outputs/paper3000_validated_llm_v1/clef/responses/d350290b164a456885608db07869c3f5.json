@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [python-win32] Library not Registered Error while running\n\nHi Tim, I tried the snippet you sent to me. Same error. i opened the python shell and gave \"import wmi\" It give the same error.  comobj._oleobj_.GetTypeInfo().GetContainingTypeLib()[0].GetTypeComp() com_error: (-2147319779, 'Library not registered.', None, None) Thanks  for your responce. Siddhartha   On Mon, Mar 17, 2008 at 4:30 PM,  wrote: > Send python-win32 mailing list submissions to >        kpitck-aew45@python.org > > To subscribe or unsubscribe via the World Wide Web, visit >        http://mail.python.org/mailman/listinfo/python-win32 > or, via email, send a message with subject or body 'help' to >        gqljhv-syv93-dxsffgq@python.org > > You can reach the person managing the list at >        lzlwpv-ttz39-lzxdd@python.org > > When replying, please edit your Subject line so it is more specific > than \"Re: Contents of python-win32 digest...\" > > > Today's Topics: > >   1.  Library not Registered Error while running (siddhartha veedaluru) >   2. Re: Library not Registered Error while running (Tim Golden) > > > ---------------------------------------------------------------------- > > Message: 1 > Date: Mon, 17 Mar 2008 12:07:55 +0530 > From: \"siddhartha veedaluru\"  > Subject: [python-win32]  Library not Registered Error while running > To: kpitck-aew45@python.org > Message-ID: >        <430r88wu4829366843q38848ua2th6o8430388w848c9@mail.gmail.com> > Content-Type: text/plain; charset=\"iso-8859-1\" > > Date: Fri, 14 Mar 2008 12:59:26 +0000 > From: Tim Golden  > Subject: Re: [python-win32] Library not Registered Error while running >       WMI example script > Cc: kpitck-aew45@python.org > Message-ID: <12is92qs.1322328@timgolden.me.uk> > Content-Type: text/plain; charset=ISO-8859-1; format=flowed > > siddhartha veedaluru wrote: > > I have installed win32 extensions on my windows 2003 server > > i'm using python 2.5.1. > > > > downloaded the wmi module 1.3.2 to my machine > > used > > > > \"python setup.py install\" > > > > to install the module > > > > i tried run an example mentioned in the web page. it gave the following > > error. > > > > File \"C:\\\\Python25\\\\Lib\\\\site-packages\\\\wmi.py\", line 157, in __init__ > > comobj._oleobj_.GetTypeInfo().GetContainingTypeLib()[0].GetTypeComp() > > pywintypes.com_error: (-2147319779, 'Library not registered.', None, > None) > > Script terminated. > > Just to test, could you run this code to see if it produces > the same result? (This is basically what the wmi module > does behind the scenes). > >  > import win32com.client > win32com.client.GetObject (\"winmgmts:\") > >  > TJG > ------------------------------------------- > Hi , > > I have tried the snipped > The script just terminted with any output or error. > > > Thanks > Siddhartha. > -------------- next part -------------- > An HTML attachment was scrubbed... > URL: > http://mail.python.org/pipermail/python-win32/attachments/20080317/cf718808/attachment-0001.htm > > ------------------------------ > > Message: 2 > Date: Mon, 17 Mar 2008 08:34:27 +0000 > From: Tim Golden  > Subject: Re: [python-win32] Library not Registered Error while running > Cc: kpitck-aew45@python.org > Message-ID: <32jz4o78.1602384@timgolden.me.uk> > Content-Type: text/plain; charset=ISO-8859-1; format=flowed > > siddhartha veedaluru wrote: > >> From: Tim Golden  > >> Just to test, could you run this code to see if it produces > >> the same result? (This is basically what the wmi module > >> does behind the scenes). > >> > >>  > >> import win32com.client > >> win32com.client.GetObject (\"winmgmts:\") > >> > >>  > >> TJG > > > ------------------------------------------- > > Hi , > > > > I have tried the snipped > > The script just terminted with any output or error. > > Well that's a shame (for me): it means that WMI is working > ok on your machine in general... although I'd have been > surprised if that weren't the case! > > Just to narrow down, could you run these lines in the interpreter > to see if/where the error comes up: > >  > import wmi > c = wmi.WMI () > c.Win32_OperatingSystem () >  > > Thanks > TJG > > > ------------------------------ > > _______________________________________________ > python-win32 mailing list > kpitck-aew45@python.org > http://mail.python.org/mailman/listinfo/python-win32 > > > End of python-win32 Digest, Vol 60, Issue 26 > ******************************************** >",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9472303645848932,
+          "SPAM": 0.052769635415106916
+        },
+        "confidence": 0.8944607291697864
+      }
+    },
+    "usage": {
+      "input_tokens": 1509,
+      "output_tokens": 0
+    }
+  }
+}

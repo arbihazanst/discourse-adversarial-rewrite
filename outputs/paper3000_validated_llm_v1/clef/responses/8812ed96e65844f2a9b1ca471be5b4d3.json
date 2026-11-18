@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ie-rant] NTL Junk Mail...\n\nI'll tell you the next time I see you.\n\nDermott Bolger  wrote:                               That thread has been removed from Board.ie.\n \n I find Karen's silence on Mr Briggs even more disturbing.\n \n Regards,\n \n Dermott\n \n On 9/27/07, Williams, Graham  wrote:\n >\n >\n >\n >\n >\n >\n > Boards.ie didn't like the post, here's the txt from it\n >\n > NTL Junk Mail Alan Briggs NTL Head Of Sales:\n >\n > I know that this problem has been discussed here before, but I get so much junk mail from NTL.\n > They are all from the Head of Sales, Alan Briggs.\n >\n > I have spoken to Alan Briggs on a number of occasions, for some reason someone in NTL gave me his mobile number.\n >\n > I have asked him to remove me from the mailing list, unfortunately it's sent to The Resident, which means\n > there isn't much I can do about it, but on my last phone call to Alan, I told him if I got anymore junk mail I would be posting his phone number on the web so other people like myself could call him. He actually laughed at this, so I don't think he thought I was serious.\n >\n > So if anyone wants to call him, here's his mobile number, please pass this number around to anyone who has a problem with the amount of junk mail that NTL send.\n > Alan Briggs NTL Head Of Sales:\n >\n > http://tinyurl.com/  2tu9bg\n >\n > Please call him with your complaints, and remember don't abuse this number.\n > If anyone can recommend any other forums to post this on please let me know.\n >\n > TW\n >\n > ________________________________\n >\n > From: pq-mism@yahoogroups.com on behalf of Williams, Graham\n > Sent: Thu 27/09/2007 17:11\n > To: pq-mism@yahoogroups.com\n > Subject: [ie-rant] NTL Junk Mail...\n >\n > From boards.ie\n >\n > http://www.boards.ie/vbulletin/showthread.php?t=2055156946 \n >\n > Head Of Sales from NTL http://tinyurl.com/2tu9bg \n >\n >\n > g\n >\n \n     \n                               \n\n\n        \"I always feel like a poofter when I order a latte, the name is so gay that even if it was made with testosterone and came with a free vagina to fuck voucher, it would still be gay.\"\n\n\n\n\n\n       \n---------------------------------\nDon't let your dream ride pass you by.    Make it a reality with Yahoo! Autos.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.956695858435818,
+          "SPAM": 0.043304141564182
+        },
+        "confidence": 0.9133917168716359
+      }
+    },
+    "usage": {
+      "input_tokens": 771,
+      "output_tokens": 0
+    }
+  }
+}

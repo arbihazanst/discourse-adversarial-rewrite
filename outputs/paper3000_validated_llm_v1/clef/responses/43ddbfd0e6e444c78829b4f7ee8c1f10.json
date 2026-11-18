@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Wekalist Digest, Vol 60, Issue 19\n\nSend Wekalist mailing list submissions to\n\tiuxxdkqk@list.scms.waikato.ac.nz\n\nTo subscribe or unsubscribe via the World Wide Web, visit\n\thttps://list.scms.waikato.ac.nz/mailman/listinfo/wekalist\nor, via email, send a message with subject or body 'help' to\n\tohwwlejs-pbfotbp@list.scms.waikato.ac.nz\n\nYou can reach the person managing the list at\n\tpobypuhs-hvhzj@list.scms.waikato.ac.nz\n\nWhen replying, please edit your Subject line so it is more specific\nthan \"Re: Contents of Wekalist digest...\"\n\n\nToday's Topics:\n\n   1. Re: stringtowordvector (michel.plantie)\n   2. Questions about the experimenter (Roman Hausner)\n   3. Logistic regression function parameters (Peter Schüffler)\n   4. Re: stringtowordvector (Peter Reutemann)\n   5. Re: How to do parameter optimization? (Peter Reutemann)\n   6. Re: Questions about the experimenter (Peter Reutemann)\n   7. Re: Logistic regression function parameters (Peter Reutemann)\n\n\n----------------------------------------------------------------------",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9332731047521748,
+          "SPAM": 0.06672689524782516
+        },
+        "confidence": 0.8665462095043497
+      }
+    },
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 0
+    }
+  }
+}

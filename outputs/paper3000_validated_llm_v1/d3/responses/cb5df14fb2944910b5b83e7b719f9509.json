@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] WCB07 Call for Papers\n\n**********************************************************************\n****                     CALL FOR PAPERS\n****                   WCB08 - Workshop on\n****          Constraint Based Methods for Bioinformatics\n****                      May 22th, 2008\n****              PARIS associated to CPAIOR 2008\n****           http://www.dimi.uniud.it/dovier/WCB08\n**********************************************************************\n\nBioinformatics is a challenging and fast growing area of\nresearch, which is of utmost importance for our understanding\nof life. Major contributions to this discipline can have\nthousands of positive effects in medicine, agriculture, or industry.\n\nThe main aim of this workshop is twofold. On the one hand,\nto share recent results in this area (new ideas and/or systems,\nrelying on constraints, but also on linear programming, Mixed\nInteger Linear Programming, Local Search, and any other AI techniques,\npossibly combining some of them). On the other hand, to present new\nchallenging problems recently formalized but still far from admitting\nan acceptable solutions.\n\nSee from the workshop web page, the web pages/proceedings\nof the previous editions and the link to the forthcoming special issue\nof the Constraints Journal on the same topics.\n\n**********************************************************************\n\nSubmitted papers can be\n\n    * Extended Abstracts of new results or\n    * Abstract of ongoing works\n    * Systems presentations (with demos at the workshop)\n    * Summaries of already accepted or recently published results\n\nin any topic concerning bioinformatics and constraints and close techniques.\nSubmission style is the standard llncs style. Page limit is 6 pages.\nPlease send the pdf or ps via email to the three co-chairs (email\non the web page of the workshop).\n\nSubmission Deadline:      March 15, 2008\nNotification to Authors:  April 15, 2008\nCamera-ready due:         April 30, 2008 (strict!)\nWorkshop:                 May 22, 2008.\n\nWorkshop participation of at least one author is mandatory.\nParticipation to CPAIOR is strongly encouraged.\n\n**********************************************************************\n\nProgram Committe\n\nRolf Backofen Freiburg Univ., Germany (co-chair)\nPedro Barahona Univ. Nova de Lisboa, Portugal\nAlexander Bockmayr Freie Univ. Berlin, Germany\nMats Carlsson SICS, Uppsala Sweden\nAlessandro Dal Palù Univ. of Parma, Italy\nSimon De Givry INRA, Toulouse, France\nMaria Garcia de la Banda Monash Univ., Australia\nDavid Gilbert Glasgow Univ., UK\nAgostino Dovier Udine Univ., Italy (co-chair)\nFrancois Fages INRIA Rocquencourt, France (co-chair)\nInês Lynce INESC-ID Lisboa, Portugal\nEnrico Pontelli NMSU (USA)\nPeter Stuckey Univ. of Melbourne\nSebastian Will Freiburg Univ., Germany\n\n***********************************************************************\n****************************************\nAgostino Dovier\nDip. di Matematica e Informatica\nUniv. of Udine, Italy\nhttp://www.dimi.uniud.it/dovier\n****************************************",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.06869662856633602,
+          "NOT_SPAM": 0.931303371433664
+        },
+        "confidence": 0.6389592082246436
+      }
+    },
+    "usage": {
+      "input_tokens": 804,
+      "output_tokens": 0
+    }
+  }
+}

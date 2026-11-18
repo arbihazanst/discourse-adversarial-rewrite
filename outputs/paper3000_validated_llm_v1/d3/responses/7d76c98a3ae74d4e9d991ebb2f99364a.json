@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: ANN: mixed 0.2\n\nintroducing 'mixed', a module providing a class for handling mixed numbers\nand fractions.  Parses string and float inputs and handles arithmetic\ncorrectly.\n\neasy_install mixed\ndevelopment version: hg clone http://hg.assembla.com/mixed_pythonmixed_python\nHomepage and trac: http://trac-hg.assembla.com/mixed_python/\n\n>>> from mixed import Mixed\n>>> m1 = Mixed('4 2/3')\n>>> m2 = Mixed('4/10')\n>>> m2.reduced()\nMixed('2/5')\n>>> m1 + m2\nMixed('5 1/15')\n>>> print m1 / m2\n11 2/3\n>>> Mixed(-1.5)\nMixed('-1 1/2')\n>>> Mixed(2./3.)\nMixed('2/3')\n\n-- \n- Catherine\nhttp://catherinedevlin.blogspot.com/\n*** PyCon 2008 * Chicago * March 13-20 * us.pycon.org ***",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.11355981405483788,
+          "NOT_SPAM": 0.8864401859451622
+        },
+        "confidence": 0.48943907172458134
+      }
+    },
+    "usage": {
+      "input_tokens": 358,
+      "output_tokens": 0
+    }
+  }
+}

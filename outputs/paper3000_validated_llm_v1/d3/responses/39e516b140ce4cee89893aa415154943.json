@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Prodigious preparation is to your service\n\nYou won't need to complain about it's small $ize anymore!\nMake wonders in your life with your own hands!\nhttp://wearplaces.com/\n\n\nreactors at its Shika nuclear power plant were shutin Indianapolis, Cleveland, and most recently Buffalo.1971 - East Pakistan declared its independence from",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9862455500203362,
+          "NOT_SPAM": 0.013754449979663918
+        },
+        "confidence": 0.8952366838839785
+      }
+    },
+    "usage": {
+      "input_tokens": 201,
+      "output_tokens": 0
+    }
+  }
+}

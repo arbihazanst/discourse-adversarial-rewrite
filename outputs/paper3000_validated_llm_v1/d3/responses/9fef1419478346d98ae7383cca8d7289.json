@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: patch@32017 - CPANPLUS::Dist::Build fixes for VMS\n\nJos, Just in case anything is missing, this is what it takes to patch  CPANPLUS::Dist::Build in blead to work on VMS. I think that the only change from what I have previously submitted is  the inc/conf.pl patch. In Build.pm: The build procedure needs to have '.com' appended to it, and $buildflags  needs to be passed in double quotes C<\">. In inc/conf.pl: I reworked the previous patch for handing of directories on VMS to be  both more accurate, and actually a bit simpler. In 02_CPANPLUS-Dist-Build.t: Use catfile instead of catdir in several places. -John ho0ebg@qsl.net Personal Opinion Only",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0015698382175015505,
+          "NOT_SPAM": 0.9984301617824984
+        },
+        "confidence": 0.9831136734499242
+      }
+    },
+    "usage": {
+      "input_tokens": 302,
+      "output_tokens": 0
+    }
+  }
+}

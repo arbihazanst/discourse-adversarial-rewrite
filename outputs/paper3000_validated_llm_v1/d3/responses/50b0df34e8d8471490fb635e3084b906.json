@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] ICAPS 2007: CALL FOR PARTICIPATION\n\n\n[Apologies for cross postings]\n\n                                CALL FOR PARTICIPATION\n\n        The International Conference on Automated Planning and Scheduling\n                                    ICAPS 2007\n                         Providence, Rhode Island, USA\n                              September 22--26, 2007\n                           icaps07.icaps-conference.org\n\nThe technical program of the 17th International Conference on Automated\nPlanning & Scheduling (ICAPS-07) has been completed and we warmly invite\neveryone working in planning, scheduling and related areas to participate.\n\nIn 2007, for the first time, ICAPS is co-located with the Constraint \nProgramming (CP)\nconference. In addition, ICAPS has reached out to the machine learning \nand model-based\nreasoning communities to strengthen links between planning and \nscheduling and these\nrelated areas. The 2nd International Competition on Knowledge \nEngineering for Planning\nand Scheduling (ICKEPS) is also co-located with the conference.\n\nThe technical sessions are complemented by a varied and lively program \nof tutorials\nand  workshops, a doctoral consortium, and demonstrations of planning \nand scheduling\nsystems. There are technical sessions and invited talks held jointly \nbetween ICAPS and CP,\nchosen to promote areas of mutual interest and to encourage \ncross-fertilisation.\n\nThe preliminary program details and registration information are available\non the conference Web site. The early registration deadline is July 23rd.\n\nWe very much look forward to seeing you in Providence in September.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.05618539797657167,
+          "NOT_SPAM": 0.9438146020234285
+        },
+        "confidence": 0.687887547935276
+      }
+    },
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 0
+    }
+  }
+}

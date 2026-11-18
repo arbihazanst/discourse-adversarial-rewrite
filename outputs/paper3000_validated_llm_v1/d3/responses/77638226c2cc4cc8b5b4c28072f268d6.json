@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] u'text' as an alias for 'text'?\n\nMartin v. Löwis wrote:\n>> Will python 2.6 have something like \"from future import \n>> unicode_string_literals\" ?\n> \n> It was proposed before, I don't know whether any implementation\n> on that has started.\n\nI don't see anything in the bug tracker.  I'd be willing to look at it, \nif this is what we want to do.\n\n>> This should also solve lennart's problem. (But then py3k would need to \n>> support that future import, which\n>> is forbidden).\n> \n> Right. Of course, just removing a __future__ import is simpler than\n> editing all the string literals.\n\npy3k supports future imports.  For example, \"from __future__ import \nwith_statement\" works, and I presume it's a no-op.  I did not forward \nport print_function, but maybe I should?\n\nEric.\n\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00044965093598797127,
+          "NOT_SPAM": 0.999550349064012
+        },
+        "confidence": 0.9943518097944961
+      }
+    },
+    "usage": {
+      "input_tokens": 416,
+      "output_tokens": 0
+    }
+  }
+}

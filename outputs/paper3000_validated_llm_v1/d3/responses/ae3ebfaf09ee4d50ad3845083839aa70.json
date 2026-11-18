@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Exclusively Online: FREE Bonus with select Club gifts!\n\nSpecial Spring Fruit-of-the-Month Club gifts with FREE Bonus! View\nthis email online:\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/hosted?CIRC_HD=66I1D2A&i_storename=\n\n=======================================\nOnline Special, Limited Time Only\nNEW Fruit-of-the-Month Club Collection\nwith FREE Bonus Gift\n=======================================\n\nTwice as nice: \nOrder select Clubs, and the first month they'll get our famous \nRoyal Riviera Pears PLUS our hand-decorated Baker's Best Spring Cookies \nas a FREE Bonus - a $39.95 value!\n\nShop Select Clubs:\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/shop?CIRC_HD=66I1D2A\n\nEaster is Early - March 23. Enjoy One-Hop Shopping, Online:\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/online?CIRC_HD=66I1D2A\n\nAnd also shop Easter in our Stores!\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/stores?CIRC_HD=66I1D2A\n\nExtravagant, not expensive: Shop all Gifts under $50.\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/undfifty?CIRC_HD=66I1D2A\n\nAll our Best,\nHarry and David\n2500 S. Pacific Hwy.\nMedford, OR 97501\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/home?CIRC_HD=66I1D2A\n\nFind the most delicious ways to celebrate at your local\nHarry & David Store: in a city near you.\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/storeloc?CIRC_HD=66I1D2A\n\nHarry and David has sent you this email advertisement because you\nhave purchased from us or registered to receive our email updates.\n\n====================================================================\nTo be sure our mail reaches your inbox (not bulk or junk folders), \nadd hbusdgzwatadv@e.harryanddavid.com to your address book. \n====================================================================\n\nIf you would like to change your email address, or no longer wish to\nreceive email from us, let us know by using this link: \nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/updates?ljqoa=jne@gvc.ceas-challenge.cc&CIRC_HD=66I1D2A \n\nUse this link to contact customer service:\nhttp://e.harryanddavid.com/a/tBHzn59AP5VaVB0yfIfAFqBnP.AP5VaVDe/feedback?CIRC_HD=66I1D2A \nYou may also call us toll-free at 1-877-322-1200, or write to us at\nthe address shown.\n\nCopyright 2008, Harry and David. All rights reserved. Harry and\nDavid is a registered trademark and service mark. Harry & David \nis a registered trademark, service mark and dba of Harry and David. \nWebsite material may not be copied, reproduced, published,\nbroadcast, rewritten or distributed in any way.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.8017376202755846,
+          "NOT_SPAM": 0.19826237972441532
+        },
+        "confidence": 0.2815607877578715
+      }
+    },
+    "usage": {
+      "input_tokens": 1001,
+      "output_tokens": 0
+    }
+  }
+}

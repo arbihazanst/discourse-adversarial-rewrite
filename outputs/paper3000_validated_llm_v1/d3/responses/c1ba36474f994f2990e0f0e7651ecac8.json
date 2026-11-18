@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Planet Sports  Draw Tuesday 18th\n\nHi Captains please see the draw for Tuesday 18th of March. \nPlease confirm by text or email Please Please quote your team name in the\nreply. We would be gratful if you could confirm at least two working days\nprior to the game.\n\nAlso as of the 1st of April Netball Team Fees will be increasing by $1 per\nplayer to $60 per team. \nWe apologise for having to do this but we can no longer absorb the\nincreasing operational costs i.e rent rates, etc. \n\nDraw for :      TUESDAY         18-Mar-08       \n                COURT ONE               \nTue 6:00pm      Ball Breakers (6)       Netball Spaccaculi (5.30)       \nTue 6:35pm      Aegis (6)       Netball Seven (6.30)    \nTue 7:10pm            B6's (6.30)       Netball Wazzabi (6)     \nTue 7:45pm      Jezebelles (6)  Netball Mo Jo (7)       \nTue 8:20pm      Blitzers (7)    Netball Pink Bits  (7.45)       \nTue 8:55pm      The Munters (6.30)      Netball Filver Searns (7.10)    \nTue 9:30pm              Netball         \n                                \n                COURT TWO               \nTue 6:00pm      Washinda (6)    Netball Oceanbridge (6) \nTue 6:35pm      ALC5 (6)        Netball Burger Fuel  (6.30)     \nTue 7:10pm      Hobbits (6.30)  Netball Ratshit \nTue 7:45pm      Team Rambo (5.30)       Netball Le Agia (6)     \nTue 8:20pm      One Youth (6.30)        Netball Chesters (7)    \nTue 8:55pm      Eclipse (6.30)  Netball Junabeas (6.30) \nTue 9:30pm              Netball         \nTue 9:30pm                              \n                COURT THREE             \nTue 6:00pm      Jerkin Gerkin (6)       Netball No Ethicals (6) \nTue 6:35pm      Crazy Locos  (5.30)     Netball Flying Pigs (6.30-9)    \nTue 7:10pm      Consumer Link (7)       Netball The Hillbillies (6)     \nTue 7:45pm      Pandas (5.30)   Netball Batteries (7-8) \nTue 8:20pm      Muppets (7)     Netball Chumbawumba (6.30-8.30) \nTue 8:55pm      Team Sandra (6.30)      Netball Just Us (6)     \nTue 9:30pm              Netball         \n                                \n                COURT FOUR              \nTue 6:00pm      Fighting Salmon (6)     Soccer  The Devils (6)  \nTue 6:35pm      S.G Giants (6.30)       Soccer  The Demons (6.30)       \nTue 7:10pm       Cardic Arrest Club (6) Soccer  Vipers (7)      \nTue 7:45pm      Turd Burglers (6)       Soccer  Emo Killaz  2 (Soc)     \nTue 8:20pm      Happy Tree Friends (6.30)_      Soccer  Dunno (7)       \nTue 8:55pm      Chai Hards (8.30)       Soccer  Jog On (7.45)   \nTue 9:30pm      Team Andy (7.10)        Soccer  Geriatrics  (6.30) \n\n\nPh:  +64 (9) 444 2311 \nFax: +64 (9) 444 2319 \n\nwww.planetsports.co.nz \n\nThe information contained in this email and any attachments is confidential\nand may be legally privileged. If you have received this email in error,\nplease contact Planet Sports immediately and delete this email. Thank you.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0034317835950808287,
+          "NOT_SPAM": 0.9965682164049192
+        },
+        "confidence": 0.9669620738241622
+      }
+    },
+    "usage": {
+      "input_tokens": 1079,
+      "output_tokens": 0
+    }
+  }
+}

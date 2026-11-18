@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: H-AAMAS workshop\n\n** CALL FOR PAPERS **\n\nH-AAMAS: Hierarchical Autonomous Agents and Multi-Agent Systems\nHalf-day workshop at the AAMAS-06 conference\nMay 9 (afternoon), 2006\nhttp://www.science.uva.nl/~bram/HAAMAS/\n\nSubmission & notification:\n--------------------------\nSubmissions must be sent to bram (at) science.uva.nl  no later than \n*February 1, 2006*.\nNotification of acceptance or rejection will be sent no later than \n*February 19, 2006*.\n\nWorkshop description:\n---------------------\nIn a variety of fields related to autonomous agents and multi-agent \nsystems, hierarchical approaches are beginning to emerge as one of the \npremier ways of dealing with the scale and complexity of interesting, \nreal-world problems. These fields include reinforcement learning, \nevolutionary algorithms, multi-agent learning, mapping and planning in \nrobotics, Markov processes, and networked sensor and information systems.\n\nThe general strategy in all these methods is \"to divide and conquer\": a \nlarge, complex problem is decomposed (possibly recursively) into \nsmaller, simpler subproblems. Hierarchical methods generally represent \nand solve tasks at multiple spatial and/or temporal resolutions, and \nhigher levels or layers are in some sense abstractions of the details of \nlower levels. However, precise, formal relationships between \nhierarchical methods in different fields are virtually unknown, while \npresumably hierarchical methods in one field may profit greatly from \nadvances made on hierarchical methods in another field.\n\nThe purpose of this workshop is to bring together researchers from these \ndifferent fields to discuss the similarities between the various \nhierarchical methods, inspire cross-fertilization, prevent superfluous \nreinventions of the same \"hierarchical wheels\", and identify important \nquestions for further research on hierarchical methods.\n\nCall for papers:\n----------------\nWe invite papers on hierarchical methods, in particular related to the \nfollowing, but not limited to the following issues:\n\n*Which mathematical frameworks can provide the solid theoretical \nunderpinnings of hierarchical methods?\n*How can hierarchical methods developed for single agent systems be \nextended to multi-agent systems?\n*There are some results on the complexity of hierarchical problem \nsolving in evolutionary algorithms. Can we generalize those results to \nother fields in which hierarchy is important?\n*What is the relationship between hierarchical methods and \"flat\", \n\"monolithic\" methods which do not exploit hierarchical structure, both \nin terms of the type of solutions and in terms of the savings that can \nbe obtained with hierarchical methods?\n*There exist mathematically sound methods for learning policies given a \nhierarchical structure, for example in reinforcement learning. Can we \nprovide similarly sound methods for learning the hierarchical structure \nitself?\n*Hierarchical solutions sometimes perform suboptimally. Can these losses \nas a result of hierarchy be formalized, and can solutions be guaranteed \nthat are optimal given the hierarchical structure?\n*What are the most important questions future research on hierarchical \nmethods should address?\n*Applications of hierarchical methods on complex/real-world problems.\n\nWorkshop organizers:\n--------------------\nDr. Bram Bakker\nIntelligent Autonomous Systems\nInformatics Institute\nUniversity of Amsterdam, The Netherlands\nbram (at) science.uva.nl\n\nDr. Leon Kester\nIntegrated Systems\nTNO Defense, Safety and Security, The Netherlands\nleon.kester (at) tno.nl\n\nDr. Nikos Vlassis\nIntelligent Autonomous Systems\nInformatics Institute\nUniversity of Amsterdam, The Netherlands\nvlassis (at) science.uva.nl\n\nDr. Edwin de Jong\nDepartment of Information and Computing Sciences\nUniversity of Utrecht, The Netherlands\ndejong (at) cs.uu.nl",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.08421858570349358,
+          "NOT_SPAM": 0.9157814142965065
+        },
+        "confidence": 0.5831280562478975
+      }
+    },
+    "usage": {
+      "input_tokens": 930,
+      "output_tokens": 0
+    }
+  }
+}

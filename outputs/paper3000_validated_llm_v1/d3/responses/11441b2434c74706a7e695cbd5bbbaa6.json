@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] SUSE 10.3 + ATI FireGL 5250 + Latest ATI driver = no 3D efects\n\nOn 2/10/08, CyberOrg  wrote:\n> On Feb 11, 2008 12:24 AM, AV  wrote:\n>\n> > >\n> > >       Then run \"rpm -qa | grep compiz\" from a console and post the\n> output.\n> >\n>\n> > compiz-manager-0.0.1_git080201-1.1\n>\n> Run compiz-manager in shell or Alt+f2 as user.\n>\n> If it does not work, paste the output that you get in shell when you\n> run that command.\n>\n\nI get:\n\nhecking for Xgl: not present.\nDetected PCI ID for VGA: 01:00.0 Class 0300: 1002:71d4 (prog-if 00 [VGA])\nChecking for texture_from_pixmap: not present.\nTrying again with indirect rendering:\nChecking for texture_from_pixmap: present.\nChecking for non power of two support: present.\nChecking for Composite extension: present.\nComparing resolution (1680x1050) to maximum 3D texture size (4096): Passed.\nChecking for nVidia: not present.\nChecking for FBConfig: present.\nChecking for Xgl: not present.\nStarting emerald\n * Detected Session: kde\n * Searching for installed applications...\n * Using the GTK Interface\n\nAnd then I get blurred screen and have to exit from X to get normal\nscreen. In blurred screen I can see contours of my desktop and\nprograms... and my mouse cursor...\n\nAudrius",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00082233109343525,
+          "NOT_SPAM": 0.9991776689065648
+        },
+        "confidence": 0.9903868716502748
+      }
+    },
+    "usage": {
+      "input_tokens": 533,
+      "output_tokens": 0
+    }
+  }
+}

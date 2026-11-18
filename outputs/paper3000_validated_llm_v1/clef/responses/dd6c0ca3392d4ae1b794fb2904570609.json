@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Which Ones Really Work? We List The Top Penis Enlargement Products!\n\n\nGet your free bottles today, and change your life - why wait?\n\n\"Ever since I started on your herbal supplement, Sharon says sex is so much more pleasurable for her, and she comes much more easily\". David, Florida, USA \n\nhttp://scorewin.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02627320586897003,
+          "SPAM": 0.9737267941310299
+        },
+        "confidence": 0.9474535882620598
+      }
+    },
+    "usage": {
+      "input_tokens": 233,
+      "output_tokens": 0
+    }
+  }
+}

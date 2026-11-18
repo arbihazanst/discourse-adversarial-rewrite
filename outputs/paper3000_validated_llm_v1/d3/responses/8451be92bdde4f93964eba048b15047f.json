@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Don't be a fuddy-duddy...use the software everyone's using... \n\nGet the great di iz scou qwk nts on popular so lhg ft fxz wa ku re today at http://rmhgx.vodaforento.com/?wlupk\nAll s ur of pn wa ab re is instantly available to do wwz wnl qg oad - No Need Wait!\nALL OUR SO ac FTW yi ARE zrr S ON ALL EUROPEAN LANGUAGES - \nUSA, English, France, Italy, Spanish, German and more!!!\nNotre prix:Wi de ndo cyf ws X nuu P Pr tc o W qyo it crz h S qvg P2$59.95Ad qu o czd be Ac zb rob cwb at P zya ro 8$69.95Of xr fi vmc ce 2003 Pr by o$59.95A zln do max be Ph lfq oto iy sh ro op C ot S2$79.95A fi ut glt oC nti AD 2007$149.95\nAlso we have so mu bmp ch s kc of bkr t for MA mjq CIN uzn TO one SH!!!Mi upc cro be so wvs ft O hy ff goi ice 2004 for M bl A hj C$79.95Ad ox obe A rgm cro jkx bat 7 Pro gvp fes tou sio ik nal for M ypc A rx C$59.95Ad ie obe Cre jcf ati rx ve Su ydq ite 2 Pre hws mi zu um for M zas A qg C$229.95Ma wqy cro cdq me ow dia Dre jkr amw wu eav dn er 8 for M keq A sg C$69.95\nTo re qrc vi kb ew full list of the offers, v ss is ru it http://rmhgx.vodaforento.com/?wlupk",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9956498594093908,
+          "NOT_SPAM": 0.00435014059060926
+        },
+        "confidence": 0.9596120994484012
+      }
+    },
+    "usage": {
+      "input_tokens": 571,
+      "output_tokens": 0
+    }
+  }
+}

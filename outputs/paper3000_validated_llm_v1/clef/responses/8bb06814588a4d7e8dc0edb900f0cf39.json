@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Man's stuff mall\n\n\n\n\nYour good health is our goal.\n\n\nTake her to the seventh heaven of pleasure.\n\nHere!\n\n\n\n\nfBgaintool episcopacy exocolitis\nerectility extraneity felt/smelt\nevaluacion enormities erinaceous\neuropaweit explosions feijenoord",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.057480677243450864,
+          "SPAM": 0.942519322756549
+        },
+        "confidence": 0.8850386455130981
+      }
+    },
+    "usage": {
+      "input_tokens": 224,
+      "output_tokens": 0
+    }
+  }
+}

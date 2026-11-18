@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Download labels broken in Oct 29 Google Code Site update.\n\n\nI would like to second the report of the problems with labels, I can't\nchange or add new ones like before.  This problem was happening for me\nbefore the downtime, but I figured that eventually it would work its\nway out.  Hopefully a little more time will do it.\n\nI haven't tried the uploads yet, so I can't confirm that.\n\n-Bryan\n\nOn 10/29/07, Graham Dumpleton  wrote:\n>\n> Seems the update last night might have broken a few things. Problem is\n> that one of the things that may have broken is the FAQ entry at\n> http://code.google.com/hosting/faq.html referenced from project\n> hosting group welcome page. As a result, cant find the issues tracker\n> for codesite problems, something which never seems to be listed in an\n> obvious place. :-(\n>\n> Anyway, until I can find the issue tracker again, posting here to note\n> that download labels seem to have been broken. If you have an existing\n> entry and go in and try and change the labels, one would normally see\n> a drop down list of choices if not all categories applied. This\n> doesn't appear and click enough times and it will display a message:\n>\n>   Note: You are using 2 uncommon labels.\n>\n> It seems that of the labels:\n>\n>   Type-Source OpSys-All Featured\n>\n> it only recognises Type-Source as valid.\n>\n> All the labels in Adminstrator/Downloads area are as they were\n> originally and haven't been changed.\n>\n> Happens on Firefox and Safari.\n>\n> Also had a file upload take forever at one point with proxy in between\n> finally timing out. Google Code wouldn't show it in list but wouldn't\n> let me replace it, but then about 10 minutes later it finally showed\n> up. So uploads having problems as well.\n>\n> Graham\n>\n>\n> >\n>\n\n\n-- \nBryan Klein\nimfdl.bhiux@nist.gov\n\nNational Institute of Standards and Technology\n100 Bureau Drive, Mail Stop 8663\nGaithersburg MD 20899\nPhone: 301 975 5171\nFax: 301 975 4052\n\n--~--~---------~--~----~------------~-------~--~----~\nYou received this message because you are subscribed to the Google Groups \"codesite-discuss\" group.\nTo post to this group, send email to piletdsh-ipxesgg@googlegroups.com\nTo unsubscribe from this group, send email to bfjlklza-sawampr-sbfjlklzasa@googlegroups.com\nFor more options, visit this group at http://groups.google.com/group/codesite-discuss\n-~----------~----~----~----~------~----~------~--~---",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005691132063286097,
+          "NOT_SPAM": 0.9994308867936714
+        },
+        "confidence": 0.9930447074956401
+      }
+    },
+    "usage": {
+      "input_tokens": 793,
+      "output_tokens": 0
+    }
+  }
+}

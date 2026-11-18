@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Buy Now Pay Jul 09  Or Pay Only ?25.26 For 36 Months.\n\n                 \n                                             \n          \n\nBringing you the best in Home Entertainment Systems\n\n\n\n                                                                    \n          \n\nAUGUST OFFERS\n\n  Panasonic TH-65PF10EK (Charcoal)\n\n  £4,485.00\n\n   including 5 year warranty if units purchased in August.\n\n    Price includes:\n  Panasonic 3 year manufacturer's warranty\n  TY-FB9BD Composite/S-Video terminal board as supplied by Panasonic\n  Panasonic TY-FB10HMD dual HDMI terminal board (Forum member offer)\n  Flat wall mount (Upgrade to Unicol desk stand additional £200.00)\n    \n\n\nNOW with 12 months 'Buy Now Pay Later (subject to status)\n\n\n       Panasonic TH-50PF10 (Charcoal)\n\n  £1894.99\n\n   ncludes VAT, Panasonic 3 year warranty & UK mainland delivery.\n\n         \n\n\nNEW REDUCED PRICE. LIMITED TIME ONLY\n\n     \n\nNOW with 12 months 'Buy Now Pay Later (subject to status)\n\n\n      Includes BNC Component board and DVI board (supplied by Panasonic)\n  Includes dual HDMI board (1080p/24)\n  Includes flat wall mount (desk stand + £75)\n\n\n    Please call 01892 535007 to order or  http://www.av-sales.co.uk/products.php?cat=401&sort=3\n    The information transmitted in this email is intended only for the person or entity to whom it is addressed and may contain confidential and/or privileged material. If you believe you are not the intended recipient of this email, contact us here: av-sales Customer Support\n  \n\nPrivacy\nav-sales.co.uk respects your privacy and never sends unsolicited emails.  We'll also never give your email address  to any other companies without your permission.  av-sales.co.uk is a member of the DMA http://www.dma.org.uk/\n\n  \n Customer Service, Feedback & Suggestions\n We greatly value your support and feedback, if you have any questions regarding this email offer, or have any customer service or support-related issues with previous purchases please use our Online Support Area. If you would like to suggest another product or service for us to offer, we'd love to hear your ideas - just",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.0735008181115472,
+          "SPAM": 0.9264991818884528
+        },
+        "confidence": 0.8529983637769056
+      }
+    },
+    "usage": {
+      "input_tokens": 670,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Spring Special offer for ConceptDraw software\n\n\n Dear Tony,\nThank you for choosing ConceptDraw Software!\n\nThis month we give you an opportunity to considerably save your funds by purchasing ConceptDraw Business Suite. This professional solution is designed to improve your workflow, save time and increase productivity.\nConceptDraw Business Suite includes ConceptDraw 7 Pro, ConceptDraw MINDMAP 5 Pro and ConceptDraw Project. \nConceptDraw 7 Pro is a powerful drawing tool that allows you to quickly and easily create any kind of diagrams, flow charts and other schemas.\nConceptDraw MINDNMAP 5 Pro can help you to easily develop ideas and then present any information in a clear visual way. This tool is very helpful when creating complicated projects with many relations, presenting your ideas to others or simply organizing your daily activities.\nConceptDraw Project 4 is designed to help you in planning your projects no matter what field you are engaged in. This tool will support you when organizing new projects and help to achieve successful results in a planned and most effective way.\n\nUp to the end of March you can order ConceptDraw Business Suite at special price and save up to $248. Detailed information on the product is available at:\n\n\n\nThank you for your time and attention!\nSincerely,\nOleg Bocharnikov\nHead of Sales department\nComputer Systems Odessa Team\n-------------------------------------------\n\nIf you would not like to receive any more information from us\nunsubscribe at:\nhttp://www.conceptdraw.com/news/emailnews.php",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.7703844966461163,
+          "NOT_SPAM": 0.22961550335388378
+        },
+        "confidence": 0.2226595628541025
+      }
+    },
+    "usage": {
+      "input_tokens": 436,
+      "output_tokens": 0
+    }
+  }
+}

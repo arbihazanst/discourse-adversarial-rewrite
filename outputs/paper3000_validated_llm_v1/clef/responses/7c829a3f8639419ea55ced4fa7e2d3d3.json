@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Back to business\n\n\n\n\nCNET | Weekend Hit List\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 9, 2008\n\n\n\n\nView online |\nManage newsletters |\nUnsubscribe |\nSend us feedback\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBack to business\n    Let's face it. Few people like going to work, but most of us have to do it. Thanks to the Web and lots and lots of microchips, we can work from almost anywhere these days. But it can still be tedious and unproductive without the right tools. This month's Living With Technology gives you productivity tips and shows you the best tools to use, plus we look at how Web sites may be affecting boxed software giants like Microsoft.\n    \n           Get back to work \n\n\n\n\n\nLaura K. Cucullu\nFeatures editor,CNET.com\n\n\n\n\nTop-rated reviews this week\n\n\n\n1. 2008 Infiniti G35\n2. Backup-Pal (for select Motorola models)\n3. Gateway P-171S\n4. Ion iPTUSB USB Turntable\n5. LG HBM-770\n6. Acer TravelMate 6292-6700\n7. ZoneAlarm Anti-Spyware 7.1\n8. Dell Inspiron 1525\n9. Windows Vista SP1\n10. LG HBM-755\n\n\n\n\n\n\n\nTop community discussions this week\n\n \n1. Five reasons you shouldn't buy a Blu-ray player yet\n2. How popular is Vista?\n3. Music poll: How do you get your music? CD? iTunes? Napster?\n4. The mess with messaging\n5. Real ID could mean real travel headaches\n6. FAQ: What's next in HD video fracas?\n7. Apple doubles iPhone, iPod Touch capacity\n8. Don't kid yourself--the RIAA doesn't care about the artists\n9. Stop svchost.exe from stealing CPU cycles\n10. The worst game console(s) ever\n\n\n\nLatest from CNET Reviews\n\n \n1. Yamaha NX-B02 Bluetooth Speakers (white)\n2. Jabra BT8030 Bluetooth headphones/speaker\n3. JVC KD-S100\n4. Photos: Windows Vista SP1 installation\n5. Photos: 2009 Acura RL\n6. Photos: 2009 Chevrolet Traverse\n7. Cars you can talk to \n8. Better basic phones\n9. MP3 players for file hoarders\n10. The best Nextel cell phones\n\n\n\nEditors' top digital-camera bags\n\n \n1. Lowepro Vertex 200 AW\n2. Tamrac Expedition 5 Model 5575 - camera backpack\n3. Kata Ergo-Tech Sensitivity V Backpack\n4. Tamrac Adventure 9 Camera/Computer Backpack (Red/Black)\n5. Lowepro Cirrus TLZ 25\n\n\n\nMost popular News.com stories\n\n \n1. Images: High-speed hopes for the hypersonic A2\n2. FAQ: What's next in HD video fracas?\n3. Obama loses Silicon Valley to Clinton: Is anyone surprised?\n4. Analyst: Apple cutting Q1 production of iPods, iPhones\n5. Religious minorities face Real ID crackdown\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBudget big-screen HDTVs\n\n \n1. Insignia NS-PDP42\n2. Philips 42PFL7432D\n3. Panasonic TH-42PX77U\n4. Hitachi P50H401\n5. LG 50PC5D\n6. Panasonic TH-50PH10UK\n\n\n\n\n\n\nCNET guide\n\nTax software and online tax prep\n\nWe've reviewed desktop and online applications that walk you through calculating and submitting a return without having to crunch numbers on confusing IRS forms. Each service helps with the latest credits for long-distance telephone tax, buying a hybrid car, and making a home more energy-efficient. Read more \n\n\n\n\n\n  Related Newsletters\n\n\n\n\n\n\n\n\n\n\nCNET Security Center Weekly\n\n(Delivered every Monday.)Read Robert Vamosi's award-winning column and up-to-the-minute blogs regarding Internet threats and how to counter them.\n\nView preview \n\n\n\n\n\n\n\n\n\n\n\n\n\nCNET TV prime time\n\n\nIntroducing Loaded with Natali Del Conte\n            Monday through Thursday, Natali runs down the top tech headlines of the day from the NYC CNET TV studio. Catch up on this week's episodes.  Read more\n\n\n\nTop 5: Best downloads of 2007\n            Here are the downloads you should start saving to your hard drive right now. Tom Merritt counts 'em down.  Read more\n\n\n\n\n\n\nRelated resources\n\n CNET Living With Technology\n\n\n CNET TV\n\n\n CNET Crave\n\n\n\n Webware: Nonstop Web 2.0\n\n\n CNET Podcast Central\n\n\n What's new on CNET\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign up for more free newsletters from CNET! To manage your account settings or to remove yourself from all CNET communications, please visit our Subscription Center. The e-mail address for your subscription is user6@gvc.ceas-challenge.cc  Unsubscribe from this e-mail | FAQ | Advertise | Privacy Policy\n\n\n\n\n\n\n\n\n\nCopyright 2008 CNET Networks, Inc. All rights reserved.CNET Networks, Inc. 235 Second Street  San Francisco, CA 94105 U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8751822239013879,
+          "SPAM": 0.12481777609861204
+        },
+        "confidence": 0.7503644478027758
+      }
+    },
+    "usage": {
+      "input_tokens": 1273,
+      "output_tokens": 0
+    }
+  }
+}

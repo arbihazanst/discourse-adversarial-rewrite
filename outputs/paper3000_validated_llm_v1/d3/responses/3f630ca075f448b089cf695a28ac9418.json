@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Tisha Perry\n\n\n\n\n\n\n\n\nAff uok ord dz able P qd ha csb rm ax a ps cy Meds\n\nFDA Approved. US P et ha cz rma rhz cy.\nFree Deliveryb\n\nhttp://sawgather.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9904133657363396,
+          "NOT_SPAM": 0.009586634263660448
+        },
+        "confidence": 0.9219598366585349
+      }
+    },
+    "usage": {
+      "input_tokens": 178,
+      "output_tokens": 0
+    }
+  }
+}

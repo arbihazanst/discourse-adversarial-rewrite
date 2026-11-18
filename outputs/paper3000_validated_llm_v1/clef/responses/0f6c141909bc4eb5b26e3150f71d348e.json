@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] fixing tests on windows\n\nTim Golden wrote:\n> Gregory P. Smith wrote:\n>> On Tue, Apr 1, 2008 at 9:13 AM, Tim Golden  wrote:\n>>\n>>> Tim Golden wrote:\n> \n>>> \n>>> import os, sys\n>>> import win32file\n>>>\n>>> FILENAME = \"test\"\n>>>\n>>> def rename_and_remove (filename):\n>>>   os.rename (filename, filename + \".deleted\")\n>>>   os.remove (filename + \".deleted\")\n> \n>> Isn't this still going to run into problems when the rename fails because\n>> the earlier tests remove still left the .deleted file around due to some\n>> other running desktop search service that now has the .deleted file open?\n\nI've looked around this issue as far as I can, and I can't\ncome up with a foolproof way of guaranteeing that this won't\nhappen. I considered, eg, trying to open the test file with\nsemantics which preclude FILE_SHARE_DELETE from succeeding\n(ie stopping the search services / TSVN from getting a handle\nat all) but I can't find anything which doesn't cause more\nproblems than it solves.\n\nLest this discussion descend into inactivity, I've done a\nfresh checkout and I'm producing a patch which will add\nopen_testfile and close_testfile functions to test_support\n(or something like that) and which will update all the tests\nto use those. I'm inclined to go with the tempfile approach\nbut at least having the functions means that that could\nchange.\n\nThis is obviously a wide-reaching change, but unless anyone's\ngot better ideas, the alternative seems to be intermittently-failing\ntest runs on the Windows buildbots.\n\nTJG\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.939912851619577,
+          "SPAM": 0.060087148380423054
+        },
+        "confidence": 0.8798257032391541
+      }
+    },
+    "usage": {
+      "input_tokens": 599,
+      "output_tokens": 0
+    }
+  }
+}

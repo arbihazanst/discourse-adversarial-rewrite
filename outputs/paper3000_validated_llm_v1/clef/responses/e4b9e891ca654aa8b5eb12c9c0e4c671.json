@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Order Rolex Replica //atches 0nline!   \n\n\nTherefore it is very important to chose the right replica retailer. \n\nStartling Brietling watches at Replica Classics   \n\nJaeger-LeCoultre replica watch Luxury isnt a sin \n\nhttp://halmscapsic.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.026356184906780048,
+          "SPAM": 0.9736438150932201
+        },
+        "confidence": 0.9472876301864401
+      }
+    },
+    "usage": {
+      "input_tokens": 216,
+      "output_tokens": 0
+    }
+  }
+}

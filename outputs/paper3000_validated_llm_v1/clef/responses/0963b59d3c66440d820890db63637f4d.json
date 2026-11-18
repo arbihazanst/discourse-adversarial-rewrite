@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Highly rated fashion accessories\n\nHigh-fashion timepieces were skillfully copied for you to afford them! http://pickreal.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.028276925664170952,
+          "SPAM": 0.9717230743358289
+        },
+        "confidence": 0.9434461486716579
+      }
+    },
+    "usage": {
+      "input_tokens": 186,
+      "output_tokens": 0
+    }
+  }
+}

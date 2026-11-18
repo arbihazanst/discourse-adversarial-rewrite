@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: FNC Alert\n\nGEORGIA REPORTS DOWNING 2 RUSSIAN AIRCRAFT IN FIERCE FIGHTING OVER BREAKAWAY REPUBLIC OF SOUTH OSSETIA\n\n**Watch FOX News Channel or go to http://foxnews.com for more                                            \n\n\n=================================================\nThis e-mail is never sent unsolicited. You have received this FOX News Alert because you subscribed to it or someone forwarded it to you.\n\nTo unsubscribe from FOX News Alerts, or to add/remove a new e-mail address, log on to:\nhttp://www.foxnews.com/alerts/unsubscribe.html\n\nCopyright 2008 FOX News Network, LLC. 1211 Avenue of the Americas. New York. NY. All Rights Reserved.\n=================================================",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.7168161093383913,
+          "SPAM": 0.2831838906616087
+        },
+        "confidence": 0.4336322186767827
+      }
+    },
+    "usage": {
+      "input_tokens": 317,
+      "output_tokens": 0
+    }
+  }
+}

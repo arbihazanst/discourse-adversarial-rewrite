@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [cw-discuss] Question About Crossover Games\n\nOn Wednesday 05 March 2008 07:58, Jeremy White wrote:\n> CrossOver Games is in private beta right now, and if you got the\n> beta from us, you would have gotten an email pointing you at the\n> forums and reporting areas (hint, they're the same place).\n\nGlad to hear you guys are doing this.  Maybe you'll introduce a \nmonthly subscription plan too, so that I can stop paying Transgaming \n5 bucks a month for something I haven't used in three years and start \nsupporting you guys again.\n\nRob\n\n_______________________________________________\ndiscuss mailing list\nvncmzkl@crossover.codeweavers.com\nhttp://crossover.codeweavers.com/mailman/listinfo/discuss\nYou can be removed from this list by visiting the above web page, or by checking the 'subscriptions' tab in your account with CodeWeavers.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9644282406355742,
+          "SPAM": 0.03557175936442588
+        },
+        "confidence": 0.9288564812711484
+      }
+    },
+    "usage": {
+      "input_tokens": 368,
+      "output_tokens": 0
+    }
+  }
+}

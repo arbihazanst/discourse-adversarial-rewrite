@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] python-safethread project status\n\nOn Mon, Apr 7, 2008 at 7:40 PM, Greg Ewing  wrote:\n> Guido van Rossum wrote:\n>\n>  > Maybe it should be a forked subprocess then, if it doesn't touch\n>  > anything shared?\n>\n>  It might be taking and returning large data structures\n>  that it would be tedious to transfer between processes.\n>  Pickling them might not be straightforward if they\n>  contain references to objects that you don't want to\n>  transfer, but you want to maintain the references.\n>\n>\n>  > Huh? We do that all the time. We won't let you control when memory is\n>  > deallocated.\n>\n>  I hardly think that being able to kill threads is\n>  anywhere near as dangerous as being able to scribble\n>  all over memory. And I *can* actually do that if I\n>  really want, using ctypes. :-)\n\nI see three levels of thread interruption. First, you might want to\npoke a thread just to wake up a single system call, but the thread\nmight get back to work afterwards. This resembles Java's\nThread.interrupt. Second, you might want to cancel the thread, but\nonly in ways that let the user clean up afterward. This is vaguely\nlike pthread_cancel, or like Thread.interrupt with no way to clear the\ninterrupted status. Third, you might want to really abort the thread,\nlike Java's Thread.stop.\n\nThere are uses for all three levels, but for a first implementation, I\nthink we should pick just one. Because aborting is unsafe in most\nsituations, it's out. And I vaguely remember Josh Block saying that if\nhe had to do Java over again, he'd make it impossible to clear a\nThread's interrupted status, turning it into cancellation, but I need\nto check with him to make sure I got that right.\n\nI'm not opposed in theory to providing the really violent option in,\nsay, the version after we provide plain cooperative cancellation, but:\n 1) Any given library can simulate it by calling\nthreading.cancellation_point() (or whatever its name turns out to be)\noccasionally within its inner loop, and\n 2) Judging from other systems with violent interruptions like posix\nsignals and Haskell asynchronous exceptions, we'll need a way of\nblocking aborts in a scope, and unblocking them in a sub-scope.\n\n-- \nNamasté,\nJeffrey Yasskin\n_______________________________________________\nPython-3000 mailing list\nPython-3000@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00018209102991706901,
+          "NOT_SPAM": 0.9998179089700828
+        },
+        "confidence": 0.9974751956644591
+      }
+    },
+    "usage": {
+      "input_tokens": 761,
+      "output_tokens": 0
+    }
+  }
+}

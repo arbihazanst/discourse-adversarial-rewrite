@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [SM-USERS] Error with SquirrelMail plugin: Change Qmail-LDAP Forward Version 1.00\n\nHi, all.\n\nI use this SquirrelMail plugin for mail forward setting in LDAP:\n    * Change Qmail-LDAP Foward v1.0.\n\nBut i got some trouble now.\n\nMy mail server components:\n\n    * OpenBSD 4.2 -release, i386.\n    * OpenLDAP-2.3.33 (with qmail.schema)\n    * SquirrelMail-1.4.3 (with compatibility-2.0.10)\n    * PHP-5.2.3\n\nWhen i configure and enable change_qldforward, it display these error\nmsg in Apache error_log:\n\n--------\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  1 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  2 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  1 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  2 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  1 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  2 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  1 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  2 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Notice:  Undefined offset:  1 in\n/squirrelmail-1.4.13/plugins/compatibility/functions.php on line 121\n[Wed Feb 20 20:11:45 2008] [error] PHP Fatal error:  Call to undefined\nfunction php_self() in\n/squirrelmail-1.4.13/plugins/compatibility/includes/1.5.0/global.php on\nline 25\n--------\n\nAnd bellow is my config.php:\n\n# cat config.php |grep -v '[/*]' | uniq\n\n\n\nHow can i fix it?\n\nThanks for your help.\n\n----\nBest Regards.\n\nZhang Huangbin\n2008.02.20",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0008666425946764493,
+          "NOT_SPAM": 0.9991333574053236
+        },
+        "confidence": 0.9899345139624299
+      }
+    },
+    "usage": {
+      "input_tokens": 955,
+      "output_tokens": 0
+    }
+  }
+}

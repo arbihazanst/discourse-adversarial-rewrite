@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] call for demos\n\n***************************************************************************\nCALL FOR DEMONSTRATIONS:  Neural Information\nProcessing Systems - NIPS 2005\n                 December 5-8 Vancouver, BC\n***************************************************************************\n                       www.nips.cc\n\nDeadline for Demonstration Proposals:   * Sunday,\nSeptember 25, 2005 *\nApplication:\n\n\n\nWould you like to interactively demonstrate your novel\nhardware,\nsoftware, or wetware technology, your robot, or your\nchip to people\nat the NIPS 2005 Conference?\n\nThe Neural Information Processing Systems Conference\nhas a\nDemonstration track that will run in parallel with the\npopular\nevening Poster Sessions.\n\nDemonstrators will have a chance to show their\ninteractive demos in\nthe areas of hardware technology, neuromorphic and\nbiologically-inspired systems, robotics, and software\nsystems.  The\nonly hard rules are that the demo must show novel\ntechnology and must\nbe LIVE and INTERACTIVE!  (It is not a back-door\nPoster Session.)\n\nSubmitting a Demonstration proposal is online and very\neasy, see:\n\n*Demonstration Application Form\n*\n\nAct quickly because our final deadline is Sunday\nSeptember 25, 2005.\nDemonstrations proposers will be notified of\nacceptance by the first\nweek of October.\n\n*NIPS 2005 Demonstrations Co-Chairs: *Timmer Horiuchi,\nDept. of\nElectrical and Computer Engineering, Institute for\nSystems Research\nand the Neuroscience and Cognitive Science Program,\nUniversity of\nMaryland and Alan Stocker, Center for Neural Science,\nNew York\nUniversity. Questions should be directed to\ntimmer@isr.umd.edu.\n\n*Deadline for Demonstration Proposals:  September 25,\n2005*\n\nNIPS is a continually-evolving interdisciplinary\nConference, which\nattracts cognitive scientists, computer scientists,\nengineers,\nneuroscientists, physicists, statisticians, and\nmathematicians\ninterested in all aspects of neural and statistical\nprocessing and\ncomputation. The Demonstration Track enables\nresearchers to highlight\nscientific advances, systems, and technologies in ways\nthat go beyond\nconventional poster presentations. It will provide a\nunique forum for\ndemonstrating advanced technologies (hardware and\nsoftware), and\nfostering the direct exchange of knowledge.  We hope\nthat this track\nwill stimulate interactions between researchers from\ndifferent fields\nor approaches.\n\n*Key requirements for Demonstrations* is that they be\nLIVE and\nINTERACTIVE and that they present a compelling view of\nan emerging\ntechnology. Past Demonstrations have covered a very\nwide range.\nAreas of interest for the Demonstrations track have\npreviously\nincluded the following: analog and digital VLSI,\nneuromorphic\nengineering, computational sensors and actuators,\nrobotics, bioMEMS\n(microelectromechanical systems), biomedical\ninstrumentation, neural\nprostheses, RNA-computation, photonics, real-time\nmultimedia systems,\nlarge-scale neural emulators, online learning\nalgorithms, and\nopen-source software toolboxes.\n\n*Submissions* accepted in the Demonstrations track\nwill be published\non the NIPS web site, but will not appear in printed\nproceedings.\nHowever, submitting your work to the Demonstration\ntrack does not\npreclude the submission of a companion paper to the\nregular NIPS\nConference; joint submissions are very much\nencouraged.  We also\nencourage authors submitting Demonstrations to\nconsider organizing a\nWorkshop at NIPS 2005.\n\n*NIPS will provide: * There will be a separate room\nfor these\nDemonstrations and participants will have access to\npower strips,\ntables and poster boards. Monitors will also be\nprovided on request\nat their rental cost. Participants are responsible for\nensuring that\ntheir Demonstration is sufficiently portable;\nadditional hardware\nbeyond that specified above might be provided at cost,\nif readily\navailable.\n\nProposals for Demonstrations will be reviewed by the\nDemonstrations\nCo-Chairs.  Demonstration proposals should be\nsubmitted via the web\nform:\n\nDemonstrators will be asked to enter information about\nthe nature of\nthe Demonstration, in particular they will be asked to\ndescribe first\nthe user experience and then the underlying\ntechnology. Proposals\nthat are simply papers in disguise will be rejected,\nthis session is\nfor live, interactive experiences that compellingly\ndemonstrate new\ntechnology.  Proposers will also be asked about the\npresent state of\ntheir Demonstration in order that the co-chairs may\njudge whether the\nDemonstration can actually be made functional.  Past\nexperience has\nshown that simpler Demonstrations that make one point\nare usually\nmore interesting to attendees.  Complex Demonstrations\ninvolving\nmultiple technologies and partners have not been as effective.\n\n\n\t\t\n____________________________________________________\nStart your day with Yahoo! - make it your home page \nhttp://www.yahoo.com/r/hs",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.10698617270251198,
+          "NOT_SPAM": 0.8930138272974881
+        },
+        "confidence": 0.5092421244199183
+      }
+    },
+    "usage": {
+      "input_tokens": 1215,
+      "output_tokens": 0
+    }
+  }
+}

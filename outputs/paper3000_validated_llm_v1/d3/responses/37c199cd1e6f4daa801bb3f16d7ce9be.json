@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: Planet Sports Netball Draw Tuesday 6th April\n\nHi Erica\n\n \n\nThanks for your email, unfortunately Rach and I can't play tonight or\nnext week as our basketball games are at 8.15pm this week and next.\n\nOn the 13th we play at 8.15pm again and on the 20th we have a bye so\nwill be fine to play that night.\n\n \n\nGood luck for this week and next and hopefully see you the week after!\n\nDebbie\n\n \n\n \n\nDebbie Carpenter\n\nBasketball Services Manager\n\nHarvey Norman NZ Breakers Basketball Ltd\n\n \n\n=============================================\n\n \n\nHarvey Norman NZ Breakers\n\nPhone  + 64 9 970 5260\n\nMobile  + 64 21 512 630\n\nFax      + 64 9 912 2997\n\n \n\nHarvey Norman NZ Breakers\n\n7 Atlas Place, Mairangi Bay, North Shore City, Auckland, New Zealand\n\nPO Box 302-854, North Harbour, North Shore City 0751, Auckland, New\nZealand\n\n \n\nOne Team + Courage + Integrity = Champions\n\n \n\n \n\nwww.nzbreakers.co.nz\n\n________________________________\n\nFrom: Erica Styles [mailto:imzkt@hydroflow.co.nz] \nSent: Tuesday, 29 April 2008 8:34 a.m.\nTo: Tony Meyer; Hawkins, Jacinta; Wilson, Rachael; Debbie Carpenter;\nBjorn Schuffelen\nSubject: FW: Planet Sports Netball Draw Tuesday 6th April\n\n \n\nDoes this clash with your basketball game???\n\nSee you tonight\n\n \n\n________________________________\n\nFrom: Planetsports [mailto:ngkcf@planetsports.co.nz] \nSent: Tuesday, 29 April 2008 8:06 a.m.\nTo: Erica Styles\nSubject: Planet Sports Netball Draw Tuesday 6th April\n\n \n\nHi Captains please find your Draw Below please confirm your game at the\ncounter the week before. \n\nMany Thanks \n\nDraw for :      TUESDAY         06-May-08       \n                COURT ONE               \nTue 6:00pm      Aegis (6)       Netball Crazy Locos  (5.30)     \nTue 6:35pm      Ball Brakers (6)        Netball Juana 2 (6.30)  \nTue 7:10pm      Mo Jo (7)       Netball Jezebelles (6)  \nTue 7:45pm      One Youth (6.30)        Netball       B6's (6.30)       \nTue 8:20pm      Letmec (6.30)   Netball Blitzers (7)    \nTue 8:55pm      Pink Bits  (7.45)       Netball Wazzabi (6)     \nTue 9:30pm      The Unknown     Netball The Rollers (6) \n                                \n                COURT TWO               \nTue 6:00pm      ALC5 (6)        Netball Pros, Ho's & Gigalo's (6)       \nTue 6:35pm      Le Agia (6)     Netball Burger Fuel  (6.30)     \nTue 7:10pm      Team Rambo (5.30)       Netball Juna Beas (6.30)        \nTue 7:45pm      Hobbits (6.30)  Netball Batteries (7-8) \nTue 8:20pm      Eclipse Netball Consumer Link (7)       \nTue 8:55pm      Chesters (7)    Netball Pandas (5.30)   \nTue 9:30pm      Ashleighs Team  Netball Shore Things (6.30)     \n                                \n                COURT THREE             \nTue 6:00pm      McVeagh Fleming Netball Oceanbridge (6) \nTue 6:35pm      Flying Pigs (6.30-9)    Netball The Hillbillies (6)     \nTue 7:10pm      Just Us (6)     Netball Filver Searns (7.10)    \nTue 7:45pm      Spaccaculi (5.30)       Netball The Munters (6.30)      \nTue 8:20pm      Old School      Netball Team Sandra (6.30)      \nTue 8:55pm      Washinda (7)    Netball No Ethicals (6) \nTue 9:30pm      chickedeas 5.45 Netball Easy Done       \n                                \n                COURT FOUR              \nTue 6:00pm      The Legends     Soccer  Emo Killaz 2    \nTue 6:35pm      The Fighting Salmon (6) Soccer  Turd Burglers (6)       \nTue 7:10pm      Vipers (7)      Soccer  Dunno (7)       \nTue 7:45pm      Rubber Bungs    Soccer  The Devils (6)  \nTue 8:20pm      The Shambles    Soccer  The lobsters    \nTue 8:55pm      The Gunners     Soccer  Chai Hards (8.30)       \nTue 9:30pm      The Demons (6.30)       Soccer  Geriatrics (7.10)       \nTue 10:05pm      Cardic Arrest Club (6) Soccer  S.G Giants (6.30)       \n                                \n                        Team Andy (7.10)        \n                v               \n                v       Jog On (7)      \n                v \n\n \n\nPh:  +64 (9) 444 2311 \nFax: +64 (9) 444 2319 \n\nwww.planetsports.co.nz \n\nThe information contained in this email and any attachments is\nconfidential and may be legally privileged. If you have received this\nemail in error, please contact Planet Sports immediately and delete this\nemail. Thank you.\n\n________________________________\n\nAttention: \nThis e-mail is privileged and confidential. If you are not the\nintended recipient please delete the message and notify the sender.\nAny views or opinions presented are solely those of the author.\n\nThis e-mail message has been scanned and cleared by MailMarshal \n\n________________________________\n\nScanned by Bizo EmailFilter\n  \n\nScanned by Bizo Email Filter",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0010096460779457552,
+          "NOT_SPAM": 0.9989903539220543
+        },
+        "confidence": 0.9884961924253521
+      }
+    },
+    "usage": {
+      "input_tokens": 1531,
+      "output_tokens": 0
+    }
+  }
+}

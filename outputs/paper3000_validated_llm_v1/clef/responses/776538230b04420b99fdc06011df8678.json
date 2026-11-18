@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] true news group?\n\nRandall R Schulz wrote:\n\n> Yes. And your problem with that is what? Do you have a specific\n> objection, or are you going to continue to feign incredulity?\n> \n\nHere's my list of objections from an article I wrote in Jan2006:\n\nWeb forums: I also absolutely loathe web-forums. Talk about enhancing to\nthe point of failure. Or re-inventing the wheel. What was ever wrong\nwith newsgroups and mailing-lists? The 5 top reasons why I hate\nweb-forums:\n\n1. They are essentially an inferior and utterly superfluous re-invention\nof existing internet communication means - newsgroups aka usenet.\n2. They're web-based - the interface changes just about every time you\nchange forum. Add to that the entirely superfluous graphics and icons\nand what have you, and they become slow and unwieldy.\n3. Following multiple separate forums can't be done on one screen.\n4. There is no proper threading in forums and selective quoting is at\nbest cumbersome.\n5. They usually require that you login. Downright silly.\n\n\n\n/Per Jessen, Zürich",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9650977089581682,
+          "SPAM": 0.034902291041831804
+        },
+        "confidence": 0.9301954179163363
+      }
+    },
+    "usage": {
+      "input_tokens": 422,
+      "output_tokens": 0
+    }
+  }
+}

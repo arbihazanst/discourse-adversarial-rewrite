@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: SafeSecure100mgForCustomers\n\n\nPharmShippingInternationalPharmacy\nhttp://mo9egw.blu.livefilestore.com/y1pm6qZlwlvE6oCmo1WfyeB_OCR2rpI51VUMkumzImq5hJiZEH_SlAcuK4V6vFGDm0nmxFmFY2RS4pjJDVJpXRIqw/index.html",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9901691786008122,
+          "NOT_SPAM": 0.009830821399187815
+        },
+        "confidence": 0.9203305065745642
+      }
+    },
+    "usage": {
+      "input_tokens": 224,
+      "output_tokens": 0
+    }
+  }
+}

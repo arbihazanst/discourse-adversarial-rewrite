@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: New size for Men especially for new feelings of women at once scsbr o snc\n\nNo other p vle en eyw is e dj nla am rgem gh ent form au ula has been as thoroughly researched and cli ag nic li ally studied as Po vay we tc rEn woy lar iwb ge. Forty-four sepa dyi rate cli cx nical studies testify to the shocking p opg en zkt is enla em rgem tu ent power of Po qg we pp rEn sn lar vbb ge. In a groundbreaking cl mlu ini xg cal study at McM lyk aster Un gf iver fst sity, one extraordinary subject using Po xra we uxq rEn rs lar kx ge stunned researchers after he gai pv ned 3.04 In mbe ch mn es, which beats any other p rm en csx is enl nyd arge gu ment system around.We offer a FU jed LL MO nf NEY BA zcb CK GU lds ARA gm NTEE if you are not completely satisfied with the re aw su tby lts of Po ltn we sl rEn zzc lar jcf ge, You have nothing to lose, just a lot to gain!Discover new and happy side of love life with Po ygg we nrd rEn zq lar iho ge.Click here!!! ... http://lrzfl.leadmake.com/?l",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02611088635362677,
+          "SPAM": 0.9738891136463732
+        },
+        "confidence": 0.9477782272927464
+      }
+    },
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Auto-Assignment\n\nctypes is big and important enough IMO to deserve a component.\n\nOn Fri, Mar 7, 2008 at 6:59 AM, Thomas Heller  wrote:\n> Jeroen Ruigrok van der Werven schrieb:\n>\n> > -On [20080307 11:05], Guilherme Polo (dsbkyd@gmail.com) wrote:\n>  >>When you create a new issue, you have to select a component from a\n>  >>list, those are the available components.\n>  >\n>  > I think Thomas was wondering what the definition for a component was within\n>  > Roundup/the Python project and if ctypes would need to be a component entry\n>  > as such.\n>  >\n>\n>  Exactly.\n>\n>  Thomas\n>\n>\n>\n>  _______________________________________________\n>  Python-Dev mailing list\n>  zvllln-eum@python.org\n>  http://mail.python.org/mailman/listinfo/python-dev\n>  Unsubscribe: http://mail.python.org/mailman/options/python-dev/guido%40python.org\n>\n\n\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005633313318643628,
+          "NOT_SPAM": 0.9994366686681355
+        },
+        "confidence": 0.9931070680937053
+      }
+    },
+    "usage": {
+      "input_tokens": 467,
+      "output_tokens": 0
+    }
+  }
+}

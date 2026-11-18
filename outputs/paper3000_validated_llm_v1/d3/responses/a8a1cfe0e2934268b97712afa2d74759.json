@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] [Python-3000] The release process\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn Mar 1, 2008, at 10:29 PM, Stephen J. Turnbull wrote:\n\n> The fact that Barry found Anthony's process unusable is IMO not a\n> reflection on either Barry or Anthony's code.  Release processes seem\n> to be highly personal, even within the same project.  My own project\n> (XEmacs) has 3 concurrent processes going at any one time (stable\n> core, unstable core, stdlib).  In my time with the project, stable\n> core has seen two RM successions, unstable core has seen four, and\n> stdlib has seen two.  In no case did the new RM adopt the tools of any\n> of his predecessors, but in two cases one person was a successor\n> twice, and in both cases they reverted to their old tools.  All\n> processes seem to have been of roughly the same quality (my opinion,\n> there are no metrics available).\n\nI agree with all of this, and I definitely never meant to impugn  \nAnthony's hack.\n\nHowever, I would categorize every release tool I've ever used (both  \nbought and built, in a commercial or FLOSS environment) as \"a hack\".   \nReleasing something as complex as Python is just going to be a PITA,  \nso all the RM is looking for is a hack that fits his hands better and  \ndoes just enough to lower his threshold of pain, or ToP (tm), to a  \nlevel where he doesn't want to spend his time waiting for the next  \nstep by plunging ice picks into his earholes.\n\nI'm sure when Anthony releases Python 2.9  he'll curse my  \nrelease tool too.  Or he'll do the smart thing and as Stephen  \nsuggests, just ditch my pile of crap and resurrect welease.\n\n- -Barry\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.8 (Darwin)\n\niQCVAwUBR8yAg3EjvBPtnXfVAQIW2QP/e0Ny+l8mYGrOzmVJ1zCDZp9cdvBVgEXB\nfBWc0UPjyBRhmVBoeZ773R5j/IMlsLCetp2VKDkDCutq4PRo9z78ZjrYE2M2+RZP\nrigMxReSvv5Nw83kOXRy99jQva0ptjnYw2Gdpd1nhtlVSrRmEXaLnVF52Z2hLgul\nQ9JkBpg7kr8=\n=PEaE\n-----END PGP SIGNATURE-----\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005228950026525029,
+          "NOT_SPAM": 0.9994771049973475
+        },
+        "confidence": 0.9935456408896942
+      }
+    },
+    "usage": {
+      "input_tokens": 801,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Last Call for Papers/Abstracts\n\nAnnouncement\n-------------------------------------------------------\nLast Call for Papers/Abstracts and Invited Sessions Proposals for WM-SCI 2008, (Orlando, Florida, USA. June 29th- July 2nd, 2008) http://www.sciiis.org/wmsci2008\n\nDeadlines:\nPapers/Abstracts Submissions and Invited Sessions Proposal: March 26th, 2008\nAuthors Notification: April 21st, 2008\nCamera-ready, full papers: May 15th, 2008\n-------------------------------------------------------\n\nAll Submitted papers will be reviewed by a double-blind (at least three reviewers), non-blind, and participative peer review. These three kinds of review will support the selection process of those that will be accepted for their presentation at the conference, as well as those to be selected for their publication in JSCI Journal.\n\nAuthors of accepted papers who registered in the conference can have access to the evaluations and possible feedback provided by the reviewers who recommended the acceptance of their papers/abstracts, so they can accordingly improve the final version of their papers. Non-registered authors may not have access to the reviews of their respective submissions.\n\nThe registration fee of effective invited session organizers will be waived and they will receive at the registration desk, for free, 1) a package of 4 DVDs and one CD containing the 6-hour tutorial \"Fundamentals and History of Cybernetics: Development of the Theory of Complex Adaptive Systems\" and 2) a second 4-DVDs/1-CD package 6-hours tutorial titled \"Cybernetic Management\". The market price of each of these packages is US $ 295. Twelve more benefits for invited session organizers are listed at WM-SCI 2008 web page.\n\nFor submissions or Invited Sessions Proposals, please go to the web site: http://www.sciiis.org/wmsci2008/organizer.asp\n\nAuthors of the best 10%-20% of the papers presented at the conference will be invited to adapt their papers for their publication in the Journal of Systemics, Cybernetics and Informatics.\n\nEach session to be included in the conference program will have corresponding electronic pre-conference and post-conference sessions for 15 days each. In the electronic pre-conference sessions authors will have access to the papers to be presented at their session and to an associated electronic forum, so they can be better prepared for their conference face-to-face session. Similarly, electronic post-conference sessions will complement and support a follow-up of the respective conference sessions, via an electronic forum and the possibility of evaluating papers presented at the associated session. These evaluations will also support the selection process for the papers to be published in JSCI journal.\n\n\nBest regards,\n\nWMSCI 2008 Secretariat\n\nIf you wish to be removed from this mailing list, please send an email to cbmsv.lhqoig@sciiis.org with REMOVE MLWM-SCI in the subject line. Address: Torre Profesional La California, Av. Francisco de Miranda, Caracas, Venezuela.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.15568768448107953,
+          "SPAM": 0.8443123155189205
+        },
+        "confidence": 0.688624631037841
+      }
+    },
+    "usage": {
+      "input_tokens": 828,
+      "output_tokens": 0
+    }
+  }
+}

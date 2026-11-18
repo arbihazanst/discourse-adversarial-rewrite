@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [domainkeys-interop] Re: Issue with libdomainkeys and Yahoo\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nLet me take a look again at it and get back to you off the list.\nThis is a libdk issue only.\n\nTim\n\n\nOn Mon, 15 Oct 2007 08:08:22 -0700 coderangerdan\n wrote:\n>Thanks, doesnt seem to work for me. The signatures it creates are\n>invalid.\n>\n>I also cant quite see how it is doing it, I can see code that is\n>still hashing all the headers but this code just stops them\n>appearing\n>in the \"h=\" tag ... but they have all still been hashed so the sig\n>is\n>wrong.\n>\n>Perhaps the diff is bad or, more likely, I am doing something\n>wrong.\n>\n>Could you perhaps send me the domainkeys.c file with the diffs in-\n>place so I can compare it with my version.\n>\n>Thanks.\n>Dan\n>\n>\n>--- In bxcbhgwfhe-gfonxob@yahoogroups.com,  wrote:\n>>\n>> -----BEGIN PGP SIGNED MESSAGE-----\n>> Hash: SHA1\n>>\n>>\n>> There is a user submitted patch available here\n>>\n>http://sourceforge.net/tracker/index.php?func=detail&aid=1432010&gr\n>o\n>> up_id=107680&atid=648375\n>> That I forgot to add into CVS (which I hope to get around to)\n>that\n>> does what you are asking for.\n>>\n>> It worked fine last time I checked.\n>>\n>> Timothy Der\n>>\n>> On Sun, 14 Oct 2007 12:13:44 -0700 Dan Petitt\n>>  wrote:\n>> >Hi\n>> >\n>> >I have implemented my own mailing component that creates emails\n>> >signing with DomainKeys and DKIM, the problem I have is that\n>using\n>> >the open source libdomainkeys in SourceForge, Yahoo 'fail' the\n>> >DomainKeys signature with bad sig.\n>> >\n>> >This, I think, is because my e-mail has some \"X-\" mail headers\n>and\n>> >looking at the headers that arrived in my Yahoo InBox I noticed\n>> >that all these \"X-\" headers didnt exist; as libdomainkeys by\n>> >default signs all mail headers then this could explain the\n>failure\n>> >... it has signed the \"X-\" headers but Yahoo have stripped them\n>> >out prior to checking the signature.\n>> >\n>> >Is there a possibility that a 'callback' for \"int\n>> >SignThisHeader(const char* szHeader)\" can be included which\n>would\n>> >allow me/anyone to decide which headers are included, return 0\n>to\n>> >not sign that header, 1 to sign it.\n>> >\n>> >libdkim in SourceForge uses such a facility and it works easily\n>> >and is very useful.\n>> >\n>> >If it is unlikely to be added/changed, could someone point me\n>in\n>> >the right direction to add it myself and would you like to see\n>the\n>> >changes?\n>> >\n>> >Thanks\n>> >Dan\n>> >\n>> >\n>> >\n>___________________________________________________________\n>> >Want ideas for reducing your carbon footprint? Visit Yahoo! For\n>> >Good  http://uk.promotions.yahoo.com/forgood/environment.html\n>> -----BEGIN PGP SIGNATURE-----\n>> Note: This signature can be verified at\n>https://www.hushtools.com/verify\n>> Charset: UTF8\n>> Version: Hush 2.5\n>>\n>>\n>wkYEARECAAYFAkcTBqQACgkQrwqXL4qy7yYPugCgvB/LjZvoKVKAT3Twp46aazZu3Ds\n>A\n>> oIL73l5hPE+5ctEKPvrn341b1n6z\n>> =yv4V\n>> -----END PGP SIGNATURE-----\n>>\n-----BEGIN PGP SIGNATURE-----\nNote: This signature can be verified at https://www.hushtools.com/verify\nCharset: UTF8\nVersion: Hush 2.5\n\nwkYEARECAAYFAkcUCD0ACgkQrwqXL4qy7yYYEgCeNZOYZC6ABSVQyCU8JTP082qs/20A\nnRfGr6HCj/oBcrza52wytdkQO9or\n=RSRl\n-----END PGP SIGNATURE-----",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.01358735758317965,
+          "NOT_SPAM": 0.9864126424168203
+        },
+        "confidence": 0.8962681281278658
+      }
+    },
+    "usage": {
+      "input_tokens": 1206,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Full sexy songs Meg Ryan\n\n#SNzNktNicole Richie New mp3.\n\n#mtfebLThe video is Full!\n\n#NzNktK\nGo the site >>>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9954974222682926,
+          "NOT_SPAM": 0.004502577731707488
+        },
+        "confidence": 0.9584210569979862
+      }
+    },
+    "usage": {
+      "input_tokens": 168,
+      "output_tokens": 0
+    }
+  }
+}

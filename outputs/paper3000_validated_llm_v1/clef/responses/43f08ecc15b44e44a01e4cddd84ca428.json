@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] bash - why doesn't the tldp bash beginners guide for loop example work?\n\nOn Wednesday 13 February 2008 20:41, David C. Rankin wrote:\n> Listmates,\n>\n> \tI have run into a bash problem with a simple for loop I don't\n> understand and would like input from the gurus to determine if the\n> tldp documentation is in error or if it is me. Safe money says it's\n> me, but here is the situation.\n>\n> \tI am using example 9.1.2.2. from the following link to construct a\n> simple for loop to extract a directory full of zip files:\n>\n> http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html\n\nIt sounds like someone needs to submit some feedback to the author or \nmaintainer of that document.\n\n\n> \tThe example give is:\n>\n> ...\n>\n> \tSo I created the following:\n>\n> #!/bin/bash\n> LIST=\"$(ls *.zip)\"\n> for i in \"$LIST\"; do\n>          unzip $i -d\n> /mnt/nemesis-cfg/home/samba/computer/software/fonts/extract\n>          echo \"Unzipped: $i to ../extract\"\n> done\n> exit 0\n>\n> \tIt didn't work?? The echo statement showed that $i was receiving the\n> entire $LIST and the loop was only executing once instead of once for\n> each entry in $LIST. Fiddling with it, I got it to work by removing\n> the quotes \"\" from $LIST in the loop definition like this:\n>\n> #!/bin/bash\n> LIST=\"$(ls *.zip)\"\n> for i in $LIST; do\n>          unzip $i -d\n> /mnt/nemesis-cfg/home/samba/computer/software/fonts/extract\n>          echo \"Unzipped: $i to ../extract\"\n> done\n> exit 0\n>\n> \tI understand enough to realize the quotes affect bash expansion, but\n> I am curious as to whether the tldp example is in error. What says\n> the brain trust?\n\nThat's what quotes do. They create a single string. The ones where LIST \nis defined are required because a shell variable (that is not an array) \ncan have only a single value and ordinary parsing would break the \noutput of ls at each occurrence of a (run of) whitespace characters.\n\nThe one in the \"for\" loop, where any number of words is allowed, causes \nthere to be only one, holding the entire output from the \"ls\" \ninvocation.\n\n\nI personally like to use array variables in BASH scripting. They're very \nhand because they can be spread across multiple lines _without_ using \nbackslashes and by putting a single value on each line, you can easily \ncomment out certain values by commenting the line that contains them \nwithin the array initialization.\n\nAlso, you can get item-by-item quoting when expanding an array. Consider \nthis array:\n\nnumbers=( 0 I two 3 )\n\nfor number in \"${numbers[@]}\"; do\n  echo $number\ndone\n\nEcho will be invoked four times in this loop. This variant get all the \narray elements expanded in single quoted string:\n\nfor number in \"${numbers[*]}\"; do\n  echo $number\ndone\n\nIn this case, echo will be invoked only once.\n\n\nWhen you combine arrays with command substitution (the $( command ) \nnotation) and pipes, you can get pretty fancy about generating value \nlists to operate on.\n\n\n> --\n> David C. Rankin, J.D., P.E.\n\n\n\nRandall Schulz",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9516896355884004,
+          "SPAM": 0.04831036441159971
+        },
+        "confidence": 0.9033792711768007
+      }
+    },
+    "usage": {
+      "input_tokens": 976,
+      "output_tokens": 0
+    }
+  }
+}

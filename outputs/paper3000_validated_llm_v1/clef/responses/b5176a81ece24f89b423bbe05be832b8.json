@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] EASSS'05: call for tutorials\n\n!!!     CALL FOR TUTORIALS AT EASSS'02   !!! After successful summer schools on Agent Systems in Utrecht,  Saarbrucken, Prague, Barcelona, Bologna and Liverpool, Agentlink (www.agentlink.org) is planning to organise  the seventh edition of this event in            Utrecht, the Netherlands, 18 - 22 July 2004              European Agent Systems Summer School \t\t\t (Note that this is one week before AAMAS'04 in Utrecht!) Researchers and teachers in this field are invited to  submit a proposal for a course. A typical course is 4 hours in total, but deviations are possible. For an impression, the courses of 2001 are collected in the LNAI series of Springer Verlag (No 2086), and programs of previous editions of EASSS are still at AgentLink's website. The summer schools attract about 125 students each year.  We intend to pay a modest contribution towards tutor expenses, but each tutor is encouraged to book and pay his/ her own travel and accommodation to and in Utrecht. Tutors are encouraged to submit a propsosal for a course,  including a 1 page description mentioning experience of  the tutor, level of the course (beginners, advanced),  duration (2, 6, or, preferably, 4 hours) and needs for equipment. Deadline for proposals:\t\tDecember 19, 2004. Notification: \t\t\t15 January, 2005 material for reader (< 26 pp)\tApril 15, 2005 To be send to: \t\t\tsculv@csc.liv.ac.uk The EASSS05 committee consists of Peter McBurney\t\tLiverpool, UK Mehdi Dastani\t\tUtrecht, Netherlands Michael Luck\t\tSouthampton, UK Onn Shehory\t\tTel Aviv, Israel Carles Sierra\t\tBarcelona, Spain Gerhard Weiss\t\tMunchen, Germany Mike Wooldridge\t\tLiverpool, UK and Wiebe van der Hoek (chair). Kind regards, the EASSS05 committee. POSSIBLE TOPICS:  \t* action selection and planning         * adaptation and learning         * agent architectures         * agent-based software engineering         * agent communication languages \t* agents and the web \t* agent programming languages \t \t* agents and complex systems \t \t* agent based simulation \t* ambient intelligence \t* applications \t* argumentation         * artificial market systems and electronic commerce         * autonomous robots         * believability         * communication, collaboration, and interaction \t  of humans and agents \t* cognitive models \t \t* collective intentionality \t* communication \t \t* competition \t \t* complexity \t* cooperation \t \t* coordination \t         * coordinating perception, thought, and action         * designing agent systems \t* e-Commerce \t* economic Models \t \t* emergence \t \t* emotion         * expert assistants         * evolution of agents         * foundational issues         * game theoretic models \t \t* grid computing \t         * human-like qualities of synthetic agents         * information agents \t* Institutions         * instructability         * integration and coordination of multiple activities         * knowledge acquisition and management         * integration and coordination of multiple activities         * knowledge acquisition and management         * logicsal models         * lessons learned from deployed agents         * lifelike qualities \t* meta-modeling and meta-reasoning \t* methodologies         * middle-agents (e.g., matchmakers, brokers, routers)         * mobile agents         * modeling the behavior of other agents         * models of emotion, motivation, or personality         * multi-agent teams         * multi-agent communication, coordination,  \t  and collaboration         * multi-agent simulation, verification, and validation \t* negotiation         * network agents         * organization of agent societies \t* p2p computing         * privacy and agents \t* protocols \t* reactivity          * real-time performance \t* robotics \t* self-organisation \t \t* semantic Web \t \t* service Oriented Computing \t* social ability \t \t* software engineering         * standards         * synthetic agents         * system support for the implementation of agents \t* teamwork \t \t* theories of agency \t \t* tools \t* trust and reputation          * virtual markets         * user modeling - --------------------------------------------------------------- Wiebe van der Hoek             http://www.csc.liv.ac.uk/~wiebe/ Department of Computer Science      tel (+44 151) 794 7480/3672 University of Liverpool             fax (+44 151)      794 3715 Liverpool L69 7ZF, United Kingdom           sculv@csc.liv.ac.uk",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9485290464440912,
+          "SPAM": 0.05147095355590881
+        },
+        "confidence": 0.8970580928881824
+      }
+    },
+    "usage": {
+      "input_tokens": 1171,
+      "output_tokens": 0
+    }
+  }
+}

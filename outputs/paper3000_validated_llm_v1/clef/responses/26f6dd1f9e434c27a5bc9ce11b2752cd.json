@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 5731] DB_File locking hangs on Ubuntu feisty / gutsy Linux systems in spamd\n\nhttp://issues.apache.org/SpamAssassin/show_bug.cgi?id=5731\n\n\n\n\n\n------- Additional Comments From user7@gvc.ceas-challenge.cc  2008-02-11 13:21 -------\n(In reply to comment #10)\n> At this point I think I should switch to testing a later perl\n> build; fiddling with perl 5.6.1 signal-handling is a bit of a waste\n> of time, and I noted that the Ubuntu issue we're trying to track down\n> should occur with 5.8.x too.  Ideally it should be repro'able with\n> the gutsy package of perl.\n\nso builds 905 (Thu 07 Feb 2008 13:23:41) to 941 (Mon 11 Feb 2008 21:06:03) have\nall passed without a failure.\nhttp://buildbot.spamassassin.org/t-feisty-561/builds/905\nhttp://buildbot.spamassassin.org/t-feisty-561/builds/941\n\nthis looks like it was basically a bug in perl 5.6.1, which has been fixed in\n5.8.x... however, I noted when opening this that the bug occurred on the\n\"jm-feisty\" buildbot, which was running with /usr/bin/perl on a laptop here.\n\n\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9420291451383728,
+          "SPAM": 0.057970854861627306
+        },
+        "confidence": 0.8840582902767455
+      }
+    },
+    "usage": {
+      "input_tokens": 533,
+      "output_tokens": 0
+    }
+  }
+}

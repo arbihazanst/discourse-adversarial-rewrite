@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] 2nd CFP - NIPS workshop on statistical models of networks\n\nDear colleagues,\n\nI would like to invite you to participate in a workshop on\n\"Statistical models of networks\" on Sat 8th of December at\nNIPS'07 in Whistler, B.C.  Due to several requests, we have extended\nthe deadline for abstract submissions until Oct 31st. Please send 1-2\npages in pdf format to murphyk@cs.ubc.ca. More details can be found\nbelow and at\n\n  http://www.cs.ubc.ca/~murphyk/nips07NetworkWorkshop/\n\n\nKevin Murphy\nLise Getoor\nEric Xing\nRaphael Gottardo\n\n\n\nThe purpose of the workshop is to bring together people from different\ndisciplines - computer science, statistics, biology, physics, social\nscience, etc - to discuss foundational issues in the modeling of\nnetwork and relational data. In particular, we hope to discuss various\nopen research issues, such as\n\n- How to represent graphs at varying levels of abstraction, whose\ntopology is potentially condition-specific and time-varying\n\n- How to combine techniques from the graphical model structure\nlearning community with techniques from the statistical network\nmodeling community\n\n- How to integrate relational data with other kinds of data (e.g.,\ngene expression or text data)\n\nSix stellar invited speakers (Mark Handcock, Peter Hoff, Stephen\nFienberg, Stanley Wasserman, Volker Tresp, Jasmine Zhou) have already\naccepted. However, we are also soliciting abstracts on related work,\nto broaden the scope of the workshop and improve the exchange of\nideas.\n\nPlease send 2 pages in pdf format to jkqgmpa@cs.ubc.ca by October 31st.\nThis should describe relevant work that you are currently doing or\nhave recently published. Due to time constraints, accepted abstracts\ncan only be presented as a poster and/or a short spotlight. However,\nall accepted abstracts will also be posted online.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9424472826060464,
+          "SPAM": 0.05755271739395357
+        },
+        "confidence": 0.8848945652120928
+      }
+    },
+    "usage": {
+      "input_tokens": 598,
+      "output_tokens": 0
+    }
+  }
+}

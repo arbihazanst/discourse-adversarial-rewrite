@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] very bad network performance\n\nRalf,\n\nTerry is right. Please file a bug. I do think there may be a problem\nwith that change but I don't have the time to review it in depth.\nHopefully others will. I do recall that sockets reading one byte at a\ntime has been a problem before -- I recall a bug about this in the\n1.5.2 era for Windows... Too bad it's back. :-(\n\n--Guido\n\nOn Mon, Apr 14, 2008 at 10:25 AM, Terry Reedy  wrote:\n>\n>  \"Ralf Schmitt\"  wrote in message\n>  news:932f8baf0804140912u54adc7d5md7261541857f21bd@mail.gmail.com...\n>\n>\n> | Hi all,\n>  |\n>  | I'm using mercurial with the release25-maint branch. I noticed that\n>  checking\n>  | out a local repository now takes more than\n>  | 5 minutes (it should be around 30s).\n>  |\n>  | I've tracked it down to this change:\n>  | http://hgpy.de/py/release25-maint/rev/e9446c6ab3cd\n>  | this is svn revision 61009. Here is the diff inline:\n>  |\n>  | --- a/Lib/socket.py Fri Mar 23 14:27:29 2007 +0100\n>  | +++ b/Lib/socket.py Sat Feb 23 20:30:59 2008 +0100\n>  | @@ -305,7 +305,7 @@\n>  |             self._rbuf = \"\"\n>  |             while True:\n>  |                 left = size - buf_len\n>  | -                recv_size = max(self._rbufsize, left)\n>  | +                recv_size = min(self._rbufsize, left)\n>  |                 data = self._sock.recv(recv_size)\n>  |                 if not data:\n>  |                     break\n>  |\n>  |\n>  |\n>  | self._rbufsize if 1, and so the code reads one byte at a time. this is\n>  | clearly wrong, I'm posting it to the mailing list, as I don't want\n>  | this issue to get lost in the bugtracker.\n>\n>  --------------------------------------------------------------------------------\n>\n>  It is at least as likely to get lost here.  There is a mailing list for new\n>  tracker items that many devs subscribe to.\n>\n>\n>\n>  _______________________________________________\n>  Python-Dev mailing list\n>  zvllln-eum@python.org\n>  http://mail.python.org/mailman/listinfo/python-dev\n>  Unsubscribe: http://mail.python.org/mailman/options/python-dev/guido%40python.org\n>\n\n\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004017143862398882,
+          "NOT_SPAM": 0.9995982856137602
+        },
+        "confidence": 0.9948886072484515
+      }
+    },
+    "usage": {
+      "input_tokens": 902,
+      "output_tokens": 0
+    }
+  }
+}

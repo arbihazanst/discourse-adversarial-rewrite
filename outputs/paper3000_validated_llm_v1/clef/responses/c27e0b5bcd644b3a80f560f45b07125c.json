@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] AIME 2007 first announcement\n\nFirst Announcement of the\n\n11th Conference on: Artificial Intelligence in Medicine\n\nAIME 07, 07-11 July 2007\n\nAmsterdam, The Netherlands\n\nWeb site: http://www.aimedicine.eu/aime07\n\n\nThe AIME 07 conference will be held in Amsterdam starting from 07/07/07. \nAIME 07 is a unique opportunity to present and improve the international \nstate of the art of AI in biomedical research from both perspectives of \nmethodology and application. AIME 07 will include invited lectures, full \nand short papers, tutorials, workshops, and a doctoral consortium. The \nconference will be held in De Rode Hoed, which is a beautiful historic \nbuilding in the centre of Amsterdam.\n\nProgram Committee Chair: Riccardo Bellazzi, University of Pavia, Italy\n\nLocal Organization Chair: Ameen Abu-Hanna, University of Amsterdam, The \nNetherlands\n\nDoctoral Consortium Chair: Jim Hunter, University of Aberdeen, UK\n\n\n\n1) INVITED SPEAKERS\n\nWe are happy to announce our keynote speakers:\n\n\n\nMichael Berthold, University of Konstanz, Germany\n\nPeter Szolovits, Massachusetts Institute of Technology, USA\n\n\n\n2) CALL FOR PAPERS\n\nContact: Riccardo Bellazzi (edkh4995@unipv.it)\n\n\n\nIMPORTANT DATES\n\n23 January 2007             Abstract Submission deadline\n\n31 January 2007    Paper Submission deadline\n\n30 March 2007             Notification of acceptance\n\n17 April 2007             Camera-ready papers deadline\n\n09-11 July 2007    AIME 07 Scientific Sessions\n\n\n\nOriginal long and short papers are sought on the development of theory, \nsystems, and applications of AI in Medicine, including the exploitation \nof AI approaches to molecular medicine and biomedical informatics. \nContributions to theory may include presentation or analysis of the \nproperties of novel AI methods potentially useful in solving medical \nproblems. Papers addressing theory should describe the development or \nthe extension of AI methods and discuss the assumptions and limitations \nof the proposed methods and their novelty with respect to the state of \nthe art. Papers addressing systems should describe the requirements, \ndesign and implementation of new AI-inspired tools and systems, and \ndiscuss their applicability in the medical field. Application papers \nshould describe the implementation of AI systems to solve significant \nmedical problems, and should present sufficient information to allow \nevaluation of the practical benefits of the system.\n\n\n\nThe scope of the conference includes topics such as:\n\nKnowledge Acquisition and Management; Biomedical Ontologies and \nTerminologies; Machine Learning, Knowledge Discovery and Data Mining; \nDecision Support Systems; AI and Statistical Approaches: Decision Trees \nand Bayesian Belief Networks;  Case-Based Reasoning, Neural Networks, \nFuzzy Systems and Soft Computing; Spatial and Temporal Reasoning; \nQualitative Modelling; Protocols, Guidelines, and Workflow Models; \nNatural Language Processing: Generation and Understanding; Biomedical \nComputer Vision, Imaging and Signal Interpretation; Intelligent Agents, \nCooperative and Distributed Systems; Information Retrieval; Cognitive \nModelling.\n\n\n\n3) CALL FOR WORKSHOPS AND TUTORIALS\n\nContact: Ameen Abu-Hanna (p.jfp-cdvxi@amc.uva.nl)\n\n\n\nIMPORTANT DATES\n\n15 Nov 2006               Deadline for proposals\n\n01 Dec 2006               Notification of acceptance\n\n15 May 2007               Camera-ready materials\n\n07 Jul 2007                  Tutorials at AIME 07\n\n08 Jul 2007                  Workshops at AIME 07\n\n\n\nWorkshops will address selected technical topics. They should have an \ninformal atmosphere and will last for half or a whole day with ample \ntime allotted for general discussion. A workshop will typically attract \n20 to 40 participants. Tutorials focus on topics relating to theoretical \nand applied aspects of AI in Biomedicine. They will last for 4 hours and \nwill typically attract up to 20\n\nparticipants. Attendees at tutorials and workshops do not necessarily \nneed to register for the main AIME 07 conference.\n\n\n\n4) CALL FOR DOCTORAL CONSORTIUM SUBMISSIONS\n\nContact: Jim Hunter (btnfgtf@csd.abdn.ac.uk)\n\n\n\nIMPORTANT DATES\n\n27 March 2007            Paper submission deadline\n\n01 May 2007               Notification of acceptance\n\n15 May  2007              Camera-ready papers deadline\n\n07 July 2007                Doctoral Consortium at AIME 07\n\n\n\nThe aim of the AIME 07 Doctoral Consortium is to support the research \ndone by doctoral students with constructive remarks and feedback from \nprominent scientists in the AIM field. About 6 - 8 Ph.D. students will \nmake presentations, which will be commented on by two members of a panel \nwith substantial experience in the field. The session will conclude with \na discussion of general questions related to Ph.D. research.\n\n-- \nRiccardo Bellazzi, PhD\nAssociate Professor\nDipartimento di Informatica e Sistemistica\nUniversity of Pavia\ne-mail: yzdnbyoi.lwxanaxb@unipv.it\ntel: +39-0382-985720, +39-0382-985511\nfax: +39-0382-985373\n\n_______________________________________________\nuai mailing list\nfaq@ENGR.ORST.EDU\nhttps://secure.engr.oregonstate.edu/mailman/listinfo/uai",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9057899956405113,
+          "SPAM": 0.09421000435948856
+        },
+        "confidence": 0.8115799912810227
+      }
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 0
+    }
+  }
+}

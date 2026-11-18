@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Re: [opensuse-kde] Konqueror now crashing under\tKDE4?\n\n\nEl lun, 18-02-2008 a las 16:09 +0100, Will Stephenson escribió:\n> On Sunday 17 February 2008, Hudibras said:\n> > Hi, again, and thank you in advance.  This issue wasn't of mine, but\n> > dealing with kde4, I'm asking for reasons about it.\n> > Yes, I and everybody are running qt 3.91 or rather 4.3.91 so that 4.0.62\n> > can be installed as a requirement.\n> > I have said before that kde never did this before, i.e. crashing even in\n> > a \"stable\" version or release.\n> \n> Whoa, let me stop you there: 4.0.62 and Qt 4.3.91 are not \"stable\" or \n> released.  They are pre-alpha preview packages, and running them is like \n> running with scissors - sooner or later there will be blood.\n\nYes! I know! I know! And that's the paradox. I said before that even\n4.0.62 (tagged as \"unstable\") is stabler than 4.0.1 (tagged as\n\"stable\"). \nI took a look to unstable hoping what I expected. The weird thing is\nthat 4.0.1 lacks a lot of features; konqueror still crashing with\nflash-plugin pages; konsole does not save options changed (cursor, font\nand other things); \"kicker\" is not viewable at all; plasmoids fail and\nrestart plasma (always without success...)\nMay I follow describing issues? I speak a poor English, but if I would\nexpress in my mother tongue, I would be more explicit. So, sorry. \n\nThat's the reason why I said yesterday I will wait to the D-Day: when\nall things I do with kde3, gnome, windowmaker, even Enlightenment 0.17!,\nI can do it with kde4. \n\nCheers,\nAOP.\n\n> \n> What we are experiencing here are the consequences of the evolution of \n> openSUSE.  The Build Service makes it very (very, thank you 1-Click Install \n> guys) easy for you to add unstable software to your system.  In the old days, \n> to get unstable KDE, you had to know about a directory on ftp.suse.com, \n> download and install the packages by hand, resolve dependency problems \n> yourself, and in doing so, realised that you were taking a risk.  That is no \n> longer the case.  \n> \n> Maybe we should write an applet that before you go to bugzilla.novell.com, \n> scans your zypper repo list for any build service repos, and shows a graphic \n> of a geeko in a tutu holding a STOP sign \"Are you sure you know what you're \n> running?\" to prevent users worrying unnecessarily about the state of \n> unreleased software.\n> \n> Will\n> -- \n> Desktop Engineer\n> KDE Team",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9515101187911045,
+          "SPAM": 0.048489881208895524
+        },
+        "confidence": 0.903020237582209
+      }
+    },
+    "usage": {
+      "input_tokens": 860,
+      "output_tokens": 0
+    }
+  }
+}

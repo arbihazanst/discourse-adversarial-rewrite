@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Tia Richter\n\n\n\n\n\n\n\n\nP xs harm kjg acy\n\nVis zjf it Your Local Target P may h zqr arm qqe acy\nfor Ge ju ner utt ic Dr ka ug vqd s, Re faa fills, & More.\n\nhttp://colonybear.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.977412567658607,
+          "NOT_SPAM": 0.0225874323413931
+        },
+        "confidence": 0.8442683844343796
+      }
+    },
+    "usage": {
+      "input_tokens": 188,
+      "output_tokens": 0
+    }
+  }
+}

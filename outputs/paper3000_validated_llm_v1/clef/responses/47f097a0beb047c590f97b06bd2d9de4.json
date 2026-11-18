@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Get slim this summer.\n\n\nDear 38da22de552453ff94c9a9174fd4fdfe\n\nSummer is a good time to take a  break off at work and think about your health & personal life.\n\nAnd we are glad to help you with it.\n\n From now on till 30th of September you can use our special offer.\n\nVisit our site for more details.\n\ntraditionstreet.com\n\n6 Aug 2008 06:42:18",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02623478233581139,
+          "SPAM": 0.9737652176641886
+        },
+        "confidence": 0.9475304353283771
+      }
+    },
+    "usage": {
+      "input_tokens": 277,
+      "output_tokens": 0
+    }
+  }
+}

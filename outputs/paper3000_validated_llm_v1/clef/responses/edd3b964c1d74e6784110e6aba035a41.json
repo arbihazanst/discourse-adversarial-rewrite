@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: What to look for when purchasing a replica watch\n\n\nIn our online store you can buy replicas of Rolex watches and other brands.\n\nLuxurious costume replica watches at lowest prices \n\nExcellent-made replica watches from Rolex   \n\nhttp://fundspampasau.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.027404038319601406,
+          "SPAM": 0.9725959616803985
+        },
+        "confidence": 0.945191923360797
+      }
+    },
+    "usage": {
+      "input_tokens": 212,
+      "output_tokens": 0
+    }
+  }
+}

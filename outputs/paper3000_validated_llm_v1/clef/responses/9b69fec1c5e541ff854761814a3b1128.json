@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Enjoy The Sex Life You Deserve\n\n\nPut on an average gain of 3.02 inches where it matters - and all gains are 100% permanent!\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\nhttp://pillmust.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02227978357042879,
+          "SPAM": 0.9777202164295712
+        },
+        "confidence": 0.9554404328591424
+      }
+    },
+    "usage": {
+      "input_tokens": 255,
+      "output_tokens": 0
+    }
+  }
+}

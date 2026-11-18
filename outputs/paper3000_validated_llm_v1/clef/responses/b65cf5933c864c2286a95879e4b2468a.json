@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Problems with the new super()\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn May 1, 2008, at 6:33 PM, Andrew McNabb wrote:\n\n> On Thu, May 01, 2008 at 12:55:22PM -0700, Guido van Rossum wrote:\n>>\n>> I'm not proud of this, but I don't see a way around it. The\n>> alternative would be to make it a keyword, which seemed excessive\n>> (plus, it would be odd if super() were a keyword when self is not).\n>> There were long discussions about various possible ways to implement\n>> something like this, and they all had their downsides. (The PEP still\n>> isn't fixed to describe the status quo.)\n>\n> I remember some brainstorms about treating more like self.  I'm not  \n> sure\n> if these were thought through all the way, but I remember seeing\n> something like:\n>\n> class MyClass(Super1, Super2):\n>    # This method requires super:\n>    @requires_super\n>    def __init__(self, super, **kwds):\n>        super(**kwds)\n>\n>    # This method doesn't require super:\n>    def some_method(self):\n>        pass\n>\n> I'm sure there are drawbacks, but it fits in my head.  Using super in\n> Python 2.0 is verbose but simple.  However, I'm a little scared of  \n> super\n> in Python 3.0.  I guess I'm probably just a wimp.\n\nIt certainly makes me uncomfortable too.  I think of all the  \nalternatives in PEP 3135, I'd probably prefer self.__super__.foo(),  \nexcept that I'd call it self.super.foo().\n\nAlthough I don't mind reserving a non-underscore-adorned name for  \nPython 3.0, I could see adopting self.__super__ and using  \nsuper(self).foo() as a shortcut.  To me, that addresses the main  \nrationale of the PEP without the magic (i.e. no need to repeat the  \nclass).\n\n- -Barry\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.8 (Darwin)\n\niQCVAwUBSBpWLHEjvBPtnXfVAQJmOAP+NW1tj67Ls+m6PCbF9wYpPRQhT2RJ1210\n0QdYxyYz8akY5+I1QJTp3BN5erDLw1sAWGcKVP2phw7Rvb3pXf8FGh/Yg8du7KAg\nZAm96xdaNLPiATVDaZZHuoWZ3+S6zUbmx6QtpjU//EAOXhwQCoTdhDme9QyPDI/2\nkA+oldSXr+M=\n=bBRP\n-----END PGP SIGNATURE-----\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9459000825819758,
+          "SPAM": 0.05409991741802422
+        },
+        "confidence": 0.8918001651639516
+      }
+    },
+    "usage": {
+      "input_tokens": 905,
+      "output_tokens": 0
+    }
+  }
+}

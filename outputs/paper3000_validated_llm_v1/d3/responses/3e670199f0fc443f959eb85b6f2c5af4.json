@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Final Call for Participation ACM IUI-2008 - 12th Int. Conf. on Intelligent User Interfaces (January 13-16, 2008, Maspalomas, Canary Islands)\n\nFinal Call for Participation ACM IUI-2008 - 12th Int. Conf. on Intelligent User Interfaces\nJanuary 13-16, 2008, Maspalomas, Canary Islands\nhttp://www.iuiconf.org/\n\n********************************************************************\n\nEarly registration deadline ends: December 17, 2007\nBook accomodation now! Canary Islands is a favorite holiday spot in January!\nRegistration now open: http://www.iuiconf.org/registration.html\n\n********************************************************************\n\nInvited Talks:\n  Theodore W. Berger: US: Implantable Biomimetic Electronics as Neural Prostheses for Lost Memory Function\n  Enrico Motta, UK: Exploiting large scale Web semantics to build end user applications\n\n********************************************************************\n\nCome and visit the presentation of selected papers from over 220 submitted short and long papers\n30 selected full papers in the main programme (22% selection rate)\n32 short papers in the main conference poster session\n9 selected demonstrations in the main conference poster session\nMore at http://www.iuiconf.org/08program.html\n\n********************************************************************\n\nAttend state-of-the-art tutorials:\nT1: Joemon M Jose, U of Glasgow: Adaptive and Context-Sensitive Information Retrieval Systems\nT2: Martin Dzbor, OU: Semantic Web for Computer and Users?\nMore at: http://www.iuiconf.org/08tutorials.html\n\n********************************************************************\n\nAttend one of 6 workshops:\nW1: Enculturating Conversational Interfaces by Socio-cultural Aspects of Communication [full day]\nW2: International Workshop on IUI for Ambient Assisted Living (IUI4AAL 2008) [full day]\nW3: Intelligent User Interfaces for Developing Regions   [full day]\nW4: 5th International workshop on Ubiquitous User Modeling [half day]\nW5: Recommendation and Collaboration (ReColl)   [full day]\nW6: Common Sense Knowledge and Goal-Oriented Interfaces (CSKGOI 2008) [half day]\n\n********************************************************************\n\nRegistration now open: http://www.iuiconf.org/registration.html\n\n\nPearl Pu\nEPFL, Switzerland\nPublicity Chair for IUI'08",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.1906136511745131,
+          "NOT_SPAM": 0.8093863488254869
+        },
+        "confidence": 0.2972465929892094
+      }
+    },
+    "usage": {
+      "input_tokens": 666,
+      "output_tokens": 0
+    }
+  }
+}

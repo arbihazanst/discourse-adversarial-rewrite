@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] DATE 2008 Friday Workshop on Impact of Process Variability on Design and Test - Call for Submissions\n\nCall for Submissions and Participation\n\nDATE 2008 Friday Workshop on\nImpact of Process Variability on Design and Test\n\nICM, Munich, Germany, Friday, March 14, 2008.\nhttp://www.date-conference.com/conference/2008/prog/progdetail.php?progid=W2\n\nAbstract submission deadline: March 1, 2008.\nEarly registration deadline: February 20, 2008.\n\n\nWORKSHOP DESCRIPTION\nIntegrated circuit technology continues to shrink. Mainstream\nsemiconductors are starting to be produced at the 45nm technology node,\nwhere transistors and wires measure less than 100 atoms across. The\ndiscrepancies between lithography wavelengths and circuit feature sizes\nincrease. Lower power supply levels and increasing operating speeds\nsignificantly reduce noise margins and increase variations in process,\ndevice and design parameters. Consequently, it is increasingly difficult\nto control the fabrication process precisely enough to maintain\nuniformity. The inherent randomness of materials used in fabrication at\nnanoscopic scales means that performance will be increasingly variable,\nnot only from die-to-die but also within each individual die.\n\nProcess variation cannot be solved by improving manufacturing\ntolerances. Variability must be reduced by new device technology or\nmanaged by design in order for scaling to continue. Within-die\nperformance variation also imposes new challenges for test methods. Test\nhardware must be embedded in the design to detect errors dynamically,\nisolate and confine faults, reconfigure the system to work around faults\nusing spare hardware, and recover from errors on the fly. This will\nbecome increasingly important as devices experience parametric\ndegradation over time, requiring run-time reconfiguration. This workshop\nwill provide a forum for researchers from industry and academia where\nthe latest results can be presented and ideas exchanged between those\nworking on different approaches to dealing with variability.\n\nThe scope of this workshop covers all aspects of process variation. At\nthe transistor level, this includes new devices to replace CMOS in order\nto reduce variability, and the modelling of transistor devices at atomic\nscales so variation can be understood. From the viewpoint of fabrication\ntechnology, new techniques and CAD tools for predicting and compensating\nfor the effect of variability in processes are of interest. At the\ncircuit and system level, tools and design methods must be aware of\nvariation, without adding extra complexity that renders design\nintractable. Process variation-aware test and reliability methods\ntogether with various design techniques that allow circuits and systems\nto adapt variability are also of particular relevance.\n\nBy bringing together researchers from different areas of expertise, this\nworkshop aims to encourage collaborative research that tackles the\nproblems of process variation from several levels simultaneously.\n\n\nPROGRAM AND PARTICIPATION\nThe workshop includes seven very interesting invited talks - however a\nsignificant part of the workshop will be based around poster\npresentations, to maximise the opportunities for discussion and\ninteraction amongst all participants.\n\nThere will be two one-hour sessions during the workshop for poster\npresentations. The format of the posters will be A0 portrait. A title\nand a brief abstract of the poster should be sent to Gert Jervan\n(inmop@pld.ttu.ee), Mladen Berekovic (nngoqprft@ida.ing.tu-bs.de) or\nPete Sedcole (xxfl.kbffvuh@imperial.ac.uk).\n\nParticipation requires registration and a registration fee. Discounted\nregistration is available through the DATE'08 web site only until\nFebruary 20, 2008. Full-fee registration will also be possible on-site\nin Munich, Germany.\n\nFor more information see:\nhttp://www.date-conference.com/conference/2008/prog/progdetail.php?progid=W2\n\n\nPlease feel free to forward this on to anyone who you believe may be\ninterested.\n\n\nGert Jervan (inmop@pld.ttu.ee)\nMladen Berekovic (nngoqprft@ida.ing.tu-bs.de)\nPete Sedcole (xxfl.kbffvuh@imperial.ac.uk)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9369944080495013,
+          "SPAM": 0.06300559195049873
+        },
+        "confidence": 0.8739888160990026
+      }
+    },
+    "usage": {
+      "input_tokens": 1073,
+      "output_tokens": 0
+    }
+  }
+}

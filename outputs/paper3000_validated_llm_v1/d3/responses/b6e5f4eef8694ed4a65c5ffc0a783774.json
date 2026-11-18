@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Oc-pm] A/B Testing by Ben Tilly @ Santa Monica tonight!\n\nThis is a reminder for tonight's LA.pm meeting!\n\nWhat: Ben Tilly - How to do A/B Testing on Websites\n\nWhen: Tonight, Thursday the 8th of November, 2007 (from 7:00pm to 9:00pm)\n\nWhere: Rent.com 2425 Olympic Blvd, Suite 400E, Santa Monica, CA\n\nFor details, including directions and important parking instructions,\nplease go to http://la.pm.org\n\nThe LA.pm Team\n_______________________________________________\nOc-pm mailing list\npn-bo@pm.org\nhttp://mail.pm.org/mailman/listinfo/oc-pm",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.006438904797750939,
+          "NOT_SPAM": 0.993561095202249
+        },
+        "confidence": 0.9438720068853479
+      }
+    },
+    "usage": {
+      "input_tokens": 285,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: ForValuedCustomer100mgHealth\n\n\nProductListHealthyLifeInternetPrices\nhttp://oha2xa.bay.livefilestore.com/y1puVZkHbq1OuYVAEiX048q7fnYPxBihgmg_OR8xxfNy9nvUHWQvh0r8DSX_onmm1pV-0sFFpkhvCo-I1dkfOrUtA/index.html",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.019565428110822528,
+          "SPAM": 0.9804345718891775
+        },
+        "confidence": 0.960869143778355
+      }
+    },
+    "usage": {
+      "input_tokens": 253,
+      "output_tokens": 0
+    }
+  }
+}

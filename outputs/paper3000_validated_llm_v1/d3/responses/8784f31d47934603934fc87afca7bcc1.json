@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Don't miss out on improving your performance! h yqvtm cq\n\nChoosing your p bl eni vr s enl gq arge tjy ment method you should remember that some widely advertised met ry hods are either ineffective or dange fsh rous. Some advertisements are based on lies, lack of m coh edi gg cal knowledge or are just frauds. Choose Po op we wyt rEn kv lar jm ge pe bol ni xw s enl zv arge qp ment device to achieve pe mde ni pvr s si ky ze you dream of in a safe and m sq edic dw ally approved way.Personal approach to each customer and high standards in customer ser kdz vice, well-organized prompt delivery service. We do our best for you to receive your Po sko we pn rEn ale lar kte ge as soon as possible.Fast EX wpd PRE ix SS Sh wuc ipp hlf ing WorldWide. Click here!!! ... http://m.standmill.com/?ixn",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.988783365224829,
+          "NOT_SPAM": 0.011216634775170932
+        },
+        "confidence": 0.9112451265996355
+      }
+    },
+    "usage": {
+      "input_tokens": 336,
+      "output_tokens": 0
+    }
+  }
+}

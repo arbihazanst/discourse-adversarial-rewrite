@@ -1,0 +1,35 @@
+{
+  "original_text": "Subject: The Most Trustworthy Online Drugstore\n\nCanadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.\n\n100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.\nhttp://mineintuition.com\n\nVerified by VISA and sell FDA Approved Pills only.",
+  "rewrite_text": "Subject: Information Regarding Canadian Healthcare\n\nCanadian Healthcare is an international online store with full licensing and experience in providing pharmaceutical products. We offer generic medications from leading manufacturers known for their quality.\n\nOur products are available at competitive prices. We currently offer only generic drugs. \nhttp://mineintuition.com\n\nWe are verified by VISA and sell FDA-approved medications.",
+  "rubric_version": "rewrite_validity_v1",
+  "checks": {
+    "purpose": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\67bc38a6422cae7028c74f29227e438fa8edbf3b936466513e3f1784d4e4af6c.json"
+    },
+    "key_information": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\cf8ab7f7e3c3dada9b59474c0db5fe4d2c858eab9143e36e79309a25ee320007.json"
+    },
+    "meaning": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\1a4ed44a10b44976e063984387cdf09dd87865b35f4ef759137a8babaf0b951d.json"
+    },
+    "no_fabrication": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\5ec94060f6235d765fd3e640bf275f88b0d592d3f3a3e3987dec1cd03a185ae0.json"
+    },
+    "coherence": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\33819c9fafd38d8ee48a99fb6a2e93d4b229cf7e3785f04f77bf96378dd47da1.json"
+    }
+  },
+  "reason": "",
+  "verdict": "VALID",
+  "request_time_ms": 0
+}

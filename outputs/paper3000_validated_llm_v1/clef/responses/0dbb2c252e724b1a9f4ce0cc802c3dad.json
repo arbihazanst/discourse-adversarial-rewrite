@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re:\n\n\nWe come to love not by finding a perfect person, but by learning to see an imperfect person perfectly. http://z.prosperityanger.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.5367792513538207,
+          "SPAM": 0.4632207486461794
+        },
+        "confidence": 0.0735585027076413
+      }
+    },
+    "usage": {
+      "input_tokens": 194,
+      "output_tokens": 0
+    }
+  }
+}

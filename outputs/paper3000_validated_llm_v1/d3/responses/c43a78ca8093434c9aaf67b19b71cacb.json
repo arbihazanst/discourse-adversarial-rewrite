@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] Dict literal bytecode\n\nOn Wed, Mar 26, 2008 at 9:18 AM, Alexander Belopolsky\n wrote:\n>\n> On Tue, Mar 25, 2008 at 5:06 PM, Adam Olsen  wrote:\n>  > On Tue, Mar 25, 2008 at 2:43 PM, Alexander Belopolsky\n>  >\n>  >  wrote:\n>  >\n>  > > On Tue, Mar 25, 2008 at 4:26 PM, Adam Olsen  wrote:\n>  >\n>  > >  >  It does not even have to be a frozenset.  A set works just as well,\n>  >  >  >  never modified by the produced bytecode.\n>  >  >\n>  >  >  With the current implementation, precomputed constants must be\n>  >  >  hashable because the compiler uses a dictionary lookup in order to\n>  >  >  eliminate duplicates.  This is of course just an implementation\n>  >  >  detail, but it would actually be hard to work around it.\n>  >\n>  >  Only builtin types with literal syntax may be deemed \"constant\"\n>  >  anyway.  I fail to see how that's relevant to my frozenset vs set\n>  >  comment.\n>\n>  I realized that right after I hit the \"send\" button, so my comment\n>  about optimizing\n>  frozenset({...}) was wrong.  With respect to frozenset vs set comment,\n>  I understand\n>  your proposal as transforming current\n>\n>  >>> dis(lambda: i in {1,2,3})\n>   1           0 LOAD_GLOBAL              0 (i)\n>\n>               3 LOAD_CONST               0 (1)\n>               6 LOAD_CONST               1 (2)\n>               9 LOAD_CONST               2 (3)\n>              12 BUILD_SET                3\n>              15 COMPARE_OP               6 (in)\n>              18 RETURN_VALUE\n>\n>\n>  to\n>\n>   1           0 LOAD_GLOBAL              0 (i)\n>               3 LOAD_CONST               3 ({1, 2, 3})\n>               6 COMPARE_OP               6 (in)\n>               9 RETURN_VALUE\n>\n>  This will not work because {1, 2, 3} is not hashable, but it should be\n>  possible to do\n>\n>   1           0 LOAD_GLOBAL              0 (i)\n>               3 LOAD_CONST               3 (frozenset({1, 2, 3}))\n>               6 COMPARE_OP               6 (in)\n>               9 RETURN_VALUE\n\nAhh, I see!  It's \"safe\" to use a set, but it internally gets stuck in\na dict to intern it, which a set doesn't allow.  Fixable, but\nannoying.\n\n\n>  On the other hand, our dialog is increasingly off-topic.  My original\n>  question was whether or not it will be a good idea to unify how set\n>  and dict literals are processed.  Please comment on the following\n>  options:\n>\n>  1. Do nothing: dicts are built incrementally, and sets in batch.\n>  2. Implement batch processing for dict literals.\n>  3. Implement incremental processing for sets.\n>\n>  My order of preference is 2, 1, 3.\n\nIMHO, just go ahead with 2.\n\n-- \nAdam Olsen, aka Rhamphoryncus\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0003010527430168485,
+          "NOT_SPAM": 0.9996989472569832
+        },
+        "confidence": 0.9960441145818554
+      }
+    },
+    "usage": {
+      "input_tokens": 1053,
+      "output_tokens": 0
+    }
+  }
+}

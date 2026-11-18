@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Reminder: last alphas next Wednesday 07-May-2008\n\nJeroen Ruigrok van der Werven wrote:\n> -On [20080502 10:50], Steve Holden (gsdsz@holdenweb.com) wrote:\n>> Groan. Then everyone else realizes what a \"great idea\" this is, and we see \n>> ~/Perl/, ~/Ruby/, ~/C# (that'll screw the Microsoft users, a directory with \n>> a comment market in its name), ~/Lisp/ and the rest? I don't think people \n>> would thank us for that in the long term.\n> \n> I'm +1 on just using $HOME/.local, but otherwise $HOME/.python makes sense\n> too. $HOME/.python.d doesn't do it for me, too clunky (and hardly used if I\n> look at my .files in $HOME).\n> \n> But I agree with Steve that it should be a hidden directory.\n\nThis sums up my opinion pretty well. Hidden by default, but easy to \nexpose (e.g. via a local -> .local symlink) for the more experienced \nusers that want it more easily accessible.\n\nCheers,\nNick.\n\n-- \nNick Coghlan   |   uytankmf@gmail.com   |   Brisbane, Australia\n---------------------------------------------------------------\n             http://www.boredomandlaziness.org\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9487858281268028,
+          "SPAM": 0.051214171873197184
+        },
+        "confidence": 0.8975716562536056
+      }
+    },
+    "usage": {
+      "input_tokens": 525,
+      "output_tokens": 0
+    }
+  }
+}

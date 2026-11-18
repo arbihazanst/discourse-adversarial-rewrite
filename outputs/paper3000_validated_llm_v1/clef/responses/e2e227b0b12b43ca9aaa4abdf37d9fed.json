@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Spamassassin Wiki] Update of \"FasterPerformance\" by JustinMason\n\nDear Wiki user,\n\nYou have subscribed to a wiki page or wiki category on \"Spamassassin Wiki\" for change notification.\n\nThe following page has been changed by JustinMason:\nhttp://wiki.apache.org/spamassassin/FasterPerformance\n\nThe comment on the change is:\nadd their aliases\n\n------------------------------------------------------------------------------\n  Examine the custom rule set files you use:\n  \n   * Avoid large rule sets, those over 100k or 150k in size. The more rules you have, the slower SA will run. \n-  * In particular, the {{{sa-blacklist}}} and {{{sa-blacklist-uri}}} rulesets are extremely heavyweight, and massively affect performance and memory usage.  If you're using these, '''remove them immediately'''.  Ensure network tests are enabled, instead; those rules have been made obsolete by the URIBL_WS_SURBL network rule.  See [http://wiki.apache.org/spamassassin/OutOfMemoryProblems#head-198fc106917f358aea90b95047299e4de6c0443d OutOfMemoryProblems].\n+  * In particular, the {{{blacklist}}} and {{{blacklist-uri}}} (aka {{{sa-blacklist}}} and {{{sa-blacklist-uri}}}) rulesets are extremely heavyweight, and massively affect performance and memory usage.  If you're using these, '''remove them immediately'''.  Ensure network tests are enabled, instead; those rules have been made obsolete by the URIBL_WS_SURBL network rule.  See [http://wiki.apache.org/spamassassin/OutOfMemoryProblems#head-198fc106917f358aea90b95047299e4de6c0443d OutOfMemoryProblems].\n   * Pick rule set files that are more productive. In the SARE families published by Bob Menschel, use files 0 and 1 for productivity / efficiency, and avoid files 2 and 3. \n   * Remove and re-add rule set files one at a time, and check performance after each change. If one rule set file causes a huge change in performance, take appropriate action.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9415861182291383,
+          "SPAM": 0.05841388177086167
+        },
+        "confidence": 0.8831722364582766
+      }
+    },
+    "usage": {
+      "input_tokens": 661,
+      "output_tokens": 0
+    }
+  }
+}

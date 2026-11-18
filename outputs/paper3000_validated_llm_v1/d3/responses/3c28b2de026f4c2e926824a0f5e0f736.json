@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] How we can get rid of eggs for 2.6 and beyond\n\nOn Sat, Mar 22, 2008 at 09:13:24PM +0100, \"Martin v. L?wis\" wrote:\n> Unfortunately no. I was looking for it, but couldn't find it. He\n> mentioned a website with a \"call for action\", but I couldn't find\n> that, either :-(\n\nWe're working on the video, but I think it'll be a few weeks before\nthings start to get posted.\n\n--amk\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0011099972784283337,
+          "NOT_SPAM": 0.9988900027215717
+        },
+        "confidence": 0.9875046249994266
+      }
+    },
+    "usage": {
+      "input_tokens": 314,
+      "output_tokens": 0
+    }
+  }
+}

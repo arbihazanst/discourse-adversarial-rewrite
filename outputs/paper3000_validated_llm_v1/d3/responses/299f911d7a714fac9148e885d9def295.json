@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Feb. 20th: Disaster recovery for complex IT configurations\n\n\n\n\n\nTechRepublic Webcasts\n\n\n\n\n\n\n\n\nTechRepublic Webcasts\n\n\n\n\n\n\n\n\n Implementing Disaster Recovery forComplex IT Configurations\nReplicating complex IT environments isn't easy, but your business continuity needs demand that you do it.\nFor help, check out this live TechRepublic Webcast on disaster planning for advanced IT configurations. You'll learn how Microsoft Cluster Server clusters and virtual server technology can work alone or in tandem to protect your data.\nHow to Implement Disaster Recovery for Complex IT Configurations\nWednesday, February 20, 2007\n1:00 P.M. ET | 10:00 A.M. PT | 18:00 GMT\n\n\nJoin us to learn how you can:\n\nIdentify weak links in your disaster recovery plan\nTake advantage of cross-platform replication\nReduce hardware costs for your replica environment\n\nRegister TODAY to participate on February 20th!\nIncludes live Q&A!\n\n\nSponsor:\n\n\nFeaturing:\n\nDavid Aschmann\nDirector of Product Management\nCA XOsoft\n\nHost:\nJames Hilliard\nModerator\nTechRepublic\n\n\n\n\n\nYou are receiving this communication as a benefit of your TechRepublic membership. If you prefer not to receive this information, please visit our subscription center.\n\n   The e-mail address for your subscription is tjm@cognosys.net.\nUnsubscribe from this e-mail | View CNET's privacy policy\n\n\n\n\n\n\nCopyright © 2008 CNET Networks, Inc. All rights reserved.\nTechRepublic is a registered service mark of CNET Networks, Inc.\n\nCNET Networks, Inc., 235 Second Street, San Francisco, CA 94105, U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.33465250485921455,
+          "NOT_SPAM": 0.6653474951407854
+        },
+        "confidence": 0.08039063954893655
+      }
+    },
+    "usage": {
+      "input_tokens": 489,
+      "output_tokens": 0
+    }
+  }
+}

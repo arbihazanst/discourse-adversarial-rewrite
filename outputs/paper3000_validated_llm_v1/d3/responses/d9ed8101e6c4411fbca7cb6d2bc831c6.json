@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] getpass and stdin\n\nOn Sun, Feb 24, 2008 at 1:02 PM, Shaya Potter  wrote:\n> [please cc me on responses]\n>\n>  I was wondering if getpass could be changed to enable piped stdin to work.\n>\n>  For instance, the getmail program can read my email password in via\n>  stdin using getpass functionality.\n>\n>  However, if I do\n>\n>  echo password | getmail4\n>\n>  it will fail due to stdin not being a terminal and therefore not being\n>  able to do a old = termios.tcgetattr(fd) on it.\n>\n>   From what I can tell, the point of this is to only to prevent echoing\n>  the password, which isn't a problem in the echo case I give (especially\n>  if using bash, then it wont even be on the cmdline when run from a\n>  script as it's a builtin, script can also read in the password and store\n>  it in memory).\n>\n>  currently the code is\n>\n>  -----\n>  def unix_getpass(prompt='Password: '):\n>      \"\"\"Prompt for a password, with echo turned off.\n>\n>      Restore terminal settings at end.\n>      \"\"\"\n>\n>      try:\n>          fd = sys.stdin.fileno()\n>      except:\n>          return default_getpass(prompt)\n>\n>      old = termios.tcgetattr(fd)     # a copy to save\n>      new = old[:]\n>\n>      new[3] = new[3] & ~termios.ECHO # 3 == 'lflags'\n>      try:\n>          termios.tcsetattr(fd, termios.TCSADRAIN, new)\n>          passwd = _raw_input(prompt)\n>      finally:\n>          termios.tcsetattr(fd, termios.TCSADRAIN, old)\n>\n>      sys.stdout.write('\\\\n')\n>      return passwd\n>  -----\n>\n>  it would seem that if the tcgetattr() line is moved into the initial\n>  try, my echo case would work as expected (as it would fail, but be\n>  caught and then just run default_getpass() (which should just read it\n>  from stdin).\n>\n>  Is there any reason not to do it this way?\n\nIt's certainly possible to have getpass() read from stdin\nautomatically, but it's traditionally understood that having it read\nfrom a tty is much, much better.  Suppose your program were meant to\nuse getpass, and then read a file from stdin.  Now, all of a sudden,\nyou miss the first line of the file, and it becomes your password, for\nno particular reason.  getpass() works the way it does because it's\nbeen working that way in C for decades.\n\nIf you really want to maintain a 'configuration file' for your\npassword, or have it available on command line, try adding an option\nlike -p  or -p  to whatever program you're writing.\n\n-- \nCheers,\nLeif\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00033509558002359013,
+          "NOT_SPAM": 0.9996649044199764
+        },
+        "confidence": 0.9956485851764098
+      }
+    },
+    "usage": {
+      "input_tokens": 881,
+      "output_tokens": 0
+    }
+  }
+}

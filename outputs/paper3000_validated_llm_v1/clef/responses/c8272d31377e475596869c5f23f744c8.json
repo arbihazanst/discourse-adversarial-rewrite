@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Netflix Queue Manager\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nJoe Sloan wrote:\n| Rick Friedman wrote:\n|> Does anyone know of an application, applet, karamba widget, etc., that\n|> enables you to manage your Netflix queue?\n|\n| You mean, other than firefox?\n|\n| Joe\n\nYeah... I'm looking for an applet or widget of some sort that is\ndedicated to the Netflix queue. For some unknown reason, my wife thinks\nit would be \"terribly cool\" to have one. :/\n\nRick\n- --\nRick's Law: What cannot be imagined will be accomplished by a fool.\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.4-svn0 (GNU/Linux)\nComment: Using GnuPG with SUSE - http://enigmail.mozdev.org\n\niD8DBQFHu3aOPIcjS54RJeARAkwyAJ0ds8UMNUkzPWq11CpEpVjOjBI8tQCeO7Qk\n0+sIQ/+DZvdmMjtFRKnVXi0=\n=zULD\n-----END PGP SIGNATURE-----",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9615276347106815,
+          "SPAM": 0.03847236528931851
+        },
+        "confidence": 0.923055269421363
+      }
+    },
+    "usage": {
+      "input_tokens": 436,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: False positive with scoring I don't understand\n\nOn Wed, 2008-02-13 at 10:15 -0800, Tim Alberts wrote:\n> Rubin Bennett wrote:\n> > On Wed, 2008-02-13 at 09:45 -0800, Tim Alberts wrote:\n> >   \n> >> Greetings everyone.  I'm new to the list because I need help \n> >> desperately.  I've been using spamassassin for many years and it has \n> >> gone a long way to fixing spam, so first, thank you for the great product.\n> >>\n> >> System is Fedora Linux 6 running sendmail.  Mail is delivered for local \n> >> users with procmail which feeds the delivered mail to spamassassin.  I'm \n> >> getting the following from some (very important) customers and it's \n> >> really a problem right now.  Where is the score 244.3 coming from?  The \n> >> sender is whitelisted for -100?\n> >>\n> >> X-Spam-Flag: YES\n> >>\n> >> X-Spam-Checker-Version: SpamAssassin 3.1.9 (2007-02-13) on msi2.inside.msi\n> >>\n> >> X-Spam-Level:**************************************************\n> >>\n> >> X-Spam-Status: Yes, score=244.3 required=5.0 tests=AWL,BAYES_00,    \n> >> USER_IN_WHITELIST autolearn=no version=3.1.9\n> >>\n> >> X-Spam-Report: * -100 USER_IN_WHITELIST From: address is in the user's \n> >> white-list    * -2.6 BAYES_00 BODY: Bayesian spam probability is 0 to \n> >> 1%    *      [score: 0.0000]    *  347 AWL AWL: From: address is in the \n> >> auto white-list\n> >>\n> >>     \n> > The From: address is in the auto whitelist.  Turn it off and see where\n> > you get, then determine why they were added to the AWL in the first\n> > place.\n> >\n> > Rubin\n> >   \n> Thank you for responding Rubin.  I disable the AWL with main \n> spamassassin local.cf config file and the line 'auto_learn 0' correct?  \n> However I'm not sure how to determine why they were added in the first \n> place.  I'm looking through the awl docs, and I think it would be easier \n> (and much quicker with less downtime) to just remove the address from \n> the awl.  I don't see how to do this though, can it be done, and if so, how?\n> \n> \nspamassassin --remove-addr-from-whitelist\n\n(Googled for SpamAssassin AWL remove entry)\nhttp://wiki.apache.org/spamassassin/AwlWrongWay\n\nAlso man spamassassin should give you some more details about that\ncommand :)\n\nRubin\n> >   \n> >>     \n> \n-- \nRubin Bennett\nRB Technologies\nhttp://thatitguy.com\nkenrmahk@thatitguy.com\n(802)223-4448\n\n\"They that can give up essential liberty to obtain a little\ntemporary security deserve neither liberty nor safety\"\n  --Benjamin Franklin, Historical Review of Pennsylvania, 1759",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9643917102525302,
+          "SPAM": 0.035608289747469865
+        },
+        "confidence": 0.9287834205050605
+      }
+    },
+    "usage": {
+      "input_tokens": 963,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [ydn-delicious] for: tag listing\n\nI pulled up my only for:user tag, and though it said \"listing all 5\nitems\" there was only 1.\n\n\nTim\n\n-- \nTim Larson        AMT2 Unix Systems Administrator\n    InterCall, a division of West Corporation\n\n               Eschew obfuscation!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9658684551319713,
+          "SPAM": 0.03413154486802868
+        },
+        "confidence": 0.9317369102639426
+      }
+    },
+    "usage": {
+      "input_tokens": 232,
+      "output_tokens": 0
+    }
+  }
+}

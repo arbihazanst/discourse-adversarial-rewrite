@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [OT] Bogus MX opinions\n\nMarc Perkel wrote:\n> Let me clarify something about using bogus MX records. Let's assume \n> the following.\n>\n> bogus0.domain.com - MX 10\n> real.domain.com - MX 20\n> backup.domain.com MX 30\n> bogus1.domain.com MX 40\n> bogus2.domain.com MX 50\n>\n> The host bogus1 and bogus2 are 100% safe and effective. The bogus IPs \n> can be dead on port 25 or can return 421 and let it retry. The 421 \n> will let you log hits if you want to see it working.\n> The bogus on the low end is trickier. What you have to do there is \n> firewall off port 25 to almost everyone. You can't do a 421 error \n> because it breaks Qmail servers. Qmail won't retry higher numbered MX \n> records after seeing a 421 but will try if the port is closed.\n\n\nBut then you are adding a useless connection to every MTA out there. if \nyou want to avoid this, you need to whitelist legitimate MTAs (MTAs from \nwhich you got ham or that you decided to whitelist before receiving mail \nfrom) and this whitelist is to be used on the firewall (which may be \nfeasible/acceptable depending on what FW you use). also, care is to be \ntaken for MTAs that send from pools with different IPs.\n\nwhile this may be \"usable\", it's not something I would embark on without \na serious cost/benefit analysis...\n\n>\n> Because there is occasionally some server doing something very weird \n> you might have to open up port 25 one some specific IP who is running \n> something really dumb. I think I've had to do this only once or twice. \n> But once you open up port 25 to the problem user you solved the problem.\n>\n> For the most part if you do an MX sandwich as above you'll get rid of \n> 80% of your spam and not lose good email. If you are fearful of going \n> all the way then just do the higher numbered MX and leave the bottom \n> as is.\n>\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0012615216513943539,
+          "NOT_SPAM": 0.9987384783486056
+        },
+        "confidence": 0.9860319226465613
+      }
+    },
+    "usage": {
+      "input_tokens": 619,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] just to say hello\n\nGiulivo Navigante, Tue, Oct 30, 2007 at 01:08:53PM +0000:\n> as in the subject, hello :+)\n\nAs the -IIRC- first 100% italian to join the mailing list back when I was\ntrying to move to Ireland, I welcome you here. I actually failed to make\nmy move, but I stayed on the list due to the very high levels of\npleasantness and competence of its members - I'm sure you noticed that\nin the last months. I must admit I don't think you can find an environment\nas good as this in the various Italian LUG circles.\n\nEnjoy your stay. :)\n\np.\n-- \npbm - \"and a messy desk drawer full of broken strings\n    -  you know those kids, and you know these things\"",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00030018103627584426,
+          "NOT_SPAM": 0.9996998189637241
+        },
+        "confidence": 0.9960543129867782
+      }
+    },
+    "usage": {
+      "input_tokens": 327,
+      "output_tokens": 0
+    }
+  }
+}

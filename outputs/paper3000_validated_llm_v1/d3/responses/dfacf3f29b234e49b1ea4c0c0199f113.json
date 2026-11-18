@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [spambayes-dev] exceptions in windows binary\n\n>     Mark> I just tried the spambayes-1.1a4-070629 with a proxy and I\n> think\n>     Mark> there is a problem.  If you do not select the 'upgrade\n> databases'\n>     Mark> option, attempting to train will result in:\n>     ...\n> \n> Remind me again what \"upgrade dataabses\" is supposed to do?\n\nNo idea!  No idea who added it either.\n\n\n>     Mark> I'm just noting it here as I'm too lazy to open a bug, but\n> this\n>     Mark> seems like a bug we need to fix before 1.0.  Anyone have any\n>     Mark> clues?\n> \n> Not a one.  Is this problem specific to the Outlook installer?\n\nIts specific to using the pop3 proxy from the binary installer, but has\nnothing to do with the Outlook addin.\n\nMark\n\n_______________________________________________\nspambayes-dev mailing list\nbsfegmjrr-hnq@python.org\nhttp://mail.python.org/mailman/listinfo/spambayes-dev",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0018977833531829936,
+          "NOT_SPAM": 0.9981022166468171
+        },
+        "confidence": 0.9801059276902706
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: OldFriends - Do you know these people?\n\n\n\n\nOldFriends - Do you know these people?\n\n\n\n\n\n\n\n\n\n\r\nNow with over 1124030 members!\nwww.oldfriends.co.nz\n\n\n\n\n\n\n\n\n\n\nHi Tony,Do you know these people?\n\n\n\nTennille Green (Tennille Telford)\n\n\n \nTennille is a friend of (paulson) Henry\n\n\n\n\n\n\nElizabeth Garton\n\n\n \nElizabeth is a friend of Jaime Oneill\n\n\nLog in to add them to your friends\r\nThanks for using OldFriends!\nwww.oldfriends.co.nz\n\n\nYour contact details\n\n\n\n Email: \nuser2.5@gvc.ceas-challenge.cc\n\n\n\n\n\n\n Mobile: \nNone (Add)\n\n\n\n\n\n\n Home: \nNone (Add)\n\n\n\n\n\n\n Work: \nNone (Add)\n\n\n\n\n\n\n MSN: \nuser2.2-ext1@gvc.ceas-challenge.cc\n\n\n\n\n\n\n Skype: \ntonyandrewmeyer\n\n\nOnly your friends can see my contact details (update)\nEdit your profile\n\n\n\nTo change how often you receive these emails, click here",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8055534587409953,
+          "SPAM": 0.19444654125900476
+        },
+        "confidence": 0.6111069174819905
+      }
+    },
+    "usage": {
+      "input_tokens": 388,
+      "output_tokens": 0
+    }
+  }
+}

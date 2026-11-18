@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: No scoring because of not beeing tested ?\n\nOn Thu, 2008-02-21 at 10:14 +0100, Emmanuel Lesouef wrote:\n> Le Thu, 21 Feb 2008 00:57:55 +0100,\n> Karsten Bräckelmann  a écrit :\n\n> > > At 13:51 20-02-2008, Emmanuel Lesouef wrote:\n> > > >http://pastebin.com/m61564e4\n> > \n> > That's not a default SA header. X-Spam-Checker-Version is missing, and\n> > that X-Spam-Status is missing autolearn and version. Whatever calls\n> > SA, you want to check with that.\n> \n> Amavisd-new is calling spamassassin.\n> \n> \n> > Amavisd-new I assume, looking at the Received header right before the\n> > X-Spam stuff. And Amavisd-new is, what inserts these headers, too. It\n> > is not SA.\n> \n> But the spamassassin config is read from /etc/spamassassin ?\n\nYes. But this is not related to your issue, since in your OP you\nmentioned \"more and more\" spam with such a header.\n  X-Spam-Status: No, score=0 required=5 tests=[none]\n\nSo SA obviously works in the general case. Again, the header has been\nadded by Amavisd-new, and that's where you need to dig.\n\nSA merely processes the mail. It's Amavis that adds the headers, it's\nAmavis that decides if a mail be scanned or not, and that likely\nenforces a timeout until it continues processing your mail and maintains\nits own whitelists, etc.\n\nYou should go check your Amavis config and logs for any error messages\nregarding these specific mail. In particular, the tests=[none] has been\nadded by Amavis, and it tries to tell you something that way.\n\nSorry, I'm not an Amavis user.\n\n  guenther\n\n\n-- \nchar *t=\"\\\\10pse\\\\0r\\\\0dtu\\\\0.@ghno\\\\x4e\\\\xc8\\\\x79\\\\xf4\\\\xab\\\\x51\\\\x8a\\\\x10\\\\xf4\\\\xf4\\\\xc4\";\nmain(){ char h,m=h=*t++,*x=t+2*h,c,i,l=*x,s=0; for (i=0;i>=1)||!t[s+h]){ putchar(t[s]);h=m;s=0; }}}",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.007918229257637507,
+          "NOT_SPAM": 0.9920817707423626
+        },
+        "confidence": 0.9333477148704399
+      }
+    },
+    "usage": {
+      "input_tokens": 721,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: PowerEnlarge penis increasing system is proved to be effective! wq tcyy j\n\nThe best way to e de nla gbt rge your p hnb en ume is is the safest one with perm ina anent resu ej lts. Such met dvu hod is Po oww we kd rEn pbw lar xqd ge p kp en me is enl dv argem sq ent system. Convenient, discreet, easy to use, wear and take off this system is me ke dica gqw lly ap jeu pro chf ved and 100% sa ajc fe.Simply fill in the form and order Po pib we od rEn xxk lar dh ge now or contact the customer service if you have any questions concerning Po ha we uk rEn hlb lar gd ge. Fast delivery! Abs bmd olute secu kv rity is gu hbt aran lp teed.100% Sa uxa fe To Take, With NO Si kl de Ef np fec bl ts. Click here!!! ... http://deq.makecase.com/?ju",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9962071085423173,
+          "NOT_SPAM": 0.0037928914576826206
+        },
+        "confidence": 0.9640341275714962
+      }
+    },
+    "usage": {
+      "input_tokens": 352,
+      "output_tokens": 0
+    }
+  }
+}

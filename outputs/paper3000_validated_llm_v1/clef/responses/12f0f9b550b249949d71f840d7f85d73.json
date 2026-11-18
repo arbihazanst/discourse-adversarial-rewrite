@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Get worth any girl's attention\n\nHear your lassie cry out with happiness, as you penetrate her harder and more deeply!\nMoney back guarantee, discreet and fast delivery - what else do you need?\nhttp://milddear.com/\n\n\nPakistan's President General Pervez Musharraf forHollinger's shareholders of millions of dollars.9 overs.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.024188210489182013,
+          "SPAM": 0.975811789510818
+        },
+        "confidence": 0.9516235790216361
+      }
+    },
+    "usage": {
+      "input_tokens": 236,
+      "output_tokens": 0
+    }
+  }
+}

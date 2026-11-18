@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: We provide for you a real advantage to turn her on blfr lk fpyix\n\nAfter many years of Rese nkl arch and Develo dyx pment, our company is pleased to offer you a 100% Nat rgl ural and Sa zn fe Pro pp duct that can safely and permanently en am lar gi ge your p psr en wqr is si pv ze up to 3-4 In mqy ch oyj es in le dbb ng tj th and up to 25% in girth. Discover what our \"proven to work\" for xyy mula can do for you by or dj deri vvm ng today. Many men were skeptical at first but after they gave our pi ltj lls a try their se oon x life and self esteem changed for the better.Po ql we rr rEn lh lar ofa ge Pi ktk lls are ma sf nufac mm tured in C kqh NL approved man qag ufac yex turing la uh bs. So you can rest assured about the q lc ual xik ity of Po boo we ud rEn gp lar dfn ge Pi fg lls. This cannot be said about other companies offering male en ork han ec cem dvy ent p irp rod mqp ucts.Fast EX ulf PRE kp SS Sh zf ipp sw ing WorldWide. Click here!!! ... http://zqo.leadmake.com/?dap",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.020915137284291535,
+          "SPAM": 0.9790848627157085
+        },
+        "confidence": 0.958169725431417
+      }
+    },
+    "usage": {
+      "input_tokens": 466,
+      "output_tokens": 0
+    }
+  }
+}

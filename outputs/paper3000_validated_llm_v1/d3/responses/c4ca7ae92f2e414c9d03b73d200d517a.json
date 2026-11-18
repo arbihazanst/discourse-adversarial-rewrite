@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] OpenSuse 11\n\nJames Knott wrote:\n> Tero Pesonen wrote:\n>> On Friday 08 February 2008, Sloan wrote:\n>>   \n>>> Tero Pesonen wrote:\n>>>     \n>>>> On Friday 08 February 2008, Randall R Schulz wrote:\n>>>>       \n>>>>>   Linux is safe when used intelligently.\n>>>>>   Intelligent use includes using secure passwords and\n>>>>>    applying security upgrades when they're made available.\n>>>>>   Intelligent use excludes running binaries or scripts supplied\n>>>>>    by unknown individuals.\n>>>>>\n>>>>>\n>>>>> If that's too complicated for someone, they shouldn't be using a\n>>>>> computer at all.\n>>>>>         \n>>>> So, are Windows XP or Vista not safe then when used intelligently?\n>>>>       \n>>> IMHO using a microsoft operating system intelligently (is there an\n>>> oxymoron here?) involves a number of additional restrictions and\n>>> caveats, as well as extra costs, as compared to using linux\n>>> intelligently, which is OTOH fairly straightforward.\n>>>\n>>> Joe\n>>>     \n>> I don't think running Windows XP on a desktop securely is rocket \n>> science. My parents have pulled off such a feat -- they've never had \n>> any security issues, and of the people I know, they are the least \n>> computer literate. My brother is now on OS X, but not because of \n>> security issues. He just wanted a better computer with a better OS than \n>> what his XP-powered Wintel box was.\n>>   \n> \n> Do they run as admin or user?  Do they have any applications that force\n> them to run as admin?\n>> Maybe securing a desktop Linux system is easier. However, as long as it \n>> is not difficult as such on the other side, security is not a selling \n>> point. I've talked about security and Linux to Windows users. What they \n>> say is: I do not need \"better\" or \"more\" security, since security is a \n>> non-issue to begin with. If, on the other hand, OpenOffice or MS Office \n>> became magically easier to use once run on Linux, then they might \n>> become interested. \n>>   \n> \n> There are a lot of fundamental flaws in Windows, that create security\n> risks.  One is the way IE is tied into the kernel, so that a user app\n> runs in kernel space.  The sole reason for this, was so that Microsoft\n> could force IE bundling, as IE was now part of the OS.  This goes\n> completely against good software engineering principles and means that\n> problems with the browser become problems with the OS.\n> \n>> That's what I've gathered.\n>>\n>>   \n> \n> \"Security\" in Windows comes from patching a sieve.\n\nMore specifically, replacing one section of permeable wire\nmesh with a new section of permeable wire mesh -- BY DESIGN.\n\nThe many back-doors in Windows are *NOT* accidental.\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006934781975180002,
+          "NOT_SPAM": 0.999306521802482
+        },
+        "confidence": 0.9917226050251178
+      }
+    },
+    "usage": {
+      "input_tokens": 789,
+      "output_tokens": 0
+    }
+  }
+}

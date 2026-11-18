@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: overload64.t failures\n\nOn Oct 21 2007, Rick Delaney wrote: > On Oct 21 2007, Jerry D. Hedden wrote: > > Actually, I think they may be indicating a bug.  The tests are going > > awry after a 'division by one' test: > >  > >     is($oo/1, $ii, '0+ overload with division'); > >     is($$oo, $cnt++, 'overload called once');       <<== this one fails > >  > > This indicates that, in this case, overloading is being called > > more than once. >  > Attached patch should fix that. Sorry, `make test` was still running when I sent that.  It should be correct but there is a failure for t/lib/warnings.t.  Haven't looked at it yet. --  Rick Delaney hfvo@bort.ca",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9510972578630562,
+          "SPAM": 0.04890274213694372
+        },
+        "confidence": 0.9021945157261124
+      }
+    },
+    "usage": {
+      "input_tokens": 363,
+      "output_tokens": 0
+    }
+  }
+}

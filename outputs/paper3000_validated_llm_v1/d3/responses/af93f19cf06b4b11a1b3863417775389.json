@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Where to buy new PC without OS ?\n\n> I wanted to try pcworld.ie but their website is \"under re-construction\"\n> at the moment.\n\n\nPC World Business has a site at http://www.pcwb.ie/\n\nStephen",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.022518602574513238,
+          "NOT_SPAM": 0.9774813974254868
+        },
+        "confidence": 0.8446426550081054
+      }
+    },
+    "usage": {
+      "input_tokens": 184,
+      "output_tokens": 0
+    }
+  }
+}

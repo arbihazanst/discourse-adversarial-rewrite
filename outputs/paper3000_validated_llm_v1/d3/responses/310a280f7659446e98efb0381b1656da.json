@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Enjoy Prices in our Drugstore\n\nI strongly recommend you to switch to the Canadian Healthcare online store. We keep monitoring their products every once in a while so I can say that buying your pills from them will be a much safer thing to do.\n\nThe best place to shop for your generic products.\nhttp://mineintuition.com\n\nAnd improve your sexual life. Only Confidential purchase. Verified by VISA.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9946688693923056,
+          "NOT_SPAM": 0.005331130607694309
+        },
+        "confidence": 0.9520721477200746
+      }
+    },
+    "usage": {
+      "input_tokens": 211,
+      "output_tokens": 0
+    }
+  }
+}

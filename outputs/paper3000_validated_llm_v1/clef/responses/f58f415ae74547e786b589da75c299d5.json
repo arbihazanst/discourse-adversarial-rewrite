@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Dixielandjazz] New John Pertters Trio Video on Jazz Legends & \tYouTube\n\nHi Folks,\nI'm working on a new DVD and CD box set of a trio session I recorded in \nMarch with the brilliant James Evans on clarinet and the incredible \nyouge Italian pianist Paolo Alderighi.\n\nThe material is mostly based on the Goodman trio style.\nI've been getting to grips with video editing - using two cameras with \nthe audio dubbed on to the sountrack from my professional hard disc \nmachine.\nTake a peek\n\nhttp://jazzlegends.ning.com/video/video/show?id=2137845%3AVideo%3A1061\n\nor\nhttp://www.youtube.com/watch?v=B4g1YPXwG3k\n\nKeep swinging\n-- \nJohn Petters\nwww.traditional-jazz.com\nAmateur Radio Station G3YPZ\n\n_______________________________________________\nTo unsubscribe or change your e-mail preferences for the Dixieland Jazz Mailing list, or to find the online archives, please visit:\n\nhttp://ml.islandnet.com/mailman/listinfo/dixielandjazz\n\n\n\nDixielandjazz mailing list\nDixielandjazz@ml.islandnet.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9479924049583719,
+          "SPAM": 0.052007595041628045
+        },
+        "confidence": 0.8959848099167438
+      }
+    },
+    "usage": {
+      "input_tokens": 432,
+      "output_tokens": 0
+    }
+  }
+}

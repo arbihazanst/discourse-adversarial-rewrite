@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] test_support.have_unicode\n\nOn Tue, Mar 18, 2008 at 8:18 AM, Virgil Dupras  wrote:\n\n> The test_support unit has this have_unicode. Do we need the Python's\n> test unit to be *that* backward compatible? Is there still an\n> implementation of Python that doesn't support unicode? If there is,\n> should the test suite care?\n\nPython 2.x can be compiled without Unicode.\n\n>\n>\n> As a side question. Considering that I'm not sure whether have_unicode\n> is relevant or not, is it more appropriate to create a ticket for it\n> or to ask python-dev?\n>\n> Virgil Dupras\n> _______________________________________________\n> Python-Dev mailing list\n> zvllln-eum@python.org\n> http://mail.python.org/mailman/listinfo/python-dev\n> Unsubscribe:\n> http://mail.python.org/mailman/options/python-dev/musiccomposition%40gmail.com\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9418225752909015,
+          "SPAM": 0.058177424709098514
+        },
+        "confidence": 0.883645150581803
+      }
+    },
+    "usage": {
+      "input_tokens": 382,
+      "output_tokens": 0
+    }
+  }
+}

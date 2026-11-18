@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Unicode v ascii?\n\nGreg Freemyer wrote:\n> All,\n> \n> I have a huge text file (1.7 million lines) full of unicode and ascii\n> text (half and half).\n> \n> note: disk space for copies is not a problem, if I need to manipulate this file\n> \n> Also, I have a 30 line file full of ascii text.\n> \n> I need to search the large file for any occurrences of the keywords in\n> the 30 line file.\n> \n> Ignoring the unicode issue, I could use grep (of fgrep, egrep) with\n> appropriate args.\n> \n> I have no idea how to handle the unicode issue.\n\nThe same way, but be prepared to use /123-isms\n\n> \n> Any suggestions?\n\nhandle what, specifically (i'm not sure what you mean --\ngrepping unicode or converting it to ASCII or what)?\n\n> \n> Thanks\n> Greg",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005526590482350318,
+          "NOT_SPAM": 0.9994473409517649
+        },
+        "confidence": 0.9932224000097866
+      }
+    },
+    "usage": {
+      "input_tokens": 347,
+      "output_tokens": 0
+    }
+  }
+}

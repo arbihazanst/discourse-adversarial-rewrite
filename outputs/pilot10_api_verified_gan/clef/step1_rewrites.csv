@@ -1,0 +1,54 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+clef,PAPER3000-0001,1,SPAM,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",,  and with with to the the the the of the the 's its,SPAM,OK,SKIPPED_INVALID,,0.042416,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,5.796171,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,5.838587
+clef,PAPER3000-0002,1,SPAM,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/",, and many get the the the n't the the an ,SPAM,OK,SKIPPED_INVALID,,0.037359,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,5.823091,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,5.86045
+clef,PAPER3000-0003,1,SPAM,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only.",," and   of of of , the  of of the with  with with the",SPAM,OK,SKIPPED_INVALID,,0.039204,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,4.901216,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,4.94042
+clef,PAPER3000-0008,1,SPAM,"Subject: Reactivate Your AdWords Google Account.
+
+--------------------------------
+----------------------------
+-------------------------------
+Dear Advertiser,
+
+We were unable to process your payment.
+
+Your ads will be suspended soon unless we can process your payment.
+
+To prevent your ads from being suspended, please update your payment information.
+
+Please sign into your account and update your payment information.
+
+We look forward to providing you with the most effective advertising available.
+
+Thank you for advertising with Google AdWords.
+
+
+----------------------------------------------
+--------------------
+-------------------",,  that own of on with with n't  be    on be to to with  've get,SPAM,OK,SKIPPED_INVALID,,0.038621,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,5.341257,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,5.379878
+clef,PAPER3000-0010,1,SPAM,"Subject: Re:
+
+
+He taught me how to love, but not how to stop. http://dombv.winforgiveness.com",,  and its from to make the its  much  the the of,SPAM,OK,SKIPPED_INVALID,,0.039419,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,5.197531,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,5.23695

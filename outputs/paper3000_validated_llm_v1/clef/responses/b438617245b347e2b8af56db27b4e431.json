@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] ICDM'06: Call for Workshop Proposals\n\n[Apologies if you receive this more than once]\n \n ==================================================================\n Call for Workshop Proposals\n \n ICDM '06: The 6th IEEE International Conference on Data Mining\n \n Sponsored by the IEEE Computer Society\n \n Hong Kong Convention and Exhibition Centre, Hong Kong, China,\n 18-22 December 2006.\n \n http://www.comp.hkbu.edu.hk/iwi06/\n \n (Workshop Proposals Due: 10 April 2006)\n \n ===================================================================\n \n The Program Committee of the 6th IEEE International Conference on Data\n Mining (ICDM '06) invites proposals for Workshops.  The Workshops will\n be held at the beginning of the Conference, December 18, 2006 at the\n Hong Kong Convention and Exhibition Centre.\n \n The workshop organizers will be responsible for advertising the\n workshop, forming the program committees, reviewing and selecting the\n papers, and guaranteeing high quality worthy of the prestige and range\n of the Conference.  All papers accepted for workshops will be included\n in the Workshop Proceedings, which are expected to be published by\n IEEE Computer Society Press and will be available at the workshops.\n \n The workshop organizers will also have the discretion of editing\n selected papers (after their expansion and revision) into books or\n special journal issues.  Workshops may be full-day or half-day. A\n full-day workshop should select 20-25 regular papers, while a half-day\n workshop should select 10-13 regular papers, from a large number of\n submissions.  The workshop organizers should ensure the presence of\n authors of accepted papers at the workshops.\n \n Each workshop subject will focus on new research challenges and\n initiatives in Data Mining.  The workshops should provide an informal\n and vibrant forum for researchers and industry practitioners to share\n their research results and practical development experiences in the\n data mining field.\n \n Workshop Proposal Submission\n -----------------------------\n \n Workshop proposals should include the following elements: \n \n - Title of the workshop \n - Your name, affiliation, mailing address and e-mail address  \n - A description of the topic of the workshop (not exceeding 200 words)\n - Type of the workshop (full-day or half-day)\n - A description of how the workshop will contribute to the field of \n   Web Intelligence and/or Intelligent Agent Technology\n - A short description on how the workshop will be advertised so as \n   to ensure a sufficiently wide range of authors and high quality papers\n \n After the acceptance of a workshop proposal the organizer(s) should:\n \n - Create a \"Call for papers/participation\" for the workshop \n - Create a Web page for the workshop, the link of which will be published \n   on the Conference Web site \n - Create a Board of Reviewers (Program Committee)\n - Review and select papers \n - Schedule the workshop activities \n \n All submitted papers will be reviewed on the basis of technical\n quality, relevance, significance, and clarity.\n \n Those papers selected by a workshop organizer will also be reviewed by\n the Workshop Co-Chairs for final acceptance.\n \n We will provide an online paper submission and review system to\n support the workshops.\n \n Important Dates\n ---------------\n \n - April 10, 2006: Workshop proposal submission due \n     (Please send proposals by e-mail to Workshops Chair)\n - April 20, 2006: Notification to workshop proposers\n - April 30, 2006: Each workshop organizer sends out Call for Workshops Papers\n - July 30, 2006: Due date for full workshop papers submission\n                  (at least two reviews for each paper)\n - September 5, 2006: Final acceptance by Workshop Co-Chairs\n - September 8, 2006: Notification of paper acceptance to authors\n - October   8, 2006: Camera-ready of accepted papers\n - December 18, 2006: Workshop day\n \n We look forward to your support in making 2006 IEEE Data Mining\n workshops an exciting event.\n \n Workshops Chair:\n \n  * Shusaku Tsumoto, Shimane University, Japan\n    E-mail: tgeighg@computer.org\n \n Note: we will not have a separate workshop registration fee this year\n (i.e., the conference registration covers everything).\n \n For your information, the ICDM '06 conference will be co-located with\n the IEEE/WIC/ACM International Joint Conference on Web Intelligence\n (WI) and Intelligent Agent Technology (IAT) for providing synergism\n among the three research areas. It will provide opportunities for\n technical collaboration beyond that of previous conferences. The three\n conferences will have a joint opening, keynote, reception, and\n banquet. Attendees only need to register for one conference and can\n attend workshops, sessions and tutorials across the three conferences.\n We are also planning a joint panel and joint paper sessions that\n discuss common problems in the three areas.\n \n_______________________________________________\nuai mailing list\nfaq@ENGR.ORST.EDU\nhttps://secure.engr.oregonstate.edu/mailman/listinfo/uai",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9215998304553009,
+          "SPAM": 0.07840016954469915
+        },
+        "confidence": 0.8431996609106018
+      }
+    },
+    "usage": {
+      "input_tokens": 1272,
+      "output_tokens": 0
+    }
+  }
+}

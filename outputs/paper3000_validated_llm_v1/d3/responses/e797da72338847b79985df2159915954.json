@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] [Python-Dev] The release process\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn Mar 2, 2008, at 1:54 AM, Georg Brandl wrote:\n\n> Barry Warsaw schrieb:\n>\n>> PEP 101 is sorely out of date, especially with regards to updating  \n>> web\n>> content and the Python documentation.  I think I now know how to\n>> update the python.org web site, but the new Python documentation\n>> format is still a mystery to me.  If someone would like to help  \n>> update\n>> PEP 101 for the documentation steps, please let me know.\n>\n> Well, it's not very hard to guess who this someone is, is it?\n\nActually, I honestly didn't know... sorry Georg!\n\n> I've updated PEP 101, except for the part where the docs are uploaded\n> to the website, I've no idea if the FTP paths etc. are still valid.\n\nThanks, this is a big help.  I'll double check the ftp paths, but I  \nthink they haven't changed.\n\n> For the next releases, if you want to do documentation packages,\n> please feel free to contact me, I'll be happy to help!\n\nGreat, thanks!\n- -Barry\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.8 (Darwin)\n\niQCVAwUBR8yBVHEjvBPtnXfVAQJemgP/aE/a54SaKc7Ls9osae+g57zcYB7d95FX\nO/HcE3/QFJCQeBquTfwbOV8doyAYHFDDIw8U2GIvgppLjPEqHAJzKfBqeQIILM3a\nuZM/4yUUcnnI8UQYhi4u+maztv6YwQxyKj9sLuK9GFncxk1B1z7zW4WcWISoet3H\nj3XC4eFVvjM=\n=SDdJ\n-----END PGP SIGNATURE-----\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00024449281986230523,
+          "NOT_SPAM": 0.9997555071801377
+        },
+        "confidence": 0.9967139091823234
+      }
+    },
+    "usage": {
+      "input_tokens": 695,
+      "output_tokens": 0
+    }
+  }
+}

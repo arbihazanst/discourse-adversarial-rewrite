@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [R] Mixed model with multiple response variables?\n\nHi,\n\nI have a data set collected from 10 measurements (response variables)\non two groups (healthy and patient) of subjects performing 4 different\ntasks. In other words there are two fixed factors (group and task),\nand 10 response variables. I could analyze the data with aov() or\nlme() in package nlme for each response variable separately, but since\nmost likely there are correlations among the 10 response variables,\nwould it be more meaningful to run a MANOVA? However manova() in R\nseems not to allow an error term in the formula. What else can I try\nfor this kind of multivariate mixed model?\n\nAlso, if I want to find out which response variables (among the 10\nmeasurements) are statistically significant in terms of acting as\nindicators for group difference, what kind of statistical analysis\nwould help me sort them out?\n\nThanks in advance,\nGang\n\n______________________________________________\nR-help@r-project.org mailing list\nhttps://stat.ethz.ch/mailman/listinfo/r-help\nPLEASE do read the posting guide http://www.R-project.org/posting-guide.html\nand provide commented, minimal, self-contained, reproducible code.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006932948237446318,
+          "NOT_SPAM": 0.9993067051762554
+        },
+        "confidence": 0.9917245291756427
+      }
+    },
+    "usage": {
+      "input_tokens": 397,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: test my auto-generated ruleset\n\nI've been using Justin Mason's auto-generated rule set since mid October and am fairly happy with it.  Up until Jan 11, false positives averaged about 10% of the hits and I can live with that. I noticed a surprising change on Jan 11, 2008.  Before that day many of the hits were on low scoring (< 20) spam which was very helpful.  And I would see many of these every day.  Since Jan 10 I've only seen 4 messages that hit on low scoring spam and the rest on very high scoring spam.  I don't get anymore FPs but as the spam scores for these messages are already through the roof, at the moment, the usefulness of the current rule sets have diminished.  Though I assume the methods for creating the rules are still under development and am looking forward to more improvements. Was there a big change in the way rules were created around that time period? Thanks for the great work! Nedry",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9765753466049715,
+          "SPAM": 0.023424653395028586
+        },
+        "confidence": 0.953150693209943
+      }
+    },
+    "usage": {
+      "input_tokens": 378,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] Types and classes\n\n>  Could not find this in tracker, so http://bugs.python.org/issue2565\n\nAnd thanks to Martin for making it so.\n\nAs a follow-up, what do people think of making the str() of a class\nreturn just the thing between '...' in the repr()? This is much\nshorter and in many cases enough.\n\n(This actually inverses the rule that the repr() ought to resemble an\nexpression and the str() could be anything convenient, but I'd rather\nsee the repr() be unambiguous.)\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.000489670845401385,
+          "NOT_SPAM": 0.9995103291545987
+        },
+        "confidence": 0.9939093556037868
+      }
+    },
+    "usage": {
+      "input_tokens": 347,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: (perl-current of 5.9.5) patch for ext/Sys/Syslog/Makefile.PL for EBCDIC platform\n\nSébastien Aperghis-Tramoni  wrote 2007-10-27 16:34:05:\r\n\r\n> Rafael Garcia-Suarez wrote:\r\n> \r\n> > Sébastien Aperghis-Tramoni  wrote:\r\n> >> AFAICT, this is already in Sys::Syslog\r\n> >\r\n> > Yes, it's in blead.\r\n> \r\n> Ok. Then I'll make a new release to add the other part of he patch \r\n> and resolve the copyright issue Debian had, and will send you the \r\n> corresponding diff. (Must remind to implement LOG_PERROR first).\r\n> \r\n> Chun Bing Ge, could you confirm me that Sys::Syslog works on you \r\n> system with just the modified test in Makefile.PL ? I'm asking \r\n> because _PATH_LOG is also tested in the module as well. I had tried \r\n> and failed to find complete documentation on how syslog works on z/OS.\r\n> \r\n\r\nIn perl-current(5.9.5) maybe there is not a test case to test \"_PATH_LOG\".\r\nI copied a test case from perl-5.8.7 which came from an IBM customer on \r\nz/OS:\r\n\r\n#!/usr/lpp/perl/bin/perl -w\r\n\r\nuse Sys::Syslog qw( :DEFAULT setlogsock);\r\nuse strict;\r\n\r\nsetlogsock('unix');\r\nopenlog($0, 'pid,cons', 'LOG_USER');\r\nsyslog('info', \"test message from $0\");\r\ncloselog();\r\n\r\nIf the ext/Sys/Syslog/Makefile.Pl has these codes like:\r\n  if (-S \"/dev/log\" && -w \"/dev/log\") {\r\n\r\nI got these return when I run the test case above on z/OS:\r\nunix passed to setlogsock, but path not available at sys.t line 6\r\n.\r\n\r\nIf changed those code in Makefile.PL to:\r\n  if ((-S \"/dev/log\" || -c \"/dev/log\") && -w \"/dev/log\") {\r\nI got:\r\nno connection to syslog available\r\n        - /dev/log is not a socket at sys.t line 8\r\n.\r\n\r\nRecently, I am very busy. I have no time to investigate the 2nd error.\r\nIf you know the reason, please let me know. Thanks a lot.\r\n\r\n\r\n\r\nGe, Chun Bing\r\n空山新雨后，天气晚来秋",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9650616321673247,
+          "SPAM": 0.03493836783267527
+        },
+        "confidence": 0.9301232643346493
+      }
+    },
+    "usage": {
+      "input_tokens": 706,
+      "output_tokens": 0
+    }
+  }
+}

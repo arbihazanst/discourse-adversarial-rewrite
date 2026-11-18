@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Novell client for Linux\n\nOn Monday 18 February 2008 18:03:35 Roger Oberholtzer wrote:\n> On Mon, 2008-02-18 at 10:32 +0800, Jonathan Ervine wrote:\n> > On Friday 15 February 2008 21:03:53 Roger Oberholtzer wrote:\n> > > Hello\n> > >\n> > > I am trying to run Novell Client for Linux on OpenSUSE 10.0. My\n> > > client is from\n> > > novell-client-1.1.0-4.rpm. But I cannot log in. I can log in on a\n> > > Windows PC using Novell Client for Windows. So, I took all the\n> > > information in the Advanced settings of the Windows login and put\n> > > it in the Linux Advanced settings. But no joy. I get this:\n> >\n> > Do you know the IP address of:\n> > a) a server holding a copy of the [Root] replica?\n> > b) the server you're attempting to log into?\n> >\n> > You could try replacing the Tree name with the IP address of the\n> > [Root] replica holder and then browsing to your required context\n> > via the button in the client. Or try replacing your Server name\n> > with the IP address of the server.\n>\n> I do not know the Novell client very well. It looks to me as though\n> the Context is a machine which could be replaced by an IP address. I\n> did not think the Tree entry was a machine name. As such, I am not\n> sure how I could get the IP address. So, I am no further...\n>\n\nJust to confirm; you're using SUSE Linux 10.0, and not SLED 10, yes? Can \nyou also find out if the NetWare server(s) you're connecting to are \nusing IP as their protocols. Since NetWare 5.0 IP has been supported \nnatively, but IPX is still supported and in regular use. If the servers \nare not using IP then this is never going to work.\n\nAs Graham has outlined in his mail, the context is simply your user \nobject's location within the eDirectory tree. This is important so that \nthe client can locate your user object. If I were you I'd try seeing \nwhich servers you're connected to after a successful Windows logon. \nThis should be obvious by right clicking on the 'big red N' in the \nsystem tray or on Network Neighbourhood and checking the connections. \nThen ping the servers to find out their IP addresses. You can then put \none of these IP addresses in the server field of the Novell Client for \nLinux. If you're lucky one might be a [Root] replica server, and you \ncould put it in the Tree field, and see if you can browse the available \ncontexts. If you can browse the contexts (see the tree structure) then \nyou know you can make a tree connection and a login should be easy.\n\nFailing that, as a long shot you could try seeing if you can locate the \ntree you need by pressing the Tree button... If after all that has \nfailed you might be needing your NetWare admin to be helping out as \nthey'll know the specifics of the eDirectory/NetWare environment.\n\nJon\n-- \nTo unsubscribe, e-mail: assipqff+nmekprykass@opensuse.org\nFor additional commands, e-mail: qybuovjs+kcmh@opensuse.org",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9517861106415625,
+          "SPAM": 0.0482138893584376
+        },
+        "confidence": 0.903572221283125
+      }
+    },
+    "usage": {
+      "input_tokens": 962,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] interesting video on Hillary\n\n\nOn Oct 30, 2007, at 12:06 PM, Tom Higgins wrote:\n\n> On 10/30/07, Jeff Bone  wrote:\n>> PS - yes, the system is broken.  As engineered.  But the fact is that\n>> it's the system that will be in place in the next presidential  \n>> election.\n>\n>\n> And will be for the next one and the next one and the next one so long\n> as otherwise thinking folks take too much comfort in either supporting\n> or getting comfort form being dinkum critics of he systems as it now\n> stands to stand up and make it not so.\n>\n> Sounds like folks have already loaded up their bowl's with an extra\n> heaping of conformity and  a nice blend of know-your-role.\n\nPolitical pragmatism and idealism --- not an either-or proposition.   \nStipulating to the facts and figuring out how best to deal with 'em  \nisn't the same as saying you agree with 'em, or that you won't work  \nto change 'em.\n\njb",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007154914910603951,
+          "NOT_SPAM": 0.9992845085089396
+        },
+        "confidence": 0.9914921217540263
+      }
+    },
+    "usage": {
+      "input_tokens": 380,
+      "output_tokens": 0
+    }
+  }
+}

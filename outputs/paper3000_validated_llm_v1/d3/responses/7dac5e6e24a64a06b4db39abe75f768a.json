@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Use entire disk, and not a partition\n\nCarlos E. R. wrote:\n> -----BEGIN PGP SIGNED MESSAGE-----\n> Hash: SHA1\n> \n> \n> \n> The Thursday 2008-02-14 at 10:54 -0500, Aaron Kulkis wrote:\n> \n>> As I recall, Oracle gets even better performance if you just\n>> use a raw disk partition -- it is capable of managing block\n>> placement on a raw disk, and gets much better perfomance than\n>> by using the disk space through a filesystem driver.\n>>\n>> That being said, if he decides to use the \"whole disk\" which\n>> includes the 1 or 2 blocks normally reserved for the partition\n>> table as part of his raw block device, he's just begging for\n>> data loss if the disk is ever removed from the system and\n>> put in another for some reason (hey! this partition table\n>> makes no sense -- that must be the problem -- I'll remake\n>> the first partition to use the whole disk...and wham, the\n>> first 512 - 1024 bytes are overwritten).\n> \n> Next step, fire the sysadmin for not reading the logbook, o not making a \n> disk image first :-p\n\nI've seen crazy things happen.  Especially during an outage,\nand they're trying to get a system back up.\n\nUnder stress, people start forgetting obvious things.\nThe best thing to do is to not set up each other for failure.\n\nThe drawback to using the partition table and making the\nwhole disk part of partition one is about a penny's worth\nof disk space.  The drawback to having a mishap because\nsomeone forgot that the disk is using the partition table\nspace for real data -- low end is probably hundreds of\ndollars.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0003874229463334417,
+          "NOT_SPAM": 0.9996125770536667
+        },
+        "confidence": 0.995050199780628
+      }
+    },
+    "usage": {
+      "input_tokens": 536,
+      "output_tokens": 0
+    }
+  }
+}

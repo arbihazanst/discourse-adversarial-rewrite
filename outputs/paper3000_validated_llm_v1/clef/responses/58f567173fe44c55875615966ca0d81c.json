@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] RELEASED Python 2.6a1 and 3.0a3\n\n> Thanks for fixing these Martin!\n\nI have now also uploaded signed MSI files for 3.0a3.\n\nI have not tested them on a machine which doesn't have the\nVS 2008 CRT installed (as all the machines I can access\nright now do have it); please report what works and what\ndoesn't.\n\nRegards,\nMartin\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9544222504409389,
+          "SPAM": 0.04557774955906118
+        },
+        "confidence": 0.9088445008818777
+      }
+    },
+    "usage": {
+      "input_tokens": 336,
+      "output_tokens": 0
+    }
+  }
+}

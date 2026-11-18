@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: In-depth Case Studies that Address Key Development Challenges\n\n\n\nTemplate - ADTmag.com promotional template\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDear Ted,\n\nHow effective is your organization at building and managing applications? Download these papers and find out how to address key challenges related\n\t\tto application development and management. Get these papers today!\nThe Evolution of Build and Release Management for Effective Software Delivery  \nThe Four Requirements of Next Generation Web Performance Management \nFederating SharePoint Sites within WebSphere Portal   \n\nThe Evolution of Build and Release Management for Effective Software Delivery\n \t\t\n\t\tThis Hurwitz and Associates paper presents the current development trends that are driving the need for better build and release management practices.\n\t\tThis report shares in-depth case studies to explain how companies can address these development challenges in order to create measurable results in their \n\t\torganizations. [Download the research now!]\nThe Four Requirements of Next Generation Web Performance Management\n\t\tWeb applications are more complex than legacy client server or mainframe applications, due to new technologies like J2EE, .NET, SaaS, AJAX, SOA, Flash \n\t\tand others. This paper discusses the challenges inherent in these new applications, and outlines the four requirements to effectively manage their performance. \n\t\t[Get this white paper now.]\nFederating SharePoint Sites within WebSphere Portal \n\t\tThis white paper explores the capabilities and architecture of Mainsoft's SharePoint Federator for WebSphere Portal. Composite \n\t\tapplications, single sign-on, and authentication schemes across .NET and Java are examined in detail. \n\t\t[Get the paper today.]\nFor additional resources, visit our Tech Library. With our broad selection,  \n\t\tyou're sure to find something of interest to you.\nSincerely,\nApplication Development Trends\n\n\n\nThis message has been sent to: kse@cognosys.net\nAs a subscriber of an 1105 Media, Inc. Redmond Media Group publication, we'll periodically send you information via e-mail about related products and services. If you wish to discontinue receiving these types of e-mails, you may opt out using the link below:\n\n\nhttps://preference.1105pubs.com/pref/opt.jsp?e=0gmdv@gvc.ceas-challenge.cc&l=1&p=91&o=D04860\n\n\nTo view our privacy policy, visit: http://www.1105media.com/privacy.html \n1105 Media, Inc., 9121 Oakdale Ave., Chatsworth, CA 91311",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.07872427040802944,
+          "SPAM": 0.9212757295919706
+        },
+        "confidence": 0.8425514591839411
+      }
+    },
+    "usage": {
+      "input_tokens": 683,
+      "output_tokens": 0
+    }
+  }
+}

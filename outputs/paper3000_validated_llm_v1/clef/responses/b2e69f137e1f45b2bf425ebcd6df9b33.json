@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: The jet set\n\nThe man in front of me on the plane watched the latest steaming Robin  \nWilliams pile-o-shite THREE TIMES. Voluntarily. He had other options,  \nlike watching \"Knocked Up\" or pulling his toenails out.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9833923822363654,
+          "SPAM": 0.0166076177636345
+        },
+        "confidence": 0.9667847644727308
+      }
+    },
+    "usage": {
+      "input_tokens": 212,
+      "output_tokens": 0
+    }
+  }
+}

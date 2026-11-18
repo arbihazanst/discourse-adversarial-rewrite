@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: CNET Download Dispatch: Security on the cheap\n\n\nCNET | Download Dispatch, Weekend Edition\n\n\n\n\n\n\n\n\n\nFeb. 15, 2007\n\n\n\n\nView online |\nManage newsletters |\nUnsubscribe |\nSend us feedback\n\n\n\n\n\n\n\n\n\n\n\nFree Security Apps\nSecurity and spyware protection is one area where you usually \ndon't want to scrimp. Luckily, there are several great free \nprograms that provide basic security coverage for Windows users. \n>From blocking intrusions and removing spyware to detecting\nviruses and encrypting your data, this collection of free\nsecurity tools will keep you safe and secure.\nSpybot is back in the Top 10 most popular downloads once again, \njumping two places to grab the No. 9 spot. GOM Media Player leads \nthis week's Top Movers, climbing three spots to No. 16.\nThis week on Crossfade TV, we've got the brand-new Gnarls Barkley\nsingle \"Run,\" acoustic sounds from 12-string guitarist James\nJames Blackshaw and new hip-hop from Boston's Akrobatik. Help save the\nlife of a carnival fortune teller in the puzzle game \"Mystery Case\nFiles: Madame Fate,\" our Game of the Week.\nHappy downloading!\n\n\n\nMark SikesAssociate Producer,CNET Download.com\n\n\n\n\nNew releases \nAvira AntiVir PersonalEdition Classic 706.00.270 \n\tDetect and remove more than viruses from your computer.\n\nAdobe Acrobat Reader 8.1.2 \n\tRead Adobe PDF files on your desktop or on the Web.\n\nFlash Player 9.0.115 \n\tView Flash multimedia content through your browser.\n\nQuickTime 7.4.1 \n\tPlay MPEG-4 movies with AAC sound with latest version of Apple's premier media player.\n\n\n\n\n\n\n\nTop 5 movers\nThese hot titles are rising up the Windows Most Popular list.\n  1. Spybot - Search & Destroy - Up 3 spots to No. 11\n  2. GOM Media Player - Up 3 spots to No. 16\n  3. IrfanViewt - Up 3 spots to No. 22\n  4. SmartFTP Client (32-bit) - Up 2 spots to No. 25\n  5. Avant Browser - Up 4 spots to No. 46\n\n\n\n\nTop 10 products\nThese programs are the top 10 most downloaded Windows apps on CNET Download.com for the week ending February 10, 2007\n\nAd-Aware 2007 Free1,480,414 downloads\nAVG Anti-Virus Free Edition1,266,791 downloads\nLimeWire708,092 downloads\nICQ398,514  downloads\nAvast Home Edition338,412 downloads\nBitComet284,987 downloads\nWinZip  262,943 downloads\n\nWinRAR 254,127 downloads\nSpybot - Search & Destroy245,685 downloads\nmIRC 242,679 downloads\n\n\n\n\n\nFree Security Apps\nBehold, the most popular free security downloads for the week ending February 14.\n  1. Comodo Firewall Pro - Secure your system against internal attacks such as Trojan\n   viruses, malicious software, and external attacks by hackers\n\n  2. Spyware Terminator - Protect your computer with free real-time detection of\n   spyware, adware, and key loggers.\n\n  3. Avira AntiVir PersonalEdition  - Detect and remove viruses and more from your computer.\n\n  4. TrueCrypt - Using 11 algorithms for encrypting your important data, this\n   open-source tool provides more functionality than many\n   commercial programs. \n\n  5.  Avast Home Edition - Scan your computer for viruses, worms, and Trojan horses.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew from CNET TV\n\n\n\n\nQuick tip: Launch Web sites faster\n\nWhat's faster than opening up your browser and launching a Web\n  site from your bookmarks? Why, it's Launchy! In this quick tip\n  video, CNET Editor Tom Merritt demonstrates how to open Web\n  sites, search online, and create commands with the must-have\n  freeware app Launchy.\t\nWatch the video\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDetect and correct out-of-date drivers and software automatically. VersionTracker Pro alerts you immediately when updates are available.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGame of the week: 'Mystery Case Files: Madame Fate'\nAfter peering into her crystal ball, Madame Fate sees her own\n   demise by midnight. Explore the carnival to unravel the\n   mystery and save the seer. Play the entire full game for an\n   hour with this trial.\n\n\n\n\nMusic: Gnarls Barkley, James Blackshaw,\n   Akrobatik \n\n Hear the brand-new Gnarls Barkley single \"Run\" on Crossfade TV \n   before everyone else, plus acoustic sounds from 12-string\n   guitarist James Blackshaw and new hip-hop from Boston's\n   Akrobatik.\n\n\n\n\n\n\n\nRelated links from CNET Download.com\n\n Audio & Video Software\n Security & Spyware\n Utilities & Drivers\n\n\n Most popular Windows software\n New Releases in Windows\n All freeware\n\n\n CNET Download.com\n Today on CNET\n CNET News.com\n\n\n\n\n\n\n\n\n\n\n\n\nSign up for more free newsletters from CNET! To manage your account settings or to remove yourself from all CNET communications, please visit our Subscription Center. The e-mail address for your subscription is user6@gvc.ceas-challenge.cc  Unsubscribe from this e-mail | FAQ | Advertise | Privacy Policy\n\n\n\n\n\n\n\n\nCopyright 2008 CNET Networks, Inc. All rights reserved.CNET Networks, Inc. 235 Second Street  San Francisco, CA 94105 U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.42938684200171506,
+          "NOT_SPAM": 0.5706131579982848
+        },
+        "confidence": 0.014435394966971438
+      }
+    },
+    "usage": {
+      "input_tokens": 1386,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "state": "Subject: Re:\n\n\nHe taught me how to love, but not how to stop. http://dombv.winforgiveness.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.49327509427077243,
+          "NOT_SPAM": 0.5067249057292276
+        },
+        "confidence": 0.00013049384583541102
+      }
+    },
+    "usage": {
+      "input_tokens": 154,
+      "output_tokens": 0
+    }
+  },
+  "baseline_reused_from": {
+    "root": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_baseline",
+    "artifact": "d3\\responses\\52349c69813942968d68454cd2db25a5.json",
+    "sha256": "cdf443ee3138cf2cb0b49a41edb65abc44072f363e1c4084963a8133141da5e7"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Smoke [5.10.0] 32059 FAIL(FM) MSWin32 WinXP/.Net SP2 (x86/2 cpu)\n\nAutomated smoke report for 5.10.0 patch 32059\nmaldoror.bath.planit.group: Intel(R) Core(TM)2 CPU 6700 @ 2.66GHz(~2660 MHz) (x86/2 cpu)\n    on        MSWin32 - WinXP/.Net SP2\n    using     cl version 13.10.3077\n    smoketime 2 hours 58 minutes (average 8 minutes 56 seconds)\n\nSummary: FAIL(FM)\n\nO = OK  F = Failure(s), extended report at the bottom\nX = Failure(s) under TEST but not under harness\n? = still running or test results not (yet) available\nBuild failures during:       - = unknown or N/A\nc = Configure, m = make, M = make (after miniperl), t = make test-prep\n\n   32059     Configuration (common) -DCCTYPE=MSVC70FREE -DINST_TOP=$(INST_DRV)\\\\Smoke\\\\doesntexist\n----------- ---------------------------------------------------------\nF O         \nM M         -Dusemymalloc\nF O         -Duselargefiles\nM M         -Duselargefiles -Dusemymalloc\nF F         -Duseithreads -Uuseimpsys\nM M         -Duseithreads -Uuseimpsys -Dusemymalloc\nO O         -Duseithreads -Uuseimpsys -Duselargefiles\nM M         -Duseithreads -Uuseimpsys -Duselargefiles -Dusemymalloc\nO F         -Duseithreads\nF O         -Duseithreads -Duselargefiles\n| +--------- -DDEBUGGING\n+----------- no debugging\n\nLocally applied patches:\n    DEVEL\n    SMOKE32059\n\nFailures: (common-args) -DCCTYPE=MSVC70FREE -DINST_TOP=$(INST_DRV)\\\\Smoke\\\\doesntexist\n[default] \n[default] -Duselargefiles\n[default] -Duseithreads -Uuseimpsys\n[default] -DDEBUGGING -Duseithreads -Uuseimpsys\n[default] -DDEBUGGING -Duseithreads\n[default] -Duseithreads -Duselargefiles\n    ../lib/Net/Ping/t/190_alarm.t...........FAILED 5-6\n\nMANIFEST did not declare 'LIB/EXTUTILS/MINIPERL.PM'\nMANIFEST did not declare 'PATCHLEVEL.BAK'\nMANIFEST did not declare 'POLICY.SH'\nMANIFEST did not declare 'WIN32/SMOKE.MK'\n\nCompiler messages(MSWin32):\n\\\\regcomp.c(1410) : warning C4244: 'initializing' : conversion from 'UV' to 'char', possible loss of data\n\\\\regcomp.c(1444) : warning C4244: 'initializing' : conversion from 'UV' to 'char', possible loss of data\n\\\\regcomp.c(6507) : warning C4244: '=' : conversion from 'UV' to 'char', possible loss of data\nre_comp.c(1410) : warning C4244: 'initializing' : conversion from 'UV' to 'char', possible loss of data\nre_comp.c(1444) : warning C4244: 'initializing' : conversion from 'UV' to 'char', possible loss of data\nre_comp.c(6507) : warning C4244: '=' : conversion from 'UV' to 'char', possible loss of data\n\\\\perl.c(2257) : error C2065: 's' : undeclared identifier\n\\\\perl.c(2257) : warning C4047: '=' : 'int' differs in levels of indirection from 'char *'\n\\\\perl.c(2257) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int'\n\n-- \nReport by Test::Smoke v1.19_86 build 1044 running on perl 5.9.5\n(Reporter v0.027 / Smoker v0.032)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.002775598291512034,
+          "NOT_SPAM": 0.997224401708488
+        },
+        "confidence": 0.9724281044341747
+      }
+    },
+    "usage": {
+      "input_tokens": 1132,
+      "output_tokens": 0
+    }
+  }
+}

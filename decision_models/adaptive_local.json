@@ -1,51 +1,73 @@
-{
-  "profile": "main",
-  "dataset": "dataset/paper_baseline3000.csv",
-  "step1_bank": "dataset/paper_step1_bank.csv",
-  "output_dir": "outputs/paper3000_validated_llm_v1",
-  "gan_output_dir": "outputs/paper3000_validated_gan_v1",
-  "gan": {
-    "resource_dir": ".cache/openattack_gan/AttackAssist.SGAN",
-    "seed": 20261104
-  },
-  "attacker": {
-    "transport": "openai",
-    "url": "http://127.0.0.1:30007/v1/chat/completions",
-    "model": "google/gemma-3-27b-it",
-    "revision": "google/gemma-3-27b-it",
-    "key_env": "",
-    "temperature": 0.0,
-    "max_tokens": 1024
-  },
-  "defenders": {
-    "clef": {
-      "transport": "direct",
-      "url": "http://127.0.0.1:30005/v1/systemone",
-      "model": "clef",
-      "revision": "clef-27b-q4_k_m",
-      "key_env": ""
-    },
-    "d3": {
-      "transport": "direct",
-      "url": "http://127.0.0.1:30006/v1/systemone",
-      "model": "d3",
-      "revision": "d3-27b-q4_k_m",
-      "key_env": ""
-    }
-  },
-  "default_model": "clef",
-  "active_models": ["clef", "d3"],
-  "tool_pilot_output_dir": "outputs/validated_baseline_pilot10_v1",
-  "rewrite_evaluator": {
-    "transport": "direct",
-    "url": "http://127.0.0.1:30002/v1/systemone",
-    "model": "perplexity-ai/pplx-decider-flash-v1.2",
-    "revision": "pplx-decider-flash-v1.2",
-    "key_env": "",
-    "role": "pplx_validity",
-    "rubric_version": "rewrite_validity_v1"
-  },
-  "protocol": "validity_gated_v1",
-  "tool_llm_pilot_output_dir": "outputs/validated_llm_pilot10_v1",
-  "tool_gan_pilot_output_dir": "outputs/validated_gan_pilot10_v1"
+﻿{
+    "profile":  "main",
+    "dataset":  "dataset/paper_baseline3000.csv",
+    "step1_bank":  "dataset/paper_step1_bank.csv",
+    "output_dir":  "outputs/paper3000_validated_llm_v1",
+    "gan_output_dir":  "outputs/paper3000_validated_gan_v1",
+    "gan":  {
+                "resource_dir":  ".cache/openattack_gan/AttackAssist.SGAN",
+                "seed":  20261104
+            },
+    "attacker":  {
+                     "transport":  "openai",
+                     "url":  "http://127.0.0.1:11441/v1/chat/completions",
+                     "model":  "google/gemma-3-27b-it",
+                     "revision":  "API-VERIFIED-CHECKPOINT-gemma",
+                     "key_env":  "",
+                     "temperature":  0.0,
+                     "max_tokens":  1024
+                 },
+    "defenders":  {
+                      "clef":  {
+                                   "model":  "clef-flash-q4",
+                                   "url":  "http://127.0.0.1:11439/v1/systemone",
+                                   "transport":  "direct",
+                                   "revision":  "API-VERIFIED-CHECKPOINT-clef",
+                                   "key_env":  ""
+                               },
+                      "d3":  {
+                                 "model":  "d3-flash-q4",
+                                 "url":  "http://127.0.0.1:11440/v1/systemone",
+                                 "transport":  "direct",
+                                 "revision":  "API-VERIFIED-CHECKPOINT-d3",
+                                 "key_env":  ""
+                             }
+                  },
+    "default_model":  "all",
+    "active_models":  [
+                          "clef",
+                          "d3"
+                      ],
+    "tool_pilot_output_dir":  "outputs/pilot10_api_verified_baseline",
+    "rewrite_evaluator":  {
+                              "model":  "perplexity-ai/pplx-decider-flash-v1.2",
+                              "url":  "http://127.0.0.1:11438/v1/systemone",
+                              "transport":  "direct",
+                              "revision":  "API-VERIFIED-CHECKPOINT-pplx",
+                              "key_env":  "",
+                              "role":  "pplx_validity",
+                              "rubric_version":  "rewrite_validity_v1"
+                          },
+    "protocol":  "validity_gated_v1",
+    "tool_llm_pilot_output_dir":  "outputs/pilot10_api_verified_gemma",
+    "tool_gan_pilot_output_dir":  "outputs/pilot10_api_verified_gan",
+    "service_pilot":  {
+                          "pplx":  {
+                                       "model":  "perplexity-ai/pplx-decider-flash-v1.2",
+                                       "url":  "http://127.0.0.1:11438/v1/systemone"
+                                   },
+                          "clef":  {
+                                       "model":  "clef-flash-q4",
+                                       "url":  "http://127.0.0.1:11439/v1/systemone"
+                                   },
+                          "d3":  {
+                                     "model":  "d3-flash-q4",
+                                     "url":  "http://127.0.0.1:11440/v1/systemone"
+                                 },
+                          "gemma":  {
+                                        "model":  "google/gemma-3-27b-it",
+                                        "url":  "http://127.0.0.1:11441/v1/chat/completions"
+                                    }
+                      },
+    "gan_archive":  "dataset/gan_replay.csv"
 }

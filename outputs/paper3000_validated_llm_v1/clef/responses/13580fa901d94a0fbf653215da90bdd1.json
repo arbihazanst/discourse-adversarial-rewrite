@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Broken OO-parent-method call & can()\n\nYitzchak Scott-Thoennes wrote:\n> On Fri, October 26, 2007 12:05 pm, Linda W wrote:\n>> Rafael Garcia-Suarez wrote:\n>>\n>>> Linda W wrote:\n>>>\n>>>> I'm firmly of the opinion that \"\\\\&foo\" should return \"undef\" at\n>>>> execution time if \\\\&foo is not defined (i.e. &foo doesn't exist).\n>>> A function can exist, but be undefined :\n>>> $ perl -wle 'sub foo;print defined &foo print exists &foo'\n>>> 1\n----\n\tI disagree with my former self.  I won't say I firmly\nam of opinion that \\\\&foo should return undef at execution time as it would\nnot be consistent with other var access.\n\tThis doesn't mean I don't want a chance reference to a non-existent\nlocal routine \" {\\\\&nonlocalsub }, interfering with a call through a blessed\nreference.\n\n> \n> The dispatch table in BEGIN block (http://perlmonks.org/?node_id=647782)\n> example in your perlmonks thread (http://perlmonks.org/?node_id=647749)\n> provides an IMO unarguable, if rare, use case\n---\n\tI'm not arguing for use of that dispatch table -- but I am arguing\nthat a \"stray\", \"random\" reference to an undefined sub should *OVERRIDE*\nan OO-call properly looking up the method.\n\n\tThe jump table you mention originally referred to all package\nlocal calls, making all of the entries valid.  It was when the handling\nroutines got split into separate packages (classes) that the jump-table\nno longer functioned.  I'm not arguing that the jump table, across packages\nor classes \"should\" work.  Makes sense that it doesn't.\n\n> .  (And \\\\ returning undef in\n> general seems very wrong to me.)  So \\\\&foo really needs to create a forward\n> declaration.\n---\n\tThat's fine...I \"think\" I agree...:-)\n> And because forward declarations must affect method resolution\n\n> (see example in http://perlmonks.org/?node_id=647781), we're pretty much\n> stuck with things as they are.\n----\n\tJust because correctly functioning code is \"hard\" or\n'difficult\" doesn't mean it should be avoided. A *defined* forward\nreference should affect method resolution, but in OO implementation,\nbefore OO returns a \"method is undefined\" error, it should look\nthrough the parent classes.\n\n> (The only possible \"fix\" I see would be making \\\\&, when it creates a\n> forward declaration, set a special flag saying to ignore that CV when doing\n> method resolution, making it have a special \"semi-exists\" state.  But\n> the idea of that makes me ill.)\n---\n\tBut when a function is \"forward referenced\", but not defined,\nit already is in a \"semi-exists\" state.  I'm saying that when a function\nis in that \"quasi\" state, it shouldn't *override* the parental lookup\nmachinery.  This was the *bug* I brought to the table  on 9-29.  That's\na MONTH ago.  Nobody had a clue that local, undefined methods would\nstop perl's OO lookup machinery from working.\n\n\tOn the other hand -- I strongly suspect I am not the only one\nwho has encounter this.  I'm just the first person who decided not to work\naround the buggy code like everyone else does (don't use references;\nuse strings for method calls).  That sounded \"superstitious\" to me.  I\nwanted to know what was wrong with what I was doing -- not just code\naround it.\n\n\tWhen I did find the bug, it was big enough to drive a truck\nthrough.  Many people suggested ways to work around this bug, but when\nI pushed back with examples of things that didn't work -- that should have,\nthose people just stopped responding -- they had more important things\nto do than going on some perl-bug hunt.  They knew how to work around\nit -- that was the \"accepted\" way to do things (because taking the\nreference would activate the bug), so why waste time tracking down why\nmy code was \"broken\".\n\n\tThe above behavior -- where experienced perl-coders knew\n\"instinctively\", the way to work around it indicates to me that while\nall of them knew how to code around that \"buggy area\", none of them were\nable to tell me what part of my code was \"incorrect\" or why.\n\n> So this seems very much a DDTT situation.  \n---\n\tDDTT? (Don't do that thing?)  Regardless -- because\nof people reactions to my probing (for a month), I don't think the\ncase is as infrequent as you would like to believe.  It's just\nno one has been willing to deal with the flack \"you don't know what\nyou are doing\" or \"you just aren't willing to take our help\" (i.e.\nnot willing to code \"differently\", while not understanding why).\n\n\tRegardless of my reasons for pursuing the problem, when\nthe function is \"defined by reference\" and not really defined, it\nis in a \"quasi\" state.  Why can't it look through the parent's methods\nbefore throwing a fatal error?  It's not like it is going to be a\nperformance sensitive case, since the alternative if it isn't fixed\nis just to die with a fatal error.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9551467854893808,
+          "SPAM": 0.044853214510619174
+        },
+        "confidence": 0.9102935709787616
+      }
+    },
+    "usage": {
+      "input_tokens": 1392,
+      "output_tokens": 0
+    }
+  }
+}

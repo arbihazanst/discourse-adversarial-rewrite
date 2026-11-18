@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 5676] VBounce copied other man page too verbatim\n\nhttp://issues.apache.org/SpamAssassin/show_bug.cgi?id=5676\n\n\nuser7@gvc.ceas-challenge.cc changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n             Status|NEW                         |RESOLVED\n         Resolution|                            |FIXED\n   Target Milestone|Undefined                   |3.2.4\n\n\n\n\n------- Additional Comments From user7@gvc.ceas-challenge.cc  2007-10-11 08:41 -------\napplied to 3.3.0:\n\n: jm 260...; svn commit -m \"bug 5676: trivial fix to POD documentation; the\ntopic is 'whitelist_bounce_relays', not 'whitelist_from'\"\nlib/Mail/SpamAssassin/Plugin/VBounce.pm\nSending        lib/Mail/SpamAssassin/Plugin/VBounce.pm\nTransmitting file data .\nCommitted revision 583856.\n\nand 3.2.x:\n\n: jm 263...; svn commit -m \"bug 5676: trivial fix to POD documentation; the\ntopic is 'whitelist_bounce_relays', not 'whitelist_from'\"\nlib/Mail/SpamAssassin/Plugin/VBounce.pm\nSending        lib/Mail/SpamAssassin/Plugin/VBounce.pm\nTransmitting file data .\nCommitted revision 583857.\n\n\nthanks...\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9142875631985301,
+          "SPAM": 0.08571243680146994
+        },
+        "confidence": 0.8285751263970602
+      }
+    },
+    "usage": {
+      "input_tokens": 527,
+      "output_tokens": 0
+    }
+  }
+}

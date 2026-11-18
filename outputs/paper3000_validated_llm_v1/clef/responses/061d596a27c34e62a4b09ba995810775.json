@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: firefox + features\n\nHello\n\nI'm trying to find a best site for my tracks + photos. There's a dozen \nof the websites and evaluating each one of them takes a lot of time.\n\nYour one seem to be of the best but there's a critical issue - it seem \nto lack support of Firefox browser. I'm surprised to see a modern site \nnot supporting this browser but anyway. To be more specific, signup & \nadding tracks works in IE only.\n\nI know, there's a work around - i can use upload application, but it \ndoes not work either - when it tries to upload the files it just sits \nthere waiting with zero progress then reports error...\n\nThese are the features i'm looking for when evaluating gps tracking sites:\n\n- ability to specify what sort of google map i want to see for EACH \ntrack (usually i prefer terrain as this is the most informative about \nthe track), my second choice is standard map, and never it is a \nsatellite view.\n\n- how detailed is the tack (i found that some web sites do too much\nrounding to make size of several mb track smaller)\n\n- ability to upload photos, site should support EXIF geo data too.\n\n- easy viewing of photos (sort of album view), not only clicking on \npictures on the map.\n\n- detailed stats: max speed, average speed, max height, min height, \nelevation and speed graph, duration, length.\n\nRegards,\nAlexei",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9489731407696929,
+          "SPAM": 0.05102685923030721
+        },
+        "confidence": 0.8979462815393857
+      }
+    },
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 0
+    }
+  }
+}

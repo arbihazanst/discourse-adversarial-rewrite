@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: You our client!\n\nChristina Aguilera NudeS! See movies now!\nhttp://tecland.cl/input1/input.php",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.020894419686057316,
+          "SPAM": 0.9791055803139428
+        },
+        "confidence": 0.9582111606278856
+      }
+    },
+    "usage": {
+      "input_tokens": 189,
+      "output_tokens": 0
+    }
+  }
+}

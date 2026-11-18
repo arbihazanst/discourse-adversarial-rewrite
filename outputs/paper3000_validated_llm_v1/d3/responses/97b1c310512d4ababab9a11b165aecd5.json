@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Suggestions to block this spam\n\nHi Bob,\n\nThanks I will try the suggestions in the other post.\nI have updated the pastebin with header - i think : )\nhttp://pastebin.ca/910315\n\nThanks again\nKate\n\nBob Proulx wrote:\n> Kathryn Allan wrote:\n>   \n>> The url to pastebin is http://pastebin.ca/910275\n>> apologies if this is wrong - its my first time using pastebin.\n>>     \n>\n> Your pastebin of the message body was good.  Normally it would be\n> better to paste the full headers in too so that we can run the message\n> through the tools directly but in this case we have all been seeing a\n> lot of those spam messages and are very familiar with them.\n>\n> Another comment about pastebin is that for temporary stuff like this\n> it is good to set an expiration on it.  In the long term it is junk\n> and so expiring it saves disk space there and on the search engines\n> that thread it and generally allows things to clean up afterward.\n> Other pastebin sites set an expiration by default but on pastebin.ca\n> you need to manually set one.  It is the \"Expire this post in:\"\n> pulldown setting.\n>\n> To combat this spam Justin has recently posted about his sought.cf rules.\n>\n>   Justin Mason recently wrote:\n>     by the way, just to get back to this original topic -- my \"sought.cf\"\n>     ruleset has caught these nicely for months.  It's very good for this\n>     kind of spam: http://taint.org/2007/08/15/004348a.html\n>\n> I am using them to good effect (Thanks Justin!) and your message\n> scored the following for me:\n>\n>  3.5 BAYES_99               BODY: Bayesian spam probability is 99 to 100%\n>                             [score: 1.0000]\n>  4.0 JM_SOUGHT_1            JM_SOUGHT_1\n>  4.0 JM_SOUGHT_3            JM_SOUGHT_3\n>\n> My Bayes engine has learned these as mostly spam but yours probably\n> has not.  Plus it wouldn't be enough by itself.  But the sought rules\n> have been doing good at handling the surge of \"today's spam\" messages\n> as they change rapidly.\n>\n> Bob\n>   \n\n-- \n\nKate Kleinschafer\nInternet Services\nGetRheel\n\n/A division of Rheel Electronics Ltd /\nPhone +64-3-386 3070 Fax +64-3-386-3071\nMobile +64-21-386-394\n\nemail: pnmg@rheel.co.nz\nwww.getrheel.co.nz\n\nThis e-mail together with any attachments is confidential, may be \nsubject to legal privilege and may contain proprietary information, \nincluding information protected by copyright. If you are not the \nintended recipient, please do not copy, use or disclose this e-mail; \nplease notify us immediately by return e-mail and then delete this e-mail.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00818362047291735,
+          "NOT_SPAM": 0.9918163795270828
+        },
+        "confidence": 0.9315045641110835
+      }
+    },
+    "usage": {
+      "input_tokens": 844,
+      "output_tokens": 0
+    }
+  }
+}

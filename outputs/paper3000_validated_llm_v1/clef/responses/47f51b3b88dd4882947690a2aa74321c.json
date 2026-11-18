@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Massey University Survey of Student Satisfaction with Services\n\nSubject\n\n\n \n\n\n\n\n\n \n \n \n \n\n\n\n\n \n\nDear Tony  \n \nRecently we invited you to participate in the major annual survey of student satisfaction with services at Massey University. \n\n \nYour views are very important to us. If you have not yet had the chance to complete the survey, may we urge you to do so without delay. The survey closes on the 4th of May . \n\n \nPlease click on the link below to gain access to the survey. \n\n START THE SURVEY\n \n \nThank you for taking the time to give us your response. Your participation in this survey is very much appreciated.  \n \n \n For assistance at any time while completing the questionnaire please email ssurvey@massey.ac.nz or phone 0800 MASSEY (or +64 6 350 5701 if outside NZ) or contact the survey provider MMResearchTM on 0800 667373 (or +64 4 587 0500 if outside NZ).\n\n\n \nYours sincerely\n\nTheo Muller\nManaging Director \nMMResearchTM\n \n\nDr Patrick Sandbrook\nDirector National Student Relations\nMassey University\n \nThis project has been reviewed and approved by the Massey University Human Ethics Committee: Southern B, Application 06/53. If you have any concerns about the conduct of this research, please contact Dr Karl Pajo, Chair, Massey University Human Ethics Committee: Southern B, telephone 04 801 5799 x 6929, email humattgvanjkniol@massey.ac.nz",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8783331133607774,
+          "SPAM": 0.12166688663922277
+        },
+        "confidence": 0.7566662267215547
+      }
+    },
+    "usage": {
+      "input_tokens": 527,
+      "output_tokens": 0
+    }
+  }
+}

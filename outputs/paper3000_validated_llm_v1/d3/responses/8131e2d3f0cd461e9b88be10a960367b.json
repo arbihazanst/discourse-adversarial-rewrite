@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] Book Mooch\n\nOn 10/26/07, Tom Higgins  wrote:\n> http://bookmooch.com/\n>\n> While reading Wondermark I saw a reference to BookMooch. I had a few\n> moments between diaper changes and resumes so I checked it out. It is\n> a site that does what it says and says what it does, points for that.\n> You list books you want to get rid of, you are then told who to send\n> them to. If you accept the job of sending the books you get points\n> with which you can ask people to send you books they are getting rid\n> of.\n>\n> And behold, I have two books packaged up to be sent and a book (jean\n> shepherds Ferarri in the Bedroom) heading my way.\n>\n> http://bookmooch.com/m/bio/tomhiggins\n>\n> Like with ebay the big winner here is the Post System:)-\n>\n> Oh yeah, powers of social networks magnified by use...aint valuation\n> just too cool ?\n\nSee also Library Thing, which lets you list your library and then\nintegrates with Book Mooch.\n\nhttp://www.librarything.com/blog/2006/09/arrr-swap-books.php\n\nLibrary Thing, generally, is fascinating; like wikipedia for books,\nbut with structure, leading to all kinds of interesting tie-ins.\n\nLuis",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0054005546234036925,
+          "NOT_SPAM": 0.9945994453765962
+        },
+        "confidence": 0.9515490913925313
+      }
+    },
+    "usage": {
+      "input_tokens": 449,
+      "output_tokens": 0
+    }
+  }
+}

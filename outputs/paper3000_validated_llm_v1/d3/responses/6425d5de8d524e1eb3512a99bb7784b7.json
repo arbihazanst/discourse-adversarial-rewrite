@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] A shameless COM question\n\nHi Tim,\n\nThank you for the alternative view, yes i have the twisted downloaded and \ninspecting it prior to this question.\nMy only concern would be this is because the said COM  component is made to \nrun optimally in Windows and i am not sure i have the same\nassurance when it comes to Twisted.  I needed the events because i need to \ninspect and log in nearly every level of the smtp transaction so just \ncreating\na simple smtp was not the goal, the goal is to create a full fledge mail \nserver with crazy control and logging.\n\nI am not familiar with how Twisted is implemented in Windows, if it uses the \nspecific windows apis and asynch model winsock2 directly for optimal\nperformance.\n\nSo do you still think i should stick with twisted? I am all open for \nsuggestions.\n\nMarcus.\n\n\n----- Original Message ----- \nFrom: \"Tim Roberts\" \nTo: \"Python-Win32 List\" \nSent: Wednesday, April 02, 2008 6:07 AM\nSubject: Re: [python-win32] A shameless COM question\n\n\n> Marcus Low wrote:\n>> Hi,\n>>\n>> I am aggressively trying to try and use python for my team's sub\n>> commercial project. However we are using a com component and  i have the\n>> example given in C#. It looks very simple to use and elegent in C# but\n>> i need to do the same in python (minus the GUI of course)\n>>\n>> The C# example is :\n>> http://www.internetnow.com.my/download/marcus/Csharp.txt\n>>\n>> I have generated from makepy the file :\n>> http://www.internetnow.com.my/download/marcus/from_genpy.txt\n>>\n>> How do i even begin to use the same \"event\" notification in Pytonwin?\n>> I have resorted to ask this shameless question given that\n>> my COM knowledge is kinda rusty and i could only go as far as  :\n>>\n>>  SmtpMail = win32com.client.Dispatch(\"WeOnlyDo.wodSmtpServerCom.1\")\n>>  SmtpMail.Start()\n>>  win32gui.PumpMessages()\n>\n> Please allow me to steer to conversation in a slightly different\n> direction.  The code you posted shows using that COM component to create\n> a very simple SMTP server.  There are MANY ways of solving that problem\n> in Python without resorting to complicated external components.  If the\n> problem you are trying to solve really is just the creation of an SMTP\n> server, then forget about the COM component, and start searching for\n> Pythonic solutions.  The Twisted module, for example, makes something\n> like this almost trivial.\n>\n> -- \n> Tim Roberts, eqem@probo.com\n> Providenza & Boekelheide, Inc.\n>\n> _______________________________________________\n> python-win32 mailing list\n> kpitck-aew45@python.org\n> http://mail.python.org/mailman/listinfo/python-win32 \n\n\n_______________________________________________\npython-win32 mailing list\nkpitck-aew45@python.org\nhttp://mail.python.org/mailman/listinfo/python-win32",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004096358089819872,
+          "NOT_SPAM": 0.999590364191018
+        },
+        "confidence": 0.994799357963314
+      }
+    },
+    "usage": {
+      "input_tokens": 845,
+      "output_tokens": 0
+    }
+  }
+}

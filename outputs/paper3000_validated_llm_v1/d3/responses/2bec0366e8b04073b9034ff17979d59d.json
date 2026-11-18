@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] JSON nit\n\nOn Tue, Mar 18, 2008 at 8:32 PM,   wrote:\n> Regarding putting some JSON implementation in the standard library...\n>\n>  I suppose anyone who uses JSON is aware of its limitations, but this was a\n>  bit disconcerting:\n>\n>     >>> simplejson.loads(simplejson.dumps({1: 2}))\n>     {u'1': 2}\n>\n>  Silent type conversion is a Perl thing.  I would prefer it if it raised a\n>  TypeError if I tried to encode something other than a string as a dictionary\n>  key.\n\nIt's also a JavaScript thing, which is why that behavior was chosen.\nYes it's silly, but no it has never caused anyone any (reported)\nproblems in practice.\n\n-bob\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004906139026080066,
+          "NOT_SPAM": 0.999509386097392
+        },
+        "confidence": 0.9938989878172945
+      }
+    },
+    "usage": {
+      "input_tokens": 392,
+      "output_tokens": 0
+    }
+  }
+}

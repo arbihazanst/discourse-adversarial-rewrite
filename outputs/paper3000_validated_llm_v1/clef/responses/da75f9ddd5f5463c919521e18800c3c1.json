@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Why do you fall so weak and slow?\n\n\nLeading supplier of Canadian chemists in now available for you.\nhttp://jeea.wwwmedbeds.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02357813902079049,
+          "SPAM": 0.9764218609792096
+        },
+        "confidence": 0.9528437219584192
+      }
+    },
+    "usage": {
+      "input_tokens": 193,
+      "output_tokens": 0
+    }
+  }
+}

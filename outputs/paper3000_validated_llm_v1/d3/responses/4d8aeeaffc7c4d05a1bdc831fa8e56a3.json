@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Greetings from...?\n\n\nYour neighbor has issued you a greeting at YourLettercard.com.\n\nTo view your card, click on the following link.\n\nhttp://YourLettercard.com/?ee713076a3db5\n\n(c) 2003-2008 YourLettercard.com.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9245371939275661,
+          "NOT_SPAM": 0.07546280607243383
+        },
+        "confidence": 0.6140132423948708
+      }
+    },
+    "usage": {
+      "input_tokens": 196,
+      "output_tokens": 0
+    }
+  }
+}

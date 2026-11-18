@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Chair in AI at Bristol (UK)\n\nThe University of Bristol intend to appoint a Chair in Artificial\nIntelligence to head the AI group in the Department of Engineering\nMathematics.\n\nThe Department of Engineering Mathematics has had a strong group in\nArtificial Intelligence (www.enm.bris.ac.uk/ai) over many years under\nthe leadership of Professor Jim Baldwin (a past EPSRC Senior Research\nFellow). Professor Baldwin retired in 2003 and now holds an honorary\nUniversity Research Fellowship. The AI Group has an international\nreputation in theory and algorithms for the mathematical treatment of\nuncertainty and learning in intelligent systems. This includes\npioneering and fundamental theoretical work in fuzzy and probabilistic\nuncertainty, and in neural networks and kernel methods. The Group is\nespecially well known for development of the mathematical foundations\nof these topics with recent theories including those of soft Bayesian\nnets and label semantics. Their ethos is that of developing\nfundamental theory, implementing it, and applying it to novel\nengineering solutions.\n\nIntelligent systems are in the forefront of the revolution in\ncomputing and information. It is commonplace to see computer systems\nthat control machinery, check documents, recognise voice input, play\ngames at expert level, make decisions in finance, medicine, travel,\nentertainment, etc – all using technology developed in artificial\nintelligence laboratories through the application of discrete\nmathematics. We seek to appoint a research leader in this exciting\narea of research who will: • complement existing strengths in the\nAI Group • exploit new opportunities for research • enhance the\nresearch potential of existing researchers • actively collaborate\nand engage in interdisciplinary research, for example with the\nDepartments of Mathematics, Computer Science or other parts of the\nEngineering Faculty.\n\nFurther details can be obtained from\nhttp://www.enm.bris.ac.uk/admin/vacancies/\n\nor contact:\nProfessor Alan Champneys j.q.xqqjtpezz@bristol.ac.uk (Head of\nDepartment)\nDr Trevor Martin pgdgdg.pyqdbr@bristol.ac.uk\nDr Jonathan Lawry a.suwex@bristol.ac.uk\nDr Colin Campbell c.dzmmcbsl@bristol.ac.uk",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.04202656017238479,
+          "NOT_SPAM": 0.9579734398276153
+        },
+        "confidence": 0.7484920400256512
+      }
+    },
+    "usage": {
+      "input_tokens": 588,
+      "output_tokens": 0
+    }
+  }
+}

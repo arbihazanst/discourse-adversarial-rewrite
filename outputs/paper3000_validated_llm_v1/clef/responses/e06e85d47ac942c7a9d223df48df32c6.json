@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Switch off console\n\nMichael Watterson wrote: > I assumed something like that. I won't be using ssh. Imagine two > industrial \"things\" connected by serial cable. Put them at two sites, > each with Mobile Internet Router with serial port (each configured with > the other box's Public IP, which doesn't change, as it's not > GPRS/GSM/EDGE/3G/HSDPA dialup, but an native IP based system that always > assigns the same IP to same modem MAC). So the \"things\" talk to each other, they do not provide a console. I.E do you want serial port redirection rather than remote serial console. There seem to be a couple of redirectors here (msredird, sredird): http://www.ibiblio.org/pub/Linux/system/serial/ Googling also throws up a couple of commercial solutions. > So basically keep commenting out any reference to tty in any > configuration script in /etc  I wish there was a  consistent  list and  > all distros  did the same. Yep keep doing that, and hope no serial port access has been hardcoded into any apps Pádraig. p.s. your email address never works for me --  Return-Path:  X-Original-To: jl@localhost Delivered-To: user7@gvc.ceas-challenge.cc Received: from radish.jmason.org (localhost [127.0.0.1]) \tby radish.jmason.org (Postfix) with ESMTP id D1B8C32CDA \tfor ; Fri, 26 Oct 2007 15:24:15 +0100 (IST) X-Spam-Virus: No X-Spam-Checker-Version: SpamAssassin 3.3.0-r574664 (2007-09-11) on \tsoman.fdntech.com X-Spam-Relays-External: [ ip\u00193.1.193.138 rdns\thelo\tidÅA2B269838 auth\thelo\tidz6854CC183 auth\thelo\tauth\tidentX-Spam-Status: No, score\tshortcircuitX-Spam-Relays-Internal:  X-Spam-Relays-Untrusted: [ ip\u00193.1.193.138 rdns\thelo\tidÅA2B269838 auth\thelo\tidz6854CC183 auth\thelo\tauth\tidentX-Spam-Relays-Trusted:  X-Spam-Level:  X-Spam-RBL:  [193.1.193.138] X-Original-To: user7-ext3@gvc.ceas-challenge.cc Delivered-To: jl@mail.fdntech.com Received: from localhost [127.0.0.1] \tby radish.jmason.org with IMAP (fetchmail-6.3.2) \tfor  (single-drop); Fri, 26 Oct 2007 15:24:15 +0100 (IST) Received: from morrigan.tuatha.org (morrigan.tuatha.org [193.1.193.138]) \tby soman.fdntech.com (Postfix) with ESMTP id C5A2B269838 \tfor ; Fri, 26 Oct 2007 09:16:28 -0500 (CDT) Received: from localhost.localdomain (localhost.localdomain [127.0.0.1]) \tby morrigan.tuatha.org (Postfix) with ESMTP id 7A6854CC183; \tFri, 26 Oct 2007 15:16:27 +0100 (IST) X-Original-To: qifw@linux.ie Delivered-To: waogk.al-swgm@localhost Received: from mail.go2.ie (mail.go2.ie [212.147.139.234]) \tby morrigan.tuatha.org (Postfix) with ESMTP id 5A7A24CC173 \tfor ; Fri, 26 Oct 2007 15:16:20 +0100 (IST) Received: from [87.198.136.186] (helo\tby mail.go2.ie with esmtpa (Exim 4.52) id 1IlPyt-00063Z-Qt \tfor qifw@linux.ie; Fri, 26 Oct 2007 15:16:12 +0100 Message-ID: <4721F6AB.7070800@go2.ie> Date: Fri, 26 Oct 2007 15:16:11 +0100 From: Nick Murtagh  User-Agent: Thunderbird 1.5.0.13 (X11/20070824) MIME-Version: 1.0 To: qifw@linux.ie Subject: Re: ubuntu upgrades was Re: [ILUG] Linux PCs from Tesco References: <20071026120406.F171F32CF7@radish.jmason.org> \t<2596w2lk.2883291@go2.ie> \t<003101c817d7$7e21c910$7a655b30$@zelyp@dit.ie> In-Reply-To: <003101c817d7$7e21c910$7a655b30$@dunne@dit.ie> X-Enigmail-Version: 0.94.0.0 Content-Type: text/plain; charsetContent-Transfer-Encoding: 7bit X-go2web-MailScanner: Not scanned: please contact your Internet E-Mail Service \tProvider for details X-go2web-MailScanner-SpamCheck:  X-go2web-MailScanner-From: jbdvd@go2.ie X-BeenThere: qifw@linux.ie X-Mailman-Version: 2.1.5 Precedence: list List-Id: Irish Linux Users' Group  List-Unsubscribe: , \t List-Post:  List-Help: , \t I think some of the problem is that people see ubuntu desktop as more than a > desktop OS.  > I installed it on my laptop and went straight in to a console and installed > Bind server so I could play with it.  > I could never do that with a windows XP or Vista PC. Ubuntu desktop ticks > all the boxes for a personal desktop OS.  > It's when you start using it as a Linux server that you run into problems > when you go to upgrade.  To me a server is a machine in a datacentre that I access by SSH and has no GUI installed. And I would never try to upgrade the OS on a production server. Instead I would replace it with a new (tested) machine running the new OS. So Ubuntu works just fine for me as a server :) --  Nick Murtagh  go2web Ltd., Harbour House, Harbour Road, Howth, Dublin 13 http://www.go2.ie/ - Phone +353-(0)1-839-5432 - Fax +353-(0)1-839-5439 Registered in Ireland: No. 327376 Registered address: 53 Thormanby Lawns, Howth, Dublin 13",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9593847179954004,
+          "SPAM": 0.04061528200459961
+        },
+        "confidence": 0.9187694359908007
+      }
+    },
+    "usage": {
+      "input_tokens": 1896,
+      "output_tokens": 0
+    }
+  }
+}

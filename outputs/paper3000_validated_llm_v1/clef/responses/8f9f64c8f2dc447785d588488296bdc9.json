@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: FW: amusing analogies, some good, some bad, some plain stupid....\n\n>He spoke with the wisdom that can only come from experience,like a guy who \n>went blind because he looked at a solar eclipse without one of those boxes \n>with a pinhole in it and now goes around the country speaking at high \n>schools about the dangers of looking at a solar eclipse without one of \n>those boxes with a pinhole in it.\n>Joseph Romm, Washington\n>\n>She caught your eye like one of those pointy hook latches that used to \n>dangle from screen doors and would fly up whenever you banged the door open \n>again.\n>Rich Murphy, Fairfax Station\n>\n>The little boat gently drifted across the pond exactly the way a bowling \n>ball wouldn't.\n>Russell Beland, Springfield\n>\n>McBride fell 12 stories, hitting the pavement like a Hefty Bag filled with \n>vegetable soup.\n>Paul Sabourin, Silver Spring\n>\n>>From the attic came an unearthly howl. The whole scene had an eerie,surreal \n>quality, like when you're on vacation in another city and \"Jeopardy\" comes \n>on at 7 p.m. instead of 7:30.\n>Roy Ashley, Washington\n>\n>Her hair glistened in the rain like nose hair after a sneeze.\n>Chuck Smith, Woodbridge\n>\n>Her eyes were like two brown circles with big black dots in the center.\n>Russell Beland, Springfield\n>\n>Bob was as perplexed as a hacker who means to access \n>T:flw.quid55328.com\\\\aaakk/ch@ung but gets T:\\\\flw.quidaaakk/ch@ung by \n>mistake\n>Ken Krattenmaker, Landover Hills\n>\n>Her vocabulary was as bad as, like, whatever.\n>Unknown\n>\n>He was as tall as a six-foot-three-inch tree.\n>Jack Bross, Chevy Chase\n>\n>The hailstones leaped from the pavement, just like maggots when you fry \n>them in hot grease.\n>Gary F. Hevel, Silver Spring\n>\n>Her date was pleasant enough, but she knew that if her life was a movie \n>this guy would be buried in the credits as something like \"Second Tall \n>Man.\"\n>Russell Beland, Springfield\n>\n>Long separated by cruel fate, the star-crossed lovers raced across the \n>grassy field toward each other like two freight trains, one having left \n>Cleveland at 6:36 p.m. traveling at 55 mph, the other leaving from Topeka \n>at 4:19 p.m. at a speed of 35 mph.\n>Jennifer Hart, Arlington\n>\n>The politician was gone but unnoticed, like the period after the Dr. on a \n>Dr Pepper can.\n>Wayne Goode, Madison, Ala.\n>\n>They lived in a typical suburban neighborhood with picket fences that \n>resembled Nancy Kerrigan's teeth\n>Paul Kocak, Syracuse, N.Y.\n>\n>John and Mary had never met. They were like two hummingbirds who had also \n>never met.\n>Russell Beland, Springfield\n>\n>The thunder was ominous-sounding, much like the sound of a thin sheet of\n>metal being shaken backstage during the storm scene in a play.\n>Barbara Fetherolf, Alexandria\n>\n>His thoughts tumbled in his head, making and breaking alliances like \n>underpants in a dryer without Cling Free\n>Chuck Smith, Woodbridge\n>\n>The red brick wall was the color of a brick-red Crayola crayon.\n>Unknown\n>\n\n_________________________________________________________________\nUse MSN Messenger to send music and pics to your friends \nhttp://www.msn.co.uk/messenger",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9561302583287585,
+          "SPAM": 0.04386974167124154
+        },
+        "confidence": 0.9122605166575171
+      }
+    },
+    "usage": {
+      "input_tokens": 1004,
+      "output_tokens": 0
+    }
+  }
+}

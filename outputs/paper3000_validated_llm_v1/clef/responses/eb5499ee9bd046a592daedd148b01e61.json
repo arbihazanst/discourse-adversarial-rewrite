@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [UAI] How Do You Define Similarity?\n\nProf. Hutter:\n\nYou make some excellent points pursuant to my own. Chaitin's\nrandomization and Kolmogorov complexity are of course synonymous. One\ndifference however that you only alluded to is the whole science\nunderpinning the evolution of heuristics to perform the clustering or\nclassification task. How does your method(s) address this point? Thank\nyou again.\n\nStuart Rubin, Ph.D.\nSSC-SD\nTel. (619) 553-3554\nFax. (619) 553-1130\nE. gydugz.bnktn@navy.mil\n\n\n-----Original Message-----\nFrom: nhi-pljlbix@engr.orst.edu [mailto:nhi-pljlbix@engr.orst.edu] On\nBehalf Of Marcus Hutter\nSent: Saturday, December 01, 2007 12:04 AM\nTo: faq@engr.orst.edu\nCc: Lotfi A. Zadeh\nSubject: Re: [UAI] How Do You Define Similarity?\n\n\nDear Lofti,\n\nPaul Vitanyi and others have developed the universal similarity based on\nKolmogorov complexity K. It has very general \"optimality\" properties\nwhich justifies the label \"universal\". It has been applied to a wide\nrange of problems, from phylogenetic tree reconstruction, to similarity\nof languages, and determining the composer of pieces of music.\n\nThe idea is that if two objects A and B are similar, then they can be\nbetter compressed jointly than separately, so the difference in\ncompression length\nD(A,B)=K(A)+K(B)-K(AB) is used as a dissimilarity measure.\n\nI do not know of any other candidate (except for variants) that may\nhonestly be called a universal similarity.\n\nI agree with you that the degree of similarity depends on the purpose.\nThis has been discussed at the Kolmogorov Complexity mailing list a few\nyears ago.\n\nhttp://mailman.ti-edu.ch/pipermail/kolmogorov/2004q1/000112.html\n\nOne can show that D is smaller than any other computable distance\nmeasure satisfying Kraft's inequality, but it is not always the right\nsimilarity relation, with \"right\" meaning that it clusters w.r.t. to the\ndesired property (e.g. minimizing erroneous classifications).\n\nSo using \"only\" D might not be sufficient to perform a desired\nclassification task. So although D is universal in the mathematical\nsense, this does not imply that it is universally good for EVERY\nclustering or classification task\n\nOn the other hand, the experimental success of the universal metric is\nremarkable. In the light of the above considerations it is even more\nastonishing that the information-theoretic dominant feature seems\noften(?) to be the one which we are interested in. The above\nconsideration may also explain why D (or variants) sometimes fail. It\nwould be great if one could augment or adapt D to the classification\nproblem at hand in a theoretically elegant way to allow for grouping\nw.r.t. the desired property.\n\nBest,\n\nMarcus\n\n______________________\nMarcus Hutter, Assoc. Prof.\nRSISE, Room B259, Building 115\nAustralian National University\nCorner of North and Daley Road\nCanberra ACT 0200, Australia\nPhone:   +61(0)2 612 51605\nFax:  +61(0)2 612 58651\nEmail: jdykjn.glapjs@anu.edu.au\nhttp://rsise.anu.edu.au/~marcus\n\nMachine Learning Summer School 2008  http://kioloa08.mlss.cc",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9586261996679449,
+          "SPAM": 0.041373800332054955
+        },
+        "confidence": 0.9172523993358899
+      }
+    },
+    "usage": {
+      "input_tokens": 1004,
+      "output_tokens": 0
+    }
+  }
+}

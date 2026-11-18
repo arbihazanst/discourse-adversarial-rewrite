@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Call for papers: IJCAI workshop on Grammatical Inference Applications\n\nApologies to those of you who receive this more than once.\n\n\t\t\tSecond Call for Papers\n\t\t\t IJCAI 2005 Workshop\n\n\t\t  GRAMMATICAL INFERENCE APPLICATIONS\n\t\t   Successes and Future Challenges\n\n\t\t  To be held in Edinburgh, Scotland,\n\t\t prior to IJCAI-05 on July 31, 2005.\n\n\t       http://www.ics.mq.edu.au/~menno/IJCAI05/\n\nBackground\n\nThere has been growing interest over the last few years in learning\ngrammars from text and other types of sequential, structured, and\nsemi-structured data.  The family of techniques enabling such learning\nis usually called grammatical inference or grammar induction (GI).  It\nmakes use of results and techniques from, among others, machine\nlearning, formal language theory, computational learning theory, and\nstatistics to learn, induce or infer a grammar or an automaton from a\ntraining sample.  There have been many theoretical and experimental\nresults in the field as well as a wide range of applications,\nincluding computational linguistics, text mining, speech recognition,\ncomputational biology, web intelligence, and robotics.\n\n\nAim of the workshop\n\nThe workshop is intended as a meeting point of researchers working on\napplications of grammatical inference with more speculative ideas.\n\nSome topics that are of interest are:\n* Robotics: map learning, language learning\n* Computational linguistics: parsing, natural language processing,\n  language modelling\n* Information extraction (IE): world wide web IE, wrapper induction,\n  DTD learning\n* User modelling: web usage mining, web personalization\n* Semantic modelling: ontology learning\n* Computational biology: biological sequence analysis, motif\n  extraction, structure predictions\n* Machine translation: transducer learning, language alignment,\n  bi-language modeling\n* Music modeling: musical style classification, automatic composition\nNote that this is *not* an exhaustive list and non-classical\napplications such as animal language modeling, strategy learning, etc.\nare strongly encouraged. \n\nIt should be noted that a tutorial on Grammatical Inference will be\ngiven at IJCAI, enables those interested in getting an even more\ngeneral picture of the field and the techniques to do so.\n\n\nParticipants\n\nThe workshop is open to all members of the AI community and we\nespecially encourage papers from researchers who are interested in GI\nand are working on applications where these techniques might be used\nand researchers with a GI background that have an interest in\napplications.\n\nTo encourage interaction and a broad exchange of ideas, the workshop\nwill be limited to 40 participants and ample time will be allotted for\ngeneral discussion.  Attendance is limited to active participants\nonly.  Workshop attendees need not register for the main IJCAI\nconference, but are encouraged to do so.\n\n\nFormat\n\nThe workshop will consist of 30 minute presentations and ample time\nwill be allocated for discussions.  In addition to the regular papers,\nwe will accept position papers.  Furthermore, there will be a panel\ndiscussion on future and more speculative work in applications of GI.\n\n\nSubmission Guidelines\n\nSubmissions should be formatted as for the main IJCAI-05 conference\nsubmissions.  Information on formatting can be found on the following\nurl (with some changes outlined below):\n   http://ijcai05.csd.abdn.ac.uk/index.php?section=papers#format\nThe maximum number of pages for the papers in the workshop will be 10\n(instead of 6 for the main conference).  Note however, it will *not*\nbe possible to purchase extra pages.\n\nThe submission guidelines for position papers are the same as for the\nregular papers.  However, only 2 pages may be used.\n\nPlease submit the LaTeX source of the article (including all\nnon-standard style files and bibtex files) as well as the PDF file\nof the article combined in one file.  The filename should have the\nlast name of the main author in it.\n\nSubmissions should be sent by email by March 19, 2005.  The file\nshould be sent to:\n   Menno van Zaanen \nand the subject of the email should be:\n   Grammatical Inference Applications: \nwith  the name of the main author.\n\nWe encourage you to send a version some time before the deadline, so\nwe can test if the LaTeX sources compile correctly.  If you have\nproblems with the requirements, please let us know as soon as possible\n(on the above email address).\n\n\nImportant dates\n\n* Workshop paper submission deadline:     March 19, 2005.\n* Workshop paper acceptance notification: April 12, 2005.\n* Workshop paper camera-ready deadline:   April 30, 2005.\n* Workshop dates:                         July 30 or 31, 2005.\n\n\nReviews\n\nSubmitted papers will be reviewed by referees from the Program\nCommittee.  Accepted papers will be published in the working notes of\nthe workshop.\n\n\nOrganization\n\n- Colin de la Higuera (Universite de Saint-Etienne, France),\n- Tim Oates (University of Maryland Baltimore County, USA),\n- Georgios Paliouras (NCSR \"Demokritos\", Greece),\n- Menno van Zaanen (Macquarie University, Australia).",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9341467859120804,
+          "SPAM": 0.06585321408791947
+        },
+        "confidence": 0.8682935718241609
+      }
+    },
+    "usage": {
+      "input_tokens": 1328,
+      "output_tokens": 0
+    }
+  }
+}

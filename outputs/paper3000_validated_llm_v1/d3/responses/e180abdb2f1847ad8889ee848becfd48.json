@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: ietf-dkim Digest, Vol 110, Issue 3\n\nSend ietf-dkim mailing list submissions to \tgfky-hddl@mipassoc.org To subscribe or unsubscribe via the World Wide Web, visit \thttp://mipassoc.org/mailman/listinfo/ietf-dkim or, via email, send a message with subject or body 'help' to \tqvci-mnfi-qkwxudx@mipassoc.org You can reach the person managing the list at \tqght-rnrq-bhlpv@mipassoc.org When replying, please edit your Subject line so it is more specific than \"Re: Contents of ietf-dkim digest...\" Today's Topics:    1. Re: Issue #1547: MX records (was: ASP 4.2.2,\tStep 2: name       existence check) (Douglas Otis) ---------------------------------------------------------------------- >From udcat@mail-abuse.org  Sat Apr 26 15:52:27 2008 Message: 1 Date: Wed, 5 Mar 2008 10:10:33 -0800 From: Douglas Otis  Subject: Re: [ietf-dkim] Issue #1547: MX records (was: ASP 4.2.2,\tStep \t2: name existence check) To: DKIM List  Message-ID: <3C558652-A8AD-4D9C-B0A8-02ABEA73D90F@mail-abuse.org> Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes On Mar 3, 2008, at 6:35 PM, Douglas Otis wrote: > On Mar 3, 2008, at 4:54 PM, Jim Fenton wrote: >> Douglas Otis wrote: >> >> You have proposed that domains publishing ASP records be required   >> to publish MX records.  But in this case, we have a domain (or   >> perhaps a host) that has not published an ASP record, so there   >> could be no requirement for an MX. > > Requiring MX records be coupled with DKIM/SMTP policy records means   > \"existing\" domains without MX and policy records thereby indicate   > they do not have policy asserted for the domain.  Importantly, this   > result can be reached without climbing the domain tree.  Conversely,   > when a policy record is discovered without an MX record, checks   > against parent domains are also prevented.  Both of these important   > safety features are missing from the present DKIM policy discovery   > algorithm. >>> But avoiding a policy check at the parent would be in scope, would   >>> it not? >> >> Perhaps, if there were a clear advantage to checking for the   >> existence of the domain vs. querying the parent, which I explore in   >> the following paragraph. > > Second or third level domains might be above millions of email-  > address domains which could cause DKIM policy discovery processes to   > be invoked.  An algorithm that makes requests for non-existent   > records within parent domains will generate a fair amount of new and   > highly distributed overhead of non-beneficial traffic that will   > cause unnecessary processing delays. > >>>> Another justification might be caching, but I'd need to find out   >>>> more about how negative caching works: would a negative response   >>>> to _asp._domainkey.nonexistent.example.com result in a negative   >>>> cache entry for nonexistent.example.com?  If so, step 2 might   >>>> occur very quickly (and locally), potentially eliminating the   >>>> step 3 query for the parent, which would probably not be cached. >>> >>> See RFC 2308.  Negative caching is not as certain as positive   >>> caching.  This is why the MX record should be checked prior to   >>> walking up the domain tree.  Negative caching should be retrained   >>> as long as the MINIMUM field of the SOA record or the TTL of the   >>> SOA itself, whichever is less.  Not all resolvers are RFC 2308   >>> compliant.  Some truncate the duration of negative caching to   >>> limit the effects of transient network failures. >> >> In this case, the query that would benefit from negative caching   >> occurs immediately (within milliseconds) of the first query, so   >> there shouldn't be significant TTL issues. > > Agreed, the SOA record TTL should not represent a significant   > concern.  However, a fairly significant percentage of DNS resolvers   > do not fully adhere to RFC 2308 and as such, reliance upon negative   > caching should be minimized.  In other words, negative caching   > should not be expected to terminate walks up the domain tree when   > searching for seldom published records. To expand upon this concept a bit.  A requirement to publish MX   records in conjunction with DKIM/SMTP policy records benefits: 1- Slightly increased percentage of MX records positively answering   existence probes. 2- Within existing domains, a DKIM/SMTP Policy Record absent MX   records signifies disavowal of DKIM/SMTP. 3- DKIM/SMTP policy records signifying disavowal of DKIM/SMTP can be   empty and not require content interpretation. 4- Asserting policy does not depend upon walking up the domain, but   instead requires publishing empty policy records at existing nodes. 5- This Discovery/Policy assertion strategy safely extends to other   protocols. 6- Does not depend upon wildcards. 7- Expects domains establishing policy to use a strategy that protects   parent domains. 8- Does not modify what is permitted by the parent domain. Item 1 moves SMTP closer to a general mandate of requiring MX records   for message acceptance.  At that time, a need to publish an empty   policy record at every existing domain node would be precluded. Item 2 affords actionable responses to abuse or forgery, as this   offers stronger evidence than invalid or missing signatures provide. Item 3 can terminate even one level domain searches for policy, which   would be highly recommended of any domain utilizing DKIM when such   searching is adopted. Item 4 minimizes memory required, and eliminates impact of changes to   the policy record structure used in conjunction with MX records. -Doug           ------------------------------ _______________________________________________ NOTE WELL: This list operates according to  End of ietf-dkim Digest, Vol 110, Issue 3 *****************************************",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.004399214752607231,
+          "NOT_SPAM": 0.9956007852473927
+        },
+        "confidence": 0.9592278345306356
+      }
+    },
+    "usage": {
+      "input_tokens": 1524,
+      "output_tokens": 0
+    }
+  }
+}

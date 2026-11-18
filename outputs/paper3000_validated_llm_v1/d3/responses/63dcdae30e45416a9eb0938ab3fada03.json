@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [spambayes-dev] SpamBayes core_server.py and related bits\tmerged to CVS HEAD\n\nHello, The 100MB files should not be a really big problem because we could  truncate them to their headers (or just a part of them) and send them as  normal features to SB. We should use a remote SB classifier only when the network and  classifier are trusted. When this is not the case we could do the  parsing locally, hash the tokens, build the feature vector and send it  to the remote classifier. This way the local application would not  disclose sensitive information. Another important problem is related to using a single classifier for  several application (possibly with a totally different content). IMHO  the spam for an application might be totally different then the spam of  another, or to be more exact: the ham/spam features might differ. In  this case the result of the classification might not be relevant. \"My  SPAM is not your SPAM\" :) M. iybz@pobox.com wrote: >     skip> For Reimar and Marian (the MoinMoin gurus), I did a very little >     skip> bit of performance testing.  Roundtrip performance on my laptop >     skip> (Mac PowerBook G4 - 800MHz) with both the server and client >     skip> running on the same machine ranged anywhere from 10-50 bytes/ms. >     skip> When I added a large payload (a MIME encoded JPEG file of 9.5MB) >     skip> performance in terms of bytes/ms shot way up, but as you would >     skip> imagine overall time did as well.  Here are some figures: > >     skip>     attachment     time          bytes/ms >     skip>        size >     skip>     9587824        30.7 sec      312 >     skip>      975978         3.7 sec      259 >     skip>      114794         0.5 sec      252 >     skip>       28675         0.2 sec      142 > > I probably should have drawn some inferences from this.  First, if you > really try to score 100MB payloads (Reimer & Marian suggested that some > people routinely attach 100MB Word (I think) files to wikis), you're going > to be disappointed.  Second, although attachments of that size would be > problematic, since SpamBayes doesn't examine the guts of binary data, > there's probably nothing wrong with trimming the binary file to a reasonable > size (< 1MB?) and including that trimmed version in the score request. > > Also, note that I've really don't nothing with non-ASCII data to this point. > I suspect people more familiar with that will see a clear path to sanity > fairly easily. > > Skip > >    _______________________________________________ spambayes-dev mailing list bsfegmjrr-hnq@python.org http://mail.python.org/mailman/listinfo/spambayes-dev",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0017897724265296233,
+          "NOT_SPAM": 0.9982102275734704
+        },
+        "confidence": 0.9810867385470408
+      }
+    },
+    "usage": {
+      "input_tokens": 800,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] HP Printer C4380\n\nErik Jakobsen a écrit :\n\n> If I press the scan in the HPLIP window, XSANE starts up\n\n(...)\n\njust for the record, I have an HP printer all in one *not* network \ncapable connected to a very simple netserver (my adsl box from \"free\" \nthe french ISP).\n\nI can print on it from any 10.3 computer without problem, bt hp-tools \ndon't find it.\n\nI stopped trying to fix this when I notced that this printer have card \nslots and allow *scanning to card*. When scanning it writes a jpeg \ndirectly on any supported card (for me sd card).\n\nGiven the scanner/printer is on an other floor, it's much simpler to \nscan to card than to put the document, scan from the computer and go \nback take the document :-))\n\njust this capability was not written on the box and I got on it by \nchance :-))\n\njdd\n\n-- \nhttp://www.dodin.net",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9599730345718651,
+          "SPAM": 0.04002696542813492
+        },
+        "confidence": 0.9199460691437302
+      }
+    },
+    "usage": {
+      "input_tokens": 389,
+      "output_tokens": 0
+    }
+  }
+}

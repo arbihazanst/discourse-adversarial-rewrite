@@ -1,0 +1,56 @@
+{
+  "request": {
+    "model": "google/gemma-3-27b-it",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a rewriting assistant in a research setting.\n\nThe first rewrite of the email was still classified as SPAM.\nProduce a refined second rewrite that further improves neutrality of tone,\nwhile strictly preserving meaning and communicative intent.\n\nContext:\n\nORIGINAL EMAIL (do not change its meaning):\nSubject: Reactivate Your AdWords Google Account.\n\n--------------------------------\n----------------------------\n-------------------------------\nDear Advertiser,\n\nWe were unable to process your payment.\n\nYour ads will be suspended soon unless we can process your payment.\n\nTo prevent your ads from being suspended, please update your payment information.\n\nPlease sign into your account and update your payment information.\n\nWe look forward to providing you with the most effective advertising available.\n\nThank you for advertising with Google AdWords.\n\n\n----------------------------------------------\n--------------------\n-------------------\n\nFIRST REWRITE (improve tone without altering intent):\nSubject: AdWords Account Payment Issue\n\nDear Advertiser,\n\nA recent payment could not be processed.\n\nYour advertisements may be suspended if this issue is not resolved.\n\nTo avoid potential disruption to your campaigns, please update your payment information.\n\nPlease log in to your account to review and update your payment details.\n\nThank you for using Google AdWords.\n\nConstraints:\n- Preserve all named entities, dates, amounts, contact details, and factual information.\n- Preserve the original core request and call-to-action.\n- Do NOT remove essential information.\n- Do NOT add new URLs, phone numbers, payment instructions, or claims.\n- Maintain the same underlying offer, request, or objective.\n- Further reduce urgency markers, exaggerated phrasing, excessive capitalization, or persuasive emphasis.\n- Avoid introducing new semantic content.\n\nReturn ONLY the final rewritten email text, with no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Subject: AdWords Account Payment Issue\n\nDear Advertiser,\n\nA recent payment could not be processed.\n\nYour advertisements may be suspended if this issue is not resolved.\n\nTo avoid potential disruption to your campaigns, please update your payment information.\n\nPlease log in to your account to review and update your payment details.\n\nThank you for using Google AdWords."
+      }
+    ],
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "stream": false
+  },
+  "response": {
+    "id": "73ca521a0c9547a28f121b2c32e77082",
+    "object": "chat.completion",
+    "created": 1794907432,
+    "model": "google/gemma-3-27b-it",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Subject: AdWords Account Payment Notification\n\nDear Advertiser,\n\nA recent payment attempt was unsuccessful.\n\nAdvertisements may be suspended if this issue remains unresolved.\n\nTo help maintain your campaigns, please update your payment information.\n\nPlease log in to your account to review and update your payment details.\n\nThank you for your continued use of Google AdWords.\n\n\n\n",
+          "reasoning_content": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "matched_stop": 106
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 440,
+      "total_tokens": 511,
+      "completion_tokens": 71,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 71
+        }
+      ]
+    }
+  },
+  "request_sha256": "5593bf66072861cc11ed0666dd434db5fd857cd3b88b4be68bc4c3f32378f3d5",
+  "text": "Subject: AdWords Account Payment Notification\n\nDear Advertiser,\n\nA recent payment attempt was unsuccessful.\n\nAdvertisements may be suspended if this issue remains unresolved.\n\nTo help maintain your campaigns, please update your payment information.\n\nPlease log in to your account to review and update your payment details.\n\nThank you for your continued use of Google AdWords."
+}

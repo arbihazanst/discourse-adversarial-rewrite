@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] Reminder: last alphas next Wednesday 07-May-2008\n\n> First, Skip, I *only* care about the default behavior.  There's already\n> a way to do it differently: PYTHONPATH.  So, Fred, I think what you're\n> arguing for is to drop this feature entirely.  Or is there some other\n> use for a new way to allow users to explicitly add something to\n> sys.path, aside from PYTHONPATH?  It seems that it would add more\n> complexity and I can't see what the value would be.\n\nPYTHONPATH is lacking one feature which is important for lots of\npackages and setuptools. The directories in PYTHONPATH are just added to\nsys.path. But setuptools require a site package directory. Maybe a new\nenv var PYTHONSITEPATH could solve the problem.\n\n> As I've said a dozen times in this thread already, the feature I'd like\n> to get from a per-user installation location is that 'setup.py install',\n> or at least some completely canonical distutils incantation, should\n> work, by default, for non-root users; ideally non-administrators on\n> windows as well as non-root users on unixish platforms.\n\nThe implementation of my PEP provides a new option for install:\n\n$ python setup.py install --user\n\nIs it sufficient for you?\n\nChristian\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9402827581006552,
+          "SPAM": 0.05971724189934479
+        },
+        "confidence": 0.8805655162013104
+      }
+    },
+    "usage": {
+      "input_tokens": 533,
+      "output_tokens": 0
+    }
+  }
+}

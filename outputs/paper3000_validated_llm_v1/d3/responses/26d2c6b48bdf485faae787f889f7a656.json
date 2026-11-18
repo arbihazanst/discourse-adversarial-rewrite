@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Restricting internal distribution list: warning: unknown smtpd restriction: \"insiders_only\"\n\nWhat additional steps can I take to further debug and find this error? Thanks. Marcio Merlone escreveu: > Hello all, > > I am trying to restrict some internal distribution lists from abuse as  > per http://www.postfix.org/faq.html#internal-list with  > postfix-2.3.8-2+b1 on a debian 4.0 box: > > main.cf: > smtpd_restriction_classes = insiders_only > insiders_only = check_sender_access hash:/etc/postfix/insiders, reject > > smtpd_recipient_restrictions    = >   hash:/etc/postfix/protected_destinations, >   etc... > > /etc/postfix/insiders: > pe@domain OK > > /etc/postfix/protected_destinations: > fzk@domain insiders_only > > Hashes properly postmapped, reloaded postfix and it work at first,  > denying relay for unauthorized senders. But if pe@domain tries, I get  > an error: > > Feb 18 18:50:08 servidor postfix/smtpd[23032]: connect from  > localhost.localdomain[127.0.0.1] > Feb 18 18:50:15 servidor postfix/smtpd[23032]: 35F0F100E9:  > client=localhost.localdomain[127.0.0.1] > Feb 18 18:50:19 servidor postfix/cleanup[23035]: 35F0F100E9:  > message-id=<98206455855516.73x8k064x5@server.domain> > Feb 18 18:50:19 servidor postfix/qmgr[23030]: 35F0F100E9:  > from=, size=373, nrcpt=1 (queue active) > Feb 18 18:50:19 servidor postfix/smtpd[23040]: connect from  > localhost.localdomain[127.0.0.1] > Feb 18 18:50:19 servidor postfix/smtpd[23040]: warning: unknown smtpd  > restriction: \"insiders_only\" > Feb 18 18:50:19 servidor postfix/smtpd[23040]: NOQUEUE: reject: RCPT  > from localhost.localdomain[127.0.0.1]: 451 4.3.5 Server configuration  > error; from= to= proto=ESMTP helo= > Feb 18 18:50:19 servidor amavis[21842]: (21842-10) (!) mail_via_smtp:  > DATA skipped, no valid recips, 1 > Feb 18 18:50:19 servidor amavis[21842]: (21842-10) (!) FWD via SMTP:  >  -> , 451 4.6.0 Failed, id=21842-10, from  > MTA([127.0.0.1]:10025): 451 4.3.5 Failed, id=21842-10, from  > MTA([127.0.0.1]:10025): 451 4.3.5 Server configuration error > Feb 18 18:50:19 servidor postfix/cleanup[23035]: 3F79D100EA:  > message-id=<33800836418899.7v33k008bk@server.domain> > Feb 18 18:50:19 servidor amavis[21842]: (21842-10) Blocked TEMPFAIL,  > [127.0.0.1]  -> , Message-ID:  > <98206455855516.73x8k064x5@server.domain>, mail_id: N6J-qB1TBFt3,  > Hits: -0.744, 236 ms > Feb 18 18:50:19 servidor postfix/smtpd[23040]: disconnect from  > localhost.localdomain[127.0.0.1] > Feb 18 18:50:19 servidor postfix/qmgr[23030]: 3F79D100EA:  > from=, size=889, nrcpt=1 (queue active) > Feb 18 18:50:19 servidor postfix/smtp[23036]: 35F0F100E9:  > to=, relay=127.0.0.1[127.0.0.1]:10024, delay=5.7,  > delays=5.5/0/0/0.24, dsn=4.3.5, status=deferred (host  > 127.0.0.1[127.0.0.1] said: 451 4.3.5 Failed, id=21842-10, from  > MTA([127.0.0.1]:10025): 451 4.3.5 Server configuration error (in reply  > to end of DATA command)) > > I even tried this on master.cf: > > 127.0.0.1:10025 inet    n -  n  -   -   smtpd >   -o content_filter= >   -o local_recipient_maps= >   -o relay_recipient_maps= >   -o smtpd_restriction_classes= >   -o smtpd_client_restrictions= >   -o smtpd_helo_restrictions= >   -o smtpd_sender_restrictions= >   -o smtpd_restriction_classes= >   -o mynetworks=127.0.0.0/8 > > I have amavis on port 10024, looks like it is involved on the error,  > but I could not establish or perceive the correlation. I use  > postfix-2.3.8-2+b1 in a  debian 4.0 box. Thanks in advance for any hint. > > Regards, > --  Marcio Merlone A1 Engenharia e Gerenciamento Ltda. Fone: +55 41 3616-3796 Fax:  +55 41 3616-3617",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0013094647173117013,
+          "NOT_SPAM": 0.9986905352826884
+        },
+        "confidence": 0.9855715881814495
+      }
+    },
+    "usage": {
+      "input_tokens": 1704,
+      "output_tokens": 0
+    }
+  }
+}

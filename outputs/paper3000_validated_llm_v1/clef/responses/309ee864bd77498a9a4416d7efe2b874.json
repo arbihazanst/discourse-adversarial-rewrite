@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Rolex replica watch\n\n\nWhy pay more? Get qualitative replica watches here \n\nWith Vacheron Constantin replica watch time becomes ...   \n\nLooking for a watch? Visit Replica Classics\n\nhttp://gatedequidnos.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.027308525837411102,
+          "SPAM": 0.9726914741625888
+        },
+        "confidence": 0.9453829483251777
+      }
+    },
+    "usage": {
+      "input_tokens": 204,
+      "output_tokens": 0
+    }
+  }
+}

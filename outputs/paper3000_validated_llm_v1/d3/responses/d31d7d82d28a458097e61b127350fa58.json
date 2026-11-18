@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: News & Views | 08.07.08\n\nCommon Dreams - Breaking News & Views for the Progressive Community\n\nThursday 08.07.08\n\nHeadlines...\n\nEnd Nuclear Threat, Next President Told\nhttp://www.commondreams.org/archive/2008/08/07/10870/\n\nPanel: Human Rights Sacrificed in Name of Counter-Terrorism\nhttp://www.commondreams.org/archive/2008/08/07/10863/\n\nDetainee Urges Investigation of American Torture\nhttp://www.commondreams.org/archive/2008/08/07/10856/\n\nPrepare For 'Catastrophic Impact,' Warns Top Climate Scientist\nhttp://www.commondreams.org/archive/2008/08/07/10853/\n\nDid Dick Cheney Give Bush Plausible Deniability?\nhttp://www.commondreams.org/archive/2008/08/07/10868/\n\nGrowing Hesitancy Over A Military Test Used For High School Recruitmentt\nhttp://www.commondreams.org/archive/2008/08/07/10858/\n\nAfter Split Decision In Guantanamo, Legal Debate Rages On\nhttp://www.commondreams.org/archive/2008/08/07/10864/\n\nAnti-War Protesters Freeze In Place\nhttp://www.commondreams.org/archive/2008/08/07/10857/\n\nand more...\n\n*********************************************************************\n\nViews...\n\nNaomi Klein | The Olympics: Unveiling Police State 2.0\nhttp://www.commondreams.org/archive/2008/08/07/10860/\n\nRobert Parry | Why McCain May Well Win\nhttp://www.commondreams.org/archive/2008/08/07/10869/\n\nAmy Goodman | Threats, Lies and Audiotape\nhttp://www.commondreams.org/archive/2008/08/07/10854/\n\nSahr MuhammedAlly | The Hamdan War Crimes Trial: An Illusion of Justice\nhttp://www.commondreams.org/archive/2008/08/07/10850/\n\nMark Lynas | Climate Change Catastrophe by Degrees\nhttp://www.commondreams.org/archive/2008/08/07/10849/\n\nThe Brattleboro Reformer | Against the Wal\nhttp://www.commondreams.org/archive/2008/08/07/10855/\n\nJohann Hari | Don't Let the Games Blind Us to the Plight of China's Workers\nhttp://www.commondreams.org/archive/2008/08/07/10851/\n\nand more...\n\n****************************************************\n\nNewswire...\n\nRecreate 68 Alliance: Press Conference to Address Judges Ruling in ACLU Case\nhttp://www.commondreams.org/news2008/0807-08.htm\n\nFood & Water Watch: Not Even Monsanto Wants rBGH\nhttp://www.commondreams.org/news2008/0807-13.htm\n\nLeague of Women Voters (LWV) Opposes Coal-Fired Power Plants\nhttp://www.commondreams.org/news2008/0807-06.htm\n\nACLU Reminds \"America's Toughest Sheriff\" That He's Not Above The Law\nhttp://www.commondreams.org/news2008/0807-05.htm\n\nand more...",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.21339526407886733,
+          "NOT_SPAM": 0.7866047359211327
+        },
+        "confidence": 0.2520772646656949
+      }
+    },
+    "usage": {
+      "input_tokens": 954,
+      "output_tokens": 0
+    }
+  }
+}

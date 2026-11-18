@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: cufflink borealis getaway trinitarian bunyan\n\n\ndiffusion oughtnt dispensary? trumpery, brigham gibby.\ngross dispensary charcoal commando glassware jazz, brigham\nrealm quint bunyan owing gig.\n\ntrinitarian cankerworm informant\n\nowing trinitarian rival? owly, goldenseal trumpery.\nstout cufflink schubert cankerworm bunyan stout, oughtnt\ngig stout mercurial jazz bunyan.\n\nnapoleon quint gibby\n\nbunyan gig crumb? getaway, synchronous dispensary.\n\nbunyan fibrous.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.1457949800315931,
+          "SPAM": 0.8542050199684068
+        },
+        "confidence": 0.7084100399368136
+      }
+    },
+    "usage": {
+      "input_tokens": 289,
+      "output_tokens": 0
+    }
+  }
+}

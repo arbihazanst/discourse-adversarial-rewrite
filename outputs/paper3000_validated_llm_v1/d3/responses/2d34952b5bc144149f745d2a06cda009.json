@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Five Blu-ray players for less than $500\n\n\n\n\nCNET | Digital Dispatch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 19, 2008\n\n\n\n\nView online |\nManage newsletters |\nUnsubscribe |\nSend us feedback\n\n\n\n\n\n\n\n\n\n\n\n\n\nTom MerrittExecutive editor,CNET.com\n\n\n\n\nBlu-ray players that won't break the bank\n\n\nWell, it looks like old HD DVD may have lost the race. Which means it's time to turn attention to Blu-ray. Blu-ray players aren't as cheap as HD DVD players, but you can still find them for less than $500. In fact our reviewers have worked long and hard to round up the best five for less than $500. If you do purchase one of these players, pour a little out in memory of HD DVD. Five for less than $500\n\n\n\n\n\nAs seen on CNET TV\n\n\n\n\n\nInsider Secrets: Encrypt data on a thumbdrive\n            We show you two ways to encrypt data on a portable USB drive.\nWatch this video\n\n\n\n\n\n\nToday on CNET\n\nCNET Reviews\nR.I.P. HD DVD: 2006-2008\n            The two-year war between HD DVD and Blu-ray officially ended today as Toshiba waved the white flag and declared it would stop producing HD DVD products.\nRead more\n\n\nDownload.com\nFree 'n' easy photo editing\n            PhotoScape distinguishes itself from the crowd with an impressive set of features. Although it eats and leaks about as much memory as Firefox, it's aimed squarely at the at-home image editor.\nRead more\n\n\nCNET Reviews\nHeadphones for $50 or less\n            You don't have to spend a fortune to snag a set of headphones that will do justice to your tunes.\nRead more\n\n\nCNET TV\nTales of Silicon Valley: The Mighty Cray\n            Meet a supercomputer inspired by Star Trek with a wall-size power bank in this episode of Tales of Silicon Valley. \nRead more\n\n\n\n\nWhat's new on CNET\n\n\nAsus Nova P22\n\n\n\n    \n    The Asus Nova P22 makes a decent attempt at competing against the Mac Mini. If you want a small PC with 802.11n networking, this system is your best option. Otherwise, Asus can't compete with Apple or other Windows vendors on price, features, and performance. Read more\n\n Check prices\n\n\n\nJabra BT8040\n\n\n\n    \n    The Jabra BT8040 is a compact yet powerful Bluetooth headset that offers more than enough features for the mobile professional at an affordable price. Read more\n\n Check prices\n\n\n\nOlympus E-3 (with 14mm-54mm lens)\n\n\n\n    \n    Despite some interface quirks and a slightly awkward design, the Olympus E-3 fares quite well against its midrange dSLR competition. Read more\n\n Check prices\n\n\n\n\nSecurity Watch\n\n\n\nWhat IT can learn from botnets\nRobert Vamosi\nWe know that botnets as a platform for launching attacks are here to stay. Where they go next--say, toward launching a \"digital Pearl Harbor\"--remains debatable. Storm and other botnets have shown themselves to be agile and adaptable; so, too, must the security community become agile and adaptable. Read more\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEditors' top high-tech cars\n\n \n1. 2008 Audi S5\n2. 2008 BMW 535i\n3. 2008 Mercedes-Benz C300 Sport\n4. 2008 Cadillac CTS\n5. 2008 Audi TT 3.2 Quattro\n\n\n \n\n\n\n\n  Related Newsletters\n\n\n\n\n\n\n\n\n\n\nCNET News.com\nAfternoon Dispatch\n\n(Delivered each weekday.)Get the latest tech news from CNET News.com via e-mail every weekday afternoon, plus podcasts, columns, video, and other looks at the top issues of the day.\n\nView preview \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOther CNET resources\n\n CNET.com\n\n\n Latest CNET reviews\n\n\n CNET Tips and Tricks\n\n\n\n CNET Living With Technology\n\n\n Top 10 must-have gadgets\n\n\n Editors' top 100 products\n\n\n\n CNET At Work\n\n\n CNET At Home\n\n\n CNET Go Mobile\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign up for more free newsletters from CNET! To manage your account settings or to remove yourself from all CNET communications, please visit our Subscription Center. The e-mail address for your subscription is user6@gvc.ceas-challenge.cc  Unsubscribe from this e-mail | FAQ | Advertise | Privacy Policy\n\n\n\n\n\n\n\n\n\nCopyright 2008 CNET Networks, Inc. All rights reserved.CNET Networks, Inc. 235 Second Street  San Francisco, CA 94105 U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.31045812445737375,
+          "NOT_SPAM": 0.6895418755426264
+        },
+        "confidence": 0.10629842325858108
+      }
+    },
+    "usage": {
+      "input_tokens": 1115,
+      "output_tokens": 0
+    }
+  }
+}

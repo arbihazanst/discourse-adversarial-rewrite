@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Want To Make 500-1000 AUD a week?\n\n\nHELLO EVERYONE!\nPlease take your time and read about this genuine offer, job position.Make money spending only few hours a day, if you are located in Australia! This position either can replace your current job, or can be as an extra income for you. Denmark successful company -  Apple Sales Group brought this opportunity for you. Advertisement itself is brought to you via Google ads (Paid advertisement, assigning e-mail business account). The most convenient and smart position for anybody who has couple hours a day, Monday-Friday. You will be able to make 1400+ AUD a week! It's either - you do want to participate in this, or - you do not, that's what makes it a genuine offer and worth reading and finding out more. If you meet requirements - do not hesitate to receive full information:\n\n*You are 18+ y/o\n*You are Reliable and Enthusiastic person.\n*You Have 2-3 Hours a Day of Your Spare/Free Time, Monday-Friday(Saturday).\n*You Are Located in Australia (New Zealand can be considered also).\n*You Have Access to Internet 2-3 Hours A Day, Monday-Friday(Saturday).\n\nReference:\n\"The Most Creative Opportunity of The Month\" - \"Two Time\" Magazine, quote by Angela Roer.\n\"Consider This Opportunity\" - \"Behind The Truth\" Magazine, quote by Marcus Stowee.\n\n\nTo receive full information reply to: apple.swed404@gmail.com\n\n\nwith subject \"More Information\" and one of our representatives will assist you shortly. \nThank you for your interest and Good Luck!\n\nBest Regards,\nApple Sales Group.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9957946921532146,
+          "NOT_SPAM": 0.0042053078467854405
+        },
+        "confidence": 0.9607508939720281
+      }
+    },
+    "usage": {
+      "input_tokens": 494,
+      "output_tokens": 0
+    }
+  }
+}

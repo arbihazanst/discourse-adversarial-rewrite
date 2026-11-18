@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: BBC(Bleadperl Breaks CPAN) Today: PerlPoint::Parser (0.451)\n\nOn Wed, Oct 10, 2007 at 09:54:05AM +0200, H.Merijn Brand wrote: > On Wed, 10 Oct 2007 09:05:57 +0200, qmabcthq@squirrel.nl (Johan Vromans) > wrote: >  > > [Quoting Andreas J. Koenig, on October 10 2007, 05:11, in \"Re: BBC(Bleadperl Br\"] > > > t/l0_ifilters......412/0 Use of uninitialized value $\" in join or string at /home/src/perl/repoperls/installed-perls/perl/p6E9LgS/perl-5.8.0@32059/lib/5.10.0/strict.pm line 6,  line 3. > > > t/l0_ifilters......ok      > > > All tests successful. > >  > > Interesting. > >  > > A \"@array\" expansion of a single list array should not need $\" ... >  > Isn't it blindly translated to >  >   join $\", @array; >  > ? Yes: $ ./perl -Ilib -MO=Concise -e '\"@ARGV\"' 9  <@> leave[1 ref] vKP/REFC ->(end) 1     <0> enter ->2 2     <;> nextstate(main 1 -e:1) v:{ ->3 8     <@> stringify[t5] vK/1 ->9 -        <0> ex-pushmark s ->3 7        <@> join[t4] sK/2 ->8 3           <0> pushmark s ->4 -           <1> ex-rv2sv sK/1 ->5 4              <#> gvsv[*\"] s ->5 6           <1> rv2av[t3] lK/1 ->7 5              <#> gv[*ARGV] s ->6 -e syntax OK > Which leaves room for optimization? I assume you mean that code above, not in the implementation of join. It would be possible to avoid the final read of $\" for 0 and 1 element arrays. Is that worth it? Specifically, it's this code in this order in Perl_do_join():     (void) SvPV_const(delim, delimlen); /* stringify and get the delimlen */     /* SvCUR assumes it's SvPOK() and woe betide you if it's not. */     mark++;     len = (items > 0 ? (delimlen * (items - 1) ) : 0); If $\" is a plain string scalar, SvPV_const() will check one flag and read direct from the structure, without any function calls. Nicholas Clark",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0008296255522274362,
+          "NOT_SPAM": 0.9991703744477727
+        },
+        "confidence": 0.9903121733211234
+      }
+    },
+    "usage": {
+      "input_tokens": 773,
+      "output_tokens": 0
+    }
+  }
+}

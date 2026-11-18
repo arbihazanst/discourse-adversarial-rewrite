@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: perl5.005_05-MAINT20070902\n\nHi Leon,\n\nthanks for your effort!\n\nTo compile on recent Gentoo systems, ext/IPC/SysV/SysV.xs needs\nsome tweakage. In blead, this was fixed by change #31702. However,\nthis doesn't work for 5.005, as HAS_GETPAGESIZE and HAS_SYSCONF\nare not determined by Configure.\n\nI'm pretty confident that the  include isn't needed\non Linux. I've been testing this with a vanilla RedHat installs\nback to RH 5.2 (Linux 2.0.36 #1 Tue Oct 13 22:17:11 EDT 1998),\nand they work fine without the header. But there may be be some\nplatform dependency, so I think a safe approach would be to\nremove the include for x86-Linux only. Here's a patch:\n\n\n--- perl5.005_05-MAINT20070902/ext/IPC/SysV/SysV.xs     2007-05-31 16:59:31000000000 +0200\n+++ perl5.005_05-MAINT20070902-mhx/ext/IPC/SysV/SysV.xs 2007-10-03 14:57:38000000000 +0200\n@@ -3,7 +3,7 @@\n #include \"XSUB.h\"\n \n #include \n-#ifdef __linux__\n+#if defined(__linux__) && !defined(__i386__)\n #   include \n #endif\n #if defined(HAS_MSG) || defined(HAS_SEM) || defined(HAS_SHM)\n\n\nWith this, all tests pass on all my Linux systems.\n\nMarcus\n\n\nOn 2007-10-02, at 14:07:36 +0100, Leon Brocard wrote:\n\n> Hi there porters,\n> \n> Perl 5.005 is a great version of Perl and still used by many people.\n> There have been a few distribution updates and tool changes which mean\n> that it no longer compiles cleanly everywhere, so I believe it's time\n> for a second maintenance release of perl5.005, which will lead to\n> perl5.005_05.\n> \n> Please compile and make test this snapshot on as many platforms as possible:\n> \n>   http://perl5005.googlecode.com/files/perl5.005_05-MAINT20070902.tar.gz\n> \n> This is a release candidate. I'm not interested in fixing warnings.\n> \n> I'm hosting it over at Google Code, but will push things back to\n> Perforce when it is done:\n> \n>  http://code.google.com/p/perl5005/\n> \n> Changes from perl5.005_05-MAINT20070701:\n> \n> ____________________________________________________________________________\n> [      ] By: acme                                  on 2007/09/02  08:19:41\n>         Log: Update time.t to blead's as it was occasionally failing\n>      Branch: maint-5.005/perl\n>            ! t/op/time.t\n> ____________________________________________________________________________\n> [      ] By: acme                                  on 2007/09/01  21:07:49\n>         Log: Fix IPC::SysV test under VC++ 6.0 (Thanks to Steve Hay)\n>      Branch: maint-5.005/perl\n>            ! t/lib/ipc_sysv.t\n> ____________________________________________________________________________\n> [      ] By: acme                                  on 2007/09/01  19:31:20\n>         Log: For newer FreeBSDs the return type of malloc() and free()\n>              is being guessed wrong because the 5.005 configure doesn't\n>              check that if the malloc.h exists that it doesn't simply do\n>              \"#error ...\" as it does in a number of more recent OS -\n>              I've copied in the test from the blead Configure and\n>              jiggled a few things around and all is hunk-dory - with\n>              this everything compiles and tests fine on\n>              FreeBSD 6.2-RELEASE-p4 (Thanks to Jonathan Stowe)\n>      Branch: maint-5.005/perl\n>            ! Configure\n> \n> Cheers, Leon\n\n\n-- \n Leela: And nappster says illegal copies never hurt anybody.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004016249771767927,
+          "NOT_SPAM": 0.9995983750228233
+        },
+        "confidence": 0.9948896158831084
+      }
+    },
+    "usage": {
+      "input_tokens": 1225,
+      "output_tokens": 0
+    }
+  }
+}

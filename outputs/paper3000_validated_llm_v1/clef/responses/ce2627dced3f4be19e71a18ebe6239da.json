@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Suggestions to block this spam\n\nOn Tue, 19 Feb 2008 14:21:53 -0800\n\"Bazooka Joe\"  wrote:\n\n> I too am getting dozens of these emails that are going right through\n> SA + pyzor + dcc.  sa-learn doesn't seem to make any difference.  I\n> just installed razor2 today to try to combat real men.\n> \n> Most get through w/ a score of 2 or less.  Many of them seem to\n> trigger spamcop so i bumped that up to 3.5.\n> \n> If you need more examples let me know\n\nIf you can mind the overhead, the ClamAV plugin with Sane Security\ndefinitions are catching this spam. All of mine in the past few days\nhave been directing into a spambox via a rule in my MTA.\n\n>From foo@bar  Sun Feb 24 10:30:30 2008\nX-Spam-Virus: Yes (Email.Spam.Gen2588.Sanesecurity.08021808)\nX-Spam-Flag: YES\nX-Spam-Checker-Version: SpamAssassin 3.2.4 (2008-01-01)\nX-Spam-Level: xxxxxxxxxx\nX-Spam-Status: Reqd:5.0 Hits:10.5 Learn:no\nTests:BAYES_50=0.001,CLAMAV=10, HTML_MESSAGE=0.5\n\n-------\n  _|_\n (_| |",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9668486924306822,
+          "SPAM": 0.033151307569317924
+        },
+        "confidence": 0.9336973848613643
+      }
+    },
+    "usage": {
+      "input_tokens": 522,
+      "output_tokens": 0
+    }
+  }
+}

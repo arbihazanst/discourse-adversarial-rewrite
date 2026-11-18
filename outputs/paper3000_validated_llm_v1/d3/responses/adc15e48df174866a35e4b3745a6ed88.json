@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [PATCH] t/comp/opsubs.t\n\nOn Tue, Nov 13, 2007 at 08:44:40PM -0500, Jarkko Hietaniemi wrote:\n> Gerard Goossen wrote:\n> > On Mon, Nov 12, 2007 at 04:13:58PM -0500, Jarkko Hietaniemi wrote:\n> >> With miniperl the test failed:\n> >>\n> >> ./miniperl -T -Ilib t/comp/opsubs.t.dist\n> >>\n> > [...]\n> >>  \n> >> +BEGIN {\n> >> +    chdir 't' if -d 't';\n> >> +    @INC = '../lib';\n> >> +}\n> > \n> > Isn't TestInit there to replace that? And shouldn't you use -MTestInit\n> > on your command line?\n> \n> TestInit is currently used by, let me see, zero t/*/*.t tests.\n> It is used by t/TEST.  Using it in the above command line makes\n> no difference since the issue was that the test failed with make\n> minitest.  And I think any test should behave identically regardless\n> of whether it is run manually with the minimum of options or via t/TEST\n> or via t/harness (unless, of course, the test tests exactly how it has\n> been run...)\n\nThat t/TEST uses makes it for me the standard to use. But just before a release\nmight not the ideal time to start introduction using 'use TestInit'.\nSo just for my information, for what I do with kurila or for 5.11: Should we\nuse TestInit, wouldn't using TestInit also make it easy to run the test on an already\ninstalled perl.\n\n> \n> >> +\n> >>  use warnings;\n> >>  use strict;\n> >>  $|++;\n> >>  \n> >> +require \"./test.pl\";\n> > \n> > I don't think it is a problem here, but I prefer this 'require' in a BEGIN \n> > block ('ok' and 'is' are often assumed prototyped).\n> > \n> >> +\n> >> +plan(tests => 36);\n> >> +\n> >> +use vars qw($TODO);\n> > \n> > please don't use vars, especially not in such a basic test like t/comp/opsubs.t\n> \n> I can instead do voodoo like\n> \n> $TODO = $TODO;\n>\n> but I need some way to make use strict happy since the $TODO is used\n> later in the file.\n\nOr just C\n\n> I don't know how use vars is any worse than use\n> strict or *shudder* use warnings.\n\nI agree, and they also should not be used.\n\n-- \nGerard Goossen\nTTY Internet Solutions",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00036615051870024403,
+          "NOT_SPAM": 0.9996338494812999
+        },
+        "confidence": 0.9952921441225249
+      }
+    },
+    "usage": {
+      "input_tokens": 781,
+      "output_tokens": 0
+    }
+  }
+}

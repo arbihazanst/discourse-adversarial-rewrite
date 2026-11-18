@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Penis Enlargment Reviews\n\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\n\"Ever since I started on your herbal supplement, Sharon says sex is so much more pleasurable for her, and she comes much more easily\". David, Florida, USA \n\nhttp://pillmust.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9969701563307604,
+          "NOT_SPAM": 0.0030298436692395556
+        },
+        "confidence": 0.9702861771344223
+      }
+    },
+    "usage": {
+      "input_tokens": 227,
+      "output_tokens": 0
+    }
+  }
+}

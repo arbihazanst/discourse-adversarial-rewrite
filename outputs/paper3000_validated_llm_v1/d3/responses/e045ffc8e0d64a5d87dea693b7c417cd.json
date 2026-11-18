@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: policy server causing CLOSE_WAIT\n\nOn Mon, Feb 18, 2008 at 05:02:50PM -0600, Dan Lists wrote:\n\n> I wrote a very simple policy server using Net::Server.  It works correctly,\n> except that there are always CLOSE_WAITs sticking around.  I did a tcpdump\n> of the loopback device, and the policy daemon is closing its side of the\n> connection, but postfix is taking 2 seconds (or more) to close its end.\n> Perhaps not coincidentally, 2 seconds (or more) is how long it takes postfix\n> to hand the message off to the content filter (amavis).\n> \n> From my main.cf:\n> \n> content_filter=smtp-amavis:[127.0.0.1]:10024\n> \n> smtpd_end_of_data_restrictions =\n>    check_policy_service inet:127.0.0.1:9999\n> \n> So, is postfix leaving the connection to the policy daemon open until it can\n> hand the message off to amavis, or is something else happening?\n> \n> If so, can I change that behavior?\n> \n> Any other thoughts as to why I have CLOSE_WAITS sitting around for many\n> seconds?\n\nThe policy service is not expected to disconnect unilaterally. Rather it\nshould process multiple requests from the same smtpd process until the\nSMTP server disconnects.\n\n-- \n\tViktor.\n\nDisclaimer: off-list followups get on-list replies or get ignored.\nPlease do not ignore the \"Reply-To\" header.\n\nTo unsubscribe from the postfix-users list, visit\nhttp://www.postfix.org/lists.html or click the link below:\n\n\nIf my response solves your problem, the best way to thank me is to not\nsend an \"it worked, thanks\" follow-up. If you must respond, please put\n\"It worked, thanks\" in the \"Subject\" so I can delete these quickly.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0003663305035888876,
+          "NOT_SPAM": 0.999633669496411
+        },
+        "confidence": 0.9952900897043538
+      }
+    },
+    "usage": {
+      "input_tokens": 569,
+      "output_tokens": 0
+    }
+  }
+}

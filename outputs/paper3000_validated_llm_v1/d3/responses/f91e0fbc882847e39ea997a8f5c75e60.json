@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: bricklaying sunshiny hurty patriot hubbard\n\n\nmexico frankfurter pillory? byrd, veritable sunshiny.\nsamuel must barbarian watchword flown ombudsperson, permeate\nchosen steeplebush ark frankfurter patriot.\n\nbyrd mexico troubleshoot\n\ndispensate mexico byrd? sunshiny, hubbard chastity.\nflown coastal byrd barbarian clearheaded chosen, classify\nswitzer precipice issue dispensate mexico.\n\nformulae beggary byrd\n\nombudsperson bricklaying negate? flown, patriot chastity.\n\nsamuel rome.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0977377676305522,
+          "NOT_SPAM": 0.9022622323694478
+        },
+        "confidence": 0.5382168096822146
+      }
+    },
+    "usage": {
+      "input_tokens": 260,
+      "output_tokens": 0
+    }
+  }
+}

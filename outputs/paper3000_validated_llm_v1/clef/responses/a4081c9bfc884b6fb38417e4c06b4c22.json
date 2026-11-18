@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CAGI'07 Call for Participation\n\n\nCall for participation\n----------------------\n\nICML-2007 Workshop on\nChallenges and Applications of Grammar Induction \n\nIn conjunction with the International Conference on Machine Learning, \nOregon State University, June 20 - June 24, 2007 \n\nSponsored by the PASCAL Network \n\n\nInvitation:\n\nThe organizing committee of the Workshop on Challenges and Applications \nof Grammar Induction, a workshop held in conjunction with the \nInternational Conference on Machine Learning, would like to extend an \ninvitation to you. We are looking forward to quality presentations on \na variety of topics, as shown in the program below. We also have an \ninvited presentation, sponsored by the Pascal Network. The day is \nconcluded by a panel discussion. \n\nParticipation in the workshop is free! \n\nWorkshop Format:\n\nThe workshop will include presentations of peer-reviewed papers. Each\nsuch paper is assigned 45 minutes, including 10 minutes for discussion.\nThere will be an invited talk after lunch. The day will be concluded\nwith an open panel for discussing the key lessons learned and pointing\nat relevant research perspectives.\n\nInvited Talk:\n\n\"Grammatical Inference with String Kernels\"\nAlexander Clark, Royal Holloway University of London\nSponsored by the Pascal Network.\n\nProgram: \n\nThe workshop takes place on June 24th, 2007.\n\n\n\n8:00 Breakfast\n9.00 Inference of Node and Edge Replacement Graph Grammars - J. Kukluk,\n     L. Holder and D. Cook (UTA, WSU) \n9.45 Structure Induction by Lossless Graph Compression - L.Peshkin\n     (Harvard) \n10.30 Coffee Break\n11.00 Morphology Learning Using Tree of Aligned Suffix Rules - K.\n      Shalonova and P. Flach (U. of Bristol) \n11.45 Unsupervised Grammar Induction and Matroids Hitting Sets - N.\n      Harvey, D. Karger, V. Mirrokni and L. Peshkin (MIT, Harvard) \n12.30 Lunch\n14.00 Invited Talk: Grammatical Inference with String Kernels -\n      Alexander Clark, Royal Holloway University of London\n15.00 Towards Schema-Guided XML Query Induction - J. Champavère, R.\n      Gilleron, A. Lemay and J. Niehren (INRIA Futurs) \n15.45 Coffee break\n16.15 Automata Learning for Numerical Entities Extraction from OCR\n      output - C. Kermovant and A. Rafrafi (A2iA) \n17.00 Short Paper: Towards 1-click Tool Generation with PADS - D. Burke,\n      P. White, K. Fisher, D. Walker and K. Zhu (Galois Conn, AT&T,\n      Princeton) \n17.20 Final Discussion\n\n\nOrganizing Committee:\n\nIstvan Jonyer, Oklahoma State University, USA \nPierre Dupont, Université catholique de Louvain, Belgium\nTim Oates, University of Maryland Baltimore County, USA\nMarc Sebban, Université de Saint-Etienne, France\n\nProgram Committee:\n\nPierre Dupont (PC chair), Université catholique de Louvain, Belgium \nPieter Adriaans, Universiteit van Amsterdam, The Netherlands\nIstvan Jonyer, Oklahoma State University, USA\nLaurent Miclet, Université de Rennes, France\nTim Oates, University of Maryland Baltimore County, USA\nRajesh Parekh, Yahoo!, Inc., USA\nYasubumi Sakakibara, Keio University, Japan\nMarc Sebban, Université de Saint-Etienne, France \nMenno van Zannen, Macquarie University, Australia \nEnrique Vidal, Universidad Politécnica de Valencia, Spain \n\n\nSponsored by the PASCAL Network\n\n---------------------------- Ever since I was a young boy,\n- Menno van Zaanen         - I've played the silver ball.\n- hxeqg@ics.mq.edu.au      - From Soho down to Brighton\n- www.ics.mq.edu.au/~menno - I must have played them all.\n----------------------------              -Tommy (The Who)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9438802589611379,
+          "SPAM": 0.05611974103886209
+        },
+        "confidence": 0.8877605179222758
+      }
+    },
+    "usage": {
+      "input_tokens": 1091,
+      "output_tokens": 0
+    }
+  }
+}

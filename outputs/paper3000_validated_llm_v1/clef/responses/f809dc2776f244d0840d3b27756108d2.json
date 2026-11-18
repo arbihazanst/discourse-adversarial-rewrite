@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: failed lib/CPANPLUS/Dist/Build/t/01_CPANPLUS-Dist-Build-Constants.t\n\nThe following warnings/errors occur with DEVEL 32221 on Solaris:\n\n\n. ... ...\nlib/CPANPLUS/Dist/Build/t/01_CPANPLUS-Dist-Build-Constants....ok\nlib/CPANPLUS/Dist/Build/t/02_CPANPLUS-Dist-Build..............\n[ERROR] Fetching of 'ftp://ftp.cpan.org/pub/CPAN/authors/01mailrc.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'http://www.cpan.org/authors/01mailrc.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://ftp.nl.uu.net/pub/CPAN/authors/01mailrc.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://cpan.valueclick.com/pub/CPAN/authors/01mailrc.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/01mailrc.txt.gz' failed: Command failed:\n[ERROR] Fetch failed: host list exhausted -- are you connected today?\n[ERROR] Couldn't fetch '01mailrc.txt.gz'\n[ERROR] Fetching of 'ftp://ftp.cpan.org/pub/CPAN/modules/03modlist.data.gz' failed: Command failed:\n[ERROR] Fetching of 'http://www.cpan.org/modules/03modlist.data.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://ftp.nl.uu.net/pub/CPAN/modules/03modlist.data.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://cpan.valueclick.com/pub/CPAN/modules/03modlist.data.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/03modlist.data.gz' failed: Command failed:\n[ERROR] Fetch failed: host list exhausted -- are you connected today?\n[ERROR] Couldn't fetch '03modlist.data.gz'\n[ERROR] Fetching of 'ftp://ftp.cpan.org/pub/CPAN/modules/02packages.details.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'http://www.cpan.org/modules/02packages.details.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://ftp.nl.uu.net/pub/CPAN/modules/02packages.details.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://cpan.valueclick.com/pub/CPAN/modules/02packages.details.txt.gz' failed: Command failed:\n[ERROR] Fetching of 'ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/02packages.details.txt.gz' failed: Command failed:\n[ERROR] Fetch failed: host list exhausted -- are you connected today?\n[ERROR] Couldn't fetch '02packages.details.txt.gz'\n\nKey 'archive' (dummy-cpanplus/01mailrc.txt.gz) is of invalid type for 'Archive::Extract::new' provided by CPANPLUS::Internals::Source::__create_author_tree at /var/tmp/peter/perl-current/t/../lib/CPANPLUS/Internals/Source.pm line 659\nKey 'archive' (dummy-cpanplus/03modlist.data.gz) is of invalid type for 'Archive::Extract::new' provided by CPANPLUS::Internals::Source::__create_dslip_tree at /var/tmp/peter/perl-current/t/../lib/CPANPLUS/Internals/Source.pm line 881\nKey 'archive' (dummy-cpanplus/02packages.details.txt.gz) is of invalid type for 'Archive::Extract::new' provided by CPANPLUS::Internals::Source::_create_mod_tree at /var/tmp/peter/perl-current/t/../lib/CPANPLUS/Internals/Source.pm line 745\nCan't use an undefined value as a HASH reference at /var/tmp/peter/perl-current/t/../lib/CPANPLUS/Internals/Search.pm line 146.\n# Looks like your test died just after 2.\nFAILED--non-zero wait status: 65280\nlib/CPANPLUS/t/00_CPANPLUS-Inc................................ok\n. ... ...\n\n\nto answer the question of the test: I am \"not connected today\" and\nprobably never will be since all this happens behind a company firewall.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9702257764237414,
+          "SPAM": 0.029774223576258595
+        },
+        "confidence": 0.9404515528474828
+      }
+    },
+    "usage": {
+      "input_tokens": 1163,
+      "output_tokens": 0
+    }
+  }
+}

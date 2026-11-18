@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] [Python-Dev] 2.6 and 3.0 tasks\n\nOn Sun, Mar 16, 2008 at 11:26 AM, Benjamin Peterson\n wrote:\n> On Sun, Mar 16, 2008 at 10:23 AM, Guido van Rossum  wrote:\n> > > PyString -> PyBytes ...\n> >\n> > -1. This will make merging code from 2.6 harder, and causes more work\n> > for porting C extensions.\n\n> There was a thread about this a few weeks ago:\n> http://mail.python.org/pipermail/python-dev/2008-March/077339.html\n>  We can still do the renaming, but alias PyString to PyBytes.\n\nThat's a rather long thread. Was any conclusion reached? I'm not sure\nhow introducing a set of aliases will help merging 2.6 code to 3.0.\nCan you or Christian describe the proposed approach in more detail?\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9426286425492,
+          "SPAM": 0.057371357450800006
+        },
+        "confidence": 0.8852572850984
+      }
+    },
+    "usage": {
+      "input_tokens": 491,
+      "output_tokens": 0
+    }
+  }
+}

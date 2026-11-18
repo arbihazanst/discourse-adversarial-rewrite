@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] OpenSUSE and disk boot order\n\nOn Tue, 2008-03-04 at 15:42 +0100, Carlos E. R. wrote:\n> -----BEGIN PGP SIGNED MESSAGE-----\n> Hash: SHA1\n> \n> \n> \n> The Tuesday 2008-03-04 at 15:23 +0100, Roger Oberholtzer wrote:\n> \n> > I remember on previous openSUSE installs (e.g., 10.0), one could select\n> > the disk boot order in the BIOS. I do not mean if it is in a partition\n> > or the MBR. I mean which disk. All disks are present in the install so\n> > all info is there to do this, as it did in 10.0. For the life of me, I\n> > do not see this in 10.3. I am guessing it is moved or traveling\n> > incognito. Anyone know where this is now located?\n> \n> AFAIK “the disk boot order in the BIOS” is selected in the BIOS, \n> obviously.\n> \n> Or are you asking about something different? :-?\n\nYes. The BIOS is involved, up to a point. But if there are two disks in\nthe system during install, and one later gets removed, something\nimportant may may go missing. In 10.0, you could select which disk was\ngoing to be the boot disk, and then the install made sure all things\nboot related were set up for this. In my case, there is a removable disk\nthat shows up as /dev/sda during install (no matter where it is in the\nBIOS boot order), and the disk I want to install on is /dev/sdb. In 10.0\nI could, in a menu available during install, tell the install\nthat /dev/sdb is the boot disk. Removing /dev/sda has no effect. The\nboot always works. I am looking for this functionality in 10.3 that\nworked great for me in 10.0. As I wrote, perhaps it is now done via\ndifferent information. I am trying to find out what that is.\n\n\n-- \nRoger Oberholtzer\n\nOPQ Systems / Ramböll RST\n\nRamböll Sverige AB\nKapellgränd 7\nP.O. Box 4205\nSE-102 65 Stockholm, Sweden\n\nOffice: Int +46 8-615 60 20\nMobile: Int +46 70-815 1696",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00043686190309724773,
+          "NOT_SPAM": 0.9995631380969027
+        },
+        "confidence": 0.9944942665923655
+      }
+    },
+    "usage": {
+      "input_tokens": 714,
+      "output_tokens": 0
+    }
+  }
+}

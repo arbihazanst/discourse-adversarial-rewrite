@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [perl #47548] OK: perl 5.10.0 +RC1 on amd64-freebsd 6.2-release  \n\n# New Ticket Created by  djzyiw@cpan.org \n# Please include the string:  [perl #47548]\n# in the subject line of all future correspondence about this issue. \n# \n\n\nThis is a success report for perl from djzyiw@cpan.org,\ngenerated with the help of perlbug 1.36 running under perl 5.10.0.\n\nPerl reported to build OK on this system.\n---\nFlags:\n    category=install\n    severity=none\n---\nSite configuration information for perl 5.10.0:\n\nConfigured by eserte at Sat Nov 17 18:01:57 CET 2007.\n\nSummary of my perl5 (revision 5 version 10 subversion 0 patch 32367) configuration:\n  Platform:\n    osname=freebsd, osvers=6.2-release, archname=amd64-freebsd\n    uname='freebsd biokovo-amd64.herceg.de 6.2-release freebsd 6.2-release #0: fri jan 12 08:32:24 utc 2007 vnga@portnoy.cse.buffalo.edu:usrobjusrsrcsysgeneric amd64 '\n    config_args='-Dprefix=/usr/perl5.10.0 -D cc=ccache cc -Dgccansipedantic -de'\n    hint=recommended, useposix=true, d_sigaction=define\n    useithreads=undef, usemultiplicity=undef\n    useperlio=define, d_sfio=undef, uselargefiles=define, usesocks=undef\n    use64bitint=define, use64bitall=define, uselongdouble=undef\n    usemymalloc=n, bincompat5005=undef\n  Compiler:\n    cc='ccache cc', ccflags ='-DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -I/usr/local/include',\n    optimize='-O2 -pipe',\n    cppflags='-DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -I/usr/local/include'\n    ccversion='', gccversion='3.4.6 [FreeBSD] 20060305', gccosandvers=''\n    intsize=4, longsize=8, ptrsize=8, doublesize=8, byteorder=12345678\n    d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=16\n    ivtype='long', ivsize=8, nvtype='double', nvsize=8, Off_t='off_t', lseeksize=8\n    alignbytes=8, prototype=define\n  Linker and Libraries:\n    ld='ccache cc', ldflags ='-Wl,-E  -L/usr/local/lib'\n    libpth=/usr/lib /usr/local/lib\n    libs=-lgdbm -lm -lcrypt -lutil -lc\n    perllibs=-lm -lcrypt -lutil -lc\n    libc=, so=so, useshrplib=false, libperl=libperl.a\n    gnulibc_version=''\n  Dynamic Linking:\n    dlsrc=dl_dlopen.xs, dlext=so, d_dlsymun=undef, ccdlflags=' '\n    cccdlflags='-DPIC -fPIC', lddlflags='-shared  -L/usr/local/lib'\n\nLocally applied patches:\n    RC1\n\n---\n@INC for perl 5.10.0:\n    /usr/perl5.10.0/lib/5.10.0/amd64-freebsd\n    /usr/perl5.10.0/lib/5.10.0\n    /usr/perl5.10.0/lib/site_perl/5.10.0/amd64-freebsd\n    /usr/perl5.10.0/lib/site_perl/5.10.0\n    .\n\n---\nEnvironment for perl 5.10.0:\n    HOME=/home/e/eserte\n    LANG (unset)\n    LANGUAGE (unset)\n    LC_ALL=de_DE.ISO8859-1\n    LC_CTYPE=de_DE.ISO8859-1\n    LD_LIBRARY_PATH (unset)\n    LOGDIR (unset)\n    PATH=/usr/X11R6/bin:/usr/X11/bin:/usr/local/bin:/usr/bin:/bin:/usr/gnu/bin:/usr/TeX/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/pilot/bin:/home/e/eserte/bin/FreeBSD:/home/e/eserte/bin/sh:/home/e/eserte/bin:/usr/X386/bin:/usr/games:/home/e/eserte/devel\n    PERL_BADLANG (unset)\n    PERL_HTML_DISPLAY_CLASS=HTML::Display::Mozilla\n    SHELL=/bin/tcsh",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9410548571885579,
+          "SPAM": 0.05894514281144215
+        },
+        "confidence": 0.8821097143771157
+      }
+    },
+    "usage": {
+      "input_tokens": 1311,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [SM-USERS] sendmail verbose output\n\n\n\n\n----------------------------------------\n> Date: Tue, 19 Feb 2008 17:04:41 -0800\n> From: evhq@squirrelmail.org\n> To: bspsggvwcfmo-bvbmb@lists.sourceforge.net\n> Subject: Re: [SM-USERS] sendmail verbose output\n> \n> On Feb 19, 2008 3:55 PM, Mohit Tewari  wrote:\n> >\n> >\n> > Hi,\n> > My set up is\n> > Debian - Etch / php5.2.08/apache2/squirrelmail1.5.1/plugins installed - calendar, squirrelspell, 'html_mail, spam_buttons.\n> > For composing and sending mails through squirrelmail we use exim4 with additional -v argument for verbose output.\n> > Some of our users want Delivery  Receipt, which is not working in squirrelmail 1.5.1\n> \n> Please do not use 1.5.1.  It possibly contains a number of gaping\n> security exploits and is very old code.  If you want to use\n> development code, please get a 1.5.2 snapshot.  Delivery receipts are\n> handled by the MTA, not SquirrelMail, however (SM only sends the\n> request), so you might be barking up the wrong tree unless you can\n> clarify yourself.\n> \n> >, so I am thinking of  redirecting the verbose output  from exim to a\n> file (that with contain all the helo ehelo etc) and  provide that as\n> delivery receipt.\n> > So appreciate if any one can point to the right place to look for redirecting the verbose output from exim while sending mails.\n> \n> Dunno, maybe someone else can answer this part.\n> \n> \n> This SF.net email is sponsored by: Microsoft\n> Defy all challenges. Microsoft(R) Visual Studio 2008.\n> \n> \n> squirrelmail-users mailing list\n> Posting guidelines: http://squirrelmail.org/postingguidelines\n> List address: bspsggvwcfmo-bvbmb@lists.sourceforge.net\n> List archives: http://news.gmane.org/gmane.mail.squirrelmail.user\n> List info (subscribe/unsubscribe/change options): https://lists.sourceforge.net/lists/listinfo/squirrelmail-users\n\n\nThanks for the prompt reply.\nYes we will be moving to 1.5.2 version of squirrelmail but not right away.\n\nI know delivery receipts are handled by the MTA, however I just want to redirect the output produced by exim when squirrelmail calls exim for delivering the messages.\nSquirrelmail opens a stream(popen) and writes the headers, message etc. to that stream, I want to redirect the  output of that stream to a file, which possibly should contain the handshake and other info by exim.\nHope I am a little clear about want I want to achieve.\n\nThanks\n_________________________________________________________________\nHelping your favorite cause is as easy as instant messaging. You IM, we give.\nhttp://im.live.com/Messenger/IM/Home/?source=text_hotmail_join\n\n\n\n\n\nList info (subscribe/unsubscribe/change options): https://lists.sourceforgenet/lists/listinfo/squirrelmail-users",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.01776360940701963,
+          "NOT_SPAM": 0.9822363905929804
+        },
+        "confidence": 0.8713073361183625
+      }
+    },
+    "usage": {
+      "input_tokens": 853,
+      "output_tokens": 0
+    }
+  }
+}

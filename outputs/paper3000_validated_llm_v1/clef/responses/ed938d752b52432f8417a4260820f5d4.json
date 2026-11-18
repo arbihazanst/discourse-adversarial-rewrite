@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-Dev] shal we redefine \"module\" and \"package\"?\n\nFolks:\n\nHere's an experiment you can perform.  Round up a Python programmer  \nand ask him the following three questions:\n\nQ1.  You type \"import foo\" and it works.  What kind of thing is foo?\n\nQ2.  You go to the Python package index and download something named  \n\"bar-1.0.0.tar.gz\".  What kind of thing is bar?\n\nQ3.  What is a \"distribution\"?\n\nI'm willing to bet that you will get the following answers:\n\nA1.  foo is a module.\n\nA2.  bar is a package.\n\nA3.  A distribution is a version of Linux that comes with a lot of  \nFree Software.\n\n\nUnfortunately these answers aren't quite right.  A \"package\" is  \nactually a directory containing an __init__.py file, and a  \ndistribution is actually what you think of when you say \"package\" --  \na reusable package of Python code that you can, for example, get from  \nthe Python package index.\n\nEducational efforts such as the Python tutorial and the distutils  \ndocs have not succeeded in training Python programmers to understand  \nthe terminology for these things as used by the Python implementors,  \nso perhaps instead the implementors should start using the  \nterminology understood by the programmers:\n\n1.  A \"module\" shall henceforth be the name for either a foo.py file  \n(a single-file module), or a directory with an __init__.py in it (a  \ndirectory module).\n\n2.  A \"package\" shall henceforth be the name of the thing that is  \ncurrently called a \"distribution\".\n\n\nRegards,\n\nZooko\n\nwho doesn't mind stirring up trouble on occasion...\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9487493866335828,
+          "SPAM": 0.05125061336641715
+        },
+        "confidence": 0.8974987732671655
+      }
+    },
+    "usage": {
+      "input_tokens": 595,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: News Summary\n\n\n\n\nCBSNews.com\n\n\n\n\n  » Unsubscribe / Delivery Options  » Get Mobile Delivery   \n\n\nAugust 6, 2008 | \n               \tAfternoon Edition\n\n\n\n\n\n\n\n\nTop Stories\n\n\n\nTribunal Convicts Bin Laden's DriverPentagon-Selected Jury Returns Split Verdict In First Guantanamo War Crimes Trial\n\n\n\n\n Texas Executes Mexican-Born Killer Gun-Control Activist Eyed As NRA Spy CBS Poll: Do VP Picks Matter?CBS News Programs\nThe Early Show: RecipesA \"Simply Delicioso\" Summer FiestaIngrid Hoffman Cooks Up Fabulous Latin Flavors Without The Fuss SciTech: Protecting Your Identity: Be Proactive   Early Show: Visiting Nurses Helping Infants In Crisis CBS Evening News: Olympic Swimmer Dara Torres' New ChallengeU.S.  » More U.S.\nAnthrax Investigation Documents Released Judge Unseals Hundreds Of Pages Detailing FBI Probe Of Bruce Ivins  911 Error Leads To Ga. Woman's Death Brewer Can Use \"Try Legal Weed\" Bottle Cap Man Pleads Not Guilty In Frozen Body Death\nWorld  » More World\nIraqi Pols Break Without Election DealParliament Adjourns With Adoption Of Budget, But No Agreement On Provincial Elections Mauritania's Leaders Detained In Coup Bush Pushes N. Korea On Nuke Verification Let The Protests Begin: Groups Bash China\nPolitics  » More Politics\nUnlikely Donors Give Big Money To McCainWashington Post: Bundler Harry Sargeant III Has Collected Over $100K For McCain, Giuliani And Clinton Paris Hilton Throws Tiara Into '08 Ring McCain Farm Stances Could Hurt In Midwest Anti-Obama Books Are Best-Sellers\nHealth  » More Health\nU.S. Ends Ban On HIV-Positive TravelersAIDS Experts Urge Countries To Follow U.S. Lead By Erasing HIV Travel Restrictions Old Wives' Tales: Fact Or Fiction? Panel Pans Prostate Checks For Men Over 75 Hormone Therapy For Schizophrenia?\nSciTech  » More SciTech\n11 Indicted In Largest ID Theft Case EverDOJ Charges International Hackers Who Allegedly Stole 40 Million Credit Card Numbers Thousands Of Rare Gorillas Found In Congo Five Pit Bulls Cloned In South Korea Protecting Yourself Against ID Theft\nBusiness  » More Business\nWall Street Surges After Fed DecisionDow Soars 330 Points After Central Bank Leaves Interest Rates Unchanged Brewer Can Use \"Try Legal Weed\" Bottle Cap Morgan Stanley To Help With Mortgage Mess Fed Leaves Key Interest Rate Unchanged\nStrange  » More Strange\n111-year-old Reptile Finally Becoming A Father111-year-old New Zealand Reptile Finally Becoming A Father After Cancer Surgery Ohio Preacher, 71, Convicted In Road Rage Case Goats Slip Past Security Fence Near NYC Bridge Stubborn Sea Lion Refuses To Leave Sailboat\nEntertainment  » More Entertainment\nParis Hilton Throws Tiara Into '08 RingIn Online Video Spoof, Society Gal Provides Energy Plan, Says She Is \"Like, Totally Ready To Lead\" Buzz Briefs: Kelsey Grammer, The Beatles  Tori Spelling: \"I Thrive In Chaos\" Katie and Suri's New York Playdate\nOpinion  » More Opinion\nAleksandr Isayevich Solzhenitsyn, R.I.P.National Review: The Great Writer Was The Voice And Conscience Of The Russian People Open Letter To Obama The Rewards Of Wisdom Dem Platform Should Co!\n mmit To Real Reform\n\n\n\n\n\n\n\nTop Videos  » More Videos\n\n\nDeep Rockefeller Mystery Probe (3:32)\nAims For Flawless Torch Relay (1:54)\nAnthrax Case Made Public (1:25)\n\n\nBig Wall Street Rally (1:36)\nMoneyWatch (1:19)\nThe Top Self-Monitoring Kits (2:11)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTop Photos  » More Photos\n\n\nPhotos Of The Day\nCelebrity Circuit\nFar East Swing\n\n\nDaughter Abducted\nEdouard Eases Ashore\nTeen Choice Awards\n\n\n\n\n\n\n\n\n\nLatest Blog Posts  » More Blogs\n\n\n\nHorseraceNew Obama Ad: \"Original Maverick,\" Huh?Spot Suggests McCain Is Similar To Bush Despite His \"Maverick\" Claims Read More\n\n\n\nCouric & Co.Katie Couric's Notebook: Endangered PrimatesNew Reports Remind Us How Much Work We Have To Do To Protect Planet Earth Read More\n\n\n\nFrom The RoadObama Continues Week-Long Energy FocusCampaigning in Indiana Read More\n\n\n\n\n\n\n\n\n\nMost Viewed\n\n\n\nStories1. Texas Executes Mexican-Born Killer2. Jon Voight Blasts Obama3. Goats Slip Past Security Fence Near NYC Bridge4. Beheading Suspect Pleads \"Please Kill Me\"5. Court: Brazil On The Brink Of Civil War\n\n\n\nVideos1. Price Of Crude Trends Down (2:40)2. Tornadoes Strike Chicago Area (1:20)3. Eye To Eye: An Olympic Battle (2:28)4. Wedding In The Skies (1:41)5. Paris For President? Hot! (2:20)\n\n\n\nPhotos1. Celebrity Circuit2. Photos Of The Day3. Daughter Abducted4. Laura Dern5. Brangelina's Babies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n               \t\n               \tContact: Email Administrator, CBSNews.com, 524 W. 57th St., Room 514/1, New York, NY, 10019\n               \t©MMVIII, CBS Interactive Inc. All Rights Reserved.\n               \tTo unsubscribe or change your subscription options, click here.»Help\n               \t »Advertise\n               \t »Terms of Service\n               \t »Privacy Policy",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.2016215696830466,
+          "NOT_SPAM": 0.7983784303169534
+        },
+        "confidence": 0.27484059666488136
+      }
+    },
+    "usage": {
+      "input_tokens": 1412,
+      "output_tokens": 0
+    }
+  }
+}

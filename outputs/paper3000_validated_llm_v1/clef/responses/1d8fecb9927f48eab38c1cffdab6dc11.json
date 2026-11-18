@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Relaying Denied\n\nThanks for the reply. I am not sure what information you need. Just  \nask if you need something else. However, here are the relevant lines  \nfrom main.cf:\n\nmyhostname = xserveone.aimaudit.biz\nmydomain = aimaudit.biz\nmydestination = $mydomain,$myhostname\n\nInitially the last two lines were not included (I thought all  \ndefaults should work) so I tried adding them but neither way works.\n\nOn Feb 19, 2008, at 1:43 PM, Noel Jones wrote:\n\n> Dennis Putnam wrote:\n>> I'm not even sure how to ask this question but hopefully someone  \n>> will understand what I am talking about.\n>> I have 2 servers on two different domains (a .com and a .biz).  \n>> Both are set up almost identically and the .biz server is a backup  \n>> for .com. The .biz server is really at a remote disaster recovery  \n>> site and is an open directory slave. One of my disaster recovery  \n>> tests is to make sure we can get mail via that server but at the  \n>> same time I can't really change the MX records just for the test.\n>> What I am trying to do is send mail to the .biz server by using  \n>> the .biz address instead of the .com. Seems simple enough to me  \n>> (which is probably why I'm having problems). However when the  \n>> email is received by the .biz server it seems to be trying to  \n>> relay it somewhere (the .com domain?) so I get rely denied. I am  \n>> guessing this is because of the way the MX records are set up  \n>> although for the .biz domain there is no alternate MX records. So  \n>> my question is, how can I get this server to accept and deliver  \n>> messages to the local mailboxes, at least for testing without  \n>> changing my DNS?\n>> Thanks.\n>\n> You don't give us much information to go on here...\n>\n> Postfix by default allows relay access when either:\n>\n> The recipient domain is listed in mydestination, relay_domains,  \n> virtual_alias_domains, or virtual_mailbox_domains.\n>\n>  - or -\n>\n> the IP of the connecting client is listed in the mynetworks parameter.\n>\n> If you get a \"relay denied\" message, then none of the above are  \n> true or you've changed the defaults.\n>\n> http://www.postfix.org/BASIC_CONFIGURATION_README.html\n> http://www.postfix.org/DEBUG_README.html\n> http://www.postfix.org/DEBUG_README.html#mail\n>\n> -- \n> Noel Jones\n>\n\n\n\nDennis Putnam\nSr. IT Systems Administrator\nAIM Systems, Inc.\n11675 Rainwater Dr., Suite 200\nAlpharetta, GA  30004\nPhone: 678-240-4112\nMain Phone: 678-297-0700\nFAX: 678-297-2666 or 770-576-1000\nThe information contained in this e-mail and any attachments is  \nstrictly confidential. If you are not the intended recipient, any  \nuse, dissemination, distribution, or duplication of any part of this  \ne-mail or any attachment is prohibited. If you are not the intended  \nrecipient, please notify the sender by return e-mail and delete all  \ncopies, including the attachments.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9699572176637581,
+          "SPAM": 0.03004278233624191
+        },
+        "confidence": 0.9399144353275162
+      }
+    },
+    "usage": {
+      "input_tokens": 931,
+      "output_tokens": 0
+    }
+  }
+}

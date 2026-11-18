@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [perl #47371] 'DESTROY created new reference...' with blessed overload methods\n\nOn Nov 11, 2007 6:32 PM, via RT Father Chrysostomos\n wrote:\n> # New Ticket Created by  Father Chrysostomos\n> # Please include the string:  [perl #47371]\n> # in the subject line of all future correspondence about this issue.\n> # \n>\n>\n> If I pass a blessed coderef to 'overload', it causes the following\n> error:\n>\n> $ perl -le 'use overload q/+/ => bless sub { 42 };'\n> DESTROY created new reference to dead object 'main' during global\n> destruction.\n\nIn Perl_sv_bless, I read this snippet. I'd then suppose that your\nobject going into the ->import call is failing to have SvAMAGIC_on set\nbecause it is happening too early. The stash won't have\n\n    if (Gv_AMG(stash))\n        SvAMAGIC_on(sv);\n    else\n        (void)SvAMAGIC_off(sv);\n\nI haven't read enough of Perl_GV_AMupdate in gv.c to know what this\nmatters to but the fix for you is pretty obvious. Don't bless into\nyour package until you've done the overload call.\n\nJosh",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9589543062396944,
+          "SPAM": 0.04104569376030567
+        },
+        "confidence": 0.9179086124793887
+      }
+    },
+    "usage": {
+      "input_tokens": 460,
+      "output_tokens": 0
+    }
+  }
+}

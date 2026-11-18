@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Class-Inner (was Re: BBC(Bleadperl Breaks CPAN) Where are we now?)\n\nbwhcppr.mukezr.7qm9whcp@franz.ak.mind.de (Andreas J. Koenig) wrote:\n:After 45 BBC articles and 5.10 waiting around the corner I wanted to\n:get an overview about the open issues. So I made the table below,\n[...]\n:  Unsolved (20):\n:  --------------\n:    PDCAWLEY/Class-Inner-0.1.tar.gz                   http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2007-07/msg00499.html\n\nI suggest the patch below to Class::Inner to complete the DESTROY cleanup\nas I think the module intends.\n\nHugo\n--- Inner.pm.old\t2001-08-12 13:50:47.000000000 +0100\n+++ Inner.pm\t2007-11-04 14:12:07.000000000 +0000\n@@ -2,7 +2,7 @@\n \n use vars qw/$VERSION/;\n \n-$VERSION = 0.1;\n+$VERSION = 0.2;\n \n \n use strict;\n@@ -149,6 +149,7 @@\n sub clean_symbol_table {\n     my $class = shift;\n     no strict 'refs';\n+    @{\"$class\\\\::ISA\"} = ();\t# ensure caches are tidied even on 5.10+\n     foreach my $symbol (keys %{\"$class\\\\::\"}) {\n \tdelete ${\"$class\\\\::\"}{$symbol};\n     }\n--- Changes.old\t2001-08-12 13:54:03.000000000 +0100\n+++ Changes\t2007-11-04 14:10:31.000000000 +0000\n@@ -1,3 +1,9 @@\n+2007-11-04\tPiers Cawley\t\n+\n+\tv0.2 - changes in ISA/method caching for perl-5.10 require that @ISA\n+\tbe explicitly cleared before removal from the symbol table to leave\n+\tthe caches in a clean state. (Hugo van der Sanden )\n+\n 2001-08-12  Piers Cawley  \n \n \t* Initial release. Everthing working as documented, I think.  Now\n--- README.old\t2001-08-12 14:05:02.000000000 +0100\n+++ README\t2007-11-04 14:11:10.000000000 +0000\n@@ -1,16 +1,16 @@\n INSTALLATION\n     Just perform the usual incantation:\n \n-    gunzip Class-Inner-0.1.tar.gz\n-    tar -xvf Class-Inner-0.1.tar \n-    cd Class-Inner-0.1\n+    gunzip Class-Inner-0.2.tar.gz\n+    tar -xvf Class-Inner-0.2.tar \n+    cd Class-Inner-0.2\n     perl Makefile.PL\n     make\n     make test\n     make install\n \n AUTHOR\n-    Copyright (c) 2001 Piers Cawley, .\n+    Copyright (c) 2001, 2007 Piers Cawley, .\n \n     All rights reserved. This program is free software; you can\n     redistribute it and/or modify it under the same terms as",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9531058144070481,
+          "SPAM": 0.04689418559295188
+        },
+        "confidence": 0.9062116288140962
+      }
+    },
+    "usage": {
+      "input_tokens": 1038,
+      "output_tokens": 0
+    }
+  }
+}

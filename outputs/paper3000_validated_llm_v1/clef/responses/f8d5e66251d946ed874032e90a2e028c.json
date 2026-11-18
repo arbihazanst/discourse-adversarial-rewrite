@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Wo kann ich Ci online kau.?\n\nThus the German Imperial couple was enabled to return home with the best of impressionsBoth the monarch He knew, as I did, what blessings the canals *A German philologist who compiled a well-known boot of quotationsWhen the new structure was completed, However, it also met with the approval of the gen tlemen who had been formerly so criticalIn the east, great extensions of railway stations, bridges, and new railway lines were built, some of them while the war was in progressThe King remarked that the agreement, to tell the truth, no longer was in force, and that the best thing to do would be to forget it; that the French, fundamentally, were doing noth ing different in Morocco from what the English had previously done in Egypt; that, therefore, England would place no obstacles in the path of the French, but would let them alone; that the thing to do was to recognize the fait accompli  ' of the occupation of Morocco and make arrange ments, for commercial protection, with FranceHe wanted to alter  MY CO-WORKERS many post offices, or build entirely new ones, espe cially in the big cities, but, in view of the fearful slowness and devotion to red tape of the aforesaid official body, he used to receive no answers at all, or else refusals, when he brought these matters to its attentionOPPOSED CHOICE OF GERMAN Therefore, I was not at all pleased when the choice fell upon Prince William of WiedIn the first half of  came the sending of Sir Ernest Cassel with a verbal note in which Eng land offered to remain neutral in case of an un provoked attack upon Germany, provided Ger many agreed to limit her naval construction pro gram and to drop her new Naval bill, the latter being darkly hinted atAnd ce que femme veut, Dieu le veut (what woman wishes, God wishes)Grey stood for a while in the foreground another  BETHMANN proof that it was politics rather than the number of ships which was to play the leading roleMeinecke was Under Secretary of State in the Finance Ministry and had, therefore, much to do with other Min isters, since finances were an important thing everywhereHe said that when Cassel had got back to Lon don, reported on his reception, and handed over the German reply, the impression made was so favorable that no further doubt was entertained there as to the actory course of the negotia tions and their conclusion in the form of an agree ment; that, thereupon a keen dispute had arisen among the Ministers, especially between Churchill and Grey, as to who should go to Berlin and affix his name to this great historical document, in case the object should be achieved of making Germany cbmpletely give up the further development of her fleet; that Churchill thought himself the right man for the job, since he was at the head of the navyAfter some objection I had to make up my mind to be myself the writer of the answerIn addition, I agreed with Admiral von Tirpitz that he should speak English, as far as possible, and that I, in case of difficult technical expres sions, would interpret Until England made known the name of the negotiator, our time was spent in suppositions, and Ballin informed us of combinations in connection with which a number of names, even that of Grey, came upI esteemed him as a distinguished, knightly man of lofty sentiments, but considered him unfitted for the postThe first consideration, of course, in railway construction had been the improvement and facili tation of industry and commerce, but it had not been able to meet the immeasurably increased demands of these, since the great network of canals, designed to relieve the railways, was not in existence",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.17452191400767447,
+          "SPAM": 0.8254780859923255
+        },
+        "confidence": 0.650956171984651
+      }
+    },
+    "usage": {
+      "input_tokens": 937,
+      "output_tokens": 0
+    }
+  }
+}

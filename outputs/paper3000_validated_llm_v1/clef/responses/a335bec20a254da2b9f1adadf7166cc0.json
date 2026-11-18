@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: kurila 1.3 released\n\nOn 10/13/07, chromatic  wrote:\n> On Friday 12 October 2007 19:10:55 A. Pagaltzis wrote:\n> > * chromatic  [2007-10-13 00:05]:\n>\n> > > On Friday 12 October 2007 13:36:50 A. Pagaltzis wrote:\n>\n> > >> I hate to bring it up, and I'm not particularly fond of\n> > >> dumping on Perl6, but compare how that effort is going with\n> > >> the Python 3000 track record, which took the \"internal\n> > >> refactoring and juggling (and it's OK to break backcompat)\"\n> > >> approach vs. the \"complete retink\" approach of Perl6.\n>\n> > > Clearly the problem is that Perl 6 has no Daddy Googlebucks\n> > > funding 20 - 50% of development time.\n>\n> > Sorry? A single partially-funded developer working for about a\n> > year is capable of delivering more than all of the volunteer work\n> > that has gone into Pugs and its multiple backends over several\n> > years? That's bogus.\n> >\n> > I think it's rather clearly the problem that with Resources and\n> > Quality being fixed in place and Time being a free variable, the\n> > Scope knob is the only one you can turn; and that was obviously\n> > dialed down a lot on the Py3k project to keep the Time variable\n> > from exploding.\n>\n> My point was that Python 3000's Resources knob has settings higher than 1.5,\n> which is sadly where the Perl 6 and Perl 5 knobs have been stuck, combined,\n> for several years now.\n>\n> If I count correctly, the only person actually spending any day-job time\n> working on Perl 5 or 6 with any official blessing from an employer is Jan.\n> Maybe Rafael.\n\nThen you missed the year I worked fulltime on perl. Or am I not\nincluded because my employer was me? Admittedly once I started working\non a new job, writing a book, and moving house my contributions\ndropped to zero, but thats life.\n\nAnd to comment on this thread, im with Aristotle here. There seems to\nbe a tendency in Perl circles to take the position that there are only\ntwo possibilities, a) work on Perl6, a totally new language, or b)\nmaintain Perl 5 with 0 tolerance for backcompat breakage.\n\nI think there is a middle ground. Try to keep as much of Perl5 as\npossible but focus on cleaning up the internals and if a few things of\nPerl5 must be sacrificed to achieve this then so be it. And I include\nthe XS code out there in the \"few things\".\n\nThis isnt a binary scenario people, its not just a choice of Perll5\nversus Perl6, there are other options. And I think Kurila does belong\non list for the time being as it proves that there is another choice.\nHaving said that Im not super keen on Kurila as I dont think its aimed\nat the problems that I think hold Perl5 back. But its mere existence\nproves that there are more options than are conventionally postulated.\nAnd I think that reminder is important to this community. Personally i\nthink that if we can start thinking outside of the box a bit we might\nrealize that there is a perfectly viable future for perl5 that doesn't\ninvolve being slavishly devoted to backwards compatibility and that\nisn't called Perl6.\n\nYves\n\n\n-- \nperl -Mre=debug -e \"/just|another|perl|hacker/\"",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9552381392113874,
+          "SPAM": 0.04476186078861254
+        },
+        "confidence": 0.9104762784227749
+      }
+    },
+    "usage": {
+      "input_tokens": 1005,
+      "output_tokens": 0
+    }
+  }
+}

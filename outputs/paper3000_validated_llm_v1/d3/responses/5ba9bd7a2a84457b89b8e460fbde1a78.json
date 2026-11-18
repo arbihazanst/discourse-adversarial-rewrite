@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] Google age-discrimination suit\n\nOn 10/7/07, Adam L Beberg  wrote:\n> Tom Higgins wrote on 10/6/2007 5:50 PM:\n> > On my end I have noticed blowing past the job descriptions that\n> > subliminally call for  20 hour day geek in a hamster cage  work\n> > environs more so than i was doing 10 years ago when i last looked for\n> > a job.\n> >\n> > The google case will be interesting to watch, manifestations of the\n> > Logan's Run principle in the worksphere and such as.\n>\n> Interesting how? All Tech jobs have worked this way since... well since\n> tech jobs. Why won't I work 80 hour weeks for you and why won't you hire\n> me have the same answer.\n\nfwiw, i have noticed the exact opposite pattern for most of my career\nhere in melbourne, australia. younger programmers are generally taken\nadvantage of while older ones are paid substantially more just for the\nfact that they are older and married and hence assumedly have more\ncommitments and requirement for money.\n\nnot that i agree with google at all, but i have certainly pretty much\nonly seen age discrimination going in the other direction.\n\n\n> For 30+'s not still living in their parents basements, it's all over.\n> You just cannot be naive enough to work enough to keep a tech job.\n> Luckily you're smart enough to now work for yourself.\n>\n> --\n> Adam L. Beberg\n> http://www.mithral.com/~beberg/\n> \n> FoRK mailing list\n> \n>\n\n\n-- \nmike\nhttp://lets.coozi.com.au/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.000597361843916,
+          "NOT_SPAM": 0.9994026381560841
+        },
+        "confidence": 0.9927412344104062
+      }
+    },
+    "usage": {
+      "input_tokens": 522,
+      "output_tokens": 0
+    }
+  }
+}

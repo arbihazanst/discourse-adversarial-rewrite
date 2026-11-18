@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] FreeBSD test suite failure -> curses\n\nJeroen Ruigrok van der Werven wrote:\n> -On [20080309 23:59], \"Martin v. Löwis\" (martin@v.loewis.de) wrote:\n>> So this now *is* a FreeBSD/ncurses expert's question.\n>> I don't think this is supposed to happen; newscr should\n>> become non-NULL when initscr is called, and should remain\n>> that way throughout.\n> \n> Looking at the other FreeBSD build it seems to pass the tests. It's\n> 6.2-RELEASE box. So right now I am getting my VMWare 6.2-R up and running\n> and seeing if I also get the same results. At least that narrows my search\n> to the point of my 6.3-STABLE from the 6.2-RELEASE date.\n\ntest_curses on its own passes on my FreeBSD 6.3 box.  It segfaults when\nrun in the context of a full regression test though.\n\nI've tried libthr instead of libpthread (via libmap.conf), and it\nalso fails only in the full regression test.  The backtrace from the\ncoredump is different from the libpthread case though...\n\nlibthr:\n=======\n#0  0x2849513c in wecho_wchar () from /lib/libncursesw.so.6\n#1  0x28496a89 in wecho_wchar () from /lib/libncursesw.so.6\n#2  0x28497e62 in wecho_wchar () from /lib/libncursesw.so.6\n#3  0x2849b134 in doupdate () from /lib/libncursesw.so.6\n#4  0x287cf247 in PyCurses_doupdate (self=0x0)\n     at /home/andymac/build/python-svn/trunk/Modules/_cursesmodule.c:182\n#5  0x080c602e in PyEval_EvalFrameEx (f=0x93cbc0c, throwflag=0)\n     at Python/ceval.c:3620\n#6  0x080c6269 in PyEval_EvalFrameEx (f=0x93cba0c, throwflag=0)\n     at Python/ceval.c:3722\n#7  0x080c6269 in PyEval_EvalFrameEx (f=0x935b40c, throwflag=0)\n     at Python/ceval.c:3722\n#8  0x080c6eda in PyEval_EvalCodeEx (co=0x9b5bb60, globals=0x284c117c,\n     locals=0x6e, args=0x817002c, argcount=0, kws=0x0, kwcount=0, defs=0x0,\n     defcount=0, closure=0x0) at Python/ceval.c:2908\n#9  0x080c702e in PyEval_EvalCode (co=0x9b5bb60, globals=0x93fb4f4,\n     locals=0x93fb4f4) at Python/ceval.c:495\n#10 0x080d938a in PyImport_ExecCodeModuleEx (\n     name=0xbfbfdc60 \"test.test_curses\", co=0x9b5bb60,\n     pathname=0xbfbfd2e0 \n\"/home/andymac/build/python-svn/trunk/Lib/test/test_curses.pyc\") at \nPython/import.c:680\n#11 0x080d97f3 in load_source_module (name=0xbfbfdc60 \"test.test_curses\",\n     pathname=0xbfbfd2e0 \n\"/home/andymac/build/python-svn/trunk/Lib/test/test_curses.pyc\", \nfp=0x282801d8) at Python/import.c:968\n---Type  to continue, or q  to quit---\n\nlibpthread:\n===========\n#0  0x281a655b in pthread_testcancel () from /lib/libpthread.so.2\n#1  0x2819eeec in pthread_mutexattr_init () from /lib/libpthread.so.2\n#2  0x28166450 in ?? ()\n\n\nThis is with a checkout updated to r61352.\n\nAndrew.\n\n-- \n-------------------------------------------------------------------------\nAndrew I MacIntyre                     \"These thoughts are mine alone...\"\nE-mail: andymac@bullseye.apana.org.au  (pref) | Snail: PO Box 370\n        andymac@pcug.org.au             (alt) |        Belconnen ACT 2616\nWeb:    http://www.andymac.org/               |        Australia\n_______________________________________________\nPython-Dev mailing list\nPython-Dev@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00023629391768761578,
+          "NOT_SPAM": 0.9997637060823125
+        },
+        "confidence": 0.9968124766987297
+      }
+    },
+    "usage": {
+      "input_tokens": 1362,
+      "output_tokens": 0
+    }
+  }
+}

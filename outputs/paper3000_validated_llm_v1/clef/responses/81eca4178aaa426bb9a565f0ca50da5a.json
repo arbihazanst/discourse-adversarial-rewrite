@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: can't get check_recipient_access working\n\nI forgot the mention: in the access column I put \"OK\" \n\nOn Monday 25 February 2008 10:56:30 Chantal Rosmuller wrote:\n> Hi,\n>\n> When I try to send mail to an existing user I get the following error:\n> 451 4.3.5 Server configuration error\n>\n> This is in my main.cf:\n>\n> smtpd_recipient_restrictions = permit_mynetworks,\n> reject_unauth_destination, check_recipient_access\n> mysql:$config_directory/mysql_virtual_user_maps.cf\n>\n> this is mysql_virtual_user_maps.cf\n>\n> user = dbuser\n> password = secret\n> dbname = postfix\n> hosts = maildb\n> table = mailbox\n> select_field = access\n> where_field = username\n>\n> and the mailbox table looks like this:\n>\n>\n> CREATE TABLE IF NOT EXISTS `mailbox` (\n>   `mailbox_id` int(11) NOT NULL,\n>   `username` varchar(255) NOT NULL default '',\n>   `password` varchar(255) NOT NULL default '',\n>   `name` varchar(255) NOT NULL default '',\n>   `maildir` varchar(255) NOT NULL default '',\n>   `quota` int(10) NOT NULL default '0',\n>   `domain` varchar(255) NOT NULL default '',\n>   `created` datetime NOT NULL default '0000-00-00 00:00:00',\n>   `modified` datetime NOT NULL default '0000-00-00 00:00:00',\n>   `active` tinyint(1) NOT NULL default '1',\n>   `access` varchar(255) NOT NULL default 'OK',\n>   PRIMARY KEY  (`mailbox_id`),\n>   KEY `username` (`username`)\n> ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Virtual Mailboxes';\n>\n> When I leave out check_recipient_access everything works fine, but I don't\n> want to accept mail for non existing users\n> Can anyone tell me what I did wrong?\n>\n> Regards Chantal",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.956376986517187,
+          "SPAM": 0.04362301348281291
+        },
+        "confidence": 0.9127539730343741
+      }
+    },
+    "usage": {
+      "input_tokens": 681,
+      "output_tokens": 0
+    }
+  }
+}

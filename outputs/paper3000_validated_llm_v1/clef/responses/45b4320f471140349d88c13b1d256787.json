@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Nvidia compiz \"freeze\"\n\nPeter Bradley wrote:\n> David C. Rankin wrote:\n>> In the short term choosing \"Blank\" screen as your screen saver may\n>> help. I have had this issue as well on an ATI card, so it isn't just\n>> nVidia specific.\n>>\n> \n> Yes, I get it with ATI.  I had to do a hard reboot.  So I've given up on\n> compiz.  I guess what you've never had you'll never miss.\n> \n\n\tAah yes, but, once you _have_ had it, you _will_ miss it.\n\n\tI have found it well worth the time it takes me to resolve the issues \nand get it running. I am one that has never cared too much about which \ndesktop I run before, but the compiz interface really makes managing \nmultiple desktops and many more windows on the same desktop much more \nintuitive. Of course your preferences may be different,\n\n-- \nDavid C. Rankin, J.D., P.E.\nRankin Law Firm, PLLC\n510 Ochiltree Street\nNacogdoches, Texas 75961\nTelephone: (936) 715-9333\nFacsimile: (936) 715-9339\nwww.rankinlawfirm.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9601863193618436,
+          "SPAM": 0.039813680638156344
+        },
+        "confidence": 0.9203726387236872
+      }
+    },
+    "usage": {
+      "input_tokens": 464,
+      "output_tokens": 0
+    }
+  }
+}

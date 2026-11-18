@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-Dev] [Distutils-SIG] PYTHONPATH installation (was Re: PEP\t365 (Adding the pkg_resources module))\n\nAt 10:18 PM 3/19/2008 -0600, zooko wrote:\n>The fact that easy_install creates a site.py that changes the\n>semantics of PYTHONPATH is probably the most widely and deservedly\n>hated example of this kind of thing [2].\n\nYep, this was an unfortunate side effect of eggs growing outside \ntheir original ecological niche.  Without the 'site' hack, it was \nimpossible to install eggs to user directories and avoid installation \nconflicts.\n\nSpecifically, if someone installed a package to PYTHONPATH with the \ndistutils, and then installed a later version using setuptools, the \nsetuptools-installed version would always end up on sys.path *after* \nthe distutils-installed version.  Detecting this condition and \nhandling it properly was a major problem for users of easy_install, \nwho wanted it to \"just work\".\n\nStandardization of a PEP 262-style installation database is still \nneeded to address these problems, not to mention \nuninstallation.  Maybe now with some package manager folks paying \nsome attention here, we can do something about that.\n\n\n>[2] http://www.rittau.org/blog/20070726-02\n>    And no, PJE's suggested \"trivial fix\" does not satisfy the\n>objectors, as it can't support the use case of \"cd somepkg ; python \n>./ setup.py install ; cd .. ; python -c 'import somepkg'\".\n\nWell, it replaces the hack being complained about, with the problem \nthat the hack was introduced to fix.  :)\n\nAgain, to properly fix this, we need a metadata standard for who owns \nwhat packages -- and it should probably include information about the \n*tool* that did the installation, so that system packagers can either \ntell Python-level tools to keep their hands off, or tell Python how \nto run the tool in question.\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9329435490052431,
+          "SPAM": 0.0670564509947568
+        },
+        "confidence": 0.8658870980104862
+      }
+    },
+    "usage": {
+      "input_tokens": 667,
+      "output_tokens": 0
+    }
+  }
+}

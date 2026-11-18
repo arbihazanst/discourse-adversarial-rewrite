@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Digital Frames Sale: Display Your Valentines Memories\n\nClick below to view this email with images:\nhttp://jr.chtah.com/a/tBHtFQIAJMkGtBx88D1AFqBnPGx/webhost-3?t=BHtFQIAJMkGtBx88D1AFqBnPGx&ljqoa=jne@gvc.ceas-challenge.cc&RAF_TRACK=\n\nHello from your Friends at JR.com,\n\nSo many Valentines Day memories, so little shelf space. Show your loved\nones you care and display them all! We have great deals on digital frames\nand the memory cards that go with them, featuring the Westinghouse 7\" Color\nLCD Digital Picture Frame, now on sale for just $89.99 (save 25%).\n\nSee all the great deals:\n\nhttp://jr.chtah.com/a/tBHtFQIAJMkGtBx88D1AFqBnPGx/save-3\n\nThank you!\n\nJ&R Music and Computer World\n23 Park Row | New York, NY 10038 | USA \nTEL: 1-800-426-6027 | FAX: 1-212-238-6396 \n\nReal New Yorkers Know - www.RNYK.com\nJ&R blogs on Gadgets, Games, Gotham, Music & More!\nhttp://jr.chtah.com/a/tBHtFQIAJMkGtBx88D1AFqBnPGx/blog-3\n\n------------------------------------------------------------------------\nPrices, availability & terms of offers may change without notice. Unless\nspecifically stated, prices do not include shipping or applicable taxes.\n\nNEED HELP? \nOur professional staff is available seven days a week to answer your\nquestions. Call toll free 1-800-806-1115 or contact us online at\nhttp://jr.chtah.com/a/tBHtFQIAJMkGtBx88D1AFqBnPGx/contactus-3\n \nUpdate your name, email address or subscription options at \nhttp://jr.chtah.com/a/tBHtFQIAJMkGtBx88D1AFqBnPGx/change-3\n\nUnsubscribe from our newsletter at \nhttp://jr.chtah.com/a/tBHtFQIAJMkGtBx88D1AFqBnPGx/unsub-3",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.8788729208407001,
+          "NOT_SPAM": 0.12112707915929978
+        },
+        "confidence": 0.46740803452224544
+      }
+    },
+    "usage": {
+      "input_tokens": 663,
+      "output_tokens": 0
+    }
+  }
+}

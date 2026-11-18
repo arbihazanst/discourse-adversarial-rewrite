@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Open Social\n\n Google opens up social networking\n\n http://news.bbc.co.uk/2/hi/technology/7070815.stm\n   [image: Google developers] Developers will have wider distribution for\ntheir widgets\n  *Google has launched a system that will allow developers to create\napplications for a variety of social networks.*\n\nDevelopers currently have to customise their designs for a particular site\nwith many partnering with the hugely popular Facebook.\n\nGoogle's OpenSocial system will allow a wider distribution for tools like\nFacebook's music recommendation service iLike and its Top Friends\napplication.\n\nIt has long been reported that Google has big ambitions in social\nnetworking.\n\nLast week it missed out on the chance to buy a stake in Facebook with the\nfounders choosing instead to do a deal with Microsoft.\n\n*\"Facebook-fear\"*\n\nGoogle said that around a dozen social network partners had signed up to the\n\nsystem, including business site LinkedIn, Friendster and Google's own social\n\nnetwork Orkut.\n\nDevelopers already onboard include Flixster, iLike and RockYou.\n\nUnlike Facebook, OpenSocial allows developers to write in normal javascript\nand html with only minor adjustments needed for the code to work on its\nplatform.\n\nAccording to blog TechCrunch the plan is likely to be a big hit with\ndevelopers as well as Facebook's rivals.\n\n\"Developers have been complaining non stop about the costs of learning yet\nanother markup language for every new social network platform, and taking\ndeveloper time in creating and maintaining the code,\" wrote TechCrunch's\nMichael Arrington.\n\nHe is impressed by the number of social networks that have signed up so far.\n\n\n\"Facebook-fear has clearly driven good partners to side with Google,\" he\nwrote.\nTechnology writer Om Malik observed: \"OpenSocial attacks Facebook where it\nis the weakest (and the strongest): its quintessential closed nature.\"\n\nOn 11/1/07, Lapp  wrote:\n>\n>\n> Does anyone know how google chose the networks for open social?\n>\n> A group of Facebook's cross-town rival, including Google, LinkedIn,\n> Hi5, Friendster, Plaxo and Ning, are apparently responding, in an\n> effort to see if they can stop Facebook from running away with the\n> lead in social networking.\n>\n> I wanted to try to include my site in on this, and not sure who to\n> contact about it?\n>\n>\n> >\n>\n\n\n-- \nBest regards,\n\nJanada(http://janada.googlepages.com)\n日出东海落西山，愁也一天，喜也一天；\n遇事不钻牛角尖，人也舒坦，心也舒坦；\n常与知己聊聊天，古也谈谈，今也谈谈；\n祝你快乐每一天，不是神仙，胜是神仙！\n\n--~--~---------~--~----~------------~-------~--~----~\nYou received this message because you are subscribed to the Google Groups \"codesite-discuss\" group.\nTo post to this group, send email to codesite-discuss@googlegroups.com\nTo unsubscribe from this group, send email to codesite-discuss-unsubscribe@googlegroups.com\nFor more options, visit this group at http://groups.google.com/group/codesite-discuss\n-~----------~----~----~----~------~----~------~--~---",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.01193941061387124,
+          "NOT_SPAM": 0.9880605893861288
+        },
+        "confidence": 0.9066078686677966
+      }
+    },
+    "usage": {
+      "input_tokens": 853,
+      "output_tokens": 0
+    }
+  }
+}

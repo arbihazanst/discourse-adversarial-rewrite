@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] How we can get rid of eggs for 2.6 and beyond\n\nNeal Becker wrote:\n> Another use case, which I find in my world, is that there are always\n> packages that interest me (found at pypi), that my vendor hasn't packaged\n> as rpms yet.\n> \n> With finite resources, this will always be true.\n\nWhy do you need a package database for that? Can't you just run\n\"setup.py install\", or perhaps \"setup.py bdist_rpm\", and then install\nthe RPM?\n\nRegards,\nMartin\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9510387071991517,
+          "SPAM": 0.048961292800848315
+        },
+        "confidence": 0.9020774143983035
+      }
+    },
+    "usage": {
+      "input_tokens": 341,
+      "output_tokens": 0
+    }
+  }
+}

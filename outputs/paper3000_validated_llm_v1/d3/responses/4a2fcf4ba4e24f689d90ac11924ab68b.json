@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 5846]  New: \"Changes\" file in distro should include human-readable changes list\n\nhttps://issues.apache.org/SpamAssassin/show_bug.cgi?id=5846\n\n           Summary: \"Changes\" file in distro should include human-readable\n                    changes list\n           Product: Spamassassin\n           Version: unspecified\n          Platform: Other\n        OS/Version: other\n            Status: NEW\n          Severity: normal\n          Priority: P5\n         Component: Building & Packaging\n        AssignedTo: xrh@spamassassin.apache.org\n        ReportedBy: user7@gvc.ceas-challenge.cc\n\n\nI came across this again:\n\n  http://use.perl.org/~petdance/journal/30809\n\nit's an old moan from Andy Lester about our changes file -- \"Here's how to not\ndo a Changes file: That tells me nothing about whether I want to upgrade my\nSpamAssassin install. :-(\"\n\nit occurred to me that we still substantially have this problem.  I\nsuggest we fix it by changing our build process so that, instead of\ngenerating \"Changes\" from svn log, we just cut and paste the history\nof build/announcements/*.txt into a single top-level \"Changes\" file, e.g.\n\n\nSummary of changes from 3.2.2:\n------------------------------\n\n- bug 5548: Certain mail input can take a long time to scan with 100% CPU\n  utilisation, due to backtracking in a rule's regexp. fix\n\n[... other changes omitted]\n\nSummary of changes from 3.2.1:\n------------------------------\n\n3.2.1 is a major bug-fix release, including a potential local DoS.  The\nmajor highlights are:\n\n- bug 5480: fix for CVE-2007-2873: a local user symlink-attack DoS\n  vulnerability. It only affects systems where spamd is run as root, is used\n  with vpopmail or virtual users via the \"-v\"/\"--vpopmail\" OR\n  \"--virtual-config-dir\" switch, AND with the \"-x\"/\"--no-user-config AND\n  WITHOUT the \"-u\"/\"--username\" switch AND with the \"-l\"/\"--allow-tell\" switch.\n  This is not default on any distro package, and is not a common configuration.\n  More details of the vulnerability can be read at\n  .\n\n[... other changes omitted]\n\nSummary of changes from 3.2.0:\n------------------------------\n\nChanges to the core code:\n\n * new behavior for trusted_networks/internal_networks: the 127.* network is now\nalways considered trusted and internal, regardless of configuration.\n\n * bug 3109: short-circuiting of 'definite ham' or 'definite spam' messages\nbased on individual short-circuit rules using the 'shortcircuit' setting, by\nDallas Engelken .\n\n[... 3.2.0 changes omitted]\n\n\n\nyou get the idea.   As each release goes out, the manual gardening required\nis basically just to cut and paste in the *current* release's changes block\ninto the file.\n\nThe svn log is, of course, still available -- in SVN.  so people who\nwant that can still get it.\n\nsound good?\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.001777612050991574,
+          "NOT_SPAM": 0.9982223879490085
+        },
+        "confidence": 0.9811977426471833
+      }
+    },
+    "usage": {
+      "input_tokens": 873,
+      "output_tokens": 0
+    }
+  }
+}

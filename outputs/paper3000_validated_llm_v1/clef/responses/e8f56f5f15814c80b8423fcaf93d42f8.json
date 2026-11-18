@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: URIBL\n\n> I have to \n> > enable only the plugin with loadPlugin.\n> \n> ... and it's enabled by default, so you should be all set. :)\n> \n> > Then I have to use the command 'urirhssub' of the plugin \n> URIDNSBL to \n> > specify that I want to use SURBLs:\n> \n> ... the rules exist by default, so you should be all set. :)\n\nOK. So the SURBL on my gateway should already work.. But how could I\ncheck this fact?\n\nrocsca",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9696695930683035,
+          "SPAM": 0.030330406931696384
+        },
+        "confidence": 0.9393391861366069
+      }
+    },
+    "usage": {
+      "input_tokens": 290,
+      "output_tokens": 0
+    }
+  }
+}

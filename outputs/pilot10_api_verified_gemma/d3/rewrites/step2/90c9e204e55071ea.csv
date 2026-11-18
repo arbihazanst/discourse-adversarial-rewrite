@@ -1,0 +1,27 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+d3,PAPER3000-0001,2,SPAM,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/","Subject: Replica Watches
+
+We offer replica watches.
+
+We have replicas available from Patek Philippe and other brands.
+
+Is a Rolex replica priced under $199 of interest to you? 
+
+http://fetessteersit.com/","Subject: Replica Watches
+
+Replica watches are available.
+
+Replicas from brands including Patek Philippe are among those we offer.
+
+Would a Rolex replica priced under $199 be of interest?
+
+http://fetessteersit.com/",SPAM,OK,OK,SPAM,0.004535,1.055709,shared_cache,,,VALID,,0.050069,,rewrite_validity_v1,PASS,PASS,PASS,PASS,PASS,1.110313

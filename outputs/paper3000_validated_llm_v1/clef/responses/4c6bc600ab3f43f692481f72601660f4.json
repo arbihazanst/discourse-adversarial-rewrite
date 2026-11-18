@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Py2exe-users] Including data files in library.zip?\n\nQuoting Larry Bates :\n\n> Joel Parker wrote:\n> > I'm packaging an existing program that has roughly this file structure:\n> >\n> > program.py\n> > data\\\\\n> >     datafile.xml\n> >\n> > When I use py2exe to package it, the program works, but fails when it looks\n> for\n> > dist\\\\library.zip\\\\data\\\\datafile.xml\n> >\n> > Is there a way to tell py2exe to include a set of data files in\n> library.zip?\n> >\n> > Thanks,\n> >\n>\n> This question seems to come up about every couple of weeks.  IMHO the best\n> answer is to not try to make py2exe into an installer but rather user Inno\n> Installer to include data files, documentation, configuration files, etc.\n> into\n> your application.  Once you learn how to use Inno, it will make your\n> applications much easier to distribute and they will be better because you\n> can\n> include the necessary \"pieces\" for users.  You can include any/all data files\n> that may need to go along with your application.  You can put appropriate\n> shortcuts on desktop, quicklaunch, start button.  Include shortcuts to\n> documentation, unit tests, etc.  Make necessary registry entries.  Register\n> COM\n> objects.  Install and start services.  Basically anything you need to do\n> during\n> the install and it all gets wrapped up into a single setup.exe file for\n> distribution.  It is WELL worth your while to spend a couple of days working\n> with Inno Installer, it will be repaid MANY times over in time saved later.\n\nHi Larry, thank you for the help.\n\nMy question isn't so much about packaging data files with the program (I'm\ninstalling some other things as well), but about where my program is expecting\nto find the files.\n\nIn my example above, it's looking for the data directory in the library.zip\nfile. Is this common? Will it require manually inserting files into library.zip\nusing an installer package, or a change in the base program to make it look\nsomewhere else?\n\nThanks,\n\n-- \nJoel Parker\n\n-------------------------------------------------------------------------\nThis SF.net email is sponsored by the 2008 JavaOne(SM) Conference \nDon't miss this year's exciting event. There's still time to save $100. \nUse priority code J8TL2D2. \nhttp://ad.doubleclick.net/clk;198757673;13503038;p?http://java.sun.com/javaone\n_______________________________________________\nPy2exe-users mailing list\nzi9rpy-fcecq@lists.sourceforge.net\nhttps://lists.sourceforge.net/lists/listinfo/py2exe-users",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9562472901209185,
+          "SPAM": 0.043752709879081496
+        },
+        "confidence": 0.9124945802418369
+      }
+    },
+    "usage": {
+      "input_tokens": 787,
+      "output_tokens": 0
+    }
+  }
+}

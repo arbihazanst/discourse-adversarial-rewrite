@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Sync iTunes libraries on multiple computers - - TuneRanger Just $19.99\n\n\n\nTo view this email as a web page, follow the link below:\nhttp://dr.bluehornet.com/hostedemail/email.htm?h=19360bcc7f07a69b435d507f3ffdd17b&CID=1839222796&ch=85EC09F2C7E5FF0CF5CB7B61CE8D521A \n\nTo ensure you receive future emails, please add \natmdhkdbwx@reply.digitalriver.com to your address book.\n\n========================================================\nA SPECIAL PRODUCT OFFER FROM SMITH MICRO SOFTWARE, INC.  \n========================================================\n\nSync, manage and protect all of your iTunes libraries with \nTuneRanger! \n\nNOW JUST  $19.99\n(that's over 30% off the regular retail price of $29.99)\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nCLICK HERE TO BUY DIGITAL -- only $19.99:\nhttp://dr.bluehornet.com/ct/1790778:1839222796:m:3:154390362:85EC09F2C7E5FF0CF5CB7B61CE8D521A\n\nCLICK HERE TO BUY PHYSICAL -- only $19.99:\nhttp://dr.bluehornet.com/ct/1790777:1839222796:m:3:154390362:85EC09F2C7E5FF0CF5CB7B61CE8D521A\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n \nMusic, video and playlists can then be synchronized and \nmerged with the click of a button. Buy a song on any computer, \nadd an album cover or lyrics, and all changes are updated \neverywhere. Easy!\n\nLink and Sync your iTunes libraries over any network!\n\nTuneRanger connects iTunes-running computers over a network \nand enables you to copy your music, video and playlists. \nPCs can copy from Macs or vice versa, plus, you can perform \nbi-directional iPod synchronization! \n\nUsing advanced sync settings and filters, TuneRanger \ncompares songs and videos and only moves what is different.\n\nEasily manage and protect all of your iTunes files!\n\nTuneRanger also includes an automated duplicate manager, an \norphan file remover, tools to remove unlicensed songs, the \nability to add or remove disconnected files, and a utility to \ncopy album art from the iTunes database to the actual matching \nmusic files. If a file needs to be removed as part of a sync, \nyou can opt to delete it or have it moved to a safe designated \nfolder.\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nCLICK HERE TO BUY DIGITAL -- only $19.99:\nhttp://dr.bluehornet.com/ct/1790778:1839222796:m:3:154390362:85EC09F2C7E5FF0CF5CB7B61CE8D521A\n\nCLICK HERE TO BUY PHYSICAL-- only $19.99:\nhttp://dr.bluehornet.com/ct/1790777:1839222796:m:3:154390362:85EC09F2C7E5FF0CF5CB7B61CE8D521A\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n30-Day Money-Back Guarantee:\nIf for any reason you're not completely satisfied \nwith the product, simply return it within 30 \ndays of your purchase date and we'll refund your $19.99.\n\nWindows XP or Windows Vista (all editions); Pentium 4-class\nprocessor \nor better; 256MB RAM; 15MB available disk space; Apple's iTunes \n\nMacOS X (10.4 or newer); PowerPC G4 or Intel Core Duo Processor\nor \nbetter; 256MB RAM (system-wide); 15MB available disk space; \nApple's iTunes\n\n                         339841\n\nThis message was intended for: user2.1@gvc.ceas-challenge.cc\nFor more information on why you're receiving this email, follow\nthe URL below:\nhttp://dr.bluehornet.com/subscribe/source.htm?c=bhG8NLbBXj7CQ&xwmsu=nnce.kdwwu@gmail.com&cid=fc665d763da01454ec152bd9f597f6\n\nFollow the URL below to update your preferences or opt-out:\nhttp://dr.bluehornet.com/phase2/survey1/survey.htm?CID=kgswww&action=update&cogieo=akxo.ldimg@gmail.com&_mh=19360bcc7f07a69b435d507f3ffdd17b\n\nFollow the URL below to view Smith Micro's Privacy Policy:\nhttp://www.smithmicro.com/privacy.tpl\n\nSmith Micro Software\n185 Westridge Drive\nWatsonville, CA 95076",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.043155759325910883,
+          "SPAM": 0.9568442406740892
+        },
+        "confidence": 0.9136884813481785
+      }
+    },
+    "usage": {
+      "input_tokens": 1338,
+      "output_tokens": 0
+    }
+  }
+}

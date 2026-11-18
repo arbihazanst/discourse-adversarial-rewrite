@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: 1 new message in 1 topic - abridged\n\n \ncomp.mail.misc\nhttp://groups.google.com/group/comp.mail.misc?hl=en\n\nToday's most active topics:\n\n* Electronic Mail: Frequently Asked Questions (FAQ) - 1 new\n  http://groups.google.com/group/comp.mail.misc/t/717a2ad016248da8?hl=en\n\n\n\n\nActive Topics\n-------------\n\nElectronic Mail: Frequently Asked Questions (FAQ) - 1 new\n---------------------------------------------------------\nArchive-name: mail/faq-pointers Version: $Id: email.n,v 1.15 2005/06/03 12:59:\n08 dalamb Exp $ Posting-Frequency: weekly Maintainer: dal...@spamcop.net (\nDavid Alex Lamb) Copyright: 1997-2005 David Alex Lamb URL: [link] I maintain a\ncouple of Frequently-Asked Questions (FAQ) postings about how to - Sun, Feb 24\n2008 2:30 am \n1 message, 1 author\nhttp://groups.google.com/group/comp.mail.misc/t/717a2ad016248da8?hl=en\n\n\n\n==============================================================================\n\nYou received this message because you are subscribed to the Google\nGroups \"comp.mail.misc\" group.\n\nTo post to this group, send email to kjcv.fcvs.fcvg@googlegroups.com or\nvisit http://groups.google.com/group/comp.mail.misc?hl=en\n\nTo unsubscribe from this group, send email to\nvmzk.tgzg.ozuu-jondvmzktgz@googlegroups.com\n\nTo change the way you get mail from this group, visit:\nhttp://groups.google.com/group/comp.mail.misc/subscribe?hl=en\n\nTo report abuse, send email explaining the problem to gqsgh@googlegroups.com\n\n==============================================================================\nGoogle Groups: http://groups.google.com?hl=en",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9361464976376596,
+          "SPAM": 0.06385350236234037
+        },
+        "confidence": 0.8722929952753191
+      }
+    },
+    "usage": {
+      "input_tokens": 581,
+      "output_tokens": 0
+    }
+  }
+}

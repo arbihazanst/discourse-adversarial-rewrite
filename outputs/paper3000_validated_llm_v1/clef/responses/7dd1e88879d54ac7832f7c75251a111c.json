@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Broadband in Dublin\n\nHi,\n\nOn Mon, 08 Oct 2007, Glen Gray wrote:\n\n> Gavin McCullagh wrote:\n> >While we're on about ISPs I'll give my experience.  I deliberately went\n> >with NTL back in February.  My reasons were \n> >\n> >  - not wanting to pay line rental\n> \n> With NTL you DO pay line rental, it's called teh Basic TV service \n> (analogue). It's quite funny that most people see this as a line rental, \n> but it is. \n\nI think I moreorless said this at the bottom of that email?\n\nTo be fair to NTL, eircom's line rental alone gets you nothing at all,\nwhereas paying for NTL's analogue tv service gives you access to 20 or so\ntelevision stations that most people wouldn't otherwise have.  You might\nnot want the tv channels I guess, but it's not the same as phone line\nrental, where you get nothing for it, unless you then proceed to spend more\nmoney on calls.  Given the existence of VoIP, I wouldn't intend making\nlandline calls.  I guess if a real equivalent IPTV service turns up, I\nmight feel like I'm double-paying with NTL, but for now, I think the two\nservices are pretty complementary.\n\nAs you say, it's understandable that the services are bundled given NTL are\nnot in a position to provide broadband without giving you the tv service\ntoo.  Once they force everyone onto their unsplittable, unstable digital tv\nservice, that may change.  Yay progress!! :-(\n\nGavin",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9658076266485904,
+          "SPAM": 0.03419237335140963
+        },
+        "confidence": 0.9316152532971809
+      }
+    },
+    "usage": {
+      "input_tokens": 529,
+      "output_tokens": 0
+    }
+  }
+}

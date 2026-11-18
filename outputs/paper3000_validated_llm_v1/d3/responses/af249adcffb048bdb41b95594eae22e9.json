@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: What is a pid file\n\nPidfile holds the PID of the forked process ie. /var/run/MailScanner.pid Regards, --  --[ UxBoD ]-- // PGP Key: \"curl -s http://www.splatnix.net/uxbod.asc | gpg --import\" // Fingerprint: F57A 0CBD DD19 79E9 1FCC A612 CB36 D89D 2C5A 3A84 // Keyserver: www.keyserver.net Key-ID: 0x2C5A3A84 // Phone: +44 845 869 2749 SIP Phone: octnk@sip.splatnix.net ----- \"Agnello George\"  wrote: > while starting spamd i was recomended to use the -r switch which Write > the process id to pidfile >  > Now!! what is a pidfile ... cant find much on google >  > can any one help me with this basic stuff !! >  > thanks !! --  This message has been scanned for viruses and dangerous content by MailScanner, and is believed to be clean. >From yruyie@libero.it  Sat Apr 26 15:52:25 2008 Message: 7 Date: Tue, 4 Mar 2008 16:20:22 +0100 From: \"Carmelo Saffioti\"  Subject: [Wekalist] Weka running slow on Windows Vista To: \"Weka machine learning workbench list.\" \t Message-ID: <004101c87e0b$443fefc0$6e0000c0@carmelo> Content-Type: text/plain; charset=3D\"iso-8859-1\" Hello, I'm trying to use Weka on my new Windows Vista, but it's running really slo= w. At startup it takes 47 seconds, and  when I need to use the FileOpen dia= log it takes many seconds too. Launching Weka from command line with the ja= va -verbose option I discovered that, on startup, it waits on: sun.awt.shell.Win32ShellFolder2$FolderDisposer$1 from d:\\\\programmi\\\\java\\\\jre= 1.6.04\\\\lib\\\\rt.jar Please help me to solve this problem, I need to use Weka on Vista too Thank you very much Cheers Carmelo -------------- next part -------------- An HTML attachment was scrubbed... URL: https://list.scms.waikato.ac.nz/pipermail/wekalist/attachments/2008030= 4/a2aea18b/attachment-0001.html ------------------------------ >From hqmoasa@gmail.com  Sat Apr 26 15:52:25 2008 Message: 8 Date: Tue, 4 Mar 2008 16:38:33 +0100 From: \"Marco Genova\"  Subject: Re: [Wekalist] Weka running slow on Windows Vista To: \"Weka machine learning workbench list.\" \t Message-ID: \t Content-Type: text/plain; charset=3D\"iso-8859-1\" rt.jar is a file of Java Runime Env... WEKA is not guilty! Find problem with \"java runtime and Windows Vista\". 2008/3/4, Carmelo Saffioti : > >  Hello, > I'm trying to use Weka on my new Windows Vista, but it's running really > slow. At startup it takes 47 seconds, and  when I need to use the FileOpen > dialog it takes many seconds too. Launching Weka from command line with t= he > java -verbose option I discovered that, on startup, it waits on: > > sun.awt.shell.Win32ShellFolder2$FolderDisposer$1 from > d:\\\\programmi\\\\java\\\\jre1.6.04\\\\lib\\\\rt.jar > > Please help me to solve this problem, I need to use Weka on Vista too > > > Thank you very much > Cheers > Carmelo > > _______________________________________________ > Wekalist mailing list > iuxxdkqk@list.scms.waikato.ac.nz > https://list.scms.waikato.ac.nz/mailman/listinfo/wekalist > > -- = Marco Genova -------------- next part -------------- An HTML attachment was scrubbed... URL: https://list.scms.waikato.ac.nz/pipermail/wekalist/attachments/2008030= 4/8796e681/attachment.html ------------------------------ _______________________________________________ Wekalist mailing list iuxxdkqk@list.scms.waikato.ac.nz https://list.scms.waikato.ac.nz/mailman/listinfo/wekalist End of Wekalist Digest, Vol 61, Issue 2 ***************************************",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.013613572502765499,
+          "NOT_SPAM": 0.9863864274972345
+        },
+        "confidence": 0.89610610827347
+      }
+    },
+    "usage": {
+      "input_tokens": 1212,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "original_text": "Subject: How To Enlarge Penis Size\n\n\nSize DOES matter - change your life today!\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\nhttp://jumpwill.com/",
+  "rewrite_text": "Subject: Information Regarding Penis Enlargement\n\nA customer, Lindsay from California, USA, reported experiencing a 3-inch increase in penis size over a period of two months. She also noted increased sexual satisfaction.\n\nhttp://jumpwill.com/",
+  "rubric_version": "rewrite_validity_v1",
+  "checks": {
+    "purpose": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\9a46316aed55dfa3407c04f48a26125e312a8b48cddb35357b65d9ddaf7f9505.json"
+    },
+    "key_information": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\12eecd9081e867a24487a5623c4f49c07e9731788e9f0b2455bc5127925ee4cb.json"
+    },
+    "meaning": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\ae82c981ddb8f617d1885835e09baa83f7a3f14c34561fcb7625bfb8f634919b.json"
+    },
+    "no_fabrication": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\d639dac67703a0a41e2f6888390f57a841f9147c692a54bd509a5c0d149e5396.json"
+    },
+    "coherence": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\41d7dd45139915c45a46fe8dd48f61dd1fee1d5a05d44bf8ef08f29c02d38b10.json"
+    }
+  },
+  "reason": "",
+  "verdict": "VALID",
+  "request_time_ms": 0
+}

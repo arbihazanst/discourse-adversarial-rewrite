@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Workshop on Parameter Setting in Genetic and Evolutionary Algorithms\n\n\nPlease accept our apologies if you have received multiple copies of this Call\nFor Participation.\n\n===========================================================================\n                        CALL FOR PARTICIPATION\n\n                              PSGEA-2005\n\n                          PARAMETER SETTING IN\n                   GENETIC AND EVOLUTIONARY ALGORITHMS\n\n  Part of the Genetic and Evolutionary Computation Conference (GECCO-2005)\n        Washington, D.C. on June 25 - 29 (Saturday - Wednesday), 2005\n                      www.isgec.org/GECCO-2005\n\n                       Organized by ACM SIG-EVO\n============================================================================\n\nWORKSHOP SUMMARY\n\nOne of the main difficulties that a user faces when applying a\nGEA is on deciding on an appropriate set of parameter values.\nBefore running the algorithm, the user has to specify a number of\nparameters, such as population size, selection rate, crossover\nprobability, and mutation probability. Over the years, there has been\na variety of research studies with the purpose of understanding\nparameter interactions, as well as different approaches to\nautomate parameter setting in GEAs. In this workshop we would like\nto have an open discussion on the following topics:\n\n- Interactions among GEA parameters,\n- Behavior of one (or more) specific GEA parameter,\n- Practical guidelines for parameter configuration and trade-off in GEAs,\n- Parameter setting in GEAs for real-world problems,\n- Deterministic and adaptive parameter-less techniques for GEAs,\n- Self-adaptive parameter-less techniques for GEAs,\n- Benefits and drawbacks of the different approaches to automate\n  parameter setting in GEAs;\n\nThe length of the workshop is 4 hours. The workshop will start with an\nintroduction by the organizers, followed by about 5-7 presentations, and\nwill finish with a panel discussion.\n\nPARTICIPATION\n\nPresentations will be selected according to the submitted papers (with a\nmaximum length of 12 pages) which will be reviewed by at least two members\nof the international program committee. All accepted papers will be\nincluded in the workshop proceedings that will be available at GECCO-2005\ncheck in. Papers should be submitted in electronic PDF format following\nthe Springer LNCS style. When submitting your paper please use the following\nsubject: \"PSGEA submission\".\n\nExtended versions of selected papers presented at the workshop will be\npublished in a book entitled \"Parameter Setting in Genetic and Evolutionary\nAlgorithms\", which will be part of the new series \"Studies in Computational\nIntelligence\" by Springer.\n\nFor more detailed submission guidelines and recent updates,\nsee the workshop pages at\nhttp://w3.ualg.pt/~flobo/psgea-2005/index.html\n\nIMPORTANT DATES (subject to change)\n\nPaper submission deadline:             14 March, 2005\nDecisions will be mailed by:           08 April, 2005\nSubmissions of camera-ready papers:    22 April, 2005\nWorkshop day:                          25 June,  2005\n\nWORKSHOP CHAIRS\n\nFernando Lobo and Claudio Lima\nDEEI-FCT,\nUniversidade do Algarve\nCampus de Gambelas, 8000 Faro\nPortugal\nTel: +351-289-800900\nFax: +351-289-819403\nuojbj@ualg.pt\nclima@ualg.pt\n\nATTENDANCE\n\nAttendance to the workshop is open to all GECCO attendees.\nWe particularly welcome researchers who have been working on the topic\nof automating parameter settings in GEAs, and practitioners who want\nto apply GEAs for problem solving but that are often confused with the\nnuts and bolts of parameter settings.\n\nFurther information will be posted on the workshop web pages\n(http://w3.ualg.pt/~flobo/psgea-2005/index.html) as it becomes\navailable.\n\nWe are looking forward to your participation.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.041817230298433435,
+          "NOT_SPAM": 0.9581827697015666
+        },
+        "confidence": 0.7494370323032085
+      }
+    },
+    "usage": {
+      "input_tokens": 1008,
+      "output_tokens": 0
+    }
+  }
+}

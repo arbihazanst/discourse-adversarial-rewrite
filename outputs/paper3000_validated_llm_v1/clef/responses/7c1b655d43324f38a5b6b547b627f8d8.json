@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: sa-learn weirdness...\n\nOn Fri, Feb 08, 2008 at 02:02:45PM +0100, Paolo Cravero wrote:\n> Arthur Dent wrote:\n>\n>> Hmmm... Not delete exactly, but the sa-learn job take so long that the\n>> archivemail job has kicked off and finds the \"TempSpam\" and \"TempHam\" mboxes\n>> in the Mail directory and dutifully chops out anything older than 180 days. I\n>> didn't think that that would be a problem, but maybe it's upsetting sa-learn?\n>> I will try switch the order of the jobs (archivemail running first) and see if\n>> that makes a difference.. \n>\n> At this point you have probably already swapped the two processes.\n>\n> I think sa-learn or the process feeding it does not like the chopping.\n\nYes. Sorry, I didn't post an update because I was embarrassed at my own\nstupidity for not thinking it through more carefully before posting my\noriginal message. Switching the jobs round did indeed mean that sa-learn\nis no longer getting interfered with by archivemail while it's in\nmid-learn. It now behaves quite sensibly.\n\n>> Well, as I explained in my previous post, the \"TempHam\" folder is a\n>> concatenation of all my non-spam folders. Mail that is older than 180 days is\n>> taken off at one end and new mail (c. 30-40 per day) added on at the other.\n>> The total remains roughly constant.\n>\n> Don't forget that sa-learn remembers which messages have been learned. Once \n> your old messages have all been learned, you need to feed to it only new \n> arrivals, that is since the last sa-learn run. No need to keep 180 days \n> worth of ham and spam in the temp folder!\n\nYes I understand that. It's not that I *keep* a temp folder of spam/ham, I\ndon't. I know that it only needs to learn the *new* mails. It's just that\nI'm basically lazy, and it seemed far easier for me simply to take all\nmy non-spam folders and copy them together into one big temporary\nfile, run sa-learn on it and then delete the temporary file, eg:\n\n#!/bin/bash\ncat ~/mail/mailinglists/* ~/mail/WorkStuff/* ~/mail/Admin/* > TempHam\nsa-learn --ham --mbox ~/mail/TempHam\nrm ~/mail/TempHam\n\nI'm no bash-scripting wiz (that much should be obvious!) so I could\nthink of no *easy* way to strip only today's mails out of my 20-odd\nfolders and just feed those to sa-learn. My way, I need to do nothing\nmyself, the job takes about half an hour, and I'm asleep when it\nhappens... OK, sa-learn has to work a bit harder than it needs to, but\nhey, better it than me!\n\nThe 180 days thing is because I choose to keep only the last 6 months\n(approx) mail in each of my 20 or so folders, the rest being zipped into a gzip\narchive using \"Archivemail\" (a very neat little utility btw) and 180 days is\nits default setting (see I told you I was lazy!).\n\n> Let sa-learn complete and then chop the folder. Just concatenate the \n> process rather than schedule it in crontab. It should fix your apparent \n> weirdness.\n>\n> Paolo\n\nThanks for all the help and suggestions. Much appreciated...\n\nMark",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9612226970715255,
+          "SPAM": 0.038777302928474505
+        },
+        "confidence": 0.922445394143051
+      }
+    },
+    "usage": {
+      "input_tokens": 974,
+      "output_tokens": 0
+    }
+  }
+}

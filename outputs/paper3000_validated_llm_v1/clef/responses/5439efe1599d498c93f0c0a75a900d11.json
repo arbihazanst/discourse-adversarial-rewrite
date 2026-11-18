@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] PADL 2008: Call for Papers\n\n\n[ Colleagues, note that this will be the 10th PADL;\n  We strongly urge you to submit papers, the deadline is\n  only 3 weeks way]\n\n\n                          CALL FOR PAPERS!!!\n\n                    Tenth International Symposium on\n             Practical Aspects of Declarative Languages 2008\n\t\t             (PADL '08)\n\n\t           http://www.ist.unomaha.edu/padl2008/\n\n                        San Francisco, USA\n\t\t\tJanuary 7-8, 2008\n\n                     Co-located with ACM POPL'08\n\nDeclarative languages build on sound theoretical bases to provide attractive\nframeworks for application development. These languages have been successfully\napplied to vastly different real-world situations, ranging from data base management\nto active networks to software engineering to decision support systems.\n\nNew developments in theory and implementation have opened up new application areas.\nAt the same time, applications of declarative languages to novel problems raises\nnumerous interesting research issues. Well-known questions include designing for\nscalability, language extensions for application deployment, and programming\nenvironments. Thus, applications drive the progress in the theory and implementation\nof declarative systems, and benefit from this progress as well.\n\nPADL is a forum for researchers and practitioners to present original work emphasizing\nnovel applications and implementation techniques for all forms of declarative concepts,\nincluding, functional, logic, constraints, etc. Topics of interest include:\n\n * innovative applications of declarative languages;\n * declarative domain-specific languages and applications;\n * practical applications of theoretical results;\n * new language developments & their impact on applications;\n * evaluation of implementation techniques on practical applications;\n * novel uses of declarative languages in the classroom; and\n * practical experiences\n\nPADL 08 welcomes new ideas and approaches pertaining to applications and implementation\nof declarative languages.  PADL 08 will be co-located with the ACM POPL.\n\nIMPORTANT DATES AND SUBMISSION GUIDELINES\n\n      Paper Submission: August 24, 2007\n      Notification: \tSeptember 27, 2007\n      Camera-ready: \tOctober 23, 2007\n      Symposium: \tJanuary 7-8, 2008\n\n      Authors should submit an electronic copy of the full paper (written in\n      English) in Postscript (Level 2) or PDF. Papers must be no longer than 15\n      pages, written in 11-point font and with single spacing. Since the final\n      proceedings will be published as Lecture Notes in Computer Science by Springer\n      Verlag, authors are strongly encouraged to use the LNCS paper formatting\n      guidelines for their submission.\n\n      Each submission must include on its first page the paper title; authors and\n      their affiliations; contact author's email and postal addresses, telephone and\n      fax numbers, abstract, and three to four keywords. The keywords will be used to\n      assist us in selecting appropriate reviewers for the paper. If electronic submission\n      is impossible, please contact the program chair for information on how to submit\n      hard copies.\n\n\nMOST PRACTICAL PAPER AWARD\n\n\t  The Most Practical Paper award will be given to the submission that is judged\n\t  by the program committee to be the best in terms of practicality, originality,\n\t  and clarity of presentation. The program committee may choose not to make an\n\t  award, or to make multiple awards.\n\nContacts:\n     For information about papers and submissions, please contact the Program Chair:\n\t  Paul Hudak\n\t  PC co-Chair - PADL 2008\n\t  Department of Computer Science\n\t  Yale University\n\t  P.O. Box 208285\n\t  New Haven, CT 06520 - 8285\n\t  Email: ejyvk@cs.yale.edu\n\n\t  David S. Warren\n\t  PC co-Chair - PADL 2008\n\t  Department of Computer Science\n\t  Stony Brook University\n\t  Stony Brook, NY\n\t  Email: yewynp@cs.sunysb.edu\n\n     For other information about the conference, please contact:\n\n\t  Hai-Feng Guo\n\t  General Chair - PADL 2008\n\t  Department of Computer Science\n\t  College of Information Science & Technology\n\t  University of Nebraska at Omaha\n\t  Omaha, NE, U.S.A.\n\t  Email: vhynlvbaat@mail.unomaha.edu\n\nSponsored by: COMPULOG Americas (http://www.cs.nmsu.edu/~complog) and University of Nebraska at Omaha",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.941576525018349,
+          "SPAM": 0.05842347498165095
+        },
+        "confidence": 0.883153050036698
+      }
+    },
+    "usage": {
+      "input_tokens": 1162,
+      "output_tokens": 0
+    }
+  }
+}

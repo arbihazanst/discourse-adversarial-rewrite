@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] [ANN] Python 2.3.7 and 2.4.5, release candidate 1\n\nOn Mar 2, 2008, at 7:43 PM, Fred Drake wrote:\n> 2.4.5 won't build for me from the svn checkout on Mac OS X 10.5.2:\n\n\nNeither does 2.3.7 now that I've tried that:\n\ngcc  -u __dummy -u _PyMac_Error -framework System -framework  \nCoreServices -framework Foundation -o python.exe \\\\\n\t\t\tModules/python.o \\\\\n\t\t\tlibpython2.3.a -ldl\nUndefined symbols:\n   \"__dummy\", referenced from:\nld: symbol(s) not found\ncollect2: ld returned 1 exit status\nmake: *** [python.exe] Error 1\n\nOf course, I wasn't using an earlier 2.3.x version on this box.  I  \nwould really like to be able to use 2.4.5, since I've been using 2.4.4  \nfor work for a while now.\n\n\n   -Fred\n\n-- \nFred Drake   \n\n\n\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0008475887506440189,
+          "NOT_SPAM": 0.9991524112493559
+        },
+        "confidence": 0.9901286157589737
+      }
+    },
+    "usage": {
+      "input_tokens": 434,
+      "output_tokens": 0
+    }
+  }
+}

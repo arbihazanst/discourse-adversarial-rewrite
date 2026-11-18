@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: We reviewed your website\n\n\nDear CEO,We wanted to let you know your company got reviewed\nin our blog KillerStartups.com.There's\nonly two ways for your startup to make it to our blog:   1) Any of\nour registered readers submitted it   2) Our editorial team found\nyour company through our daily scan of the 'Top 100' blogs that write\nabout Internet and technology.You can read the review about\nyour company here:http://www.killerstartups.com/User-Gen-Content/triptracker--Keeping-Track-of-Your-Travels/In\ncase you want to modify something that's incorrect, or want to\ncomplete some missing information, you can use the following username\nand password we generated so only you can modify the\nreview.URL: http://www.killerstartups.com/register/login.php?id=11910username:\ntriptracker.netpassword: hyqkjytqKillerStartups.com is a\nuser driven Internet startups community. It's intended for\nentrepreneurs, investors and bloggers to stay updated on up-and-coming\nInternet startups. As we like to say it: \"KillerStartups.com: tapping\nthe wisdom of crowds to find the next big thing on the\ninternet.\"We want to wish you a great day and thank you in\nadvance for collaborating with us.Regards,Gonzalo\nArzuagaCEO – KillerStartups,\nInc.http://www.KillerStartups.comP.S. Show the world\nyou're proud of being reviewed on KillerStartupsPaste our badge on\nyour site by clicking here http://www.killerstartups.com/badge\nto let your community see the review and vote for you as a\nkiller!Fact: KillerStartups is now 5,000 on Alexa only 6\nmonths after being launched!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.3476598965371574,
+          "SPAM": 0.6523401034628427
+        },
+        "confidence": 0.3046802069256853
+      }
+    },
+    "usage": {
+      "input_tokens": 547,
+      "output_tokens": 0
+    }
+  }
+}

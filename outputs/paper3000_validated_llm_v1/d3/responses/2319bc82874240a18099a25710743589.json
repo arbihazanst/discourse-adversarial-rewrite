@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-3000] A question about Py3K migration\n\nThis is something that I've been pondering over for a while now, but I\nhaven't been able to come to any strong conclusions. I'd appreciate\nsome comment, and possibly a bit of clarification in the documentation\nfor migrating to 3.0.\n\nI'm basically an end user of Python. I don't write libraries or\nframeworks, but I do depend on a number of 3rd party libraries. As a\nWindows user, I'm probably more dependent on binary installers than\nthe average Unix/MacOS user.\n\nAs far as my own code is concerned, I am able to follow the standard\nmigration path (move to 2.6, fix issues in 3.0-warning mode, use 2to3\nand test, repeat as needed). As my code is generally not complex, I\ndon't expect this to be a particularly lengthy process. But I'm going\nto be stuck until 3.0-compatible installers are available for the\nextensions I use. And that's even true for pure-Python packages, as\nthey will need to do the 2to3 dance as well.\n\nSo there's a bottleneck in 3.0 adoption, with end users not being able\nto move to 3.0 until package maintainers have done their bit. In the\nlong run, this will happen, but it could slow down adoption of 3.0. I\nsee this already - as 99.9% of my code depends on either pywin32 or\ncx_Oracle, and with neither having 3.0 compatible binaries yet, I\ncan't make any practical use of the 3.0 alphas.\n\nAs I said at the start, I don't have any good answers. But would it be\nworth maintaining something like a wiki page of key libraries and\ntheir expectations for moving to 3.0? It might at least make people\naware of reasonable timescales, and set some expectations for chronic\nearly adopters like me :-)\n\nPaul.\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00029607254074412963,
+          "NOT_SPAM": 0.9997039274592558
+        },
+        "confidence": 0.9961024290882733
+      }
+    },
+    "usage": {
+      "input_tokens": 640,
+      "output_tokens": 0
+    }
+  }
+}

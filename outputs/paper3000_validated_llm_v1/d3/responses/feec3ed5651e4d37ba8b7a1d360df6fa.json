@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: ASA Staff Changes\n\n\nASA has had a series of staff changes and so would like to confirm the following for any University personnel who may not already be aware - Melanie Jackson left her role as ASA Advertising Manager in December, Dan Markham left his position as ASA Satellite Editor in February. Nigel Green, the ASA General Manager is acting for both roles until replacements can be found, so any queries should be sent directly to him. Finally, Bronwyn Porter has completed her contract as ASA Event Manager and is replaced by Sikander Gore who is also ASA Bar Manager. All email contact details and internal extensions remain the same.\n\nRegards\n\nNigel Green\nGeneral Manager\nAlbany Students' Association Inc.\nPrivate Bag 102 904\nNorth Shore City 745\n�\nDDI: 09 443 9746\nM: 027 2927469\nF: 09 443 9745\n�\nThe information contained in this mail message may be confidential and/or be legally privileged.� If the reader of this message is not the intended recipient, you are hereby notified that any use, dissemination, distribution or reproduction of this message is prohibited.� If you have received this message in error please notify the sender immediately and destroy the original message.� Thank you.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007569935244183067,
+          "NOT_SPAM": 0.9992430064755816
+        },
+        "confidence": 0.9910602242108433
+      }
+    },
+    "usage": {
+      "input_tokens": 407,
+      "output_tokens": 0
+    }
+  }
+}

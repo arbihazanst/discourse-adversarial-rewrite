@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Journal \"Logical Methods in CS\"\n\n----------------------------------------------------------------------\n\nyear 1 of a new journal year 1 of a new journal year one of a new journal\n\n-------------------------EXCUSE MULTIPLE COPIES-----------------------\n\n\n\nDear Colleague:\n\nWe are writing to inform you about the progress of the open-access,\nonline journal \"Logical Methods in Computer Science,\" which has recently\nbenefited from a freshly designed web site, see:\n\n                 http://www.lmcs-online.org\n\nIn the first year of its existence, the journal received 75 submissions:\n21 were accepted and 22 declined (the rest are still in the editorial\nprocess). The first issue is complete, and we anticipate\nthat will be three in all by the end of the calendar year. Our eventual\naim is to publish four issues per year. We also publish Special Issues:\nto date, three are in progress, devoted to selected papers from LICS\n2004, CAV 2005 and LICS 2005.\n\nThe average turn-around from submission to publication has been\n7 months. This comprises a thorough refereeing and revision process:\nevery submission is refereed in the  normal way by two or more\nreferees, who apply high standards of quality.\n\nWe would encourage you to submit your best papers to Logical Methods in\nComputer Science, and to encourage your colleagues to do so too.\nThere is a flier and a leaflet containing basic information about the\nnew journal on the homepage; we would appreciate your posting\nand distributing them, or otherwise publicising the journal. We would\nalso appreciate any suggestions you may have on how we may improve the\njournal.\n\nYours Sincerely,\n\nDana S. Scott (editor-in-chief)\nGordon D. Plotkin and Moshe Y. Vardi (managing editors)\nJiri Adamek (executive editor)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8505662857547606,
+          "SPAM": 0.1494337142452394
+        },
+        "confidence": 0.7011325715095211
+      }
+    },
+    "usage": {
+      "input_tokens": 566,
+      "output_tokens": 0
+    }
+  }
+}

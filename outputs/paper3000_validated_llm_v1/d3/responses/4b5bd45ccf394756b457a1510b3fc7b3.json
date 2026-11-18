@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse]  [OT] How much power does a PC really consume?\n\nRandall R Schulz wrote: > Ah, right. Well, my EE courses were a very long time ago. (Programming > rots the brain, it appears...) Amen to that.  (my own EE classes were 20 years back).  /Per Jessen, Zürich --  >From kylwi0776@yahoo.com  Sat Apr 26 15:49:38 2008 Message: 8 Date: Fri, 15 Feb 2008 01:34:52 -0800 (PST) From: \"M. Fatih Akay\"  Subject: [Wekalist] Discretize filter To: weka  Message-ID: <988171.16184.qm@web52810.mail.re2.yahoo.com> Content-Type: text/plain; charset=\"iso-8859-1\" Hello,       What is the exact output of a discretize filter? I know that it counts the number of attributes whose values are in specific ranges, but I do not know how it determined the new values of these attributes.        Any help is greatly appreciated.       Fatih          --------------------------------- Be a better friend, newshound, and know-it-all with Yahoo! Mobile.  Try it now. -------------- next part -------------- An HTML attachment was scrubbed... URL: https://list.scms.waikato.ac.nz/pipermail/wekalist/attachments/20080215/b55fd989/attachment-0001.html ------------------------------ >From oqhik.grwzxwv@gmail.com  Sat Apr 26 15:49:38 2008 Message: 9 Date: Fri, 15 Feb 2008 11:06:28 +0100 From: \"Roman Hausner\"  Subject: Re: [Wekalist] Questions about the experimenter To: \"Weka machine learning workbench list.\" \t Message-ID: \t<513439826510226251v439ua65ju22625f34jf82651u@mail.gmail.com> Content-Type: text/plain; charset=\"iso-8859-1\" On Wed, Feb 13, 2008 at 9:13 PM, Peter Reutemann  wrote: > Not really. If the Experiment setup changes, then the number of columns > can change. That's why the file-based output cannot be resumed. If you > use a database as results backend, you can resume experiments, add new > datasets/classifiers. It's also handy, if you experiment runs out of > memory and your virtual machine dies. Then you can just restart Weka > with more memory and only run the experiments that haven't finished yet. > Thank you for your very valuable and helpful answers! I indeed decided to switch to Mysql .. i can always convert to arff by reading in the table in the explorer and saving to arff. What I am not sure about: is there a way to have seperate experiment results in one database? I was not able to achieve this (everything seems to go into the Results0 table automatically) and had to use a different mysql database for each experiment that i want to keep seperated. > 3) When one shows the summary or Ranking, a lot of pairwise significance > > tests are used. > > Are these tests Bonferroni adjusted? (does the \"corrected\" shown with > paired > > t-test indicate > > Bonferroni correction for multiple significance tests or is this a > different > > kind of correction? > > Copy/paste from the weka.experiment.PairedCorrectedTTester Javadoc: > > Behaves the same as PairedTTester, only it uses the corrected resampled > t-test statistic. > > For more information see: > > Claude Nadeau, Yoshua Bengio (2001). Inference for the Generalization > Error. Machine Learning.. > I dug that up and as far as my little understanding of statistics goes, the corrected t-test corrects for the under-estimate of variance when one does repeated CVs. So it seems that there is no (automatic) Bonferroni adjustment -- at least it is nowhere mentioned in Weka. > > 4) If one uses a DB, will essentially the same data be stored in the > table > > as in the ARFF file? > > In other words, would it be possible to transfer an experiment from an > ARFF > > file to the > > table or vice-versa at a later time? > > Never done that before, but I reckon you can do that with the > DatabaseLoader/DatabaseSaver of the weka.core.converters package. > Converting from DB to ARFF I just achieved by loading the data into the explorer from the DB and saving as ARFF. -------------- next part -------------- An HTML attachment was scrubbed... URL: https://list.scms.waikato.ac.nz/pipermail/wekalist/attachments/20080215/acfc4a84/attachment.html ------------------------------ _______________________________________________ Wekalist mailing list iuxxdkqk@list.scms.waikato.ac.nz https://list.scms.waikato.ac.nz/mailman/listinfo/wekalist",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.02009920249510809,
+          "NOT_SPAM": 0.979900797504892
+        },
+        "confidence": 0.8580028258348467
+      }
+    },
+    "usage": {
+      "input_tokens": 1309,
+      "output_tokens": 0
+    }
+  }
+}

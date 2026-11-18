@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [SM-DEVEL] Need a patch for saving sent messages problem\n\nOn Wed, Feb 27, 2008 at 10:50 AM, David Severance  wrote:\n> A couple of questions regarding...\n>\n> > use a 1.4.14 snapshot\n>  The problem with a snapshot from the SVN repository that I can see is\n>  that it's not guaranteed to be stable or is it?\n\nNothing is guaranteed, of course.  Some stable releases have contained\nbugs.  But generally, the SVN repo for our stable branch will usually\nbe better than the last stable release because it contains fixes for\nany bugs in the previous releases.\n\n> I have something like\n>  22,000 users daily who would be upset if it wasn't stable. What I mean\n>  by stable is that if some changes for work in progress were half checked\n>  in\n\nThat never happens in our stable branch.  Only a select number of new\nfeatures are added, and they are always checked in in full.\n\n> then I would get something unstable. Or am I over thinking / worrying\n>  about it? If I check out that copy is it supposed to be ready to go,\n>  just awaiting someone to call it stable? Is there a 1.4.14 release imminent?\n\nThe best thing to do in a serious production environment is test it in\na parallel installation on your own servers to guarantee its\nstability.  We have not discussed a 1.4.14 release yet, but it IS more\nstable than 1.4.13 already because it has a couple small but important\nfixes for some compose bugs.\n\n>  Sorry for all the worrying, I'd just like to be clear as to what I'd be\n>  getting myself into.\n\nCheers,\n\n  Paul\n\n\n\nsquirrelmail-devel mailing list\n\nList address: aqcvnwkdyeem-hbpoa@lists.sourceforge.net\nList archives: http://news.gmane.org/gmane.mail.squirrelmail.devel\nList info (subscribe/unsubscribe/change options): https://lists.sourceforge.net/lists/listinfo/squirrelmail-devel",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0002856742309119723,
+          "NOT_SPAM": 0.999714325769088
+        },
+        "confidence": 0.9962245778072495
+      }
+    },
+    "usage": {
+      "input_tokens": 600,
+      "output_tokens": 0
+    }
+  }
+}

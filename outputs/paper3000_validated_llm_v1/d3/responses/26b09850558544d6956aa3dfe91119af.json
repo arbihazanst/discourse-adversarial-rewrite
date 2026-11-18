@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] editing the docs\n\nBenjamin Peterson schrieb:\n> Hi,\n> Now that I'm starting to examine and do some edits on the docs, I'd like \n> to ask some guidance. What editor(s) do you guys use? I'm not one to \n> cling to an editor, so all suggestions are fair game.\n\nI use Emacs, for which the docutils bring an excellent rst mode.\n\n\nGeorg\n\n-- \nThus spake the Lord: Thou shalt indent with four spaces. No more, no less.\nFour shall be the number of spaces thou shalt indent, and the number of thy\nindenting shall be four. Eight shalt thou not indent, nor either indent thou\ntwo, excepting that thou then proceed to four. Tabs are right out.\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007432058607173977,
+          "NOT_SPAM": 0.9992567941392826
+        },
+        "confidence": 0.9912033342005879
+      }
+    },
+    "usage": {
+      "input_tokens": 348,
+      "output_tokens": 0
+    }
+  }
+}

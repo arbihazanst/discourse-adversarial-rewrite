@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: There is no cheaper source of original and perfectly working software.\n\n\n Great site to purchase more than 270 programs! Even for Macintosh! Software in all European languages available! Cheap prices and original programs only! There are special offers and discounts for you to make even more significant savings.\n Consultations of professional customer service will help you to install any program. Fast response guaranteed. Access to all updates! Money back guarantee!\n\n  http://bramentos.com\n\n Check our site for discounts!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02821239677695106,
+          "SPAM": 0.9717876032230489
+        },
+        "confidence": 0.9435752064460978
+      }
+    },
+    "usage": {
+      "input_tokens": 262,
+      "output_tokens": 0
+    }
+  }
+}

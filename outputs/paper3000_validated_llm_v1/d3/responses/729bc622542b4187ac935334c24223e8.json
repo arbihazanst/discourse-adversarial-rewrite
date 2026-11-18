@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] [pywin32-bugs] ISAPI Set-Cookie Probs\n\nThanks that helped. In case anyone else needs it, I also did the following\n\nRemove the service manager:\n\nwin32_extensions += [\n    WinExt_win32('servicemanager',\n           extra_compile_args = ['-DUNICODE', '-D_UNICODE',\n                                 '-DWINNT', '-DPYSERVICE_BUILD_DLL'],\n           libraries = \"user32 ole32 advapi32 shell32\",\n           dsp_file = r\"win32\\\\Pythonservice servicemanager.dsp\",\n           windows_h_version = 0x500), ############ change to 0x501\n]\n\nComment out the whole section of:\n\n#    WinExt_win32com('shell', libraries='shell32', pch_header=\"shell_pch.h\",\n#                    sources=(\"\"\"\n#                        %(shell)s/PyIActiveDesktop.cpp\netc...\n#                        \"\"\" % dirs).split()),\n\nI know that's a lot of stuff, and is definitely not the way to go. I tried\nthe Windows Server 2008+.NET 3.5 SDK, but I was still having some issues. I\nthink it is probably just some setup issue on my side so I went with this\ntemporarily.\n\nOn Sun, Mar 30, 2008 at 2:49 AM, Mark Hammond \nwrote:\n\n>  Oops – forgot to \"reply all\":\n>\n>\n>\n> The problem is that win32service needs a later platform SDK – try changing\n> the line in setup.py from:\n>\n>\n>\n>         (\"win32service\", \"advapi32 oleaut32 user32\", True, 0x0500),\n>\n>\n>\n> To:\n>\n>\n>\n>         (\"win32service\", \"advapi32 oleaut32 user32\", True, 0x0501),\n>\n>\n>\n> And it should be skipped.  You might need to do it to pythonservice.exetoo.  Or just install the Vista SDK.\n>\n>\n>\n> Mark\n>\n>\n>\n> *From:* necrji-abt57-imetone@python.org [mailto:\n> necrji-abt57-imetone@python.org] *On Behalf Of *Kevin Patterson\n> *Sent:* Sunday, 30 March 2008 3:23 PM\n> *To:* Tom Wells; Python-Win32 List\n> *Subject:* Re: [python-win32] [pywin32-bugs] ISAPI Set-Cookie Probs\n>\n>\n>\n> I also received this error message. I backed up to tag \"b209\" and\n> everything compiled o.k. Is this error below a known issue?\n>\n>\n>\n> On Mon, Feb 25, 2008 at 11:36 AM, Tom Wells  wrote:\n>\n> Just tried to run a build, and getting the following errors:\n> C:\\\\temp\\\\pywin32>python setup.py -q build\n> Building pywin32 2.5.210.9\n> Skipping win32cred WINDOWS.H with version 0x501 is required, but only\n> version 0x500 is installed.\n> win32servicemodule.cpp\n> win32\\\\src\\\\win32servicemodule.cpp(2675) : error C2065:\n> 'SERVICE_CONTROL_PRESHUTDOWN' : undeclared identifier\n> win32\\\\src\\\\win32servicemodule.cpp(2733) : error C2065:\n> 'SERVICE_ACCEPT_PRESHUTDOWN' : undeclared identifier\n> error: command '\"C:\\\\Program Files\\\\Microsoft Visual Studio .NET\n> 2003\\\\Vc7\\\\bin\\\\cl.exe\"' failed with exit status 2\n>\n> I have vs2003 installed (for python 2.5.1), plus just downloaded and\n> installed the latest platform sdk from (\n> http://www.microsoft.com/downloads/details.aspx?FamilyId=A55B6B43-E24F-4EA3-A93E-40C0EC4F68E5&displaylang=en#filelist\n> ).\n>\n> Any ideas? I'm purely after the ISAPI bits.\n>\n> Thanks,\n> Tom\n>\n>\n>\n> On Mon, Feb 25, 2008 at 4:28 PM, Tom Wells  wrote:\n>\n> Mark, Hi\n>\n> A test build would be great - I just sync'd CVS and saw your changes and\n> about to download platform SDK etc to compile the newest version, but i'm\n> sure you can probably get me something sooner! I will however get the\n> sources anyways, as it's a good reference plus I may feel inclined to finish\n> off some of your TBD's (such as the SF_NOTIFY_SEND_RESPONSE notification,\n> which should be very easy as it takes exactly the same notificationtype as\n> SF_NOTIFY_PREPROC_HEADERS according to ISAPI documentation).\n>\n> Thanks for the support so far - really appreciate it!\n>\n> Please let me know once you have a build available, I am running python\n> 2.5.1 (32 bit), but would also require an amd64 build if possible?\n>\n> Thanks,\n> Tom\n>\n>\n>\n> On Mon, Feb 25, 2008 at 3:50 PM, Mark Hammond \n> wrote:\n>\n> > Actually there is no such fc.SetHeader() function ...\n>\n> Yep - it was PREPROC_HEADERS I was referring to.\n>\n>\n> > SendResponseHeaders() not working is odd, and maybe i'm just\n> misunderstanding it's use\n>\n> Sadly, there is a layer of indirection here I inherited from the original\n> author which isn't necessarily intuitive.  SendResponseHeaders() is used\n> by\n> an extension and which as the docs mention (or at least do in CVS - its\n> likely they do not in your copy), \"calls ServerSupportFunction with\n> HSE_REQ_SEND_RESPONSE_HEADER_EX\" - which you will find takes 3 params -\n> response, complete_headers, keep_alive, where response is the \"200 OK\"\n> string, complete_headers is a string with \\\\r\\\\n terminators, and keep_alive\n> is a bool (which, best I can tell, has no effect on anything!)\n>\n> I have added HTTP_FILTER_CONTEXT AddResponseHeaders() to CVS though - let\n> me\n> know if you would like a build to test (and let me know your Python\n> version)\n> - and that goes for anyone else too - build 211 gets closer by the day\n> (just\n> get Roger to stop fixing lots of pythonwin bugs ) so I'll point\n> anyone\n> who asks at test builds...\n>\n> Cheers,\n>\n> Mark.\n>\n>\n>\n>  --\n> http://www.tomwells.org\n>\n>\n>\n>  --\n> http://www.tomwells.org\n>\n> _______________________________________________\n> python-win32 mailing list\n> kpitck-aew45@python.org\n> http://mail.python.org/mailman/listinfo/python-win32\n>\n>\n>\n>\n>\n>\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00042701775070819035,
+          "NOT_SPAM": 0.9995729822492919
+        },
+        "confidence": 0.9946042876939314
+      }
+    },
+    "usage": {
+      "input_tokens": 1828,
+      "output_tokens": 0
+    }
+  }
+}

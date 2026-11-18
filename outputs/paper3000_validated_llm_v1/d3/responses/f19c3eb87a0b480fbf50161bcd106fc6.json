@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Problems with the new super()\n\nGuido van Rossum schrieb:\n> On Thu, May 1, 2008 at 11:20 AM, Georg Brandl  wrote:\n>>  But the other two magical things about super() really bother me too. I\n>>  haven't looked at the new super in detail so far (and I don't know how\n>>  many others have), and two things are really strikingly unpythonic in\n>>  my view:\n>>\n>>  * super() only works when named \"super\" [1]. It shouldn't be a function if\n>>   it has that property; no other Python function has that.\n> \n> Actually, I believe IronPython and/or Jython have to use this trick in\n> certain cases -- at least I recall Jim Hugunin talking about\n> generating different code when the use of locals() was detected.\n\nI don't know if it's possible in Jython to have \"locals\" referring to\nsomething else. For CPython, the name \"super\" in a function can refer to\nanything -- local, global or builtin -- and it just feels wrong for the\ncompiler to make assumptions based on the mere mention of a non-reserved\nname.\n\n> I'm not proud of this, but I don't see a way around it. The\n> alternative would be to make it a keyword, which seemed excessive\n> (plus, it would be odd if super() were a keyword when self is not).\n\nI don't find it odd. In fact, IMO the whole magic needed for the runtime\nimplementation of \"super()\" justifies super becoming a keyword.\n\nGeorg\n\n[Moving this to the Python-3000 list]\n\n-- \nThus spake the Lord: Thou shalt indent with four spaces. No more, no less.\nFour shall be the number of spaces thou shalt indent, and the number of thy\nindenting shall be four. Eight shalt thou not indent, nor either indent thou\ntwo, excepting that thou then proceed to four. Tabs are right out.\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00039116244698606597,
+          "NOT_SPAM": 0.9996088375530139
+        },
+        "confidence": 0.9950078450709937
+      }
+    },
+    "usage": {
+      "input_tokens": 631,
+      "output_tokens": 0
+    }
+  }
+}

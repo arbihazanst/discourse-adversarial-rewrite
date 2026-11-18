@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Fwd: Re[2]: [ILUG] New ILUG commitee\n\nTimothy Murphy wrote on 15/11/07 11:43:\n> Seriously, though, as ILUG appears to me to be an electronic organisation,\n> I would have thought  it would  be better if election of the committee, etc,\n> were conducted over the internet.\n>   \n\ne-voting FTW! \\\\o/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9668965925680453,
+          "SPAM": 0.03310340743195479
+        },
+        "confidence": 0.9337931851360906
+      }
+    },
+    "usage": {
+      "input_tokens": 260,
+      "output_tokens": 0
+    }
+  }
+}

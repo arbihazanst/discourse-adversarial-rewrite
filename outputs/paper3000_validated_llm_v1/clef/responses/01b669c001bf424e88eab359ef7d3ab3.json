@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Have a separate resolv.conf per interface\n\nOn 2/14/08, Tommy Pham  wrote:\n> Doc,\n>\n> Are you having problems connecting to *certain* DNS server for\n> resolving because you're connecting to it via a different connection?\n> The problem I had was my ISP refuses connection that doesn't originate\n> from their subscribed line/network because their server doesn't use\n> authentication.  If your ISP's DNS server(s) are doing the same also,\n> you can route all traffic to certain (DNS server) IP via certain\n> gateway.  That's how I can connect to both of my ISP's servers and\n> still manage to _load balance_ the 99% of the out going connections via\n> 2 connection.\n>\n> Regards,\n> Tommy\n>\n\nThe problem is this:\n\nI'm at a client and need to be on their network to access their\nmachines.  I connect to their network via eth0 and am assigned an\naddress via DHCP.\n\nHowever, I cannot get out to the Internet on their network.  They have\na proxy in place and do not give vendors access.  So to get on the\nWWW, I have a Sprint Wireless card seen as ppp0.  I have setup routing\nsuch that all traffic goes through the Sprint card with the exeception\nof traffic bound for their network which uses a different gateway.\n\nThis works well except for the name resolution piece.  Right now\nresolv.conf is set to use DNS servers provided by Sprint to resolve\nWWW names, but I want to be able to resolve machine names on their\nnetwork as well using *their* nameservers.  I cannot add that to\nresolv.conf...doesn't work that way.  As long as a nameserver is not\ndown, it will not go on to try other nameservers just because it can't\nresolve the name you're looking for.  I could add a whole bunch of\nnames to my /etc/hosts file, but I'd rather not do that.\n\nWindows appears to handle this situation well, I'm just not sure how it does it.\n\nHope this helps to better explain my question.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9621836195331991,
+          "SPAM": 0.03781638046680091
+        },
+        "confidence": 0.9243672390663982
+      }
+    },
+    "usage": {
+      "input_tokens": 635,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Forrester Research on Maintaining Your Greatest Asset: Your People\n\n\n\n\n\nTechRepublic Enterprise Spotlight\n\n\n\n\n\n\n\n\n\n\n\nTechRepublic Enterprise SpotlightBringing you product highlights & special offers from premier enterprise sponsors \n\n\n\n\n\n\n\n\n\n\n\nUnsubscribe | Manage Subscriptions\n\n\n\n\tFebruary 13, 2008\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload the Forrester Research Brief\n\n\n\n\n\n\nClick here to download thethe research brief.\n\t\n\n \n\n\nTechRepublic Enterprise Spotlight Member:\n\n\tForrester Research wants to know: Are you maintaining your most important asset - your people? With the proliferation of automated processes and outsourcing, it's dangerously easy to overlook employee satisfaction and productivity. \n\n\tAccording to a new Forrester Research Brief, best practices for managing an organization's IT operations must include a sharp focus on staff development and appreciation. This doesn't necessarily mean sending the team to Hawaii - it can be as simple and cost-effective as enabling employees with secure remote access. \n\n\tDownload the Forrester Research Brief to learn how leveraging the power of your human resources with Web-based remote access leads to:\n\t\n\n\n\n\n\n• \n\nIncreased productivity and reduced IT costs\n\n\n\n• \n\nGreater flexibility with zero additional IT burden\n\n\n\n• \n\nHigher employee satisfaction, retention and work/life balance\n\n\n\nDownload the Research Brief Now\n\n\tPlease forward this invitation to colleagues who are interested in learning more about remote access.\n \n\n\n\n\n\n\n\n\n\n\nCitrix Online | 6500 Hollister Avenue | Goleta, CA 93117\nVoice: (888) 646-0016 | Fax: (805) 690-6471\n\nUnsubscribe\nhere\n© 2008 Citrix Online, LLC. All rights reserved.\n\n\n\n\n\n\n\n\n\n\n\nYou have been selected to receive this email because you indicated you wanted to receive valuable information and product updates from technology vendors when you provided your e-mail address to TechRepublic. Your email address has not been given to any Third Parties.\nSign up for more free newsletters from TechRepublic - To manage your account settings or to remove yourself from all TechRepublic communications, please visit our Subscription Center.\nThe e-mail address for your subscription is user6@gvc.ceas-challenge.cc\nUnsubscribe from this e-mail  |  FAQ |  Advertise |  Privacy Policy\n\n\n\n\n\n\n\n\n\nCopyright\n        © 2008 CNET Networks, Inc. All rights reserved. TechRepublic is a\n        registered service mark of CNET Networks, Inc. TechRepublic Logo is service\n        mark of CNET Networks, Inc.\n\n        CNET Networks, Inc.\n235 Second Street\nSan Francisco, CA 94105\nU.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.23340685837182837,
+          "SPAM": 0.7665931416281716
+        },
+        "confidence": 0.5331862832563432
+      }
+    },
+    "usage": {
+      "input_tokens": 712,
+      "output_tokens": 0
+    }
+  }
+}

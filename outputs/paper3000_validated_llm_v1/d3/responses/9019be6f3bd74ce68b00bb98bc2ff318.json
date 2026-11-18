@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] 2nd CFP: Bayesian Methods in NLP Workshop at NIPS\n\n************************************************************************\n\n                            CALL FOR PAPERS\n\n            Bayesian Methods for Natural Language Processing\n\n                            Workshop at the \n            Neural Information Processing Systems Conference\n                              (NIPS 2005)\n\n                  http://www.isi.edu/~hdaume/BayesNLP/\n\n               ** Submission Deadline: 21 October 2005 **\n\n************************************************************************\n                   [ Apologies for multiple postings ]\n\n\nOVERVIEW\n--------\n\nModels of natural language processing problems are often incredibly\ncomplex, and there is never enough data to properly estimate all the\nrequired parameters. This has lead to a strong need for learning\ntechniques with built-in capacity control; most classical solutions to\nthis problem involve largely ad-hoc smoothing techniques. The\napplication of Bayesian learning methods to these problems could\npotentially result in more effective models, for which extensive\ncross-validation is no longer required for hyperparameter tuning or\nmodel selection.\n\nThe goals of this workshop are to bring together researchers from both\nthe Bayesian machine learning community and the natural language\nprocessing community to enable cross-fertilization of techniques,\nmodels and applications. We wish to focus on the following issues:\n\n    * Statistical Models: Current Bayesian models for text have\n      largely focused on \"bag of words\" style approaches, where\n      conditional independence is assumed between words. This leads to\n      a convenient interpretation of a document as a sequence of draws\n      from multinomial distributions, but does not account for any of\n      the internal structure that exists in documents and which NLP\n      researchers are interested in. How can we build models that move\n      beyond the bag of words assumption? What structures are useful\n      for modeling? How can we model these structures efficiently? Can\n      we learn these models automatically?\n\n    * Applications-oriented Models: Many statistical models for text\n      have aimed at automatically inferring implicit relationship\n      between varied elements of documents in a corpus. How can we use\n      such models to aid in applications? Can we develop similar\n      models that are aimed at solving a real-world NLP task? For what\n      NLP applications are Bayesian techniques appropriate and how can\n      we develop models specific to these problems?\n\n\n\nCALL FOR PARTICIPATION\n----------------------\n\nWe invite submission of workshop papers that discuss ongoing or\ncompleted work dealing with Bayesian techniques applied to natural\nlanguage processing problems (see below for an incomplete list of\npossible topics). A workshop paper should be no more than six pages in\nthe standard NIPS format. Authorship should not be blind. Please\nsubmit a paper by emailing it in Postscript or PDF format to\nqmwpgp@isi.edu with the subject line \"BNLP Submission\". We anticipate\naccepting four to six such papers for 15 minute presentation slots\n(exact details will be worked out shortly). Please only submit an\narticle if at least one of the authors will be able to attend the\nworkshop and present the work.\n\nWe are especially interested in submissions from authors in the NLP\ncommunity who have not previously attended a NIPS conference. If you\nfall into this category, please note this in your email when you\nsubmit your paper.\n\nRelevant Topics:\n\n    * Models that move beyond the bag-of-words assumption\n    * Techniques that apply to problems other than language modeling\n    * Structure-learning techniques for language\n    * Bayesian extensions to well-known NLP models\n    * Application of Bayesian techniques to NLP problems\n    * Both supervised and unsupervised techniques are welcome\n\nWe also welcome position papers of at most two pages in length that\ndiscuss, with appropriate argumentation, whether or not Bayesian\ntechniques are applicable to NLP problems and, if so, which\nones. These should be submitted in the same way as standard workshop\npapers. These will be used to help guide discussion during panel\nsessions.\n\n\nIMPORTANT DATES\n---------------\n\n    18 Aug 05 -- Call for participation\n    21 Oct 05 -- Paper submission deadline\n     4 Nov 05 -- Notification of paper acceptance\n    25 Nov 05 -- Survey and position paper deadlines\n  9/10 Dec 05 -- Workshop in Whistler\n\n\nINVITED SPEAKERS AND PANELISTS\n------------------------------\n\nKenneth Church (Microsoft Research) -- Invited Speaker & Panelist\nTom Griffiths (Brown University)    -- Invited Speaker & Panelist\nJeff Bilmes (U. of Washington)      -- Panelist\nAndrew McCallum (UMass Amherst)     -- Panelist\n\nRESEARCHER SURVEY\n-----------------\n\nRegardless of whether you submit a paper or not, if you are a\nresearcher in either the Bayesian learning community or the NLP\ncommunity, please complete our survey (available on the web page),\nwhich will serve to guide the panel discussions at the workshop.\n\n\nORGANIZATION\n------------\n\nHal Daume III\nInformation Sciences Institute\nqmwpgp@isi.edu\nhttp://www.isi.edu/~hdaume/\n\nYee Whye Teh\nNational University of Singapore\nvfysm@comp.nus.edu.sg\nhttp://www.cs.berkeley.edu/~ywteh/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.04187102813686892,
+          "NOT_SPAM": 0.9581289718631312
+        },
+        "confidence": 0.7491940186797315
+      }
+    },
+    "usage": {
+      "input_tokens": 1231,
+      "output_tokens": 0
+    }
+  }
+}

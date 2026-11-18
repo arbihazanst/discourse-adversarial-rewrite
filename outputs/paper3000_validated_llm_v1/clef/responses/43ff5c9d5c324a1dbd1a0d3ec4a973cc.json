@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re:\n\n\nMaybe God put a few bad people in your life, so when the right one came along you'd be thankful. http://ewxjel.pushyet.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.04130601503157112,
+          "SPAM": 0.958693984968429
+        },
+        "confidence": 0.9173879699368579
+      }
+    },
+    "usage": {
+      "input_tokens": 195,
+      "output_tokens": 0
+    }
+  }
+}

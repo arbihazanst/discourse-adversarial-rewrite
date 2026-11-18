@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [UAI] Belief Propagation Software\n\nHi,\n\nI recently released a free/open source software library called libDAI\nthat supports various approximate inference algorithms (amongst which\nloopy BP) on arbitrary factor graphs with discrete variables. It is a\nC++ library and offers a simple command line interface and a MatLab\ninterface (currently disabled because of compilation problems for some\nMatLab versions, but this is a minor issue).\n\nDocumentation still has to be written but I'll try to offer some support\nby email in the meantime.\n\nNeighborhoods larger than 4 are supported.\n\nFor more information, see http://www.mbfys.ru.nl/~jorism/libDAI\n(where the package can be downloaded).\n\nRegards,\n\nJoris Mooij\nRadboud University Nijmegen, The Netherlands\n\n\nOn Wed, Feb 07, 2007 at 06:13:57PM -0500, Qiang Ji wrote:\n> All,\n> \n> \n> We need a package to support loopy belief propagation in a\n> neighborhood\n> larger than 4 . Only pairwise cliques need to be considered.\n> However, there may be more than 4 neighbors, e.g. 6 neighbors.\n> \n> Current packages such as those from Murphy's and from Middlebry  seem \n> to only support 4 neighborhood inference.\n> \n> Any information will be appreciated.\n> \n> \n> Thanks for in advance\n> QJ\n> \n> uai mailing list\n> \n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9369993553195293,
+          "SPAM": 0.06300064468047076
+        },
+        "confidence": 0.8739987106390585
+      }
+    },
+    "usage": {
+      "input_tokens": 497,
+      "output_tokens": 0
+    }
+  }
+}

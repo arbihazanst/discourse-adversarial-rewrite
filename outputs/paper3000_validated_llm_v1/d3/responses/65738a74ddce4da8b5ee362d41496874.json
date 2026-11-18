@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: These SOA papers could win you an Apple iPod!\n\n\n\n\nThese SOA Resources are Your Chance to Win!\n\n\n\n\n\n\nYou are receiving this communication as a benefit of your TechRepublic membership. If you prefer not to receive this information, please visit our subscription center.\n\n\n\n\n\n\n\n\n\n\nThese SOA Resources are Your Chance to Win!\n\n\n\nTo understand the issues involved in preparing for and implementing a service-oriented architecture, start by reading these FREE white papers, compliments of TechRepublic and our sponsor, Oracle.\nDownload by Feb. 29th for your chance to WIN an iPod!\nDownload any of the Oracle-sponsored SOA resources featured below before 11:59 P.M. PT on Friday, February 29th to be automatically entered into our drawing for an Apple iPod, valued at $249.99!\nNote: Only one download is required to be automatically entered into our Sweepstakes, which is open to U.S. residents only. Read the complete Sweepstakes Rules here.\n\n\nBringing SOA Value Patterns to Life\nData Grids and Service-Oriented Architecture\nCalculating the Return on Investment for Clustered Caching and Data Grid Solutions\nSOA Governance: Framework and Best Practices\nNext-Generation SOA Infrastructure\nWeb Services Security: What's Required to Secure a Service-Oriented Architecture\nAchieving the Impossible: Unlimited Application Scalability\n\n\n\n\nCopyright © 2008 CNET Networks, Inc. All rights reserved.\n    \n\n\nYou have received this message at user6@gvc.ceas-challenge.cc as a part of your membership with TechRepublic.\n\n\n\nUnsubscribe from this list\nQuestions & Comments\n\n\nChange your e-mail address\nVisit TechRepublic\n\n\nView/edit your e-mail subscriptions\nView CNET's Privacy Policy\n\n\nCopyright © 2008 CNET Networks, Inc. All rights reserved.\n    TechRepublic is a registered service mark of CNET Networks, Inc.\n\n    CNET Networks, Inc., 235 Second Street, San Francisco, CA 94105, U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.5063725835331163,
+          "NOT_SPAM": 0.49362741646688363
+        },
+        "confidence": 0.00011717834692359652
+      }
+    },
+    "usage": {
+      "input_tokens": 550,
+      "output_tokens": 0
+    }
+  }
+}

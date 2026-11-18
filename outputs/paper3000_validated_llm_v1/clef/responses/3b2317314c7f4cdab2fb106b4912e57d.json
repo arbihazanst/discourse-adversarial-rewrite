@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Amos Hamilton\n\n\n\n\n\n\n\n\nB tz u fw y From On fpv line P dt har wmb ma qdl cy\n\nGet FDA Me di ds & Save up to 85%\n100% Legal P sjo har gb macy - Or yde der Today! \n\nhttp://colonybear.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.024244545827038843,
+          "SPAM": 0.9757554541729611
+        },
+        "confidence": 0.9515109083459221
+      }
+    },
+    "usage": {
+      "input_tokens": 226,
+      "output_tokens": 0
+    }
+  }
+}

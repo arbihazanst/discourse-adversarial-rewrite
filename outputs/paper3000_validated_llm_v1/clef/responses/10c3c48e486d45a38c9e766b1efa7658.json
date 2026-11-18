@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Spambayes-checkins] spambayes/spambayes CoreUI.py, 1.1.2.7,\t1.1.2.8 ProxyUI.py, 1.64.2.1, 1.64.2.2 UserInterface.py,\t1.61.2.1, 1.61.2.2\n\nUpdate of /cvsroot/spambayes/spambayes/spambayes\nIn directory sc8-pr-cvs8.sourceforge.net:/tmp/cvs-serv16141/spambayes\n\nModified Files:\n      Tag: CORESVR\n\tCoreUI.py ProxyUI.py UserInterface.py \nLog Message:\ntrivial refactoring (these should probably both be functions, not methods)\n\nIndex: CoreUI.py\n===================================================================\nRCS file: /cvsroot/spambayes/spambayes/spambayes/Attic/CoreUI.py,v\nretrieving revision 1.1.2.7\nretrieving revision 1.1.2.8\ndiff -C2 -d -r1.1.2.7 -r1.1.2.8\n*** CoreUI.py\t6 Jun 2007 03:30:45 -0000\t1.1.2.7\n--- CoreUI.py\t8 Jun 2007 02:09:51 -0000\t1.1.2.8\n***************\n*** 206,226 ****\n          self.write(_(\"OK. Return Home.\"))\n  \n-     def _keyToTimestamp(self, key):\n-         \"\"\"Given a message key (as seen in a Corpus), returns the timestamp\n-         for that message.  This is the time that the message was received,\n-         not the Date header.\"\"\"\n-         return long(key[:10])\n- \n-     def _getTimeRange(self, timestamp):\n-         \"\"\"Given a unix timestamp, returns a 3-tuple: the start timestamp\n-         of the given day, the end timestamp of the given day, and the\n-         formatted date of the given day.\"\"\"\n-         this = time.localtime(timestamp)\n-         start = (this[0], this[1], this[2], 0, 0, 0, this[6], this[7], this[8])\n-         end = time.localtime(time.mktime(start) + 36*60*60)\n-         end = (end[0], end[1], end[2], 0, 0, 0, end[6], end[7], end[8])\n-         date = time.strftime(\"%A, %B %d, %Y\", start)\n-         return time.mktime(start), time.mktime(end), date\n- \n      def _buildReviewKeys(self, timestamp):\n          \"\"\"Builds an ordered list of untrained message keys, ready for output\n--- 206,209 ----\n\nIndex: ProxyUI.py\n===================================================================\nRCS file: /cvsroot/spambayes/spambayes/spambayes/ProxyUI.py,v\nretrieving revision 1.64.2.1\nretrieving revision 1.64.2.2\ndiff -C2 -d -r1.64.2.1 -r1.64.2.2\n*** ProxyUI.py\t6 Jun 2007 03:31:25 -0000\t1.64.2.1\n--- ProxyUI.py\t8 Jun 2007 02:09:51 -0000\t1.64.2.2\n***************\n*** 111,115 ****\n  )\n  \n! # Like the above, but hese are the options that will be offered on the\n  # advanced configuration page.\n  adv_map = (\n--- 111,115 ----\n  )\n  \n! # Like the above, but these are the options that will be offered on the\n  # advanced configuration page.\n  adv_map = (\n***************\n*** 221,241 ****\n          self.write(_(\"OK. Return Home.\"))\n  \n-     def _keyToTimestamp(self, key):\n-         \"\"\"Given a message key (as seen in a Corpus), returns the timestamp\n-         for that message.  This is the time that the message was received,\n-         not the Date header.\"\"\"\n-         return long(key[:10])\n- \n-     def _getTimeRange(self, timestamp):\n-         \"\"\"Given a unix timestamp, returns a 3-tuple: the start timestamp\n-         of the given day, the end timestamp of the given day, and the\n-         formatted date of the given day.\"\"\"\n-         this = time.localtime(timestamp)\n-         start = (this[0], this[1], this[2], 0, 0, 0, this[6], this[7], this[8])\n-         end = time.localtime(time.mktime(start) + 36*60*60)\n-         end = (end[0], end[1], end[2], 0, 0, 0, end[6], end[7], end[8])\n-         date = time.strftime(\"%A, %B %d, %Y\", start)\n-         return time.mktime(start), time.mktime(end), date\n- \n      def _buildReviewKeys(self, timestamp):\n          \"\"\"Builds an ordered list of untrained message keys, ready for output\n--- 221,224 ----\n\nIndex: UserInterface.py\n===================================================================\nRCS file: /cvsroot/spambayes/spambayes/spambayes/UserInterface.py,v\nretrieving revision 1.61.2.1\nretrieving revision 1.61.2.2\ndiff -C2 -d -r1.61.2.1 -r1.61.2.2\n*** UserInterface.py\t24 May 2007 03:19:34 -0000\t1.61.2.1\n--- UserInterface.py\t8 Jun 2007 02:09:51 -0000\t1.61.2.2\n***************\n*** 1253,1254 ****\n--- 1253,1273 ----\n                  lines.append(''.join(cur_line))\n          return lines\n+ \n+     def _keyToTimestamp(self, key):\n+         \"\"\"Given a message key (as seen in a Corpus), returns the timestamp\n+         for that message.  This is the time that the message was received,\n+         not the Date header.\"\"\"\n+         return long(key[:10])\n+ \n+     def _getTimeRange(self, timestamp):\n+         \"\"\"Given a unix timestamp, returns a 3-tuple: the start timestamp\n+         of the given day, the end timestamp of the given day, and the\n+         formatted date of the given day.\"\"\"\n+         this = time.localtime(timestamp)\n+         start = (this[0], this[1], this[2], 0, 0, 0, this[6], this[7], this[8])\n+         end = time.localtime(time.mktime(start) + 36*60*60)\n+         end = (end[0], end[1], end[2], 0, 0, 0, end[6], end[7], end[8])\n+         date = time.strftime(\"%A, %B %d, %Y\", start)\n+         return time.mktime(start), time.mktime(end), date\n+ \n+ \n\n_______________________________________________\nSpambayes-checkins mailing list\npnperxdpv-sarswdlp@python.org\nhttp://mail.python.org/mailman/listinfo/spambayes-checkins",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8780357612027055,
+          "SPAM": 0.12196423879729455
+        },
+        "confidence": 0.7560715224054111
+      }
+    },
+    "usage": {
+      "input_tokens": 1946,
+      "output_tokens": 0
+    }
+  }
+}

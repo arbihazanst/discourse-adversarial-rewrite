@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Improved thread switching\n\nOn Thu, Mar 20, 2008 at 09:58:46AM -0400, Jesse Noller wrote:\n> FYI: I shot an email to stdlib-sig about the fact I am proposing the\n> inclusion of the pyProcessing module into the stdlib. Comments and\n> thoughts regarding that would be welcome. I've got a rough outline of\n> the PEP, but I need to spend more time with the code examples.\n\nSince we officially encourage people to spawn processes instead of\nthreads, I think that this would be a great idea.  The processing module\nhas a similar API to threading.  It's easy to use, works well, and most\nimportantly, gives us some place to point people to when they complain\nabout the GIL.\n\n\n-- \nAndrew McNabb\nhttp://www.mcnabbs.org/andrew/\nPGP Fingerprint: 8A17 B57C 6879 1863 DE55  8012 AB4D 6098 8826 6868",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.001010387494768033,
+          "NOT_SPAM": 0.9989896125052321
+        },
+        "confidence": 0.9884888153671443
+      }
+    },
+    "usage": {
+      "input_tokens": 384,
+      "output_tokens": 0
+    }
+  }
+}

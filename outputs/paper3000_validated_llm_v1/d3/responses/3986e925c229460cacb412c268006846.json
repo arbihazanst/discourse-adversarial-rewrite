@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [PownceAPI] Redirect Url's\n\n\nSince my applications exist outside of the Pownce website, when you  \nsend someone a link, and they view it through one of my applications,  \nits pretty obvious the view count will not change.\n\nI'd love to see some sort of url redirect link that we can pass url's  \nto which will then increment the view count.\n\nLet me know what you think.\n\nKyle Browning\n\n--~--~---------~--~----~------------~-------~--~----~\nYou received this message because you are subscribed to the Google Groups \"PownceAPI\" group.\nTo post to this group, send email to zgdjhgesv@googlegroups.com\nTo unsubscribe from this group, send email to ggnqhfrsh-hbqfvscggnq@googlegroups.com\nFor more options, visit this group at http://groups.google.com/group/pownceapi?hl=en\n-~----------~----~----~----~------~----~------~--~---",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0014096897783757107,
+          "NOT_SPAM": 0.9985903102216244
+        },
+        "confidence": 0.9846173463600253
+      }
+    },
+    "usage": {
+      "input_tokens": 349,
+      "output_tokens": 0
+    }
+  }
+}

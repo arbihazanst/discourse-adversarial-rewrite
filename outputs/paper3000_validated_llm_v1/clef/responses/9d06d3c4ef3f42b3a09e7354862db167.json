@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Spring Big Sale...FANTASTIC Replica watches...Save 15% ...   \n\n\nWatches  from simple to luxurious Replica Classics \n\nMost reliable replica from Patek Philippe ...   \n\nLuxurious costume replica watches at ...   \n\nhttp://gatedequidnos.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.020878824605399523,
+          "SPAM": 0.9791211753946005
+        },
+        "confidence": 0.9582423507892011
+      }
+    },
+    "usage": {
+      "input_tokens": 217,
+      "output_tokens": 0
+    }
+  }
+}

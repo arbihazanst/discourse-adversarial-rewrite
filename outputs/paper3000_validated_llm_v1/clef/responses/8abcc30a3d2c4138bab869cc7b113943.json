@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: part-time job\n\n\nThis letter contains an offer of the distant job.\n\nMain requirements:\n\n- Age from 18 to 60 years\n\n- Basic computer\n\n- DE citizenship or DE permanent residency\n\n- Mobile connection\n\n- The account in any bank\n\n- Accuracy, responsibility and making tasks in a short space of time\n\n- 1-2 hours of free time during working day\n\n- Desired Education Level: High School or Equivalent\n\n---\n\nThe description of the job:\n\nOur firm has been already working for 4 years in the Net market of transactions, we have worked\nout our own\n\nscheme of financial transactions for the third World, for all less economically developed\ncountries and we\n\ninvolve employees from well-to-do countries like Germany.\n\nYou can work at constant job or be unemployed, but you should always have an opportunity to\nvisit the bank,\n\nthe Western Union office, the office of our company in Ottawa, Canada. You don't need to have\nany kind of\n\nfinancial education or experience. Pass the registration on our web-site, after checking your\ninformation your personal\n\nmanager will connect you. He will define the work specificity just for you in your region.\n\nIf you're interested send your full name, phone number, age and RESUME to manokiowork@gmail.com\n\n---\n\nAbout us:\n\nXOOM Global Money Transfer was organized by the european millionaire Roman Abramovich, who used\nto be the first\n\nin making the public statement that the financial market brings the killing profit in less\neconomically developed\n\ncountries and there is no point to underestimate them.\n\nThe system of urgent transactions has been working from 2004; for all that time there was made\nmore than 4 million transactions.\n\nOur business is absolutely legal according to all international laws.\n\n\n---\n\nInfo: Dear ladies and gentlemen, we are sincerely sorry if our advertisement letter has come to\nyou without the inquiry in the form of spam. Unfortunately,\n\nnot all promotion companies use the legal advertisement, therefore we also suffer.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.017899307655039914,
+          "SPAM": 0.98210069234496
+        },
+        "confidence": 0.96420138468992
+      }
+    },
+    "usage": {
+      "input_tokens": 582,
+      "output_tokens": 0
+    }
+  }
+}

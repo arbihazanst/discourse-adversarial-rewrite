@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] OpenSocial\n\nOn 11/2/07, Justin Mason  wrote:\n> Adam L Beberg writes:\n> > The value of a social network is who they keep out.\n\nSo true so true. Just the other day at the country club I had to be\namazed at the number of \"those\" people who seemed to think it was\nacceptable that they order a mint julep before I did. Such things are\nsimply not to be tolerated.\n\nSo you and your emeritus profs do not  worry yourselves , I am sure\nyou will find methodologies to keep the rabble form crashing your\nweekly circle jerks erhm I  mean learned coffee clutches.\n\n\n\n Now for the folks of dont take the Waldorf and Statler approach to\nthings, the idea of interoperability means you actually, if this works\nas I think it might, not have to be part of a place you do not deem\nworthy and yet still mark folks as friends or part of  your network.\nThose who would not touch myspace with a 23 foot polish sausage will\nbe able to include diehard myspacers in thier networks without having\nto deal with going to pages with  gigglygifs or blaring loud\npsuedoindi band tunage.\n\nSure Beburp calls this useless, though much of what is called useless\nby such  seems to wind up being used a bunch to the point of finding\nother uses. Was it not the case that social networks sucked and would\nnever be worth anything. Oh snap how the intertubes does make\nostriches of the most self dimensionally progressive types.\n\nSo anyway, back to the ranch of the possible....what can we, and by we\nyes do mean you and you and you,do  to pull us some use out of this\npossible interverse thing. We are a smart savvy collective of dinkums\nwho should be able to outmaneuver the next wave of cool at least on a\nscale of a few cool widgizmooids. IM, conferencing, white boarding, go\nplaying, etc etc etc. Lets sotrm the castle brain a little and see if\nwe can at least identify what the next brand new jimmies might be.   I\nwant plans and projections floating on the list asap.\n\n-tom(getting back into team manager mode)higgins",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9632414000439136,
+          "SPAM": 0.036758599956086484
+        },
+        "confidence": 0.9264828000878271
+      }
+    },
+    "usage": {
+      "input_tokens": 670,
+      "output_tokens": 0
+    }
+  }
+}

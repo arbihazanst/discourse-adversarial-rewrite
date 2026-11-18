@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: This Week: The Earth Day Channel, Project Greenhouse, Jack Johnson\tand more...\n\n               \nCheck out this email on our website. Click here. http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zfDjNQ\n---------------------------------------------------------\nJoost : What's on this Week\n---------------------------------------------------------\n\nEarth Day: Not Just April 22\n\nWe're all environmentally-friendly these days - we have to be. But Earth Day\nisn't just about reducing, reusing and recycling - it's about celebrating the\nplanet. So we've put together a channel that explores the world's greatest\nnatural wonders, mixed with shows about innovations you can use and steps you\ncan take to help preserve them.\n\nWatch the Earth Day Channel: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zqDjZA\n\n---------------------------------------------------------\nFeatured Videos\n---------------------------------------------------------\nWhat is Earth Day: A Short History\n\nEarthling is a term you usually associate with science fiction - but in fact, \nit refers to all of us. And this year, more than a billion of us Earthlings will \ncelebrate our planet and make a commitment to protect it on Earth Day. \nWe've come a long way since the first Earth Day in 1970.\n\nWatch What is Earth Day: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zqHjZQ\n\n---------------------------------------------------------\n\nThe Future of the Great Barrier Reef\n\nWill the world's largest coral reef system be able to survive coral \nbleaching - \"stressful\" events that are usually caused by a change in \nwater temperature and result in colorless coral? Scientists try to find \nout if coral can adapt to its new environment.\n\nWatch The Future of the Great Barrier Reef: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zqbjZg\n\n---------------------------------------------------------\n\nProject Greenhouse: 30 Days of Invisible Living\n\nFor a full month, your average American male will try to live a \ncarbon-neutral life. This means giving up his SUV, burgers and his \npack-a-day smoking habit for eco-friendly foods, eco-friendly clothes \nand a bicycle. Will he be able to last for the full 30 days?\n\nWatch Project Greenhouse: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zqfjZw\n\n---------------------------------------------------------\n\nJack Johnson: Hope           \nThis surfer poet supports environmental causes around\nthe world. See him perform from a eco-friendly plastic plant. \nWatch Jack Johnson: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zqTjmA\n\nHilfiger Sessions            \nCheck out exclusive live footage, interviews and backstage \nclips of established and up-and-coming musicians.\nWatch Hilfiger Sessions: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zqXjmQ\n\nA Lion's World\nImpress your friends with all the facts you could ever want to \nknow about lions - like how much they eat, sleep and mate.\nWatch A Lion's World: http://e.joost.com/I?a=A9X7CquSJjWN8QdNwKb1zprjmg\n\n---------------------------------------------------------\nClick here to unsubscribe from this newsletter. http://e.joost.com/J?a=A9X7CquSJjWN8QdNwKb1zo_jjw\nCopyright 2008 Joost",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.73216069972551,
+          "SPAM": 0.26783930027448993
+        },
+        "confidence": 0.46432139945102
+      }
+    },
+    "usage": {
+      "input_tokens": 967,
+      "output_tokens": 0
+    }
+  }
+}

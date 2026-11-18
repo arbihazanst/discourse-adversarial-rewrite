@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [R] Switch two rows in a matrix\n\nYou could perhaps do it like that a<-a[c(1,2,4,3),] B. Zhang Yanwei - Princeton-MRAm wrote: >  > Hi all, >   I have a 4 by 4 matrix, and I want to switch row 2 and row 3 first, then > switch column 2 and column 3. Is there an easy way to do it? > The following is a tedious way to get what I want. But I wonder if there > is a way to simplify this. >  >  > a=matrix(rnorm(16),4,4) >> a >             [,1]       [,2]        [,3]       [,4] > [1,]  0.33833811 -0.9422273 -0.06181611 -1.8346134 > [2,] -0.68167996  0.2004836  0.71079887 -1.1590184 > [3,]  0.07811688  0.1338694 -1.61262688  0.2988365 > [4,]  0.21869786 -1.6356661 -0.13694344 -1.2121355 >> b=a >> b[2,]=a[3,] >> b[3,]=a[2,] >> b >             [,1]       [,2]        [,3]       [,4] > [1,]  0.33833811 -0.9422273 -0.06181611 -1.8346134 > [2,]  0.07811688  0.1338694 -1.61262688  0.2988365 > [3,] -0.68167996  0.2004836  0.71079887 -1.1590184 > [4,]  0.21869786 -1.6356661 -0.13694344 -1.2121355 >> c=b >> c[,2]=b[,3] >> c[,3]=b[,2] >> c >             [,1]        [,2]       [,3]       [,4] > [1,]  0.33833811 -0.06181611 -0.9422273 -1.8346134 > [2,]  0.07811688 -1.61262688  0.1338694  0.2988365 > [3,] -0.68167996  0.71079887  0.2004836 -1.1590184 > [4,]  0.21869786 -0.13694344 -1.6356661 -1.2121355 >  >  > Sincerely, > Yanwei Zhang > Department of Actuarial Research and Modeling > Munich Re America > Tel: 609-275-2176 > Email: yzhang@munichreamerica.com >  >  > \t[[alternative HTML version deleted]] >  > ______________________________________________ > R-help@r-project.org mailing list > https://stat.ethz.ch/mailman/listinfo/r-help > PLEASE do read the posting guide > http://www.R-project.org/posting-guide.html > and provide commented, minimal, self-contained, reproducible code. >  >  ----- The art of living is more like wrestling than dancing. (Marcus Aurelius) --  View this message in context: http://www.nabble.com/Switch-two-rows-in-a-matrix-tp18872329p18872790.html Sent from the R help mailing list archive at Nabble.com. ______________________________________________ R-help@r-project.org mailing list https://stat.ethz.ch/mailman/listinfo/r-help PLEASE do read the posting guide http://www.R-project.org/posting-guide.html and provide commented, minimal, self-contained, reproducible code.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9178870927622615,
+          "SPAM": 0.08211290723773837
+        },
+        "confidence": 0.8357741855245231
+      }
+    },
+    "usage": {
+      "input_tokens": 1244,
+      "output_tokens": 0
+    }
+  }
+}

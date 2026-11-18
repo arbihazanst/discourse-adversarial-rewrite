@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: nan\n\nApologies to all if I have sent you this several times already, ( I know you have received it several times rachel, sorry), but it seems I'm having problems with my email when wanting to 'reply to all', so I have sent the email below one last time, just in case you didn't receive it.  Thanks, Van!\n\nHi Rach, \n\nYes, me and Tobey would love to run wild with you andCourtney as we are all back to our normal routine now.  Also everyoneelse, I have started attending a play group that Rachel attends held atStella Maris School in their school hall, it starts at 9.15 and goesthrough to 11.00 and is a gold coin donation.  Tobey had heaps of funrunning off LOTS of excess energy, painting and baking and sleptwonderfully in the afternoon which was blissful!!  I understand thatnumbers attending the group have fallen a bit low of late so if anyonefancies coming along for a few hours both Tobey and Courtney can highlyrecommend it!  This Friday I believe they are meeting at Orewa Park at9.00 for a play then putting the bubs in their prams and joining therest of Stella Maris school for a 5 km walk along the beach at 10.00. I'm sure Rachel can feel you in with more details about the group ifyou need any or correct anything I may of got wrong. \n\n Hope to see you all on Thursday.\n\nVanessa :-)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007029098841841131,
+          "NOT_SPAM": 0.9992970901158159
+        },
+        "confidence": 0.9916237318268929
+      }
+    },
+    "usage": {
+      "input_tokens": 450,
+      "output_tokens": 0
+    }
+  }
+}

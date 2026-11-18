@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] 3.0 buildbots all red\n\nTrent Nelson wrote:\n>>> Sounds like a challenge if ever I've heard one -- care to wager a beer on it?\n>>> (Only applies to buildbots that are connected/online.)\n> \n>> Make sure you get a screen shot for OnYourDesktop if/when they *do* go\n>> green!\n> \n> Screenshot?  I'm going to buy a pack of iron-on transfers and sell t-shirts of it online.\n> \n>     \"All the buildbots were green momentarily after PyCon 2008...\n>      ....and all I got was this lousy t-shirt.\"\n\n\nMomentarily? You mean they were only up for a few seconds?\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9535910573482497,
+          "SPAM": 0.0464089426517503
+        },
+        "confidence": 0.9071821146964993
+      }
+    },
+    "usage": {
+      "input_tokens": 376,
+      "output_tokens": 0
+    }
+  }
+}

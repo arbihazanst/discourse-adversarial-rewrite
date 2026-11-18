@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: You Can Enlarge Your Penis By 3\" Compare Top 5 Penis Enlargers\n\n\nMany surveys have shown that ladies prefer their man to have a huge manhood.\n\nTry it today - you have nothing to lose, just a lot to gain!\n\nhttp://pillmust.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9978709784323603,
+          "NOT_SPAM": 0.00212902156763975
+        },
+        "confidence": 0.9780354126857079
+      }
+    },
+    "usage": {
+      "input_tokens": 187,
+      "output_tokens": 0
+    }
+  }
+}

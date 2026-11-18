@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Syncing Blackberry on Linux\n\nFunambol is fine if you are \"standalone\", but what if you are (like me)\nusing a company owned blackberry which is configured to work with their\nexchange server and all you want to do is keep things like your tasks\nand phone book synced on your linux laptop?\nA WAY nicer thing would be a way to use my bb in places where there is\nno internet for access to the internet via wireless (no matter how slow).\nwcn\n\nCarlos Lorenzo Matés wrote:\n> Hi.\n>\n> El Miércoles, 20 de Febrero de 2008, Jerry Feldman escribió:\n>   \n>> I just found out that Blackberry uses a proprietary OS that has nothing\n>> to do with Microsoft, so I am removing the heretic question. Since\n>> Blackberry has software to transfer data from Palm to Blackberry, the\n>> only question I have is syncing the Blackberry on Linux.  Apparently\n>> their are a couple of OpenSource projects, such as Barry and OpenSync.\n>> I'm just curious if anyone on this list has been syncing on Linux.\n>>     \n>\n> Try Funambol www.funambol.org\n>\n>\n>\n>\n>\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9665240463781856,
+          "SPAM": 0.033475953621814415
+        },
+        "confidence": 0.9330480927563711
+      }
+    },
+    "usage": {
+      "input_tokens": 436,
+      "output_tokens": 0
+    }
+  }
+}

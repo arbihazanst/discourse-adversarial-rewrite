@@ -1,0 +1,35 @@
+{
+  "original_text": "Subject: How To Enlarge Penis Size\n\n\nSize DOES matter - change your life today!\n\n\"I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily\" Lindsay, California, USA\n\nhttp://jumpwill.com/",
+  "rewrite_text": " and many get the the the n't the the an ",
+  "rubric_version": "rewrite_validity_v1",
+  "checks": {
+    "purpose": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\1c3dbdbf012bf0fea6a40d4b67db6ad77bea4d108f831dd2833977452ae7028f.json"
+    },
+    "key_information": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\28aca715fad334fd4f08ae8194713e2a418bd19b769657264be030b3da647254.json"
+    },
+    "meaning": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\be2c811c23e8d6edb77fb337bc08aa6b879a3fcb404533d5b83781851167d7d9.json"
+    },
+    "no_fabrication": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\76c38219298a757a1c18dbc63ff1bec484311d3a94317f90537dd8f032953841.json"
+    },
+    "coherence": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\edbd58817d5f42a7887a4c9c76ba111430f89b69f400cb593f3fa7d986ebedfe.json"
+    }
+  },
+  "reason": "purpose;key_information;meaning;no_fabrication;coherence",
+  "verdict": "INVALID",
+  "request_time_ms": 0
+}

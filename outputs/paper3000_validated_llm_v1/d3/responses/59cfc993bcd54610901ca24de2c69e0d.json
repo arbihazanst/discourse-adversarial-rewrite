@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Something afoot in the City\n\nSOMETHING AFOOT IN THE CITY\nThere's something going on in the City. It's hard to divine precisely what it is, but it seems to centre on the banks' need for more liquidity.\n\nWe know the Bank of England, despite its �23bn largesse with Northern Rock (so far), is reluctant to keep pumping more cash into the system. We also know that there was a meeting of senior bankers at the Bank of England yesterday. All my usual sources have gone to ground today, which is another surefire suggestion that something is afoot.\n\nThe tangible facts relate to Barclays' loss, at one point, of 8 per cent on the stock market, and reports that the Citigroup has got capital problems. Faisal Islam is out in the City, ferreting about, and we'll see what we can hone in on at seven.\n\nBarclays shares plummet: http://tinyurl.com/2tqwtj\n\nANOTHER BLAIR CONTROVERSY\nWe have an interesting new development in the fortunes of Sir Ian Blair, Metropolitan Police commissioner, whose force was yesterday found guilty of endangering the public over the death of Jean Charles de menezes. Another unfortunate controversy on his watch. I can't say more at this stage, but well worth tuning in.\n\nTALKING WITH THE PKK\nAbroad, Condi Rice has been in Turkey, reassuring the Turks that America understands their concerns about the radical PKK rebels in northern Iraq. We have an exclusive interview with the leader of the PKK tonight. Again, to protect its exclusivity I must hold back on this one.\n\nPAPWORTH HEART OPS ON HOLD\nSerious floods in Mexico have engulfed a region the size of Wales (as they say) and displaced hundreds of thousands of people. Back home, we're looking at the decision to close the heart transplant ward at Papworth hospital - one of the great leaders in this sort of surgery. They're concerned that their death rate within 30 days following major heart transplant surgery, normally one in 10, has fallen to seven in 20.\n\nMexico floods trap thousands: http://tinyurl.com/2tnbhn\n\nA NEW CHAPTER FOR RICHARD AND JUDY\nAnd finally, my good friends Richard and Judy are vacating the space that I used to intrude upon from time to time in the late afternoons. But they're not leaving Channel 4 altogether. It seems their book projects will continue in another form elsewhere in the schedule.\n\n25 YEARS OLD\nWe shall continue in the same form on this, our 25th anniversary night, at seven. And I calculate that it is probably somewhere around my 4,500th programme. But hey, who's counting? (me! - Ed.)\n\nJon's most memorable Channel 4 News moments: http://tinyurl.com/2o5whp\n\nChannel 4 News at 25: changing faces http://tinyurl.com/3yu3oc\n\nAND ON MORE4 NEWS WITH KYLIE MORRIS\nWe talk to a former police chief who DID resign when his officers shot the wrong man, despite the fact that an inquiry found HE wasn�t to blame. Does he think Sir Ian Blair should go?�\n\nAnd the latest twist to reality TV? MOSQUE idol. May the best minaret win.\n\nJoin us at 8pm.   \n\n\nGet Channel 4 News\n====================\n�\nOnline: Watch our video reports at: \nhttp://www.channel4.com/news/watchlisten/video/\n�\nStreamed Live: Watch C4 News live at 7pm online at: \nhttp://geo.channel4.com/player/simulcast/index.jsp\n�\nTV: Weekdays - Channel 4 News at 7pm on 4; More4 News at 8pm on More 4.\n\n\n\nChannel 4 News services\n====================\n\nOnline: Watch our video reports at: \nhttp://www.channel4.com/news/watchlisten/video/\n\nSubscribe to RSS feeds, podcasts and mobile phone bulletins. \nhttp://www.channel4.com/news/subscribe/\n\n\nBusiness\n============\nThe US Dollar to Sterling was: 2.08535 \nThe Euro to Sterling was: 1.43870\n\n\nWeather\n==========\nSponsored by Worcester, Bosch Group - www.worcester-bosch.co.uk \n\nTONIGHT\nPatchy rain pushing south over Scotland, N.Ireland and later N.England. Clear spells either side of this, with mist and fog for a time in the south of England. \nSATURDAY\nSouthern parts, mostly cloudy, mild, occasional brightness .A band of cloud and increasingly patchy rain will move south over northern England and Wales, with brighter, cooler conditions to the north. \n\n\nUnsubscribe\n================\n\nhttp://www.channel4.com/news/snowmail/snowmail_deactivate.html\n\nIf you want to reply to Snowmail please email ckns@channel4.com and put Snowmail in the subject header. DO NOT hit reply to this email as they cannot be read. Thank you.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.10490746583757576,
+          "NOT_SPAM": 0.8950925341624243
+        },
+        "confidence": 0.5156383952223523
+      }
+    },
+    "usage": {
+      "input_tokens": 1201,
+      "output_tokens": 0
+    }
+  }
+}

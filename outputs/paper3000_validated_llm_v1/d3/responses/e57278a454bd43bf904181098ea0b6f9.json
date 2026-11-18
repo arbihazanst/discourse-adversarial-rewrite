@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [perl #47487] make fails at Making B (dynamic) phase with Permission denied error \n\n# New Ticket Created by  \"Uri Arad\" \n# Please include the string:  [perl #47487]\n# in the subject line of all future correspondence about this issue. \n# \n\n\nSummary of my perl5 (revision 5 version 8 subversion 8) configuration:\n  Platform:\n    osname=freebsd, osvers=4.11-release-p19, archname=i386-freebsd\n    uname='freebsd pro8.abac.com 4.11-release-p19 freebsd 4.11-release-p19 #1: fri jul 14 16:35:50 pdt 2006 vnga@bak1.abac.com:usrobjusrsrcsyspro i386 '\n    config_args=''\n    hint=recommended, useposix=true, d_sigaction=define\n    usethreads=undef use5005threads=undef useithreads=undef usemultiplicity=undef\n    useperlio=define d_sfio=undef uselargefiles=define usesocks=undef\n    use64bitint=undef use64bitall=undef uselongdouble=undef\n    usemymalloc=n, bincompat5005=undef\n  Compiler:\n    cc='cc', ccflags ='-DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -I/usr/local/include',\n    optimize='-O',\n    cppflags='-DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H -fno-strict-aliasing -pipe -I/usr/local/include'\n    ccversion='', gccversion='2.95.4 20020320 [FreeBSD]', gccosandvers=''\n    intsize=4, longsize=4, ptrsize=4, doublesize=8, byteorder=1234\n    d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=12\n    ivtype='long', ivsize=4, nvtype='double', nvsize=8, Off_t='off_t', lseeksize=8\n    alignbytes=4, prototype=define\n  Linker and Libraries:\n    ld='cc', ldflags ='-Wl,-E  -L/usr/local/lib'\n    libpth=/usr/lib /usr/local/lib\n    libs=-lm -lcrypt -lutil -lc\n    perllibs=-lm -lcrypt -lutil -lc\n    libc=, so=none, useshrplib=false, libperl=libperl.a\n    gnulibc_version=''\n  Dynamic Linking:\n    dlsrc=dl_dlopen.xs, dlext=none, d_dlsymun=undef, ccdlflags=' '\n    cccdlflags='-DPIC -fPIC', lddlflags='-shared  -L/usr/local/lib'",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.002070985419126785,
+          "NOT_SPAM": 0.9979290145808732
+        },
+        "confidence": 0.9785514936589311
+      }
+    },
+    "usage": {
+      "input_tokens": 795,
+      "output_tokens": 0
+    }
+  }
+}

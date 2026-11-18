@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Defragging: possible?  necessary?\n\nPhilipp Thomas wrote:\n> On Sun, 17 Feb 2008 12:29:45 -0500, James Knott wrote:\n>\n>   \n>> Then why does the defragmenter in XP show how fragmented NTFS partions\n>> are?\n>>     \n>\n> Because fragmentation resistant doesn't mean fragmentation free! Please\n> do read http://en.wikipedia.org/wiki/Defragmentation and then we'll\n> discuss further.\n>\n> Philipp\n>   \nI never said fragmentation free. Also, I have read that entire article \nand couldn't find much to support your claim. Care to make some quotes, \nas I did in another note to you?\n\n\n-- \nUse OpenOffice.org",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0018962087963473196,
+          "NOT_SPAM": 0.9981037912036527
+        },
+        "confidence": 0.9801201606263511
+      }
+    },
+    "usage": {
+      "input_tokens": 304,
+      "output_tokens": 0
+    }
+  }
+}

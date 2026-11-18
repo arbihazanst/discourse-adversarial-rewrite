@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: A few multiple dispatch questions\n\nOn Tue, Aug 05, 2008 at 06:17:30PM +0200, Jonathan Worthington wrote:\n> Hi,\n>\n> I am currently reviewing bits of the spec surrounding multiple dispatch  \n> and, of course, have a question or two (I'll probably have some more  \n> later, as the dust settles in my head).\n>\n> 1) The spec says:\n>\n> --\n> A proto also adds an implicit multi to all routines of\n> the same short name within its scope, unless they have an explicit modifier.\n> --\n>\n> If you write:\n>\n> proto sub foo(:$thing) { ... }\n> sub foo(Int $x) { ... }\n> only sub foo() { ... }\n>\n> Does this give some kind of error, because you've declared something  \n> with 'only', but it clearly can't be the only one because we also have a  \n> proto in there?\n\nI'd consider it an error.\n\n> 2) If I write:\n>\n> multi sub foo(Int $blah) { ... } # 1\n> proto sub foo(:$blah) is thingy { ... } # 2\n> multi sub foo() { ... } # 3\n>\n> Does #1 get the thingy trait, or not because it was declared before the  \n> proto was? I'm clear that #3 gets it...\n\nI think a proto cannot be expected to work retroactively.  In fact, I\nthink it's probably an error to declare a proto after a non-proto in the\nsame scope.\n\n> 3) The spec says:\n>\n> --\n> A parameter list may have at most one double semicolon; parameters after  \n> it are\n> never considered for multiple dispatch (except of course that they can  \n> still\n> \"veto\" if their number or types mismatch).\n> --\n>\n> Does the \"veto\" take place once the multiple dispatch has given us a  \n> candidate and we try to bind the parameters to the signature, or as part  \n> of the multiple dispatch? For example, supposing I declare:\n>\n> multi foo(Int $a;; Num $b) { ... } # 1\n> multi foo(Int $a;; Str $b) { ... } # 2\n> multi foo(Int $a;; Num $b, Num $c) { ... } # 3\n>\n> What happens with these?\n>\n> foo(2, RandomThing.new); # Ambiguous dispatch error\n> foo(2, 2.5); # Ambiguous dispatch error, or 1 because 2 vetos?\n> foo(1, 2.5, 3.4); # Ambiguous dispatch error, or 3 because only one with  \n> arity match?\n>\n> Basically, what I'm getting at is, are all of these multi-methods  \n> ambiguous because they all have the same long name, and just because  \n> binding fails doesn't make us return into the multiple dispatch  \n> algorithm? (This is what I'm kinda expecting and would mean every one of  \n> these fails. But I just want to check that is what was meant by the  \n> wording.)\n\nI believe \"veto\" is giving the wrong idea here as something that\nhappens after the fact.  What's the term for only allowing \"acceptable\"\ncandidates to put their names on the ballot?  Anyway, as TSa surmises,\nthe ballot is vetted or stacked in advance--only those candidates\nthat *could* bind are considered to be part of the candidate set.\nIn the abstract, candidates that cannot match never get their names\non the ballot, though of course an implementation might choose to\ndetermine this lazily as long as it preserves the same semantics.\n\nAlternately, even if the list of valid candidates is determined\neagerly, if the candidate list construction is memoized based on the\ntypeshape of the Capture, it will generally not have to be redone\nuntil you see a different typeshape (where the meaning of \"different\"\nmay depend on how specific the signatures are, and in particular on\nwhether any of the signatures rely on subset constraints (including\nindividual values, which are just degenerate subsets)).\n\nLarry",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00022568204065590608,
+          "NOT_SPAM": 0.999774317959344
+        },
+        "confidence": 0.9969406648646425
+      }
+    },
+    "usage": {
+      "input_tokens": 1074,
+      "output_tokens": 0
+    }
+  }
+}

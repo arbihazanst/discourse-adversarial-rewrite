@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] [Python-Dev]  Python source code on Bazaar vcs\n\nOn Fri, Mar 21, 2008 at 6:12 PM, Brett Cannon  wrote:\n\n> On Fri, Mar 21, 2008 at 3:10 PM, Benjamin Peterson\n>  wrote:\n> >\n> >\n> >\n> >\n> > On Fri, Mar 21, 2008 at 5:04 PM, Paul Moore  wrote:\n> > >\n> > > On 21/03/2008, Benjamin Peterson  wrote:\n> > > > I tend to make a repository and make a working copy for each patch\n> in\n> > it.\n> > > > The history is saved in the repository so it's efficient.\n> > >\n> > > OK, so just lots of copies, fair enough. Presumably just use bzr diff\n> > > to create patches? Much like Subversion, in practice, but with local\n> > > commits of partial work.\n> > Yes, bzr diff should do the trick, although if you have local commits in\n> it,\n> > you'll have to give the revision number manually.\n>\n> That's not really true. Let's say you have a trunk branch that you\n> keep which is pristine. You branch off of it and create a xxx branch.\n> You can diff between xxx and trunk by running  ``bzr diff xxx --old\n> trunk``. You can also run this from within xxx with ``bzr diff --old\n> ../trunk``.\n\nWell, I just learned something. ;)\n\n>\n>\n> -Brett\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00027026881615634736,
+          "NOT_SPAM": 0.9997297311838437
+        },
+        "confidence": 0.9964065551760586
+      }
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 0
+    }
+  }
+}

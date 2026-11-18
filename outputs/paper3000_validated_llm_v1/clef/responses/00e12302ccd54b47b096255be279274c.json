@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP  AW: Semantic Annotation\n\n\t\t\t\tCall for Papers\n\t\t\tI-Know 05 Special Track on\n\t\"Knowledge Discovery and Semantic Technologies 2005\"\n\t\t\t  June 29th 2005, Graz, Austria\n\nIntroduction\n\nThe I-KNOW '05 Special Track on Knowledge Discovery and Semantic \nTechnologies addresses the emerging fields of knowledge discovery and \ninformation retrieval technologies for the Semantic Web. Original papers \nare solicited in all areas of Knowledge Discovery and Information \nRetrieval with focus on semantic information. Submissions will be \nreviewed by a board of international experts.\n\nTopics include:\n\n     * Knowledge discovery and web mining techniques\n     * Knowledge discovery from unstructured and multimedia data\n     * Clustering and classification techniques\n     * Ontologies and knowledge representation\n     * Multimedia and cross media retrieval\n     * Information and knowledge extraction\n     * Information summarization\n     * Modelling and retrieval of semantic metadata\n     * Knowledge discovery in the semantic web\n     * Semantic Agent Technologies\n     * Intelligent network agents\n     * Natural language processing\n     * Topic detection and tracking\n\nSubmissions might also address applications of knowledge discovery and \nsemantic technologies in areas such as search engines, decision support, \ne-learning, healthcare, mobile and pervasive computing, or bioinformatics.\n\nTarget Group\n\nThe topics mentioned above are addressed at researchers and developers \nas well as at innovative practitioners and providers in the fields of \nknowledge discovery and semantic technologies.\n\nThe special track will be held in English.\nSubmission Categories\nPapers: Mon 24 Jan 2005\n\nPapers should be at most eight (8) printed pages. Papers must present \npreviously unpublished, original results. Accepted papers will be \npublished within the J.UCS conference proceedings of the I-Know '05 \nConference.\n\nAt least one author of an accepted paper must attend the special track \nto present the work.\n\nSubmission Instructions\n\nPlease prepare your submission according to I-Know style guidelines. All\nsubmissions, regardless of category, should include title, author(s), \nabstract, keywords, body, and references. Submissions are to be made \nelectronically in PDF (Adobe's Portable Document Format) or MS Word \nformat. Submissions are treated as confidential communications during \nthe review process, so submission does not constitute public disclosure \nof any ideas therein. Submissions should contain no information or \nmaterials that will be proprietary or confidential at the time of\npublication, and should cite no publications that are proprietary or\nconfidential at the time of publication.\n\nSubmission Procedure\n\nPlease submit your contribution via http://www.i-know.at/submission. In \ncase of problems or questions concerning the submission of papers, \nplease contact the track chairs at rlzlc70@know-center.at via email.\n\nImportant Dates\n\n     * 24 January 2005 - Submission of full paper (8 pages)\n     * 14 March 2005 - Notification of acceptance\n     * 18 April 2005 - Revised camera-ready paper (8 pages)\n     * 29 June 2005 - KDaST 2005 special track\n\nPublication\n\nAccepted papers will be published within the I-KNOW '05 conference \nproceedings in cooperation with J.UCS and Springer Co. Pub.\n\nAdditional Information\n\nFor additional information please consult the I-KNOW '05 conference \nwebsite at http://www.i-know.at or the website of the special track on \nKnowledge Discovery and Semantic Technologies at http://www.i \n- -know.at/KDaST or contact the KDaST organizers at rlzlc70@know-center.at \nvia email.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8851011442083823,
+          "SPAM": 0.11489885579161768
+        },
+        "confidence": 0.7702022884167645
+      }
+    },
+    "usage": {
+      "input_tokens": 941,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Storage on Shared Directories\n\nKiaOra\n\nThis is a message to all staff regarding storing information on shared\ndirectories.\n\nITS staff are often called upon to help departments manage their space\nallocation on these drives.  The main issue we see is the amount used is\nnearing capacity and causing concern.\n\nIf you are sharing these spaces with any students please ensure you\nregularly check the validity of information being stored.  We are\nfinding a lot of movies and other data which do not relate to any work\nrelated purpose.\n\nFiles of this nature often take up Gigabytes of storage, may breach\ncopyright laws and also contravene the Massey Acceptable Computer Use\nPolicy.\n\nPlease contact me if you require any further information;\n\nThanks & kind regards\n\nBarbie Yerkovich\nITS Manager\nMassey University - Albany\nPrivate Bag 102 904 NSMC\nAuckland, New Zealand\nEmail: n.rfamxwqge@massey.ac.nz\nPhone: +64 9 414-0800 x9476\nFax: +64 9 441-8100",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9045981933474763,
+          "SPAM": 0.0954018066525238
+        },
+        "confidence": 0.8091963866949525
+      }
+    },
+    "usage": {
+      "input_tokens": 409,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Get multiple orgasms by increasing  your sperm volume.\n\n\n\n\n\n\n\n\n         WonderCum is the leading semen  enhancement product on the market. This fantastic product helps to increase your power, potency and volume of ejaculate, and thereby intensity of climax .\nMake your  order now .",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9957956465226263,
+          "NOT_SPAM": 0.0042043534773736424
+        },
+        "confidence": 0.9607584217110849
+      }
+    },
+    "usage": {
+      "input_tokens": 183,
+      "output_tokens": 0
+    }
+  }
+}

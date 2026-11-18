@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: [ie-rant] PPoE Server\n\nIt's Dan's mac but I'm the one who fucked up the internet connection in the first place\n\nDenis Mc Auliffe  wrote:                                     \n  Hah! Thats what you get for buying a MAC \n   \n      From: pq-mism@yahoogroups.com [mailto:pq-mism@yahoogroups.com] On Behalf Of Rara Avis\n Sent: 09 October 2007 19:43\n To: pq-mism@yahoogroups.com\n Subject: [ie-rant] PPoE Server\n  \n  \n   \n        Where the fuck do I find a PPoE server on my Mac?\n I can't connect to the internet because this stupid cunt of a machine is can't find this.\n And the error messages are about as helpful as pneumonia when you have full blown aids.\n \n \n            \"I always feel like a poofter when I order a latte, the name is so gay that even if it was made with testosterone and came with a free vagina to fuck voucher, it would still be gay.\"\n  \n  \n  \n  \n  \n    \n    \n---------------------------------\n  \n  Looking for a deal? Find great prices on flights and hotels with Yahoo! FareChase.\n  \n   \n  \n     \n\n\n     \n                               \n\n\n        \"I always feel like a poofter when I order a latte, the name is so gay that even if it was made with testosterone and came with a free vagina to fuck voucher, it would still be gay.\"\n\n\n\n\n\n       \n---------------------------------\nDon't let your dream ride pass you by.    Make it a reality with Yahoo! Autos.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9636666343861598,
+          "SPAM": 0.0363333656138402
+        },
+        "confidence": 0.9273332687723197
+      }
+    },
+    "usage": {
+      "input_tokens": 504,
+      "output_tokens": 0
+    }
+  }
+}

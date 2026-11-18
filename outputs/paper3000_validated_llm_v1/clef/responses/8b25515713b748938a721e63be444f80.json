@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] 2.6 and 3.0 tasks\n\nOn Sun, Mar 16, 2008 at 10:23 AM, Guido van Rossum  wrote:\n\n> Moving this to a new subject to keep the discussion of tasks and the\n> discussion of task tracking tools separate.\n>\n> On Sun, Mar 16, 2008 at 9:42 AM, Christian Heimes \n> wrote:\n> >  I did a quick brainstorming with me, myself and I. I came up with a\n> list\n> >  of (IMHO) important tasks.\n> >\n> >  * Stabilize the C API of Python 3.0. I like to rename several prefixes\n> >  to reduce the confusing: PyBytes -> PyByteArray,\n>\n> +1 (also +1 to backporting this to 2.6)\n>\n> > PyString -> PyBytes ...\n>\n> -1. This will make merging code from 2.6 harder, and causes more work\n> for porting C extensions.\n\nThere was a thread about this a few weeks ago:\nhttp://mail.python.org/pipermail/python-dev/2008-March/077339.html\nWe can still do the renaming, but alias PyString to PyBytes.\n\n>\n>\n> >  * Backport the new buffer protocol to 2.6. I spoke to Travis yesterday\n> >  and he said he is trying to get it done during the PyCon sprint. Maybe\n> >  somebody can assist him?\n>\n> Does he need assistance?\n>\n> >  When the new buffer protocol is available in 2.6 we can start back\n> >  porting bytesarray and the new IO framework.\n>\n> Are these really so closely tied that they have to wait before they\n> can be backported?\n>\n> >  * Replace Windows API calls with wide versions to support unicode for\n> >  file names, environment etc.\n>\n> +1. This should be broken into separate tasks for each API.\n>\n> >  * Get the stdlib reorg done\n>\n> +1. But again, I think this is many small tasks.\n>\n> > and add the fixers to 2to3\n>\n> +1. I think quite a few changes have not had a fixer added. Again, I\n> think we should maintain a specific list of needed fixers; fixers can\n> easily be developed independently.\n>\n> >  * Speed up 2to3. I suggested a GSoC task to improve and speed up 2to3\n> >  but it may be too late when we plan to ship out 3.0 in August.\n>\n> While I know that some people are expecting to use a development model\n> that invokes 2to3 very frequently, I think this is at best a\n> nice-to-have. (I also don't see how it could be done, but maybe I'm\n> blind for the obvious, as the original author.)\n>\n> I have some other tasks to add:\n>\n> - getargs.c (Georg posted about this; his post actually inspired my post.)\n>\n> - Tweak structseq to be more like namedtuple. Maybe they could have a\n> common ABC. I also think we should get rid of the concept of \"hidden\"\n> fields (that are accessible by name but not through the tuple API).\n>\n> - Devise a way to handle str instances pickled in 2.6 and unpickled in\n> 3.0, and also bytes instances pickled in 3.0 and unpickled in 2.6.\n>\n> - Someone should go over\n>  https://spreadsheets.google.com/ccc?key=pCKY4oaXnT81FrGo3ShGHGg\n> and extract more tasks.\n>\n> --\n> --Guido van Rossum (home page: http://www.python.org/~guido/\n> )\n> _______________________________________________\n> Python-Dev mailing list\n> zvllln-eum@python.org\n> http://mail.python.org/mailman/listinfo/python-dev\n> Unsubscribe:\n> http://mail.python.org/mailman/options/python-dev/musiccomposition%40gmail.com\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9488058955299729,
+          "SPAM": 0.051194104470027174
+        },
+        "confidence": 0.8976117910599457
+      }
+    },
+    "usage": {
+      "input_tokens": 1126,
+      "output_tokens": 0
+    }
+  }
+}

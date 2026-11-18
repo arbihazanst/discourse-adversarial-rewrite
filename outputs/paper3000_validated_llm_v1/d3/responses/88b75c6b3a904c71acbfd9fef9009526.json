@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Update mirror sites?\n\nOn Friday 15 February 2008 09:06:10 pm Tom Patton wrote:\n> I hope the threads mentioning that the opensuse update re-director is\n> down explain why I was unable to update last night or today...?  I could\n> hit packman and all the others, but not the suse update source.  I was\n> just about to blame Sprint, thinking they were tired of all my\n> downloads :-(\n>\n> Per the comments to use mirror sites, I looked in the listing of all\n> mirrors, and none of them mention having the updates available.  Would\n> someone point me to the update mirror addresses?\n\nthey exist.\n\nI'm now using mirrors.kernel.org (in my country) and have the update set to...\n\n/opensuse/update/10.3/\n\n\nNow, I'm getting a failure on that, because of an issue with one of the .xml \nfiles.\n\n\nRepository 'openSUSE-10.3-Updates' is invalid.\nFile ./repodata/patch-clamav-5009.xml not found on media: \nftp://mirrors.kernel.org/%2fopensuse/update/10.3/\nPlease, check if the URLs defined for this repository are pointing to a valid \nrepository.\n\n\nI'm guessing it will be fixed shortly.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007159553044193386,
+          "NOT_SPAM": 0.9992840446955807
+        },
+        "confidence": 0.9914872761672405
+      }
+    },
+    "usage": {
+      "input_tokens": 431,
+      "output_tokens": 0
+    }
+  }
+}

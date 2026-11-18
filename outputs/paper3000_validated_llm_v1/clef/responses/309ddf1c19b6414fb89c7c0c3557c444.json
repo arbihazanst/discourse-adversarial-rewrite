@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] Apache & mod_python & win32com\n\nThe problem with apache tho is, that it starts the thread itself and I don't know wether my script runs on a new thread or not. I did some testing with calling CoInitialize at the start of my scripts and CoUnitialize at the end of my script (as suggested by others before) and it seemed to work...\n\nDo I understand you correct, that you suggest to use CoInitializeEx instead? My scripts should all use the aparment threading model tho, but I can try and change to CoInitializeEx =)\n\nAs for the COM objects I'm requesting, these are:\n\nwin32com.client.Dispatch(\"MSXML2.XMLSchemaCache.6.0\")\nwin32com.client.Dispatch(\"Msxml2.FreeThreadedDOMDocument.6.0\")\nwin32com.client.Dispatch(\"Msxml2.DOMDocument.6.0\")\nwin32com.client.Dispatch(\"Msxml2.XSLTemplate.6.0\")\n\nSo for the DOM document there seem to be either version, but for the schema and template objects I don't know wether these are free-threaded or not and wether that matters at all... :-/ I have to admit that the whole COM stuff is a bit mysterious for me...\n\nGreetings Dominique\n\n-----Original Message-----\nFrom: Mark Hammond [mailto:nkpmuffq@skippinet.com.au]\nSent: Sonntag, 27. April 2008 09:20\nTo: Holzwarth, Dominique (Berne Bauhaus); kpitck-aew45@python.org\nSubject: RE: [python-win32] Apache & mod_python & win32com\n\n> Thank you Rober & Alex for the answers :-) But I must admit that I'm\n> still bit uncertain about that whole issue.\n> As I understood apache it is creating a thread for every request\n> anyway, or not?\n\nNo - given the docs posted before, they are created once and shared.  When a request completes, its thread becomes available to process the next request.\nThus, its better perf wise to only call the CoInit functions once as the thread starts.\n\n\n> (and yes, on windows the MPM winnt is used) so wouldn't it be enough\n> to just call CoInitialized() at the start of my (mod_python)\n> python-handler and CoUnitialize() and the end of my handler? the\n> try... finally you have added only for the case my script would\n> \"crash\", right? so that the CoUnitialize() is called in that case as\n> well?\n\nCoInit functions can fail if someone else has beaten you to calling CoInit, and requested a different threading model.  Ideally, you should call CoInitializeEx(COINIT_MULTITHREADED), and if you happen to be using a free-threaded COM object, your threads will not interfere with each other at all.  Apartment threading (the default) may not perform as well.  Requesting free-threading should not hurt if the object is not free-threaded, but you would want to make sure :)\n\n> The idea about the single thread and queue I don't really get to be\n> honest... what sort of object would be passed in the queue? And how\n> would I create that queue and the thread? I guess you thinking of some\n> standard python modules (as there's probably a python module for\n> everything =))?\n\nGoogle for something like \"consumer and producer pattern\"\n\nCheers,\n\nMark\n\n\n\n_______________________________________________\npython-win32 mailing list\nkpitck-aew45@python.org\nhttp://mail.python.org/mailman/listinfo/python-win32",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9493175481093743,
+          "SPAM": 0.050682451890625736
+        },
+        "confidence": 0.8986350962187486
+      }
+    },
+    "usage": {
+      "input_tokens": 956,
+      "output_tokens": 0
+    }
+  }
+}

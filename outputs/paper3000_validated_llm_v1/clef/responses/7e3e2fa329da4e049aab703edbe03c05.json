@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] OpenSocial \n\n\nAdam L Beberg writes:\n> Tom Higgins wrote on 11/1/2007 7:10 PM:\n> > I am not sure if 'without barriers' is exactly what it will be but from\n> > all I am scanning Open Social will be the way to do just that, an API\n> > everyone can code to that uses html, css, whatever to render in a\n> > browser and will, I hope I am reading this right, be able to be used\n> > in or on other social sites that want to play along, which I think\n> > means allowing the containers on their pages.\n> \n> The value of a social network is who they keep out. Therefore, this is \n> completely useless. Open IM has worked out so well after all, so this \n> may be useless and repetative as well.\n\nI guess that depends on who your social network is.  Amongst my friends,\nJabber (in the form of Google IM) is on the up, and AIM, MSN et al are on\nthe way out.\n\n--j.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9706196959963436,
+          "SPAM": 0.029380304003656276
+        },
+        "confidence": 0.9412393919926871
+      }
+    },
+    "usage": {
+      "input_tokens": 407,
+      "output_tokens": 0
+    }
+  }
+}

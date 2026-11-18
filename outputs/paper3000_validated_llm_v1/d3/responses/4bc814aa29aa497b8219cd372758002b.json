@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] [OT] How much power does a PC really consume?\n\nOn Thu, Feb 14, 2008 at 9:59 AM, Randall R Schulz  wrote:\n> On Thursday 14 February 2008 06:18, Greg Freemyer wrote:\n>  > ...\n>  >\n>  > Per,\n>  >\n>  > I don't know how you measured the load, but it is important to\n>  > measure very short power surges.  In particular, I'm suspicious of\n>  > that load during raid1 resync.  Could your technique catch a 10 msec\n>  > spike etc?\n>\n>  Surely the capacitors in the power supply and elsewhere would absorb\n>  such brief demand spikes, no?\n>\n>  And what is their source? Logic circuits active only transiently or the\n>  voice coil? Obviously the spindle motors have uniform demand once the\n>  drive is spun up (but much higher while starting up, of course).\n\nI'm guessing disk seek activity.  As the seek activity is getting\nfaster and faster, it takes more and more power to start/stop the\nheads as they skip around the drive.  Apparently if you don't have a\nvery solid PSU, the sata drive starts encountering problems.\n\nThe trouble with that theory is I would have hoped the drive motors,\netc. would be 12v and the electronics 5v, so I really don't understand\nhow the issue happens either. Especially since disk seeks are on the\norder of 1 or 2 millisecs and a relatively small cap should handle\nthat fine,\n\nI did just go back and re-read one of the posts and Tejun Heo said the\nissue is with the 12v supply and the new video cards that are sucking\nup all the 12v power.\n\nRegardless, most of the reports I have seen have been with 4 or more\ndrives, especially in a raid 5.  So it seems that the actively of one\ndrive is causing problems for other drives sharing the PSU.  On the\nlkml-ide list, the very first troubleshooting question for this type\nof issue is to power up the drives from a separate PSU.  I saw one of\nthe lead developers say that 90% of the reported problems currently\nare caused by power issues, not the kernel code itself.\n\nIf you want to experiment with using a cheap external PSU:\n   http://modtown.co.uk/mt/article2.php?id=psumod\n\nFYI: Sata apparently does not have a ground on its cable, so you don't\nhave to worry about ground loops.  This too is just repeating what\nI've read on the lkml list, so check it out yourself if your curious.\n\nGreg\n-- \nGreg Freemyer\nLitigation Triage Solutions Specialist\nhttp://www.linkedin.com/in/gregfreemyer\nFirst 99 Days Litigation White Paper -\nhttp://www.norcrossgroup.com/forms/whitepapers/99%20Days%20whitepaper.pdf\n\nThe Norcross Group\nThe Intersection of Evidence & Technology\nhttp://www.norcrossgroup.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.003756721630827234,
+          "NOT_SPAM": 0.9962432783691727
+        },
+        "confidence": 0.9643250751592083
+      }
+    },
+    "usage": {
+      "input_tokens": 832,
+      "output_tokens": 0
+    }
+  }
+}

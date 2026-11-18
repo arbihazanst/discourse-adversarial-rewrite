@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: perldoc using fancy quotes\n\nRuss Allbery skribis 2007-11-18 18:16 (-0800): > Poking about, it looks like nroff leaves \"\" alone by default and only does > its magic with `` and '', so there's no actual protection in Pod::Man, > just conservative rewriting of \"\" as ``'' where appropriate. Using ``'' is never appropriate. It was cute in now-ancient terminals that used fonts which displayed ' like an acute accent, that is: diagonal, but fails to keep making sense now. http://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html Unicode quotes may be appropriate, but never in C<> or verbatim blocks of course. (Except when they're there in the document literally.) --  Met vriendelijke groet,  Kind regards,  Korajn salutojn,   Juerd Waalboer:  Perl hacker  <#####@juerd.nl>     Convolution:     ICT solutions and consultancy",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9592171746943845,
+          "SPAM": 0.04078282530561557
+        },
+        "confidence": 0.918434349388769
+      }
+    },
+    "usage": {
+      "input_tokens": 382,
+      "output_tokens": 0
+    }
+  }
+}

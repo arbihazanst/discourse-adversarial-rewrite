@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] ILUG events this week\n\nOn Thu, Nov 01, 2007 at 12:41:08PM +0000, Proinnsias Breathnach wrote:\n> On Thu, Nov 01, 2007 at 12:36:04PM +0000, Timothy Murphy wrote:\n> > On Thu 01 Nov 2007, Proinnsias Breathnach wrote:\n> > \n> > > For another map option : plug : 53.336511,-6.243238 (ICS)\n> > > into google maps\n> > \n> http://maps.google.co.uk/maps?&q=53.336511,-6.243238+(ICS)\n> \n\nActually - it turns out I got the coordinates wrong by a few yards\n\n53.336585,-6.243791 (ICS)\n\nshould be a touch closer to the door !\n\nP",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9711189440523158,
+          "SPAM": 0.02888105594768425
+        },
+        "confidence": 0.9422378881046316
+      }
+    },
+    "usage": {
+      "input_tokens": 401,
+      "output_tokens": 0
+    }
+  }
+}

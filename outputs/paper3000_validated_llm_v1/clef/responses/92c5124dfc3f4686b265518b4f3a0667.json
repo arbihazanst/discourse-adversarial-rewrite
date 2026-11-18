@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] International Conference on Machine Learning (ICML) 2007 Call for Papers\n\n------------------------------------------------------------\n \t          ICML07 Call For Papers\n\nYour help with circulating this announcement locally is much\nappreciated. Apologies for multiple postings.\n------------------------------------------------------------\n\n\nICML 2007\n24th International Conference on Machine Learning\nhttp://oregonstate.edu/conferences/icml2007/\n\nJune 20-24, 2007\nCorvallis, Oregon, USA\n\nICML 2007 invites submission of papers on substantial, original, and\npreviously unpublished research in all aspects of machine learning.\nWe welcome submissions of innovative work on systems that are self\nadaptive, systems that improve their own performance, or systems that\napply logical, statistical, probabilistic or other formalisms to the\nanalysis of data, learning predictive models, or interaction with the\nenvironment.  We welcome theoretical contributions, carefully\nevaluated empirical studies, and we particularly welcome work that\ncombines both.  We also encourage submissions that bridge the gap\nbetween machine learning and other fields of research.\n\nICML 2007 will be co-located with the 17th Annual International\nConference on Inductive Logic Programming (ILP 2007).\n\n***********************\n\nIMPORTANT DATES:\n***********************\n\nFeb 7:          Abstract submissions due\nFeb 9:          Paper submissions due\nJun 19-21:      ILP Conference (co-located)\nJun 20-24:      ICML Conference\n\n***********************\n\nFormat of the Conference\n\nThe conference will include three days of technical presentations\nalong with one day of tutorials and one day of workshops.  The\nconference will also feature poster sessions and informal gatherings\ndesigned to foster discussion of research in machine learning.\nAccepted papers will each be given an oral presentation and also\nfeatured in evening poster sessions, to allow conference attendees\nto discuss the work with the authors at greater length. The ICML\nprogram will also feature talks by several invited speakers.\n\nPaper Submission\n\nThe deadline for abstract submissions to ICML 2007 is Wednesday,\nFebruary 7th, 2007.  The deadline for full papers is Friday, February\n9th, 2007. Abstract submission by the 7th is required for each full\npaper; abstracts for which full papers are not submitted will be\nignored. The submission process will be entirely electronic.\nAuthors should submit papers using the same format and length as will\nbe required for the final proceedings version. Detailed instructions,\n\nAuthors should submit papers using the same format and length as will\nbe required for the final proceedings version. Detailed instructions,\nas well as templates for LaTeX and Word, will be available on the\nwebsite.  ICML 2007 will not accept any paper which, at the time of\nsubmission, is under review or has already been accepted for\npublication in a journal or another conference. Authors are also\nexpected not to submit their papers elsewhere during ICML's review\nperiod.\n\nReview Process\n\nPapers submitted to ICML 2007 will normally be reviewed by three (but\nat least two) referees. Authors will be given the opportunity to\nprovide a short feedback to the reviews before the final decision is\nmade.  Reviewing for ICML 2007 will be blind to the identities of the\nauthors.\n\nFor more information, please visit\nhttp://oregonstate.edu/conferences/icml2007/\n\n\n\n-----------------------------\nXiaoli Fern\nPublicity Chair ICML07\nAssistant Professor\nEECS, Oregon State University\n541-737-2557\n_______________________________________________\nuai mailing list\nfaq@ENGR.ORST.EDU\nhttps://secure.engr.oregonstate.edu/mailman/listinfo/uai",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9422226195407796,
+          "SPAM": 0.05777738045922042
+        },
+        "confidence": 0.8844452390815591
+      }
+    },
+    "usage": {
+      "input_tokens": 991,
+      "output_tokens": 0
+    }
+  }
+}

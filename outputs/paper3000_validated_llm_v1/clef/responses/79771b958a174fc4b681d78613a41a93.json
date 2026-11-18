@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] PEP 3127 (Integer Literal Support and Syntax): %o\tand %b\n\nOn Tue, Mar 18, 2008 at 9:11 PM, Eric Smith\n wrote:\n> I've been double checking the PEP 3127 implementation in py3k and the\n>  backport I did to 2.6.  The PEP says this about the % operator:\n>\n>  \"The string (and unicode in 2.6) % operator will have 'b' format\n>  specifier added for binary, and the alternate syntax of the 'o' option\n>  will need to be updated to add '0o' in front, instead of '0'.\"\n>\n>  The %b operator was not added to 3.0, so I'll look into doing that in\n>  both 2.6 and 3.0 (which I opened as issue 2416).\n>\n>  What should be done for '%#o' formatting in 2.6?  The above sentence\n>  from the PEP implies it should be modified to add '0o' instead of '0',\n>  even in 2.6.  But that seems like a bad idea to me.  Maybe it should\n>  stay as-is, but add a -3 warning?  Unfortunately, there'd be no way to\n>  change your code to get rid of the warning, short of switching to\n>  str.format() or adding a __future__ import (shudder).  In 3.0, '%#o'\n>  already adds the leading '0o'.\n\nI think this is such a tiny detail we shouldn't bother with a -3 warning.\n\nI agree that in 2.6, %#o should continue to do what it does in 2.5.\nCan you update the PEP?\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9364309975988985,
+          "SPAM": 0.06356900240110147
+        },
+        "confidence": 0.872861995197797
+      }
+    },
+    "usage": {
+      "input_tokens": 656,
+      "output_tokens": 0
+    }
+  }
+}

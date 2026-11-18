@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] [Mlnet] CFP for special session Applications of  Machine  Learning in Medicine and Biology at ICMLA05 and associated special issue of the IEEE Engineering in Medicine and Biology Magazine\n\n======================================================== => CALL FOR PAPERS for Special Session on <= \"Applications of Machine Learning in Medicine and Biology\" of 4th Int. Conf. on Machine Learning and Applications (ICMLA'05), Dec 15-17, 2005, Los Angeles, CA, U.S.A. and associated Special Issue of the IEEE Engineering in Medicine and Biology Magazine on \"Machine Learning in the Life Sciences\" http://www.ece.ualberta.ca/~lkurgan/MLMB.htm submission deadline June 20, 2005 for details see http://www.cs.csubak.edu/~icmla/icmla05/ ======================================================== => SCOPE <= Advances in Machine Learning (ML) and related technologies make analysis of large collections of complex data more realistic. Medicine and biology are two major application areas that will benefit from that. They are in real and urgent need for decision-making and data-analysis solutions. This session aims to provide a platform to present and discuss recent advancements in the area of application of ML methods in the medical field. Papers are sought on a range of topics that include, but are not limited to: - ML in medical databases - applications of ML in disease detection, diagnosis,    treatment planning, and prognosis - application of ML in bioinformatics and    computational biology including:    - signal processing for genomics problems    - large-scale microarray gene expression data analysis      / recognition / classification    - novel architecture and implementation methods for      bioinformatics    - comparative and quantitative proteomics    - management of genomics and proteomics data    - structural proteomics    - protein structure and interaction analysis and      prediction - applications of ML in interpretation of medical images - architectures and algorithms for knowledge-based medical    decision systems - aspects of knowledge representation and reasoning in    medicine - computational methods for modeling and simulation of    biological systems ======================================================== => INSTRUCTIONS <= The special session will be an integral part of ICMLA'05 conference, i.e. submission, acceptance decision and publication will be made using the same procedures as for papers submitted to the conference. The authors should   submit papers directly to the conference, indicating that they concern the special session. Papers must correspond to the requirements detailed in the instructions to authors, which are placed on the conference web site. All accepted papers must be presented by one of the authors to be published in the conference proceeding. ======================================================== => SPECIAL ISSUE OF IEEE EMB MAGAZINE <= Selected best papers accepted for the special session will be invited for publication in a special issue of the IEEE Engineering in Medicine and Biology Magazine entitled \"Machine Learning in the Life Sciences\". Invited authors will be asked to extend the papers to accommodate for the requirements of the magazine and the overall outlook of the issue. We anticipate that the issue will include total of 8-10 papers, and the extended papers will enter publication queue in December 2005. ======================================================== => ORGANIZERS AND CONTACTS <= Please do not hesitate to direct your questions to special session organizers listed below. - Dr. Krzysztof (Krys) Cios (tdmb.uuui@cudenver.edu)    University of Colorado at Denver & Health Sciences Center    University of Colorado Center for Computational Biology - Dr. Lukasz Kurgan (hjvbtug@ece.ualberta.ca)    University of Alberta - Dr. Marek Reformat (gwdkzz@ece.ualberta.ca)    University of Alberta",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.12525114798786327,
+          "NOT_SPAM": 0.8747488520121368
+        },
+        "confidence": 0.4557309110148209
+      }
+    },
+    "usage": {
+      "input_tokens": 884,
+      "output_tokens": 0
+    }
+  }
+}

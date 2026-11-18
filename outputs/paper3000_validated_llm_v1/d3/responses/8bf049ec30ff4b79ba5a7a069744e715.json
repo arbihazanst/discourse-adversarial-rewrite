@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [SM-USERS] Themes change\n\nOn Wed, Mar 5, 2008 at 1:38 PM, Fredrik Jervfors\n wrote:\n> > My Squirrelmail has only Outlook2003 theme in the list available for\n>  > users. I known that has a lot of themes. What are the steps to put others\n>  > themes in a list of themes?\n>\n>  I'm not aware of such a theme in SquirrelMail 1.4.8, which you seem to be\n>  using. My guess is that you're using a modified installation. Find out who\n>  modified the installation and ask him/her how to proceed.\n\nhttp://sourceforge.net/projects/squirreloutlook/\n\n>  If you're the administrator, please read the posting guidelines and\n>  provide some more details: version, how you obtained and installed\n>  SquirrelMail, how you choose the Outlook2003 theme etc.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0030948500564816125,
+          "NOT_SPAM": 0.9969051499435184
+        },
+        "confidence": 0.969743585145844
+      }
+    },
+    "usage": {
+      "input_tokens": 342,
+      "output_tokens": 0
+    }
+  }
+}

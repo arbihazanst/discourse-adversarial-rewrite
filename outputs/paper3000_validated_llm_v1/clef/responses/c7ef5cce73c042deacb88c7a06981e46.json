@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: FW: [UAI] ICDM Data Mining Contest (ICDM DMC 2007)\n\nLetos je za nas zanimiva (s TripTracker-jem povezana) tema \ndata mining contest-a:\n\n> This year's inaugural contest proposes a location-estimation \n> problem in an indoor wireless network environment.  The \n> problem is to accurately predict a mobile user's locations \n> from the received radio signal strength values in a wireless \n> environment.\n\nKaj takega bi bila tud dobra tema za diplomsko nalogo, \nce je slucajno kdo pred diplomo (Cile, Sole, ?).\n\nLp,\nAndrej\n\n\n> -----Original Message-----\n> From: nhi-pljlbix@engr.orst.edu \n> [mailto:nhi-pljlbix@engr.orst.edu] On Behalf Of Rong Pan\n> Sent: Tuesday, July 24, 2007 9:31 AM\n> To: faq@engr.orst.edu\n> Subject: [UAI] ICDM Data Mining Contest (ICDM DMC 2007)\n> \n> Apologies for cross-postings\n> \n> ICDM Data Mining Contest (ICDM DMC) is set up to meet the \n> challenges of novel, difficult and high-impact real world \n> data mining problems.\n> \n> We strive to make this contest series an important part of \n> the IEEE ICDM Conference in the future.\n> \n> This year's inaugural contest proposes a location-estimation \n> problem in an indoor wireless network environment.  The \n> problem is to accurately predict a mobile user's locations \n> from the received radio signal strength values in a wireless \n> environment.\n> \n> For more information, please see \n> http://www.cse.ust.hk/~qyang/ICDMDMC07/, or contact sinnopan \n> at cse.ust.hk and qyang at cse.ust.hk\n> \n> The co-chairs for the ICDM DMC07 Contest are:\n> \n> \tChris Ding, University of Texas at Arlington (USA)\n> \tGang Kou, Thomson Corporation (USA)\n> \tQiang Yang, Hong Kong UST\n> \n> The important dates are:\n> \n> Aug 16, 2007\tTask description, training datasets and \n> registration available online\n> Sept 16, 2007\tTest data available\n> Sept 26, 2007\tSubmissions of estimation results (by midnight PST)\n> Oct 1, 2007\tSubmission of brief algorithm description (by \n> midnight PST)\n> Oct 28-31, 2007\tContest Winner Presentation at ICDM Conference\n> \n> \n> _______________________________________________\n> uai mailing list\n> faq@ENGR.ORST.EDU\n> https://secure.engr.oregonstate.edu/mailman/listinfo/uai\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9620908943803324,
+          "SPAM": 0.03790910561966775
+        },
+        "confidence": 0.9241817887606647
+      }
+    },
+    "usage": {
+      "input_tokens": 822,
+      "output_tokens": 0
+    }
+  }
+}

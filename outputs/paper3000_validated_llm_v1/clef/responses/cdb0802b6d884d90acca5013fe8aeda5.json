@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Need help with bug fix for storing shared objects in shared structures\n\nI'm trying to come up with a fix for the bug related to storing shared objects inside of shared structures.  The bug is that when any proxy objects for the shared object are destroyed, the object's DESTROY routine is called even thought the object itself should not yet be destroyed. My problem is that my code (provided below) seg faults, and I can't figure out why.  Any help, comments, suggestions, etc. would be appreciated. The following elicits the bug: ----- #!/usr/bin/perl use strict; use warnings; use threads; use threads::shared; package Jar; {     my @jar :shared;     sub new {         bless(&threads::shared::share({}), shift);     }     sub store {         my ($self, $cookie) = @_;         push(@jar, $cookie);         print(\"JAR   : Cookie stored\\\\n\");         return $jar[-1];        # BUG: The cookie is destroyed here     } } package Cookie; {     my $destruction_count = 0;     sub new {         bless(&threads::shared::share({}), shift);     }     sub DESTROY {         $destruction_count++;         print(\"COOKIE: destruction count = $destruction_count\\\\n\");     } } package main; MAIN: {     my $jar = Jar->new();     my $cookie = Cookie->new();     print(\"MAIN  : Storing cookie\\\\n\");     $jar->store($cookie);     print(\"\\\\nMAIN  : Cookie should not have been destroyed yet\\\\n\");     print(\"\\\\nMAIN  : Exiting scope\\\\n\") } print(\"\\\\nDONE\\\\n\"); ----- The above outputs:     MAIN  : Storing cookie     JAR   : Cookie stored     COOKIE: destruction count = 1     MAIN  : Cookie should not have been destroyed yet     MAIN  : Exiting scope     COOKIE: destruction count = 2     DONE which shows that DESTROY is called twice - the first time by the destruction of a proxy object. I am attempting to fix this bug by first providing a call in threads::shared (ext/threads/shared/shared.xs) to report on whether or not a shared object should be destroyed:  If the ref is shared, and its refcnt is greater than one, then it should NOT be destroyed. ----- void _is_destroyable(SV *shared_var)     PROTOTYPE: \\\\[$@%]     PREINIT:         SV *ssv;     CODE:         shared_var = SvRV(shared_var);         if (SvROK(shared_var))             shared_var = SvRV(shared_var);         ssv = Perl_sharedsv_find(aTHX_ shared_var);         ST(0) = (ssv && (SvREFCNT(ssv) > 1)) ? &PL_sv_no : &PL_sv_yes;         /* XSRETURN(1); - implied */ ----- I then use this call inside of Perl_sv_clear (in sv.c) to control the execution of destructors for shared objects. My code is in the '#ifdef USE_ITHREADS' block, and follows the example for \"Returning a Scalar\" in 'perlcall' (which is the same as used in do_mark_cloneable_stash in sv.c). The idea is that a shared object's DESTROY routine should not be called unless it's the last proxy object being destroyed (i.e., the refcnt on the \"private SV\" is 1). ----- void Perl_sv_clear(pTHX_ register SV *sv) {     dVAR;     const U32 type = SvTYPE(sv);     const struct body_details *const sv_type_details \t= bodies_by_type + type;     HV *stash;     assert(sv);     assert(SvREFCNT(sv) == 0);     if (type <= SVt_IV) { \t/* See the comment in sv.h about the collusion between this early \t   return and the overloading of the NULL and IV slots in the size \t   table.  */ \treturn;     }     if (SvOBJECT(sv)) { \tif (PL_defstash) {\t\t/* Still have a symbol table? */ #ifdef USE_ITHREADS \t    IV destroyable; \t    CV *check_destroyable = get_cv(\"threads::shared::_is_destroyable\", 0); \t    if (check_destroyable) { \t\tdSP; \t\tint count; \t\tENTER; \t\tSAVETMPS; \t\tPUSHMARK(SP); \t\tXPUSHs(sv); \t\tPUTBACK; \t\tcount = call_sv((SV*)check_destroyable, G_SCALAR); \t\tSPAGAIN; \t\tif (count != 1) \t\t    Perl_croak(aTHX_ \"'threads::shared::_is_destroyable' failed to return result\"); \t\tdestroyable = POPi; \t\tPUTBACK; \t\tFREETMPS; \t\tLEAVE; \t    } else { \t\tdestroyable = 1; \t    } \t    if (destroyable) { #endif \t\tHV* stash; \t\tdo { \t\t    dSP; \t\t    CV* destructor; \t\t    stash = SvSTASH(sv); \t\t    destructor = StashHANDLER(stash,DESTROY); \t\t    if (destructor) { \t\t\tSV* const tmpref = newRV(sv); \t\t\tSvREADONLY_on(tmpref);   /* DESTROY() could be naughty */ \t\t\tENTER; \t\t\tPUSHSTACKi(PERLSI_DESTROY); \t\t\tEXTEND(SP, 2); \t\t\tPUSHMARK(SP); \t\t\tPUSHs(tmpref); \t\t\tPUTBACK; \t\t\tcall_sv((SV*)destructor, G_DISCARD|G_EVAL|G_KEEPERR|G_VOID); \t\t\tPOPSTACK; \t\t\tSPAGAIN; \t\t\tLEAVE; \t\t\tif(SvREFCNT(tmpref) < 2) { \t\t\t    /* tmpref is not kept alive! */ \t\t\t    SvREFCNT(sv)--; \t\t\t    SvRV_set(tmpref, NULL); \t\t\t    SvROK_off(tmpref); \t\t\t} \t\t\tSvREFCNT_dec(tmpref); \t\t    } \t\t} while (SvOBJECT(sv) && SvSTASH(sv) != stash); \t\tif (SvREFCNT(sv)) { \t\t    if (PL_in_clean_objs) \t\t\tPerl_croak(aTHX_ \"DESTROY created new reference to dead object '%s'\", \t\t\t      HvNAME_get(stash)); \t\t    /* DESTROY gave object new lease on life */ \t\t    return; \t\t} #ifdef USE_ITHREADS \t    } #endif \t} \tif (SvOBJECT(sv)) { \t    SvREFCNT_dec(SvSTASH(sv));\t/* possibly of changed persuasion */ \t    SvOBJECT_off(sv);\t/* Curse the object. */ \t    if (type != SVt_PVIO) \t\t--PL_sv_objcount;\t/* XXX Might want something more general */ \t}     }     and so on.... ----- A patch to blead for the above is attached.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9379428423713015,
+          "SPAM": 0.06205715762869845
+        },
+        "confidence": 0.8758856847426031
+      }
+    },
+    "usage": {
+      "input_tokens": 1632,
+      "output_tokens": 0
+    }
+  }
+}

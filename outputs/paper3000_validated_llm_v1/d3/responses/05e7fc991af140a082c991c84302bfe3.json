@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Kmail, extensive disk i/o at startup (10.3)\n\nOn Wednesday 13 February 2008, Verner Kjærsgaard said:\n> - I'm on SuSE10.3 (plain vanilla, new install) with Kmail 1.9.6 (enterprise\n> 20070904.708012) Under KDE 3.5.7 release 72.6.\n>\n> - I've noticed that when I fire up my DELL Precision M90, Kmail goes amok\n> with very heavy kio_file actions. This goes on for about 5 minutes, then\n> suddenly it's quiete again - and my PC becomes fully responsive.\n>\n> I've got something like 100.000+ mails (in total) in my Kmail dirs. Under\n> SuSE10.2, this did not happen.\n>\n> Anything I can do?\n\nYou could see if it's beagle indexing your mail - but I don't think this uses \nkio_file to do so.\n\nKDE 3.5.9 will be released with many kdepim fixes next week, please use the \nKDE:KDE3 build service repo to try those packages (of course, back up your \nmail first!)\n\nWill\n\n\n-- \nDesktop Engineer\nKDE Team\n-- \nTo unsubscribe, e-mail: assipqff+nmekprykass@opensuse.org\nFor additional commands, e-mail: qybuovjs+kcmh@opensuse.org\n\n\n>From nkcjsapaz_0056@yahoo.com  Sun Feb 24 10:30:10 2008\nMessage: 4\nDate: Tue, 12 Feb 2008 23:42:33 +1300\nFrom: \"horizonti_2004\" \nSubject: [Wekalist] *****SPAM:5.1/5.0*****report_safe 0 Fw: Picturs\nTo: \nMessage-ID: \nContent-Type: text/plain; charset=\"iso-8859-1\"\n\nSpam detection software, running on the system \"zombie.scms.waikato.ac.nz\", has\nidentified this incoming email as possible spam.  The original message\nhas been attached to this so you can view it (if it isn't spam) or label\nsimilar future email.  If you have any questions, see\nthe administrator of that system for details.\n\nContent preview:  photo photo2 photo3 [...] \n\nContent analysis details:   (5.1 points, 5.0 required)\n\n pts rule name              description\n---- ---------------------- --------------------------------------------------\n 0.5 FROM_ENDS_IN_NUMS      From: ends in numbers\n 0.0 MISSING_DATE           Missing Date: header\n 2.2 FORGED_YAHOO_RCVD      'From' yahoo.com does not match 'Received' headers\n 0.2 HTML_90_100            BODY: Message is 90% to 100% HTML\n 1.5 HTML_IMAGE_ONLY_12     BODY: HTML: images with 800-1200 bytes of words\n 0.4 HTML_MESSAGE           BODY: HTML included in message\n 0.2 MIME_MISSING_BOUNDARY  RAW: MIME section missing boundary\n 0.1 MIME_BOUND_NEXTPART    Spam tool pattern in MIME boundary\n\nThe original message was not completely plain text, and may be unsafe to\nopen with some email clients; in particular, it may contain a virus,\nor confirm that your address can receive spam.  If you wish to view\nit, it may be safer to save it to a file and open it with an editor.\n\n-------------- next part --------------\nAn embedded message was scrubbed...\nFrom: \"horizonti_2004\" \nSubject: Fw: Picturs\nDate: no date\nSize: 1867\nUrl: https://list.scms.waikato.ac.nz/pipermail/wekalist/attachments/20080212/627d607f/attachment-0001.mht\n\n------------------------------",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.5206005712263032,
+          "NOT_SPAM": 0.47939942877369685
+        },
+        "confidence": 0.0012248587196115324
+      }
+    },
+    "usage": {
+      "input_tokens": 1061,
+      "output_tokens": 0
+    }
+  }
+}

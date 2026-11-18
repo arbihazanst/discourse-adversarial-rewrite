@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Smoke [5.8.8] 32025 FAIL(F) MSWin32 WinXP/.Net SP2 (x86/2 cpu)\n\nAutomated smoke report for 5.8.8 patch 32025\nmaldoror.bath.planit.group: Intel(R) Core(TM)2 CPU 6700 @ 2.66GHz(~2660 MHz) (x86/2 cpu)\n    on        MSWin32 - WinXP/.Net SP2\n    using     bcc32 version 5.5.1\n    smoketime 3 hours 36 minutes (average 10 minutes 49 seconds)\n\nSummary: FAIL(F)\n\nO = OK  F = Failure(s), extended report at the bottom\nX = Failure(s) under TEST but not under harness\n? = still running or test results not (yet) available\nBuild failures during:       - = unknown or N/A\nc = Configure, m = make, M = make (after miniperl), t = make test-prep\n\n   32025     Configuration (common) -DCCTYPE=BORLAND -DINST_TOP=$(INST_DRV)\\\\Smoke\\\\doesntexist\n----------- ---------------------------------------------------------\nF F         \nF O         -Dusemymalloc\nF F         -Duselargefiles\nO O         -Duselargefiles -Dusemymalloc\nF F         -Duseithreads -Uuseimpsys\nF F         -Duseithreads -Uuseimpsys -Dusemymalloc\nF F         -Duseithreads -Uuseimpsys -Duselargefiles\nF F         -Duseithreads -Uuseimpsys -Duselargefiles -Dusemymalloc\nO F         -Duseithreads\nF F         -Duseithreads -Duselargefiles\n| +--------- -DDEBUGGING\n+----------- no debugging\n\nLocally applied patches:\n    MAINT30961\n    SMOKE32025\n\nFailures: (common-args) -DCCTYPE=BORLAND -DINST_TOP=$(INST_DRV)\\\\Smoke\\\\doesntexist\n[default] \n[default] -DDEBUGGING\n[default] -DDEBUGGING -Duselargefiles\n    ../lib/locale.t.........................FAILED 99-103\n\n[default] -Dusemymalloc\n[default] -Duseithreads -Uuseimpsys -Dusemymalloc\n[default] -DDEBUGGING -Duseithreads -Uuseimpsys -Dusemymalloc\n[default] -Duseithreads -Uuseimpsys -Duselargefiles -Dusemymalloc\n[default] -DDEBUGGING -Duseithreads -Uuseimpsys -Duselargefiles -Dusemymalloc\n[default] -DDEBUGGING -Duseithreads\n[default] -Duseithreads -Duselargefiles\n[default] -DDEBUGGING -Duseithreads -Duselargefiles\n    ../lib/Net/Ping/t/190_alarm.t...........FAILED 5-6\n\n[default] -Duselargefiles\n    ../lib/Net/Ping/t/190_alarm.t...........FAILED 5-6\n    ../lib/locale.t.........................FAILED 99-103\n\n[default] -Duseithreads -Uuseimpsys\n    ../ext/B/t/lint.t.......................FAILED 7\n    ../lib/locale.t.........................FAILED 99-103\n\n[default] -DDEBUGGING -Duseithreads -Uuseimpsys\n    ../ext/B/t/lint.t.......................FAILED 6-7\n    ../lib/Net/Ping/t/190_alarm.t...........FAILED 5-6\n    ../lib/locale.t.........................FAILED 99-103\n\n[default] -Duseithreads -Uuseimpsys -Duselargefiles\n    ../ext/B/t/lint.t.......................FAILED 16-17\n    ../lib/locale.t.........................FAILED 99-103\n\n[default] -DDEBUGGING -Duseithreads -Uuseimpsys -Duselargefiles\n    ../ext/B/t/lint.t.......................FAILED 27\n    ../lib/Net/Ping/t/190_alarm.t...........FAILED 5-6\n    ../lib/locale.t.........................FAILED 99-103\n\nMANIFEST did not declare 'LIB/EXTUTILS/MINIPERL.PM'\nMANIFEST did not declare 'PATCHLEVEL.BAK'\nMANIFEST did not declare 'POLICY.SH'\nMANIFEST did not declare 'WIN32/SMOKE.MK'\n\nCompiler messages(bcc32):\nWarning W8019 ..\\\\pad.c 361: Code has no effect in function Perl_pad_add_name\nWarning W8041 ..\\\\pp.c 4093: Negating unsigned value in function Perl_pp_hslice\nWarning W8065 win32.c 1640: Call to function 'out_of_memory' with no prototype in function win32_ansipath\nWarning W8065 win32.c 1649: Call to function 'out_of_memory' with no prototype in function win32_ansipath\nWarning W8065 win32.c 1656: Call to function 'out_of_memory' with no prototype in function win32_ansipath\nWarning W8055 win32io.c 259: Possible overflow in shift operation in function PerlIOWin32_seek\nWarning W8055 win32io.c 280: Possible overflow in shift operation in function PerlIOWin32_tell\nWarning W8055 win32.c 2912: Possible overflow in shift operation in function win32_fstat\nWarning W8075 re.xs 50: Suspicious pointer conversion\nWarning W8075 re.xs 90: Suspicious pointer conversion in function install\nWarning W8075 ..\\\\doio.c 1847: Suspicious pointer conversion in function Perl_apply\nWarning W8079 perlhost.h 624: Mixing pointers to different 'char' types in function PerlStdIOGetBase(IPerlStdIO *,FILE *)\nWarning W8079 perlhost.h 657: Mixing pointers to different 'char' types in function PerlStdIOGetPtr(IPerlStdIO *,FILE *)\nWarning W8079 perlhost.h 749: Mixing pointers to different 'char' types in function PerlStdIOSetPtr(IPerlStdIO *,FILE *,char *)\nWarning W8079 ..\\\\perlio.c 3359: Mixing pointers to different 'char' types in function PerlIOStdio_set_ptrcnt\n\n-- \nReport by Test::Smoke v1.19_86 build 1044 running on perl 5.9.5\n(Reporter v0.027 / Smoker v0.032)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9327146304531336,
+          "SPAM": 0.0672853695468663
+        },
+        "confidence": 0.8654292609062673
+      }
+    },
+    "usage": {
+      "input_tokens": 1729,
+      "output_tokens": 0
+    }
+  }
+}

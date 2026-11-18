@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: No Pumps! No Surgery! No Exercises! \n\n\nTry it today - you have nothing to lose, just a lot to gain!\n\nNow, thanks to an incredible breakthrough, there is a herbal supplement available on the market that is absolutely GUARANTEED to add inches to your manhood, as well as increase thickness, pleasure, and allow you to maintain a rock hard, solid erect1on through intercourse. \n\nhttp://fronthigh.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9983363204810366,
+          "NOT_SPAM": 0.0016636795189634138
+        },
+        "confidence": 0.982243713164977
+      }
+    },
+    "usage": {
+      "input_tokens": 220,
+      "output_tokens": 0
+    }
+  }
+}

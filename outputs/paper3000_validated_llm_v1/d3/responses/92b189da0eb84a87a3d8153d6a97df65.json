@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Code freeze\n\n\"Craig A. Berry\"  wrote on 10/22/2007 07:11:53 \nPM:\n\n> The other VMS failures I'm still seeing in blead are listted below.  I\n\nI rsynced perl-current@32181 and using a compiler of:\n\n$  cc/ver\nHP C V7.3-018 on OpenVMS IA64 V8.3\n\nI see these failures:\n\nt/op/stat.....................................................FAILED at \ntest 31\nt/op/taint....................................................FAILED--unexpected \noutput at test 143\next/B/t/optree_misc...........................................FAILED at \ntest 2\next/Cwd/t/cwd.................................................FAILED at \ntest 23\nlib/Archive/Extract/t/01_Archive-Extract......................FAILED at \ntest 22\nlib/Archive/Tar/t/02_methods..................................FAILED at \ntest 18\nlib/CPANPLUS/Dist/Build/t/02_CPANPLUS-Dist-Build..............FAILED at \ntest 4\nlib/CPANPLUS/t/00_CPANPLUS-Inc................................FAILED--no \nleader found\nlib/CPANPLUS/t/00_CPANPLUS-Internals-Utils....................FAILED--no \nleader found\nlib/CPANPLUS/t/01_CPANPLUS-Configure..........................FAILED--no \nleader found\nlib/CPANPLUS/t/02_CPANPLUS-Internals..........................FAILED--no \nleader found\nlib/CPANPLUS/t/03_CPANPLUS-Internals-Source...................FAILED--no \nleader found\nlib/CPANPLUS/t/04_CPANPLUS-Module.............................FAILED--no \nleader found\nlib/CPANPLUS/t/05_CPANPLUS-Internals-Fetch....................FAILED--no \nleader found\nlib/CPANPLUS/t/06_CPANPLUS-Internals-Constants................FAILED--no \nleader found\nlib/CPANPLUS/t/07_CPANPLUS-Internals-Extract..................FAILED--no \nleader found\nlib/CPANPLUS/t/08_CPANPLUS-Backend............................FAILED--no \nleader found\nlib/CPANPLUS/t/09_CPANPLUS-Internals-Search...................FAILED--no \nleader found\nlib/CPANPLUS/t/10_CPANPLUS-Error..............................FAILED--no \nleader found\nlib/CPANPLUS/t/15_CPANPLUS-Shell..............................FAILED--no \nleader found\nlib/CPANPLUS/t/19_CPANPLUS-Dist...............................FAILED--no \nleader found\nlib/CPANPLUS/t/20_CPANPLUS-Dist-MM............................FAILED--no \nleader found\nlib/CPANPLUS/t/21_CPANPLUS-Dist-No-Build......................FAILED--no \nleader found\nlib/CPANPLUS/t/30_CPANPLUS-Internals-Selfupdate...............FAILED--no \nleader found\nlib/CPANPLUS/t/40_CPANPLUS-Internals-Report...................FAILED--no \nleader found\nlib/ExtUtils/t/basic..........................................FAILED at \ntest 82\nlib/ExtUtils/t/INSTALL_BASE...................................FAILED at \ntest 20\nlib/File/Copy.................................................FAILED--expected \n60 tests, saw 27\nlib/File/Find/t/find..........................................FAILED at \ntest 10\nlib/File/Find/t/taint.........................................FAILED at \ntest 10\nlib/IPC/Cmd/t/01_IPC-Cmd......................................FAILED--non-zero \nwait status: 1024\nlib/Module/Build/t/files......................................FAILED--expected \n6 tests, saw 2\nlib/Module/Build/t/install....................................FAILED at \ntest 20\nlib/Module/Build/t/manifypods.................................FAILED--expected \n21 tests, saw 2\nlib/Module/Build/t/ppm........................................FAILED at \ntest 3\nlib/Module/Build/t/test_type..................................FAILED--expected \ntest 4, saw test 3\nlib/Module/Build/t/xs.........................................FAILED--expected \ntest 11, saw test 10\nlib/Net/Ping/t/510_ping_udp...................................FAILED at \ntest 2\nlib/Test/Harness/t/failure....................................FAILED--expected \ntest 3, saw test 2\nFailed 39 tests out of 1327, 97.06% okay.\n\nPeter Prymmer",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005563033155313725,
+          "NOT_SPAM": 0.9994436966844686
+        },
+        "confidence": 0.9931829844299015
+      }
+    },
+    "usage": {
+      "input_tokens": 1129,
+      "output_tokens": 0
+    }
+  }
+}

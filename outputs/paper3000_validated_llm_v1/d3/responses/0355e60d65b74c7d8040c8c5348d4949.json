@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Snow Big Deal: $56.50 for \"Avenue Q\" Orchestra Seats\n\nTHIS WINTER'S\nMUST-HAVE\nACCESSORY!\n\nOrchestra Seats only $56.50*\n\nSee Broadway’s smash-hit Tony®-winning musical AVENUE Q from February 126thru March 30 for only:\n\n$46.50* (Rear Mezz A-H: Tues, Wed. & Thurs. at 8; Sun at 7, Wed. at 2)\nSAVE OVER 30%! (Regular price $66.50)\n\n$56.50* (Orch/Front Mezz: Tue, Wed & Thurs. at 8, Sun at 7, Wed. at 2)\nSAVE ALMOST 50%! (Regular price $111.50)\n\n$72.50* (Rear Mezz A-C: Sat at 8)\nSAVE OVER 35%! (Regular price $111.50)\n\nSpecial added Wednesday Performances 3/19 at 2 & 8\nClick Here to watch our TV commercial\nhttp://www.avenueq.com/land/promo\n\n3 ways to buy:\n\n1. Visit www.broadwayoffers.com and enter code\nAQTCE56.\n2. Call Telecharge.com at 212-947-8844 and mention code\nAQTCE56.\n3. Print this email and bring it to the Golden Theatre box office, 252 W. 45th St., NYC. Box Office hours: Mon-Sat 10am - 8pm, Sunday 12pm - 7pm\n\nFor everything Q, visit AVENUEQ.COM\n\n*All prices include a $1.50 facilities fee. Offer valid for select performances through 3/30/08. Subject to availability and prior sale. Not valid for the first ten (10) rows of the Orchestra. Limit 8 tickets per order. Normal service charges apply to phone and online orders. Offer may be revoked at any time. All sales final. No refunds or exchanges. Not valid in combination with any other offer. Blackout dates may apply.\n\n---------------------------------\n\nThis is an advertisement from Telecharge.com. This offer is subject to availability and may be changed or revoked at any time. Certain seat locations and/or performances may not be available with this offer. Blackout dates may apply. Phone and online service fees may apply. All ticket prices include $1.50 theater restoration charge. All sales final. Not valid on prior sales. No refunds or exchanges.\n\nReplies to this e-mail address will not be read or answered.  If you have any questions or comments, please send an e-mail to tickets@telecharge.com.\n\nFor tickets to the best Broadway and Off Broadway shows, check out Telecharge.com\nInterested in bringing a large group to see a show? Discounts are available through Telecharge.com Group Sales.  Visit Telecharge.com/Groups or call 212-239-6262 or 800-432-7780.\n\nTelecharge.com\n411 Hackensack Avenue\nHackensack, NJ 07601\n(Tickets are not available for purchase at this location.)\n\nYou are currently subscribed to the Telecharge.com e-mail list as: user6@gvc.ceas-challenge.cc\nTo subscribe visit http://www.telecharge.com/signup\nTo make changes to your account or unsubscribe from this list, visit http://editor.ne16.com/clientforms/newsletter/newsletterlist.asp?memberid=53242493&List=telecharge_buyers\nTo unsubscribe from all Telecharge.com lists, send a blank email to iugcu-2659850-66468242u@lists.n-email4.net",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9671503208643212,
+          "NOT_SPAM": 0.032849679135678725
+        },
+        "confidence": 0.7915125439307756
+      }
+    },
+    "usage": {
+      "input_tokens": 972,
+      "output_tokens": 0
+    }
+  }
+}

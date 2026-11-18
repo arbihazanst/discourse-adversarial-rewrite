@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: rule checking environment variable\n\nThey are getting high score because are using dynamic ip ranges and they match rbl lists.\n\nMatus UHLAR - fantomas escribió:\n> On 26.02.08 14:51, Miguel Angel wrote:\n>>     i am using spamassassin 3.2.3 with qmail and simscan, the problem i \n>>     have it is that my authenticated smtp\n>> users have any mails rejected because a high score,\n> \n> do they get high score because of the authentication or are they catching\n> something like DOX_*_TO_MX? \n> Proper authentication data in Received: headers should make SA know that the\n> client was trusted and not to catch that rule...\n> \n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9616081387708096,
+          "SPAM": 0.0383918612291903
+        },
+        "confidence": 0.9232162775416193
+      }
+    },
+    "usage": {
+      "input_tokens": 327,
+      "output_tokens": 0
+    }
+  }
+}

@@ -423,7 +423,7 @@ def main(argv=None):
     parser.add_argument('--show',action='store_true',help='Tampilkan profil saja; tanpa API')
     parser.add_argument('--results',action='store_true',help='Build the flat results overview for --mode without any model calls')
     parser.add_argument('--mode',choices=('pilot','full'),default='pilot')
-    parser.add_argument('--task',choices=('baseline','llm','gan','all'),help='Jalankan tanpa menu interaktif')
+    parser.add_argument('--task',choices=('baseline','llm','gan','all','tunnel'),help='Jalankan tanpa menu interaktif')
     parser.add_argument('--model',help='Defender: experimenting=pplx, main=clef/d3/all')
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--check-server',action='store_true')
@@ -431,6 +431,10 @@ def main(argv=None):
     args=parser.parse_args(argv)
     if args.dry_run and args.check_server:parser.error('Pilih offline atau cek layanan, bukan keduanya.')
     if not args.task and (args.dry_run or args.check_server or args.retry_errors):parser.error('Gunakan --task bersama opsi eksekusi.')
+    if args.task=='tunnel':
+        if args.model or args.retry_errors:parser.error('Uji tunnel memeriksa empat layanan sekali.')
+        from check_model_tunnel import check
+        return check(dry=args.dry_run)
     local=LOCAL if args.profile=='main' else EXPERIMENT/'adaptive_local.json'
     default=MAIN if args.profile=='main' else EXPERIMENT/'adaptive_config.json'
     path=pipeline.rooted(args.config) if args.config else local if local.exists() else default
@@ -451,6 +455,7 @@ def main(argv=None):
         print('  4. Hasil CSV dan evaluasi')
         print('  5. Pengaturan model, endpoint, output, dan GAN')
         print('  6. Panduan singkat')
+        print('  7. Uji empat model lewat tunnel SSH')
         print('  0. Keluar')
         try:
             choice=input('\nPilih nomor: ').strip()
@@ -462,6 +467,9 @@ def main(argv=None):
             elif choice=='4':results_menu(config)
             elif choice=='5':path,config,selected=settings(path,save_path,config,selected)
             elif choice=='6':help_text(config)
+            elif choice=='7':
+                from check_model_tunnel import check
+                check()
             else:print('Pilih nomor yang tersedia.')
         except (ValueError,OSError,KeyError) as exc:print('\nTidak dapat melanjutkan:',exc)
         except KeyboardInterrupt:print('\nKembali ke menu. Hasil yang tersimpan tetap tersedia.')

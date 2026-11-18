@@ -1,0 +1,35 @@
+{
+  "original_text": "Subject: fashionable replica watches\n\n\nWe only sell premium watches. \n\nMost reliable replica from Patek Philippe ...   \n\nis ROLEX under 199 $ good for you? \n\nhttp://fetessteersit.com/",
+  "rewrite_text": "Subject: Replica Watches\n\nReplica watches are available.\n\nReplicas from brands including Patek Philippe are among those we offer.\n\nWould a Rolex replica priced under $199 be of interest?\n\nhttp://fetessteersit.com/",
+  "rubric_version": "rewrite_validity_v1",
+  "checks": {
+    "purpose": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\d6692eb7a691171ebb0b9047809243f13e2f6164f123ca9b3676dc29740550b5.json"
+    },
+    "key_information": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\a284a10a6ab3b3f650d76b114a5fe29a5093708cc269aec8997d8196b66609da.json"
+    },
+    "meaning": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\c9debfbc4d7445a7054c048f6dbb14daeffa55ab2e639c1e96b82eff1eaa9d3f.json"
+    },
+    "no_fabrication": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\49536c3ab38dba46f896ecfaeff6c1c0547638fb4d1f46b948f78df6df03cf91.json"
+    },
+    "coherence": {
+      "label": "PASS",
+      "cache_hit": true,
+      "artifact": "validity_cache\\65317b6a1e1c55626133fdf8b71f16ed35196001882d6862e500fac92c708f27.json"
+    }
+  },
+  "reason": "",
+  "verdict": "VALID",
+  "request_time_ms": 0
+}

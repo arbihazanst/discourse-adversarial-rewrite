@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [PATCH] ex-PVBM and mro interact badly\n\nOn 10/15/07, Ben Morrow  wrote:\n> Running this script\n>\n>     use constant PVBM => 'foo';\n>     index 'foo', PVBM;\n>     my %h = ( a => PVBM );\n>\n> with blead@32107 causes an assertion failure:\n>\n>     Assertion ((((shplep)->sv_flags & (0x00004000|0x00008000)) ==\n>     0x00008000) && (((svtype)((shplep)->sv_flags & 0xff)) == SVt_PVGV ||\n>     ((svtype)((shplep)->sv_flags & 0xff)) == SVt_PVLV)) failed: file\n>     \"hv.c\", line 1453.\n>\n> This patch appears to fix the problem, though I'm not sure what to do\n> about the fact that the test will never fail: perl will die instead. The\n> eval doesn't seem to catch it.\n\nThere is a class of error that perl cant catch, such as seg faults and\nserious errors like that. In the case of the regex engine we have a\nsection at the end of the test file t/op/pat.t that says something\nlike:\n\n# Tests that can segfault perl go after here so that we test as much\nas we can before crash\n\nWhich seems to work out well enough, except when people just blindly\nstick new tests at the bottom of the file. So we solve that with a\ncomment like\n\n# New tests should go above the comment about tests that can segv perl.\n\nat the bottom of the file.\n\nSticking the test count in a begin block just above the the first\ncomment or right at the end of the file seems to help as well.\n\nYves\n\n\n-- \nperl -Mre=debug -e \"/just|another|perl|hacker/\"",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9540488504504049,
+          "SPAM": 0.04595114954959503
+        },
+        "confidence": 0.9080977009008098
+      }
+    },
+    "usage": {
+      "input_tokens": 606,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Replica watches, pens, bags and more... Cheap luxury gifts ...   \n\n\nQualitative watches at Replica Classics \n\nClassical Bvlgari watches at Replica Classics   \n\nItalian-crafted Rolex - only $65 - $140!!\n\nhttp://fundspampasau.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9951142117856814,
+          "NOT_SPAM": 0.004885788214318604
+        },
+        "confidence": 0.9554594060513596
+      }
+    },
+    "usage": {
+      "input_tokens": 186,
+      "output_tokens": 0
+    }
+  }
+}

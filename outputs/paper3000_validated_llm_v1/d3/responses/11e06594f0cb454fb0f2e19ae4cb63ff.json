@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: *3 FREE Bottles Of VPXL !! \n\n\nJust 2 pills a day, for incredible and quick gains in length and thickness. All gains are permanent, and all results are guaranteed - or your money back! \n\nMany surveys have shown that ladies prefer their man to have a huge manhood.\n\nhttp://zoomleap.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9978515864380771,
+          "NOT_SPAM": 0.0021484135619229327
+        },
+        "confidence": 0.9778634841480895
+      }
+    },
+    "usage": {
+      "input_tokens": 196,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Linux Mag Weekly] Developing Web 2.0 Apps with the Google Web Toolkit\n\n( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,dn5q,fvbk,7vpr,a7bw )   Linux Magazine's Weekly Newsletter \n\nTHIS WEEK'S SPONSOR\n\nVyatta -- Open Source Networking\nNew Report: Vyatta outperforms the Cisco 7204\n > 3X faster BGP convergence times\n > 3.3X better price/throughput performance\n > 3X routing table capacity\n > at a cost savings of over 75%\n ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,8izt,kwt2,7vpr,a7bw ) Click to download free report & Vyatta software\n\nWHITE PAPER\n\nCost Effective Scaling with Virtualization and Coyote Point Systems\nAn overview of the industry trend toward virtualization, how server consolidation has increased the importance of application uptime and the steps being taken to integrate load balancing technology with virtualized servers. \n ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,bzm4,2vfp,7vpr,a7bw ) Download this Paper\n\nTOP STORIES\n\nDeveloping Web 2.0 Apps with the Google Web Toolkit\nAjax development hurts, and is not recommended without a bottle of analgesics by your side. Luckily for us there are tools that can make developing Web 2.0 apps a breeze. \n ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,j0lr,uwk,7vpr,a7bw ) Click to Continue |  ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,64vv,xl4,7vpr,a7bw ) Post a Comment\n\n\nEnhance Security with Port Knocking\nThe author of All I Really Need to Know I Learned in Kindergarten left out (at least) one important lesson: Secret knocks are really, really useful. As kids, we'd use secret knocks to keep undesirables (the kids we didn't like) out of our clubs or rooms. As system administrators, we can use secret knocks to protect our systems from crackers.\n ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,8asz,3v38,7vpr,a7bw ) Click to Continue |  ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,dhui,8mtt,7vpr,a7bw ) Post a Comment\n\nSUBSCRIBE TO THE PRINT EDITION\n\nPenguins can fly!  ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,9ih4,l9b0,7vpr,a7bw ) Subscribe to the print edition of Linux Magazine and have expertise, insight, and analysis delivered right to your door. A one-year subscription (12 monthly issues) is only $29.95 in the United States (subscriptions for Canada, Mexico, and other territories may be slightly more expensive). Know a penguinista?  ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,2q5w,dzru,7vpr,a7bw ) Give him or her a gift subscription.\n\nFEEDBACK\n\nJoe 'Zonker' Brockmeier\nEditor-in-Chief\nkviolzjvgdj@linux-mag.com\n\n\nBryan Richard\nVP, Community and Infrastructure\nxqnrdtul@linux-mag.com\n\n\nRobert Wells\nPrint and Online Advertising\ndkeehe@linux-mag.com\n415.595.1020\n\n\nQuarterPower Media\n330 Townsend Street, Suite 112\nSan Francisco, California 94107\n\n\n\nTo unsubscribe from this newsletter click  ( http://responses.linux-mag.com/ct.html?rtr=on&s=ax0v,8zln,33o,5ajt,dac1,7vpr,a7bw&drfla_ayaqbzj=vxjh.drfla@gmail.com ) here.\n\n\nCopyright 2007, QuarterPower Media, LLC.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8861566759718222,
+          "SPAM": 0.11384332402817765
+        },
+        "confidence": 0.7723133519436445
+      }
+    },
+    "usage": {
+      "input_tokens": 1161,
+      "output_tokens": 0
+    }
+  }
+}

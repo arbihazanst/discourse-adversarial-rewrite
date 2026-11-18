@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Astrology.com: CatScopes\n\n\n\n\n\n\n\n\nDifficulties reading this email? \nYou can also check your Daily CatScopes by clicking here.\nPlease add catscopes@rp.astrology.com to your address book to ensure that your newsletters are delivered correctly. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThursday, August 7\n             \n\n\n\n\n \n\n\t\t\t\tYou're feeling the urge to lie low and let things happen today -- you may need to watch other kitties messing around and having fun while you recover from some pretty massive exercise.\n\n\n\n\n\n\n\n\n\n\n\n              Someone's getting more attention than you -- and that's no good! You should try to move in and see if you can get some for yourself, because things need to swing back in the right direction pretty quickly!\n\n\n\n\n\n\n\n\n\n\n              You're as hard to control as it's possible to be -- and that's saying quite a lot for a cat! It's just one of those days when you know what you want to do and nothing can stop you from doing it.\n\n\n\n\n\n\n\n\n\n\n              Watch out! Someone might be trying to play a trick on you, and you are in no mood to play along. The thing is, you might not know what's going on until the situation has long passed.\n\n\n\n\n\n\n\n\n\n\n              It's a good time for you to trust your judgment -- even if your intuitions have been failing you lately! Regain that confidence and you'll find that things go really smoothly for you.\n\n\n\n\n\n\n\n\n\n\n              Your head is full of big plans, but unfortunately, too many of them require circumstances to go exactly right for you -- and that's not happening today! You might get awfully close, but not quite close enough.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nADVERTISEMENT\n\n\n\n\n\n\n\n\n\n\n\n              You're concerned about food and other necessities right now, maybe to a degree that seems neurotic to your friends and family. Try to avoid their taunts and deal with what seems real to you.\n\n\n\n\n\n\n\n\n\n\n              You're stronger than people realize -- but on days like today, they get to see a glimpse of what you're really like. Channel that primal feline energy and watch the looks of surprise pop up!\n\n\n\n\n\n\n\n\n\n\n              You are feeling somewhat retiring today, and should go find a nice, quiet place to hang out on your own or with one special friend You need some down-time to recharge your emotional batteries!\n\n\n\n\n\n\n\n\n\n\n              It's one of those crazy days when you need to look at everything a little more closely -- but once you do, you should see what's really going on around you. Try to take a step back and watch the world.\n\n\n\n\n\n\n\n\n\n\n              You're putting on a show for the humans -- or whomever else is watching, really! It might not feel rehearsed or even ready for prime time, but it should be good fun for as long as it lasts.\n\n\n\n\n\n\n\n\n\n\n              You're just a bit more skittish than usual -- though you might not need to be! Your good energy should help you deal with almost anything, so try to stretch yourself out (carefully, though).\n\n\n\n\n\n\n\n\n\n\n\n\nSponsored Links from Yahoo!\nWhat's this?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \nBlabber: Sienna Miller Blows Her Top!\n\n\n \nBat Signal Lights Up Gotham's Night\n\n\n \nFamily Drama Smacks Down Brooke Hogan\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                Romantic Compatibility Reading\n\n\n\nIs your love meant to be? Find out with a free sample Romantic Compatibility Reading from Astrology.com. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClick here if you wish to edit your current information or sign up for more exciting newsletters.\nClick here to unsubscribe from your daily CatScope.\nIf you need to email us, please include the following lines in your reply.\nemail recipient: gvcormac@gvc.ceas-challenge.cc\n\n\n\n\n\n\n\n\n\n---\nannmn:[742uUV042uUV52nr0F012002AP0042uUV0mUb3aUbFT]",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.19575797001894432,
+          "SPAM": 0.8042420299810555
+        },
+        "confidence": 0.6084840599621111
+      }
+    },
+    "usage": {
+      "input_tokens": 944,
+      "output_tokens": 0
+    }
+  }
+}

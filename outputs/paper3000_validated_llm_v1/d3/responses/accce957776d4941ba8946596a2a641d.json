@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Encoding detection in the standard library?\n\n\"Martin v. Löwis\" writes:\n\n > In any case, I'm very skeptical that a general \"guess encoding\"\n > module would do a meaningful thing when applied to incorrectly\n > encoded HTML pages.\n\nThat depends on whether you can get meaningful information about the\nlanguage from the fact that you're looking at the page.  In the\nbrowser context, for one, 99.44% of users are monolingual, so you only\nhave to distinguish among the encodings for their language.  In this\ncontext a two stage process of determining a category of encoding (eg,\nISO 8859, ISO 2022 7-bit, ISO 2022 8-bit multibyte, UTF-8, etc), and\nthen picking an encoding from the category according to a\nuser-specified configuration has served Emacs/MULE users very well for\nabout 20 years.\n\nIt does *not* work in a context where multiple encodings from the same\ncategory are in use (eg, the email folder of a Polish Gastarbeiter in\nBerlin).\n\nNonetheless it is pretty useful for user agents like mail clients, web\nbrowsers, and editors.\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006657023155187116,
+          "NOT_SPAM": 0.9993342976844812
+        },
+        "confidence": 0.9920148674903472
+      }
+    },
+    "usage": {
+      "input_tokens": 451,
+      "output_tokens": 0
+    }
+  }
+}

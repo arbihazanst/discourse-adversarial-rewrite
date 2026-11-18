@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Research Fellow Position in Uncertain Reasoning/Planning\n\nResearch fellow\nCognitive robotics project\nSchool of computer science\n\nApplications are invited for a Research Fellow to work on an EC-Funded\nproject: CoSy: Cognitive Systems for Cognitive Assistants. This is a\nvery ambitious multi-disciplinary project in which we are working to\nreintegrate some of the efforts in different areas of AI and Cognitive\nScience, notably cognitive architectures, planning, reasoning, robotics,\ncomputer vision, natural language understanding, cognitive psychology\nand machine learning.\n\nYou will specifically be required to work on reasoning and learning\nabout sensing and perceptual processing in a robot able to manipulate\nobjects, with an emphasis on visual processing. The goal of the work\nwill be to develop new sequential decision making methods for choosing\nsensing actions and making inferences about a scene when the robot has\nto make decisions about where to look, and what visual processing to\nperform. These methods are likely to involve planning (both symbolic and\nprobabilistic approaches are relevant), learning for sequential decision\nmaking (e.g. reinforcement learning), and uncertain reasoning (e.g.\nBayesian reasoning for fusion of visual processing results).\n\nApplicants should hold, or be working towards the achievement of a PhD\nin Computer Science, AI, Cognitive Science, Engineering or related\nsubject OR have equivalent research experience in robotics/vision\nresearch and Linux expertise.\n\nResearch expertise in at least one area of planning or learning for\nsequential decision making is essential. You will also have a track\nrecord of strong publications in at least one of the following areas:\n\n     * Uncertain reasoning and planning\n     * Machine learning and statistical inference\n     * Computer vision\n     * Symbolic reasoning and planning\n\nYou will need excellent programming skills, in C/C++ or Java, together\nwith the ability to engineer software to very high standards of\nreliability. You will work in a team of six researchers at Birmingham\nand along with partner groups in six other universities, working on an\nambitious interdisciplinary EC-funded robotic project described at the\nCoSy web sites: www.cognitivesystems.org ,\nwww.cs.bham.ac.uk/research/projects/cosy/\n\nYou will also be expected to contribute to the management of the group,\ngrant writing, and setting the research agenda for the future work of\nthe group. Strong communication and management skills are therefore also\nessential. Please check those web sites for up to date\ninformation about the project and this post before applying.\n\nStarting salary in the range of £32,795 to £39,160 a year (potential\nprogression on performance once in post to £44,074 a year), or in the\nrange of £24,402 to £31,840 (potential progression once in post to\n£33,799 a year). This post is available from March 2007 until 28\nFebruary 2008 in the first instance, however it is normal, and expected,\nthat the post will be extended for the full duration of the project (31\nAugust 2008).\n\nInformal inquiries to Dr Jeremy Wyatt (preferably by) email:\nu.j.ayjcj@cs.bham.ac.uk tel:- 0121 414 4788 or to Prof Aaron Sloman\nemail: c.szyxmc@cs.bham.ac.uk tel:- 0121 414 4775 or to Dr Richard\nDearden, a.f.pbculka@cs.bham.ac.uk\n\nClosing date: 14 March 2007\n\nReference: S43099\n\nDetails from 0121 415 9000 or www.hr.bham.ac.uk/jobs\nHR, University of Birmingham, Edgbaston, Birmingham B15 2TT\n\nA University of Fairness and Diversity",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.051668685475166544,
+          "NOT_SPAM": 0.9483313145248335
+        },
+        "confidence": 0.7065564359180391
+      }
+    },
+    "usage": {
+      "input_tokens": 967,
+      "output_tokens": 0
+    }
+  }
+}

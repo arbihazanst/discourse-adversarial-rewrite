@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Recent kernel update(s) failed\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\n\n\nThe Thursday 2008-02-14 at 01:20 +0100, Philippe Landau wrote:\n\n>>> Subprocess failed. Error: RPM failed: Free diskspace below /boot:\n>>> 27150120 blocks\n>> It is saying you are out of room in your /boot.  Is it a separate\n>> partition?  It is too small.\n\nIt is merely informing of the free space, which is large.\n\n> The error message is misleading, but it doesn't say that.\n> Even Marcus Meissner misread it earlier.\n> Maybe it could be improved ?\n\nIt certainly should.\n\n\n- -- \nCheers,\n        Carlos E. R.\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.4-svn0 (GNU/Linux)\n\niD8DBQFHs5M9tTMYHG2NR9URAq9GAJ4lxXbsllmYNEd7dX2a1EhXRvatlQCfSYg0\nbyT29tll6YJqTo/9Y0floJQ=\n=QVJC\n-----END PGP SIGNATURE-----",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00048463815203768644,
+          "NOT_SPAM": 0.9995153618479624
+        },
+        "confidence": 0.9939647284990797
+      }
+    },
+    "usage": {
+      "input_tokens": 420,
+      "output_tokens": 0
+    }
+  }
+}

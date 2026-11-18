@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Code freeze?\n\nNot speaking for Barry or anyone else but myself.  This is an\nexplanation of how I understand the process and why I welcome it.\n\nScott Dial writes:\n\n > I don't understand who these alpha releases are supposed to be for, and \n > who they will serve.\n\nAn alpha test is internal.  It is comprised of those tests the\ndevelopers working on the product (and/or an affiliated QA department)\ncan imagine.\n\nSimilarly, an alpha release is of, by, and for the developers.\n\n > I'm not sure what developer outside of the core community would\n > want to work with something missing key features and released\n > fairly arbitrarily.\n\nDevelopers outside of the core community are not targeted.  That said,\nhow do you know that key features are missing?  Part of the point of a\nrelease is that it says \"*this stuff* is working\".  I want *my* key\nfeature to be part of \"this stuff\", not *your* key feature.  Given \"my\nfeature,\" I download to give the team feedback as early as possible.\nLacking yours, you don't.  Next alpha, presumably our roles will be\nreversed.\n\n > More to the point, I don't know why a developer wouldn't just checkout \n > from SVN in any case. Certainly if they are going to help root out bugs, \n > then we would like them to be using the trunk if possible. I fear that \n > once an alpha is 2 weeks old, we will start saying \"please check if its \n > still a problem on the trunk.\"\n\nSoftware development in practice is a matter of \"take two steps back,\nthen three steps forward.\"  The point of an alpha release is to\ncheckpoint what is a regression, and what is a temporary \"feature\"\nintroduced by new development.  The latter is admissible on the trunk,\nbut the goal should be none from one alpha to the next.  In other\nwords, a bug introduced by new development should be fixed by the next\nalpha.  If it can't be, the developer misjudged the timing of the\nmerge to mainline; it wasn't ready yet.\n\n > A mild concern is how this effects checkins with individuals either \n > trying to meet a deadline or even wait until after an alpha release to \n > checkin a large change. I'm not sure this will happen, but having \n > releases scheduled without feature milestones attached certainly changes \n > the environment for work to be done in.\n\nScheduling feature milestones assumes that people put priority on\nthose features at a given time.  Barry can't assume that yet.  Once\nthe rhythm is established, Barry can start asking for, and some people\nwill start volunteering, milestone commitments for given releases.\n\nI think that it probably is desirable to to put that deadline pressure\non.  Individuals who rush to get their work in, and cause alpha-to-\nalpha regressions, can be advised to wait in the future in similar\ncircumstances.  Once the rhythm is established, people can expect that\nalphas will be consistently increasing in features and consistently\ndecreasing in defects.  If that's not true, something's wrong with the\nprocess, and the team needs to step back and do something about it.\n\nBut in the nature of software development, *monotone improvement is\nnot something you want to, or even can, impose on the trunk at all\npoints in time*.\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004462866357562467,
+          "NOT_SPAM": 0.9995537133642438
+        },
+        "confidence": 0.9943892331638666
+      }
+    },
+    "usage": {
+      "input_tokens": 920,
+      "output_tokens": 0
+    }
+  }
+}

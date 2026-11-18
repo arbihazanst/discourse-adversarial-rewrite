@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: AISB symposium on Normative MultiAgent systems (NorMAS05)\n\nNorMAS2005 is a one day symposium part of the 2005 AISB convention. The \ngeneral theme for the convention is \"Social Intelligence and Interaction \nin Animals, Robots and Agents\". It is held from April 12 to April 2005 \nat the University of Hertfordshire, de Havilland Campus, Hatfield, \nEngland. AISB conventions are organized by the largest AI society in the \nUnited Kingdom, SSAISB which stands for Society of the Study of \nArtificial Intelligence and the Simulation of Behaviour.\n\nNorms are essential for artificial agents that are to display behaviour \ncomparable to human intelligent behaviour or collaborate with humans, \nbecause the use of norms is the key of human social intelligence. Norms \nplay a central role in many social phenomena such as coordination, \ncooperation, decision-making, etc. There is an increasing interest in \nthe role of norms in societies, both inside as outside the agent \ncommunity. Now the time is ripe for a symposium focussing on this \ncentral sociological concept given that the field of (multi)agent \nresearch is moving more and more from the individual, cognitive focussed \nagent models to models of socially situated agents. NorMAS therefore \nfocuses on normative multiagent systems.\n\nNormative multiagent systems combine theories and frameworks for \nnormative systems with multiagent systems. Thus, these systems provide a \npromising model for human and artificial agent co-ordination, because \nthey integrate norms and individual intelligence. They are a prime \nexample of the use of sociological theories in multiagent systems, and \ntherefore of the relation between agent theory and the social sciences, \ne.g., sociology, philosophy, economics, legal science, etc.\n\nNorMAS2005, as part of AISB2005, will provide an excellent opportunity \nto meet researchers studying norms in cognitive science, social \nsciences, agent theory, computer science, philosophy, etc. to discuss \nthe current state and identify potential future directions and research \nissues.\n\nTOPICS OF INTEREST\nThe topics of this symposium include, but are not restricted to, the \nfollowing issues:\n\na.. multiagent or society level:\n  a.. balancing dynamics and statics at the agent (micro) and agent \nsociety (macro) level\n  b.. coordination based on normative multiagent systems\n  c.. emergence of conventions, norms, roles, and normative multiagent \nsystems\n  d.. combining conventions with regulative, permissive, constitutive \nand other types of norms\n  e.. relation between NorMAS and contracts, security, and (electronic) \ninstitutions\n\nb.. agent level:\n  a.. alternatives to and extensions of the homo economicus and BDI logics\n  b.. extending logical frameworks to encompass norms in agent decision \nmaking\n  c.. how to implement theories of norms in artificial agents\n\nc.. applications of NorMAS:\n  a.. multiagent social simulation models containing norms\n  b.. mixing artificial and human agents in hybrid social systems\n\nIMPORTANT DATES\n31 October 2004: Submissions deadline\n22 November 2004: Notification of authors\n17 December 2004: camera ready copies deadline\n14 January 2005: early registration deadline\n12-15 April 2005: AISB2005 convention\n\nPROCEEDINGS\nThe papers accepted for the symposium will be published in the AISB \nproceedings. Moreover, the best papers will be published in a special \nissue of a renowned international journal.\n\nSUBMISSION DETAILS\nThe length of each paper including figures and references should not \nexceed 12 pages. All papers must be submitted in PDF or postscript \nformat. A format description will be issued shortly. Papers are to be \nsend to the following email address: verhagen@dsv.su.se.\n\nPROGRAMME COMMITTEE\nGuido Boella - Dipartimento di Informatica, Universita' di Torino \n(co-chair)\nCristiano Castelfranchi - Institute of Cognitive Sciences and \nTechnologies (ISTC), Italy\nPaul Davidsson - BTH, Sweden\nAndré Meyer - TNO, Netherlands\nMaria Fasli - Essex University, UK\nLeendert van der Torre - CWI Amsterdam &TU Delft, Netherlands (co-chair)\nHarko Verhagen - DSV, KTH/SU, Sweden (co-chair)\n\n\nSYMPOSIUM WEBSITE\nhttp://normas.di.unito.it/zope/aisb05/\n\n\nAISB CONVENTION WEBSITE\nhttp://aisb2005.feis.herts.ac.uk/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.09781609257078779,
+          "NOT_SPAM": 0.9021839074292122
+        },
+        "confidence": 0.5379657063308358
+      }
+    },
+    "usage": {
+      "input_tokens": 1145,
+      "output_tokens": 0
+    }
+  }
+}

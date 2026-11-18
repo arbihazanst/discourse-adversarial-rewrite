@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Bayes - Balance of spam\n\nOn 12.02.08 13:55, Arthur Dent wrote:\n> Please forgive my ignorance, but I don't fully understand just how Bayes\n> works.\n> \n> I dutifully feed all the spam (and ham) I get into sa-learn and generally\n> Bayes works pretty well.\n> \n> I am a little concerned however that at this moment I seem to be getting\n> bombarded with Russian spam. It currently outweighs all other spam by\n> about 100:1\n> \n> My worry is that Bayes will eventually come to believe that only Russian\n> spam is *really* spam as it will, if the current trend continues,\n> overwhelm the other spam in the Bayes DB.\n> \n> Am I worrying unnecessarily, or should I make efforts to \"balance\" the\n> spam I am feeding to bayes?\n\nNot needed. You may want to increase your bayes DB size however.\nRemember to feed ham too and especially mail with BAYES score\naway from 0 or 1 (those who hit BAYES_05 to BAYES_95)\n\n-- \nMatus UHLAR - fantomas, ovvbe@fantomas.sk ; http://www.fantomas.sk/\nWarning: I wish NOT to receive e-mail advertising to this address.\nVarovanie: na tuto adresu chcem NEDOSTAVAT akukolvek reklamnu postu.\nSpam is for losers who can't get business any other way.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00417049985198128,
+          "NOT_SPAM": 0.9958295001480186
+        },
+        "confidence": 0.9610256510726418
+      }
+    },
+    "usage": {
+      "input_tokens": 469,
+      "output_tokens": 0
+    }
+  }
+}

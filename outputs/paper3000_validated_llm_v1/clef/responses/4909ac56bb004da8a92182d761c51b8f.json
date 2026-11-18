@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Sergio Ritter\n\n\n\n\n\n\n\n\nP pwo har di ma cy cy On yc line\n\nOver 2 Million Pre ws script pr ions Fil jbw led\nLowest Pri qs ce Guaran vkx tee. Bu kqk y On lw line! \n\nhttp://sawspring.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02635255094743515,
+          "SPAM": 0.973647449052565
+        },
+        "confidence": 0.9472948981051299
+      }
+    },
+    "usage": {
+      "input_tokens": 218,
+      "output_tokens": 0
+    }
+  }
+}

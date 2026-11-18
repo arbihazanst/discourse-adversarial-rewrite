@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Call for Papers: Special Issue M4M\n\n                       Call for Papers for \n\n                     \"Methods for Modalities\"\n\n          A Special Issue of the Journal of Applied Logic\n      (http://www.sciencedirect.com/science/journal/15708683)\n\nThe workshop `Methods for Modalities' (M4M) organized every two \nyears aims to bring together researchers interested in developing \nproof tools and decision methods for modal logic broadly conceived,\nincluding description logic, hybrid logic, temporal logic, etc.\n\nDuring 1993 M4M-3, the third instance of the workshop was organized \nin Nancy, France.  We have been invited by the Journal of Applied \nLogic to prepare a Special Issue containing selected publications \nfrom the workshop, in addition to other articles that might fit \nwithin the  topics of interest of M4M.   For that reason we are now\ndistributing this Call for Papers.  \n\n\nTOPICS OF INTEREST OF M4M\n\nThe following list is provided as an example of suitable topics for\nthe Special Issue. All topics should concern modal-like logics,\nbroadly conceived.  The list is by no means exhaustive and is given \nin an arbitrary order:\n\n* Automated theorem proving\n* Decision methods\n* Proof methods\n* Standard and non-standard inference problems\n* Model checking\n* Testing\n* Expressive power\n* Modelling\n* Applications\n* Successful uses of modal-like languages in other fields\n* Knowledge representation\n\n\nSUBMISSION DETAILS\n\nThe final version of accepted papers has to follow the standard \nlayout guidelines of the Journal of Applied Logic.  Instructions \nfor authors and the latex style files are available from\n \n   http://staff.science.uva.nl/~m4m/SI/ \n\nAlthough not mandatory, we suggest to use the corresponding style\nfiles from that web-page also for your initial submission. The \nissue aims at high quality papers with a length around 20 to max. 30\npages. Please send your submission in postscript or pdf no later \nthan October 31th, 2004 to\n\n   areces@loria.fr. \n\nNotice that all papers will be refereed to ensure that their\nsuitability for journal publication.\n\n\n\nIMPORTANT DATES\n\nDeadline for Submissions: October  31th, 2004\nReviews Due             : November 21th, 2004\nFinal Versions Due      : December 19th, 2004\n\n\nGUEST EDITORS of the Special Issue\n\nDr. Carlos Areces \nINRIA Lorraine\n615, rue du Jardin Botanique\n54602 Villers les Nancy Cedex, France\nphone  : +33 (0)3 83 58 17 90\nfax    : +33 (0)3 83 41 30 79\ne-mail : ghfqvb.ypioba@loria.fr\nwww    : http://www.loria.fr/~areces",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0680585645249449,
+          "NOT_SPAM": 0.9319414354750553
+        },
+        "confidence": 0.6413635323823549
+      }
+    },
+    "usage": {
+      "input_tokens": 776,
+      "output_tokens": 0
+    }
+  }
+}

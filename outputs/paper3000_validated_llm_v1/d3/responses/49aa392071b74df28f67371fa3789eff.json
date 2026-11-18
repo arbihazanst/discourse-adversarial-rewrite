@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Is it possible to force postfix to retry a failed\tsent mail\n\nMon, 25 Feb 2008, by vyjwd.trpcau@telefonica.net:\n\n> \n> \n> Hi,\n> \n> Sometimes my provider relay has an hiccup and refuses my email:\n> \n>    Feb 25 20:48:33 nimrodel postfix/smtp[19370]: 4341DB7596:\n>    to=, relay=smtp.telefonica.net[213.4.149.228]:25,\n>    delay=14, delays=0.1/0. 28/14/0, dsn=5.0.0, status=bounced (SASL\n>    authentication failed; server smtp.telefonica.net[213.4.149.228] said:\n>    535 invalid user ID or password)\n> \n> \n> I want postfix to ignore the error and retry many times. Is it possible?\n\nA 5xx is a permanent error, so: no, Postfix does not ignore this and\nwill not try again.\n\nTheo\n-- \nTheo v. Werkhoven    Registered Linux user# 99872 http://counter.li.org\nICBM 52 13 26N , 4 29 47E.     +      ICQ: 277217131\nSUSE 10.3                      +   Jabber: qeihsi@jabber.xs4all.nl\nKernel 2.6.22                  +   See headers for PGP/GPG info.\nClaimer: any email I receive will become my property. Disclaimers do not apply.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0008135150609411083,
+          "NOT_SPAM": 0.9991864849390589
+        },
+        "confidence": 0.9904772763052079
+      }
+    },
+    "usage": {
+      "input_tokens": 535,
+      "output_tokens": 0
+    }
+  }
+}

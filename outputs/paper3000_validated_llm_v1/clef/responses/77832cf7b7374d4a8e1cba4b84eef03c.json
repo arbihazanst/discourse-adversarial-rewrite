@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: New in Mystery at Amazon.com: \"Fresh Kills\" by Bill Loehfelm\n\n\n\n Dear Amazon.com Customer,\n\n\n As someone who participated in the Amazon Breakthrough Novel Award ( http://www.amazon.com/b/ref=pe_8968580_txt_1/?node=332264011 ), or has purchased mysteries ( http://www.amazon.com/b/ref=pe_8968580_txt_2/?node=18 ) or  fiction ( http://www.amazon.com/b/ref=pe_8968580_txt_3/?node=17 ) recently from Amazon.com, you may like to know that Fresh Kills ( http://www.amazon.com/gp/product/ref=pe_8968580_txt_4/?ASIN=0399155317 ) by New Orleans author (and New York City native) Bill Loehfelm is the winner! Read an exclusive Q&A and essay ( http://www.amazon.com/gp/feature.html/ref=pe_8968580_txt_5/?docId=1000215651 )  with the author, and check out early customer praise ( http://www.amazon.com/gp/product/ref=pe_8968580_txt_6/?ASIN=B00121WDJM ) for this gritty, hero-with-a-heart debut, praised by Publishers Weekly as \"the next Dennis Lehane.\"\n\n\n Pre-order Fresh Kills\n http://www.amazon.com/gp/product/ref=pe_8968580_txt_7/?ASIN=0399155317\n http://www.amazon.com/gp/product/ref=pe_8968580_txt_8/?ASIN=0399155317\n\n\n\nAmazon Breakthrough Novel Award    \nhttp://www.amazon.com/b/ref=pe_8968580_txt_9/?node=332264011\n\n\n\nPlease note that this message was sent to the following e-mail address: user2.1@gvc.ceas-challenge.cc\nWe hope you found this message to be useful. However, if you'd rather not receive future e-mails of this sort from Amazon.com, please visit the opt-out link here: http://www.amazon.com/gp/gss/o/1Gn7KN7Mv--kCtsQ8zsltkY4BFb47iy-8AQqoA9w43HM\nPlease note that product prices and availability are subject to change. Prices and availability were accurate at the time this newsletter was sent; however, they may differ from those you see when you visit Amazon.com.\n(c) 2008 Amazon.com. All rights reserved. Amazon.com is a registered trademark of Amazon.com, Inc.\nAmazon.com, 1200 12th Ave. S., Suite 1200, Seattle, WA 98144-2734.\nReference 8968580",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.123470346176599,
+          "SPAM": 0.876529653823401
+        },
+        "confidence": 0.753059307646802
+      }
+    },
+    "usage": {
+      "input_tokens": 821,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] 2.6 and 3.0 tasks\n\nGuido van Rossum wrote:\n > So this doesn't address merges at all. Suppose we have some C code\n> that's shared between 2.6 and 3.0 and manipulates binary data (e.g.\n> the gzip codec). It currently uses PyString on both branches, so any\n> changes to the trunk merge smoothly into the py3k branch. But if you\n> change PyString -> PyBytes in the py3k branch, every change you make\n> in the 2.6 code will cause a merge conflict. Is that really what you\n> want? I worry that it will effectively separate the trunk and the py3k\n> branch, losing the advantage of doing development that effects both at\n> once.\n\nI'm fully aware of the extra burden. The removal of the PyInt_*\nfunctions is already causing merge conflicts and compile errors. Nearly\nevery C code merge contains at least one place that requires manual\nintervention. The PyInt merge conflicts are trivial to fix - so would\nerrors caused PyString -> PyBytes rename.\n\nI'm not worried about the extra work since it's usually trivial and fast\nto fix. I'm more worried about the API names. Do you *really* want to\ndrag down dead bodies along the road for the next ten years? The dead\nbodies are going to rot and stink sooner than later. By Python 3.2\neverybody surely regrets the confusing names. ;)\n\nChristian\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0008038614646275031,
+          "NOT_SPAM": 0.9991961385353726
+        },
+        "confidence": 0.9905764281044052
+      }
+    },
+    "usage": {
+      "input_tokens": 508,
+      "output_tokens": 0
+    }
+  }
+}

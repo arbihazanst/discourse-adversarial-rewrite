@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Special Menu for Web Members Only\n\n\n\n\nCooksIllustrated\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUntitled Document\n\n\nFebruary  2008 e-Menu\nDear  website members,\nThis  month, I'm giving you a preview of our new cookbook The Best Chicken \n  Recipes.  The book includes several specialty chapters with themes that many of \n  you  have requested, including Chicken Dinners for Two, Light and Lean Chicken, \n  and  Starting with Leftovers. My mostly make-ahead menu was inspired by the \n  leftover  chapter and includes instructions on roasting two chickens at the same \n  time  to create extra meat. (I've also added one of the test kitchen's all-time \n  favorite  cookie recipes.)\nAnd  here are two tips for estimating how much meat to expect from a roasted \n  chicken:  Expect to get about 1 cup of shredded or thinly sliced cooked chicken \n  per  pound of raw chicken. But if you're purchasing an already cooked rotisserie \n  chicken  at the store, remember that chickens lose about 25 percent of their \n  weight  once cooked, so it will yield slightly more meat per pound than a raw \n  chicken.  Finally, most recipes for four people require 2 cups.\nEnjoy!\nLindsay  McSweeney\n  Online  Editor\n  Cook's  Illustrated\njz.cotfictvt@americastestkitchen.com\n \nChicken  Twice Over Menu\nTo  serve at the first meal and to create leftovers: \n\nTwo  Roast Chickens\n\n Midweek  Supper: \n\nRomaine  Salad with Chicken, Cheddar, Apple, and Spiced Pecans\nFreezer  Biscuits with Fresh Herbs\nChocolate  Chunk Oatmeal Cookies with Dried Cherries \n\nGame  Plan:\nUp  to 1 Month Ahead:\n\n\nMake  and freeze the biscuits\n\nUp  to 4 Days Ahead:\n\nMake  the cookies\n\nMake  the spiced pecans for the salad\n\nUp  to 2 Days Ahead:\n\nRoast  the chickens\n\nMake  the vinaigrette for the salad\n\n45  Minutes Before Serving:\n\nPreheat  the oven to 450 degrees; when hot, bake the biscuits directly from the \n    freezer  (20 to 25 minutes)\n\nJust  Before Serving:\n\n\nPrepare  the salad\n\nSee  the Chicken Twice Over Menu for all the recipes and other information \nrelating  to this menu.\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClick here to change your Email address\nClick here to unsubscribe \n\n\n\n\n\n\n\n\n\n\n\n_____________________________________________________________________\nTHIS E-MAIL WAS SENT FROM A \"SEND-ONLY\" MAILBOX.\nPlease do NOT reply to this e-mail. E-Menu is being sent to you as\nthe result of a request registered with Cook's. If you want to remove\nyour name from our mailing list, or change your e-mail address, please\nclick \nhere. \nClick \n      here to view our privacy policy.\n\nAmerica's Test Kitchen\n17 Station Street\nBrookline, MA 02445",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.926351021571532,
+          "SPAM": 0.07364897842846797
+        },
+        "confidence": 0.8527020431430641
+      }
+    },
+    "usage": {
+      "input_tokens": 805,
+      "output_tokens": 0
+    }
+  }
+}

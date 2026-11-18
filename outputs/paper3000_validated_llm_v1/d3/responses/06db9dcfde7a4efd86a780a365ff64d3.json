@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] Using *a for packing in lists and other places\n\nOn Sat, Mar 15, 2008 at 3:21 PM, Guido van Rossum  wrote:\n\n> This post does point out an inconistency in Thomas's patch:\n>\n> def f():\n>  yield 1, 2, 3\n>\n> Yields a single three-tuple.\n>\n> But\n>\n> def f():\n>  yield *[1, 2], 3\n>\n> Yields three separate values.\n\n\nUhm, what? It doesn't, and it shouldn't, and I'm not sure what makes you\nthink it does.\n\n>>> def f():\n.     yield *[1, 2], 3\n.\n>>> list(f())\n[(1, 2, 3)]\n\nThe comma makes the argument to 'yield' a single item (a tuple) and the '*'\nis part of the item in the tuple. In other words, the * binds more tightly\nthan the comma (which is not something I changed; the parser already worked\nthis way and it's necessary for '*a, b, c = ..' to even work.  'yield *[1,\n2], 3' is parsed as 'yield (*[1, 2], 3)', not 'yield *([1, 2], 3)'. What you\nsuggest (three separate values) requires 'yield *(*[1, 2], 3)'.\n\n>>> def f1():\n.     yield (*[1, 2], 3)\n.\n>>> list(f1())\n[(1, 2, 3)]\n\n>>> def f2():\n.     yield *([1, 2], 3)\n.\n>>> list(f2())\n[[1, 2], 3]\n\n>>> def f3():\n.     yield *(*[1, 2], 3)\n.\n>>> list(f3())\n[1, 2, 3]\n\n  I think this is inconsistent, since\n>\n> (1, 2, 3)\n>\n> and\n>\n> (*[1, 2], 3)\n>\n> are equivalent, and so are\n>\n> yield 1, 2, 3\n>\n> and\n>\n> yield (1, 2, 3)\n\n\nYes, they are indeed all equivalent :-)\n\n\n>\n>\n> I'm not sure how to solve this except by adopting a different syntax\n> for the multiple-yield. Perhaps\n>\n> *yield x\n>\n> instead of\n>\n> yield *x\n>\n> ???\n\n\nIf there really were an inconsistency here, I would certainly not suggest\nfixing it that way, yuuueghh.\n\n\n>\n> On Sat, Mar 15, 2008 at 4:58 PM, Terry Reedy  wrote:\n> >\n> >  \"Guido van Rossum\"  wrote in message\n> >  news:ca471dc20803150915l27750346g8655f596f5035c69@mail.gmail.com...\n> >\n> > | Thomas Wouters suggests some new syntax:\n> >\n> >  I see this as two suggestions:\n> >  1. Complete the extension of the validity of *expression syntax from\n> >  function call/definition to expression/assignment.\n> >  2. Give *expression a related meaning in yield statements.\n> >\n> >\n> >  |\n> >  | http://bugs.python.org/issue2292\n> >  |\n> >  | >>> a, b, *c = range(5)\n> >  |\n> >  | >>> *a, b, c = a, b, *c\n> >  | >>> a, b, c\n> >  | ([0, 1, 2], 3, 4)\n> >  | >>> [ *a, b, c ]\n> >  | [0, 1, 2, 3, 4]\n> >\n> >  I understand 'f(*a)' to mean 'execute the expression as if the items of\n> >  iterable a has been written literally in the code (with 'as if'\n> >  optimizations allowed for special cases).  The above follow the same\n> rule.\n> >  +1\n> >  A tutorial written for Py3 without regard to history should then\n> introduce\n> >  *expressions in examples like the above first, and only later the usage\n> for\n> >  functions, as if things had been this way all along.\n> >\n> >\n> >  | >>> L = [ a, (3, 4), {5}, {6: None}, (i for i in range(7, 10)) ]\n> >  | >>> [ *item for item in L ]\n> >  | [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n> >\n> >  Since above will become equivalent to list(gen_exp), I see this as\n> being\n> >  tied to yield *exp.\n> >\n> >\n> >  | Also, yielding everything from an iterator:\n> >  |\n> >  | >>> def flatten(iterables):\n> >  | ...     for it in iterables:\n> >  | ...         yield *it\n> >\n> >  Following the general rule above for *exp, that would be the same as\n> yield\n> >  tuple(it).  But that is nearly useless, whereas the the implicit inner\n> for\n> >  loop meaning is quite useful, with, perhaps, a speedup over an explicit\n> >  inner loop.  Since yield is already pretty magical,a bit more might not\n> >  hurt.\n> >\n> >  But, ... what do you do with\n> >     yield *a,b,c # a,b,c as above?\n> >  Yield a 5-tuple?  That would clash badly with 'yield *a' not yielding a\n> >  3-tuple.\n> >  Raise an exception?  That establishes/requires a new grammatical\n> >  category -- yield_expression.  But I would see this as preferable to\n> the\n> >  clash.\n> >\n> >  Terry Jan Reedy\n> >\n> >\n> >\n> >\n> >  _______________________________________________\n> >  Python-3000 mailing list\n> >  smsbmo-9552@python.org\n> >  http://mail.python.org/mailman/listinfo/python-3000\n> >  Unsubscribe:\n> http://mail.python.org/mailman/options/python-3000/guido%40python.org\n> >\n>\n>\n>\n> --\n> --Guido van Rossum (home page: http://www.python.org/~guido/\n> )\n> _______________________________________________\n> Python-3000 mailing list\n> smsbmo-9552@python.org\n> http://mail.python.org/mailman/listinfo/python-3000\n> Unsubscribe:\n> http://mail.python.org/mailman/options/python-3000/thomas%40python.org\n>\n\n\n\n-- \nThomas Wouters \n\nHi! I'm a .signature virus! copy me into your .signature file to help me\nspread!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0011449640501703187,
+          "NOT_SPAM": 0.9988550359498297
+        },
+        "confidence": 0.9871622614250376
+      }
+    },
+    "usage": {
+      "input_tokens": 1822,
+      "output_tokens": 0
+    }
+  }
+}

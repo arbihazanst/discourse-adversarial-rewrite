@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Problems with Postfix configuration / check_relay_domains and reject_rbl_client\n\nCharles Marcus wrote:\n> Sandy Drobic, on 2/26/2008 12:10 PM, said the following:\n>> Charles Marcus wrote:\n>>> On 2/26/2008, Damian Rivas (uljwsv@cht.com.ar) wrote:\n>>>> Yes, you have to include the \"permit_mynetworks\" command,\n>\n>>> No you don't - I don't allow unauthenticated access to my server. I \n>>> have:\n>>>\n>>> smtpd_recipient_restrictions = permit_sasl_authenticated, \n>>> check_client_access cidr:/etc/postfix/allow_relay.cidr, \n>>> reject_unauth_destination, reject\n>>>\n>>> My server is not directly internet facing, though, so I can get\n>>> away with this (allow_relay.cidr has ip blocks of our outsourced\n>>> anti-spam service, so only accepts mail from them).\n>\n>>>> You are supposed to trust your own networks.\n>\n>>> Heh... I don't trust anyone...\n>\n>> Your config says otherwise: you trust your anti-spam provider and\n>> give him the ability to use your system to relay. Explicitely: why\n>> don't you rename the allowed_relay (just look at the name!) to\n>> client_whitelist and move it behind reject_unauth_destination?\n>\n> Hmmm... actually, I guess I named that file badly... the CIDR table\n> returns 'permit_auth_destination' for each of their IP blocks, so they\n> aren't actually relaying through us, just delivering 'our' mail... ;)\n>\n> I just renamed it to 'allowed_clients.cidr'...\n\nInstead of that, move the check to after reject_unauth_destination and \nreturn OK.\n\nsmtpd_recipient_restrictions =\n    permit_sasl_authenticated\n    reject_unauth_destination\n    check_client_access cidr:/path/to/client_acl\n    ...\n\n\n== client_acl\n# whiletlisted clients\n10.1.2.0/24      OK\n..\n\n# blacklisted clients\n192.0.2.0/24   REJECT blah blah\n\n\nyou can even integrate dnswl in this file.\n>\n>> If you have clients in that table that should be able to relay\n>> separate them in two access queries before and behind\n>> reject_unauth_destination.\n>\n> Right... but I don't... thanks for pointing out the bad choice of \n> names though...\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9611433007165678,
+          "SPAM": 0.038856699283432064
+        },
+        "confidence": 0.9222866014331357
+      }
+    },
+    "usage": {
+      "input_tokens": 723,
+      "output_tokens": 0
+    }
+  }
+}

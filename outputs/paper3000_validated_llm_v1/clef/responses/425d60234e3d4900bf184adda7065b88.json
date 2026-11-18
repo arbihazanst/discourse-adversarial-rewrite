@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re:\n\n\nMany a young lady does not realize just how strong her love for a young man is until he fails to pass the approval test with her parents. http://nddkaf.pushyet.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.08110660493156217,
+          "SPAM": 0.9188933950684378
+        },
+        "confidence": 0.8377867901368756
+      }
+    },
+    "usage": {
+      "input_tokens": 201,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ydn-delicious] Instead of 503, repeating API /posts/all gives 200 but no posts.  Eeek!\n\n\nOn Nov 6, 2007, at 6:30 AM, Jerry Krinock wrote:\n\n> Well, the API has been well-behaved today. But, interestingly, now I\n> just saw a glitch in http://del.icio.us/MyAccount which proves that it\n> can make mistakes too. And I was logged in. Specifically, I had 384\n> posts in this account and deleted 4 of them using my app and hence the\n> API. I immediately reloaded http://del.icio.us/MyAccount and saw\n> listing of 383 posts. Reloaded again, saw 382. Reloaded again, saw\n> 380. Now, this is not a big deal because it synchronized within\n> seconds, but it tells me that http://del.icio.us/MyAccount can give\n> wrong answers sometimes too. Therefore, it should not be used to\n> correct the answers we get from the API.\n>\nAh, that's to be expected. Your data is actually correct. However,  \nthat count (and the tag list) are processed asynchronously - they're  \ntoo expensive to do dynamically every time someone loads a page, so  \nwe do it when something changes.\n\n\n\n> > You'll likely run into cookie problems here, among other things.\n>\n> OK, I don't think I'm going to do this, but I'm curious about what\n> \"cookie problems\" there could be, since I thought that del.icio.us\n> does not use cookies for authentication. (Your answer might help me\n> in understanding another issue.)\n>\nThe api doesn't use cookies, but the main site does. If you want to  \nbe looking at actual html pages, you're going to be dealing with  \ncookies.\n\n\n\n> > Ping me directly if you see it happening again and I'll be able to\n> > get a more definitive answer if I can catch it as it is happening.\n>\n> Will do. By the way, I forgot to mention that, although the changes\n> were made over a period of 30 minutes, when they finally appeared in\n> the posts/all, they appeared within a few minutes, probably all at  \n> once.\nThanks for the info. It may be a pointer to other possibilities. I'll  \nsee what I can find.\n\nRegards,\nToby",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9607149823341644,
+          "SPAM": 0.03928501766583551
+        },
+        "confidence": 0.9214299646683288
+      }
+    },
+    "usage": {
+      "input_tokens": 707,
+      "output_tokens": 0
+    }
+  }
+}

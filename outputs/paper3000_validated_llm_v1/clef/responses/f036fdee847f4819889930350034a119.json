@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [perl #47361] B::Deparse: do({}) and do+{} \n\n# New Ticket Created by  lefadavxgp@ctosonline.org \n# Please include the string:  [perl #47361]\n# in the subject line of all future correspondence about this issue. \n# \n\n\nB::Deparse does not deparse do({}) and do+{} correctly. They both come  \nout as 'do {}'\n\n---\nFlags:\n     category=library\n     severity=low\n---\nSite configuration information for perl v5.8.8:\n\nConfigured by root at Sun Sep 23 19:05:56 PDT 2007.\n\nSummary of my perl5 (revision 5 version 8 subversion 8) configuration:\n   Platform:\n     osname=darwin, osvers=9.0, archname=darwin-thread-multi-2level\n     uname='darwin omen.apple.com 9.0 darwin kernel version 9.0.0b5:  \nmon sep 10 17:17:11 pdt 2007; root:xnu-1166.6~1release_ppc power  \nmacintosh '\n     config_args='-ds -e -Dprefix=/usr -Dccflags=-g  -pipe  -Dldflags=- \nDman3ext=3pm -Duseithreads -Duseshrplib'\n     hint=recommended, useposix=true, d_sigaction=define\n     usethreads=define use5005threads=undef useithreads=define  \nusemultiplicity=define\n     useperlio=define d_sfio=undef uselargefiles=define usesocks=undef\n     use64bitint=define use64bitall=define uselongdouble=undef\n     usemymalloc=n, bincompat5005=undef\n   Compiler:\n     cc='cc', ccflags ='-arch i386 -arch ppc -g -pipe -fno-common - \nDPERL_DARWIN -no-cpp-precomp -fno-strict-aliasing -Wdeclaration-after- \nstatement -I/usr/local/include',\n     optimize='-O3',\n     cppflags='-no-cpp-precomp -g -pipe -fno-common -DPERL_DARWIN -no- \ncpp-precomp -fno-strict-aliasing -Wdeclaration-after-statement -I/usr/ \nlocal/include'\n     ccversion='', gccversion='4.0.1 (Apple Inc. build 5465)',  \ngccosandvers=''\n     intsize=4, longsize=4, ptrsize=4, doublesize=8, byteorder=1234\n     d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=16\n     ivtype='long', ivsize=4, nvtype='double', nvsize=8,  \nOff_t='off_t', lseeksize=8\n     alignbytes=8, prototype=define\n   Linker and Libraries:\n     ld='cc -mmacosx-version-min=10.5', ldflags ='-arch i386 -arch ppc  \n-L/usr/local/lib'\n     libpth=/usr/local/lib /usr/lib\n     libs=-ldbm -ldl -lm -lutil -lc\n     perllibs=-ldl -lm -lutil -lc\n     libc=/usr/lib/libc.dylib, so=dylib, useshrplib=true,  \nlibperl=libperl.dylib\n     gnulibc_version=''\n   Dynamic Linking:\n     dlsrc=dl_dlopen.xs, dlext=bundle, d_dlsymun=undef, ccdlflags=' '\n     cccdlflags=' ', lddlflags='-arch i386 -arch ppc -bundle - \nundefined dynamic_lookup -L/usr/local/lib'\n\nLocally applied patches:\n\n\n---\n@INC for perl v5.8.8:\n     /System/Library/Perl/5.8.8/darwin-thread-multi-2level\n     /System/Library/Perl/5.8.8\n     /Library/Perl/5.8.8/darwin-thread-multi-2level\n     /Library/Perl/5.8.8\n     /Library/Perl\n     /Network/Library/Perl/5.8.8/darwin-thread-multi-2level\n     /Network/Library/Perl/5.8.8\n     /Network/Library/Perl\n     /System/Library/Perl/Extras/5.8.8/darwin-thread-multi-2level\n     /System/Library/Perl/Extras/5.8.8\n     /Library/Perl/5.8.6/darwin-thread-multi-2level\n     /Library/Perl/5.8.6\n     /Library/Perl/5.8.1\n     .\n\n---\nEnvironment for perl v5.8.8:\n     DYLD_LIBRARY_PATH (unset)\n     HOME=/Users/sprout\n     LANG=en_US.UTF-8\n     LANGUAGE (unset)\n     LD_LIBRARY_PATH (unset)\n     LOGDIR (unset)\n     PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/pgsql/bin:/usr/TeX/ \nbin/powerpc-darwin6.8/:/usr/local/bin\n     PERL_BADLANG (unset)\n     SHELL=/bin/bash",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9240185457468619,
+          "SPAM": 0.07598145425313804
+        },
+        "confidence": 0.8480370914937239
+      }
+    },
+    "usage": {
+      "input_tokens": 1361,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 5832]  New: mass-check --server seems to imply --all\n\nhttp://issues.apache.org/SpamAssassin/show_bug.cgi?id=5832\n\n           Summary: mass-check --server seems to imply --all\n           Product: Spamassassin\n           Version: SVN Trunk (Latest Devel Version)\n          Platform: Other\n        OS/Version: other\n            Status: NEW\n          Severity: normal\n          Priority: P5\n         Component: Masses\n        AssignedTo: xrh@spamassassin.apache.org\n        ReportedBy: wlbpaliggfad@dostech.ca\n\n\nIt seems that the mass-check --server is implying --all causing it to send large\n(say 1MB) messages to the mass-check --client which won't scan them unless you\nspecify --all on the client.\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8950253961159806,
+          "SPAM": 0.10497460388401932
+        },
+        "confidence": 0.7900507922319613
+      }
+    },
+    "usage": {
+      "input_tokens": 370,
+      "output_tokens": 0
+    }
+  }
+}

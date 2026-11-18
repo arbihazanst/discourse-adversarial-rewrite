@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: I love to bang her\n\n\n\n\n\n\n\nShe loves it when i go this much deeper, she gets overwhelmed by \nher\norgasm. http://www.waitscore.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.13444596743911216,
+          "SPAM": 0.8655540325608879
+        },
+        "confidence": 0.7311080651217758
+      }
+    },
+    "usage": {
+      "input_tokens": 195,
+      "output_tokens": 0
+    }
+  }
+}

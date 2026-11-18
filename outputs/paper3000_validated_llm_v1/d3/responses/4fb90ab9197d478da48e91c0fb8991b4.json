@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Backup of System Configuration (was: Migrate from 32bit to 64bit?\n\nHans Witvliet wrote:\n> On Fri, 2008-02-22 at 14:58 -0800, Randall R Schulz wrote:\n>> On Friday 22 February 2008 14:44, Hans Witvliet wrote:\n>>> When doing a manual installation, the very, very last question is\n>>> wether to generate a XML-config file (for cloning).\n>> I don't recall this, but then, I don't maintain a population of \n>> installations, just a couple of one-off systems (one still at 10.0, the \n>> other at 10.3), so such an option probably didn't attract my attention.\n> \n> Even more obscure, with opensuse, the checkbox is default \"off\"\n> With SLE it is default \"on\" (something for bugzilla....)\nAre you going to add that there ?\nOr is bugzilla just a dump, in too many cases ?\n\n>>> If you did this the previous time (when you installed the 32-bit\n>>> system) It is merely making a backup of you precious data, and\n>>> re-install the system with the 64-bit version, but this time feed the\n>>> autoinstaller with the old xml-file.\n>> Is this XML configuration file updated as you modify your system \n>> configuration along the way?\n>>\n>>\n>>> needles to say that that xml-file should be kept on a different\n>>> media :-))\n>>> One might even tweak that xml-file (for adjusting partitionsize,\n>>> other filesystems....)\n>> If YaST doesn't keep it updated to reflect configuration changes made as \n>> the system's configuration evolves, it's of limited usefulness when \n>> upgrading months or years down the line...\n>>\n>>\n>>> BTW, if you don't have that xml-file, it is possible to generate it\n>>> with YAST, (that one even includes all the additional changes you've\n>>> done with yast)\n>> OK. That's good. I looked around in YaST (on my 10.3 system) and didn't \n>> see this function. No doubt I just don't know what it's called. Where \n>> is it accessed?\n>>\n> With 10.3 autoinstall in not installed by default, you can still add it\n> on later.\nIs it called \"autoyast2\" ?\nWhy is it not installed by default ?\n\nKind regards     Philippe\n\n--\n\n> yast -> miscellaneous -> autoinstallation -> tools -> create reference\n> profile\n> Select what to want to detect\n> file is written (after a save) under:\n> /var/lib/autoinstall/repository/\n>>> remember all other (manual) changes, you have to replay manually\n>>> again\n>> Eh? By \"manual\" do you mean direct configuration file editing not \n>> mediated by a YaST module?\n>>\n> Yes, For instance, untill recently there was no yast-module for sshd.\n> So just plain good ol' vi.....\n> Perhaps tweaks is inittab or fstab.\n> \n> I used both methods to create a library of xml-files for any sort of\n> machine/xen-image i have to deploy.\n> \n> Only word on caution is when using xml-file generated for older\n> versions. For instance, since 10.3 they have threads and you can define\n> additional repo's (local update-server!) before installing.\n> But within the same release, from 32->64 it will be safe.\n> \n> Save me a huge amount of time\n> \n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00040129948190433207,
+          "NOT_SPAM": 0.9995987005180957
+        },
+        "confidence": 0.9948932880780845
+      }
+    },
+    "usage": {
+      "input_tokens": 946,
+      "output_tokens": 0
+    }
+  }
+}

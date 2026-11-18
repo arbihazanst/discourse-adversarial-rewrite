@@ -1,0 +1,73 @@
+{
+  "updated_utc": "2026-11-17T09:24:41+00:00",
+  "profile": "main",
+  "mode": "pilot",
+  "sources": [
+    {
+      "defender": "clef",
+      "branch": "baseline",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_baseline\\clef",
+      "identities": {
+        "baseline": "19733233ff85cb7452243758119ed09f843b98d9e95c4c4328367de6f4f9bd7a",
+        "attack": "95597f8d214b765613ba488c9b3ab80518f205d540a085f05a90b95bec633411"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-17T09:21:52.806523+00:00"
+    },
+    {
+      "defender": "clef",
+      "branch": "llm",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_gemma\\clef",
+      "identities": {
+        "baseline": "19733233ff85cb7452243758119ed09f843b98d9e95c4c4328367de6f4f9bd7a",
+        "attack": "95597f8d214b765613ba488c9b3ab80518f205d540a085f05a90b95bec633411"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-17T09:24:01.150522+00:00"
+    },
+    {
+      "defender": "clef",
+      "branch": "gan",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_gan\\clef",
+      "identities": {
+        "baseline": "19733233ff85cb7452243758119ed09f843b98d9e95c4c4328367de6f4f9bd7a",
+        "attack": "4c964c0f599d182042f0dbb0e36a9f8604023291e51d6d518c7e98a0fa7a8916"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-17T09:24:40.125630+00:00"
+    },
+    {
+      "defender": "d3",
+      "branch": "baseline",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_baseline\\d3",
+      "identities": {
+        "baseline": "0ebe3cd0ffef0a0f47c774563fd92657563c426277d0af40444f15bb40f11907",
+        "attack": "0d34bb2c19ccf95dccf8cff992c556a65e1055ed95e05ef24842330e90d878fc"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-17T09:22:03.015415+00:00"
+    },
+    {
+      "defender": "d3",
+      "branch": "llm",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_gemma\\d3",
+      "identities": {
+        "baseline": "0ebe3cd0ffef0a0f47c774563fd92657563c426277d0af40444f15bb40f11907",
+        "attack": "0d34bb2c19ccf95dccf8cff992c556a65e1055ed95e05ef24842330e90d878fc"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-17T09:24:08.634390+00:00"
+    },
+    {
+      "defender": "d3",
+      "branch": "gan",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\pilot10_api_verified_gan\\d3",
+      "identities": {
+        "baseline": "0ebe3cd0ffef0a0f47c774563fd92657563c426277d0af40444f15bb40f11907",
+        "attack": "7cd333b931f915ae73d879eb89dc416f9448ba89424ec290e3bc3445b554f599"
+      },
+      "checkpoint_state": "COMPLETE",
+      "metrics_updated_utc": "2026-11-17T09:24:40.753185+00:00"
+    }
+  ]
+}

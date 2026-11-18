@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: KDID 2005\n\n      KDID 2005 CALL FOR PAPERS\n\n      4th International Workshop on\n Knowledge Discovery in Inductive Databases\n\n     October 3, 2005, Porto, Portugal\n\n    In conjunction with ECML/PKDD 2005\n\n      http://www-kdd.isti.cnr.it/kdid05/\n\n        (deadline: July 25, 2005)\n\nScope & Objectives\n==================\n\nEver since the start of the field of data mining, it has been realized\nthat the knowledge discovery and data mining process should be\nintegrated into database technology. This idea has been formalized in\nthe concept of inductive databases, introduced by Imielinski and\nMannila (CACM 1996, 39(11)).\n\nIn general, an inductive database is a database that supports data\nmining and the knowledge discovery process in a natural and elegant\nway. In addition to the usual data, it also contains inductive\ngeneralizations (e.g. patterns, models) extracted from the\ndata. Within this framework, knowledge discovery is an interactive\nprocess in which users can query the inductive database to gain\ninsight to the data and the patterns and models within that data.\n\nDespite many recent developments, there still exists a pressing need\nto understand the central issues in inductive databases. This workshop\naims to bring together Database and Data Mining researchers and\npractitioners that are interested in the numerous challenges that\ninductive databases offers.\n\nThis workshop follows the previous three workshops: KDID'02 held in\nHelsinki, Finland, KDID'03 held in Cavtat-Dubrovnik, Slovenia, and\nKDID'04 held in Pisa, Italy.\n\n\nTopics of interest\n==================\n\n(non-exhaustive list)\n\n* Models and theories of inductive databases\n* Query languages for data mining\n* Constraint-based data mining\n* Local pattern detection\n* Condensed representations of data and patterns\n* Pattern languages and primitives for data mining\n* Declarative bias formalisms in machine learning\n* Database support, coupling and primitives for data mining\n* Coupling data mining and database systems\n* Integration of database languages (e.g., SQL, XML) with data mining\n* Privacy issues in inductive databases\n* Specific and application-oriented inductive databases\n\n\nImportant Dates\n===============\n\n* Submission deadline: July 25\n* Notification of acceptance: August 15\n* Camera-ready copies due: September 5\n* Workshop: October 3\n\nSubmission Guidelines\n=====================\n\nFull papers must be submitted electronically to xive13@isti.cnr.it\non or before July 25, 2005. Authors are required to submit a version of\ntheir full papers in camera-ready format. The papers must be in\nEnglish and should be formatted according to the Springer-Verlag\nLecture Notes in Artificial Intelligence guidelines. Authors\ninstructions and style files can be downloaded at\nhttp://www.springer.de/comp/lncs/authors.html. The maximum length of\npapers is 12 pages.\n\nAll papers must be submitted in PDF format. It is the responsibility\nof the authors to ensure that the submitted papers print correctly on\na variety of printers. Finally, all papers must be original, and have\nnot been submitted elsewhere and are not under submission elsewhere.\n\nProceedings\n===========\n\nWorkshop proceedings will be made available on CD and informal printed\nproceedings will be available at the workshop.\n\nRefereed post-workshop proceedings will be formally published (pending\nconfirmation by Springer-Verlag).\n\nWorkshop Chairs\n===============\n\n* Francesco Bonchi, KDD Lab, ISTI-C.N.R., Pisa, Italy\n* Jean-François Boulicaut, INSA Lyon, France\n\nProgram Committee\n=================\n\n* Hendrik Blockeel, K.U.Leuven, Belgium\n* Toon Calders, University of Antwerp, Belgium\n* Saso Dzeroski, Jozef Stefan Institute, Slovenia\n* Minos N. Garofalakis, Bell Labs, USA\n* Fosca Giannotti, KDD Lab, ISTI-C.N.R., Pisa, Italy\n* Bart Goethals, University of Antwerp, Belgium\n* Dominique Laurent, LICP,Université de Cergy-Pontoise, France\n* Giuseppe Manco, ICAR-C.N.R., Cosenza, Italy\n* Heikki Mannila, HIIT - BRU, University of Helsinki, Finland\n* Rosa Meo, University of Turin, Italy\n* Taneli Mielikäinen, HIIT - BRU, University of Helsinki, Finland\n* Katharina Morik, University of Dortmund, Germany\n* Celine Robardet, INSA Lyon, France\n* Sunita Sarawagi, IIT Bombay, India\n* Arno Siebes, Utrecht University, The Netherlands\n* Mohammed Zaki, Rensselaer Polytechnic Institute, USA\n* Carlo Zaniolo, UCLA, USA",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9238151775425143,
+          "SPAM": 0.07618482245748563
+        },
+        "confidence": 0.8476303550850286
+      }
+    },
+    "usage": {
+      "input_tokens": 1242,
+      "output_tokens": 0
+    }
+  }
+}

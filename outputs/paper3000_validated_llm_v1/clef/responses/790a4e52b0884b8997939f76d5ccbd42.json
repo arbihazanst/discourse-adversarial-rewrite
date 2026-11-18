@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [domainkeys-interop] Re: Dk php implementation help!\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\n\nI am no authority but if it is not being delivered to yahoo you may\nhave a reputation (domain wise) that yahoo is blocking.  I believe\nDK/DKIM is only a small part of their blocking/reputations scoring.\n\nIs your mail delivered if you do not sign at all?\n\nTimothy Der\n\n\nOn Thu, 15 Nov 2007 13:41:29 -0800 dan_markx \nwrote:\n>--- In bxcbhgwfhe-gfonxob@yahoogroups.com, \"dan_markx\"\n>\n>wrote:\n>>\n>> --- In bxcbhgwfhe-gfonxob@yahoogroups.com, \"dan_markx\"\n>\n>> wrote:\n>> >\n>> > --- In bxcbhgwfhe-gfonxob@yahoogroups.com, \"Jason Long\"\n>\n>wrote:\n>> > >\n>> > > >>>> \"dan_markx\"  11/15/07 2:58 PM >>>\n>> > > >--- In bxcbhgwfhe-gfonxob@yahoogroups.com, \"dan_markx\"\n>\n>> > > >wrote:\n>> > > >> Received: from EV1SERVE-BYWXKG ([67.15.191.12]) by\n>kinkysmile.com\n>> > with\n>> > > >> Microsoft SMTPSVC(6.0.3790.3959);\n>> > > >> \t Thu, 15 Nov 2007 13:40:00 -0600\n>> > > >> Date: Thu, 15 Nov 2007 13:40:00 -0600\n>> > > >> Subject: test\n>> > > >> From: jasmine \n>> > > >> MIME-Version: 1.0\n>> > > >> To: test@\n>> > > >> Subject: test\n>> > > >> Content-type: text/plain; charset=iso-8859-1\n>> > > >> DomainKey-Signature: a=rsa-sha1; c=simple;\n>> > > >> h=MIME-Version:To:Subject:Content-type; q=dns; s=key1;\n>> > > >> d=kinkysmile.com;\n>> > > >>\n>>\n>b=tH6PwGma2U9No0Pz1AE3Xbtv8B3CL8Cg5GG54aNxfIdTL6S8H+lxsQL+TvIGojbal\n>Z\n>> > > >>\n>wyIW9VxrvesCV2FwdL7kvmwQwtOtQTgHR3Pni7oR3RZ+B05Y3SbdHFjaQANlcH\n>> > > >> Message-ID: \n>> > > >> X-OriginalArrivalTime: 15 Nov 2007 19:40:00.0485 (UTC)\n>> > > >> FILETIME=[4F6D2950:01C827BF]\n>> > > >>\n>> > > >> content text message\n>> > > >>\n>> > > >\n>> > > >THIS means that the headers are not recognized ... why\n>could\n>this be?\n>> > > >i am using IIS smtp server.\n>> > >\n>> > >\n>> > > Ah.\n>> > > You must PREPEND the DomainKey signature to any headers that\n>you\n>want\n>> > > included in the signed message.\n>> > > See RFC 4870, section 3.5.5.\n>> > >\n>> > > In your message the DomainKey-Signature header was after\n>your\n>Subject,\n>> > > Content-Type, etc. headers.\n>> > >\n>> > > Jason\n>> > >\n>> >\n>> >\n>> > I've fixed that also added the CRLF and still no change. i can\n>see the\n>> > canonicalized text ok. but still no match.\n>> >\n>>\n>> NOW IT PASSEDDD ! WEEEEEEEEEEEEEEEEEEEEEEEEEEEEE!\n>> one more problem.\n>>\n>> I can't get it to deliver to yahoo at all.\n>>\n>\n>\n>i've implemented both nowfs and simple algorithms with the `h=`\n>tag\n>and no success why ? is't this \"yahoo standard?\"\n-----BEGIN PGP SIGNATURE-----\nNote: This signature can be verified at https://www.hushtools.com/verify\nCharset: UTF8\nVersion: Hush 2.5\n\nwkYEARECAAYFAkc9yikACgkQrwqXL4qy7yY03gCfRQKCqfvHTp+VaLtNQZdak4kXZvgA\nn32Y6kBJGB7Yuppd76oQ6glT1kj7\n=aN0m\n-----END PGP SIGNATURE-----",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9603071278223759,
+          "SPAM": 0.0396928721776241
+        },
+        "confidence": 0.9206142556447519
+      }
+    },
+    "usage": {
+      "input_tokens": 1316,
+      "output_tokens": 0
+    }
+  }
+}

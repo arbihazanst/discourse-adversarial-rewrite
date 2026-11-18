@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] windows standard [was: PEP 365 (Adding\tthepkg_resources module)]\n\n\n\"Jim Jewett\"  wrote in message \nnews:fb6fbf560803231916p1c03cf24yc05104f1cf46c762@mail.gmail.com...\n| Terry Reedy\n| > The standard (and to me, preferable)  way of dealing\n| > with such things is to  have an 'installation manager'\n| > that can reinstall as well as delete and  that has a\n| > check box for various things to delete.  This is what\n| > Python  needs.\n\n'such things' referred to 'add-ons' as discussed in snipped text both mine \nand Paul's.\n\n| Paul Moore:\n| > I'd dispute strongly that this is a \"standard\".\n| > It may be preferable, but I'm not sure where you\n| > see evidence of it being a standard.\n|\n| When I install a large program (such as developer tools, or python\n| itself) on Windows, I expect a choice of \"default\" or \"custom\".   When\n| I choose custom, I expect a list of components, which can be chosen,\n| not chosen, or mixed (meaning that it has subcomponents, only some of\n| which are chosen).\n|\n| The whole thing only shows up once in Add/Remove programs.  If I\n| select it, I do get options to Change or Repair.  These let me change\n| my mind on which subcomponents are installed.\n\nThis is what I am requesting for Python.\n\n| If I install python and then separately install Zope, it may or may\n| not make sense for Zope to be listed separately as a \"program\" to Add\n| or Remove.\n\nNeither Paul nor I defined 'add-on', but I would be willing to call \nZope/Plone  something more than that, preferably with its own multi-option \nentry.\n\ntjr\n\n\n\n\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004905182762051509,
+          "NOT_SPAM": 0.999509481723795
+        },
+        "confidence": 0.9939000389959749
+      }
+    },
+    "usage": {
+      "input_tokens": 628,
+      "output_tokens": 0
+    }
+  }
+}

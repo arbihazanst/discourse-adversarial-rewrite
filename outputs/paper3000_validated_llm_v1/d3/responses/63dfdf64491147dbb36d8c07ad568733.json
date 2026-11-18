@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [ILUG] Asus Eee PC\n\nI saw a rave review of this machine on SlashDot from a UK guy,\nbut I don't see anywhere one can actually get the PC.\nHas anyone seen one?\n\nAlso I saw a statement somewhere (don't remember where)\nthat one could buy an OLPC if one sent a second to the third world.\nDoes anyone know anything about this deal?",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.006497518979502027,
+          "NOT_SPAM": 0.9935024810204981
+        },
+        "confidence": 0.9434462885480831
+      }
+    },
+    "usage": {
+      "input_tokens": 213,
+      "output_tokens": 0
+    }
+  }
+}

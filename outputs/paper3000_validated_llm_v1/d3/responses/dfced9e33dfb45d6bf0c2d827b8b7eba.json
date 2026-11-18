@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Branching\n\nOn Tuesday 05 August 2008 12:35:50 Geoffrey Broadwell wrote:\n\n> We will definitely need multiple long-lived branches.  Just to make\n> explicit the reasoning: data loss, security, or otherwise critical\n> bugfixes that should be backported to one or more already released\n> versions and re-released immediately.  That's a lot harder if you don't\n> have release branches.  Of course, you can branch lazily, since releases\n> are tagged.  But we have to assume that there *will* be multiple\n> long-lived branches that won't merge and go away.\n\nThat's horrible.  I doubt you give morphine to a five year old who falls and \nscrapes his knee.  This is the equivalent in releasing software.\n\nI can see patching the previous release in case of a critical bugfix, but if \nwe get in the habit of encouraging users to expect updates of anything older \nthan the previous stable release for free, we've doomed the project.\n\nPoint releases every month.  Major releases every three months.  Complete and \nutter refusal to support users who expect that they can install Parrot 1.0 \nand get free support from the mailing list or IRC for the next eight to ten \nyears.  If we don't set those expectations now, we might avoid the problem of \nthese leeches in the future.  (Again, see Perl 5 for an example of why \nmaintaining multiple stable branches doesn't work, why encouraging people not \nto upgrade doesn't work, why release candidates don't work, and why \nfeature-based releases don't work.)\n\n> However, I'm against the practice of branching before release to\n> \"stabilize\" an assumed-crazy trunk.  I prefer the (general) way we do\n> things now: releases are made from the trunk code, which is kept as\n> high-quality as possible; small changes are made directly to trunk;\n> large changes are made in a branch and merged to trunk when ready.\n\nAgree.\n\n> The details may be ripe for improvement, however.  There seems to be an\n> implicit assumption from at least some of us that a \"merge back to\n> trunk\" should be (or even 'needs' to be) an all or nothing affair.\n\nTraditionally, it has been.  If mergebacks are small and frequent, I can live \nwith long-lived branches.\n\nThe problem isn't that branches live too long.  The problem is that features \nare too big and take too long to develop.  Small, working, isolated steps are \nalways better than big thuds.  Branches only seem to protect us from those \nbig thuds by keeping trunk stable.  (If you can't keep your branch stable... \nwell, there's another problem obvious to anyone who watched the concurrency \nbranch.)\n\n-- c",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0003209712358165234,
+          "NOT_SPAM": 0.9996790287641836
+        },
+        "confidence": 0.995812053383699
+      }
+    },
+    "usage": {
+      "input_tokens": 750,
+      "output_tokens": 0
+    }
+  }
+}

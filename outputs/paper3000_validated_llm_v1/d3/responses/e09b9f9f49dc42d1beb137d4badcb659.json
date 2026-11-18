@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: MyPDF Maker - Create PDF Files from Any Application\n\nIf you want to read the HTML version of this message, please click\nhere\nhttp://web.avanquest.com/ML/2008/MyPDFMaker/VCUS/07/MPD_0208_95_RE.htm\n\nMyPDF Maker - Instant and Easy PDF Creation\nBonus Software: Special Edition of MyLabel Designer ($20 Value)\n\nMyPDF Maker\nPowerful, Simple, Affordable PDF Creation\nSave 15%\n\n- Create 100% Industry-Standard PDF Files\n- One-Click or Drag-and-Drop Conversion\n- Combine Different Files into one PDF\n- Password Encryption\n\n$24.95 instead of $29.95\n\nGet MyPDF Maker for only $24.95\nPromo code: EASYPDF10\n\n----\n\nWould you like to be able to send your important documents knowing\nthat they can be read by any computer, with perfect formatting? How\nabout being able to create these documents in just a few seconds with\na single click?\n\nMyPDF Maker gives you all the PDF basics in a single compact,\naffordable package. It has more features than comparable products for\nthe same price, is easy to use, and integrates with your favorite\nMicrosoft� Office applications. It gives you the power of PDF creation\nfrom 200+ file types and full control over document security. And,\nit's the only product in its class that allows you to quickly combine\nmultiple files into one PDF document, or extract individual PDF pages.\n\n> Learn more about MyPDF Maker\n\nhttp://web.avanquest.com/ML/2008/MyPDFMaker/VCUS/07/MPD_0208_95_RE.htm\n\nSincerely,\nAvanquest Software\n\n----------------------------------------------------------------\n\nVCOM� is registered trademark of Avanquest Software and its\nsubsidiaries\nThis email is sent to you by Avanquest Publishing USA because you have\nsubscribed to our newsletter or because you have given permission\nthrough one or more sites or brands marketed by Avanquest Software and\nits subsidiaries.\n\nThis email was sent to: user6@gvc.ceas-challenge.cc\nIf you would like to unsubscribe from these emails, please:\n> Click here\nhttp://www.avanquest.com/tools/unsubscribe.cfm?operation=VC_US_EM_MPD_0208RE_95&langue=VCOM&ljqoa=jne@gvc.ceas-challenge.cc\n\nAvanquest Publishing USA Inc., a subsidiary of Avanquest Software S.A\n1259 El Camino Real, PMB 167, Menlo Park, CA 94025-4227.\nAvanquest� and the Avanquest logo, BVRP Software� and the BVRP\nSoftware logo, VCOM� and the VCOM logo, MySoftware� and the MySoftware\nlogo, BlueSquad� and the BlueSquad logo, and Blitzbox� and the\nBlitzbox logo are registered trademarks and the exclusive property of\nAvanquest Software S.A and its subsidiaries.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9480569356817257,
+          "NOT_SPAM": 0.05194306431827438
+        },
+        "confidence": 0.7054056920052973
+      }
+    },
+    "usage": {
+      "input_tokens": 800,
+      "output_tokens": 0
+    }
+  }
+}

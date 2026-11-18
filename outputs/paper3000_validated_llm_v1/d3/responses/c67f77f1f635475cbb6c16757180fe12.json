@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Improved thread switching\n\nAdam Olsen  gmail.com> writes:\n\n> \n> On Wed, Mar 19, 2008 at 10:09 AM, Stefan Ring  visotech.at> wrote:\n> > Adam Olsen  gmail.com> writes:\n> >\n> >  > Can you try with a call to sched_yield(), rather than nanosleep()?  It\n> >  > should have the same benefit but without as much performance hit.\n> >  >\n> >  > If it works, but is still too much hit, try tuning the checkinterval\n> >  > to see if you can find an acceptable throughput/responsiveness\n> >  > balance.\n> >  >\n> >\n> >  I tried that, and it had no effect whatsoever. I suppose it would make an\neffect\n> >  on a single CPU or an otherwise heavily loaded SMP system but that's not the\n> >  secnario we care about.\n> \n> So you've got a lightly loaded SMP system?  Multiple threads all\n> blocked on the GIL, multiple CPUs to run them, but only one CPU is\n> active?  I that case I can imagine how sched_yield() might finish\n> before the other CPUs wake up a thread.\n> \n> A FIFO scheduler would be the right thing here, but it's only a short\n> term solution.  Care for a long term solution? ;)\n> \n> http://code.google.com/p/python-safethread/\n> \n\n\nI've already seen that but it would not help us in our current\nsituation. The performance penalty really is too heavy. Our system is\nslow enough already ;). And it would be very difficult bordering on\nimpossible to parallelize Plus, I can imagine that all extension modules\n(and our own code) would have to be adapted.\n\nThe FIFO scheduler is perfect for us because the load is typically quite\nlow. It's mostly at those times when someone runs a lengthy calculation\nthat all other users suffer greatly increased response times.\n\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0027175055534608967,
+          "NOT_SPAM": 0.9972824944465392
+        },
+        "confidence": 0.9729221379591061
+      }
+    },
+    "usage": {
+      "input_tokens": 630,
+      "output_tokens": 0
+    }
+  }
+}

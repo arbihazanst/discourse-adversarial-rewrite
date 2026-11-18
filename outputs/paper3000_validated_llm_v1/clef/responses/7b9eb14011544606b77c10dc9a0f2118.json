@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: hello\n\nHello All,\n\nYou may be aware, or not, that Gran is having her 80th birthday in april this year.  I thought it would be nice to give her some sort of \"This is your life\" type of book.  Too late, as she has already had one for her 60th birthday.\n\nSo instead, I have decided that I will make her a box of memories, from all of her grand- and great-grand children.  Here's where you come in.  If at some stage before the 31st of March you have a memory of Granny, please email me the details.\n\nNow.  It doesnt have to be a novel.  In fact it can be a little as two lines long.  If, in fact, the only memory you have of her is \"Gran once made me a ham sandwich\", that is okay, i can use that.  I just need to know what you would like to be ummm...sort of.... quoted......... as saying.....so that I can compile all the memories.  Also, if there are little chillens that don't really have any memories of Gran, or at least are too young to verbalise them in any way, shove a felt pen in their hands and let them go crazy on a piece of paper and I will put that in the box from them.  \n\nI wanted to do this because I find, even though she knows it, and even though I think it from time to time, it is the right occasion to tell Gran that we all love, appreciate and need her, even if we never tell her.  It will be a box of all the stuff we love about her that she can go to.\n\nEw, yuck.  Lets not get too sentimental here.  \n\nRight so, somewhere on your to-do list in between \"pay the bills\" and \"be an adult\", please remember to write \"email Ashleigh with a memory of Gran by March 31st.\"\n\nPlease remember this so I don't have to stalk you.  And I would.  Im pretty good at being annoying.\n\nSee you in April,\n\nAshleigh",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9550076366286101,
+          "SPAM": 0.044992363371389926
+        },
+        "confidence": 0.9100152732572202
+      }
+    },
+    "usage": {
+      "input_tokens": 608,
+      "output_tokens": 0
+    }
+  }
+}

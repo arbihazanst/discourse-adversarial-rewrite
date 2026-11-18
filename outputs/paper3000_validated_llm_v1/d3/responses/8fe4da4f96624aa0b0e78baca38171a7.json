@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Reminder: Second UBDM-2006 Workshop - Submission deadline in one week\n\n====================================================================\n*Extended* Submission Deadline: June 26\n\nSecond KDD-2006 Workshop on Utility-Based Data Mining\nAugust 20, 2006\nPhiladelphia, Pennsylvania\nIn conjunction with ACM SIGKDD International Conference on Knowledge\nDiscovery and Data Mining (SIGKDD'06)\nWorkshop website:  http://www.ic.uff.br/~bianca/ubdm-kdd06.html\n\nPapers accepted in the workshop will be included in the CD\nproceedings together with ACM KDD papers and will also be included in the\nACM Digital Library.\n\nSelected papers from the workshop will be invited to be submitted to  the\nspecial issue on Utility-Based Data Mining in the International  Journal\nData Mining and Knowledge Discovery. Please visit the special issue web\nsite at http://storm.cis.fordham.edu/~gweiss/dmkd-cfp.html\n\nImportant Dates\n===============\n\nJune 26, 2006: Deadline for electronic submission of full papers\nJuly 5 , 2006: Notification of accepted papers\nJuly 14, 2006 : Camera Ready Copies\nAugust 20, 2006 UBDM Workshop\n\n\nWorkshop topics\n===============\n\nAlgorithms\n----------\n- Approaches for information acquisition, data preprocessing, mining and\nknowledge application that incorporate relevant utility factors. This\nincludes work in active learning/sampling and cost-sensitive learning.  -\nApproaches for adapting predictive and descriptive data mining tasks such\nas predictive modeling, clustering and link analysis to incorporate\nutility factors.\n- Interaction of utility factors throughout the data mining process Work\ntowards a comprehensive framework for incorporating utility factors to\nbenefit the entire data mining process. This includes techniques which\ntake into account dependencies between different phases of the process to\nmaximize the utility of more than a single phase. For example, methods for\nacquiring training data which take into account the costs of errors in\naddition to the cost of data; or methods for the extraction of predictive\npatterns which take into account the cost of test features necessary at\nprediction time.\n\nApplications\n------------\n- Case studies of data mining applications which have taken utility\nfactors into account\n- Case studies which address how relevant utility factors for a given\napplication determined and measured.\n- Methods employed to take utility factors into consideration throughout\nthe data mining process\n- How do utility factors and the methods for dealing with them vary\naccording to the specific problem addressed (e.g., by industry)?\n\nTypes of utility factors in data mining\n---------------------------------------\n- What utility factors arise in the context of data mining?\n- What assessment metrics are used in response to these utility factors?\n- Can the use of utility factors help address previously studied problems\nin   data mining, such as the problems of learning rare classes and\nlearning from   skewed distributions?\n\nSubmission Guidelines\n========================\n\nAll submissions should be submitted electronically, by the submission\ndeadline of June 26, 2006, to the workshop contact, Bianca Zadrozny.\nPlease send them to the following email address: bianca@ic.uff.br. All\nsubmissions should be made in PDF or PostScript format. Submissions should\nbe a maximum of 10 pages and should use the ACM SIG Proceedings Templates.\nNote that in addition to technical papers, we encourage the submission of\nposition papers (which generally should be at most 6 pages).\nSubmitted papers will be reviewed by members of the program committee and\naccepted papers will be presented at the workshop and published in the\nworkshop proceedings and in the ACM digital library. Authors will be\nnotified of the acceptance or rejection of their paper by July 5, 2006.\nCamera-ready version of the papers are due July 14, 2006.\n\nPlease do not hesitate to email the workshop contact if you have any\nquestions.\n\nWorkshop Co-Chairs\n====================\n- Bianca Zadrozny Federal Fluminense University, Brazil\n- Maytal Saar-Tsechansky   University of Texas at Austin\n- Gary M. Weiss Fordham University, Bronx, New York\n\n\n====================================================================\nYou are getting this message because we think you are interested in\nthe UBDM subject. If you prefer to be removed from our mailing list,\nplease reply to this message and let us know.\n====================================================================",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.06906612886670078,
+          "NOT_SPAM": 0.9309338711332992
+        },
+        "confidence": 0.6375710766019809
+      }
+    },
+    "usage": {
+      "input_tokens": 1072,
+      "output_tokens": 0
+    }
+  }
+}

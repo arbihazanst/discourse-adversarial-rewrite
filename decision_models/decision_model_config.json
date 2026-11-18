@@ -1,24 +1,24 @@
 {
   "models": [
     {
-      "name": "PPLX Decider Flash v1.2",
-      "host_port": "30002",
+      "name": "perplexity-ai/pplx-decider-flash-v1.2",
+      "host_port": "11438",
       "engine": "native_pplx_decider",
       "status": "not_yet_evaluated_on_this_CEAS_package",
       "model_key": "pplx",
-      "host_url": "http://127.0.0.1:30002/v1/systemone",
-      "docker_internal_port": 30002,
+      "host_url": "http://127.0.0.1:11438/v1/systemone",
+      "docker_internal_port": 11438,
       "docker_name_hint": "pplx-flash-v12 (verify with docker ps -a)",
       "native_route_status": "not verified; FastAPI openapi.json or api.py required",
       "openwebui_approach": "Existing PPLX Tool; a future direct Pipe requires a verified native API request schema"
     },
     {
       "name": "Clef 27B Q8_0",
-      "host_port": "30005",
+      "host_port": "11439",
       "engine": "llama.cpp CUDA",
       "status": "not_yet_evaluated_on_this_CEAS_package",
       "model_key": "clef",
-      "host_url": "http://127.0.0.1:30005/v1/systemone",
+      "host_url": "http://127.0.0.1:11439/v1/systemone",
       "docker_internal_port": 8080,
       "docker_internal_url": "http://decision-clef:8080/v1/systemone",
       "openwebui_pipe_model_id": "decision_spam.clef",
@@ -26,11 +26,11 @@
     },
     {
       "name": "d3 27B Q8_0",
-      "host_port": "30006",
+      "host_port": "11440",
       "engine": "llama.cpp CUDA",
       "status": "not_yet_evaluated_on_this_CEAS_package",
       "model_key": "d3",
-      "host_url": "http://127.0.0.1:30006/v1/systemone",
+      "host_url": "http://127.0.0.1:11440/v1/systemone",
       "docker_internal_port": 8080,
       "docker_internal_url": "http://decision-d3:8080/v1/systemone",
       "openwebui_pipe_model_id": "decision_spam.d3",
@@ -53,8 +53,8 @@
   },
   "access_modes": {
     "local_pc": "https://llms.si-lab.org/api/chat/completions -> Open WebUI Pipe/Tool -> Docker-internal decision model endpoint",
-    "gpu_server_local": "http://127.0.0.1:30002 (PPLX), :30005/v1/systemone (Clef), :30006/v1/systemone (d3)",
-    "warning": "30005 and 30006 are bound on GPU server loopback; a local PC cannot call those localhost ports directly; Docker bridge network Pipe uses internal port 8080."
+    "gpu_server_local": "http://127.0.0.1:11438 (PPLX), :11439/v1/systemone (Clef), :11440/v1/systemone (d3)",
+    "warning": "11439 and 11440 are bound on GPU server loopback; a local PC cannot call those localhost ports directly; Docker bridge network Pipe uses internal port 8080."
   },
   "current_default_dataset": "dataset/paper_baseline3000.csv",
   "adaptive_profiles": {

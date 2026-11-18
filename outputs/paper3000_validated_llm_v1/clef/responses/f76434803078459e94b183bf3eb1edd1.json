@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [doap-interest] Doap NetBeans plugin\n\nArgh!\n\nThanks for pointing this out. I had installed  a developer version of  \nnetbeans from Oct 1st.\n\nI have repackaged it with the NB6.0 beta 1 and placed the new version  \non the plugin site\nhttp://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp? \npluginid=3810\n\nThanks again for letting me know!\n\nHenry\n\n\nOn 7 Oct 2007, at 16:01, Josef Petrák - VŠE wrote:\n\n> Hello Henry,\n>\n> I am very looking forward to test your DOAP NB plugin. I downloaded  \n> NetBeans\n> 6 beta 1, your distribution of  Doap Bean, but I got this kind of  \n> error\n> message:\n>\n> Plugin DOAP Bean cannot match its dependencies:\n> Subversion [module org.netbeans.modules.subversion = 200710010000]\n>\n> Update center offers me no updates for SVN plugin. What version of  \n> NB6 do\n> you use to run?\n>\n> Thanks for answers\n> Best regards\n>\n>\n> Josef Petrak\n> ---\n> University of Economics, Prague\n> Knowledge Engineering Group, see http://keg.vse.cz/\n>\n>\n>\n> -----Original Message-----\n> From: cqsg-eekkpwvz-uldjcqs@lists.gnomehack.com\n> [mailto:cqsg-eekkpwvz-uldjcqs@lists.gnomehack.com] On Behalf Of  \n> Story Henry\n> Sent: Friday, October 05, 2007 7:04 PM\n> To: wegl-zxehrszy@lists.gnomehack.com\n> Subject: [doap-interest] Doap NetBeans plugin\n>\n> I have just published a very simple, but nevertheless I hope still  \n> useful,\n> NetBeans DOAP plugin. You can read more about it here:\n>\n> http://blogs.sun.com/bblfish/entry/doap_bean_available\n>\n> Henry\n>\n> Home page: http://bblfish.net/\n> Sun Blog: http://blogs.sun.com/bblfish/\n> Foaf name: http://bblfish.net/people/henry/card#me\n>\n>\n>\n>\n> _______________________________________________\n> doap-interest mailing list\n> wegl-zxehrszy@lists.gnomehack.com\n> http://lists.usefulinc.com/mailman/listinfo/doap-interest",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9637017706540327,
+          "SPAM": 0.03629822934596733
+        },
+        "confidence": 0.9274035413080655
+      }
+    },
+    "usage": {
+      "input_tokens": 737,
+      "output_tokens": 0
+    }
+  }
+}

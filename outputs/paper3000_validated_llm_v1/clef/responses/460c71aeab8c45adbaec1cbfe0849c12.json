@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Documentation for ability to execute zipfiles &\tdirectories\n\nAt 05:40 PM 3/4/2008 +0300, Oleg Broytmann wrote:\n>On Wed, Mar 05, 2008 at 12:14:04AM +1000, Nick Coghlan wrote:\n> > As a more helpful answer, the ZIP spec allows additional data to be\n> > included in the file before the ZIP header. A more common way of using\n> > this is to add a zip file on to the end of an ELF executable while still\n> > using normal zipfile utilities to read the data in the zip file section\n> > and ignore the executable part.\n> >\n> > It turns out you can actually use the same trick to prepend a shebang\n> > line like \"/usr/bin/env python\" and a newline character\n>\n>    That's what I thought, too.\n>\n> > - the whole zip\n> > file is still a binary file, but that doesn't prevent the shell from\n> > reading that first line of text and handing the file over to Python for\n> > execution.\n>\n>    Unix doesn't distinguish text and binary files. (-:\n>\n> > The fact that this actually works was also news to me when the issue I\n> > linked in my previous post was first brought to my attention :)\n>\n>    So it really works? Amazing!\n\nSetuptools has been distributed this way for some time:\n\nhttp://pypi.python.org/pypi/setuptools#cygwin-mac-os-x-linux-other\n\nIt actually contains an entire shell script prefix that launches \nPython and invokes an entry point inside the egg.  With the new \ninterpreter capability, this would've been a *lot* simpler to implement.\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9381042207401726,
+          "SPAM": 0.06189577925982727
+        },
+        "confidence": 0.8762084414803453
+      }
+    },
+    "usage": {
+      "input_tokens": 618,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "updated_utc": "2026-11-17T11:22:26+00:00",
+  "profile": "main",
+  "mode": "full",
+  "sources": [
+    {
+      "defender": "clef",
+      "branch": "baseline",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\paper3000_validated_llm_v1\\clef",
+      "identities": {
+        "baseline": "19733233ff85cb7452243758119ed09f843b98d9e95c4c4328367de6f4f9bd7a",
+        "attack": "95597f8d214b765613ba488c9b3ab80518f205d540a085f05a90b95bec633411"
+      },
+      "checkpoint_state": "INCOMPLETE",
+      "metrics_updated_utc": "2026-11-17T10:26:54.375242+00:00"
+    },
+    {
+      "defender": "clef",
+      "branch": "llm",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\paper3000_validated_llm_v1\\clef",
+      "identities": {
+        "baseline": "19733233ff85cb7452243758119ed09f843b98d9e95c4c4328367de6f4f9bd7a",
+        "attack": "95597f8d214b765613ba488c9b3ab80518f205d540a085f05a90b95bec633411"
+      },
+      "checkpoint_state": "BASELINE SAJA; REWRITE BELUM DIJALANKAN",
+      "metrics_updated_utc": "2026-11-17T10:26:54.375242+00:00"
+    },
+    {
+      "defender": "d3",
+      "branch": "baseline",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\paper3000_validated_llm_v1\\d3",
+      "identities": {
+        "baseline": "0ebe3cd0ffef0a0f47c774563fd92657563c426277d0af40444f15bb40f11907",
+        "attack": "0d34bb2c19ccf95dccf8cff992c556a65e1055ed95e05ef24842330e90d878fc"
+      },
+      "checkpoint_state": "INCOMPLETE",
+      "metrics_updated_utc": "2026-11-17T11:22:25.985118+00:00"
+    },
+    {
+      "defender": "d3",
+      "branch": "llm",
+      "run": "C:\\Users\\prase\\Downloads\\marifahmad\\advesarial_pak_arbi\\discourse-adversarial-rewrite\\outputs\\paper3000_validated_llm_v1\\d3",
+      "identities": {
+        "baseline": "0ebe3cd0ffef0a0f47c774563fd92657563c426277d0af40444f15bb40f11907",
+        "attack": "0d34bb2c19ccf95dccf8cff992c556a65e1055ed95e05ef24842330e90d878fc"
+      },
+      "checkpoint_state": "BASELINE SAJA; REWRITE BELUM DIJALANKAN",
+      "metrics_updated_utc": "2026-11-17T11:22:25.985118+00:00"
+    }
+  ]
+}

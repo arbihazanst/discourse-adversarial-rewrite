@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: v3.2.4 scan times slow\n\nSorry for replying to my own topic, but I've figured out what's causing \nit to go so slow.\n\nIt's the rules in sa-blacklist.current.uri.cf from \nhttp://www.sa-blacklist.stearns.org/sa-blacklist/sa-blacklist.current.uri.cf.\n\nThis ruleset works fine in 3.1, I'm not sure why it doesn't in 3.2, any \ninsight?\n\nThanks,\nSean\n\n\nSean Kennedy wrote:\n> I recently upgraded from v3.1.9 to v3.2.4 and I've noticed a substantial \n> increase in scan times.  The general average scantime with v3.1 was \n> about 1.2s and now with v3.2 it's about 2.2s.  It's enough of a slow \n> down so that my mail queue backs quite easily now.\n> \n> So I'm trying to debug SA and figure out whats going on by doing -D \n> --lint and I've got a couple questions about some of the output.\n> \n> 1) Why am I getting lines like the following and how do I correct it?\n> \n> [14896] dbg: rules: SARE_HTML_ALT_WAIT1 merged duplicates: \n> SARE_HTML_ALT_WAIT2 SARE_HTML_A_NULL SARE_HTML_BADOPEN \n> SARE_HTML_BAD_FG_CLR SARE_HTML_COLOR_NWHT3 SARE_HTML_FONT_INVIS2 \n> SARE_HTML_FSIZE_1ALL SARE_HTML_GIF_DIM SARE_HTML_H2_CLK \n> SARE_HTML_HTML_AFTER SARE_HTML_INV_TAGA SARE_HTML_JSCRIPT_ENC \n> SARE_HTML_JVS_HREF SARE_HTML_MANY_BR10 SARE_HTML_NO_BODY \n> SARE_HTML_NO_HTML1 SARE_HTML_P_JUSTIFY SARE_HTML_URI_2SLASH \n> SARE_HTML_URI_AXEL SARE_HTML_URI_BADQRY SARE_HTML_URI_BUG \n> SARE_HTML_URI_FORMPHP SARE_HTML_URI_HREF SARE_HTML_URI_MANYP2 \n> SARE_HTML_URI_MANYP3 SARE_HTML_URI_NUMPHP3 SARE_HTML_URI_OBFU4 \n> SARE_HTML_URI_OBFU4a SARE_HTML_URI_OPTPHP SARE_HTML_URI_REFID \n> SARE_HTML_URI_RID SARE_HTML_URI_RM SARE_HTML_USL_MULT\n> \n> \n> 2) It hangs for like 30 seconds on the following line, what exactly is \n> it doing and is it necessary?\n> \n> [14924] dbg: rules: running uri tests; score so far=1.5\n> \n> \n> It takes about 5s to run -D --lint on my boxes running v3.1, but about \n> 50s to 1m10s using v3.2 (same hardware on all boxes).\n> \n> Any info is greatly appreciated!\n> \n> Sean",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9688848356355851,
+          "SPAM": 0.031115164364414954
+        },
+        "confidence": 0.9377696712711703
+      }
+    },
+    "usage": {
+      "input_tokens": 810,
+      "output_tokens": 0
+    }
+  }
+}

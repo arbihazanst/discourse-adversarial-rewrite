@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [spambayes-dev] A trend suggestion from :) Shee\n\n\nUncover The New Trend Today With The Secrets Through The \"VAULT\" :) http://earnsmartcashwithlcm.firez.org/\n------------------------------------------------------------------------------\n\nGreetings!\n\nWelcome to the most EXCITING, SIMPLE, and FAST way to make money that we have ever witnessed!\n\nThe New Trend Today;\n\nSmart Cash System is so EASY and can make you SO MUCH MONEY that those who use it soon begin to weigh the option of going to work... or staying home and playing... yes playing... the Smart Cash System!\n\nWhat's even more amazing is once you buy the Smart Cash System today, you are entitled to an $80.00 commission when everyone who you personally refer to Lawn Chair Millionaire buys the system too! \n\nAnd guaranteed... a massive percentage of those who so much as glance at the Smart Cash System snatch it up without thinking twice because it's so simple.\n\n11% gains in one day, 54% gains in 3 days... $300 into $3,000 in less than 30 days... $80.00 commission per sale! You wouldn't believe the number of success stories we get bombarded with on a daily basis.\n\nThe Smart Cash System is so consistent and so easy for everyone that most people admit feeling as if they are costing themselves money by going to work rather than staying home and having fun with the Smart Cash System.\n\nThere are a lot of simple ways to make money in the world but the reason the Smart Cash System was introduced to The Vault is because it is hands down the most consistent money-maker the Group has ever seen.\n\nMonth after month we have been making MASSIVE financial gains. Wondering how much? It's OK... most people do!\n\nWe had never used the Smart Cash System before so this truly was a test. We read the simple instruction for about an hour, followed the outline for opening an account with a bookie, and within two hours we went into action.\n\nGet to Earn In Your Spare Time Right NOW!\n\nClick Here ;) http://earnsmartcashwithlcm.firez.org/\n\n                ;) http://earnsmartcashwithlcm.firez.org/\n\n                ;) http://earnsmartcashwithlcm.firez.org/\n\n \n\nYour Associates, \nSheena Jane\nContact me to YM: ren0_x\nContact me here: esypniz@gmail.com \nhttp://profitizers.info/\nKM. 6 Orchid St. \nPhil.\n\n \n\n \n\n\n-------------------------------------------------------------------------------\nIf you no longer wish to receive communication from us:\nOpt-out here :( http://unsubscribehere.zeroweb.org/\n\n \n\n\n\n\n\n\n\nThis message was sent to you by www.trendwatching.com, on behalf of :) Shee  (oktggttl@runbox.com)\n_______________________________________________\nspambayes-dev mailing list\nbsfegmjrr-hnq@python.org\nhttp://mail.python.org/mailman/listinfo/spambayes-dev",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.998248823236872,
+          "NOT_SPAM": 0.0017511767631280617
+        },
+        "confidence": 0.9814394689537385
+      }
+    },
+    "usage": {
+      "input_tokens": 763,
+      "output_tokens": 0
+    }
+  }
+}

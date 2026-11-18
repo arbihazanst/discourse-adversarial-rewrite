@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Triton Ratings Assembly Competition\n\nHello sm1lies,\n\nThe prize money and timeline of the Triton Ratings Assembly have been increased!  First prize has been increased to $500; the registration period now ends 08.09.2008 at 9 AM EST and submission will end 08.10.2008 at 9 AM EST.\n\nThe task is to assemble and configure the rating module, both on the client side and service side.  Note: There are only two pages involved ? Get Rating and Save Rating.  \n\nThe service side is a web service layer provided through Apache CXF and Spring Framework in Java. The client side is a web UI driven by the ASP.NET Front Controller component. HTML output will be generated using XSLT. HTML prototype has been converted to XSL files. The XSL files will be provided. An assembly base will also be given. The assembly base provides the stuff related to web service and authorization logic that this assembly will make use of. \n\nCompetition tasks:\n\nSetup database and tables, configure Hibernate mapping files.\n* Configure the persistence, services, delegates and web service within the Spring Framework. Sample Spring configurations will be provided.\n* Configure the front controller, command factories and the flow of each page. A typical flow is like this: authorize, validate, web service (one or more), transform.\n* Configure the validation rule for each page.\n* Make sure the web UI displays the correct output under different conditions, e.g. normal output, authorization error, validation error, unexpected error. Assemblers need to write or correct XSL files if necessary.\n* Write any necessary AJAX code.\n* Provide directions for configuration and deployment. \n  \nRegistration is now open and will end 08.09.2008; the submission period will end 08.10.2008.       \n\nLearn more at: http://www.topcoder.com/tc?module=ProjectDetail&pj=30004872\n\n- The TopCoder Software Team\n\n===================================================================\nYou have received this email because you indicated in your TopCoder profile that you want to be notified of new TopCoder development opportunities.  If you no longer wish to receive these emails, you may change your email notification preferences at http://www.topcoder.com/tc?module=EditNotifications.\n\nwww.topcoder.com\nTopCoder, Inc.\n95 Glastonbury Blvd.\nGlastonbury, CT 06033\nPhone: 1-866-867-2633",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.1767666444776352,
+          "NOT_SPAM": 0.8232333555223648
+        },
+        "confidence": 0.32704766463647994
+      }
+    },
+    "usage": {
+      "input_tokens": 673,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Wie kann ich online V kau.?\n\nFor instance, when the Prince brought about the first German colonial acquisitions (Gross and Klein Popo, Togo, etc.), I informed him, at his wish, concerning the state of mind created in the public and the navy by this move, and described to him the enthusiasm with which the German people had hailed the new roadThese two were men of military experience and iron prinI feel no grudge against him for the third volume of his reminiscencesNotwithstanding this, I had dealings with many important men of the party and managed to interest them in practical collaboration for the good of allHis manifold abilities would have enabled him, to the same degree that they had made him known as Court Marshal throughout Europe, to act with equal success as ambassador or as Imperial Chan* cellor the furtherance of the welfare of the laboring classes of the population, with participation therein by the state was the real cause of the break be tween us, and caused a hostility toward me, lasting for years, on the part of Bismarck and a large part of the German nation that was derotecj to Mm, especially of the official classLe moment ou il re- fusait d'agir selon tes ordres, il f allait le renvoyerThere was a plan to persuade Turkey in a friendly way that an understanding with Rus sia was desirable for her alsoBy questioning them he obtained much valuable information about the grievances real and imaginary of the workers, as well as about their plans, hopes, and wishes for the futureHe combined with a healthy knowledge of men a strong dash of refined humor, which is so often lacking in men of the Germanic raceThe outcome of the treacherous malady which killed Emperor Frederick III was frankly told me in advance by German physicians called into consultation as experts by the English physician, Sir Morell MackenzieHence the Foreign Office was noth ing but an office of the great Chancellor , where work was done according to his directionsThe opposite is the truthSOURCE OF RUSSIAN ENMITY Once Prince Bismarck remarked to me that his!\n  main ob\n\nject was to not let Russia and England come to an understandingPetersburg as my first political act before the eyes of the world, in order to emphasize our relationship to Russia in accordance with the last wish of my dying grand- THE KAISER'S MEMOIRS fatherI was on good terms with Count Herbert Bis marckThe individual Ministers, when asked to express their views, were lukewarmAs soon as I had recognized the necessity for reforms, to  THE KAISER'S MEMOIRS some of which the industrial elements would not consent, I took up the cudgels for the laboring classes, impelled by a sense of justiceShe said that a year of mourning must first elapse, after which my first visit was due to her, since she was my grandmother, and to England, it being the native country of my mother, before other lands should be consideredI never bothered my head with all this nonsense, but my position in the house of my parents was rendered much more diffi cult for me and, at times, painfulBennigsen made a very telling point when he said Woe to the North German Liberals if they come under the leadership of the South Ger man Democrats, for that will mean the end of real, genuine Liberalism! Then we shall get the masked democracy arising from below, for which we have no use hereabout  ' The Conservative party, honorable and faith ful to its King, unfortunately has not always pro duced leaders of superior endowments who were at the same time skillful, tactically trained poli ticiansAfter my return, both THE KAISER'S MEMOIRS my grandfather and the Prince praised me for my plain, clear report, which was all the pleasanter for me since I was oppressed by the feeling that, in a number of things, I had been forced to dis illusion these high personagesOn that occasion   THE KAISER'S MEMOIRS the Prince remarked, in astonishment, Another world, a new world  This point of view also showed itself on the occasion of the visit of Admiral von Tirpitz at Friedrichsruh, at the time when he wished to win the old Imperial Chancellor over to favoring the fi!\n rst Navy\n\n billIn addition, there was the entourage of Emperor Frederick IIL I pro ceeded to dismiss, in the friendliest way, all those gentlemen who wished to go into retirement ; some of than received positions in the army, a few of  BISMARCK the younger remained in my service for the tran sition period",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.18312166580553332,
+          "NOT_SPAM": 0.8168783341944668
+        },
+        "confidence": 0.31314132550455087
+      }
+    },
+    "usage": {
+      "input_tokens": 1083,
+      "output_tokens": 0
+    }
+  }
+}

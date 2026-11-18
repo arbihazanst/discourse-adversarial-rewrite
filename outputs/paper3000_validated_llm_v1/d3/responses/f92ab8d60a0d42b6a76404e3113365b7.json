@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Improved thread switching\n\n2008/3/20, Andrew McNabb :\n\n> Since we officially encourage people to spawn processes instead of\n>  threads, I think that this would be a great idea.  The processing module\n>  has a similar API to threading.  It's easy to use, works well, and most\n>  importantly, gives us some place to point people to when they complain\n>  about the GIL.\n\nI'm +1 to include the processing module in the stdlib.\n\njust avoid confussions, with these libraries with alike names, I'm\nmeaning this [1] module, the one that emulates the semantics of\nthreading module.\n\nDoes anybody has strong reasons for this module to not get included?\n\nRegards,\n\n[1] http://pypi.python.org/pypi/processing\n\n-- \n    Facundo\n\nBlog: http://www.taniquetil.com.ar/plog/\nPyAr: http://www.python.org/ar/\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.008159366062428985,
+          "NOT_SPAM": 0.9918406339375709
+        },
+        "confidence": 0.9316724858273885
+      }
+    },
+    "usage": {
+      "input_tokens": 397,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Windows buildbots randomly die with\ttwisted\tConnectionLost errors?\n\n> I'm not sure if I should read into the fact that it's occurring after\n> networking-oriented tests like test_httplib and test_ftplib.  Running\n> rt.bat on the resulting build manually doesn't indicate any errors in\n> these tests.  Have other Windows buildbot owners seen this?\n\nNotice that it also occurs in other steps, e.g.\n\nhttp://www.python.org/dev/buildbot/all/x86%20W2k8%20trunk/builds/50/step-compile/0\n\nPlease understand that the basic principle of buildbot is that the \nslaves connect to the master, and that the master relies on the\nslaves keeping the connection up.\n\nCould it be that you are behind some firewall infrastructure which \nsuddenly decides that certain TCP connections are idle/expired/closed?\nIn that case, the firewall might reject further messages from the\nmaster, causing the master to believe that the connection was lost.\n\nIn that case, the slave should send repeated keepalive messages\n(or the firewall be reconfigured to not close connections to\ndinsdale:buildbot). It seem buildbot already has support for\nkeepalives, although the frequency might be too low.\n\nIn any case, you should check the twistd log files around the time\nof the connection loss whether it shows any problems from the\nclient side as well.\n\nRegards,\nMartin\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9430001345517519,
+          "SPAM": 0.056999865448248144
+        },
+        "confidence": 0.8860002691035038
+      }
+    },
+    "usage": {
+      "input_tokens": 530,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] AI Techniques for Flood Prediction (University of Bristol and POL)\n\nPhD Studentship joint between The University of Bristol and The Proudman \nOceanographic Laboratory\n\nTopic: Applying Rule-Based Models to Sea Level Forecasting\n\nSupervisors: Jonathan Lawry (University of Bristol), Kevin Horsburgh \n(Proudman Oceanographic Laboratory)\n\nProject Details ()\n\nStorm surges are the response of the sea surface to the meteorological \nforces of wind and atmospheric pressure. They represent an important \ncomponent of total sea level and have been the subject of much scientific \ninvestigation. Marine scientists and engineers need to understand the \nstatistics of surge occurrence and tide-surge interaction over long \ntimescales in order to provide estimates of extreme sea level for design \npurposes. Numerical models of tides and surges (based on hydrodynamic \nequations) have a long history in coastal flood warning. Whilst these \nmodels have been very successful, and form the backbone of current \noperational forecast procedures, they are inherently limited by \ninaccuracies in bathymetry, meteorological forcing and parameterisations of \nsub-grid scale processes. There are now real opportunities for alternative, \ndata-driven methods of surge prediction using artificial intelligence (AI) \nand in particular rule-based models (RBMs). RBMs can provide a high-level \nlinguistic representation of the mapping between input and output variables \nin a prediction problem, allowing for more understandable models which give \nan insight into important underlying relationships. Such models can also be \nextended to incorporate both the fuzzy and probabilistic uncertainty \ntypically present in hydrology and oceanography applications. This PhD will \nallow the student to demonstrate the use of rule-based models to an \nimportant environmental problem.\n\n The student will develop rule-based models combining probabilistic and \nfuzzy uncertainty and compare these with both deterministic forecasting \ntechniques and alternative time series methods. The student will apply and \nextend techniques such as the LID3 algorithm for learning probability \nestimation trees incorporating fuzzy description labels. The new models \nwill then be applied to the improvement of tidal forecasts in regions of \nextreme tidal range, and to the prediction of storm surges at key sites \naround the UK. The models will also be used to examine the principal \nphysical causes of extreme sea level events, and the logical rules \ngoverning tide-surge interaction.  Finally, the project will demonstrate \nthe possibility of using artificial intelligence for the interpretation of \nensemble forecasts.\n\nThe successful applicant will have a good numerical degree in mathematics, \nstatistics, computer science, engineering or physical science. Some \nknowledge of artificial intelligence, probability theory and fuzzy logic \nwould be an advantage, although full training will be given. The student \nwill be provided with training in coastal oceanography and numerical \nmodelling. All necessary data from tide gauges and from the deterministic \nnumerical models will be supplied by POL and the Met Office.\n\nFunding\n\nThis project is funded by the EPSRC Flood Risk Management Consortium. This \nposition is open to anyone, but non-EU candidates must find alternative \nmeans to fund the difference between UK and overseas tuition fees.\nContact\n\nPlease contact either Jonathan Lawry or Kevin Horsburgh directly for any \ninformal inquires. The Closing date for applications is 30 June. \nApplication forms are available online. All applications and references \nshould be sent directly to:\n\nEmma Weeks\n\nDept. Engineering Maths.\n\nUniversity of Bristol,\n\nBristol, BS8 1TR, UK",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.042438927044267924,
+          "NOT_SPAM": 0.957561072955732
+        },
+        "confidence": 0.7466350501651942
+      }
+    },
+    "usage": {
+      "input_tokens": 849,
+      "output_tokens": 0
+    }
+  }
+}

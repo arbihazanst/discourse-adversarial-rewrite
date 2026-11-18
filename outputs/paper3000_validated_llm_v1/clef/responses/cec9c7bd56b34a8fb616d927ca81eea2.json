@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] The Breaking of distutils and PyPI for Python 3000?\n\nMartin v. Löwis wrote:\n>> specific code in PyPI.  Are developers for Python 3.x encouraged in \n>> 3.x guidelines to release 'fat' distributions that combine 2.x and 3.x \n>> usable versions?\n> \n> Passive voice is misleading here: encouraged by whom?\n\n\"... encouraged in __3.x guidelines__ to ...\": I presume although I've not \nfound them yet that there is some kind of document for developers titled \nsomething like, \"how to migrate your Python code from 2.x to 3.x\".  That \ndocument would be a logical place for advice and consideration of the \ntradeoffs of jumping to 3.x, maintaining two synced versions using 2to3 or \n3to2, and the risks of keeping two independent releases.  Identifying best \npractices would help them make good choices for the community.\n\n\n> *I* encourage people to consider that option, rather than assuming it\n> couldn't possibly work. Whether it actually works, I don't know.\n> I hope it would work, and I hope it would not be fat at all.\n\nSo we don't have an actual success story of a dual-version distribution, even \nas a prototype, using 2to3 within a distutils package?  I would not encourage \na practice without at least one such example.\n\n\n>>> Can you kindly refer to some archived discussion for that?\n>>\n>> http://mail.python.org/pipermail/python-dev/2006-April/063943.html\n>>\n> Thanks. I still have the same position as I had then - if\n> distutils is broken, it should be fixed, not ignored.\n\nSince the precise API was not documented well and many people began to make \nuse of ambiguous internal interfaces, such fixes would indeed break them.  So \nyour vote would be to do the right thing, even if it results in some breakage. \n  I can respect that philosophy.\n\n\n>> A controversial point, I'm afraid.  Perhaps it is time for a parallel \n>> rewrite, so that those setup.py who import distutils get the old \n>> behavior, and those who import distutils2 get the new, and we let \n>> attrition and the community decide which is standard.\n> \n> Is there a list of the problems with distutils somewhere?\n\nUnfortunately no.  Much of it is anecdotal, much of it occurs on lists outside \nthe Python community by those attempting to package things.  And some of it \nare comments by developers who peeked into the distutils source and blanched.\n\nAnd some of the problems are not bugs, per se, but disagreement on scope of \nfunctionality and a lack of well-known alternatives.  So just \"fix it if \nbroken\" doesn't work when there is no agreement on how to expand that scope.\n\nI am working on pulling together such a list however, and getting it into the \ntracker, so that debate with a record of decisions can occur.  I agree that it \nis hard to fix problems if no one is _clearly_ reporting them to us.  Too much \nsmoke, not enough light.\n\n\n> It always worked fine for me, so I see no reason to fix it in the\n> first place.\n\nPardon my lack of knowledge of your background; when you say it always worked \nfine for you, are you referring to personal experiences using it to _install_ \nsoftware or to experiences as a packager in actually distributing complex \ncollections of modules on different platforms?\n\n-Jeff\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9468885709711559,
+          "SPAM": 0.05311142902884417
+        },
+        "confidence": 0.8937771419423117
+      }
+    },
+    "usage": {
+      "input_tokens": 989,
+      "output_tokens": 0
+    }
+  }
+}

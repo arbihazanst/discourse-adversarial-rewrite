@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Buildbot-devel] Cannot get sendchange to work\n\n> I get these two lines:\n> \n> 2007/10/31 15:51 EDT [Broker,8,127.0.0.1] Peer will receive following PB \n> traceback:\n> 2007/10/31 15:51 EDT [Broker,8,127.0.0.1] Failure: \n> twisted.cred.error.UnauthorizedLogin:\n> \n> Sendchange doesn't take a password.\n\nThat's right, sendchange uses the same access path as buildslaves do, with a\nfixed username/password of \"change\"/\"changepw\". (one day, maybe when we move\nto Foolscap, all of this will be properly secure, but at the moment attackers\ncan submit bogus changes and trick you into doing spurious rebuilds of pre-existing\ncode).\n\nHowever, the error message is suggesting exactly a login problem. If there\nweren't a PBChangeSource registered, that might be how it would look. It would also\nlook like that if the sendchange process were connecting to the wrong port,\nlike, say, the PBListener status port.\n\nI think we have exactly two PB ports being used:\n\n c['slaveport'] : used for all buildslaves, the PBChangeSource, c['debugpw']\n\n PBListener(port=) : used for status port\n\n\nCould you double-check that you're passing a --master argument to 'buildbot\nsendchange' that references the slaveport instead of a PBListener port?\n\nIf so, there might be a bug in the way the PBChangeSource is being set up,\nbut I think it's been working ok for me. What are the versions of your\nbuildmaster and your 'buildbot sendchange' code?\n\n> Is there some kind of whitelisting I need to do?\n\nNope.\n\npuzzled,\n -Brian\n\n\nThis SF.net email is sponsored by: Splunk Inc.\nStill grepping through log files to find problems?  Stop.\nNow Search log events and configuration files using AJAX and a browser.\nDownload your FREE copy of Splunk now >> http://get.splunk.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9393682691530303,
+          "SPAM": 0.06063173084696967
+        },
+        "confidence": 0.8787365383060606
+      }
+    },
+    "usage": {
+      "input_tokens": 648,
+      "output_tokens": 0
+    }
+  }
+}

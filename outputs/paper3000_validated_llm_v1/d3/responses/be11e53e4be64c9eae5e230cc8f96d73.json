@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: overload64.t failures\n\nOn Oct 21 2007, Rafael Garcia-Suarez wrote:\n> The recent smoke tests show failures on some configurations with\n> -Duselongdoubles or -Dusemorebits for the new test lib/overload64.t.\n> (See smoke reports by Merijn and Johan.)\n> \n> I can't duplicate those failures for now (on a FreeBSD box, with\n> -Duse64bitint). However it looks like those tests should be skipped.\n> Currently the test file begins with:\n> \n>     if ($Config::Config{'uvsize'} != 8) {\n>         print \"1..0 # Skip -- Perl configured with 32-bit ints\\\\n\";\n>         exit 0;\n>     }\n\nI wonder if they need to be skipped anywhere at all.  With the patch I\njust sent I can get them all to pass (32-bit Linux) except:\n\n    not ok 67 - 0+ overload with modulo\n    #   Failed test '0+ overload with modulo'\n    #   at lib/overload64.t line 128.\n    #          got: '-0'\n    #     expected: '0'\n\nThe way the tests are written, if things are consistent then they should\npass whether the large int (36028797018963971) is stored in an NV or an\nIV.  I haven't looked at this mod failure yet.\n\n-- \nRick Delaney\nhfvo@bort.ca",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00030810695612802034,
+          "NOT_SPAM": 0.999691893043872
+        },
+        "confidence": 0.9959617179539365
+      }
+    },
+    "usage": {
+      "input_tokens": 477,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Google Alert - spam OR phishing\n\n\nGoogle News Alert for: spam OR phishing\n\n\nDT Centrepiece 3.1\nZDNet - USA\nTags: Den, JAM Software, E-mail Servers, E-mail, Spam, Enterprise\nSoftware, Software, Online Communications, Security, Spam And\nPhishing Software downloads ...\n\nSee all stories on this topic\n\n\nKaspersky Internet Suite 7.0\nTechtree.com - Mumbai,India\n... that checks inbound as well as outbound traffic, anti-spyware /\nmalware protection, anti-spam, anti-phishing, anti-rootkit\n(this suite means business! ...\n\nSee all stories on this topic\n\n\nYes We Can!\nBoston Globe - United States\nIt wasn't long before the inevitable happened: Spam. Although\nSpam does not figure large in my culinary life, I use plenty of\ncanned foods. ...\n\nSee all stories on this topic\n\n\nFTC will review bogus e-mails\nIndianapolis Star - United States\nAnswer: You can forward fraudulent spam to the FTC at The FTC\nwon't take information in the From field at face value. Spammers often\nuse fraudulent return ...\n\nSee all stories on this topic\n\n\nSaved by SPAM\nWall Street Journal - USA\nProfits in its grocery-products division rose 10%, credited in part to very\nstrong SPAM sales. The SPAM family of products saw a 15%\nsales jump from a year ...\n\nSee all stories on this topic\n\n\nHackers spread malware with Hilary Clinton spam\nComputerworld - Framingham,MA,USA\n\"We've now seen just two instances of spam using political\ncandidates to spread malicious code,\" said Oliver Friedrichs, director\nof Symantec's security ...\n\nSee all stories on this topic\n\n\nIT prevents e-mail phishing attack\nThe Rice Thresher - Houston,TX,USA\nHe said this is part of the reason IT’s spam filters were unable\nto catch the message. “I’d say most phishing attempts are the\nequivalent of deciding to rob ...\n\nSee all stories on this topic\n\n\nClinton Video Is Bait in Spam Scam\nDark Reading - New York,NY,USA\nSo far, the volume of Clinton spam emails appears to be low, but IT\nmanagers should be aware of the threat and warn their users not to click on\nthe link, ...\n\nSee all stories on this topic\n\n\nSpam Sales Boost Hormel 1Q Profits\nHouston Chronicle - United States\nSales of Spam and its Hormel Compleats microwave line helped its\ngrocery products division. Hormel said it will add a new $89 million plant\nto make the ...\n\nSee all stories on this topic\n\n\nPhishers phishing phishers' phishes\nVirus Bulletin - Abingdon,England,UK\nPhishing researchers have uncovered code buried in phishing\nsoftware kits, sold by developers to less technically aware phishing\ngangs, which secretly ...\n\nSee all stories on this topic\nGoogle Blogs Alert for: spam OR phishing\n\n\nHow to use spam filters in lotus notes\n\nThe spam menu is havingfollowing options: * Disable All Filters-This will completely turnoff all spam filtering. * Enable Aggressive Filter-This will create SPAM folder in ACTIONS and filters all spam emails. ...\n\n\nDigg / upcoming - http://digg.com/\n\n\n\nSpam, No Spam: another side of MSFT/YHOO\n\nBy Paul\n\nIn the past week, mail from ibiblio sites was falsely blocked as spam when sending to any Yahoo.com addresses (at the Yahoo! end). Folks from all kinds of our mailing lists have been complaining. Don responded and has the false positive ...\n\n\nThe Real Paul Jones - http://ibiblio.org/pjones/wordpress\n\n\n\nSpam Soup\n\nBy paulie11\n\nUK NATIONAL LOTTERY AWARD 2008!! Attn;Winner We wish to notify you that this email address was randomly selected and entered into our free Third Category draws of the UK NATIONAL LOTTERY.You have subsequently ...\n\n\nA Psych Tech's Blog - Inside... - http://moodle1.wordpress.com\n\n\n\nScramble your email address to prevent email from being harvested ...\n\nBy Peter Chen(Peter Chen)\n\nI previously created a special email address for communications with my readers and used a simple HTML mailto: tag knowing jolly well that the email address will be harvested by robotic programs for spam. However, I used free web-based ...\n\n\nBlogger Tips and Tricks - http://blogger-tricks.blogspot.com/\n\n\n\nidentity spam vs. useful advertising\n\nBy T. Willerer(Littlejohn)\n\nIdentity Spam. That's what will happen in the future. It will happen when advertising uses your personal information in a way that you find inappropriate, harmful, or just annoying. Picture yourself walking in a department store, ...\n\n\nAdvertising for Peanuts - http://advertisingforpeanuts.blogspot.com/\n\n\n This once a week Google Alert is brought to you by Google.\n \nRemove this alert.\n  Create another alert.\nManage your alerts.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9189407899620088,
+          "SPAM": 0.08105921003799116
+        },
+        "confidence": 0.8378815799240176
+      }
+    },
+    "usage": {
+      "input_tokens": 1211,
+      "output_tokens": 0
+    }
+  }
+}

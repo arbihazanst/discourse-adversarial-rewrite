@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: postfix making too many queries to LDAP\n\nI know I queried this a year ago and received some responses that explained\nwhat was happening (i.e. that extra queries were required to ensure that the\nmail address was not another alias and that different components of postfix\nrequire access to the same or related data) however these responses did not\nclarify some important points for me:\n\n1. why do subsequent queries use different portions of the address (lhs and\nsome combinations of the rhs), which cannot be valid addresses?\n2. how do I turn off this 'feature'?\n3. why should I not turn it off?\n\nIf I can't achieve 2 then at least an answer to 1 and/or 3 may help me to\njustify this excess query traffic to our LDAP admins whose complaints are\ngetting louder by the day.\n\nThey are claiming that 80+% of queries to the LDAP are for entries that\ncould not exist. e.g:\n\n(&(mail=.co.za)(mailAccountStatus=active))\n(&(mail=.za)(mailAccountStatus=active))\n(&(mail=.co.za)(mailAccountStatus=active))\n(&(mail=.za)(mailAccountStatus=active))\n(&(mail=.za)(mailAccountStatus=active))\n(&(mail=.co.za)(mailAccountStatus=active))\n(&(mail=mweb.co.za)(mailAccountStatus=active))\n(&(mail=webmail.co.za)(mailAccountStatus=active))\n(&(mail=.za)(mailAccountStatus=active))\n(&(mail=.co.za)(mailAccountStatus=active))\n(&(mail=.za)(mailAccountStatus=active))\n(&(mail=dc-tech.co.za)(mailAccountStatus=active))\n\nnone of the above can be valid email addresses. The only two query_filters\nconfigured for postfix are:\n\n(&(mailAlternateAddress=%s)(mailAccountStatus=active)) in ldap-alias.cf and\n(&(mail=%s)(mailAccountStatus=active)) in  ldap-mailbox.cf,\nldap-sasl-password.cf, ldap-login_maps.cf,  ldap-mailhost.cf and\nldap-valid-senders.cf\n\nhelp,\n\nmike",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9684582532540332,
+          "SPAM": 0.03154174674596685
+        },
+        "confidence": 0.9369165065080665
+      }
+    },
+    "usage": {
+      "input_tokens": 606,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,24 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+clef,PAPER3000-0008,1,SPAM,"Subject: Reactivate Your AdWords Google Account.
+
+--------------------------------
+----------------------------
+-------------------------------
+Dear Advertiser,
+
+We were unable to process your payment.
+
+Your ads will be suspended soon unless we can process your payment.
+
+To prevent your ads from being suspended, please update your payment information.
+
+Please sign into your account and update your payment information.
+
+We look forward to providing you with the most effective advertising available.
+
+Thank you for advertising with Google AdWords.
+
+
+----------------------------------------------
+--------------------
+-------------------",,  that own of on with with n't  be    on be to to with  've get,SPAM,OK,SKIPPED_INVALID,,0.038621,,gan_sst_candidate,,,INVALID,purpose;key_information;meaning;no_fabrication;coherence,5.341257,,rewrite_validity_v1,FAIL,FAIL,FAIL,FAIL,FAIL,5.379878

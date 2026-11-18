@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Py2exe-users] Newbie: modules appear to be missing.\n\nI am new to...everything. Just downloaded the Enthought Python Distribution\nand downloaded an Envisage example; Envisage seems to be the\npython-equivalent of Eclipse...with workbench, and extensibility via\nplugins...very promising.\n\nAnyway, it is supposed to be a very simple example and it runs just fine,\nbut I wanted to create a standalone *.exe, but can't.\n\nHere are the files.\n\n=======================\nplugin_definitions.py\n=======================\nfrom enthought.envisage.api import join\nfrom enthought import envisage\nimport enthought.plugins.text_editor as text_editor\nimport enthought.plugins.python_shell as python_shell\n# The plugin definitions required by the application.\nPLUGIN_DEFINITIONS = [\n    # Core plugins .\n    join(envisage, 'core/core_plugin_definition.py'),\n    join(envisage, 'action/action_plugin_definition.py'),\n    join(envisage, 'resource/resource_plugin_definition.py'),\n    # The UI .\n    join(envisage, 'workbench/workbench_plugin_definition.py'),\n    join(envisage, 'workbench/action/action_plugin_definition.py'), # The\nshell and editor.\n    join(python_shell, 'python_shell_plugin_definition.py'),\n    join(text_editor, 'text_editor_plugin_definition.py')\n]\n======================\nsimple.py\n======================\nfrom plugin_definitions import PLUGIN_DEFINITIONS\n\ndef main():\n    gui = GUI()\n    application = Application(\n        argv = sys.argv,\n        id = \"simple_app\",\n        gui = gui,\n        plugin_definitions = PLUGIN_DEFINITIONS,\n        requires_gui = False\n    )\n    application.start() # Start the application.\n    gui.start_event_loop() # Start the GUI event loop.\n    application.stop() # Stop the app once GUI quits.\n\nmain() # Run the application.\n\n===========================================================\n===========================================================\n\nTo run this program from my DOS prompt, all I do is this:\n> python simple.py\n\nAnd it runs just fine.\n\nBut if I try py2exe with the following setup.py:\n\n===============\nsetup.py\n===============\nfrom distutils.core import setup\nimport py2exe\n\nsetup(console=['simple.py'])\n===============\n\nand the following command:\n> python setup.py py2exe\n\nthen, at the end, I get this:",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00123200357997106,
+          "NOT_SPAM": 0.998767996420029
+        },
+        "confidence": 0.9863166489855744
+      }
+    },
+    "usage": {
+      "input_tokens": 638,
+      "output_tokens": 0
+    }
+  }
+}

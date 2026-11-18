@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: How To Enlarge Penis Size\n\n\nRead hundreds of testimonials from satisfied men and their girlfriends on this site. After years of scientific research, a herbal breakthrough is finally achieved - the product rated as #1 by healthcare professionals, with gains of up to 1-3 inches guaranteed, and girth increases from 5% - 30%.\n\n\"Ever since I started on your herbal supplement, Sharon says sex is so much more pleasurable for her, and she comes much more easily\". David, Florida, USA \n\nhttp://zoomwill.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.023494534028369433,
+          "SPAM": 0.9765054659716306
+        },
+        "confidence": 0.9530109319432611
+      }
+    },
+    "usage": {
+      "input_tokens": 272,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Py3k and asyncore/asynchat\n\nI've discussed a lot with Josiah via e-mail and I provided an updated\nversion of the patch proposed in bug #1736190 including a fix for the\ntwo issues raised by me in the bug report.\nThe update has been needed also because the original patch has been\nout-dated by some commits after r53734 involving the test suite\nand the documentation, which I both took off this patch.\nI also re-added simple_producer and fifo classes in asynchat.py since\nit seems they are needed for passing tests.\n\nThe test suite has passed on Windows XP using Python 2.6 alpha 1.\nI have also successfully run the test suite of a project of mine based\non asynchat which includes over 40 tests.\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.000917800433408641,
+          "NOT_SPAM": 0.9990821995665913
+        },
+        "confidence": 0.9894163249418386
+      }
+    },
+    "usage": {
+      "input_tokens": 364,
+      "output_tokens": 0
+    }
+  }
+}

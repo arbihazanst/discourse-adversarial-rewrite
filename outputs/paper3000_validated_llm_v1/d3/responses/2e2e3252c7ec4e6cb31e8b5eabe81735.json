@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Where gone?\n\n     *{font-family:verdana,sans,arial,tahoma;font-size:11pt;}Hi !Hi! Sweet! Let's learn about? My name is BitchMaria H., Bellevue WA",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.7249927444992557,
+          "NOT_SPAM": 0.2750072555007443
+        },
+        "confidence": 0.15144167471980308
+      }
+    },
+    "usage": {
+      "input_tokens": 175,
+      "output_tokens": 0
+    }
+  }
+}

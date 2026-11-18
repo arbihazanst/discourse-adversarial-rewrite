@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 5673] \"ALL\" header includes extra spaces between header names and values\n\nhttp://issues.apache.org/SpamAssassin/show_bug.cgi?id=5673\n\n\n\n\n\n------- Additional Comments From user7@gvc.ceas-challenge.cc  2007-10-09 03:28 -------\nCreated an attachment (id=4145)\n --> (http://issues.apache.org/SpamAssassin/attachment.cgi?id=4145&action=view)\nfix\n\nthis is the patch for 3.2.x.\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.004208018393358255,
+          "NOT_SPAM": 0.9957919816066418
+        },
+        "confidence": 0.960729515819952
+      }
+    },
+    "usage": {
+      "input_tokens": 279,
+      "output_tokens": 0
+    }
+  }
+}

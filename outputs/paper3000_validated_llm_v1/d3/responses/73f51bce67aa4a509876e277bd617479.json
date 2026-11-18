@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: VMware Workstation Evaluation\n\nIf your email program has trouble displaying this email, view it as a web \r page \r [http://app.connect.vmware.com/e/es.aspx?s=524&e=3c1bc9f56d2649bd88dda0569120a13c&elq=7CDD17048635456CB13591861EA0A186] \r  \r To update your subscription and language preference, please visit \r [http://info.vmware.com/forms/Subscription?elq=7CDD17048635456CB13591861EA0A186] \r Activate your VMware Workstation Evaluation  \r -------------------------------------------  \r *** Please do not respond to this email ***  \r *** Please save this e-mail for future reference*** \r  \r Dear Andy,  \r  \r Thank you for your interest in evaluating VMware Workstation. We are pleased \r  \r to provide a 30  \r day license to support your evaluation, which will expire on 9/8/2008. Please use the link below to  \r activate your evaluation license and access download information.  \r  \r Activate my VMware Workstation Evaluation  \r -----------------------------------------  \r  \r *Activate your evaluation license and access your download.  \r  \r Use the following link to access the license information and software  \r necessary to complete your installation:  \r  \r [https://www.vmware.com/tryvmware/activate.php?k=&cmp=EMC-WSEvalActivation&li=license] \r  \r  \r Getting Help with VMware Workstation  \r ------------------------------------  \r  \r *Read the installation guide/user guide(s)  \r  \r This documentation will help you set up and run your evaluation software  \r with ease:  \r  \r \r [http://www.vmware.com/support/pubs/ws_pubs.html?cmp=EMC-WSEvalActivation&li=documentation] \r  \r *Support Information  \r  \r If you have questions or need support during your evaluation, visit the \r VMware Technology Network [http://communities.vmware.com/community/vmtn] for \r product documentation, knowledge bases and other resources.  \r  \r [https://www.vmware.com/tryvmware/activate.php?k=&cmp=EMC-WSEvalActivation&li=license] \r  \r  \r Thank you for your interest in VMware. We hope you enjoy evaluating VMware  \r Workstation.  \r  \r Sincerely,  \r  \r The VMware Team  \r  \r You are receiving this email because you requested an evaluation copy of \r VMware Workstation. As noted on the download page and in the VMware Privacy \r Policy, you can opt out of these communications by visiting \r http://info.vmware.com/content/Subscription/?cmp=EMC-WSEvalActivation&li=subscription \r  \r VMware, Inc. 3401 Hillview Ave Palo Alto CA 94304 USA Tel 1-877-486-9273 \r Copyright © 2008 VMware, Inc. All rights reserved. VMware is a registered  \r trademark of VMware, Inc.  \r  \r Thank you for registering with VMware. Any information that you provide to  \r VMware will be treated in accordance with our Privacy Policy: \r [http://www.vmware.com/help/privacy.html] \r  \r To manage your VMware subscription, please visit VMware Subscriptions.  \r [http://info.vmware.com/forms/Profile?elq=recipientid</span]",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.08185706793048202,
+          "NOT_SPAM": 0.9181429320695179
+        },
+        "confidence": 0.5913108802831223
+      }
+    },
+    "usage": {
+      "input_tokens": 921,
+      "output_tokens": 0
+    }
+  }
+}

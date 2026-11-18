@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Have a separate resolv.conf per interface\n\nOn 2/14/08, Carlos E. R.  wrote:\n> -----BEGIN PGP SIGNED MESSAGE-----\n> Hash: SHA1\n>\n>\n>\n> The Thursday 2008-02-14 at 06:00 -0000, Sudhir wrote:\n>\n> >>> Is this possible and, if so, how?\n> >>\n> >> Using profiles. Set them up with Yast.\n> >>\n> > Carlos,\n> >\n> > Can you please elaborate on how to do this?\n>\n> Well, in Yast, select System / Profile Manager, and folllow the wizzard.\n>\n> What this does is store a copy of the configuration files somewhere, and\n> you name it \"home\" and \"office\", for instance. When you change the active\n> profile, the changes you did to any configuration files are saved, and the\n> other profile is copied over your configuration. The profile can be\n> choosen at boot somehow.\n>\n> All this is much better explained in the suse manual :-)\n>\n\nPerhaps I misunderstand.  I don't want separate profiles for roaming\n(one profile for office, one for home, etc.).\n\nI was wondering if there was a way to be at one location and have 2\ninterfaces up simultaneously (such as eth0 and ppp0) and each\ninterface would be on 2 separate networks with each interface having a\n'separate, unique' /etc/resolv.conf it is referencing for name\nresolution.\n\nRight now it appears as though when each interface needs to resolve a\nname, they are both referencing /etc/resolv.conf which will resolve\nfine for one interface, but not the other.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9623581057003644,
+          "SPAM": 0.03764189429963559
+        },
+        "confidence": 0.9247162114007288
+      }
+    },
+    "usage": {
+      "input_tokens": 555,
+      "output_tokens": 0
+    }
+  }
+}

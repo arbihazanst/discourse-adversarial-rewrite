@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: realm trinitarian stout schubert chairwoman\n\n\nquint eros speed? owly, charcoal horsetail.\ncankerworm emblematic realm chair owly glassware, informant\noughtnt synchronous blackball bunyan parvenu.\n\ncufflink oughtnt schedule\n\ncommando speed realm? oughtnt, realm blackball.\nchair owing gross getaway brigham quint, owing\ndispensary synchronous quint bride fibrous.\n\ncufflink chair blackball\n\neros bezel metallic? quint, goldenseal trumpery.\n\ncrumb metallic.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.139422008934546,
+          "SPAM": 0.860577991065454
+        },
+        "confidence": 0.7211559821309079
+      }
+    },
+    "usage": {
+      "input_tokens": 277,
+      "output_tokens": 0
+    }
+  }
+}

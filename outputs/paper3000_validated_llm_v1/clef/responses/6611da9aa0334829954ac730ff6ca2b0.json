@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: This formula really works lnnj slq dsypiv\n\nPo jty we tpi rEn koh lar uko ge is the fastest acting, most pow ow erful pe lil nis enl lqc arge txj ment for uip mu wba la ever developed. Never has there been such a pr pp odu qa ct, that brings fast, pe plt rman gb ent and mas erl sive p iu en fo is en sfy lar ync gem vcq ent!Po eh we rcb rEn ax lar lbn ge Pi wp lls are ma jl nufac xd tured in C fo NL approved man iu ufac tk turing la gu bs. So you can rest assured about the q dj ual jv ity of Po bo we cr rEn er lar yvn ge Pi fu lls. This cannot be said about other companies offering male en dj han sz cem mtu ent p btd rod spi ucts.Help Stop Pre kno mat pg ure Ej hce acula ivp tion! Click here!!! ... http://r.makecase.com/?kmtm",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.024840169326158228,
+          "SPAM": 0.9751598306738418
+        },
+        "confidence": 0.9503196613476836
+      }
+    },
+    "usage": {
+      "input_tokens": 393,
+      "output_tokens": 0
+    }
+  }
+}

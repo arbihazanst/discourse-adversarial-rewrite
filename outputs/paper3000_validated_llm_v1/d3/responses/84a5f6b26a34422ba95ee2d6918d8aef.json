@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Social and Cultural Studies Seminar\n\n\nReminder:\nYou are invited to tomorrow's Social and Cultural Studies Seminar\n\nWed 9 April, at 4pm\n\n'Changing Times for young minds: Hokkaido preschools in the new millenium'\n\nby \nRachel Burke\nSchool of Social and Cultural Studies\n\nAbstract \nPreschool educators and parents in the West commonly express the hope that young children become independent, creative individuals. In contrast, Japanese preschools work to achieve a harmonious group of children whose views and behaviour are mirrored by those of their peers. Studies point to classes as large as forty as an effective way of introducing children to \"life in the group\" (sh�dan seikatsu), and to Japanese social values that will become essential as youngsters move into adulthood. While numerous studies have been made of preschools in urban Honshu, how does this representation echo or differ from the contemporary experience of children, teachers and parents in rural Eastern Hokkaido?  This remote area of Japan is currently facing economic decline, a dropping birthrate and depopulation which has resulted in preschool classrooms with as few as two or three children. Based on participation-observation fieldwork at five diverse preschools, this seminar discusses the rel!\n!\nevance of sh�dan seikatsu ideology to Hokkaido educators and identifies how demographic pressures are changing classroom dynamics.   \n\n4 pm, Atrium Bldg, Rm. 3.49\nrefreshments provided\n\n\t\t\t\t\n\t\tplease pass this on to anyone who may be interested\n\t\tenquiries to\n\t\tGraeme MacRae\n\t\tSchool of Social and Cultural Studies\n\t\t414 0800  x 9045\n\t\tor reply email",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.007494950741668277,
+          "NOT_SPAM": 0.9925050492583317
+        },
+        "confidence": 0.936314351954066
+      }
+    },
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: What time is okay for you\n\nAre you ready to hit the Bullseye?\n\nIf you are weak in b tb ed, it's very BAD! Yah, I don't envy you...\nIf i were you, i would vi bc s zf it this si ep te and order something\nlike V rj ia urf gr vpn a or L nt ev ci it ohq ra. It'll restore your previous e hth re yi ct bjm ion\nand li usa ka wo bil zh ity...\n\nDon't be heedful to vi nhb sit our si grr te!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.028654404568130506,
+          "SPAM": 0.9713455954318695
+        },
+        "confidence": 0.942691190863739
+      }
+    },
+    "usage": {
+      "input_tokens": 284,
+      "output_tokens": 0
+    }
+  }
+}

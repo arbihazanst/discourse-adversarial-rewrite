@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: CustomerSupportAllProductsProductList\n\n\nYourHealthForValuedCustomerForCustomers\nhttp://lphfza.bay.livefilestore.com/y1pVqb1_FHbwC7jAtLtjaoCF1tnqs2xHO1E1PBahm5lutO_wgecSf2M93snyuSg7ShxiVTOv3UZZEVnQHrh-33NGg/index.html",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9863325752317188,
+          "NOT_SPAM": 0.01366742476828117
+        },
+        "confidence": 0.8957735088077099
+      }
+    },
+    "usage": {
+      "input_tokens": 222,
+      "output_tokens": 0
+    }
+  }
+}

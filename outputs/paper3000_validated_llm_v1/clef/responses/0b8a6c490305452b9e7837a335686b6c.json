@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: Learning from uncertain data\n\n\n\n\nApologizes for cross-posting.\n\n------------------------------------\n\nCFP: Invited session on\n\nLearning from uncertain data\n\nKES2007: 11th International Conference on Knowledge-Based and  \nIntelligent Information & Engineering Systems\n\nin conjunction with\n\nWIRN07: 17th Italian Workshop on Neural Networks\n\nSeptember 12-14, 2007 - Vietri sul Mare (SA), Italy\n\n  http://homes.dsi.unimi.it/~malchiod/WIRN07/\n\n------------------------------------\n\nThe session will focus on research activities in the field of  \nlearning from data when a quantitative measure of the uncertainty  \naffecting each data item is available, as a counterpart of the usual  \nsamples in input to learning algorithms, gathering data to be  \nconsidered homogeneously.\n\n------------------------------------\n\nTopics\n\nThe session will welcome (although not limiting to) contributions on  \ntheoretical analysis of the problem, design of machine learning  \nalgorithms, as well as real-world applications. A non exhaustive list  \nof topics to focus on is the following:\n\n* Learning algorithms\n* Integration between learning and fuzzy sets\n* Soft computing methods for classification and model selection\n* Support vector machines and kernel methods\n* Integration between optimization and learning\n* Statistical methods for dealing with uncertainty\n* Real-world applications of uncertainty-based learning algorithms\n------------------------------------\n\nPaper submissions\n\nParticipants are encouraged to submit papers (up to eight pages in  \nlength) in the Springer LNCS/LNAI format. The conference proceedings  \nwill be published by Springer-Verlag in the LNAI series.\n\nAll submissions should be sent in PDF to malchiodi(AT)dsi.unimi.it or  \nuploaded following the\nprocedure described on the KES2007 web site.\n\n------------------------------------\n\nImportant dates\n\nPaper deadline: February 28th, 2007\nNotification of acceptance: April 1st, 2007\nCamera-ready papers: April 30th, 2007\n\n------------------------------------\nSession chair\n\nDario Malchiodi\nDipartimento di Scienze dell'Informazione\nUniversità degli Studi di Milano\nVia Comelico 39/41 20135 Milano ITALY\nT: +39 02 503 16338\nF: +39 02 503 16276\nE: malchiodi(AT)dsi.unimi.it\nW: http://homes.dsi.unimi.it/~malchiod\n\n------------------------------------\n\nConference venue\n\nThe conference will be organized in the beautiful town of Vietri sul  \nMare, near Salerno. Please refer to the official KES2007 web site for  \ndetails on the conference and for travel informations.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9189062499654702,
+          "SPAM": 0.08109375003452986
+        },
+        "confidence": 0.8378124999309404
+      }
+    },
+    "usage": {
+      "input_tokens": 765,
+      "output_tokens": 0
+    }
+  }
+}

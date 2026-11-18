@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Your chance to have perfect intimate life.\n\n\nDear aa9513e86a9a8bdc1d8451dec9f458f7\n\nSummer is a great time to take a  break off at work and think about your health & personal life.\n\nAnd we are glad to aid you with it.\n\n From now on till 30th of September you can use our particular proposal.\n\nVisit our site for more details.\n\nanswerdry.com\n\n6 Aug 2008 13:16:06",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9843588839624936,
+          "NOT_SPAM": 0.01564111603750645
+        },
+        "confidence": 0.8837886068046082
+      }
+    },
+    "usage": {
+      "input_tokens": 247,
+      "output_tokens": 0
+    }
+  }
+}

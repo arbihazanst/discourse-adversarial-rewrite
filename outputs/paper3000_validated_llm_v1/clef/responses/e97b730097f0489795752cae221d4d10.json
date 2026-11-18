@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CP-AI-OR 2005: Call for Participation\n\n===================================================================\n                Call for Participation / Registration\n\n                          CP-AI-OR 2005\n2nd International Conference on Integration of AI and OR Techniques\n in Constraint Programming for Combinatorial Optimisation Problems\n\n                       Prague, Czech Republic\n                        May 30-June 1, 2005\n\n          Early registration deadline is March 28, 2005\n\n     MASTER CLASS ON METAHEURISTICS AND CONSTRAINT PROGRAMMING\n                       Prague, Czech Republic\n                            May 29, 2005\n\n                   http://cpaior05.mff.cuni.cz/\n===================================================================\n\n\nCONFERENCE PROGRAMME:\n=====================\n\nThe aim of the conference is to bring together interested researchers from\nAI and OR, and to give them the opportunity to show how the integration of\ntechniques from AI and OR can lead to interesting results on large scale and\ncomplex problems. A secondary aim of CP-AI-OR is to provide an opportunity\nfor researchers in one area to learn about techniques in others.\n\n>>From almost 100 submitted papers, 26 papers have been selected to be\npresented in the main program.\n\nFor details, please see http://cpaior05.mff.cuni.cz/program.html\n\n\nMASTER CLASS:\n=============\n\nAs in previous years CPAIOR'05, a major forum on the Integration of OR\nand AI techniques in CP, will be preceded by a one-day Master Class\nwhere leading researchers give introductory and overview talks in a\ngiven area. This year, the topic of the Master Class is\nMetaheuristics and Constraint Programming. The Master Class is\nintended for PhD students, researchers, and practitioners. A basic\nknowledge of Constraint Programming will be expected of participants.\n\nFor details, please see http://cpaior05.mff.cuni.cz/master_class.html\n\n\nCONFERENCE VENUE:\n=================\n\nThe conference and the Master Class will take place in a newly refurbished\nbuilding of Faculty of Mathematics and Physics, Charles University, Prague.\nThis building has a convenient location in the historical city center, in\nthe area called Lesser Town (Mala Strana) close to local attractions like\nCharles Bridge (Karluv most) and Prague Castle (Prazsky hrad).\n\n\nREGISTRATION:\n=============\n\nTo participate at Master Class and/or CP-AI-OR 2005 conference you must\nregister and pay the registration fee. Please use the registration form\navailable at http://cpaior05.mff.cuni.cz/registration.html\n\nA limited number of student grants is available.\n\n\nIMPORTANT DATES:\n================\n\nStudent grants:     March 21, 2005\nEarly registration: March 28, 2005\nLate registration:  May 20, 2005\n\nMaster Class:       May 29, 2005\nCP-AI-OR'05:        May 30-June 1, 2005",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.910243788066091,
+          "SPAM": 0.08975621193390902
+        },
+        "confidence": 0.8204875761321819
+      }
+    },
+    "usage": {
+      "input_tokens": 814,
+      "output_tokens": 0
+    }
+  }
+}

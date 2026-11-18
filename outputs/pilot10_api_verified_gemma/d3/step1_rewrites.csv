@@ -1,0 +1,81 @@
+﻿defender,sample_id,step,true_label,original_text,first_rewrite_text,rewrite_text,baseline_label,generation_status,classification_status,predicted_label,generation_time_sec,classification_time_sec,source,generation_error,classification_error,validation_status,validation_reason,validation_time_sec,validation_error,rubric_version,validity_purpose,validity_key_information,validity_meaning,validity_no_fabrication,validity_coherence,step_elapsed_sec
+d3,PAPER3000-0001,1,SPAM,"Subject: fashionable replica watches
+
+
+We only sell premium watches. 
+
+Most reliable replica from Patek Philippe ...   
+
+is ROLEX under 199 $ good for you? 
+
+http://fetessteersit.com/",,"Subject: Replica Watches
+
+We offer replica watches.
+
+We have replicas available from Patek Philippe and other brands.
+
+Is a Rolex replica priced under $199 of interest to you? 
+
+http://fetessteersit.com/",SPAM,OK,OK,SPAM,0.00209,0.758223,shared_cache,,,VALID,,0.046927,,rewrite_validity_v1,PASS,PASS,PASS,PASS,PASS,0.80724
+d3,PAPER3000-0002,1,SPAM,"Subject: How To Enlarge Penis Size
+
+
+Size DOES matter - change your life today!
+
+""I couldn't believe that my Paul gained an incredible 3 inches in just 2 short months. Now that he's longer and also thicker, making love is so much more pleasurable, and I come a lot more easily"" Lindsay, California, USA
+
+http://jumpwill.com/",,"Subject: Information Regarding Penis Enlargement
+
+A customer, Lindsay from California, USA, reported experiencing a 3-inch increase in penis size over a period of two months. She also noted increased sexual satisfaction.
+
+http://jumpwill.com/",SPAM,OK,OK,SPAM,0.002545,0.745906,shared_cache,,,VALID,,0.051843,,rewrite_validity_v1,PASS,PASS,PASS,PASS,PASS,0.800294
+d3,PAPER3000-0003,1,SPAM,"Subject: The Most Trustworthy Online Drugstore
+
+Canadian Healthcare is an experienced, trusted, and fully-licensed International online store. Buy low cost generic pharmaceutical products of extremely high quality manufactured by the leading world famous manufacturers which stand for quality of their medications.
+
+100% safety at the lowest price you�ve ever seen. Only generic drugs on sale.
+http://mineintuition.com
+
+Verified by VISA and sell FDA Approved Pills only.",,"Subject: Information Regarding Canadian Healthcare
+
+Canadian Healthcare is an international online store with full licensing and experience in providing pharmaceutical products. We offer generic medications from leading manufacturers known for their quality.
+
+Our products are available at competitive prices. We currently offer only generic drugs. 
+http://mineintuition.com
+
+We are verified by VISA and sell FDA-approved medications.",SPAM,OK,OK,SPAM,0.002322,0.773042,shared_cache,,,VALID,,0.048502,,rewrite_validity_v1,PASS,PASS,PASS,PASS,PASS,0.823866
+d3,PAPER3000-0008,1,SPAM,"Subject: Reactivate Your AdWords Google Account.
+
+--------------------------------
+----------------------------
+-------------------------------
+Dear Advertiser,
+
+We were unable to process your payment.
+
+Your ads will be suspended soon unless we can process your payment.
+
+To prevent your ads from being suspended, please update your payment information.
+
+Please sign into your account and update your payment information.
+
+We look forward to providing you with the most effective advertising available.
+
+Thank you for advertising with Google AdWords.
+
+
+----------------------------------------------
+--------------------
+-------------------",,"Subject: AdWords Account Payment Issue
+
+Dear Advertiser,
+
+A recent payment could not be processed.
+
+Your advertisements may be suspended if this issue is not resolved.
+
+To avoid potential disruption to your campaigns, please update your payment information.
+
+Please log in to your account to review and update your payment details.
+
+Thank you for using Google AdWords.",SPAM,OK,OK,SPAM,0.002562,0.761651,shared_cache,,,VALID,,0.04969,,rewrite_validity_v1,PASS,PASS,PASS,PASS,PASS,0.813903

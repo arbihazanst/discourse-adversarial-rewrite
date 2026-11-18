@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Yvette Page\n\n\n\n\n\n\n\n\nP vpy harm npy acy\n\nVis hj it Your Local Target P byz h oay arm pn acy\nfor Ge ix ner jc ic Dr qqh ug spj s, Re lf fills, & More.\n\nhttp://ingenuityseat.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02881598996142445,
+          "SPAM": 0.9711840100385756
+        },
+        "confidence": 0.9423680200771511
+      }
+    },
+    "usage": {
+      "input_tokens": 220,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] Using *a for packing in lists and other places\n\nOn Sat, Mar 15, 2008 at 6:07 PM, Greg Ewing \nwrote:\n\n> Thomas Wouters wrote:\n> >  >>> a, b = *c\n> >   File \"\", line 1\n> > SyntaxError: can use starred expression only as assignment target\n>\n> That error message isn't really accurate, since in\n>\n> >  >>> a, b = (*c,)\n\n\n> the *c is not an assignment target.\n>\n\nDear lord, give me a chance to fix up all the details before you trip over\nthings like that. I wrote the patch for load-context-star in half a day at\npycon, I didn't bother to update the error message yet.\n\n\n> Also, the message implies that\n>\n>   *c = a, b\n>\n> should be valid -- is it?\n>\n\nNo, but that's not related to this patch (but rather the PEP-3132\nimplementation.)\n\n-- \nThomas Wouters \n\nHi! I'm a .signature virus! copy me into your .signature file to help me\nspread!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0011766298493312794,
+          "NOT_SPAM": 0.9988233701506687
+        },
+        "confidence": 0.9868535503540066
+      }
+    },
+    "usage": {
+      "input_tokens": 396,
+      "output_tokens": 0
+    }
+  }
+}

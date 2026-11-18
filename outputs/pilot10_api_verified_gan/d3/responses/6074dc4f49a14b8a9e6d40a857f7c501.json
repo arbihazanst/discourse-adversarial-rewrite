@@ -1,0 +1,35 @@
+{
+  "original_text": "Subject: Reactivate Your AdWords Google Account.\n\n--------------------------------\n----------------------------\n-------------------------------\nDear Advertiser,\n\nWe were unable to process your payment.\n\nYour ads will be suspended soon unless we can process your payment.\n\nTo prevent your ads from being suspended, please update your payment information.\n\nPlease sign into your account and update your payment information.\n\nWe look forward to providing you with the most effective advertising available.\n\nThank you for advertising with Google AdWords.\n\n\n----------------------------------------------\n--------------------\n-------------------",
+  "rewrite_text": "  that own of on with with n't  be    on be to to with  've get",
+  "rubric_version": "rewrite_validity_v1",
+  "checks": {
+    "purpose": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\3f2cd764da5d1db4b28d8645666b68d7b9a1350435ce841c728a5233ee5e31b7.json"
+    },
+    "key_information": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\a49fce03756f55f38965cbca1543d72af552148a2c65df79d598a2a156e54d3f.json"
+    },
+    "meaning": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\01b3a970ac47be9fe0011ec03498e53ee09e27c0e3a9ab7a8dc0384b2f6adf9f.json"
+    },
+    "no_fabrication": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\f63e499ad5bc267c9946dca6acc703085a0a6a2250cddf77da01f1c74e376c6a.json"
+    },
+    "coherence": {
+      "label": "FAIL",
+      "cache_hit": true,
+      "artifact": "validity_cache\\1725b94ec6fb0eb13bbe6d12dac9189edbb052bdfd367e14264443cb1e1bf7d5.json"
+    }
+  },
+  "reason": "purpose;key_information;meaning;no_fabrication;coherence",
+  "verdict": "INVALID",
+  "request_time_ms": 0
+}

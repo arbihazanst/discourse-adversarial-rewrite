@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] [Mlnet] 2CFP: Discovery Challenge Workshop at ECML/PKDD 2005\n\nECML/PKDD 2005 Discovery Challenge\nCall for Contributions\n\nThe Discovery Challenge will be held as a workshop at the 16th\nECML + 9th PKDD conference, October 3-7, 2005, Porto, Portugal.\n\nThe Discovery Challenge constitutes a collection of data and problems\nas a common ground for better comparisons and discussions of the\napplicability of Knowledge Discovery in Databases (KDD) methods on\nreal-world problems with respect to both KDD and application viewpoints.\nThe main goals of the Discovery Challenge are:\n- stimulate an open view of knowledge and discovery\n- stimulate a collaborative approach to KDD and research on unification\nof both different forms of knowledge and discovery\n- integrate into KDD an emphasis on business problems and solutions\nto those problems\n\nThree data sets\n- medical data (chronic hepatitis),\n- gene expression data (SAGE data produced from human cells),\n- web server log data (3 millions records, each record being a single page\nview),\nare available to prospective participants for download and\nanalysis. The deadline for submissions is July, 25.\n\nFor more info about the Challenge, visit\nhttp://lisp.vse.cz/challenge/CURRENT\nFor more info about the ECML/PKDD2005, visit\nhttp://ecmlpkdd05.liacc.up.pt\n\nPetr Berka & Bruno Cremilleux\nDiscovery Challenge co-chairs",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.03917843646526076,
+          "NOT_SPAM": 0.9608215635347391
+        },
+        "confidence": 0.761487412283326
+      }
+    },
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 0
+    }
+  }
+}

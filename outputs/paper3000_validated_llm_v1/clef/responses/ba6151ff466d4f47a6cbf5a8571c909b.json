@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] localhost.localdomain considered harmful\n\nTimothy Murphy wrote:\n> On Tue 09 Oct 2007, Brendan Minish wrote:\n>\n>   \n>>> I've found it is completely impossible to kill ipv6 on recent Fedoras.\n>>> Whatever modules you remove it always comes back.\n>>>       \n>> Get used to IPv6. it's coming to an ISP near you soon and it's far from\n>> nonsense.\n>>\n>> Current predictions are for a RIR to take the last available /8 block in\n>> 2009 and the last /21 allocation to a LIR (I.e ISP) will be made\n>> sometime in 2010\n>>\n>> Sometime shortly after that expect IPv4 addresses to get very hard to\n>> get and ISP's will start Natting customers for IPv4 access\n>>     \n>\n> I'm OK, Jack.\n> Let the Chinese eat ipv6 ...\n>\n>   \n>> XP fully supports IPv6\n>>     \n>\n> XP might support it, but does Sir Anthony?\n>\n>   \n>> IPv6 solves lots of problems for end users too, lots of things that\n>> don't work very well though NAT will work better. Each user will get\n>> a /48 from their ISP which is enough public address space for almost any\n>> conceivable end use.\n>>     \n>\n> Which ISPs give out ipv6 domains like this?\n>\n>   \n>> IPv6 auto-configures a lot more elegantly than IPv4 and fixes many of\n>> the IPv4 Shortcomings\n>>\n>> I would strongly recommend that anyone interested at all with networking\n>> take time to learn about IPv6\n>> If you want some real live IPv6 connectivity to play with you can use a\n>> tunnel broker such as sixxs\n>> http://www.sixxs.net/\n>>     \n>\n> I looked at this once, but it made me dizzy.\n>\n>   \n>> Tim, Heanet have IPv6 well implemented throughout their network already,\n>> you may already be using IPv6 and not have noticed !\n>>     \n>\n> Heanet is part of the plot.\n>\n> IPv6 is evil.\n> It makes computers ill.\n> 2^{32} is a nice large number, almost infinite.\n> When I am elected Taoiseach I intend to put a tax on IP addresses.\n>   \nYou need to be USA president.\nThe merikans took several millions each for each establishment. There's \nplenty of IPV4 to eat if places like MIT didn't have so many. One per US \nUni is what they should have :-) If I can make do with one public IP, \nwhy can't they?\n\nI like my NAT/Firewall keeps all the public evil out and my evil in. How \ndon't I know there aren't lots of bitey evil vulnerabilities in IPV6?\n\nSome ISPs NAT everyone already, but they arn't proper ISPs\n\n>\n>\n>   \n-- \nMike",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9606988586646399,
+          "SPAM": 0.03930114133536005
+        },
+        "confidence": 0.9213977173292798
+      }
+    },
+    "usage": {
+      "input_tokens": 814,
+      "output_tokens": 0
+    }
+  }
+}

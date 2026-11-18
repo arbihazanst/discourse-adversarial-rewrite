@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: IEEE TEC special issue on Evolutionary Algorithms based on Probabilistic Models\n\n\n\n\n                  Call for Papers\n       IEEE Transactions on Evolutionary Computation\n\n                    Special Issue on\nEvolutionary Algorithms based on Probabilistic Models\n\nAIMS and SCOPE\n\nEvolutionary algorithms based on probabilistic models (EAPM) have\nbeen recognized as a new computing paradigm in evolutionary\ncomputation. There is no traditional crossover or mutation in\nEAPMs. Instead, they explicitly extract global statistical\ninformation from their previous searches and build a probability\ndistribution model of promising solutions, based on the extracted\ninformation. New solutions are then sampled from the model thus\nbuilt. Instances of EAPMs include estimation of distribution\nalgorithms, probabilistic model building genetic algorithms, ant\ncolony optimization, and the cross entropy method, to name just a\nfew.  Recent years have seen a growing interest in the research\nand application of EAPMs.  As an interdisciplinary research area,\nthe development of EAPMs needs joint effort from researchers and\npractitioners in evolutionary computation, machine learning,\nstatistics and simulation. The aim of this special issue is to be\na milestone event in the development of EAPMs, which will\nhighlight the recent development of EAPMs, clarify outstanding\nissues for future progress, and disseminate EAPMs to a wider\naudience to attract more researchers to EAPMs.\n\nTOPICS COVERED\n\nSuggested topics include (but are not limited to) the following:\n     *Theory of EAPMs,\n     *New EAPMs,\n     *Combination of machine learning techniques and EAPMs,\n     *Combination of statistics techniques and EAPMs,\n     *Combination of other heuristics and EAPMs,\n     *EAPMs for multiobjective optimization problems,\n     *EAPMs in dynamic and noisy environments,\n     *Parallel implementation of EAPMs,\n     *Real-world/novel applications.\n\nSUBMISSIONS\n\nManuscripts should be prepared according to the instructions of\nthe \"Information for Authors\" section of the journal founded at\n(http://ieee-cis.org/pubs/tec/authors/) and submission\nshould be done through the journal website:\nhttp://tevcieee.manuscriptcentral.com/ and clearly mark\n\"Special Issue on EAPM\" as comments to the editor-in-chief.\n\nSubmission of a manuscript implies that it is the authors' original\nunpublished work and is not being submitted for possible publication\nelsewhere.\n\nThe review process will be driven by the Guest Editors of this\nSpecial Issue and the Editor-in-Chief, Prof. Xin Yao. For any\nclarification please contact Jose A. Lozano, Qingfu Zhang or\nPedro Larrañaga at the addresses below.\n\n\nIMPORTANT DATES\n\n     *July 31, 2007, Submission deadline\n     *November 30, 2007,     Notification of the first review\n     *January 31, 2008,      Revised versions due\n     *March 30, 2008,        Final notice of acceptance/reject\n     *April 30, 2008,        Final manuscript.\n\nThe expected publication year of the special issue will be 2008.\n\n\nGUEST EDITORS\n\nProf. Jose A. Lozano\nDepartment of Computer Science and AI,\nUniversity of the Basque Country, Spain.\ne-mail: dp.nmbsct@ehu.es\nhttp://www.sc.ehu.es/isg\n\nDr. Qingfu Zhang\nDepartment of Computer Science,\nUniversity of Essex,  UK.\ne-mail: epbeip@essex.ac.uk\nhttp://cswww.essex.ac.uk/staff/qzhang\n\nProf. Pedro Larrañaga\nDepartment of Computer Science and AI,\nUniversity of the Basque Country, Spain.\nTel.:+34 943 018045\ne-mail: bznzl.kflblwjtg@ehu.es\nhttp://www.sc.ehu.es/isg\n\n\n\n\n                                               ,,,\n                                              (.~.)\n-----------------------------------------oOO--(_)--OOo-------------\nJose A. Lozano                             e-mail: dp.nmbsct@ehu.es\nComputer Science & AI Department           tfno.: +34-943-018029\nUniversity of the Basque Country           fax: +34-943-015590\nP. Manuel de Lardizabal, 1                 http://www.sc.ehu.es/isg\n20018 San Sebastian (Spain)\n-------------------------------------------------------------------",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.1194334127266127,
+          "NOT_SPAM": 0.8805665872733872
+        },
+        "confidence": 0.47226996819735434
+      }
+    },
+    "usage": {
+      "input_tokens": 1125,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [perl #45231] Wrong definitions for NetBSD-3.* and above in hints/netbsd.sh \n\nOn Thu Sep 06 04:45:09 2007, daukq@bingosnet.co.uk wrote:\n> This is a bug report for perl from daukq@bingosnet.co.uk,\n> generated with the help of perlbug 1.35 running under perl 5.9.5.\n> \n> \n> -----------------------------------------------------------------\n> [Please enter your report here]\n> \n> hints/netbsd.sh contains defines and undefines for functions on\n> NetBSD-3.0 and above\n> which cause lots of \"whoa\" type questions during ./Configure\n> \n> endprotoent_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_endprotoent_r on this machine was\n> \"undef\"!\n> \n> endprotoent_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_endprotoent_r_proto on this machine was\n> \"define\"!\n> \n> endservent_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_endservent_r on this machine was \"undef\"!\n> \n> endservent_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_endservent_r_proto on this machine was\n> \"define\"!\n> \n> getprotobyname_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getprotobyname_r on this machine was\n> \"undef\"!\n> \n> getprotobyname_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getprotobyname_r_proto on this machine\n> was \"define\"!\n> \n> getprotobynumber_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getprotobynumber_r on this machine was\n> \"undef\"!\n> \n> getprotobynumber_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getprotobynumber_r_proto on this machine\n> was \"define\"!\n> \n> getprotoent_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getprotoent_r on this machine was\n> \"undef\"!\n> \n> getprotoent_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getprotoent_r_proto on this machine was\n> \"define\"!\n> \n> getservbyname_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getservbyname_r on this machine was\n> \"undef\"!\n> \n> getservbyname_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getservbyname_r_proto on this machine was\n> \"define\"!\n> \n> getservbyport_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getservbyport_r on this machine was\n> \"undef\"!\n> \n> getservbyport_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getservbyport_r_proto on this machine was\n> \"define\"!\n> \n> getservent_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getservent_r on this machine was \"undef\"!\n> \n> getservent_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_getservent_r_proto on this machine was\n> \"define\"!\n> \n> setprotoent_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_setprotoent_r on this machine was\n> \"undef\"!\n> \n> setprotoent_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_setprotoent_r_proto on this machine was\n> \"define\"!\n> \n> setrgid() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_setrgid on this machine was \"undef\"!\n> \n> setruid() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_setruid on this machine was \"undef\"!\n> \n> setservent_r() found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_setservent_r on this machine was \"undef\"!\n> \n> setservent_r() prototype NOT found.\n> Hmm.  Based on the hints in hints/netbsd.sh,\n> the recommended value for $d_setservent_r_proto on this machine was\n> \"define\"!\n> \n> Answering 'n' to these questions produces a viable perl.\n> \n> The same issues occur with the 5.8 series of perl.\n> \n> Confirmed the same issues occur on NetBSD-4.0 release candidate 1\n> (rc1).\n> \n> Many thanks.\n> \n\n\nIt appears that change #31802 fixed this problem.  Thanks for the report.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005452763776250397,
+          "NOT_SPAM": 0.9994547236223749
+        },
+        "confidence": 0.9933023558809346
+      }
+    },
+    "usage": {
+      "input_tokens": 1445,
+      "output_tokens": 0
+    }
+  }
+}

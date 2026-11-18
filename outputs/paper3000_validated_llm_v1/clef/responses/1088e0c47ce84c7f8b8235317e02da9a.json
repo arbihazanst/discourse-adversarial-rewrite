@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Scalar::Util::refaddr\n\nOn Mon, Oct 08, 2007 at 01:52:45PM +0200, Elizabeth Mattijsen wrote:\n} At 1:23 PM +0200 10/8/07, demerphq wrote:\n} >On 10/8/07, Juerd Waalboer  wrote:\n} >> Seen on Perl Monks:\n} >> | I do wonder why in the refaddr code in non-XS Scalar::Util, the code\n} >> | stringifies the reference then pulls a number out with a regex. As far\n} >> | as I can tell in terms of complexity and time-efficiency, that's \n} >> clearly\n} >> | inferior to forcing the reference to numeric.\n} >> -- Jeffrey Kegler at http://perlmonks.org/?node_id=643288\n} >>\n} >> The snippet in question is:\n} >>\n} >>     sub refaddr($) {\n} >>       my $pkg = ref($_[0]) or return undef;\n} >>       if (blessed($_[0])) {\n} >>         bless $_[0], 'Scalar::Util::Fake';\n} >>       }\n} >>       else {\n} >>         $pkg = undef;\n} >>       }\n} >>       \"$_[0]\" =~ /0x(\\\\w+)/;\n} >>       my $i = do { local $^W; hex $1 };\n} >>       bless $_[0], $pkg if defined $pkg;\n} >>       $i;\n} >>     }\n} >>\n} >> This does indeed seem a bit inefficient, especially with the \n} >>double reblessing\n} >> going on that's probably only there to work around issues caused by the\n} >> stringification.\n} >>\n} >> Does anyone know why it wasn't done in this much simpler way?\n} >>\n} >>     sub refaddr($) {\n} >>         ref($_[0]) ? 0+$_[0] : undef\n} >>     }\n} >\n} >Because of overloaded numification it cant be written that way. If I\n} >overload nummification I can make that return 42 everytime. :-)\n} >\n} >However given that they are doing the rebless logic i dont see why the\n} >regex part is required.\n} >\n} >     sub refaddr($) {\n} >       my $pkg = ref($_[0]) or return undef;\n} >       if (blessed($_[0])) {\n} >         bless $_[0], 'Scalar::Util::Fake';\n} >       }\n} >       else {\n} >         $pkg = undef;\n} >       }\n} >       my $i = 0+$_[0];\n} >       bless $_[0], $pkg if defined $pkg;\n} >       $i;\n} >     }\n} >\n} >Alternatively the entire rebless logic could be chucked and replaced\n} >with a call to overload::StrVal() which i think has been around as\n} >long as overload has,then the regex part could stay. I could have\n} >sworn there was a numeric equivelent to overload::StrVal(), but i cant\n} >find it documented, which suggests that if it does exist it hasnt\n} >always, which is why the code doesnt use that.\n} >\n} >I guess however the objective could have been to avoid using overload\n} >at all. Alternatively it could be a speed issue. overload::StrVal() is\n} >pretty slow as far as I recall.\n} >\n} >Core code that looks this crufty is usually that way for a reason. ;-)\n} \n} Now if there was an easy and efficient way to find out whether \n} numification is *not* overloaded on an object, you wouldn't have to \n} go through the whole rigamerole of reblessing, but simply return 0 + \n} $_[0], no?\n} \n} Is there an easy and efficient way to check this?\n\nsub refaddr {\n    if ( overload::Method( $_[0], '0+' ) ) {\n        rebless ...;\n        my $refaddr = 0+$_[0];\n        rebless ...;\n        return $refaddr;\n    }\n    else {\n        return 0+$_[0];\n    }\n}\n\n-- \nJosh",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9512670960954416,
+          "SPAM": 0.04873290390455838
+        },
+        "confidence": 0.9025341921908832
+      }
+    },
+    "usage": {
+      "input_tokens": 1158,
+      "output_tokens": 0
+    }
+  }
+}

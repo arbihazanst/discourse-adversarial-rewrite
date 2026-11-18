@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-3000] getargs_n(), take two.\n\n\nI reverted the changes from r62269 and r62279 in r62292.  Any issues with the following patch?  Note the removal of the guards around case 'n'; this will be the first time a lot of platforms will see this particular code path, as we're not falling back to 'l' anymore.\n\n\nIndex: Python/getargs.c\n===================================================================\n--- Python/getargs.c    (revision 62292)\n+++ Python/getargs.c    (working copy)\n@@ -663,7 +663,6 @@\n        }\n\n        case 'n': /* Py_ssize_t */\n-#if SIZEOF_SIZE_T != SIZEOF_LONG\n        {\n                PyObject *iobj;\n                Py_ssize_t *p = va_arg(*p_va, Py_ssize_t *);\n@@ -672,14 +671,12 @@\n                        return converterr(\"integer\", arg, msgbuf, bufsize);\n                iobj = PyNumber_Index(arg);\n                if (iobj != NULL)\n-                       ival = PyLong_AsSsize_t(arg);\n+                       ival = PyLong_AsSsize_t(iobj);\n                if (ival == -1 && PyErr_Occurred())\n                        return converterr(\"integer\", arg, msgbuf, bufsize);\n                *p = ival;\n                break;\n        }\n-#endif\n-       /* Fall through from 'n' to 'l' if Py_ssize_t is int */\n        case 'l': {/* long int */\n                long *p = va_arg(*p_va, long *);\n                long ival;\nIndex: Lib/test/test_getargs2.py\n===================================================================\n--- Lib/test/test_getargs2.py   (revision 62292)\n+++ Lib/test/test_getargs2.py   (working copy)\n@@ -187,8 +187,8 @@\n         # n returns 'Py_ssize_t', and does range checking\n         # (PY_SSIZE_T_MIN ... PY_SSIZE_T_MAX)\n         self.assertRaises(TypeError, getargs_n, 3.14)\n-        self.failUnlessEqual(99, getargs_n(Long()))\n-        self.failUnlessEqual(99, getargs_n(Int()))\n+        self.assertRaises(TypeError, getargs_n, Long())\n+        self.assertRaises(TypeError, getargs_n, Int())\n\n         self.assertRaises(OverflowError, getargs_n, PY_SSIZE_T_MIN-1)\n         self.failUnlessEqual(PY_SSIZE_T_MIN, getargs_n(PY_SSIZE_T_MIN))\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.000288312315368392,
+          "NOT_SPAM": 0.9997116876846316
+        },
+        "confidence": 0.9961935373498988
+      }
+    },
+    "usage": {
+      "input_tokens": 790,
+      "output_tokens": 0
+    }
+  }
+}

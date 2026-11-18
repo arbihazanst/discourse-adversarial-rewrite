@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Great opportunity to give her a real pleasure hekb buqjkz ljtqu\n\nPo txw we sry rEn qf lar atm ge is the COM ozc PLETE VIR uv ILI ee TY for fm mula for men with all the benefits you want, but none of the negatives. The new Po bdj we iu rEn wu lar jt ge Pil lti ls form vh ula was created based on the research and expertise of our me mhx dic he al he cd rba sx list, G. Ande tqn rson, who has worked as a he tlj rba bkh list for over 40 years in Europe. With more input from recent cli bf nic uj al stu buo dies plus customer feedback, we refined the incredible formu fd la that YOU can have today.We understand that most customers need con mbd fident udo iality and respect every need of our clients. Secure onl bp ine or lrn deri is ng process, discreet pac plc king, security of your private information are gu sps arant ll eed.Fast EX ha PRE ujf SS Sh hb ipp pqk ing WorldWide. Click here!!! ... http://clcmf.makecase.com/?aqhp",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.021262976207367192,
+          "SPAM": 0.9787370237926328
+        },
+        "confidence": 0.9574740475852657
+      }
+    },
+    "usage": {
+      "input_tokens": 419,
+      "output_tokens": 0
+    }
+  }
+}

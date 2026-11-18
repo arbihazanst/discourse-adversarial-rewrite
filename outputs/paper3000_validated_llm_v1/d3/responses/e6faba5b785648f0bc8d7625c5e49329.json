@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: How to enable spamassassin with user preference in LDAP when running with Mailscanner ?\n\nAnny,\n\nI re-read this message this evening and realized I came across\nincredibly rude.\n\nI wrote this right after I woke up and was kind of dumping my thoughts\nout without any consideration for my tone. I hope you will accept my\nsincere apology, and I hope you'll believe me when I say it wasn't\nintended to be rude. (and yes, I know that's not going to be easy to\nbelieve. My honest mood this morning, amidst my grogginess, was a bit\nedgy due to my still shaking off sleep, but it certainly was not nearly\nthis rude in intent).\n\nSo, I publicly apologize to you for:\n     writing so rudely\n     posting without reading or considering my wording\n     posting while still sleepy and in a hurry\n    allowing my sleepiness to make me a bit grumpy.\n\nHowever I hope the factual information of the email is helpful to you.\nMailScanner's a great tool, I actually use it myself. (check the\nMailScanner list for my postings there if you like, although I use a\ndifferent email address, I use the same name). But it's not a really\ngood tool for those who want per-user configurations.\n\n\n\nMatt Kettler wrote:\n> Anny Lei wrote:\n>   \n>> Dear developers,\n>>\n>> I am using Mailscanner with Spamassassin and I want Spamassassin\n>> lookup LDAP for user preference.  I have put user_scores_dsn,\n>> user_scores_ldap_username, and user_scores_ldap_password in local.cf. \n>> When I test running the command 'spamd -D --ldap-config -x', then  cat\n>> /root/sample-spam.txt | spamc -u jndx@test.domain.com', it works\n>> perfectly fine.   But when Mailscanner accepts the email, Spamassassin\n>> doesn't lookup ldap for user preference (as observed from ldap.log\n>> file).   I do not know where to specify --ldap-config -x command for\n>> Spamassassin because  Mailscanner is not calling Spamassassin daemon,\n>> spamd.\n>>\n>> Could you please let me know how to instruct Spamassassin to lookup\n>> LDAP for user preference when running with MailScanner ?   Thanks in\n>> advance for your assistance.\n>>     \n>\n> Follow-up part 2. I just realized the tone of my message might be lost\n> on you. I'm correcting it to avoid misguiding you.\n>\n> However, please cease this discussion on this list. This message belongs\n> on the users list, not the development list. This list is designed for\n> the discussion of development efforts within the SpamAssassin project\n> only. Usage questions should be directed to the users list, and the\n> developers do read and reply to messages posted there.\n>\n> Fundamentally, MailScanner is not designed to support per-user\n> configurations. This isn't anything that SpamAssassin can change, but it\n> is also something MailScanner cannot be easily changed to do. On top of\n> it all, it would also change what MailScanner is, and really defeat some\n> of the design criteria for MailScanner.\n>\n> Generally speaking, most tools that run at the MTA (mail transport\n> agent) layer don't support per user configuration. Those that do,\n> support it poorly. If you really and truly want per-user configuration,\n> the best place for you to call SA is at the MDA (mail delivery agent)\n> layer, ie: via procmail.\n>\n> Calling at the MTA layer suffers from several problems if you want to\n> have per-user configuration:\n>\n> 1)  MTA layer tools must guess at what the final recipient is, because\n> they only have the RCPT TO: address to work from. However, that address\n> might be an alias. Odds are there is no \"webmaster\" user on your system,\n> it's just an alias to root's mailbox. Etc, etc, etc. While generally\n> there's not many aliases on a system, some sites have lots of aliases,\n> and MTA layer user-guessing breaks down when this happens.\n>\n> 2) At the MTA layer, if a message is sent to multiple users, it is one\n> message with multiple recipients. The MTA layer tool must make a\n> decision as to who's user preferences to apply. Because there's only one\n> message to work with, it can only use one, and most will generally use\n> \"whoever came first\" in the recipient list. There are ways around that,\n> such as forcing a message to be requeued separately, but this introduces\n> inefficiency on the MTA side, all to do something that happens naturally\n> at the MDA.\n>\n> Of course, MDA layer tools call SA once per recipient, instead of once\n> per message. This results in more calls to SA, and more CPU usage, but\n> that's what you need to do per-user configurations properly.\n>\n>\n>\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007323585119037263,
+          "NOT_SPAM": 0.9992676414880962
+        },
+        "confidence": 0.9913161842211567
+      }
+    },
+    "usage": {
+      "input_tokens": 1249,
+      "output_tokens": 0
+    }
+  }
+}

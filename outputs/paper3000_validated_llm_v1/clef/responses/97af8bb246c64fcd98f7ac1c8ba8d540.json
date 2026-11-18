@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Mounting Windows shares in Linux\n\nStephen Burke wrote:\n> A further question: Is it possible to list/see all shares on a windows \n> server?\n> I.E., Id like to be able to browse //servername/  to see all its \n> available shares from linux.\nYes. I can see the all the Windows shares on Ubuntu, even when I don't \nhave permission to open them. Browsing //  does  work, in \nsome file browsers\n\nYou don't see ones prefixed by $, but if you have permission you can \nconnect to them.\n>\n> Cheers,\n> Steve Burke\n\n\n-- \nMike",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9615179142911012,
+          "SPAM": 0.038482085708898835
+        },
+        "confidence": 0.9230358285822025
+      }
+    },
+    "usage": {
+      "input_tokens": 302,
+      "output_tokens": 0
+    }
+  }
+}

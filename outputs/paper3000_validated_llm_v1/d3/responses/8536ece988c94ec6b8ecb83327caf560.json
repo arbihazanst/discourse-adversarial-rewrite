@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] rsync - keys - no-password question\n\nBurkhard Carstens wrote: > Am Freitag, 14. Dezember 2007 02:24 schrieb James D. Parra: >    >> Hello, >> >> I want to stop the password request when running rysnc on a second >> source server. >> >> I have a single target machine that has ssh keys from a source >> machine (source A). I want to connect a second source machine (source >> B), using rsync over ssh, to the target machine, however I see keys >> in the target machine's /etc/ssh directory. If I create keys on >> 'source B', they'll have the same name as the keys from source A on >> the target machine. Sorry if this is a stupid question, but how do >> you accomplish having the ssh keys set properly on the target machine >> from two different source machines? >>      > > \"man ssh-copy-id\" > >    All I do, is add all the various id.rsa.pub files into one authorized_keys file, which is then copied to all computers. --  Use OpenOffice.org  --  >From xlicq@espiral.org.mx  Sun Feb 24 10:30:10 2008 Message-ID: <144c024a0802111516q25499976l5a974fb432471ecf@mail.gmail.com> Date: Mon, 11 Feb 2008 18:16:11 -0500 From: \"David Moreno\"  To: \"Kashif Salman\"  Subject: Re: lstat and its uses Cc: \"John W. Krahn\" , \"Perl Beginners\"  MIME-Version: 1.0 Content-Type: multipart/alternative;  \tboundary=\"----=_Part_9747_15177374.1202771771636\" ------=_Part_9747_15177374.1202771771636 Content-Type: text/plain; charset=ISO-8859-1 Content-Transfer-Encoding: 7bit Content-Disposition: inline That is very interesting, actually. What piece of documentation should I read to learn about this operators? Thanks. David. On Feb 11, 2008 6:14 PM, Kashif Salman  wrote: > Perl already has all the info from the previous lstat command, using _ > is more efficient in that it doesn't have to do another system call. > > On Feb 11, 2008 2:06 PM, David Moreno  wrote: > > On Feb 11, 2008 4:47 PM, John W. Krahn  wrote: > > > > > lstat $filename; > > > my $size = -s _; > > > > > > Did you mean: > > > > my $size = -s $_; > > > > ? > > > > -- > > David Moreno - http://www.damog.net/ > > Yes, you can. > > > --  David Moreno - http://www.damog.net/ Yes, you can. ------=_Part_9747_15177374.1202771771636--",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.016349113040328024,
+          "NOT_SPAM": 0.983650886959672
+        },
+        "confidence": 0.8795809239696009
+      }
+    },
+    "usage": {
+      "input_tokens": 889,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] Finding the selected file in Windows Explorer\n\nDaniel Gonçalves wrote:\n> Larry Bates wrote:\n>> Daniel Gonçalves wrote:\n>>> Hi!\n>>>\n>>> I need to find the selected file(s) in a Windows Explorer window from\n>>> another program (I'd look at the window that last had focus). \n> \n> \n> \n>> Daniel,\n>>\n>> What do you mean by \"find the selected files\".  Give us a little more\n>> detail about your use case and we can help.\n>>\n> \n> Hi!\n> \n> \n> What I'm trying to do is to have a program that detects whenever some \n> file(s) are dragged over an area of the screen. Not dropped there, but \n> dragged over it (close to the screen border, for instance). AFAIK, \n> Windows only generates events whenever something is dropped, which will \n> be useless here.\n> \n> I will be using hooks to monitor mouse events and, when the mouse is \n> over the defined region, I need to find out what is being dragged. A way \n> to do estimate this might be to know that the currently focused window \n> is an Explorer window, and query it for the selected items (they will be \n> the ones being dragged). This is only an approximation but might be \n> enough for my ends, if no better way is found.\n> \n> Of course, if there is a way of just asking the OS \"what is being \n> dragged right now\", that would work even better :)\n> \n> \n> \n> Tks!\n> Daniel\n> \n> \n> \n>> One way of knowing about files that are selected is this:\n>>\n>> If you selected several files and drag and drop them on a python \n>> program the files that are selected will be passed into the program in \n>> sys.argv.  I don't know if that is what you are looking for or not.\n>>\n>> -Larry\n>>\n>> _______________________________________________\n>> python-win32 mailing list\n>> kpitck-aew45@python.org\n>> http://mail.python.org/mailman/listinfo/python-win32\n>>\n\nThe reason for this is that a user can \"changed their mind\" before the drop  I \nsometimes do that and press escape to cancel the operation.  wxWindows has some \nseveral functions that occur while the dragging is taking place and I \"think\" \nyou can actually tell what is being dragged during the process.\n\n-Larry\n\n_______________________________________________\npython-win32 mailing list\nkpitck-aew45@python.org\nhttp://mail.python.org/mailman/listinfo/python-win32",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9450846707740066,
+          "SPAM": 0.05491532922599338
+        },
+        "confidence": 0.8901693415480132
+      }
+    },
+    "usage": {
+      "input_tokens": 737,
+      "output_tokens": 0
+    }
+  }
+}

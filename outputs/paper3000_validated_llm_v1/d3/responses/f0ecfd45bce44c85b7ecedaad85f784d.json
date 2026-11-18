@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Two postdocs available in Cognitive Robotics - University of Birmingham, UK\n\nUNIVERSITY OF BIRMINGHAM\nSCHOOL OF COMPUTER SCIENCE\nTWO RESEARCH FELLOWSHIPS TO WORK ON COGNITIVE ROBOTICS PROJECTS\n\nApplications are invited for two Research Fellowships, starting as soon as \npossible after 1 February 2008 on a project due to end on 30 June 2012. The \nposts are to work on two major EU funded projects: CoSy: Cognitive Systems \nfor Cognitive Assistants, and CogX: Cognitive Systems that Self-Understand \nand Self-Extend.\n\nThe first post (Ref S43238) will be concerned with the learning of \naffordances of objects via simple manipulation. The work will in the later \nstages look at modular motor learning as a framework for carrying out this \nactivity. The research will be concerned with integrating novel methods in \ncomputer vision with manipulation abilities to allow the robot to acquire \nknowledge about the behaviour of objects by experimental manipulation. You \nwill have a strong background in robotic manipulation and computer vision.\n\nThe second post (Ref S43237) will be concerned with planning information \nprocessing and information gathering within a cognitive architecture. The \nperson appointed to this post will work on new methods for reasoning and \nplanning about sensing and perceptual processing in a mobile robot able to \nmanipulate objects, with an emphasis on visual processing. One goal of the \nwork will be to develop new methods for choosing sensing actions and making \ninferences about a scene when the robot has to make decisions about where \nto look, and what visual processing to perform. Another goal will be to \ndevelop new planning techniques that combine the benefits of decision \ntheoretic planning with those of symbolic planning to support a robot that \ncan reason about what it can learn, and cope with uncertainty in action and \nsensing. You will have a strong background in probabilistic reasoning, and \npreferably of planning algorithms.\n\nYou will work in a team of six researchers at Birmingham and along with \npartner groups in five other universities. The CoSy project is described at \nthe following sites: www.cognitivesystems.org and \nwww.cs.bham.ac.uk/research/projects/cosy/ Information on the CogX project \nis available at www.cs.bham.ac.uk/research/robotics/ .\n\nThe Intelligent Robotics Lab is a growing centre for research in robotics, \ncognition and machine learning in the UK. We collaborate with engineers, \npsychologists and biologists to develop new ideas and techniques. The group \ncurrently has 13 members, including 3 faculty, 4 postdoctoral researchers \nand six doctoral students, and holds over 1.9m pounds in external research \nfunding. As part of your duties you will also be encouraged to contribute \nto grant writing, and setting the research agenda for the future work of \nthe group. Strong communication and management skills are therefore \nessential.\n\nYou must hold or be working towards the achievement of a PhD in Computer \nScience, AI, Cognitive Science, Engineering or a related subject, OR \nequivalent research experience, including if possible robotics/vision \nresearch experience and linux expertise. In exceptional circumstances we \nwill consider appointment from someone in a related field with relevant \nexperience, such as Psychology or Neuroscience. You will need excellent \nprogramming skills, in C/C++ or Java, together with the ability to engineer \nsoftware to very high standards of reliability.\n\nInformal enquiries (preferably by email) to Dr Jeremy Wyatt email: \nu.j.ayjcj@cs.bham.ac.uk tel.: +44 121 414 4788, Dr Richard Dearden email: \na.f.pbculka@cs.bham.ac.uk tel.:+44 121 414 6687 or Prof Aaron Sloman email: \nc.szyxmc@cs.bham.ac.uk tel.: +44 121 414 4775\n\nApplications should be sent, preferably by email to Ms. Jo Gerald, \nf.w.cjqcek@bham.ac.uk tel.: 0121 414 7415. Postal address is Ms Jo Gerald, \nHuman Resources, The University of Birmingham, Edgbaston, Birmingham B15 \n2TT, United Kingdom.Please also send an email copy of your application if \npossible to Dr Wyatt, Prof Sloman and Dr Dearden.\n\nAppointment will be until 30 September 2009 in the first instance, with a \nview to extension until June 30 2012 subject to the normal requirements of \nsuccessful project reviews and funding. Late applications will be \nconsidered if the appointments process has not gone too far.\n\nStarting salaries for both posts will be in the range of £ 25,134 to £ \n32,796 a year (potential progression on performance once in post to £ \n34,813)\n\nClosing date for applications: 9 January 2008\nRefs: S43238 & S43237\n\nDetails also from 0121 415 9000 or www.hr.bham.ac.uk/jobs\nHR, University of Birmingham, Edgbaston, Birmingham B15 2TT\nA University of Fairness and Diversity",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.059115230567138015,
+          "NOT_SPAM": 0.940884769432862
+        },
+        "confidence": 0.6760773434281488
+      }
+    },
+    "usage": {
+      "input_tokens": 1276,
+      "output_tokens": 0
+    }
+  }
+}

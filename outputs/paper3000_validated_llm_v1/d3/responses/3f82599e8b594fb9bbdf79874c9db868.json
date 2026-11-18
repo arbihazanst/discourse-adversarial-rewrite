@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: New White Paper:  Forrester Study: Outbound Email and Content Security in Today's Enterprise\n\nDear SearchSecurity.com member,\n\nEmail has emerged as the most important medium for communications\nboth inside and outside the enterprise. But the convenience and\nubiquity of email as a business communications tool has exposed\nenterprises to a wide variety of new risks associated with outbound\nemail. Now more than ever, organizations are concerned about ensuring\nthat email (and other electronic message streams) cannot be used to\ndisseminate confidential or proprietary information.\n\nThis survey, conducted by Proofpoint and Forrester Consulting\nsummarizes key findings from email decision makers and surprising\nstatistics about how large companies manage the risks associated with\noutbound email, blog postings, media sharing and other electronic\ncommunications streams.\n\nClick here to download: \nhttp://go.techtarget.com/r/3072340/2079970\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nABOUT THIS FEATURED WHITE PAPER SPONSORED BY: Proofpoint, Inc.\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nDownload this white paper and learn more about: \n\n** The top enterprise concerns about outbound email\n** Techniques used by enterprises to reduce outbound email risks\n** Email security policies adopted by large corporations\n** And much more\n\nClick here to read more: \nhttp://go.techtarget.com/r/3072341/2079970\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nSEARCHSECURITY.COM WHITE PAPER LIBRARY\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nBrowse hundreds of white papers by author, keyword or topics.\nVisit the SearchSecurity.com White Paper Library today: \nhttp://go.techtarget.com/r/3072342/2079970\n\n___________________________________________________________________\nABOUT THIS E-NEWSLETTER\nThis e-newsletter is published by SearchSecurity.com, a targeted Web\nsite from TechTarget, the most targeted IT media and events company. \nTechTarget offers magazines, Web sites, e-newsletters, Webcasts and\nconferences for enterprise IT professionals.\n\nCopyright 2008 TechTarget. All rights reserved.\n\n_____________________________________________________________________\n\nTo unsubscribe from \"White Paper Alerts\":\n \nGo to unsubscribe: http://SearchSecurity.com/u?em=tjm%40cognosys.net&uid=2079970&cid=624166&\n \nPlease note, unsubscribe requests may take up to 24 hours to process;\nyou may receive additional mailings during that time. A confirmation\ne-mail will be sent when your request has been successfully\nprocessed.\n \nContact us:\nSearchSecurity\nMember Services\n117 Kendrick Street, Suite 800\nNeedham, MA 02494",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.5558649547928703,
+          "NOT_SPAM": 0.44413504520712965
+        },
+        "confidence": 0.009023824146756954
+      }
+    },
+    "usage": {
+      "input_tokens": 705,
+      "output_tokens": 0
+    }
+  }
+}

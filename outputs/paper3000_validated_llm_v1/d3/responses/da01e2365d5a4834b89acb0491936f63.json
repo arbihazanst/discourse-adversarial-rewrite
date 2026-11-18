@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] MySQL Database question\n\n\nOn 13 Nov 2007, at 14:49, Hamilton, David (TSG C&I) wrote:\n\n> The plan would be to run the DB on an external hard drive.\n> This could then be shut down, unmounted, unplugged and moved to the  \n> other machine where it could be mounted in the same place and  \n> started up.\n> So I assume from what you've said below that this should all work  \n> fine?\n>\n\nDavid,\n\nYou would need to be sure that mysql is the same version, and the same  \narchitecture as well as the same settings. I would strongly advise  \nusing the mysqldump as well, and have that on the USB disk just in  \ncase :-)\n\nCertainly for setting up MySQL replication, the procedure is to tar up  \nthe /var/lib/mysql on the master and untar it on the slave. There are  \nno other dependencies.\n\nHope this helps (because you helped me out often enough with Oracle  \nquestions back in the day!)\n\n-Barry Flanagan\n\n> Thanks,\n>        David.\n>\n> -----Original Message-----\n> From: Vincent Cunniffe [mailto:vmxopgo@cunniffe.net]\n> Sent: 13 November 2007 14:43\n> To: Hamilton, David (TSG C&I)\n> Cc: qifw@linux.ie\n> Subject: Re: [ILUG] MySQL Database question\n>\n> Hamilton, David (TSG C&I) wrote:\n>> I am looking to create a MySQL database that can be moved around from\n>> system to system.\n>>> From what I can see, when you create a database, a directory with\n>>> that name is created under the data directory.\n>\n> Correct.\n>\n>> Is this all that is required to run the database? (Assuming the base\n>> config files are all the same) I need to be able to take the DB on an\n>> external disk and reconnect it under the same mount point on another\n>> system and be able to start it up. I'm coming at this from an Oracle\n>> perspective where every DB needs an init.ora file....\n>\n> Yes, you can copy/mount the files directly into a database directory  \n> on\n> a target system, and the directory contains everything that you need  \n> for\n> that database.\n>\n> *However*, you're not guaranteed structural integrity on the MySQL\n> datafiles unless you stop the database before copying them, and\n> similarly it's not a good idea to just copy files into the directory  \n> on\n> the target MySQL either without restarting it.\n>\n> You can, however, use a 1-liner mysql commandline call to dump the\n> entire database to an  SQL backup textfile, and a similar 1-liner to  \n> cat\n> it back into the target database on the far side. This allows you to\n> move the data from instance to instance without restarting them.\n>\n> Regards,\n>\n> Vin\n> --\n> Irish Linux Users' Group mailing list\n> About this list : http://mail.linux.ie/mailman/listinfo/ilug\n> Who we are : http://www.linux.ie/\n> Where we are : http://www.linux.ie/map/\n\n-Barry Flanagan",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0002611609357463927,
+          "NOT_SPAM": 0.9997388390642535
+        },
+        "confidence": 0.9965147342134022
+      }
+    },
+    "usage": {
+      "input_tokens": 865,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Python-Dev] How we can get rid of eggs for 2.6 and beyond\n\nSo, after having some time to absorb the Python-Dev threads about \nsetuptools, bootstrap, and all the rest, I think I see an opportunity \nto let people route around the \"damage\" of eggs, while still making \nit possible for the people who want to use easy_install or to put \ndependencies in their setup.py to get what they want, too.  (And \nwithout them needing to install eggs, either.)  At the same time, we \ncan address the issues that remain around uninstalling packages, \nsystem vs. user packages, PYTHONPATH and site.py woes, and really \npretty much every other complaint I've heard in the last few days \nabout setuptools stomping on other people's stuff.  (Even Paul's \nWindows issues, hopefully.)\n\nNow, you might be asking, \"Okay, so why are you telling me about \nthis?  Why not just go fix setuptools?\"  Well, I *can't*.  Not \nwithout some help from Python-Dev and the Distutils-SIG, to create an \nupdated standard for installed package metadata, by updating PEP 262 \n(\"A Database of Installed Python Packages\") to include input from the \nsystem packaging folks, support for namespace packages, and support \nfor setuptools-compatible dependency information.\n\nWhat's that got to do with anything?  Well, without it, setuptools \ncan't support uninstall or conflict management without using eggs to \ncompartmentalize the installed files.  And because it has to use eggs \nto do *that*, it has to munge .pth files and install its own site.py \nwhen installing to PYTHONPATH.  All of this ugliness follows directly \nfrom the absence of a PEP 262-style installation database.\n\nSure, setuptools could create its own version of this, and I almost \ndid that four years ago.  (If you look at the \"open issues\" part of \nPEP 262, you'll see my comments from back then.)  I decided not to \nfor two reasons: first, the distutils didn't support it yet, so it \ndidn't help for conflict detection and avoidance in the real world at \nthat point.\n\nSecond, there were no uninstall tools for it, so I'd have had to \nwrite one myself.  (Zed's \"easy_f'ing_uninstall\" to the contrary, it \nain't easy, and I have an aversion to deleting stuff on people's \nsystems without knowing what will break.  There's a big difference \nbetween them typing 'rm -rf' themselves, and me doing it.)\n\nHowever, if tools exist and are distributed for such a \"database\", \nand *everybody* agrees to use it as an officially-blessed standard, \nthen it should be possible for setuptools to co-exist with that \nframework, and we're all happy campers.\n\nIn particular, the \"installing eggs sucks\" camp should be happy, \nbecause it'll be possible for me (or anyone else) to write a version \nof easy_install that doesn't install eggs any more, and \nsetuptools-based packages can go back to having \"setup.py install\" \ninstall things the old way by default.\n\nSo, to accomplish this, we (for some value of \"we\") need to:\n\n1. Hash out consensus around what changes or enhancements are needed \nto PEP 262, to resolve the previously-listed open issues, those that \nhave come up since (namespace packages, dependency specifications, \ncanonical name/version forms), and anything else that comes up.\n\n2. Update or replace the implementation as appropriate, and modify \nthe distutils to support it in Python 2.6 and beyond.  And \"support \nit\" means, \"ensure that 'install' and *all* bdist commands update the \ndatabase\".  The bdist_rpm, bdist_wininst, and bdist_msi commands, \neven bdist_dumb.  (This should probably also include the add/remove \nprograms stuff in the Windows case.)\n\n3. Create a document for system packagers referencing the PEP and \nintroducing them to what/why/how of the standard, in case they \nweren't one of the original participants in creating this.\n\nIt will probably take some non-trivial work to do all this for Python \n2.6, but it's probably possible, if we start now.  I don't think it's \ncritical to have an uninstall tool distributed with 2.6, as long as \nthere's a reasonable way to bootstrap its installation later.\n\nQuestions, comments...  volunteers?   :)\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9508791511266959,
+          "SPAM": 0.049120848873304084
+        },
+        "confidence": 0.9017583022533917
+      }
+    },
+    "usage": {
+      "input_tokens": 1203,
+      "output_tokens": 0
+    }
+  }
+}

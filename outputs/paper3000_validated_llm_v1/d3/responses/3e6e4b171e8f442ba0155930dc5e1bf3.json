@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] pydoc works with eggs? (python-2.5.1)\n\nNeal Becker wrote:\n\n> pydoc blew up when I tried to view doc for pytools module, which is an\n> egg:\n> \n> pydoc -p 8082\n> pydoc server ready at http://localhost:8082/\n> ----------------------------------------\n> Exception happened during processing of request from ('127.0.0.1', 52915)\n> Traceback (most recent call last):\n>   File \"/usr/lib64/python2.5/SocketServer.py\", line 222, in handle_request\n>     self.process_request(request, client_address)\n>   File \"/usr/lib64/python2.5/SocketServer.py\", line 241, in\n>   process_request\n>     self.finish_request(request, client_address)\n>   File \"/usr/lib64/python2.5/SocketServer.py\", line 254, in finish_request\n>     self.RequestHandlerClass(request, client_address, self)\n>   File \"/usr/lib64/python2.5/SocketServer.py\", line 522, in __init__\n>     self.handle()\n>   File \"/usr/lib64/python2.5/BaseHTTPServer.py\", line 316, in handle\n>     self.handle_one_request()\n>   File \"/usr/lib64/python2.5/BaseHTTPServer.py\", line 310, in\n>   handle_one_request\n>     method()\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 1924, in do_GET\n>     self.send_document(describe(obj), html.document(obj, path))\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 321, in document\n>     if inspect.ismodule(object): return self.docmodule(*args)\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 672, in docmodule\n>     contents.append(self.document(value, key, name, fdict, cdict))\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 322, in document\n>     if inspect.isclass(object): return self.docclass(*args)\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 807, in docclass\n>     lambda t: t[1] == 'method')\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 735, in spill\n>     funcs, classes, mdict, object))\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 323, in document\n>     if inspect.isroutine(object): return self.docroutine(*args)\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 891, in docroutine\n>     getdoc(object), self.preformat, funcs, classes, methods)\n>   File \"/usr/lib64/python2.5/pydoc.py\", line 79, in getdoc\n>     result = inspect.getdoc(object) or inspect.getcomments(object)\n>   File \"/usr/lib64/python2.5/inspect.py\", line 521, in getcomments\n>     lines, lnum = findsource(object)\n>   File \"/usr/lib64/python2.5/inspect.py\", line 510, in findsource\n>     if pat.match(lines[lnum]): break\n> IndexError: list index out of range\n> ----------------------------------------\n> \nI see that installing the egg unzipped fixes this.  It looks to me that\npydoc doesn't work with zipped eggs.\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006858804940439342,
+          "NOT_SPAM": 0.9993141195059561
+        },
+        "confidence": 0.9918023869789109
+      }
+    },
+    "usage": {
+      "input_tokens": 1020,
+      "output_tokens": 0
+    }
+  }
+}

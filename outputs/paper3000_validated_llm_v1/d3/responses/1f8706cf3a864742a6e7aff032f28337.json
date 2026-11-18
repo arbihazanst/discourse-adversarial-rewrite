@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Reserving an arg space for Jython\n\n-On [20080413 19:59], \"Martin v. Löwis\" (qpnysl@v.loewis.de) wrote:\n>Making suggestions on the list, and then following up with patch,\n>is certainly encouraged, and happens all the time.\n\nHere you go.\n\n>I just think that *this* specific proposed change is more effort to\n>talk about than it's worth.\n\nSo I wonder why it couldn't have been changed then instead of spending\nanother email on the subject. :P \n\n-- \nJeroen Ruigrok van der Werven  / asmodai\nイェルーン ラウフロック ヴァン デル ウェルヴェン\nhttp://www.in-nomine.org/ | http://www.rangaku.org/\nWithout you, I am nothing...",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004913355586346658,
+          "NOT_SPAM": 0.9995086644413654
+        },
+        "confidence": 0.9938910558395484
+      }
+    },
+    "usage": {
+      "input_tokens": 325,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [cw-discuss]  Making an MFC application run under Crossover\n\nI am trying to get an MFC application (of my own) to run on the Mac under Crossover. So, I have access to all the source code. The problem is that the windows (include the Menu bars etc) do not refresh unless I resize the window and move it offscreen, and back. Thus, all the necessary functionality is there, but perhaps there is some windows function I can call to make this happen as it should.\n\nAny ideas?\n\nEric",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9627547324811447,
+          "SPAM": 0.03724526751885522
+        },
+        "confidence": 0.9255094649622895
+      }
+    },
+    "usage": {
+      "input_tokens": 274,
+      "output_tokens": 0
+    }
+  }
+}

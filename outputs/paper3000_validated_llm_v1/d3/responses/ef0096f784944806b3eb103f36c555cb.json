@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Fabulous rep1!c@ watches\n\nClassic, modern, and progressive rep1!ca watch styles for ladies and gentlemen! http://wearrain.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9866312357575631,
+          "NOT_SPAM": 0.013368764242436885
+        },
+        "confidence": 0.8976220257870161
+      }
+    },
+    "usage": {
+      "input_tokens": 160,
+      "output_tokens": 0
+    }
+  }
+}

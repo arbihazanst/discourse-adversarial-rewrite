@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Great news for disenchanted men!\n\nYou can now easily bring your problem of small measurement to an end!\nBelieve us, and you'll surely win with the help of our product!\nhttp://wearplaces.com/\n\n\nthem.Erik Christinsen pass past Olaf Kolzig to narrow thecleared after inspection), when Iranian gunboats",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02481548056568228,
+          "SPAM": 0.9751845194343177
+        },
+        "confidence": 0.9503690388686354
+      }
+    },
+    "usage": {
+      "input_tokens": 232,
+      "output_tokens": 0
+    }
+  }
+}

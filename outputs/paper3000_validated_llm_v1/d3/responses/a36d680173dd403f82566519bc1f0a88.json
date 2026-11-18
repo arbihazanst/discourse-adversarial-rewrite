@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [PATCH] documentation typo for Text::Wrap\n\nNicholas Clark  writes:\n\n> On Wed, Oct 24, 2007 at 10:58:57AM +0200, David Landgren wrote:\n> > H.Merijn Brand wrote:\n> > >On Tue, 23 Oct 2007 21:43:29 +0200, David Landgren  \n> > >wrote:\n> > >\n> > >>Minor documentation tweaks to code examples.\n> > >\n> > >Thanks, applied in change #32182.\n> > >I did not up the version. did I need to?\n> > \n> > I would say no, it's just POD.\n> \n> In this case, I would say yes, possibly, because it happens that the last\n> released version has the same VERSION:\n> \n> $ grep VERSION /usr/local/lib/perl5/5.8.8/Text/Tabs.pm lib/Text/Tabs.pm \n> /usr/local/lib/perl5/5.8.8/Text/Tabs.pm:use vars qw($VERSION $tabstop $debug);\n> /usr/local/lib/perl5/5.8.8/Text/Tabs.pm:$VERSION = 2005.0824;\n> lib/Text/Tabs.pm:use vars qw($VERSION $tabstop $debug);\n> lib/Text/Tabs.pm:$VERSION = 2007.1117;\n> $ diff -q /usr/local/lib/perl5/5.8.8/Text/Tabs.pm lib/Text/Tabs.pm \n> Files /usr/local/lib/perl5/5.8.8/Text/Tabs.pm and lib/Text/Tabs.pm differ\n> \n> \n> Except that I'm sort of cheating here, because if I showed the full diff, it\n> would be clear that David's wasn't the only change to lib/Text/Tabs.pm\n> So someone else should already have bumped the VERSION, at which point the\n> answer would be \"no\".\n> \n> Checking all of these things is just another part of the yak shaving that\n> the pumpking gets to do.\n> \n\nThere's Porting/cmpVERSION.pl, which can check the module versions\nbetween two perl distributions.\n\nRegards,\n        Slaven\n\n-- \nSlaven Rezic - slaven  rezic  de\n\n    tktimex - time recording tool\n    http://sourceforge.net/projects/ptktools/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0011018367629347877,
+          "NOT_SPAM": 0.9988981632370652
+        },
+        "confidence": 0.9875847526769777
+      }
+    },
+    "usage": {
+      "input_tokens": 688,
+      "output_tokens": 0
+    }
+  }
+}

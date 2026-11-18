@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Help: How to get strings from a form to a cgi (perl)\tscript?\n\nHi Colm\nyour certainty that the cgi script wasnt executing led me to - eventually \n- spot the space before #!/usr/bin/perl\n\nApparently this breaks things - at least removing the space has got things \nworking...\n\nI've added this to my \"Things that I should have known\" file.\n\nThanks again,\n\nJohn\n\nJohn A. Kinsella\t\tPh: \t+353-61-202148 \t\t(Direct)\n \t\t\t\t\t+353-61-333644 x 2148  \t(Switch)\nMathematics Dept.\t\te-mail: aikv.qhbldaba@ul.ie\nUniversity of Limerick\t\tFAX: \t+353-61-334927\nIRELAND\t\t\t\tWeb:    http://jkcray.maths.ul.ie\n\nOn Fri, 16 Nov 2007, Colm MacCarthaigh wrote:\n\n> On Fri, Nov 16, 2007 at 04:35:28PM +0000, John Kinsella wrote:\n>> no the script is running I think just that the strings are not being\n>> passed from the html form to the cgi script.\n>\n> If the script is really running, despite \"exec of\n> /var/www/cgi-bin/upload.cgi failed\" I'll give you a star bar.\n>\n> -- \n> Colm MacCárthaigh                        Public Key: cjwf+eip@stdlib.net\n> -- \n> Irish Linux Users' Group mailing list\n> About this list : http://mail.linux.ie/mailman/listinfo/ilug\n> Who we are : http://www.linux.ie/\n> Where we are : http://www.linux.ie/map/\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9526115902927988,
+          "SPAM": 0.04738840970720108
+        },
+        "confidence": 0.9052231805855977
+      }
+    },
+    "usage": {
+      "input_tokens": 582,
+      "output_tokens": 0
+    }
+  }
+}

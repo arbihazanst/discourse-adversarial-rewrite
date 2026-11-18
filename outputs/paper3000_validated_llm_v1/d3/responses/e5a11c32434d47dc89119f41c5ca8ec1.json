@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [R] subsetting with column name as string\n\nTry this\n\n\nfoo1 = function(val)\n {\n   return(d[val])\n }\n\nfoo1(\"x\")\n\n\nGood luck\n\nmiltinho astronauta\nbrazil\n\n\n\nOn 8/6/08, Faheem Mitha  wrote:\n>\n>\n> Hi,\n>\n> Consider the following\n>\n> x = c(1,2)\n>> y = c(3,4)\n>> d = data.frame(cbind(x,y))\n>> d$x\n>>\n> [1] 1 2\n>\n>> d$\"x\"\n>>\n> [1] 1 2\n>\n>>\n>> foo = function(val)\n>>\n> + {\n> +   return(d$val)\n> + }\n>\n>>\n>> bar = function()\n>>\n> + {\n> +   return(d$\"x\")\n> + }\n>\n>>\n>> foo(\"x\")\n>>\n> NULL\n>\n>> bar()\n>>\n> [1] 1 2\n>\n> I'm a little surprised that R accepts both the form d$x and d$\"x\", but I'm\n> mostly wondering why foo(\"x\") doesn't work.\n>                                                           Thanks, Faheem.\n>\n> ______________________________________________\n> R-help@r-project.org mailing list\n> https://stat.ethz.ch/mailman/listinfo/r-help\n> PLEASE do read the posting guide\n> http://www.R-project.org/posting-guide.html\n> and provide commented, minimal, self-contained, reproducible code.\n>\n\n\t[[alternative HTML version deleted]]\n\n______________________________________________\nR-help@r-project.org mailing list\nhttps://stat.ethz.ch/mailman/listinfo/r-help\nPLEASE do read the posting guide http://www.R-project.org/posting-guide.html\nand provide commented, minimal, self-contained, reproducible code.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006882042510575419,
+          "NOT_SPAM": 0.9993117957489424
+        },
+        "confidence": 0.9917779728384173
+      }
+    },
+    "usage": {
+      "input_tokens": 548,
+      "output_tokens": 0
+    }
+  }
+}

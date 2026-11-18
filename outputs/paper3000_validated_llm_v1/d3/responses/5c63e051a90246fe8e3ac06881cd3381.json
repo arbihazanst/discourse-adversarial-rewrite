@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: alias() (was Re: kurila 1.3 released)\n\nOn Thu, Oct 18, 2007 at 02:40:34PM -0400, Michael G Schwern wrote:\n> Gerard Goossen wrote:\n> > Part of the aim of removing soft references was to reduce the\n> > complexity of the core. This wasn't for the parser but to\n> > simplify the dereference opcodes. And to simplify perl code, by making\n> > a dereference always a dereference and not sometimes a symbol lookup.\n> > \n> > There is nothing against using Alias, but Alias is more specific: only\n> > suitable to make aliases. Symbol::fetch_glob is the replacement for\n> > doing a symbol lookup by disabling 'strict refs' and dereferencing a\n> > string².You can't do only do a lookup using Alias. Symbol::fetch_glob\n> > is much more generic, and Alias would be implemented using\n> > Symbol::fetch_glob.\n> \n> I understand that it's all still possible.\n> \n> And if the purpose of Kurlia is just to play with the Perl guts and ignore the\n> usability consequences on the language, then ignore the rest of this.\n> \n> Perfectly valid goal for an experiment, if that's your goal.\n> \n> \n> > Symbol::fetch_glob can be easily used for automaticly translating \n> > things, like\n> > \n> > *{$class . '::' . $name} = $codep\n> > \n> > is translated by the Perl5toKurila converter to¹:\n> > \n> > *{Symbol::fetch_glob($class . '::' . $name)} = $codep\n> >\n> > This does make code which does symbol table lookups more complex\n> > (longer), but it makes it obvious that a symbol lookup is\n> > happening.\n> \n> It is not important to the user that a symbol lookup is happening.  The symbol\n> lookup should not be emphasized, it should be hidden.  Just like I don't want\n> to know that $foo = 42 is actually doing an SVIV assignment.  I don't care.  I\n> just want to assign a number to a scalar.\n> \n> Programmer Goal:  Give a reference a name.\n> \n> Note there's nothing about globs or symbol tables in that goal.  A glob is\n> (currently) just one of the fairly arbitrary actions necessary to achieve that\n> goal.\n\nfetch_glob is not normally used to just give something a name. You can\nuse sub { .. } or our $var or *name = ...\nNormally it means that you want to mess is somebody else her namespace.\nThat should be emphasized.\nThat 'symbol table' and 'glob' don't connect with name or namespace is a\nproblem. So maybe they should get different names. I am certainly for renaming\nglob (or should I say typeglob), but I don't know what the new name should be.\nI think it is fair to assume you know that you know the namespace you\nwant to mess is call the symbol table and not for example the lexical\nnamespace.\n\n> [...]\n\n-- \nGerard Goossen\nTTY Internet Solutions",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00038972069815720596,
+          "NOT_SPAM": 0.9996102793018428
+        },
+        "confidence": 0.9950241686134138
+      }
+    },
+    "usage": {
+      "input_tokens": 841,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: This Weekend on BBC Sport\n\n============================================================ BBC SPORT ============================================================ ------------------------------------------------------------ SUE BARKER AT THE OLYMPIC GAMES ------------------------------------------------------------ The Beijing Games are about to start and I've been so impressed with what the Chinese have built here in the Olympic Green. I absolutely love the Bird's Nest Stadium, it looks stunning at night and inside it is amazing. Swimming's Water Cube venue is equally wonderful and talking to the swimmers they all think it's terrific. Expect plenty of fast times to be set. One man sure to be setting them is American superstar Michael Phelps.  He is set to be the face of the Games as he goes for a record eight gold medals.  There is so much to look forward to from a British perspective. In track and field I'd love to see triple jumper Phillips Idowu and heptathlete Kelly Sotherton win gold and we have got real chances in sailing, rowing, boxing and cycling amongst others.  I saw diving prodigy Tom Daley at a reception at the British Embassy earlier this week.  So much media attention has been placed on the 14-year-old, but I told him, 'don't listen to anyone, have your own expectations and just enjoy it'. The expectation and pressure that sits on the shoulders of the Chinese team though is huge. I watched some of their gymnasts practising and they looked so nervous and were making mistakes.  I was told the other day that people are saying if 110m hurdler Liu Xiang doesn't win the gold medal everything he has achieved in his career won't be worth anything. They are putting so much pressure on their athletes, and to think Tim Henman thought he had it bad at Wimbledon! They not only want success, they expect success and they want to knock the USA off their usual spot at the top of the medals table. It's set to be a spectacular 16 days of action. Sue Barker is part of the BBC TV presenting team at the Beijing Olympics. Sue was talking to Paul Birch ------------------------------------------------------------ THIS WEEKEND ON BBC SPORT ------------------------------------------------------------ OLYMPICS http://news.bbc.co.uk/sport1/hi/olympics/default.stm Saturday: Beijing Olympics: Equestrian, badminton and cycling (0155-0600, BBC ONE/BBC HD/red button/online); Cycling, boxing, rowing, weightlifting, sailing (0600-1100, BBC ONE/BBC HD/red button/online); Swimming, equestrian, judo, boxing, beach volleyball, gymnastics (1100-1630, BBC ONE/BBC HD/red button/online); Games Today: highlights (1730-1830, BBC ONE/BBC HD/red button/online). Sunday: Beijing Olympics: Equestrian, dressage, swimming, badminton (0200-0600, BBC ONE/BBC HD/red button/online); Diving, rowing, boxing, cycling and sailing; Swimming, judo, boxing, weightlifting, tennis, badminton, gymnastics; BBC ONE/BBC HD/red button/online); Games Today: highlights (1900-2000, BBC ONE/BBC HD/red button/online). OTHER SPORT http://news.bbc.co.uk/sport1/hi/tv_and_radio/default.stm Saturday: Cricket: Fourth Test, England v South Africa (1045-1900, Radio 4 LW, Radio 5 Live sports extra, BBC Red Button and online);  Horse Racing: Ascot and Haydock (1300-1630, BBC TWO/online); Football: Score with Radio 5 Live commentary (1430-1630, BBC Red Button/online); Football: Final Score (1630-1710, BBC ONE/online).  Sunday: Cricket: Fourth Test, England v South Africa (1045-1900, Radio 4 LW, Radio 5 Live sports extra, BBC Red Button and online); Rugby league: The Super League Show (1555-1655, BBC ONE North, 0440-0540, BBC TWO/online). All the latest TV and radio times:  http://news.bbc.co.uk/sport1/hi/tv_and_radio ------------------------------------------------------------ .AND ON THE WEBSITE THIS WEEK ------------------------------------------------------------ bbc.co.uk/sport  2008 Olympics http://news.bbc.co.uk/sport1/hi/olympics/default.stm Olympics blog http://www.bbc.co.uk/blogs/olympics/ Don't forget to keep logged onto the site for all the latest news and action as it happens... ------------------------------------------------------------ To make changes or cancel your newsletter visit: http://www.bbc.co.uk/email/sport_newsletter To sign up for other newsletters or the personalised BBC Daily E-mail visit: http://www.bbc.co.uk/email If you have an editorial related comment, e-mail mailto:sport.online@bbc.co.uk?subject=newsletter Problems with links?  For help with this service visit: http://www.bbc.co.uk/email/help If you are experiencing technical difficulties not covered by the FAQs, e-mail mailto:dailyemail@bbc.co.uk \t\t Copyright BBC",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.21981437561742556,
+          "NOT_SPAM": 0.7801856243825745
+        },
+        "confidence": 0.24017158657549198
+      }
+    },
+    "usage": {
+      "input_tokens": 1235,
+      "output_tokens": 0
+    }
+  }
+}

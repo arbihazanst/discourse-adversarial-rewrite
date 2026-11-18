@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] openSUSE 11.0 and the Non-ready KDE4\n\nKai Ponte wrote: > On Wednesday 13 February 2008 12:35:04 pm Aaron Kulkis wrote: >> Anders Johansson wrote: >  >> Is the 11.0 Build going to default to this alpha-stage >> pile, and give newbies (who don't know better) a totally >> HORRIBLE impression of both Suse and Linux? >  > Aaron: you're not a software developer are you? Myself -- no.  I used to do a lot of programming years ago, and in recent years, I've worked in close association with developers, but no, at the present, I'm not a software developer. However, what does that have to do with the impossibility of KDE 4 going from incomplete, alpha status to production ready in only 7 weeks? --  >From xrijoeujmfs@crca.org.au  Sat Apr 26 15:49:34 2008 Message: 2 Date: Thu, 06 Mar 2008 12:00:17 +1100 From: Nigel Cunningham  Subject: Re: [TuxOnIce-users] module 'button' in 2.6.24.3 ... To: TuxOnIce users' list  Message-ID: <1204765221.9355.1.camel@laptop.nigel.suspend2.net> Content-Type: text/plain Ho Paolo. On Thu, 2008-03-06 at 01:48 +0100, Paolo wrote: > This module is blacklisted in hibernate script for k up to 2.6.22. > I've seen that as of 2.6.24.3 it's still unreliable, ie it still needs  > rmmod/modprobe upon sus/res on disk, else after resume no button* events  > are generated. > Since it's harmless to rmmod/modprobe it, I suggest to keep it blacklisted  > till the there's sufficent evidence it's become stable. It sounds like its reliability depends on your particular make and model. It's working fine here. Let's see what other input we get. Regards, Nigel ------------------------------ >From tsoal@panix.com  Sat Apr 26 15:49:34 2008 Message: 3 Date: Wed, 5 Mar 2008 17:04:31 -0800 (PST) From: Kenneth Crudup  Subject: Re: [TuxOnIce-users] module 'button' in 2.6.24.3 ... To: TuxOnIce users' list  Message-ID:  Content-Type: TEXT/PLAIN; charset=US-ASCII On Thu, 6 Mar 2008, Nigel Cunningham wrote: > It sounds like its reliability depends on your particular make and > model. It's working fine here. Let's see what other input we get. Seems to work for me; I don't care for modules w/o a good reason and put nearly everything in the kernel. \t-Kenny --  Kenneth R. Crudup  Sr. SW Engineer, Scott County Consulting, Los Angeles O: 3630 S. Sepulveda Blvd. #138, L.A., CA 90034-6809      (888) 454-8181 ------------------------------ >From tsoal@panix.com  Sat Apr 26 15:49:34 2008 Message: 4 Date: Wed, 5 Mar 2008 17:05:26 -0800 (PST) From: Kenneth Crudup  Subject: Re: [TuxOnIce-users] module 'button' in 2.6.24.3 ... To: TuxOnIce users' list  Message-ID:  Content-Type: TEXT/PLAIN; charset=US-ASCII Oh, and I have a Sony Vaio VGN-A790 (that's gonna be 3 years old this Summer, but I really haven't found anything I like any better!) \t-Kenny --  Kenneth R. Crudup  Sr. SW Engineer, Scott County Consulting, Los Angeles O: 3630 S. Sepulveda Blvd. #138, L.A., CA 90034-6809      (888) 454-8181 ------------------------------ >From pyrff716@yahoo.com  Sat Apr 26 15:49:34 2008 Message: 5 Date: Wed, 5 Mar 2008 17:38:51 -0800 (PST) From: ugh ugher  Subject: [TuxOnIce-users] Not comming back up from hibernation To: enpsfhxz-stvnz@lists.tuxonice.net Message-ID: <350817.2648.qm@web33502.mail.mud.yahoo.com> Content-Type: text/plain; charset=iso-8859-1 So any other ideas? I'm at a loss.... One thing I also for got to say is when I put it into hibernate, and I go to restart the machine, I get a grub error 17. Dont know if that matters. What I do to get around it is unplug the usb, boot off the hard drive, shut down, plug the USB back in and it boots off the USB. Wish I could get this working. ------------------------------ >From zfpnwgb@signiant.com  Sat Apr 26 15:49:34 2008 Message: 6 Date: Wed, 05 Mar 2008 21:03:31 -0500 From: Mark Beierl  Subject: Re: [TuxOnIce-users] Not comming back up from hibernation To: TuxOnIce users' list  Message-ID: <1204769011.30101.12.camel@localhost> Content-Type: text/plain On Wed, 2008-03-05 at 17:38 -0800, ugh ugher wrote: > So any other ideas? > I'm at a loss.... >  Ummm.  From what I saw of your posts it is the default swswap that comes with the vanilla kernel.  Did you compile your own kernel with TOI support? Regards, Mark ------------------------------ >From dotjx@users.sf.net  Sat Apr 26 15:49:34 2008 Message: 7 Date: Thu, 6 Mar 2008 09:01:28 +0100 From: Paolo  Subject: Re: [TuxOnIce-users] module 'button' in 2.6.24.3 ... To: enpsfhxz-stvnz@lists.tuxonice.net Message-ID: <20080306080128.GA15141@localhost> Content-Type: text/plain; charset=us-ascii On Thu, Mar 06, 2008 at 12:00:17PM +1100, Nigel Cunningham wrote: >  > It sounds like its reliability depends on your particular make and > model. It's working fine here. Let's see what other input we get. yep, but it seems safer to blacklist it: if it works, it'll work either way, but if it doesn't, user has to figure out and fiddle with the config. For the records, the nb I'm checking is a Philips freevents X59IT, iCore 2. -- paolo ------------------------------ _______________________________________________ TuxOnIce-users mailing list enpsfhxz-stvnz@lists.tuxonice.net http://lists.tuxonice.net/mailman/listinfo/tuxonice-users",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.932595189832276,
+          "SPAM": 0.06740481016772391
+        },
+        "confidence": 0.8651903796645519
+      }
+    },
+    "usage": {
+      "input_tokens": 1956,
+      "output_tokens": 0
+    }
+  }
+}

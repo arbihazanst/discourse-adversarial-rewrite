@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] true news group?\n\nOn Feb 18, 2008 7:41 PM, Per Jessen  wrote:\n> Randall R Schulz wrote:\n>\n> > Yes. And your problem with that is what? Do you have a specific\n> > objection, or are you going to continue to feign incredulity?\n> >\n>\n> Here's my list of objections from an article I wrote in Jan2006:\n>\n> Web forums: I also absolutely loathe web-forums. Talk about enhancing to\n> the point of failure. Or re-inventing the wheel. What was ever wrong\n> with newsgroups and mailing-lists? The 5 top reasons why I hate\n> web-forums:\n>\n> 1. They are essentially an inferior and utterly superfluous re-invention\n> of existing internet communication means - newsgroups aka usenet.\nThey may be inferior in some cases, but they are webbased so they need\nno separate software. I can read forums at school, in a internet cafe\nwhen on holiday, no problem.This is not the case with usenet.\n> 2. They're web-based - the interface changes just about every time you\n> change forum. Add to that the entirely superfluous graphics and icons\n> and what have you, and they become slow and unwieldy.\nThe layout is a result of the admin's choices, true. But if the\nchoices are good the result will be good. There are even phpbb's who\nlet the user pick the css (drop down menu) and (if the css is build to\nthe full posibilties) therefore the full layout.\nI do think an admin of a OpenSuSe mailing list would be competent\nenough to prevent superfluous graphics.\n> 3. Following multiple separate forums can't be done on one screen.\ntrue, but does that matter? You can simply open 2 browser windows and\nplace them neatly next to each other on 1 screen. In fact I even\nfilter my mails so different mailing lists have their own folder and\nare placed there automatically.\n> 4. There is no proper threading in forums and selective quoting is at\n> best cumbersome.\nNo proper threading? What kind of forum are you thinking? I do not\nknow any forums which don't. A message is posted in a reply to a\nmessage so it's displayed directly beneath it.\n> 5. They usually require that you login. Downright silly.\nDon't you log in to check your mail? Most forums are readable without\nlogging in, just sending to it is not allowed.\n>\n>\nDo you have more reasons? As always: I can still be convinced if you'd like.\n\nOne reason for forum instead of usenet: Linux must try to access the\nmain public. The main public does know how to work forums, the do not\nknow how to work usenet. The usenet history would have to be stored\nand made available by Google search.\n\nNeil\n\n-- \nThere are two kinds of people:\n1. People who start their arrays with 1.\n1. People who start their arrays with 0.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0009463572365392506,
+          "NOT_SPAM": 0.9990536427634606
+        },
+        "confidence": 0.9891288729755713
+      }
+    },
+    "usage": {
+      "input_tokens": 821,
+      "output_tokens": 0
+    }
+  }
+}

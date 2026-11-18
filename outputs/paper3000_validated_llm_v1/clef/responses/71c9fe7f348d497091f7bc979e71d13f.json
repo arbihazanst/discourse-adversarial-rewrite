@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: [opensuse] openSUSE 11.0 and the Non-ready KDE4\n\nHave you ever thought that they are trying to make it so anyone can use it\nnot just us geeks?  Most people I know just know how to turn on the\ncomputer.  I've use KDE 4 and I like what I see, but it still needs plenty\nof work.  \n\n-----Original Message-----\nFrom: M9. [mailto:vevrry4@iae.nl] \nSent: Thursday, February 14, 2008 1:52 PM\nTo: wkilxloc@opensuse.org\nSubject: Re: [opensuse] openSUSE 11.0 and the Non-ready KDE4\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\n\n\nJames Knott schreef:\n| M9. wrote:\n|\n|> | Glad to hear it.  Based on the demo of KDE 4 I saw at the Ontario Linux\n|> | Fest, back in October, what I saw of KDE 4 makes it a show stopper.  I\n|> | wouldn't want an OS where that crap is the only choice.\n|> |\n|> |\n|>\n|> Many issues were fixed since then, but there is still a long way to go,\n|> before it can match its predessessor...\n|>\n|\n| It wasn't the capabilities or performance that bothered me, it appeared\n| to be incredibly dumbed down and extremely ugly.  If that's any\n| indication of what KDE 4 is about, I don't want any part of it.  If I\n| want my computer to treat me like an idiot, I can always run Windows!\n| Judging from the crowd at the presentation (conducted by Marcel Gagne),\n| I wasn't the only one who felt that way.\n|\n| If what I saw is representative of the final product, it is crap!!!\n|\n|\n\nThat is a steel-hard opinion...\n\n- --\n\n\nHave a nice day,\n\nM9.               Now, is the only time that exists.\n\n\n\n\n~  OS:  Linux 2.6.22.17-0.1-default x86_64\n~  Huidige gebruiker:  monkey9@AMD64x2-sfn1\n~  Systeem:  openSUSE 10.3 (x86_64)\n~  KDE:  3.5.7 \"release 72.6\"\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.4-svn0 (GNU/Linux)\nComment: Using GnuPG with SUSE - http://enigmail.mozdev.org\n\niD8DBQFHtI3aX5/X5X6LpDgRAsk7AKDHe/FIhwDJEZMDzVdUIbf2IHDYeACeOT+x\n3mH4cogQ2C9pVK5KQVkZebc=\n=0pwr\n-----END PGP SIGNATURE-----\n--",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9530670907589244,
+          "SPAM": 0.04693290924107548
+        },
+        "confidence": 0.9061341815178487
+      }
+    },
+    "usage": {
+      "input_tokens": 847,
+      "output_tokens": 0
+    }
+  }
+}

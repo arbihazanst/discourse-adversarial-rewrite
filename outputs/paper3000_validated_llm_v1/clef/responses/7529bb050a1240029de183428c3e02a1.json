@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Computer does not turn off\n\nStephan Schöffel wrote:\n> hi there,\n> \n> i just installed 10.3 to an old athlon 1200. the problem is, that after \n> shutting down suse, the computer does not turn off.\n> \n> The last line on the screen is:\n> Master Resource Control: Runlevel 0 has been reached\n> \n> and then freezes.\n> \n> it sounds like the harddisk is powered off, but the motherboard is still \n> active and has to be switches off manually via powerbutton.\n> \n> i already looked for options in bios but could not find any. any ideas?\n> \n> --stephan\n> \n\nThis is a known PITA bug that for some reason has appeared in 10.3. See:\nhttps://bugzilla.novell.com/show_bug.cgi?id=331747\nThey are up to Comment #120 or so. I have 3 machines this problem \naffects 5-8 others that have no problem. Go figure...\n\n-- \nDavid C. Rankin, J.D., P.E.\nRankin Law Firm, PLLC\n510 Ochiltree Street\nNacogdoches, Texas 75961\nTelephone: (936) 715-9333\nFacsimile: (936) 715-9339\nwww.rankinlawfirm.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9585335199597143,
+          "SPAM": 0.041466480040285816
+        },
+        "confidence": 0.9170670399194285
+      }
+    },
+    "usage": {
+      "input_tokens": 490,
+      "output_tokens": 0
+    }
+  }
+}

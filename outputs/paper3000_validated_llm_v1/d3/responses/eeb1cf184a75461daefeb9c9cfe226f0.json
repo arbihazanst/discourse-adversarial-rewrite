@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] NAIS'05 Int. Workshop - Extended Deadline\n\nDear Colleagues (Apologies if you receive this more than once),\n\n   To accommodate those not quite finished but hoping to submit\n   enough time to complete their papers, we have agreed to\n   extend the deadline for submission by two weeks until friday April\n   15, 2005.\n\n  Depending on their content, refereed extended versions of selected\n  paper will be published on a special issue of either Natural Computing\n  or Nonlinear Analysis C-series.\n\n   Kind Regards,\n\n     Organizing Committee\n\n\n\n\n                        \t      =================\n                         \t\t    Call for Papers\n\n      International Workshop on Natural and Artificial Immune Systems\n\t\t\t\t\t   (NAIS 2005)\n\n                 Vietri sul Mare, Salerno, Italy, June 9-10, 2005\n\n      http://siren.dsi.unimi.it/conferences/IMMUNE05/html/index.html\n\n\n   * Venue\n      International Institute For Advanced Scientific Studies (IIASS),\n      \"E.R.Caianiello\", Vietri sul Mare, (SA) Italy.\n      http://www.iiassvietri.it/index.html\n      http://www.iiassvietri.it/school2004/\n\n\n   * Important Dates\n      Submission deadline:               \t\tApril 15 2005\n      Acceptance/Rejection notification: \tMay 2, 2005\n      Camera-ready copy of papers:       \tJune 6, 2005\n      Workshop Date:                     \t\tJune 9-10, 2005\n\n   * Aims and Scope\n   The workshop aims at catalyzing the interaction between modelers (computer\n   scientists, mathematicians and physicists), immunologists and biologists\n   interested in discussing the information processing mechanisms\n   emerging in the functionalities of either natural or artificial immune\n   systems.\n   The leading idea motivating this event is the attention to the various\n   forms of “intelligent thinking” underlying the many\n   attack/defense/adaptation strategies discovered in natural systems, such\n   as tumor and virus escape mechanisms of\n   animals and humans, or implemented in artificial systems.\n\n   This approach may reap several basic benefits of the original\n   cybernetics paradigm:\n    -the emergence of the mind from chemical-physical reactions that can\n   be studied and simulated,\n    - the use of natural processing mechanisms for solving artificial\n   problems, and the cross-fertilization of the natural and artificial\n   research environments,\n    -the adoption of comprehensive immune system models in the\n   development of new therapeutic approaches.\n\n\n   Possible topics include, but are not limited to:\n   # Computational Immunology\n   # Immunological Computation\n   # Immunoinformatics\n   # modelling and simulation of immune systems\n   # model testing and game theory\n   # biological and immersive learning\n   # network security and artificial virus attacks\n   # comparisons between Artificial Immune Systems and other\n      biologically-inspired paradigms\n   # theory and applications of Immunological Computing\n   # Immunocomputing\n\n\n   * Invited speakers\n    -  Franco Celada, University of Genova, Italy\n    -  Vincenzo Cutello, University of Catania, Italy\n    -  Dipankar Dasgupta, University of Memphis, USA\n    -  Doheon Lee, IBM-KAIST Bio-Computing Research Center, Korea\n    -  Jon Timmis, Universityh of Kent, UK\n\n\n   * Conference Proceedings\n   The conference will feature both introductory tutorials and original\n   refereed papers, to be published by an international publisher.\n   See details of electronic submission on the web page:\n   http://siren.dsi.unimi.it/conferences/IMMUNE05/html/index.html\n   Depending on their content, refereed extended versions of selected\n   paper will be published on a special issue of either Natural Computing or\n   Nonlinear Analysis C-series.\n\n\n\n   * Conference Chairs:\n    - Bruno Apolloni, University of Milano, Italy.\n      nvkuumub@dsi.unimi.it\n    - Alberto Clivio, University of Milano, Italy.\n      ooxwqfk.cbjeam@unimi.it\n    - Vincenzo Cutello, University of Catania, Italy.\n      cajdyhp@dmi.unict.it\n    - Giuseppe Nicosia, University of Catania, Italy.\n      xjnbvad@dmi.unict.it\n\n\n   *Programme Committee:\n    - Franco Celada, University of Genova, Italy\n    - Dipankar Dasgupta, University of Memphis, USA\n    - Marco Gori, University of Siena, Italy\n    - Doheon Lee, IBM-KAIST Bio-Computing Research Center, Korea\n    - Piero Mussio, University of Milano, Italy\n    - Anastasia Pagnoni, Unversity of Milano, Italy\n    - Jon Timmis, Universityh of Kent, UK\n    - Henry Linger, Monash University, Melbourne, Australia\n    - Fernando Esponda, University of New Mexico, USA\n\n   * Getting Vietri Sul Mare\n   http://www.iiassvietri.it/school2004/getting_vietri.htm\n\n   * NAIS 2005 Conference Secretariats:\n     - Department of Mathematics and Computer Science\n       University of Catania,\n       City University,\n       V.le A. Doria 6, 95125 Catania, Italy\n       Email: grxp65@dmi.unict.it\n       Phone: +39-095-7383074\n       Fax:   +39-095-330094\n\n      or\n\n     - Dip. di Scienze Dell'Informazione.\n       University of Milano\n       Via Comelico, 39\n       20125 Milano, Italy\n       Email: lfsynw@dsi.unimi.it\n       Phone: +39-02-50316335\n       Fax:   +39-02-50316228\n\n\n   * For additional information or questions, contact\n     Alberto Clivio, University of Milano, Italy, ooxwqfk.cbjeam@unimi.it\n     Giuseppe Nicosia, University of Catania, Italy, xjnbvad@dmi.unict.it\n\n\n   --\n   Giuseppe Nicosia\n   Ph.D. in Computer Science\n   Department of Mathematics and Computer Science\n   University of Catania\n   V.le A. Doria 6 - 95125 Catania, Italy\n   Email: xjnbvad@dmi.unict.it\n   Tel:   + 39 095 738 30 80\n   Fax:  + 39 095 33 00 94\n   Web: www.dmi.unict.it/~nicosia",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.029763618859083515,
+          "NOT_SPAM": 0.9702363811409166
+        },
+        "confidence": 0.806794970478588
+      }
+    },
+    "usage": {
+      "input_tokens": 1632,
+      "output_tokens": 0
+    }
+  }
+}

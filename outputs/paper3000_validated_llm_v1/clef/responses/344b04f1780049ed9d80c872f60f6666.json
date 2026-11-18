@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Local Root-Exploit Kernel 2.6.17-2.6.24.1\n\n\nOn Mon, 2008-02-11 at 18:43 -0200, Leonardo Rodrigues Magalhães wrote:\n> \n> Dominik escreveu:\n> > In fact i just asked here some things,\n> > i want to post something maybe usefull :)\n> >\n> > http://it.slashdot.org/article.pl?sid=08/02/10/2011257\n> >\n> > And it works for me...\n\nI'm not able to even compile it. Looks like I'm missing some libraries\nasm/page.h",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.963649759692763,
+          "SPAM": 0.0363502403072371
+        },
+        "confidence": 0.927299519385526
+      }
+    },
+    "usage": {
+      "input_tokens": 319,
+      "output_tokens": 0
+    }
+  }
+}

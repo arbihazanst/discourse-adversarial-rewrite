@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: We have lower prices for your remedy\n\nThis message is intended for :\n\n*SAVE!  SAVE!  SAVE!*\n\nTHE BEST SELLING MDAOLIEECTI:BNMS\n- No prescript required\n- Spend Less\n- Our Shipping Times Are Faster Than The Rest!\n\nhttp://kralpeal.com\n\n\nlist for membership is from 15 to 20 years, though a fast track, three-year membership process is\n\nUse http://kralpeal.com/a.php for removal",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9961184412561948,
+          "NOT_SPAM": 0.003881558743805163
+        },
+        "confidence": 0.9633229976369061
+      }
+    },
+    "usage": {
+      "input_tokens": 234,
+      "output_tokens": 0
+    }
+  }
+}

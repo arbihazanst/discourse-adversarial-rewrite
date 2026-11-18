@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Strange headers on mail from SA users list\n\n\nHi Michelle,\n\n>     To: wlbpaliggfad@gregorie.org, \"Users !\n> \nIts possible that, if the To: header line contained a sentence, that\nPostfix address rewriting will add \"@example.com\" to every word, fail to\nfind these mailboxes and bounce the message as a result.\n\nHowever, I've found another way to upset Postfix too....\n\nI get mail from my ISP with fetchmail 6.3.7. I run it in single drop\nmode and use its \"mda\" facility to pass the mail through a pipeline: \nspamc| spamkiller| sendmail\n\nSpamkiller is my own code. It just drops mail that SA marks as spam and\npasses the rest to sendmail for delivery to Postfix. Fetchmail passes\nrouting information to sendmail via its command line by using a string\nlike \"-f sender_address_from_envelope -- user\" where 'user' is the\ndestination mailbox.\n\nYesterday I found that fetchmail will sometimes corrupt the sendmail\narguments by adding spurious spaces and/or a byte in the range 0x01 -\n0x1F to the end of the final argument. This will also cause Postfix to\nreject the message after its rewritten the delivery address to, say\n\"user?@example.com\" or \"?@example.com\".\n\nSo, I've written another filter to clean up the argument string while I\ncollect evidence to submit a bug report.\n\n> the \"Subject: No Subject\" so he has accidently typed the text in the\n> Subject field.\n> \nOr equally likely, he put it in the To: field, but I agree that \"No\nsubject\" means that header was left blank.\n\nBest regards,\nMartin Gregorie",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.000713480454000731,
+          "NOT_SPAM": 0.9992865195459992
+        },
+        "confidence": 0.9915131366408572
+      }
+    },
+    "usage": {
+      "input_tokens": 511,
+      "output_tokens": 0
+    }
+  }
+}

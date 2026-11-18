@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: AWL scores high after receiving spam \"from myself\"?\n\nThank you too for you reply!\n\nOn Friday 22 February 2008 22:26:07 René Berber wrote:\n> Andreas Ntaflos wrote:\n>\n> [snip]\n>\n> > So I added my mailserver to the trusted_networks but after removing that\n> > particularly troublesome address from the whitelist\n> > (spamassassin --remove-addr-from-whitelist) and a few tests it seems that\n> > AWL again scores in the wrong direction. Should I also add the remote\n> > mailserver that is final destination for that troublesome address to\n> > trusted_networks?\n>\n> No, don't add the remote mailserver.\n\nOk.\n\n> When you remove the email address you should not see an AWL score, if\n> you still see it then you didn't remove it.  Remember that the AWL could\n> be global or per user (even if the \"user\" is the one running amavisd in\n> your case), dependending on your spamassassin configuration.\n\nRight, that's what I thought, too. I removed the address, sent a mail message \nto btokumo-uccl@freebsd.org, and AWL got no score. Half an hour later I sent \nanother message and AWL got a negative score of about -1.1. Two hours later I \nsent yet another message and now AWL was at +0.370. And a message I sent just \nnow got a score of +0.277. Is that normal?\n\nAmavisd is not involved in checking incoming mail that is retrieved via \ngetmail. It passes the message directly to spamc. Amavisd only checks \nincoming mail for the domain the mailserver is final destination for, which \nis for the domain of the address I use to post to this list \n(pseudoterminal.org). \n\nOn that note: checking the AWL scores for mail messages to *this* list from \nthat address (clnb@pseudoterminal.org) shows that they are also a bit \nhigh-ish (the first message got +2.45, the second +2.25).\n\nI am not sure if that is wrong, but I am getting more and more confused about \nthe AWL. I never had problems with it before but recently it really seems to \nscore badly only for messages sent by me!\n\nShould I post the contents of both local.cf and user_prefs? They don't contain \nanything special as far as I can see, but something definitely feels wrong \nwith my configuration. Why else would the AWL test get such scores?\n\nThanks again for your reply and your time!\n\nAndreas\n-- \nAndreas Ntaflos \nVienna, Austria \n\nGPG Fingerprint: 6234 2E8E 5C81 C6CB E5EC  7E65 397C E2A8 090C A9B4",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0016476238508933122,
+          "NOT_SPAM": 0.9983523761491067
+        },
+        "confidence": 0.9823920033179431
+      }
+    },
+    "usage": {
+      "input_tokens": 788,
+      "output_tokens": 0
+    }
+  }
+}

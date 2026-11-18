@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Spambayes-checkins] spambayes WHAT_IS_NEW.txt,1.42,1.43\n\nUpdate of /cvsroot/spambayes/spambayes\nIn directory sc8-pr-cvs8.sourceforge.net:/tmp/cvs-serv32054\n\nModified Files:\n\tWHAT_IS_NEW.txt \nLog Message:\nAdd info about 1.1a4\n\n\nIndex: WHAT_IS_NEW.txt\n===================================================================\nRCS file: /cvsroot/spambayes/spambayes/WHAT_IS_NEW.txt,v\nretrieving revision 1.42\nretrieving revision 1.43\ndiff -C2 -d -r1.42 -r1.43\n*** WHAT_IS_NEW.txt\t25 Aug 2006 02:02:12 -0000\t1.42\n--- WHAT_IS_NEW.txt\t7 Jul 2007 06:25:23 -0000\t1.43\n***************\n*** 16,19 ****\n--- 16,51 ----\n  is released.\n  \n+ New in 1.1 Alpha 4\n+ ==================\n+ \n+ --------------------------------------------\n+ ** Incompatible changes and Transitioning **\n+ --------------------------------------------\n+ \n+ Some options that were 'experimental' in 1.1a3 have now been upgraded to\n+ non-experimental, meaning the option names have had their 'x-' prefix removed.\n+ See below for details.\n+ \n+ Otherwise, there should be no incompatible changes since 1.1a3, though users \n+ new to the 1.1 series should pay careful attention to the database changes \n+ introduced in 1.1a2.\n+ \n+ -------------------\n+ ** Other changes **\n+ -------------------\n+ \n+ The previously experimental options 'x-crack-images', 'x-ocr-engine' \n+ and 'x-image-size' have all had their 'x-' prefix removed.  'crack-images'\n+ now defaults to True (meaning you don't need to change anything for it\n+ to be enabled), and ocr-engine defaults to 'gocr'.  The Windows binary ships \n+ with the gocr engine, so this should work out-of-the-box for both for Outlook \n+ and POP/IMAP/etc users.\n+ \n+ Image Cracking (ie, using OCR to extract text from images) has been\n+ implemented for the Outlook addin.\n+ \n+ Some localization related issues have been fixed, and a German translation\n+ contributed.\n+ \n  New in 1.1 Alpha 3\n  ==================\n***************\n*** 91,94 ****\n--- 123,130 ----\n  --------------------------------------------\n  \n+ * NOTE * - this section does not apply to people running SpamBayes on\n+ Windows using the binary installer - only source code installations are \n+ affected.\n+ \n  SpamBayes has changed to use ZODB as the default database backend, rather\n  than dbm (usually bsddb).  There are three methods for handling this\n***************\n*** 109,115 ****\n          persistent_use_database:dbm\n  \n!   o You can convert your existing database files to the new format.\n!     Windows users will be given the opportunity to do this on installation;\n!     other users should use the utilities/convert_db.py script to do this.\n      Note that only the token database (containing your training) is\n      converted; the 'messageinfo' database (containing statistics about\n--- 145,150 ----\n          persistent_use_database:dbm\n  \n!   o You can convert your existing database files to the new format using \n!     the utilities/convert_db.py script.\n      Note that only the token database (containing your training) is\n      converted; the 'messageinfo' database (containing statistics about\n\n_______________________________________________\nSpambayes-checkins mailing list\npnperxdpv-sarswdlp@python.org\nhttp://mail.python.org/mailman/listinfo/spambayes-checkins",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0028646976214730634,
+          "NOT_SPAM": 0.9971353023785269
+        },
+        "confidence": 0.9716737895891034
+      }
+    },
+    "usage": {
+      "input_tokens": 1031,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [SM-USERS] allow to display html emails\n\nDear ,\n           Use html_mail  plugin to get this ..\n\nOn Fri, Mar 7, 2008 at 10:38 AM, haroon ahmad  wrote:\n> Hi\n>\n> Currently my users cannot see html emails as HTML instead it appears as\n> text. where can i enable them to see html emails in proper html format like\n> displayed in gmail or hotmail etc\n>\n> thank you\n>\n> \n> This SF.net email is sponsored by: Microsoft\n> Defy all challenges. Microsoft(R) Visual Studio 2008.\n> \n> \n> squirrelmail-users mailing list\n> Posting guidelines: http://squirrelmail.org/postingguidelines\n> List address: bspsggvwcfmo-bvbmb@lists.sourceforge.net\n> List archives: http://news.gmane.org/gmane.mail.squirrelmail.user\n> List info (subscribe/unsubscribe/change options):\n> https://lists.sourceforge.net/lists/listinfo/squirrelmail-users\n>\n\n\n\n-- \nRegards\n\nPiyush Joshi\n9415414376",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.004547117392484329,
+          "NOT_SPAM": 0.9954528826075157
+        },
+        "confidence": 0.9580744770556947
+      }
+    },
+    "usage": {
+      "input_tokens": 379,
+      "output_tokens": 0
+    }
+  }
+}

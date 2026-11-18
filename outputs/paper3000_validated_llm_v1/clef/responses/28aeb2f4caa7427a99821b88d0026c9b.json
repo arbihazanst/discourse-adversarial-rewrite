@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Two telephone-related problems -- Repost\n\nOn Wednesday 05 March 2008 14:23:58 Carlos E. R. wrote:\n> The Tuesday 2008-03-04 at 20:30 +0200, Stan Goodman wrote:\n> > 1) The fax program (Primafax) sends faxes like a champ. It doesn't\n> > receive faxes at all. As I obesrved when trying to send my self a fax\n> > from a public machine, my fax program picks up the line after several\n> > rings, then does nothing -- no negotiation. The sending machine\n> > reports that the receiving machine failed, but has nothing diagnostic\n> > to add; my receiving machine makes no mention of the incident in its\n> > own log at all.\n>\n> It could be something peculiar to that program, and I've never used it.\n> My guess is that your modem is set to autoanswer, not the program: thus\n> the program doesn't log the event.\n\nAh. That is easy to check. I'll look into it later today, and report on \nwhat I find.\n\nPrimafax is an alias for PMfax, an admirable program originally for OS/2; \nthis is the Linux port. Felix Miata knows about the original.\n\n> > When I click on a telephone number, jpilot-dial emits a convincing\n> > series of dialling tones, but nothing else happens. There is no\n> > flicker of  LEDs on the modem's front panel, and the state of the\n> > telephone line does not change.\n>\n> Where do those tones come from? The modem or the PC loudspeaker?\n\nThe modem doesn't have a speaker. I think the sound is coming through the \naudio system, not the PC speaker. My hearing is not what it once was, and \nI will need to try harder to localize it. Once everything is working, \nI'll kill the sound altogether, if I can find a way to do that (the lack \nof options in jpilot is deplorable).\n\n> > The jpilot-dial program has nothing in the way of settings about\n> > matching the dialer with the port, so I have no idea if it even knows\n> > what port it should be trying to reach.\n>\n> I haven't used such a program, either.\n\nI am using it at the suggestion of Charles Chan, who helped with some \nother details as well. If there is a suggestion about some other dialer \nthat I can hook onto Kaddressbook instead, I'll be happy to try it. I'm \nsure the KDE team had a reason for not giving Kaddressbook its own \ndialer, though I can't think what it might have been.\n\n> Maybe it expects you to lift the phone previous to the program dialing?\n\nThat is what I have been doing. Doesn't work, and the dialtone continues \nundisturbed.\n\n-- \nStan Goodman\nQiryat Tiv'on\nIsrael",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9566498705750813,
+          "SPAM": 0.04335012942491874
+        },
+        "confidence": 0.9132997411501627
+      }
+    },
+    "usage": {
+      "input_tokens": 828,
+      "output_tokens": 0
+    }
+  }
+}

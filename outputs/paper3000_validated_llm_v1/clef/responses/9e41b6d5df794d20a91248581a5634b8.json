@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: 30% Coupon -- Limited Time\n\nYour Borders Weekly Shortlist has arrived, packed with new releases and\ngreat deals available at your local Borders this weekend.\n\nVIEW IT NOW BY CLICKING THE LINK BELOW OR BY COPYING THE ENTIRE LINK \nINTO YOUR BROWSER: \n\nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew1-18?t=BHvPdTAQfEXsBy7yJSAFqBnPNO&password=AQfEXsAFqBnPBHvPdTWQLsYd953Gt4&ljqoa=jne@gvc.ceas-challenge.cc&i_footer_new=0&CERTIFICATE_POINTS=&REWARDS_MEMID=8337843646&i_newslheader_rewards=0&i_yb1=2&i_yb3=0&i_toc=2&i_trouble=2&i_potter=0&i_banner=0\n\n\nTELL US WHAT YOU THINK  \nEmail fmsamue@bordersstores.com\n\nVIEW YOUR ACCOUNT  \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew71-18\n  \nUPDATE YOUR PROFILE  \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew72-18\n\nCUSTOMIZE YOUR EMAIL\nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew73-18\n\nSTORE LOCATOR \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew74-18\n\nPRIVACY POLICY   \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew75-18\n  \nFAQ  \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew76-18\n  \nTERMS & CONDITIONS  \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew77-18\n  \nUNSUBSCRIBE \nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew78-18?t=BHvPdTAQfEXsBy7yJSAFqBnPNO&ljqoa=jne@gvc.ceas-challenge.cc\n\nCANCEL MEMBERSHIP\nhttp://e.bordersstores.com/a/tBHvPdTAQfEXsBy7yJSAFqBnPNO/rew79-18\n\nFor further information, please write us at \nBorders Rewards Customer Care, P.O. Box 7002, LaVergne, TN 37086. \nOr call us at 800.443.7359. \n\nNot all products available at Waldenbooks, Borders Express, Borders Outlet, or airport stores. \nProduct availability dates subject to change. \nOffers and prices not valid online, outside the United States, or in Puerto Rico. \n\n© 2008 Borders, Inc. and Walden Book Company, Inc. All rights reserved.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.2673939443151689,
+          "SPAM": 0.7326060556848311
+        },
+        "confidence": 0.4652121113696621
+      }
+    },
+    "usage": {
+      "input_tokens": 913,
+      "output_tokens": 0
+    }
+  }
+}

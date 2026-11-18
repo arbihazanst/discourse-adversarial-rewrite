@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Message to all Academic Staff - Computer Labs\n\nKiaOra\n\nIf you would like to be part of a group who helps ITS plan and develop\nthe Computer Labs on campus please let me know.  It is envisaged that we\nwill be calling on you from time to time to discuss our plans and we\nwould like to incorporate any ideas or suggestions you may have to\nimprove the facility.\n\nIf you are unable to commit to being part of a \"lab user group\" but\nwould still like the opportunity to talk to myself and the Lab Manager\nin Palmerston North about your specific requirements please let me know.\nWe are happy to meet with you in person to discuss these.\n\nThere is no need to re-register your interest if you are already\nreceiving the lab messages via email.\n\nThanks & kind regards\n\nBarbie Yerkovich\nITS Manager\nMassey University - Albany\nPrivate Bag 102 904 NSMC\nAuckland, New Zealand\nEmail: n.rfamxwqge@massey.ac.nz\nPhone: +64 9 414-0800 x9476\nFax: +64 9 441-8100",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8619266674125707,
+          "SPAM": 0.13807333258742913
+        },
+        "confidence": 0.7238533348251415
+      }
+    },
+    "usage": {
+      "input_tokens": 420,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: features\n\nhi,i really liked the simlicity of triptracker.what are properties and methods are available i.e. how can i control the size of the picture etc..10x\nisrael s.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0022806060584169337,
+          "NOT_SPAM": 0.9977193939415832
+        },
+        "confidence": 0.9766980998522301
+      }
+    },
+    "usage": {
+      "input_tokens": 170,
+      "output_tokens": 0
+    }
+  }
+}

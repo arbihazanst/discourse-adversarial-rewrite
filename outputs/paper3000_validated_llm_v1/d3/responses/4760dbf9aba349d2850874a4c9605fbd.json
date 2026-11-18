@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Special Announcement: happysheep is alive!\n\nSpecial Announcement: happysheep is alive!\n\nHi Tony,\n\nSimon Barton (GP Store's big boss) has been working hard with the team\nfrom Zillion on a brand new free local classified site that we think\nyou'll love!\n\nThink of it like an online version of the community notice board you\nfind outside your local dairy...\n\nVisit happysheep at:\n\nhttp://www.happysheep.co.nz/\n\nThe team aims to make happysheep the #1 place in New Zealand for local\nevents,community notices, classes and activities, jobs, services,\nstuff for sale and more!\n\nBest of all, it's 100% free. Plus, place a listing in March and you\ncouldwin an Apple iPhone!\n\nPlease help happysheep to get off to a great start by visiting\nhappysheep today and placing a free listing. If you think the site is\ngreat then please tell your friends and help spread the word!\n\nRegards,\n\nAll the team at Gameplanet Store New Zealand.\nhttp://www.gpstore.co.nz/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.8489615594612467,
+          "NOT_SPAM": 0.15103844053875326
+        },
+        "confidence": 0.38756708688114794
+      }
+    },
+    "usage": {
+      "input_tokens": 373,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Doctor Approved And Recommended.\n\n\nRead hundreds of genuine testimonials from satisfied users all over the world.  \n\nPut on an average gain of 3.02 inches where it matters - and all gains are 100% permanent!\n\nhttp://pathigh.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9953258105631718,
+          "NOT_SPAM": 0.0046741894368282745
+        },
+        "confidence": 0.9570891360798618
+      }
+    },
+    "usage": {
+      "input_tokens": 182,
+      "output_tokens": 0
+    }
+  }
+}

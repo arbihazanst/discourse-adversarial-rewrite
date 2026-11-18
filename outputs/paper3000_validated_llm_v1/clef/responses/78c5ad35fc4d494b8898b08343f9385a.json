@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: If you are the one who needs male enhancing, we have a better solution for you.\n\n\nImprove your manhood with these wonderful male enhancing products.\nhttp://wf.steadstay.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.026272748414506553,
+          "SPAM": 0.9737272515854933
+        },
+        "confidence": 0.9474545031709867
+      }
+    },
+    "usage": {
+      "input_tokens": 200,
+      "output_tokens": 0
+    }
+  }
+}

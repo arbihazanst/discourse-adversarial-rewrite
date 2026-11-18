@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Your honesty will be appreciated and ED cured.\n\n\nDear 453dd85b1ebe1f969ef69f0d928128a8\n\nSummer is a best time to take a week off at work and think about your health & personal life.\n\nAnd we are glad to aid you with it.\n\n From now on till 30th of  October you can use our particular offer.\n\nCheck our site for more details.\n\nherrespect.com\n\n6 Aug 2008 17:51:34",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02302108569571588,
+          "SPAM": 0.9769789143042841
+        },
+        "confidence": 0.9539578286085681
+      }
+    },
+    "usage": {
+      "input_tokens": 282,
+      "output_tokens": 0
+    }
+  }
+}

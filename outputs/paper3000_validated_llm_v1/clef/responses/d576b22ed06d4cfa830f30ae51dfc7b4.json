@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Why spam isn't going away soon\n\n\n\n\nCNET | Security Center\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 3, 2008\n\n\n\n\nView online |\nManage newsletters |\nUnsubscribe |\nSend us feedback\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy spam isn't going away soon \n\n\n     Recently, Symantec said in its February 2008 State of Spam report that 78.5 percent of all e-mail is spam. They also said most of that is now coming from Europe. That's a change from previous reports that had suggested servers in North America were responsible. What the Symantec report doesn't explicitly state is that much of the European spam doesn't come from individuals sitting at their desk pumping out lists. Europe is one of the hotbeds for the Storm worm botnet, notorious for automatically co-opting its victims into spam relays. For example, with the release of a Valentine's Day theme-spam barrage in early February,  Jose Nazario of Arbor Networks estimated that Storm has grown by as much as 50 percent in new infections. More ominous, Nazario says \"the fact (Storm) is generating lots of money means that it's in (the creator's) interests to keep grooming it, keep growing it.\" Worse Storm isn't the only big, bad botnet in town. Read more\n Security Bites podcast\n CNET Security Center\n Security Watch archive\n\n\nRobert VamosiCNET.com\n\n\n\n\n\n\nLatest forum discussions\n\nWhat is...\n\nPosted by Jamfan55\n\nListed in the Exceptions area of my Win XP firewall, I found \"xhnuiwaqe\". Read more \n\nAppSvc32.exe slowing down my computer\n\nPosted by Judesman\n\nMy computer has just slowed to a crawl.  I have Windows XP and NAV 2007. Any help please. Read more \n\nMcAfee Firewall keeps shutting off\n\nPosted by cossie_col\n\nJust wonder if anyone has seen this before? I have not reinstalled McAfee as I want to find out why this is happening before just going for reinstall. Read more \n\n\n\nReviews\n\nNorton 360 v2\nA near-perfect all-in-one solution for brand new PCs, Norton 360 v2 may be hard to install and run on legacy machines.  However, don't count on Symantec's time-consuming and expensive technical support for help. Read more\n\n\n\n\nTaxAct Ultimate Online 2007\nThe low price and strong technical support of TaxAct Deluxe Online 2007 make it a solid choice for bargain hunters with relatively simple finances, although Intuit TurboTax and H&R Block TaxCut include more investment, deduction, and audit tools. Read more\n\n\n\n\n\n\n \n\n\n\nSecurity blogs\n\n \n1. DHS: U.S. health care records are the target of foreign hackers\n2. Security experts speculate on mailicious Air code\n3. Security researchers to unveil pacemaker, medical implant hacks\n4. Free membership to TSA Registered Traveler\n5. Identity theft study reveals HSBC, BofA, Wamu top targets\n6. Security glitch exposes OS X account passwords\n\n\n \n\n\n\n\n  Related Newsletters\n\n\n\n\n\n\n\n\n\n\nCNET Photo and Video Weekly\n\n(Delivered Mondays.)CNET drops the highlights of the week's digital-imaging coverage right in your in-box. From capture to output and every stop in between, we tell you what to buy and how to use it.\n\nView preview \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRelated resources\n\n CNET Security Center\n\n\n CNET Download.com Security Center\n\n\n CNET News.com Security Dashboard\n\n\n\n\n\n\n\n       \n\n\n\n\n\n\n\n\n\n\n\nSign up for more free newsletters from CNET! To manage your account settings or to remove yourself from all CNET communications, please visit our Subscription Center. The e-mail address for your subscription is user6@gvc.ceas-challenge.cc  Unsubscribe from this e-mail | FAQ | Advertise | Privacy Policy\n\n\n\n\n\n\n\n\n\nCopyright 2008 CNET Networks, Inc. All rights reserved.CNET Networks, Inc. 235 Second Street  San Francisco, CA 94105 U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8855570012572778,
+          "SPAM": 0.11444299874272226
+        },
+        "confidence": 0.7711140025145555
+      }
+    },
+    "usage": {
+      "input_tokens": 1003,
+      "output_tokens": 0
+    }
+  }
+}

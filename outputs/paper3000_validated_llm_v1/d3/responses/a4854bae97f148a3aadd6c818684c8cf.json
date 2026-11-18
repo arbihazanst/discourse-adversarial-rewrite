@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: WHM/Cpanel: Where are the Server-wide SpamAssassin settings?\n\n\nAs you will see from the headers, for some reason it is still forcing a test\nagainst \"Required Score\" of 2.5. I am trying to see where it is getting this\ninstruction of 2.5 from. \n\n1. In my server-wide /etc/mail/spamassassin/local.cf I have this:\n\n\nrequired_score 12\n\n\n\n2. In my user_prefs for an individual domain in cpanel, at\n/home/MYDOMAIN/.spamassassin/user_prefs I have this:\n\n\n\nrequired_score 12\n\n\n\nBut this is what my incoming mail headers tell me, which confuse me about\nwhere it is picking up these settings! \n\n\n\nContent analysis details: (4.7 points, 2.5 required)\npts rule name description\n---- ----------------------\n--------------------------------------------------\n1.0 EXTRA_MPART_TYPE Header has extraneous Content-type:...type= entry\n-0.0 SPF_PASS SPF: sender matches SPF record \n\n\n\nWhere is it getting that instruction highlighted in red? (\"2.5 required\" for\nthose who aren't reading HTML.) \n\nIn fact, this example is from a mail that was sent from an email address\nthat's listed as \"whitelist_from\" in this domain's user_prefs file, and yet\nthis came in as spam. \n\nWhich means SA is reading neither the server wide instructions (local.cf)\nnor the domain's individual user_prefs. Any ideas about where I can start\ndebugging?\n\nThanks!\n-- \nView this message in context: http://www.nabble.com/WHM-Cpanel%3A-Where-are-the-Server-wide-SpamAssassin-settings--tp15560809p15560809.html\nSent from the SpamAssassin - Users mailing list archive at Nabble.com.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00330373146577635,
+          "NOT_SPAM": 0.9966962685342236
+        },
+        "confidence": 0.9680132814233032
+      }
+    },
+    "usage": {
+      "input_tokens": 522,
+      "output_tokens": 0
+    }
+  }
+}

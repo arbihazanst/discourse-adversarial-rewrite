@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 5820] URIBL_SBL from zen?\n\nhttp://issues.apache.org/SpamAssassin/show_bug.cgi?id=5820\n\n\n\n\n\n------- Additional Comments From user7@gvc.ceas-challenge.cc  2008-02-11 01:49 -------\nI'll ask the Spamhaus guys.\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.008463975354728814,
+          "NOT_SPAM": 0.9915360246452712
+        },
+        "confidence": 0.9295710822083848
+      }
+    },
+    "usage": {
+      "input_tokens": 233,
+      "output_tokens": 0
+    }
+  }
+}

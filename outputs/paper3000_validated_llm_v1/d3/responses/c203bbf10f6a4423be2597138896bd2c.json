@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: ImportError: No module named _bsddb\n\nDo you have the latest version of venus?\n\nhttp://lists.planetplanet.org/archives/devel/2007-September/001666.html\n\n\n\nOn 10/20/07, Xavier Shay  wrote:\n>\n> I'm trying to run venus and am getting the\n> following error when I run tests or the app:\n>\n> ImportError: No module named _bsddb\n>\n> I'm not really sure where to start looking to solve this problem, any\n> guidance would be appreciated.\n>\n> Cheers,\n> Xavier\n>\n> Details follow:\n>\n> $ uname -prs\n> FreeBSD 6.2-STABLE amd64\n> $ python -V\n> Python 2.5.1\n>\n>\n> $ python runtests.py\n> Genshi is not available => can't test genshi filters\n> xsltproc is not available => can't test XSLT templates\n> Django is not available => can't test django filters\n> libxslt is not available => can't test xslt filters\n> sed is not available => can't test stripAd_yahoo\n> libxml2 is not available => can't test xpath_sifter\n> Redland RDF is not available => can't test FOAF reading lists\n>\n> ...........................................................................EEE......................................................................................................................\n> ======================================================================\n> ERROR: test_index_spider (tests.test_idindex.idIndexTest)\n> ----------------------------------------------------------------------\n> Traceback (most recent call last):\n>   File \"/home/xavier/venus/tests/test_idindex.py\", line 30, in\n> test_index_spider\n>     index = idindex.create()\n>   File \"/home/xavier/venus/planet/idindex.py\", line 38, in create\n>     import dbhash\n>   File \"/usr/local/lib/python2.5/dbhash.py\", line 5, in \n>     import bsddb\n>   File \"/usr/local/lib/python2.5/bsddb/__init__.py\", line 51, in\n> \n>     import _bsddb\n> ImportError: No module named _bsddb\n>\n> ======================================================================\n> ERROR: test_index_splice (tests.test_idindex.idIndexTest)\n> ----------------------------------------------------------------------\n> Traceback (most recent call last):\n>   File \"/home/xavier/venus/tests/test_idindex.py\", line 51, in\n> test_index_splice\n>     index = idindex.create()\n>   File \"/home/xavier/venus/planet/idindex.py\", line 38, in create\n>     import dbhash\n>   File \"/usr/local/lib/python2.5/dbhash.py\", line 5, in \n>     import bsddb\n>   File \"/usr/local/lib/python2.5/bsddb/__init__.py\", line 51, in\n> \n>     import _bsddb\n> ImportError: No module named _bsddb\n>\n> ======================================================================\n> ERROR: test_unicode (tests.test_idindex.idIndexTest)\n> ----------------------------------------------------------------------\n> Traceback (most recent call last):\n>   File \"/home/xavier/venus/tests/test_idindex.py\", line 19, in\n> test_unicode\n>     index = idindex.create()\n>   File \"/home/xavier/venus/planet/idindex.py\", line 38, in create\n>     import dbhash\n>   File \"/usr/local/lib/python2.5/dbhash.py\", line 5, in \n>     import bsddb\n>   File \"/usr/local/lib/python2.5/bsddb/__init__.py\", line 51, in\n> \n>     import _bsddb\n> ImportError: No module named _bsddb\n>\n> ----------------------------------------------------------------------\n> Ran 196 tests in 2.864s\n>\n> FAILED (errors=3)\n> Exception exceptions.AttributeError: \"'NoneType' object has no attribute\n> 'maxint'\" in  0xdff9d0>> ignored\n> $\n> --\n> devel mailing list\n> kpdpo@lists.planetplanet.org\n> http://lists.planetplanet.org/mailman/listinfo/devel\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005282572859103504,
+          "NOT_SPAM": 0.9994717427140897
+        },
+        "confidence": 0.9934872292142962
+      }
+    },
+    "usage": {
+      "input_tokens": 1054,
+      "output_tokens": 0
+    }
+  }
+}

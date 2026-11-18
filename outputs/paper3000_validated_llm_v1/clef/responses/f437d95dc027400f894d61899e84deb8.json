@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] ECIR'05: Call for papers\n\nFirst announcement and call for papers\n\n\t\tBCS-IRSG ECIR-05\n27th European Conference on Information Retrieval\n\t\t21-23 March, 2005\n            Santiago de Compostela, Spain\n\t    \n\t  http://www-gsi.dec.usc.es/ecir05/\n\t    \tkbth04@usc.es\n\nSponsored by: \n -European Research Consortium for Informatics & Mathematics (ERCIM)\n -Microsoft Research\n -Sharp Laboratories of Europe\n\nCall for Papers\n\nThe annual European Conference on Information Retrieval is \nthe main European forum for the presentation of new research results in \nthe field of Information Retrieval. \n\nWe encourage the submission of high-quality research papers \nreporting new, unpublished, and innovative research results \nwithin information retrieval. \nThe conference intends to cover all aspects of \naccessing digital information without explicitly \nspecified semantics. Papers whose sole or main author is an \nMSc, PhD, or postdoctoral student are especially welcome.\n\nTopics of interest include (but are not limited to):\n\nIR models, techniques, and algorithms\n\tSearching, browsing, meta-searching, data fusion, filtering, and indexing\n       Text and content classification, mining, extraction, and summarisation\n       Topic detection, and tracking\n       Personalised, collaborative, recommender, user-adaptive IR\n       Improvements on existing and new IR models\n       Compression, performance, optimisation\nUsers, society, and IR\n       User modelling, user studies, user interaction in IR systems\n       Novel user interfaces for IR systems\n       Visualisation and presentation of queries, search results, and content\n       Information management\n       Cross-language and multi-language IR\nIR applications \n       Web IR\n\tMobile and ubiquitous IR\n\tDigital libraries\nIR system architectures\n       Distributed \n\tParallel \n\tMobile\n\tMultimodal\n\tOpen, interoperable, and flexible\nContent representation, and processing\n       IR and structured content e.g. XML based\n       Unstructured content\n       Meta information and structures\nTest and evaluation methods for IR systems\n\tTest collections and bench marking\n\tUser-oriented and user-centred test and evaluation\nMultimedia and cross-media IR\n\tSpeech and IR\n\tImage and video IR\n\tDigital music, radio, and TV\n\nAll papers will be refereed through blind peer review. \nAccepted papers will appear in the proceedings published \nby Springer-Verlag in the Lecture Notes in Computer Science series, \nwhich will be distributed to all delegates at the Conference. \nPoster submissions addressing any of the areas identified \nin the conference topics are also invited. \nAuthors are encouraged to demonstrate work in progress \nand late-breaking research results. \nPoster abstracts (3 pages) will be included in the proceedings.\n\nAn award will be presented to the author of the Best Student Paper.\n\nSubmission details\n-------------------\n\nManuscripts should be submitted electronically, in PS or PDF format in\nclose accord with the Springer Lecture Notes in Computer Science Guidelines\n(http://www.springeronline.com/sgw/cda/frontpage/0,10735,5-164-2-72376-0,00.html).\nAuthors are encouraged to use Latex2e for preparing the manuscript \n(using the llncs template available from the springer website). Papers prepared\nunder different text processing systems are also acceptable provided that\nthe springer lncs instructions are strictly observed.\n\nPapers cannot exceed 15 pages in length (including references). \nPoster abstracts, which should follow the same \nformatting instructions, cannot exceed 3 pages (including references).\n\nOne author per paper is required to register and attend the conference to present\nthe paper if accepted for publication.\n\nImportant Dates:\n----------------\n\nPaper submission: 1 November, 2004\nPoster submission: 8 November, 2004\nNotification for all submissions:  9 December, 2004\nFinal copy due: 22 December, 2004\n\nContacts:\n---------\n\nIf you have any queries or problems concerning submitting a paper,\nplease contact any of the conference chairs:\n\nDr. David E. Losada\nGrupo de Sistemas Inteligentes\nDept. Electrónica y Computación\nUniversidad de Santiago de Compostela\nCampus sur s/n\n15782 Santiago de Compostela\nSpain\nTel: +34 981563100 x13572\nFax: +34 981528012\nemail: zbmzboa@usc.es\n\n\nDr. Juan M. Fernández Luna\nGrupo de Tratamiento de Incertidumbre en Inteligencia Artificial\nDepartamento de Ciencias de la Computación e Inteligencia Artificial\nUniversidad de Granada\nEscuela Técnica Superior de Ingeniería Informática\nC/ Periodista Daniel Saucedo Aranda, s/n.\n18071 Granada\nSpain\nTel: +34 958 240465\nFax: +34 958 243317 \nemail: drymrlk@decsai.ugr.es",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.909847621506838,
+          "SPAM": 0.09015237849316206
+        },
+        "confidence": 0.8196952430136759
+      }
+    },
+    "usage": {
+      "input_tokens": 1266,
+      "output_tokens": 0
+    }
+  }
+}

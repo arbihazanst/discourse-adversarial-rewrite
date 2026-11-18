@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] true news group?\n\nRajko M. wrote:\n> On Monday 18 February 2008 07:48:37 pm Aaron Kulkis wrote:\n> \n>>> nntp://forums.novell.com/\n>>> http://forums.novell.com/faq.php?faq=novfor#faq_nntp\n>> He's talking about an NNTP newsgroup, not web forums.\n> \n> Hmm ... what is nntp://forums.novell.com/ \n> and each and every of web forums in list has nntp interface. \n> \n\noops. didn't notice the nntp://\n\n>> Web-forums are an obstacle to communication.\n> \n> For you Aaron is obstacle. \n> Sometimes you miss IMHO, ie. what is good for your use case is not the best in \n> every case. \n> \n> People that don't follow 50 mail and news groups have no problem with page \n> refresh,\n\nI wouldn't say so.\n\nWith web-forum, it's pretty much impossible to follow all of the\ntraffic on even ONE forum if it had as many messages as this\nmail list does.\n\nSo the argument that web-forum users don't follow 50 different\nforums kinds of makes my point.. .part of the reason that they\ndon't is because THEY CAN'T.\n\n > have no problem to find the place where they asked the question.\n> \n\nThat's totally fine for people with one, and only one interest.\n\n> New users are actually really lucky to have some form of communication that:\n> - need no setup besides login that they are already familiar with,\n\nWho doesn't use E-mail these days?\nARE you NOT already familiar with your own email login?\n\n\n> - has no 200 messages a day, where noise is the largest part of them\n\nThat's because web-forums are so clumsy, it's difficult to get\nmessage traffic that high.\n\nOr alternatively, you can look at the responses to an Ann Coulter\ncolumn, which can have several hundred messages in a single day,\nand the flood is so un-manageable that it's pretty much impossible\nfor ANY coherent conversation to develop ... so the whole thing\ndevolves into nothing more than a bulletin board (not an electronic\nBBS...I mean a large rectangle of cork hung on the wall) with\nwhole bunch of \"hit and run\" messages on it.\n\nThere's no conversation because as message rates climb,\ntwo-way conversation becomes IMPOSSIBLE.\n\n> - has strict moderators with ability to delete OT messages keeping forums \n> clean.\n\nAre you claiming that this is unavailable on mail lists and\nmoderated newsgroups?\n\n\n> \n> You can go and see for yourself using your preferred nntp client. \n> The server is support-forums.novell.com.\n\nCool.\n\nSo what percentage of the usage is from the web, and what percentage\nof usage is via NNTP?\n\nI'm not against a dual-access method.  If somone wants to hinder\nthemselves by opting for the web-forum (because they're too lazy\nto invest 3 minutes to get NNTP access) -- then that's their problem.\n\nBut anyone who wants to set up a USEFUL high-bandwidth multi-way \ncommunication channel will have at best, limited success if they\nchoose to rely exclusively on the web-forum format.\n\n\n> \n> BTW, this topic belongs to dstsqgkz-fmifqje@opensuse.org .  \n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006146875066933805,
+          "NOT_SPAM": 0.9993853124933065
+        },
+        "confidence": 0.9925560662092189
+      }
+    },
+    "usage": {
+      "input_tokens": 892,
+      "output_tokens": 0
+    }
+  }
+}

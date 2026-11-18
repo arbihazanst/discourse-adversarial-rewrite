@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] python and soap?\n\nhey\nthank you for that...i just downloaded suds. it seems easy to work with. however, i'm having a problem, and you said you've used it so...\n\ni tried connecting to \nhttp://www.html2xml.nl/Services/Calculator/Version1/Calculator.asmx?WSDL\nfor the service. however, whenever i try to use the \"Add\" service there, i get the following error:\n\nTraceback (most recent call last):\n  File \"\", line 1, in \n    s.Add(1,2)\n  File \"C:\\\\Python25\\\\lib\\\\site-packages\\\\suds-0.1.7-py2.5.egg\\\\suds\\\\serviceproxy.py\", line 131, in __call__\n    raise e\nWebFault: service endpoint raised fault {\n   faultcode = (soap:Client)\n   faultstring = (Server did not recognize the value of HTTP Header SOAPAction: .)\n   detail = ()\n }\n\nhow do i set the SOAPAction or what do i do about it? i'm not exactly sure whats going wrong...\n\nthanks!\n\n- sagar\n \nSagar Khushalani\nGraduate Student, UTA\nNetworking / System Architecture\nu.dslsajnlms@yahoo.co.uk \nhttp://www.sagark.info\n\n\n\n----- Original Message ----\nFrom: Jose Galvez \nTo: Sagar Khushalani \nSent: Friday, April 11, 2008 7:53:36 PM\nSubject: Re: [python-win32] python and soap?\n\ndepends on if you want to be a SOAP service provider or if you want to use a SOAP service in python?  I just finished a project where I am hosting SOAP services and I used pylons and soaplib (http://pypi.python.org/pypi/soaplib/0.7.1dev-r17), I've also used suds (http://pypi.python.org/pypi/suds/0.1.7) to access soap services.  Both are pretty easy to use\nJose\n\nSagar Khushalani wrote: \ni guess this question has been asked lots of times, but can anyone suggest any good way of using SOAP and python 2.5? if not, is there any other versions (>2.3) that i can use?\n \ni need it for a school project and so have to use SOAP...\n \nthanks in advance!\n- sagar\n\n\n\nSagar Khushalani\nGraduate Student, UTA\nNetworking / Systems and Architecture\nu.dslsajnlms@yahoo.co.uk \nhttp://www.sagark.info\n__________________________________________________\nDo You Yahoo!?\nTired of spam? Yahoo! Mail has the best spam protection around \nhttp://mail.yahoo.com \n\n_______________________________________________\npython-win32 mailing list\nkpitck-aew45@python.org\nhttp://mail.python.org/mailman/listinfo/python-win32\n  \n\n__________________________________________________\nDo You Yahoo!?\nTired of spam?  Yahoo! Mail has the best spam protection around \nhttp://mail.yahoo.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9632514739842518,
+          "SPAM": 0.03674852601574815
+        },
+        "confidence": 0.9265029479685036
+      }
+    },
+    "usage": {
+      "input_tokens": 835,
+      "output_tokens": 0
+    }
+  }
+}

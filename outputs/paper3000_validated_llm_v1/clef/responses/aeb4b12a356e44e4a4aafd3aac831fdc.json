@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Naomi Reynolds\n\n\n\n\n\n\n\n\nB je u fv y From On boh line P rcz har xxj ma ko cy\n\nGet FDA Me ip ds & Save up to 85%\n100% Legal P kmk har ef macy - Or ujb der Today! \n\nhttp://nearpretty.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.023641649588416802,
+          "SPAM": 0.9763583504115833
+        },
+        "confidence": 0.9527167008231665
+      }
+    },
+    "usage": {
+      "input_tokens": 223,
+      "output_tokens": 0
+    }
+  }
+}

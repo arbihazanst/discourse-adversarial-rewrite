@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Paizo News: Announcing the Pathfinder RPG\n\nPaizo.com         \n\n The Golem's Got It!              \n\n      \nPaizo Publishing® Announces the Pathfinder RPGTM PathfinderTM to continue under the 3.5 rules. Tuesday, March 18th, 2008\n\nPaizo Publishing today unveiled the Pathfinder Roleplaying Game, a tabletop fantasy roleplaying game that will serve as the anchor for the company's popular line of Pathfinder adventures, sourcebooks, and campaigns. Today marks the beginning of a year-long Open Playtest of the new rules, which are based upon the popular 3.5 rules available under the Open Game License. The Pathfinder RPG is designed with backward compatibility as one of its primary goals, so players will continue to enjoy their lifelong fantasy gaming hobby without invalidating their entire game library. The first Pathfinder RPG Alpha release is available now as a free 65-page PDF download at paizo.com/pathfinderRPG . Until the finished Pathfinder RPG's release as a hardcover rulebook in August 2009, all of Paizo's popular Pathfinder-brand products will continue under the current 3.5 rules set.\n\n\"I'm really excited to work with the playtesters to make this the best game possible,\" said Jason Bulmahn, Paizo's Lead Designer. \"In the spirit of the Open Game movement, the Pathfinder RPG is really your roleplaying game. It's a huge thrill to get to lead the design process.\"\n\nPaizo will issue additional Pathfinder RPG Alpha releases in the coming months, covering new changes and additions to the 3.5 rules. Gamers can download, read, and participate in the free open playtest by setting up a paizo.com account and joining the discussion with Paizo's design staff at paizo.com/pathfinderRPG . The Pathfinder RPG will be backward-compatible with the 3.5 rules, and the staff has kept this goal as a primary focus since design began in 2007.\n\nThis coming August, Paizo will release a massive, full-color, softcover Pathfinder RPG Beta release for $24.99. This book will be available on paizo.com, at Gen Con, as well as through hobby distribution at local game stores. Just like the Alpha releases, the Beta release will be available as a free PDF download on paizo.com. As Wizards of the Coast's core 3.5 rulebooks are expected to go out of print with the release of 4th Edition, Paizo will use the Pathfinder RPG as a replacement for the 3.5 core rules. The Pathfinder RPG Beta release will represent Paizo's first published take on an updated 3.5 system, and playtesting will continue through spring 2009, when Paizo will incorporate the open playtest feedback and create a hardcover Pathfinder RPG for release in the hobby trade, bookstores, and paizo.com in August 2009.\n\nPaizo hopes to support 4th Edition with fan-created online conversions of its Pathfinder products and a complete line from its partner company, Necromancer Games, a trend-setter in the original Open Gaming movement. Necromancer has already announced a new 4th Edition version of their award-winning Tome of Horrors monster encyclopedia, and has plans for additional player and GM support products.\n\n Pathfinder Society Organized PlayToday, Paizo also announced the hiring of Nicolas Logue to run the Pathfinder Society organized play campaign, a massive mega-campaign to launch at this year's Gen Con. The Pathfinder Society will feature events at major conventions, retail stores, and home play as a way to involve thousands of players in a constantly evolving campaign environment fueled by downloadable scenarios released by Paizo. Nicolas Logue is a long-time Paizo contributor to the print versions of Dragon and Dungeon as well as the Pathfinder Adventure Paths and Pathfinder Modules line. He also co-runs an annual competition at Gen Con called Iron DM that will continue to be co-run by Nicolas Logue and his Iron DM compatriots. Nick begins working at Paizo in April.\n\n\"Nicolas Logue is one of the most energetic, personable gamers I have ever met,\" said Erik Mona, Paizo's Publisher and the co-founder during his tenure at Wizards of the Coast of Living Greyhawk, the largest organized play RPG campaign in history. \"Running a successful organized play campaign involves a magical combination of cool ideas, organizational skills, and enthusiasm. Nick is absolutely the perfect man for the job, and I'm thrilled that he will be joining us here at Paizo.\"\n\nAdditional information on the Pathfinder Society campaign can be found at paizo.com/pathfindersociety .\n\nPathfinder Society is going to need volunteers! Visit the Pathfinder Society messageboards  and read the \"Welcome to the Pathfinder Society!\" thread for details about how YOU can help make the Pathfinder Society the best organized play mega-campaign in gaming!\n\n\n     Click here to unsubscribe.   Copyright © 2008 Paizo Publishing, LLC. 2700 Richards Rd, Suite 2100, Bellevue, WA 98005 To modify your privacy settings, visit https://secure.paizo.com/paizo/account",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.325937363406302,
+          "NOT_SPAM": 0.6740626365936979
+        },
+        "confidence": 0.08927836443699133
+      }
+    },
+    "usage": {
+      "input_tokens": 1198,
+      "output_tokens": 0
+    }
+  }
+}

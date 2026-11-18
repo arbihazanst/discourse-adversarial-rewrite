@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: [opensuse] openSUSE 11.0 and the Non-ready KDE4\n\nDid you put in a request to have that option added?\n\n-----Original Message-----\nFrom: James Knott [mailto:gjaid.adgua@rogers.com] \nSent: Thursday, February 14, 2008 2:49 PM\nTo: SuSE Linux\nSubject: Re: [opensuse] openSUSE 11.0 and the Non-ready KDE4\n\nJames R Thompson wrote:\n> Have you ever thought that they are trying to make it so anyone can use it\n> not just us geeks?  Most people I know just know how to turn on the\n> computer.  I've use KDE 4 and I like what I see, but it still needs plenty\n> of work.  \n\n\nAnd what about the experienced user, who finds such things continually\ngetting in the way?  I'm not against such \"help\" for new users, just \nmake it possible to turn the damn thing off.  This is one of the reasons \nI don't care for Windows.  There are simply too many things that get in \nthe way of someone who knows what they're doing.\n\nBottom line, if KDE 4 treats me like an idiot and I can't disable that\n\"feature\", I won't be using it.\n\n-- \nUse OpenOffice.org \n\n--",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9515478578843758,
+          "SPAM": 0.04845214211562409
+        },
+        "confidence": 0.9030957157687516
+      }
+    },
+    "usage": {
+      "input_tokens": 459,
+      "output_tokens": 0
+    }
+  }
+}

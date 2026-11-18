@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP RIAO 2007 - Call for Applications\n\nRIAO 2007  8th Conference\nMay 30 to June 1, 2007, Pittsburgh, PA, USA\nLarge-Scale Semantic Access to Content\n\nCall for Applications\nDeadline: march 16 2007\n\nThe RIAO conferences are meeting places for scientific and industrial \nspecialists in information retrieval. There are sites for presentations of \nboth high-level peer-reviewed scientific research and prototypes and of \ninnovative products, selected by a special call for products. A global call \nfor products is sent at the same time that the call for papers. The \nproducts presented are chosen uniquely on the basis of their innovativeness.\nThe \"Centre de Hautes Études Internationales d'Informatique Documentaire\" \n(C.I.D.) organizes the RIAO conferences every three years since 1985. RIAO \nstands for \"Recherche d'Information Assistée par Ordinateur\".\nRIAO conferences have two selection committees: a Program Committee for \nscientific papers, and an Applications Committee which seeks out and \nselects those innovative products for the conference.\nThe RIAO conferences are not trade shows since the teams presenting \ninnovative products are selected and do not pay for the place and time that \nthey are given during the conference.\nCompanies whose product fulfills the criteria of novelty and of \ninnovativeness can fill in a dossier designed by the conference organizers \nthat describes their submitted product.\nIn addition to the dossier, product submitters will have to provide access \nto an online or CD version of the product that demonstrates the claimed \ninnovative functionalities of the product. Applications Committee members \nwill verify the functionalities of the product.\nAfter examination of the dossier and the demonstration of each product, the \nApplication Committee members select the best products.\nEach chosen company will be provided with a demonstration space (including \ntable and chair) free of charge. The space is near the amphitheatre in \nwhich the scientific papers are presented.\nEach company may also be given a special time slot (15 minutes) to give a \nshort presentation about the product.\nIn addition, innovative products chosen for RIAO 2007 will be able to \npresent their financial prospects to technology financing specialists \n(venture capital, private equity) that will be specifically invited for \nthese presentations.\nThe general topic of the Call for Applications is:\nINNOVATIVE TOOLS PROVIDING ACCESS TO VERY LARGE VOLUMES OF MULTIMEDIA \nAND/OR MULTILINGUAL DATA\n\nAmong other topics concerning the theme of the conference, the submissions \nmight concern one or more of the following subjects:\n-       Automatic indexing of video, images, and speech\n-       Improved indexing of text, image, video and sound\n-       Ontologies and unstructured data\n-       Semantic Web and Ontologies for Full-Scale Information Retrieval\n-       Automatically producing textual descriptions of images\n-       Automatically adding metadata to video and sound\n-       Indexing and retrieval of mixed-media documents\n-       Indexing interactive documents\n-       Natural interface dialogue\n-       Multimedia question answering systems\n-       Competitive Intelligence\n-       Intelligent Search Agents\n-       Multimodal search\n-       Architectures for semantic treatment of very large databases\n-       Algorithms for semantic treatment of very large databases\n-       Comprehension-based question answering and summarization\n-       Cooperative indexing between media\n-       Semantics for less studied languages\n-       Semantic representations and standards\n-       Collaborative construction of semantic resources\n-       Indexing multilingual collections\n-       Automatic extraction of ontologies from unstructured data\n-       Aligning multilingual ontologies\n-       Language resources for multimedia indexing\n-       Extracting semantic resources from raw data\n-       Semantic annotation of blogs and videoblogs\n-       Exploiting large-scale resources for e-learning\n-       Structuring cultural heritage\n-       Technological, commercial, industrial watch systems\n-       Semantic access to large and open archives\n\nDescriptions of the products demonstrated during RIAO 2007 will be \npublished in the proceedings.\nProposals of products will be sent on the web site of the conference \nhttp://www.riao.org/cyberApplications/newAppli/appliriao2007EN.html\n\nImportant dates:\nSubmission: march 16, 2007\nNotification of acceptance: april 10, 2007\nConference: May 30 to June 1, 2007 - Pittsburgh, PA, USA\n\nProgram Chair\n          Frédéric Le Roux (France)\n          Josiane Mothe (France)",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8515847246832011,
+          "SPAM": 0.14841527531679888
+        },
+        "confidence": 0.7031694493664022
+      }
+    },
+    "usage": {
+      "input_tokens": 1155,
+      "output_tokens": 0
+    }
+  }
+}

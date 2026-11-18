@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Problems with the new super()\n\nJared Flatow wrote:\n> \n> I agree that if your methods are 'clashing' then you are  \n> probably misinheriting, but cooperative methods can be the most  natural \n> way to model certain situations.\n\nI'm not saying that nobody should ever use super, only\nthat it's not the right thing for the situation I was\ntalking about there.\n\nWhat it essentially comes down to is that classes mix\nwell if they were designed to mix well. Keeping their\nfeatures independent is one way to achieve that.\nDesigning their methods to fit together in a super\ncall chain is another, if you can manage to pull it\noff.\n\nAll I was really trying to say is that stating that\n\"multiple inheritance is bad\" is far too simplistic.\n\n> Is it an issue of feasibility, or of what is the 'most obvious' solution?\n\nI can only speak from my own experience, which is that\nwhenever I've had a problem involving multiple inheritance,\nsuper() didn't solve it. What did solve it was either\nrefactoring so that the classes being mixed were more\nindependent, or finding another solution that didn't\nrequire multiple inheritance.\n\nUsually the new solution turned out to be better in\nother ways as well, so I've come to regard multiple\ninheritance issues as a code smell suggesting that\nI need to rethink something.\n\n-- \nGreg\n\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00041192268104545907,
+          "NOT_SPAM": 0.9995880773189546
+        },
+        "confidence": 0.994773633492434
+      }
+    },
+    "usage": {
+      "input_tokens": 491,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] [OT] How much power does a PC really consume?\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\n\n\nThe Monday 2008-02-18 at 11:01 +0100, Neil wrote:\n\n> I seem to have forgotten what the bar meant. I knew it when I needed\n> it for a test, but I lost it.\n> Is it the arithmic mean? The arithmic mean is a way of averaging, if\n> wikipedia (http://en.wikipedia.org/wiki/Arithmetic_mean) is correct.\n> The average of a sine (if N cycles are taken) is 0.\n\nBut as in RMS it is squared first, it is always possitive.\n\n> If the arithmic mean of a sine is plotted over a time period the\n> result would be the exact same sine.\n\nThe mean of the squares would be a flat line, at peak(squares) / root(2)\n\n> The result of this would be that RMS is a useless value. It is not,\n> and therefore my reasoning must be flawed somewhere. Does anyone have\n> the time, knowledge and will to take the quest of finding this flaw? I\n> seem to be unable to.\n\nBetter here:\n\n   http://en.wikipedia.org/wiki/Root_mean_square\n\n- -- \nCheers,\n        Carlos E. R.\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.4-svn0 (GNU/Linux)\n\niD8DBQFHuW8vtTMYHG2NR9URApBQAJ9imFmAZQTNCtdM4DfCaqO57G2pWQCgmPFE\nhCMsXH+B5W0whdz4PFxtqV8=\n=Pf9E\n-----END PGP SIGNATURE-----",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007121422229445946,
+          "NOT_SPAM": 0.9992878577770553
+        },
+        "confidence": 0.9915271253889811
+      }
+    },
+    "usage": {
+      "input_tokens": 537,
+      "output_tokens": 0
+    }
+  }
+}

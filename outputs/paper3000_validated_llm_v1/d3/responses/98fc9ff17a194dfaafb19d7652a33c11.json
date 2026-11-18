@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Smoke [5.10.0] 32090 FAIL(F) freebsd 6.0-STABLE (i386/6 cpu)\n\nAndrew Dougherty wrote:\n> On Fri, 12 Oct 2007, xlicq@landgren.net wrote:\n> \n>> Automated smoke report for 5.10.0 patch 32090\n>> profane.mongueurs.net: Intel Pentium III Xeon (i386/6 cpu)\n>>     on        freebsd - 6.0-STABLE\n>>     using     cc version 3.4.4 [FreeBSD] 20050518\n>>     smoketime 1 day 10 hours 32 minutes (average 1 hour 4 minutes)\n\n[...]\n\n>> Failures: (common-args) none\n>> [perlio] -DDEBUGGING -Duseithreads\n>>     ../lib/CPANPLUS/t/20_CPANPLUS-Dist-MM.t.FAILED ??\n>>     ../lib/IPC/Cmd/t/01_IPC-Cmd.t...........FAILED ??\n>> Inconsistent test results (between TEST and harness):\n>>     ../lib/CPANPLUS/Dist/Build/t/02_CPANPLUS-Dist-Build.tFAILED--non-zero wait status: 65280\n>>     ../lib/Archive/Extract/t/01_Archive-Extract.tFAILED--non-zero wait status: 65280\n> \n> I could be completely wrong, but these may be addressed by revision\n> 32101, which changed IPC::Cmd.t's handling of things that print to stderr.\n\nI have started a new run. As you can see, the box is slow (but it is a \nhexaproc, which is nice for exercising threads). We shall see how it \ngoes. I'm still hoping to find the tuits to address the following:\n\nCompiler messages(gcc):\nmg.c: In function `Perl_sighandler':\nmg.c:2907: warning: null format string\npp_sys.c: In function `Perl_pp_die':\npp_sys.c:491: warning: null format string\nutil.c: In function `Perl_get_hash_seed':\nutil.c:5265: warning: implicit declaration of function `strtoull'\nmg.c: In function `Perl_magic_set':\nmg.c:2642: warning: implicit declaration of function `atoll'\n\nThanks,\nDavid",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0003681543512706062,
+          "NOT_SPAM": 0.9996318456487293
+        },
+        "confidence": 0.9952692787793791
+      }
+    },
+    "usage": {
+      "input_tokens": 685,
+      "output_tokens": 0
+    }
+  }
+}

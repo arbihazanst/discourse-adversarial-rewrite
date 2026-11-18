@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Buildbot-devel] Propagating build properties to dependent\tschedulers\n\nTriggerable schedulers will do what you want.  They have yet to be\nmerged, but a patch is available here:\n  http://buildbot.net/trac/ticket/56\n\nDustin\n\nOn 10/28/07, Aaron Maxwell  wrote:\n> Hi all,\n>\n> In our buildbot installation, we have a \"checkout\" factory with (among other\n> things) an SVN checkout step, and a \"work\" factory that runs the actual\n> tests.  The scheduler for the \"work\" factory is a dependent on the \"checkout\"\n> factory, i.e. with buildbot.scheduler.Dependent .\n>\n> Is there a way to convey build property information from the \"checkout\"\n> factory to the dependent \"work\" factory?  Specifically, I need to communicate\n> the value of got_revision, so that I can add commands to the \"work\" factory\n> that use its value.\n>\n> I thought of making a special subclass of Dependent, but as I write this don't\n> know if that will solve the problem yet.\n>\n> Thanks in advance.  Incidentally, we're using 0.7.6; master and slave both run\n> on linux (Ubuntu).\n>\n> --\n> Aaron Maxwell\n> http://redsymbol.net\n>\n> Business Owners and Self-Employed:  You're NOT Alone!\n> The Business Butler - http://businessbutler.us\n>\n> \n> This SF.net email is sponsored by: Splunk Inc.\n> Still grepping through log files to find problems?  Stop.\n> Now Search log events and configuration files using AJAX and a browser.\n> Download your FREE copy of Splunk now >> http://get.splunk.com/\n> \n> Buildbot-devel mailing list\n> \n> \n>\n\n\n-- \nStorage Software Engineer\nhttp://www.zmanda.com\n\n\nThis SF.net email is sponsored by: Splunk Inc.\nStill grepping through log files to find problems?  Stop.\nNow Search log events and configuration files using AJAX and a browser.\nDownload your FREE copy of Splunk now >> http://get.splunk.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9457542649199557,
+          "SPAM": 0.05424573508004437
+        },
+        "confidence": 0.8915085298399115
+      }
+    },
+    "usage": {
+      "input_tokens": 649,
+      "output_tokens": 0
+    }
+  }
+}

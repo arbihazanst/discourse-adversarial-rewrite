@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-3000] gettext\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn Apr 24, 2008, at 6:18 PM, Guido van Rossum wrote:\n\n> Care to comment? Or know who should comment?\n>\n> ---------- Forwarded message ----------\n> From: Benjamin Peterson \n> Date: Wed, Apr 23, 2008 at 7:32 AM\n> Subject: [Python-3000] gettext\n> To: Python 3000 \n>\n>\n> [I'm not a gettext expert, so sorry if the following is totally  \n> wrong. :)]\n>\n> Are we going to want to keep the \"u\" variants of the gettext APIs\n> around in 3.0? Also, the unicode parameters (for .install methods)\n> don't make much sense in 3.0.\n>\n> I don't see how we could remove them in 3.0, but perhaps rename then\n> to their non-\"u\" variants and deprecate?\n\nI wonder if it makes more sense to keep a unicode version and a bytes  \nversion.  The simplest solution then would be to change gettext() to  \nreturn an encoded bytes and leave ugettext() to return the unicode  \nstring.  I don't have a sense for how useful an encoded translated  \nbytes will be in the real world, and I do think that the unicode  \ntranslation will be far more likely.  That might argue for renaming  \nugettext() to gettext() and adding something like a egettext() or  \nbgettext() method.\n\nOTOH, the current names are inspired from GNU gettext so it seems to  \nme there's not much value in renaming our methods, except to increase  \nconfusion and break backward compatibility .\n\n- -Barry\n\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.8 (Darwin)\n\niQCVAwUBSBiw3XEjvBPtnXfVAQIf8AP8DcnZzB1TeOwnOV5qGsRjBNUTMmE3+IOT\n/ugEtBhvp12CekNx+/7ibNmz7e8tR7ZcUPaE6vklKoryR5ILoJ8Nonm5VIIr0VaS\nHft1xD88ApIcRsESCHlzpErc0X0jsvqjqfH9lhapq0ahZtCUOAALTuKTXu4CkBCM\n7PrlDFazPcs=\n=xDf5\n-----END PGP SIGNATURE-----\n_______________________________________________\nPython-3000 mailing list\nsmsbmo-9552@python.org\nhttp://mail.python.org/mailman/listinfo/python-3000\nUnsubscribe: http://mail.python.org/mailman/options/python-3000/python-3000%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00032629638541804677,
+          "NOT_SPAM": 0.9996737036145819
+        },
+        "confidence": 0.99575031946041
+      }
+    },
+    "usage": {
+      "input_tokens": 781,
+      "output_tokens": 0
+    }
+  }
+}

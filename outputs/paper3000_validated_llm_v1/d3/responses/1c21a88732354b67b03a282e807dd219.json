@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Fwd: Re[2]: [ILUG] New ILUG commitee\n\nWhile we're on the subjecy of AGM's etc,\n\nPersonally, I don't have a problem with more committee members. (I\nthink a more spiritive approach to rules is always better than being\nlinear about things. That however also raises questions of whom has\nthe right interpretation).\n\nIn fact I think it should be increased further so that there is\nadequate representation of the regions, as not everyone is available\nor able to travel to Dublin for the AGM. This could be accommodated by\neach region also holding a meeting at the same time and making\nsubmissions to main meeting or indeed voting too. After all we are all\nsurrounded by so much technology I don't understand why we can't use\nit more.\n\nMany national organisations split voting into regions for submission\nto central bodies for results to be tallied and announced later. Does\nall this have to be done in one day? Can we not use the technology\nmany of us work with to aid us better here?\n\nAJ\n\nOn Nov 14, 2007 5:31 PM, Thomas Bridge  wrote:\n> On 14/11/2007, evhq@clubi.ie  wrote:\n>\n> > I'd propose that, given there was no opposition to the motion at the\n> > AGM, that we rectify this matter by allowing 4 days for people to\n> > object to the change via this list. If there's a lack of significant\n> > objections we can easily let the change stand.\n>\n> That would be to miss the bit where its then required to be voted upon\n> at an AGM / EGM.\n>\n> Gareth did ask on IRC about the background behind the decision to\n> limit OCM membership to two - as I recall, it was partly because it\n> was felt that the purpose of the committee was simply to provide a\n> means to opening a bank account and not to replace the somewhat\n> informal/anarchic way meetings and events had been organised.\n>\n> However, that does appear to have changed over the years, so I think\n> the fix is fairly simple.  At the next ILUG event, call an EGM and\n> pass the following proposal:\n>\n> That article 4.5 be amended as follows:\n>\n> The addition of the line \"Additional ordinary committee members may be\n> elected with the approval of the majority of votes at the AGM.    Any\n> increase in the number of Ordinary Committees shall be effective only\n> for the term of that committee.\"\n>\n> In the meantime, as my experience of ILUG committees is that they\n> usually rule by consensus, I don't see any issue with carrying on as\n> is.   As Colm points out - the constitution is there to serve the\n> members, not vice versa.   There's nothing to say the committee can't\n> invite people to their meetings anyway.\n>\n> One other point - I understand that the ILUG Chairman also ruled on\n> the interpretation of section 3.1 and the definition of residence -\n> may I suggest that http://www.linux.ie/legal/constitution.php be\n> updated to reflect that, so that there is a record of the ruling.\n>\n> Thomas\n>\n> --\n> Thomas Bridge\n> CCIE  #14108\n>\n> --\n> Irish Linux Users' Group mailing list\n> About this list : http://mail.linux.ie/mailman/listinfo/ilug\n> Who we are : http://www.linux.ie/\n> Where we are : http://www.linux.ie/map/\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00024976383078728593,
+          "NOT_SPAM": 0.9997502361692128
+        },
+        "confidence": 0.9966507512822793
+      }
+    },
+    "usage": {
+      "input_tokens": 936,
+      "output_tokens": 0
+    }
+  }
+}

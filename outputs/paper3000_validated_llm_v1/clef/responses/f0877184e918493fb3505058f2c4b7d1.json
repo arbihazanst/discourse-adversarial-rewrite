@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Lemuel Ferguson\n\n\n\n\n\n\n\n\nInst je ant Online Payday Loans Fa zc st C kb as oct h Payday Loans ...\n\nOur secure online process lets you apply from East Coast \nto the West Coast or anywhere in between and get online \napproval for Fast Cash Payday Loans.\n\n\nhttp://loanfinanc.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.022195771814359708,
+          "SPAM": 0.9778042281856403
+        },
+        "confidence": 0.9556084563712806
+      }
+    },
+    "usage": {
+      "input_tokens": 225,
+      "output_tokens": 0
+    }
+  }
+}

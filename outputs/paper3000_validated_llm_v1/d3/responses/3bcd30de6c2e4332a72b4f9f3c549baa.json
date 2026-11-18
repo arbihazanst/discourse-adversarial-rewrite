@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Today's WeatherDirect Forecast for Waterloo\n\n\n\n\n\nWeatherDirect - Waterloo, Ontario, Canada\n\n\n\n\n\n\nsubscribe | change profile | contact us\n\n\n\n\n\n\n\n\n\n\n\n\nLong Term  \t\t14 Day Trend  \t\tWeather Maps\n\n\n\n\n\n\n\n\n\n\nWaterloo, ON\nTuesday August 5, 2008\n\n\n\n\n\n\n\n\n\n\n\nHourly Forecast\n\n\nTime\nTemperature\nCondition\n\n\n7 pm\n22°C\n Thunder- showers\n\n\n8 pm\n21°C\n Thunder- showers\n\n\n9 pm\n20°C\n Thunder- showers\n\n\n10 pm\n18°C\n Chance of thunder- showers\n\n\n11 pm\n17°C\n Variable cloudiness\n\n\n12 am\n17°C\n Variable cloudiness\n\n\n1 am\n18°C\n Variable cloudiness\n\n\n2 am\n18°C\n Variable cloudiness\n\n\n\n\n\n\n\n\n\n\n\n\n\nShort Term Forecast\n\n\nTuesday overnight\nWednesday morning\nWednesday afternoon\nWednesday evening\n\n\n 18°C\n 18°C\n 24°C\n 21°C\n\n\nCloudy periods\nMainly sunny\nMainly sunny\nMainly clear\n\n\n\nUV Index: \n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t 0 Low \n\t\t\t\nUV Index: \n\t\t\t 1 Low \n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\nUV Index: \n\t\t\t\n\t\t\t 7 High \n\t\t\t\n\t\t\t\n\t\t\t\nUV Index: \n\t\t\t\n\t\t\t\n\t\t\t 5 Moderate \n\t\t\t\n\t\t\t\n\n \nWind: 15 km/h\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t\nWind: 20 km/h\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t\nWind: 25 km/h\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t\nWind: 25 km/h\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t\n\n\nP.O.P.: 10%\nP.O.P.: 0%\nP.O.P.: 0%\nP.O.P.: 0%\n\n\n\n\n\n\n\n\n\n\n\nLong Term Forecast\n\n \n\nWednesdayAugust\t6\nThursdayAugust\t7\nFridayAugust\t8\nSaturdayAugust\t9\nSundayAugust\t10\nMondayAugust\t11\n\n\nCondition\n\n\n\n\n\n\n\n\n\nMainly sunny\nA few showers\nA few showers\nCloudy periods\nA few showers\nVariable cloudiness\n\n\nHigh\n24°C\n23°C\n22°C\n23°C\n17°C\n21°C\n\n\nLow\n16°C\n14°C\n14°C\n12°C\n14°C\n12°C\n\n\nP.O.P.\n0%\n40%\n60%\n20%\n60%\n20%\n\n \nWind\n\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t25 km/h\n\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t15 km/h\n\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t10 km/h\n\n\t\t\t\n\t\t\t\t\n\t\t\t\tNW\n\t\t\t\t\n\t\t\t\n\t\t\t10 km/h\n\n\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\tSW\n\t\t\t\n\t\t\t20 km/h\n\n\t\t\t\n\t\t\t\tW\n\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t20 km/h\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNational Outlook - Weather Maps\n\n\n\n\n\n\n\n\n\t\t\t\t\tMore Weather Maps\n\t\t\t\t\n\n\nSatellite/Radar\nTemperature\nHumidex\nWind Chill\n\n\nSystem\nPrecipitation\nWind Speed\nIcon Map\n\n\n\n\n\nOther Weather Related Services\n\n\n\nMobile Messaging:\n\t\t\t\t\t\nEveryday Weather\nOn Demand (WEATH)\nRoad Hw99 (sea to sky)\n\n\n\n\nEmail:\n\t\t\t\t\t\nPollenDirect\nFluDirect\n\n\n\n\n\n\t\tSponsored Links\n\t\n\n\n\n\nTo unsubsribe to Weather Direct click here\n\nAdvertising ·Help ·Privacy  © 2008 The Weather Network",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.39796057428540743,
+          "NOT_SPAM": 0.6020394257145926
+        },
+        "confidence": 0.030254901360143638
+      }
+    },
+    "usage": {
+      "input_tokens": 826,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Celebrate favorite players from the past.\n\nThe Official Online Shop of the National Baseball Hall of Fame and Museum\n..........................................................\n\nPersonalized Replica Cooperstown Jerseys\n\nCustomize a Cooperstown jersey from a select list of former players or with your own name and number.\nOnly $99.99.\n\nShop now >> \nhttp://clicks.on32.com/cts/click?q=2;23384;4o05yM8Yq88SHSIRU%2FfjzAsTC%2B2C8H1G\n\n..........................................................\n\n(c) 2008 MLB Advanced Media, L.P. All rights reserved.\n\nBaseball Hall of Fame trademarks and copyrights are used \nwith the permission of the National Baseball Hall of Fame & Museum.  \n\nMLB Advanced Media is an official licensee of the \nNational Baseball Hall of Fame & Museum.\n\nAll Major League Baseball trademarks and service marks used herein \nare the property of the applicable MLB entity. All other marks used herein \nare trademarks or registered trademarks of their respective owners.\n\nPlease review the baseballhalloffame.org privacy policy: $ACURL('http://web.baseballhalloffame.org/about/privacy.jsp')\n\nYou received this message because you registered to receive \ncommercial e-mail messages from baseballhalloffame.org. If you no \nlonger wish to receive commercial e-mail messages from\nbaseballhalloffame.org, please click here to unsubscribe:http://clicks.on32.com/cts/click?q=2;23384;KnxaeUu5FbiW8%2FJpMv8X4N010ufgjK%2F1%2BcnJyHLYpqk%3D\n\nPostal Address: National Baseball Hall of Fame and Museum, \n25 Main Street, Cooperstown, NY 13326.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.848292174809992,
+          "NOT_SPAM": 0.15170782519000794
+        },
+        "confidence": 0.38590231230771355
+      }
+    },
+    "usage": {
+      "input_tokens": 530,
+      "output_tokens": 0
+    }
+  }
+}

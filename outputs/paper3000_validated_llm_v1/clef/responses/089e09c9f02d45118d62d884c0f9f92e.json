@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Choice IWC replica watches at Replica Classics   \n\n\nThe one with great quality products, good customer support and warranty. \n\nHigh Quality Rolex Replica Watches\n\nQualitative replica watches for most exacting people   \n\nhttp://alinegladysip.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.027660473436508695,
+          "SPAM": 0.9723395265634914
+        },
+        "confidence": 0.9446790531269829
+      }
+    },
+    "usage": {
+      "input_tokens": 210,
+      "output_tokens": 0
+    }
+  }
+}

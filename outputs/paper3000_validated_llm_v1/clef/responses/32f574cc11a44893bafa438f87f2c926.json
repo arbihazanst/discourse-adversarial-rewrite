@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Apache HTTP server configuration to interact with a subversion repository\n\nCould you explain how can I be sure that apache server and repoitory\nowner have write rights to a created repository?\n\nOn Wed, Mar 5, 2008 at 2:12 PM, dave stern - e-mail.pluribus.unum\n wrote:\n> Who is the repo owner? Using apache, I believe the repo has to be owned by\n>  whomever runs apache. So if you have a user acting as the repo librarian,\n>  that user and apache might need to be in the same group with the structure\n>  allowing group write.\n>\n>\n>\n>  On Wed, Mar 5, 2008 at 3:22 AM, Cristea Bogdan  wrote:\n>  >   I need to configure an apache server in order to interact with a\n>  >  subversion repository. In my initial configuration the repository should be\n>  >  accessed anonymously. However, when importing into a repository:\n>  >  \"svn import tmp/ModemModule/ http://localhost/repos/Modem/ModemModule\"\n>  >  I get the error message:\n>  >  \"svn: Can't create\n>  >  directory '/home/bogdan/svnrepo/Modem/db/transactions/0-1.txn': Permission\n>  >  denied\n>  >  svn: Your commit message was left in a temporary file:\n>  >  svn:    'svn-commit.3.tmp' \"\n>  >  How can I solve this issue?\n>  >  --\n>  >  Bogdan Cristea\n>  >  Software Engineer\n>  >  --\n>  >  To unsubscribe, e-mail: assipqff+nmekprykass@opensuse.org\n>  >  For additional commands, e-mail: qybuovjs+kcmh@opensuse.org\n>  >\n>  >\n>\n\n\n\n-- \nBogdan Cristea",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9626612023721907,
+          "SPAM": 0.03733879762780932
+        },
+        "confidence": 0.9253224047443813
+      }
+    },
+    "usage": {
+      "input_tokens": 613,
+      "output_tokens": 0
+    }
+  }
+}

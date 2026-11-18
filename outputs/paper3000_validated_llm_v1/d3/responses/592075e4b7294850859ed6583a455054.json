@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Past LC comments on draft-ietf-geopriv-http-location-delivery-08\n\nLisa Dusseault wrote:\n> I believe I instigated the creation of a new URI scheme for HELD.  \n> That's not to say, however, that I or the IESG required that solution -- \n> to elaborate on what Martin said, I raised some issues, and the URI \n> scheme was added after my review, but other solutions might work instead \n> of new URI schemes.\n> \n> The discussions started in a bar in San Diego (unminuted). After that \n> there was list email.  The issues that I was trying to help the WG address:\n>  - When an HTTP URI is found in an email, blog, etc, the operating \n> system launches a Web browser.  However, a Web browser doesn't know how \n> to formulate a HELD request, and even if it did know how, it wouldn't \n> know when/whether.\n\nYes. Understood.\n\nCan somebody rephrase this is as a use case? I may not understand the \ngeopriv stuff sufficiently to grok where the problem is.\n\nThe spec already defines a custom MIME type (good!).\n\nIs the concern that a client that does a GET on an HTTP URI, and receive \na response with that MIME type, still wouldn't know whether it's seeing \na genuine HELD response, or just some static XML document served by a \nweb server?\n\nIn that case I think a new response header, or some use of OPTIONS would \nbe a simpler way to achieve that.\n\n>  - When location URIs appear in another context -- let's say, another \n> protocol or a data format -- it can be helpful to be able to limit what \n> kind of URIs appear in that context.   Limiting by saying \"These URIs \n> must be of this URI scheme\" is an easy way to do so.\n> \n> Both of these problems can be solved in other ways besides defining a \n> new URI scheme.\n> \n> That said, a new URI scheme does help with both problems, and it does \n> highlight the issue that most regular HTTP requests (e.g. a GET without \n> a body) are not standardized or interoperable under HELD.  It should be \n> OK to use a new URI scheme in the target of an HTTP request, after all \n> that's a well-defined point of HTTP extensibility in theory, and I'm not \n> aware of major client or server library limitations that would prevent \n> use in practice.  If it has to be made explicit in the document that \n> defines the URI schemes, so be it -- I believe it was implicit but obvious.\n\nAs far as I can tell there are several problems with that:\n\n- RFC2616 requires servers to understand requests with an absoluteURI as \nrequest-URI, but it also tells HTTP/1.1 clients not to use it (except \nwhen talking to proxies); so you're moving outside the HTTP/1.1 spec\n\n- existing client libraries (such as XHR or Apache HttpClient) do not \nsupport this format (and why should they?), so how do you get the \nrequest on the wire if not by writing a custom http stack?\n\n- how do you implement a server on top of existing HTTP frameworks, such \nas in a Java servlet container? Are there extension hooks that allow this?\n\nSo, has this been *tested*?\n\n> I'm aware of the W3C TAG recommendations on new URI schemes.  Their TR \n> says \" Good practice: Reuse URI schemes.  A specification SHOULD reuse \n> an existing URI scheme (rather than create a new one) when it provides \n> the desired properties of identifiers and their relation to resources.\"\n> Some of their notes say for example: \"You need to demonstrate there is a \n> bar for URIs [new schemes] doing what you want or there is a huge value \n> add\".  We can debate whether this example is a big value-add and whether \n> the HTTP URI fails to express that a client needs to do a custom GET \n> request, but given those caveats and the lack of an official IESG or \n> IETF position on this, I believe there's some consistency between W3C \n> TAG recommendations and IETF usage, and potentially this specific usage.\n\nMaybe, maybe not.\n\nIt would be helpful if somebody would explain why HTTP does not work \nhere. For instance, where's the difference to WebDAV or AtomPub that \nrequires a whole new identification scheme?\n\nBR, Julian\n_______________________________________________\nIetf mailing list\nIetf@ietf.org\nhttps://www.ietf.org/mailman/listinfo/ietf",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00032091524200898134,
+          "NOT_SPAM": 0.9996790847579909
+        },
+        "confidence": 0.9958127031879782
+      }
+    },
+    "usage": {
+      "input_tokens": 1138,
+      "output_tokens": 0
+    }
+  }
+}

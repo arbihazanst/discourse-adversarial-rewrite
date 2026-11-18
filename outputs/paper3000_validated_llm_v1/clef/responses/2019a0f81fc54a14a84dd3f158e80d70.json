@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: A Series of Special Sessions on Value-Chain Optimisation using Constraint Programming\n\nWith Apologies for multiple copies:\n\n                     Call for Papers\n\n              A SERIES OF SPECIAL SESSIONS ON\n\n    Value-Chain Optimisation using Constraint Programming\n\n\n\nOVERVIEW\n\nConstraint processing has emerged as an extremely expressive and powerful\nparadigm in which to model, solve and reason about many complex problems.\nOver the past several decades advances in both the fundamental aspects of\nconstraint processing and practical applications of constraints have\ncontributed to making it one of the most promising of Artificial \nIntelligence\ntechnologies.\n\nOver the last decade there has been an increasing interest in supply chain\nmanagement or, more generally, the management of complex value-chains.\nThese can be regarded as complex optimisation problems that must be \neffectively\nmodelled and solved by state-of-the-art optimisation technologies. These\nspecial sessions aim to present a technical programme representing the\nstate-of-the-art in using constraints and operations research techniques\nto solving complex real world value-chain optimisation problems.\n\n\nSCOPE\n\nTopics that may be addressed in papers for consideration for inclusion\nin this series of special sessions include, but are not limited to:\n* optimisation and constraint solving techniques for value chain problems;\n* validation of models and solutions: robustness, sensitivity, etc;\n* reasoning about uncertainty and change in value chain optimisation;\n* distributed and agent-based optimisation across the value-chain;\n* optimisation and integrated product development, concurrent engineering,\n  Design For X, etc.;\n* constraints for decision support;\n* scheduling and logistics approaches;\n* fundamental advances in constraints and operations research that are\n  relevant to value chain optimisation, such as constraint acquisition,\n  explanation generation, preference handling, negotiation, etc.;\n* hybrid systems for value-chain optimisation involving a significant\n  constraint-based element;\n* real world applications of optimisation in value chain.\n\n\nSUBMISSION\n\nInvited papers (6 pages in IFAC double column format) will be reviewed by\nat least two referees. As to regular papers, both academic and industrial\noriented communications will be considered. Scientific contributions will\nbe compiled into several volumes of INCOM06's proceedings. Further \nsubmission\ninstructions are available on the symposium website:\n\n                    http://www.emse.fr/incom2006\n\n\nThese sessions will be organised in order to allow ample time for discussion\nand demonstration. In particular, while prospective attendees are generally\nexpected to submit a full paper, as per the conference guidelines, shorter\nsubmissions may also be considered. For example, short statements of \ninterest\nmay also be considered, indicating what perspective and background such\nauthors will bring to the sessions. We also consider position papers\ndiscussing \"what users need\" or problem statements. \"Real users\" are\nespecially welcome to provide their perspectives.\n\nThe co-chairs will investigate the potential for a special issue of a\njournal on value-chain optimisation using constraint programming.\n\n\nIMPORTANT DATES\n\nPlease express your intention of submission now to Barry O'Sullivan\n(b.qxjoiltqv@cs.ucc.ie).\n\nPapers submission deadline: November 15th, 2005\nAcceptance notification:    January 6th, 2006\nFinal papers due:           March 1st, 2006\n\n\nAUDIENCE\n\nThis series of special sessions will be of interest to researchers who seek\na deeper understanding of the technical issues associated with modelling and\nsolving optimisation problems motivated by real world value-chain scenarios\nusing constraints and operations research techniques. The sessions will also\nbe of interest to industrialists interested in learning the state-of-the-art\nin value-chain-focused optimisation technologies.\n\n\nCO-CHAIRS\n\nKenneth N. Brown, Eugene C. Freuder, Barry O'Sullivan, S. Armagan Tarim.\nCork Constraint Computation Centre, University College Cork, Ireland.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8389345756579514,
+          "SPAM": 0.16106542434204857
+        },
+        "confidence": 0.6778691513159028
+      }
+    },
+    "usage": {
+      "input_tokens": 989,
+      "output_tokens": 0
+    }
+  }
+}

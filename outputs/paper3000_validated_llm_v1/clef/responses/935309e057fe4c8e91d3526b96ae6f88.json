@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Chronicle search agent: Computer (180 miles)\n\n\n\nE-Mail Alerts From The Chronicle of Higher Education\n\n\n\n\n\n\n\n\nDear Chronicle reader,\n\nYour job search agent, Computer (180 miles), found 28 new listings. The 20 most relevant are listed below. (See all matching jobs)\n\n\n\n\n\n\n\n\n\n\n\n\n\nDean, School of Engineering and Computing Sciences\nNew York Institute of Technology (New York)\n(date posted: 2/11/2008)\n\nMultiple Tenure-track Faculty and Adminstration Positions\nNew York City College of Technology/City University of New York (New York)\n(date posted: 2/11/2008)\n\nEngineering and Electrical Systems Dpartment Position\nUniversity of Pennsylvania (Pennsylvania)\n(date posted: 2/11/2008)\n\nAssistant Professor in Music and Sound Recording\nUniversity of New Haven (Connecticut)\n(date posted: 2/11/2008)\n\nAssistant Professor: Educational Studies\nEmpire State College of State University of New York (New York)\n(date posted: 2/12/2008)\n\nAssistant Professor: Human Development\nEmpire State College of State University of New York (New York)\n(date posted: 2/12/2008)\n\nMathematics teaching Position\nDeSales University (Pennsylvania)\n(date posted: 2/11/2008)\n\nAssociate\nSteege/Thomson Communications (Pennsylvania)\n(date posted: 2/12/2008)\n\nLectuters in Division of Life Sciences\nRutgers University at New Brunswick (New Jersey)\n(date posted: 2/12/2008)\n\nChief Information Officer\nHolyoke Community College (Massachusetts)\n(date posted: 2/11/2008)\n\nAssistant Dean Position\nCollege of New Jersey (New Jersey)\n(date posted: 2/8/2008)\n\nDirector of Program Operations\nRockland Community College (New York)\n(date posted: 2/11/2008)\n\nHead Librarian of the Carl W. Blegen Library\nAmerican School Classical Studies (New Jersey)\n(date posted: 2/11/2008)\n\nProgrammer/Analyst\nNew York University (New York)\n(date posted: 2/11/2008)\n\nIRB/IACUC Administrator\nRutgers University at New Brunswick (New Jersey)\n(date posted: 2/12/2008)\n\nAssistant/Associate Professor: Nursing (2 Positions)\nEmpire State College of State University of New York (New York)\n(date posted: 2/8/2008)\n\nAssistant Professor: Social Science\nEmpire State College of State University of New York (New York)\n(date posted: 2/12/2008)\n\nAssistant Professor: Business Administration\nEmpire State College of State University of New York (New York)\n(date posted: 2/12/2008)\n\nAssistant/Associate Professor: Mathematics Education\nEmpire State College of State University of New York (New York)\n(date posted: 2/8/2008)\n\nResearch Associate, School of Engineering\nCity College of City University of New York (New York)\n(date posted: 2/11/2008)\n\n\n\n\n\n\nYou're receiving this message because you've asked to be notified\nwhen new job listings on Chronicle Careers match the following\ncriteria:\n\n\nCategory:\n\n\n\nLocation:\n\n\n\nKeyword(s):\ncomputer\n\nSearch ZIP code:\n06820\n\nSearch radius:\n180 miles\n\nThis search is named:\nComputer (180 miles)\n\nE-mail frequency:\nWeekly (as new jobs match)\n\nE-mail format:\nHTML\n\n\n\nTO STOP RECEIVING THIS NOTIFICATION, click on this button:\n\n\n\nIf you would like to modify this search or your email address, simply cancel this agent and create a new one by performing a new search on our site.\n\n\n\n\n\nCareer News & Advice\n Make Chronicle Careers Your Own Register to customize your entire job search with Chronicle Careers, a free service for job seekers from The Chronicle of Higher Education.\nGeography helps guide a Ph.D. in his decision about his first postdoctoral job.\nWhat are the odds that seven conference interviews will lead to any campus visits?\nA Ph.D. hits the road to promote her crossover book about the Blue Ridge Parkway.\nIt's no fun watching a parade of painfully earnest job candidates become sad victims of unwitting self-sabotage.\nA perennial applicant sitting on his first hiring committee gains a new perspective on the search process.\nJoin us in our discussion forums to talk about academic work and life -- or just about anything else. Registration is free.\nFor in-depth information provided by colleges, universities, and other organizations, see Employer Profiles. Recent additions: St. Edward's University and Western Oregon University.\n\nMore news & advice\n\n\n\n\nVisit Us on the Web\n\nChronicle Careers\n\nThe Chronicle of Higher Education\n\nThe Chronicle Review\n\nArts & Letters Daily\nIf you have comments or questions, please send a message to rnkriti@chronicle.com\n\n\n\n\n\n\nCopyright © 2008 by The Chronicle of Higher Education",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9542638732426244,
+          "SPAM": 0.045736126757375574
+        },
+        "confidence": 0.9085277464852488
+      }
+    },
+    "usage": {
+      "input_tokens": 1295,
+      "output_tokens": 0
+    }
+  }
+}

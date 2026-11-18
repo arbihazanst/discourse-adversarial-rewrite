@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [dkim-milter-discuss] postfix + dkim-filter + email lists - milter  troubles (can't read SMFIC_HEADER\n\nWietse Venema skrev, on 08-02-2008 14:48:\n> Tony Earnshaw:\n>> master.cf; 10026 is the last of three smtpd listeners:\n>>\n>> :10026       inet        n   -   n   -    50    smtpd\n> \n> SAFETY: use 127.0.0.1:10026\n\nHmmm ... looking at all those nullified restrictions I could kick myself \nfor not having thought of that on my own, even with the \npermit_mynetworks,reject, ecco Maestro.\n\n--Tonni\n\n--\n\n> \tWietse\n> \n>>     -o content_filter=\n>>     -o smtpd_client_restrictions=\n>>     -o smtpd_helo_restrictions=\n>>     -o smtpd_sender_restrictions=\n>>     -o smtpd_error_sleep_time=0\n>>     -o smtpd_recipient_restrictions=permit_mynetworks,reject\n>>     -o receive_override_options=no_unknown_recipient_checks\n>>     -o smtpd_milters=inet:localhost:10004\n>>     -o disable_mime_output_conversion=yes\n>>     -o milter_macro_daemon_name=ORIGINATING\n>>     -o milter_default_action=accept\n>>\n>> Default milter_protocol is 3 (6 as advised for PF 2.5 *does* give \n>> SMFIC_HEADER faults).\n>>\n>> milter_macro_daemon_name corresponds to 'MTA ORIGINATING' in \n>> /etc/dkim-filter.conf - even though people have written that that's not \n>> necessary any more with current versions of dkim-milter.\n>>\n>> Best,\n>>\n>> --Tonni\n>>\n>> -- \n>> Tony Earnshaw\n>> Email: tonni at hetnet dot nl\n>>\n>>\n> \n> \n\n\n-- \nTony Earnshaw\nEmail: tonni at hetnet dot nl",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9500416739627343,
+          "SPAM": 0.04995832603726572
+        },
+        "confidence": 0.9000833479254686
+      }
+    },
+    "usage": {
+      "input_tokens": 636,
+      "output_tokens": 0
+    }
+  }
+}

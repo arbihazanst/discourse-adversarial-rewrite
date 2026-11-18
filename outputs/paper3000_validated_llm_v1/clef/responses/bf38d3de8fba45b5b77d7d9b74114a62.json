@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [UAI] Determinism versus Choice\n\nAlex,\nMy description of a 40 year old woman would have been somewhat more \nyouthful than yours. Perhaps it depends on the which side of 40 one \nlies. Once again, we see the subjectivity in all of this.\n\nBy the way, what does any of this have to do with determinism?\nRich\n\nAt 01:46 PM 10/6/2006, Aleks Jakulin wrote:\n>Lotfi A. Zadeh wrote:\n> > The problem is: probability theory does not differentiate between\n> > fuzziness and randomness or, concomitantly, between possibility and\n> > probability. Here is a simple example. I meet Valentina. I do not know\n> > how old she is. My perception is that she is about 40. In this instance,\n> > Valentina's age is a fuzzy variable and \"about 40: is its fuzzy value.\n>\n>Lotfi's case is very important, as it demonstrates the difference\n>between the value of a random variable and a distribution over a random\n>variable. Let me rephrase the above example in probabilistic terms:\n>\n>I meet Valentina.\n>         I observe the values of several variables {Skin=\"slight wrinkles\",\n>Hairstyle=\"Formal\", Dress=\"Skirt_Blouse\"}\n>\n>I do not know how old she is.\n>         I do not know the value of variable Age. Having previously observed\n>similar women and men and knowing their ages, I could build a\n>probabilistic model P(Age|Skin,Hairstyle,Dress). Since I have not seen\n>all the women in the world, and I had started from a subjective prior,\n>the model is also subjective and Bayesian.\n>\n>My perception is that she is about 40.\n>         To quickly summarize the P(Age|Skin=\"slight\n>wrinkles\",Hairstyle=\"Formal\",Dress=\"Skirt_Blouse\"), I can use the mean\n>of the conditional distribution.\n>\n>In this instance, Valentina's age is a fuzzy variable and \"about 40\" is\n>its fuzzy value.\n>         Valentina's age is a subjective probability distribution, \n> and 40 is the\n>rounded value of its mean.\n>\n>\n>Best regards,\n>         Aleks Jakulin\n>\n>         Department of Statistics\n>         Columbia University\n>_______________________________________________\n>uai mailing list\n>faq@ENGR.ORST.EDU\n>https://secure.engr.oregonstate.edu/mailman/listinfo/uai\n\nRichard E. Neapolitan\nProfessor and Chair of Computer Science\nNortheastern Illinois University\n5500 N. St. Louis\nChicago, Illinois 60625",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9486414308298386,
+          "SPAM": 0.05135856917016133
+        },
+        "confidence": 0.8972828616596773
+      }
+    },
+    "usage": {
+      "input_tokens": 780,
+      "output_tokens": 0
+    }
+  }
+}

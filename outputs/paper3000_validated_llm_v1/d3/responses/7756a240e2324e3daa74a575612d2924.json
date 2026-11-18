@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] CFP: MICAI-2005 Artificial Intelligence, Springer LNAI: one week submission reminder CFP\n\n        4th Mexican International Conference on \n        ARTIFICIAL INTELLIGENCE\n\n        MICAI 2005\n\n        November 14-18, 2005\n        Monterrey, Mexico\n        www.MICAI.org/2005\n\n        Proceedings: Springer LNAI.\n\n        Keynote speakers: \n        John McCarthy, Tom Mitchell, Erick Cantu, Jaime Sichman;\n        Katsushi Ikeuchi (to be confirmed), more to be announced.\n\n        Submission: May 22 abstract; then full paper May 29.\n        \n\n    LAST CALL FOR PAPERS\n\n\n*** KEYNOTE SPEAKERS ***\n\nJohn McCarthy of Stanford is a pioneer of AI, creator of Lisp.\n\nTom Mitchell of CMU is ex-President of AAAI.\n\nKatsushi Ikeuchi (to be confirmed) of U. Tokyo, IEEE Fellow.\n\nErick Cantu of Lawrence Livermore National Laboratory.\n\nJaime Sichman of University of Sao Paulo.\n\nMore speakers to be announces on webpage.\n\n\n*** PAPER SUBMISSION ***\n\nAccepted papers will be published by Springer-Verlag in \nLecture Notes in Artificial Intelligence (LNAI).\n\nSubmissions are received through www.MICAI.org/2005; see guidelines there.\n\nTitle and abstract must be submitted by May 22, \nthen the full paper by May 29.\n\n\n*** IMPORTANT DATES ***\n\nMay 22: Paper registration deadline (title and abstract).\n\nMay 29: Paper submission deadline (only papers registered by May 22).\n\nJuly 17: Acceptance notification.\n\nAugust 7: Camera-ready deadline.\n\n\n*** TOPICS ***\n\nAll areas of Artificial Intelligence, see list on the webpage.\n\n\n*** CONTACT ***\n\nGeneral inquiries: micai2005 at MICAI dot org.\nInquiries on submission requirements: submission at MICAI dot org.\nInquiries on the conference program: program at MICAI dot org.\nSee more contact options on www.MICAI.org/2005.\n\nWe apology if you receive this CFP more than once. \nPLEASE CIRCULATE this CFP among your students and colleagues.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.12280719779088478,
+          "NOT_SPAM": 0.8771928022091152
+        },
+        "confidence": 0.4626234033915687
+      }
+    },
+    "usage": {
+      "input_tokens": 621,
+      "output_tokens": 0
+    }
+  }
+}

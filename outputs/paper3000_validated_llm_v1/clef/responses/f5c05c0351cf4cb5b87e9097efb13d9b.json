@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: And on the next slide...Zzzzz\n\n\n\n\nCNET | Online Courses\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nView online |\nManage newsletters |\nUnsubscribe |\nSend us feedback\n\n\n\n\nFebruary 14, 2008\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnd on the next slide...Zzzzz \n\n    Don't let your PowerPoint presentation turn into naptime. Twenty-six bullet points per slide, lousy clip art, and nonsensical jargon in a PowerPoint is what the comic-strip character Dilbert famously referred to as \"PowerPoint poisoning.\" Find the antidote by joining the discussion in CNET's Better Presentations with PowerPoint 2007 online course. PowerPoint expert Helen Bradley teaches you how to deliver a lively presentation with better templates, slides, and designs as well as practical advice on how to keep your audience members from falling asleep with their eyes open.  \n\n\nIs your Windows XP PC showing its age with slow load times and unstable performance? Join Windows troubleshooter Andrew Kantor in CNET's Speed Up Your Windows PC online course and learn how to breathe new life into an older PC with a few easy tweaks that you can do on your lunch hour. \n Read more \n\n Courses starting soon\n Better Presentations with PowerPoint 2007Starts February 18\n Speed Up Windows XPStarts February 18\n Build your first Web site Starts February 25\n Ringtones & Ringbacks: Custom Cell Phones 101 Starts February 25\n\n\n\n\n\n\nJamison Cush\nAssociate editor, \n    Online Courses \n\n\n\n\n\n\n\n\nStarts this week\nBetter Presentations with PowerPoint 2007\n\nFind out how you can deliver a PowerPoint presentation with style and clarity. This free course shows you how to create a well-defined, engaging presentation using PowerPoint 2007. Topics include planning, formatting slides, design elements, rehearsal, technical preparations, and more.\n\n\n\n\n Enter classroom\n\n\n\n\nSpeed Up Windows XP\n\nWindows XP can run quicker if you know how to tweak your PC. Find out how to free up resources that waste your system's processing power. This free course covers Windows XP settings, start-up programs, Registry tweaks, Internet-connection adjustments, memory issues, and more. \n\n\n\n\n Enter classroom\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeatured home entertainment course \n\n\n\n\nBuild your first Web site\n\n\n\n\n\n\n                Launch your own Web site with ease.  You don't need any programming skills or a lot of money to get started. This course takes you through the steps of determining which type of site you need, comparing online services, site construction tools, design, marketing, and more. \n                     \n                        \n                            Read more\n\n\n\n\n\n\n\n\n\n \n \n\n\n\n\n\n\n\n\nFeatured mobile course \n\n\n\n\nRingtones & Ringbacks: Custom Cell Phones 101\n\n\n\n\n\n\n                Give your cell phone mad style! Learn how to mod your mobile with custom cell phone touches that will make it stand out from the crowd. Topics include ringtones, ringbacks, wallpaper, screensavers, logos, skins, faceplates, charms, and much more.\n                     \n                        \n                            Read more\n\n\n\n\n\n\n\n\n\n \n \n\n\n\n\n\n\n\n\nQuick Poll \n\n\n\n\n\n\n\n\nHow do you stay awake during PowerPoint presentations?\n Concentrate on each slide\n Take notes\n Caffeine\n It's easy: I give presentations!\n\n\n\n\n\n\n \n \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n \n\n\n\n\n\n\n\n\n\n\nClassroom Q&A\n\n\n\n I've heard all Vista's extra security features slow down apps, including frame rates. As a PC gamer, should I be concerned this could affect game performance?\n  - rick_the_artist\n\n\n\n\n\n Gaming is one area where I feel that Vista lets users down. Almost every test I've carried out suggests that XP offers a faster gaming platform than Vista does...\n  - Adrian Kingsley Hughes, Windows Vista Basics\n\n\n\n\n\n\n\n\n\n\n\n\n\nRelated Newsletters\n\n\n\nCNET Digital Dispatch\nView preview \n(Delivered daily.)Want CNET's best content delivered right to your in-box? Our free, daily Digital Dispatch newsletter is jam-packed with the day's best reviews, news, and blogs.\n\n\n\n\nSubscribe free\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOnline course categories\n\n\n\n\n Digital photography\n\n\n\n Windows Vista\n\n\n\n Home audio/video\n\n\n\n\n Microsoft Office\n\n\n\n Home theater\n\n\n\n Mobile\n\n\n\n\n PC troubleshooting\n\n\n\n Home entertainment\n\n\n\n Car Tech\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign up for more free newsletters from CNET! To manage your account settings or to remove yourself from all CNET communications, please visit our Subscription Center. The e-mail address for your subscription is user6@gvc.ceas-challenge.cc  Unsubscribe from this e-mail | FAQ | Advertise | Privacy Policy\n\n\n\n\n\n\n\nCopyright 2008 CNET\nNetworks, Inc. All rights reserved.CNET Networks, Inc.235 Second\nStreet San Francisco, CA 94105U.S.A.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8057373737971996,
+          "SPAM": 0.19426262620280044
+        },
+        "confidence": 0.6114747475943991
+      }
+    },
+    "usage": {
+      "input_tokens": 1127,
+      "output_tokens": 0
+    }
+  }
+}

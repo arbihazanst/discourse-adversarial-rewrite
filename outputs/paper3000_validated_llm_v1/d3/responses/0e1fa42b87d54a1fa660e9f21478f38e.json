@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Google Earth problem\n\nOn Thursday 06 March 2008 08:49:14 pm Bikram Chatterjee wrote:\n\n> On Fri, Mar 7, 2008 at 6:19 AM, Rajko M.  wrote:\n> > On Thursday 06 March 2008 01:29:25 pm Bikram Chatterjee wrote:\n> >  > How can I get more info.. X crashes every time I try starting it, even\n> >  > from the command console, and takes me to login screen. And you know\n> >  > what, it used to work great for me in old 10.2... what might have gone\n> >  > wrong?\n> >\n> >  Did you updated your 10.3 including video driver?\n>\n> Hi Ken, Jey ans Rajko,\n>\n> I am total newbie, so it would be great for me with  a bit more\n> explanation.\n>\n> How to turn compiz off? I tried ps but there is no compiz.\n> Will a simple \"googleearth > log.txt\" will do for capturing error?\n> How to check in 10.3 whether my video driver is updated or not?\n>\n> Thanks,\n> Bikram\n\nThere was some problem like the one that you described, but updates solved it. \n  zypper up\nshould bring your system up to date. \n\nThough, some information about your system would be useful to prevent tapping \nin the dark. Can you post output of:\n  lspci \nand \n  hwinfo --gfxcard\n\nFor compiz I'm not sure, I stopped to use it, but you can see in YaST Software \nManagement is it installed. \n\n-- \nRegards, Rajko.\nSee http://en.opensuse.org/Portal",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0005858757308824824,
+          "NOT_SPAM": 0.9994141242691176
+        },
+        "confidence": 0.9928643909654081
+      }
+    },
+    "usage": {
+      "input_tokens": 544,
+      "output_tokens": 0
+    }
+  }
+}

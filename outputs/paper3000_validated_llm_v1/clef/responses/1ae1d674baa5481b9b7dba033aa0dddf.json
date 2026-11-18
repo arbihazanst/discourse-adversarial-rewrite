@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Ricky Segura\n\n\n\n\n\n\n\n\nP wg harm zj acy\n\nVis hfo it Your Local Target P ky h rac arm hj acy\nfor Ge lg ner etf ic Dr dh ug gd s, Re jq fills, & More.\n\nhttp://nearpretty.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02836081855378857,
+          "SPAM": 0.9716391814462114
+        },
+        "confidence": 0.9432783628924228
+      }
+    },
+    "usage": {
+      "input_tokens": 216,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,5 +1,21 @@
 # Pilot lokal — PPLX classifier dan evaluator
 
+## Membiarkan tunnel tetap aktif
+
+Dari root proyek, buka terminal pertama dan jalankan:
+
+```sh
+python scripts/open_model_tunnel.py
+```
+
+Masukkan password jika diminta. Setelah muncul `Port lokal siap`, gunakan terminal kedua untuk memanggil model atau menjalankan uji menu 7. Tunnel tetap aktif setelah uji selesai selama terminal pertama terbuka. Tekan Ctrl+C di terminal pertama untuk menghentikan forward milik skrip. Jika semua port sudah digunakan, periksa layanan dengan menu 7.
+
+## Uji tunnel SSH
+
+Dari root proyek di PowerShell, jalankan `.\experimenting\run_cli.bat --task tunnel` atau pilih menu utama **7**. Di Bash gunakan launcher `.sh` dengan argumen yang sama. Tambahkan `--dry-run` untuk melihat alamat tanpa membuka koneksi.
+
+Launcher memakai port lokal yang sudah tersedia dan membuka forward yang masih dibutuhkan. Jika diminta, ketik password di prompt OpenSSH. Tunnel yang dibuka launcher ditutup setelah pengujian. PPLX (11438), Clef (11439), dan d3 (11440) menerima pertanyaan refund melalui `/v1/systemone`. Gemma (11441) menerima pertanyaan RAG melalui `/v1/chat/completions`. Output menampilkan jawaban dan waktu tiap layanan. Menu ini terpisah dari konfigurasi pekerjaan `all`.
+
 Profil ini untuk menguji pipeline sebelum Clef/d3 tersedia di server. **PPLX memiliki dua peran dengan permintaan yang terpisah**:
 
 | Peran | Model/layanan |

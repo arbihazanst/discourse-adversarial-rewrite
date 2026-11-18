@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [PATCH] New failing test for RT#45667 (m/[#]/x treated inconsistently)\n\nOn Tue, Oct 30, 2007 at 04:30:46PM +0100, demerphq wrote:\n> On 10/30/07, Dave Mitchell  wrote:\n> > On Tue, Oct 30, 2007 at 03:04:28PM +0100, demerphq wrote:\n> > > Probably is. But im not entirely comfortable with the original patch.\n> > > Its not clear to me that we can change this behaviour anymore. At\n> > > least not in the regex engine. Its actually probably easier to change\n> > > this in the perl parser, which we long term intend to change anyway in\n> > > order to resolve the whole qr// as closure stuff as well as variable\n> > > bindings amongst other issues.\n> > >\n> > > Probably a good idea if Dave Mitchell speaks up on this one as to my\n> > > knowledge he has the most developed idea of the future of this.\n> >\n> > The bug's definitely in the perl parser, and I still intend to fix it post\n> > 5.10.0. The fix is kinda orthogonal to the qr// and closure stuff.\n> \n> Ok. I thought they were related.\n\nWell, they're slightly related, but the two fixes can be developed\nindependently of each other. They both involve making the tokeniser be a\nbit more clever when processing literal strings. There's a function that\nscans through characters in a literal string until it finds something\n\"interesting\". For example, in the double-quoted string \"abc$d\", it stops\nat the $ and returns \"abc\" as a token.  One fix involves stopping that\nfunction thinking that # is interesting when within [], the other involves\nmaking it think that '(?{' is interesting.\n\n> > Actually, there's a bit of uncertainty as to whether I cans still do that\n> > qr// stuff, now that there's an API been added to the regex parser: I\n> > don't think it can can handle want I would like to pass to it (a mixture\n> > of const strings and snippets of opcode trees), of if I could pass it,\n> > whether other plugged-in engines (sucha as PCRE) wouldn't choke on it.\n> > Anyway, I haven't looked closely at it yet.\n> \n> I dont think you should worry about that. I think fixing the general\n> behaviour takes precedence over supporting experimental regex engine\n> plug ins. I believe that the API has been documented to be a work in\n> progress anyway, and if it hasnt we should make sure to do so before\n> 5.10 is released. Of course if what you design has an api that makes\n> it easy for the engine plug ins to adapt it would be a good thing. :-)\n\nOkay :-)\n\n-- \nThe warp engines start playing up a bit, but seem to sort themselves out\nafter a while without any intervention from boy genius Wesley Crusher.\n    -- Things That Never Happen in \"Star Trek\" #17",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.00025302522282890006,
+          "NOT_SPAM": 0.9997469747771711
+        },
+        "confidence": 0.9966117534918008
+      }
+    },
+    "usage": {
+      "input_tokens": 835,
+      "output_tokens": 0
+    }
+  }
+}

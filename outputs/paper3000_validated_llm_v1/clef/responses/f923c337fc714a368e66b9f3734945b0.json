@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Buildbot-devel] more than one factory per builder?\n\nHey,\n\nIs it possible to have more than one factory per builder? I have a set of\n\"clobber\" steps that run nightly from a periodic scheduler, it'd be nice to\nuse the same builders but a different factory (sharing many of the same\nsteps) depending on which scheduler the change came from (the other\nscheduler would be from checkins and run \"depend\" builds).\n\nHow are others doing nightly clobber and  per-checkin depend builds?\nSeparate \"clobber\" and \"depend\" builders which share buildslaves using a\nslavelock maybe?\n\n\nThanks!\nRob",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9588878274265874,
+          "SPAM": 0.04111217257341266
+        },
+        "confidence": 0.9177756548531748
+      }
+    },
+    "usage": {
+      "input_tokens": 301,
+      "output_tokens": 0
+    }
+  }
+}

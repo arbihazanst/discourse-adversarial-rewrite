@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [FoRK] Example for the forkwidgizmoid team...Fwd: [ptp-general]\tFacebook used for wifi access control\n\nOn 11/2/07, Aaron Burt  wrote:\n> On Fri, Nov 02, 2007 at 11:14:26AM -0700, Tom Higgins wrote:\n> > ---------- Forwarded message ----------\n> > Date: Nov 2, 2007 9:06 AM\n> > Subject: [ptp-general] Facebook used for wifi access control\n>\n> Dang, ya beat me to it.\n>\n> It's interesting to me how a simple reframing can change access-control\n> from a Mystery Unto All But God and Sysadmins, to a game of who's-my-friend.\n> I expect to see many more informal Facebook-auth apps.  Wanna listen to\n> my MP3s?  Wanna comment on my blog?  Wanna write on my wiki?  Be my friend.\n\nYeah. All the more reason why having the social graph owned by\nmicrofacebooksoft is a bad idea. This is not to say that I'm\nanti-facebook; but I'd prefer it to be like email (with active\ncompetition in providers because of standards) instead of windows\n(very little competition because of lockin.)\n\nLuis",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9625582234809695,
+          "SPAM": 0.037441776519030454
+        },
+        "confidence": 0.9251164469619391
+      }
+    },
+    "usage": {
+      "input_tokens": 457,
+      "output_tokens": 0
+    }
+  }
+}

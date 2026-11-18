@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Huge love luger is attainable\n\nAs you gain in dimensions, you'll experience more thrilling pleasure with your gf!\nCatch the eye of most women with your regained self-confidence!\nhttp://milddear.com/\n\n\nSoros and Rogers. What an investment team they would become.forward, Soros sought to capitalize on foreign stock markets. Whichabout the future.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9928126423327399,
+          "NOT_SPAM": 0.007187357667260151
+        },
+        "confidence": 0.9384918810889789
+      }
+    },
+    "usage": {
+      "input_tokens": 203,
+      "output_tokens": 0
+    }
+  }
+}

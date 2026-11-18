@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Localhost:631 is Not Found\n\nOn Saturday 16 February 2008 09:57, Michele wrote:\n> Hi all,\n>\n> I'm using opensuse 10.3, 64bit, and can't found a solution\n> to get cups working (i assume the problem is not with the\n> printer, epson 440 anyway).\n> As from subjet when i try to acces the localhost:631 page\n> i get a \"Not Found\" message.\n> This is an opensuse 10.3 oss repo \"bare\" system,\n> no pacman's etc. repos...\n> Searched the web but didn't found a solution ...\n> I also use opensuse 32bit on a laptop and the\n> cups config web page works over there...\n> So maybe someone can give me some suggestions\n> to solve this problem...\n>\n> Thanks,  Michele.\n\nTry the ip address directly?\n\nhttp://127.0.0.1:631\n\n-- \nDon",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006476148618479094,
+          "NOT_SPAM": 0.999352385138152
+        },
+        "confidence": 0.9922060820246148
+      }
+    },
+    "usage": {
+      "input_tokens": 372,
+      "output_tokens": 0
+    }
+  }
+}

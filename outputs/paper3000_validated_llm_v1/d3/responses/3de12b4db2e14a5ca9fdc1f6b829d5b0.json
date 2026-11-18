@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Py2exe-users] Problems With Py2exe Vpython And Numpy\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nTry to add the module to the list of includes in your setup.py\n\nthis should put the module in the zip file (or exe if you have no zipfile)\n\nandres felipe sierra echeverry wrote:\n| Hello\n| I am making an application with vpython, numpy and scipy, I am also\n| creating a exe with py2exe, if only make it with vpython, works well, so\n| also with only numpy, the problem occurs when the two combine,\n| Begin to see messages like\n|\n| Traceback (most recent call last):\n| File \"prueba2_94.py\", line 2, in \n| File \"datos_de_programa\\\\maquina_simulacion.pyc\", line 15, in \n| File \"visual\\\\__init__.pyc\", line 24, in \n| ImportError: No module named crayola\n|\n|\n| Any suggestions?\n| Thanks\n|\n| ------------------------------------------------------------------------\n| Get news, entertainment and everything you care about at Live.com. Check\n| it out! \n|\n|\n| ------------------------------------------------------------------------\n|\n| -------------------------------------------------------------------------\n| This SF.net email is sponsored by the 2008 JavaOne(SM) Conference\n| Register now and save $200. Hurry, offer ends at 11:59 p.m.,\n| Monday, April 7! Use priority code J8TLD2.\n|\nhttp://ad.doubleclick.net/clk;198757673;13503038;p?http://java.sun.com/javaone\n|\n|\n| ------------------------------------------------------------------------\n|\n| _______________________________________________\n| Py2exe-users mailing list\n| zi9rpy-fcecq@lists.sourceforge.net\n| https://lists.sourceforge.net/lists/listinfo/py2exe-users\n\n\n- --\n\"Defer no time, delays have dangerous ends\"\n\"Ne humanus crede\"\n\nJochen Maes\nhttp://sejo.be\nhttp://monitron.org\nhttp://www.freenode.net\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2.0.9 (GNU/Linux)\nComment: Using GnuPG with Mozilla - http://enigmail.mozdev.org\n\niEYEARECAAYFAkf5DC4ACgkQHk9siaKv9sjabgCglQ2PwFHWm2DjxiYIa3VRyEf6\nJCEAoJq+JCH48KNn1ZkXt3+EqwzDIqd5\n=zbPQ\n-----END PGP SIGNATURE-----\n\n-------------------------------------------------------------------------\nThis SF.net email is sponsored by the 2008 JavaOne(SM) Conference \nRegister now and save $200. Hurry, offer ends at 11:59 p.m., \nMonday, April 7! Use priority code J8TLD2. \nhttp://ad.doubleclick.net/clk;198757673;13503038;p?http://java.sun.com/javaone\n_______________________________________________\nPy2exe-users mailing list\nzi9rpy-fcecq@lists.sourceforge.net\nhttps://lists.sourceforge.net/lists/listinfo/py2exe-users",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.029551061069341973,
+          "NOT_SPAM": 0.9704489389306581
+        },
+        "confidence": 0.8078645689871977
+      }
+    },
+    "usage": {
+      "input_tokens": 869,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Tony Meyer has shared a video with you\n\nHi there.\n\nTony has shared a video with you: Samuel Early 2008\n\nhttp://animoto.com/play/F6jUvWhpixN8gTlkkImo9Q\n\nIf you like it, why don't you try creating one yourself?  It's free and really simple, so head over to our site and give it a try:\n\nhttp://animoto.com\n\nWe look forward to your visit!  Sincerely,\n\nThe ANIMOTO Team\n\n\n==============  WHAT'S NEW AT ANIMOTO?!  ==============\n\nREFERRAL PROGRAM\n-- Save a friend $5 on an All-Access Pass & get 3 free months of All Access for yourself.  http://animoto.com/referrals\n\nEXPORT VIDEOS DIRECTLY TO YOUTUBE\n-- Now anyone with photos can contribute videos to YouTube. You don’t need a video camera or editing software to be part of the action.\n\nINTRODUCING ANIMOTO ON FACEBOOK\n-- On Facebook?  Check out our latest creation.  http://apps.facebook.com/animoto",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.8019750558518666,
+          "NOT_SPAM": 0.19802494414813335
+        },
+        "confidence": 0.28203964712648255
+      }
+    },
+    "usage": {
+      "input_tokens": 363,
+      "output_tokens": 0
+    }
+  }
+}

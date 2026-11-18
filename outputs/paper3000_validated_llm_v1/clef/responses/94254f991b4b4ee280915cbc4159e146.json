@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [SM-DEVEL] Direct SM Plugin download for distro packaging\n\nOn Tue, February 26, 2008 16:51, Paul Lesniewski wrote:\n> On Tue, Feb 26, 2008 at 7:35 AM, Fredrik Jervfors\n>  wrote:\n>\n>>>> The debian control files can use a watch function to inform the\n>>>> maintainer (me in this case) if there is a new version available. It\n>>>> uses a kind of regexp to check a web directory, e.g. [snip]\n>>\n>>>>\n>>>> Is it somehow possible to access the download location of SM\n>>>> plugins without using the www.sm.org/plugins.php in general? This\n>>>> could make my work much easier (I'm packaging additional SM\n>>>> plugins).\n>>\n>> Nothing comes to mind, but I'm sure we can set something up. Do you\n>> have any special considerations? If I know how the Debian script works,\n>> I can\n>> fix something that delivers the desired results (I hope). You can\n>> contact me off-list if you don't want to clutter the mailing list with\n>> the technical details.\n>\n> Please keep the conversation here or at least Cc: me since I'd like to\n> be aware of any needed features, since I'd like to include any needed\n> features in the feature list for the new plugins website we have been\n> planning (don't hold your breath just yet though).\n\nWhat is needed for this script to work is a web page where the URL to the\ntarball can be found directly. The current setup needs you to first find\nan URL with the right id= and rev=, and at that page find the link to the\ntarball.\n\nTwo possible solutions:\n\n* A page like this:\nhttp://www.squirrelmail.org/plugin_view.php?id=256\ncould use direct links to the tarball instead of via a subpage.\n\n* On pages like this:\nhttp://www.squirrelmail.org/plugin_download.php?id=256&rev=1319\nwe could add the feature that leaving out \"rev=????\" always gives you a\nlink to the most recent tarball.\n\nThe first one seems better to me since the subpage seems a bit superfluous\nin modern times. People can download tarballs nowadays, can they?\n\n\nThijs\n\n\n\n\nsquirrelmail-devel mailing list\n\nList address: aqcvnwkdyeem-hbpoa@lists.sourceforge.net\nList archives: http://news.gmane.org/gmane.mail.squirrelmail.devel\nList info (subscribe/unsubscribe/change options): https://lists.sourceforge.net/lists/listinfo/squirrelmail-devel",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9463541400015575,
+          "SPAM": 0.05364585999844262
+        },
+        "confidence": 0.892708280003115
+      }
+    },
+    "usage": {
+      "input_tokens": 750,
+      "output_tokens": 0
+    }
+  }
+}

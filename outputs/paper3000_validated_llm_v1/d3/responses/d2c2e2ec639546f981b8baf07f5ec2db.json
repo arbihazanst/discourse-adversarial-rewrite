@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: [ie-rant] NTL Junk Mail...\n\nYeah, boards.ie are probably afraid of getting sued by NTL, \n \nbut the post is below, with a link to his phone number....\n \nGraham\n \n\n\n________________________________\n\n\tFrom: pq-mism@yahoogroups.com [mailto:pq-mism@yahoogroups.com]\nOn Behalf Of Dermott Bolger\n\tSent: 04 October 2007 13:35\n\tTo: pq-mism@yahoogroups.com\n\tSubject: Re: [ie-rant] NTL Junk Mail...\n\t\n\t\n\n\tThat thread has been removed from Board.ie.\n\t\n\tI find Karen's silence on Mr Briggs even more disturbing.\n\t\n\tRegards,\n\t\n\tDermott\n\t\n\tOn 9/27/07, Williams, Graham  > wrote:\n\t>\n\t>\n\t>\n\t>\n\t>\n\t>\n\t> Boards.ie didn't like the post, here's the txt from it\n\t>\n\t> NTL Junk Mail Alan Briggs NTL Head Of Sales:\n\t>\n\t> I know that this problem has been discussed here before, but I\nget so much junk mail from NTL.\n\t> They are all from the Head of Sales, Alan Briggs.\n\t>\n\t> I have spoken to Alan Briggs on a number of occasions, for\nsome reason someone in NTL gave me his mobile number.\n\t>\n\t> I have asked him to remove me from the mailing list,\nunfortunately it's sent to The Resident, which means\n\t> there isn't much I can do about it, but on my last phone call\nto Alan, I told him if I got anymore junk mail I would be posting his\nphone number on the web so other people like myself could call him. He\nactually laughed at this, so I don't think he thought I was serious.\n\t>\n\t> So if anyone wants to call him, here's his mobile number,\nplease pass this number around to anyone who has a problem with the\namount of junk mail that NTL send.\n\t> Alan Briggs NTL Head Of Sales:\n\t>\n\t> http://tinyurl.com/ \n > 2tu9bg\n\t>\n\t> Please call him with your complaints, and remember don't abuse\nthis number.\n\t> If anyone can recommend any other forums to post this on\nplease let me know.\n\t>\n\t> TW\n\t>\n\t> ________________________________\n\t>\n\t> From: pq-mism@yahoogroups.com\n  on behalf of Williams, Graham\n\t> Sent: Thu 27/09/2007 17:11\n\t> To: pq-mism@yahoogroups.com \n\n\t> Subject: [ie-rant] NTL Junk Mail...\n\t>\n\t> From boards.ie\n\t>\n\t> http://www.boards.ie/vbulletin/showthread.php?t=2055156946\n\n >\n\t>\n\t> Head Of Sales from NTL http://tinyurl.com/2tu9bg\n  >\n\t>\n\t>\n\t> g\n\t>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.047422900482511646,
+          "NOT_SPAM": 0.9525770995174884
+        },
+        "confidence": 0.7246529189236668
+      }
+    },
+    "usage": {
+      "input_tokens": 831,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] Final CFP: SAT 2005 - 8th International Conference on Theory and Applications of Satisfiability Testing\n\nWith apologies for multiple copies.\n\n========================================================================\n\n                   FINAL CALL FOR PAPERS\n          \n                         SAT-2005\n\n              Eighth International Conference on\n      Theory and Applications of Satisfiability Testing\n          http://www.satisfiability.org/SAT05/\n\n                           with\n\n                2005 SAT SOLVER COMPETITION\n                2005 QBF SOLVER EVALUATION\n\n        June 19th-23rd 2005, St Andrews, Scotland\n\nThe International Conference on Theory and Applications of              \nSatisfiability Testing is the primary annual meeting for researchers\nstudying the propositional satisfiability problem (SAT).  Located in\nthe historic town of St Andrews, SAT 2005 will feature technical paper\nand poster sessions, invited talks, and the annual SAT Solver\nCompetition and QBF Solver Evaluation.  \n\nWe welcome submissions on SAT from any discipline with an interest in\nthe problem, including theoretical, experimental and applied work.\nTopics of interest include, but are not limited to:\n\n   * Proof Systems and Proof Complexity\n   * Search Algorithms and Heuristics\n   * Analysis of Algorithms\n   * Theories beyond the propositional\n   * Hard Instances ; Random Formulas\n   * Problem Encodings\n   * Industrial Applications\n   * Solvers and other tools\n   * Case Studies and Empirical results\n\n\nARTICLE SUBMISSION\n------------------\n\nAccepted papers will be collected together and distribued at the\nconference in a LNCS volume. All submissions must be 15 pages or less in\nthe Springer-Verlag LNCS style \n(http://www.springer.de/comp/lncs/authors.html)\nAll appendices, tables, figures and the bibliography must fit into the\n15 page limit.  Submissions deviating from this requirement may be\nrejected without review.  Submission will be in electronic form as PDF\nfiles at  http://www.softconf.com/start/SAT05/submit.html\nAuthors must register the abstract of their papers on the web site\nby Feb 13th, and submit their paper by Feb 20th. All submissions will be\nreviewed by three membersof the program committee, and may be accepted\nfor either a paper or poster presentation.\n\n\nASSOCIATED SOLVER COMPETITIONS\n------------------------------\n\nAssociated with the conference are the 2005 SAT Solver Competition\nand the 2005 QBF Solver Evaluation.  The SAT competition and QBF\nevaluation organizers welcome submissions of for both SAT and QBF,\nbenchmark instances, as well as SAT and QBF solvers.  \nFor details see the 2005 SAT Solver Competition web page,\nhttp://satlive.org/SATCompetition/2005, and the 2005 QBF Solver\nEvaluation web page http://satlive.org/QBFEvaluation/2005.\n\n\nIMPORTANT DATES\n---------------\n\nAbstract Submission Deadline:              February 13\nPaper Submission Deadline:                    February 20\nSAT and QBF Solver/Benchmark Submission:      February 23\nNotification of Acceptance:                   March 18   \nCamera Ready Deadline:                        April 8\nConference:                                   June 19-23\n\n\nCONFERENCE CHAIRS\n---------------------\n\nFahiem Bacchus        University of Toronto, Canada\nToby Walsh        UNSW, Sydney and NICTA, Australia\n\nLOCAL CHAIR\n-----------\nIan Miguel        University of St Andrews, Scotland\n\nSAT SOLVER COMPETITION ORGANIZERS\n---------------------------------\nDaniel Le Berre     Universite d'Artois, France\nLaurent Simon         Universite Paris-Sud, France\n\nQBF SOLVER EVALUATION ORGANIZERS\n--------------------------------\nMassimo Narizzano       Universita di Genova, Italy\nArmando Tacchella       Universita di Genova, Italy\n\nTECHNICAL PROGRAMME COMMITTEE\n-----------------------------\nDimitris Achlioptas    Microsoft Research\nFadi Aloul        University of Michigan\nClarke Barrett        NYU\nPaul Beame        University of Washington\nArmin Biere        ETH Zurich\nRonen Brafman        Ben Gurion University\nAlessandro Cimatti    IRST\nAdnan Darwiche        UCLA\nAlvaro del Val        Universidad Autonomoa de Madrid\nEnrico Giunchiglia    Universita di Genova\nEugene Goldberg        Cadence\nZiyad Hanna        Intel Corporation\nEdward Hirsch        Steklov Institute of Mathematics at St. Petersburg\nHenry Kautz        University of Washington\nEleftherios Kirousis    University of Patras\nHans Kleine Buning    University of Paderborn\nDaniel Le Berre     Universite d'Artois, France\nChu-Min Li        Universite de Picardie\nFangzhen Lin        Hong Kong University of Science and Technology\nSharad Malik        Princeton University\nJoao Marques-Silva    Universidade Tecnica de Lisboa\nIlkka Niemela        Helsinki University of Technology\nToniann Pitassi        University of Toronto\nSteve Prestwich        University College Cork\nJussi Rintanen        Universitaet Freiburg\nLakhdar Sais        CNRS, Universite d'Artois\nKarem Sakallah        University of Michigan\nLaurent Simon        Universite Paris-Sud, France\nStefan Szeider        University of Durham\nMirek Truszczynski    University of Kentucky\nAllen Van Gelder    University of California at Santa Cruz\nHans van Maaren        Delft University of Technology\nLintao Zhang        Microsoft Research\n\n========================================================================",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.12873999534760153,
+          "NOT_SPAM": 0.8712600046523985
+        },
+        "confidence": 0.44602753618355007
+      }
+    },
+    "usage": {
+      "input_tokens": 1335,
+      "output_tokens": 0
+    }
+  }
+}

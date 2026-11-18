@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Stimulate all her secret spots!\n\nDaydreaming about having longer and/or thicker love wand? We'll make your dream come true!\nMake the impossible happen!\nhttp://whitedone.com/\n\n\npositive signal against racial discrimination inclaims that the Kurdish separatist leader Abdullahintitiative, rather than in response to an individual",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.039391073991208336,
+          "SPAM": 0.9606089260087917
+        },
+        "confidence": 0.9212178520175833
+      }
+    },
+    "usage": {
+      "input_tokens": 228,
+      "output_tokens": 0
+    }
+  }
+}

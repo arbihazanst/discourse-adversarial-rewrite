@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] UM'05: Final Call for Doctoral Consortium Papers (submission deadline February 10)\n\n******** Apologies for multiple posting ************\n\n10th International Conference on USER MODELING UM05\nhttp://gate.ac.uk/conferences/um2005/\n\nFinal Call for Doctoral Consortium Papers\n==============================================\n\nSUBMISSION DEADLINE EXTENDED TO February 10, 2005\n\nThe UM05 Committee invites doctoral consortium papers to be presented as \npart of the 10th International Conference on User\nModeling (UM05) to be held from July 24th to July 30, 2005 in Edinburgh, \nScotland.\n\n       General Information\n\nContinuing a tradition that started in 1994, the UM Doctoral Consortium \naims to provide qualified Ph.D. students with the opportunity to present \ntheir on-going research to the UM community. The Doctoral Consortium is \na great forum to receive useful feedback from a knowledgeable audience, \nto exchange ideas, compare approaches and meet fellow researchers in the \nfield. Submissions should describe Ph.D. research that is at a stage \nwhere feedback from the broader UM community might be of value. Thus, we \nexpect students to be close to make their research proposal, or to have \nmade it but have at least a year of work remaining before completion of \ntheir thesis. Submissions must be a maximum of three pages (including \nreferences) and should clearly specify:\n\n   * the problem(s) that the proposed research is addressing\n   * the main contribution(s) of the research to the UM field\n   * the proposed solution(s), including a brief description of work\n     already done and a tentative plan for future work.\n\nDC papers topics should be related to the conference topics:\n\n* acquisition, updating and management of user models and student\n models\n* security and privacy aspects in the management of user data\n* evaluation of user modeling techniques\n* user model representation standards\n* user model information sharing in ubiquitous services and smart\n environments\n* user modeling servers\n* user modeling in the Semantic Web\n* user modeling and adaptive systems\n* applications of user modeling systems and techniques\n* data mining for personalization and cross-recommendation\n* affective computing\n* adaptation to people with disabilities and the elderly\n* adaptive hypermedia and Web systems\n* intelligent information retrieval, information filtering and\n content personalization\n* collaborative filtering and recommender systems\n* adaptive user interfaces\n* dialog planning and response tailoring\n* plan recognition and generation\n* presentation planning\n* recognition and correction of misconceptions\n* intelligent tutoring systems\n* human-computer cooperation, user support\n* adaptive learning environments\n* personalized Web sites and services\n* personalized interaction in Virtual Reality and 3D Interfaces\n* personalized interaction in mobile, ubiquitous and\n context-aware computing\n* embodied animated agents\n* support of collaboration and group modeling\n* engineering adaptive systems\n\n\n       Submission format:\n\n   * Maximum of 3 pages (including references)\n   * Please stay as close as possible to the formatting instructions\n     available at http://www.springer.de/comp/lncs/authors.html In\n     particular, papers must adhere to the following:\n         o The printing area of each page should be 122mm by 193mm.\n         o Use 10 point type for the names of authors, and 9 point type\n           for their addresses and the abstract.\n         o Use 10 point type and single line spacing for the main body\n           of the paper. Computer Modern Roman or Times fonts are\n           preferred.\n\n\n       Submission instructions:\n\n   * Papers should be submitted as electronic pdf files. If electronic\n     submission in pdf form will be problematic, please contact Kalina\n     Bontcheva (_kalina (at) dcs.shef.ac.uk_) to discuss alternatives,\n     including hardcopy.\n   * Please send the submission on or before February 10, 2005 as an\n     attachment to an email message to both UM05 doctoral consortium\n     chairs:  _Kalina Bontcheva (kalina (at) dcs.shef.ac.uk_) and Jon\n     Oberlander (_J.Oberlander (at) ed.ac.uk_). Please use subject\n     line: UM05 Doctoral Consortium Paper Submission.\n   * You will receive a response within three days confirming that we\n     received your submission and were able to print it.\n\nIf you have any questions regarding submissions, please send email to \n_kalina (at) dcs.shef.ac.uk_.\n\n\n       Important dates:\n\nFebruary 10, 2005     Doctoral Consortium Proposal Submission\nMarch 4, 2005     Doctoral Consortium Notification\nApril 1, 2005     Camera-Ready Versions Submission\n\n\nUM05 Doctoral Consortium Chairs\n===============================\nJon Oberlander\nUniversity of Edinburgh, UK\nE-mail: J.Oberlander (at) ed.ac.uk\n\n\nKalina Bontcheva\nUniversity of Sheffield, UK\nE-mail: kalina (at) dcs.shef.ac.uk",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9225375642436205,
+          "SPAM": 0.0774624357563794
+        },
+        "confidence": 0.8450751284872411
+      }
+    },
+    "usage": {
+      "input_tokens": 1253,
+      "output_tokens": 0
+    }
+  }
+}

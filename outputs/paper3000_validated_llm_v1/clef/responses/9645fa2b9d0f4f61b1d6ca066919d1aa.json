@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: The best European drug store\n\n\n\n\nTop news on male health\n\n\nBest solution, if you need products for health.\n\nHere!\n\n\n\n\nerverybody falconries evanescent\nestimation evenements falconer's\nfLMAILPATH fairclough fashistoid\nespacially fallscreek fRutomatic",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.04898942117658425,
+          "SPAM": 0.9510105788234157
+        },
+        "confidence": 0.9020211576468313
+      }
+    },
+    "usage": {
+      "input_tokens": 228,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] java-1_6_0-sun-src package is missing in the main repository\n\nOn Mon, Feb 11, 2008 at 01:57:31PM +0300, Anton Moiseev wrote:\n> There is no jdk source code package available for jdk 1.6 in the main\n> repository, which is highly needed during development.\n> \n> There is java-1_5_0-sun-src source package for java 1.5, but no 1.6 analog.\n> \n> Also there is no javadoc packages neither for 1.5, no for 1.6 javas. But for\n> jdk 1.5 this is ok - both eclipse and netbeans can generate\n> javadoc from jdk sources on a fly; but for jdk 1.6 I even can't see javadoc\n> comments for jdk standard classes during code autocompletion for example\n> (this could be still solved just by adding jdk1.6 source code package, so\n> probably separate javadoc packages are not needed).\n\nOpen a bugreport please.\n\nCiao, Marcus\n-- \nTo unsubscribe, e-mail: assipqff+nmekprykass@opensuse.org\nFor additional commands, e-mail: qybuovjs+kcmh@opensuse.org",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9591862496749295,
+          "SPAM": 0.04081375032507043
+        },
+        "confidence": 0.918372499349859
+      }
+    },
+    "usage": {
+      "input_tokens": 466,
+      "output_tokens": 0
+    }
+  }
+}

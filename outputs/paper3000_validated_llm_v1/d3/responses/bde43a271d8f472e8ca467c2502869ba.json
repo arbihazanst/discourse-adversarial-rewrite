@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Problems building python2.4 SRPM on RHEL4 x64\n\n>>> I appologize if this is not the right place to post this, but searching >>> through the old archives, I ran across the same issue from 3 years ago,  >>> but >>> I cannot find the resolution to it. >>> >>> Currently, I am trying to build the python2.4 SRPM from Python.org on a >>> CentOS4.6_x64 platform, but the build is failing with a very  >>> non-descript >>> error message. >>> >>> .... >>> + cd /var/tmp/python2.4-2.4-root/usr/bin >>> + mv -f pydoc pydoc2.4 >>> + cd /var/tmp/python2.4-2.4-root/usr/bin >>> + mv -f idle idle2.4 >>> + echo '#!/bin/bash' >>> + echo 'exec /usr/bin/python2.4 /usr/lib64/python2.4/idlelib/idle.py' >>> + chmod 755 /var/tmp/python2.4-2.4-root/usr/bin/idle2.4 >>> + cp -a Tools /var/tmp/python2.4-2.4-root/usr/lib64/python2.4 >>> + rm -f mainpkg.files >>> + find /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/lib-dynload -type  >>> f >>> + sed 's|^/var/tmp/python2.4-2.4-root|/|' >>> + grep -v -e '_tkinter.so$' >>> error: Bad exit status from /var/tmp/rpm-tmp.55639 (%install) >> >> The last command executed imediately before the error output >> seems to be >> >> find >> \"$RPM_BUILD_ROOT\"\"%{__prefix}\"/%{libdirname}/python%{libvers}/lib-dynload >> -type f | >> sed \"s|^${RPM_BUILD_ROOT}|/|\" | >> grep -v -e '_tkinter.so$' >mainpkg.files >> >> That is not the last command in the %install script (atleast not >> according to the spec file). So it is not at all clear why the >> shell should stop executing at that point, and spit out >> that error message. I've done a little more debugging to try to determine where the problem lies  and ran across some interesting things. 1) I first edited the SPECS file and commented out the find  \"$RPM_BUILD_ROOT\"\"%{__prefix}\"/%{libdirname}/python%{libvers}/lib-dynload -type  f | sed \"s|^${RPM_BUILD_ROOT}|/|\" | grep -v -e '_tkinter.so$' >mainpkg.files line. If I remove this line, the rpmbuild no longer crashes, but does still fail,  citing missing files in the lib64 directories. + rm -f /tmp/python-rpm-files.4859 + /usr/lib/rpm/brp-compress + /usr/lib/rpm/brp-strip + /usr/lib/rpm/brp-strip-static-archive + /usr/lib/rpm/brp-strip-comment-note Processing files: python2.4-2.4-1pydotorg error: File not found by glob:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/*.txt error: File not found by glob:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/*.py* error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/pdb.doc error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/profile.doc error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/curses error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/distutils error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/encodings error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/plat-linux2 error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/site-packages error: File not found: /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/test error: File not found: /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/xml error: File not found: /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/email error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/compiler error: File not found: /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/bsddb error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/hotshot error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/logging error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/lib-old Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.95118 + umask 022 + cd /usr/src/redhat/BUILD + cd Python-2.4 + DOCDIR=/var/tmp/python2.4-2.4-root/usr/share/doc/python2.4-2.4 + export DOCDIR + rm -rf /var/tmp/python2.4-2.4-root/usr/share/doc/python2.4-2.4 + /bin/mkdir -p /var/tmp/python2.4-2.4-root/usr/share/doc/python2.4-2.4 + cp -pr Misc/README Misc/cheatsheet Misc/Porting  /var/tmp/python2.4-2.4-root/usr/share/doc/python2.4-2.4 + cp -pr LICENSE Misc/ACKS Misc/HISTORY Misc/NEWS  /var/tmp/python2.4-2.4-root/usr/share/doc/python2.4-2.4 + exit 0 Processing files: python2.4-devel-2.4-1pydotorg error: File not found:  /var/tmp/python2.4-2.4-root/usr/lib64/python2.4/config Processing files: python2.4-tools-2.4-1pydotorg Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1  rpmlib(PayloadFilesHavePrefix) <= 4.0-1 rpmlib(VersionedDependencies) <=  3.0.3-1 Requires: /bin/bash /bin/sh /usr/bin/env 2) If I run the same find command in the  /var/tmp/python2.4-2.4-root/usr/lib/python2.4/lib-dynload (instead of the  lib64 directory), then I find a whole bunch of files, whereas the lib64/  directory returns no files. It seems as though the make script is either installing files in the wrong  location, or the SPECS is expecting files in the lib64/ directory when  instead they are in the lib/ directory. Anyone have any ideas? Thanks, Eric _______________________________________________ Python-Dev mailing list zvllln-eum@python.org http://mail.python.org/mailman/listinfo/python-dev Unsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.001180759377798625,
+          "NOT_SPAM": 0.9988192406222014
+        },
+        "confidence": 0.9868133828702266
+      }
+    },
+    "usage": {
+      "input_tokens": 1841,
+      "output_tokens": 0
+    }
+  }
+}

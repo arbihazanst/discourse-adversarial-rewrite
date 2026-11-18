@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] latent Dirichlet allocation (code available)\n\nDear UAI colleagues:\n\nI am writing to announce that we have made available a C implementation \nof the variational inference and variational EM algorithms described in \nthe 2003 JMLR paper \"Latent Dirichlet allocation.\"\n\nThe code can be found at:\n\n\thttp://www.cs.berkeley.edu/~blei/lda-c/\n\nPlease feel free to email me with any questions or suggestions.\n\nSincerely,\nDavid Blei",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.014041877762188803,
+          "NOT_SPAM": 0.9859581222378113
+        },
+        "confidence": 0.8934693490420721
+      }
+    },
+    "usage": {
+      "input_tokens": 238,
+      "output_tokens": 0
+    }
+  }
+}

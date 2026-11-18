@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Cheap and excellent software - too good to be true? Read information below!\n\n\n  Save on your software purchasing programs at absolutely low prices. Huge selection of programs! All European languages versions of programs and applications! There are also soft for MACINTOSH. No trial or demo versions! Original soft only!\n\nFree of charge professional installation consultations could be of great help. Prompt reply on all your requests. Money back guarantee ensures the quality of product.\n\n http://soviniero.com\n\n   Take this time and money saving offer!",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9927174062446539,
+          "NOT_SPAM": 0.007282593755346234
+        },
+        "confidence": 0.9378156733669903
+      }
+    },
+    "usage": {
+      "input_tokens": 235,
+      "output_tokens": 0
+    }
+  }
+}

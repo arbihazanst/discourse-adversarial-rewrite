@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: High-quality medz at low price only\n\n\n\n\nWide assortment of products for your health.\n\n\nSpicy your bedroom life.\n\nHere!\n\n\n\n\nexumbrella ex-bailiff fLauthnone\nenterprice extanblock feasabiliy\nexuviation ettringite fLxdrstdio\nexothecium epiplocele fBstreamio",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9726718696787084,
+          "NOT_SPAM": 0.027328130321291555
+        },
+        "confidence": 0.8191897296972808
+      }
+    },
+    "usage": {
+      "input_tokens": 201,
+      "output_tokens": 0
+    }
+  }
+}

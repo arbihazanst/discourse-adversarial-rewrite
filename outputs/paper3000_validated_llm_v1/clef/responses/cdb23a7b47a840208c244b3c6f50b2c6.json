@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Confirm your e-mail address for Windows Live ID\n\nHello, binbin@gvc.ceas-challenge.cc.\n\nThank you for signing up for a Windows Live ID. Please follow the instructions below to confirm that you signed up for this account, or to cancel the account if you did not sign up.\n\nCONFIRM ACCOUNT\nTo help prevent unauthorized account creation, we need you to confirm your e-mail address. We will use this e-mail address to send you important messages about your account. Also, some Windows Live ID sites and services may require a confirmed e-mail address.\n\nTo confirm this e-mail address, select and copy the following link. Open a browser and paste the link in the address bar. Press Enter or Return on your keyboard and follow the instructions that display.\n\nhttps://accountservices.msn.com/EmailPage.srf?emailid=3d140f99f73327d4&ed=B2QnEmV6dPoZh70k25BKi3j03SxYF04ZUaBKBdnqmDVOlPapbY/WFsxGXeRj&lc=1033&urlnum=0\n\n\nCANCEL ACCOUNT\n\nIf you didn't sign up for the account with this e-mail address and want to cancel the account, select and copy the following link. Open a browser and paste the link in the address bar. Press Enter or Return on your keyboard and follow the instructions that display.\n\nhttps://accountservices.msn.com/EmailPage.srf?emailid=3d140f99f73327d4&ed=B2QnEmV6dPoZh70k25BKi3j03SxYF04ZUaBKBdnqmDVOlPapbY/WFsxGXeRj&lc=1033&urlnum=1\n\nIMPORTANT\n\nTo help keep your personal information safe, Microsoft recommends that you never enter your credentials (e-mail and password) at a site you reached by clicking a link in an email. Instead of clicking the link, copy the address and paste it into the address bar in your web browser. While we may send e-mail that contains links, the links are provided for convenience only.\n\n\nWindows Live ID is committed to protecting your privacy. We encourage you to review the Privacy Statement at\nhttps://accountservices.passport.net/PPPrivacyStatement.srf?lc=1033.\n\nFor more information, go to the Windows Live ID home page at\nhttps://accountservices.passport.net/ppnetworkhome.srf?lc=1033.\n\nTo request more help, contact Customer Support at\nhttps://accountservices.passport.net/CustomerSupport.srf?lc=1033.\n\n\nThank you,\n\nWindows Live ID Customer Support\n\nNOTE:\nPlease do not reply to this message, which was sent from an unmonitored e-mail\naddress. Mail sent to this address cannot be answered.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.07949051778917356,
+          "SPAM": 0.9205094822108265
+        },
+        "confidence": 0.841018964421653
+      }
+    },
+    "usage": {
+      "input_tokens": 793,
+      "output_tokens": 0
+    }
+  }
+}

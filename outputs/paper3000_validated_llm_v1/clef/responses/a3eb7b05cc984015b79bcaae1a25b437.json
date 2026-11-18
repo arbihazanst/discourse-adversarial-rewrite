@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Adding custom Mime headers\n\ngsciwqx.mqzr@srs.gov wrote:\n>\n> I'm trying to get the RelayCountry plugin running here in order to get \n> a Mime header of all of the relay countries put on all messages.\n>\n> We're running 3.1.1, and I've implemented the necessary patch to \n> Mail::SpamAssassin::Plugin::RelayCountry.\nOuch, why are you using such an old version? (and one that's subject to \nnumerous DoS attacks at that)\n\nOffhand, 3.1.1 is vulnerable to:\n\nhttp://spamassassin.apache.org/advisories/cve-2007-2873.txt\nhttp://spamassassin.apache.org/advisories/cve-2007-0451.txt\nhttp://spamassassin.apache.org/advisories/cve-2006-2447.txt\n\nWe're on 3.2.4 now...\n\n>\n> Running SA in debug, I can see that the plugin is doing its work just \n> fine.  The X-Relay-Countries is returning expected values in the debug \n> output.\n>\n> However, after adding \"add_header all Relay-Countries _RELAYCOUNTRY_\" \n> to my /etc/mail/spamassassin/local.cf file, there is no header being \n> added.  To check this even further, I put \"add_header all Test-LG \n> 'This is a test'\" into the /etc/mail/spamassassin/local.cf file.  That \n> header isn't being added either.\n>\n> I've checked through the wiki, eliminated all possibilities of \n> user_prefs overriding local.cf and cannot figure out why add_header \n> isn't working for me.  No Amavisd or Exim in front.\n>\n> Does anyone have any ideas or experience with this?\nThe _RELAYCOUNTRY_ tag doesn't work in 3.1.1 due to a bug, it was fixed \nfor 3.1.2.\n\nSee this thread from almost 2 years ago when 3.1.1 was a current version \nof SpamAssassin:\n\nhttp://mail-archives.apache.org/mod_mbox/spamassassin-users/200604.mbox/%8c80641686950802.uc80641@manifold.algebra.com%3E",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9613301986978977,
+          "SPAM": 0.038669801302102375
+        },
+        "confidence": 0.9226603973957954
+      }
+    },
+    "usage": {
+      "input_tokens": 698,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Opensuse Updater endless Loop - Bad Cups Update?\n\nOn Wed, Mar 05, 2008 at 05:41:14PM -0800, James Bullock wrote:\n> \n> \n> John Andersen wrote:\n> > On Wed, Mar 5, 2008 at 1:51 PM, Marcus Meissner  wrote:\n> > \n> >>  It would be very nice if people seeing this could generate a solver testcase\n> >>  and put it into Bugzilla.\n> >>\n> >>  (with yast2 menu entry, or zypper up --debug-solver )\n> >>\n> >>  Ciao, Marcus\n> >>\n> > \n> > Done: https://bugzilla.novell.com/show_bug.cgi?id=367574\n> > \n> \n> another one appended to the same bug.\n\nThank you!\n\nI first thought it was the new dependency on sqlite2, but apparently\nthe desktop applets opensuse-updater-* get confused by the two patches\nnamed \"cups\" we released yesterday. (The GNOME set also had the cups name,\nsince cups was first in its package list.)\n\nCiao, Marcus\n-- \nTo unsubscribe, e-mail: assipqff+nmekprykass@opensuse.org\nFor additional commands, e-mail: qybuovjs+kcmh@opensuse.org",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007749481820291816,
+          "NOT_SPAM": 0.9992250518179708
+        },
+        "confidence": 0.9908744051674091
+      }
+    },
+    "usage": {
+      "input_tokens": 445,
+      "output_tokens": 0
+    }
+  }
+}

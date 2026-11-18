@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: [opensuse] Use entire disk, and not a partition\n\n-----Original Message-----\nFrom: Ken Schneider [mailto:gyac-crka9@bout-tyme.net] \nSent: 13 February 2008 06:10 PM\nTo: wkilxloc@opensuse.org\nSubject: Re: [opensuse] Use entire disk, and not a partition\n\n>Carlos E. R. pecked at the keyboard and wrote:\n>> \n>>> partition structure but the raw construct.\n>> \n>> I didn't mean that it was for the partition structure, but for the\n>> filesystem.\n>> \n\n>Oracle has been doing this for years (over 10 that I know of), using\nthe\n>raw disk to store data. No need to create a filesystem at all.\n\n\n\nThis is the way I used to do it with Informix - using raw devices.  We\nmigrated to Oracle, and I had to learn Oracle from scratch.  My (new)\ncollegues, who worked on Oracle for years, says raw device is not\nnecessary, which I found strange.  They say Oracle is fast enough on\ncooked files.\n\n:-o     Oh well, I'm not the senior dba anymore, so I just go with their\nrecommendations.\n\n\nDirk\n\n\n\n*** Disclaimer ***\n\nThe information contained in this e-mail is confidential and legally privileged and is intended solely for the addressee and to others who have the authority to receive it. Access to this e-mail by anyone else is unauthorized and as such, any disclosure, copying, distribution or any action taken or omitted in reliance on it is unlawful. If you have received this e-mail in error, please notify the sender immediately.\n\nThe views expressed in this e-mail are the views of the individual sender and should in no way be construed as the views of the Company.\n\nThe Company is not liable to ensure that outgoing e-mails are virus-free.\n\nThe Company is not liable, should information or data, for whatever reason, be corrupted or fail to reach its intended addressee.\n\nThe Company is not liable for any loss or damage of whatsoever nature and howsoever arising resulting from the opening or the use of the information in this e-mail, including its attachments and links.\n\nThe sender of this e-mail is subject to and bound by the terms and conditions of Company’s Electronic Communications Usage Policy.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0011232974541117062,
+          "NOT_SPAM": 0.9988767025458882
+        },
+        "confidence": 0.9873742166801348
+      }
+    },
+    "usage": {
+      "input_tokens": 633,
+      "output_tokens": 0
+    }
+  }
+}

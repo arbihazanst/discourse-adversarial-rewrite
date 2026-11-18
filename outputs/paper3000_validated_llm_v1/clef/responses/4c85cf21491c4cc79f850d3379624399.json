@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Bitpipe KnowledgeAlert\n\n\n------------------------------------------------------------------------------\nBitpipe.com KnowledgeAlert             \nFebruary 18, 2008\n------------------------------------------------------------------------------\n\n\nGreetings Ted,\n\nHere is your latest Bitpipe.com KnowledgeAlert, with new white papers, case\nstudies, webcasts and product information on the topics you have chosen.\n\n\n*** NEW DATA ON SURVEYS IN THE LAST DAY. ***\n\nTITLE: \"Comprehensive Business Intelligence Market Study - Summary Results from\nthe OLAP Survey 6\"\nURL: http://go.techtarget.com/r/3083978/4686672/1\nPUBLISHER: MicroStrategy Incorporated\nTYPE: White Paper\n\n------------------------------------------------------------------------------\nMANAGING YOUR SUBSCRIPTION \n------------------------------------------------------------------------------\n\nThe email address for this subscription is user6@gvc.ceas-challenge.cc\n\nTo unsubscribe from this alert, please use the link below:\nhttp://ka.bitpipe.com/cgi-bin/ka/unsubscribe.cgi?ljqoa=jne@gvc.ceas-challenge.cc&pid=11031394447650&type=html\nTo change your e-mail address, add new topics to your alert or change the\nfrequency of your e-mails, please visit: http://ka.bitpipe.com\n\n\n------------------------------------------------------------------------------\nABOUT US\n\nBitpipe.com is the leading source of in-depth IT information including white\npapers, product literature, webcasts, analyst reports and more.\n\nPrivacy Policy: http://www.bitpipe.com/about/privacy_policy_bp.jsp\n...................................................................\nCopyright 1998-2008 TechTarget, Inc.  All Rights Reserved.\nDesignated trademarks and brands are the property of their respective owners.\nTechTarget, Inc. * 117 Kendrick Street * Needham, MA * 02494\nContact TechTarget at cdknwfmwxhr@bitpipe.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.8667579880957507,
+          "SPAM": 0.1332420119042493
+        },
+        "confidence": 0.7335159761915013
+      }
+    },
+    "usage": {
+      "input_tokens": 555,
+      "output_tokens": 0
+    }
+  }
+}

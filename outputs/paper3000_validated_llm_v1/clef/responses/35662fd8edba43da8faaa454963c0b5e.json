@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Increase Your Penis Width (Girth) By upto 20%.\n\n\nImpress the ladies with the new tool in your pants, and watch them moan in pleasure when you fill them up deeper and more tightly.\n\nTry it today - you have nothing to lose, just a lot to gain!\n\nhttp://zoomhigh.com/",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.026046501312936236,
+          "SPAM": 0.9739534986870637
+        },
+        "confidence": 0.9479069973741274
+      }
+    },
+    "usage": {
+      "input_tokens": 229,
+      "output_tokens": 0
+    }
+  }
+}

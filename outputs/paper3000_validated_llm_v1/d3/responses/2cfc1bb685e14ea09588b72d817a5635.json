@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Removing callable() from the stdlib\n\nOn Fri, Mar 28, 2008 at 12:58 PM, Guido van Rossum  wrote:\n>\n> On Fri, Mar 28, 2008 at 10:51 AM, Collin Winter  wrote:\n>  > I've been running 2to3's fix_callable over 2.6's stdlib to remove -3\n>  >  warnings due to callable() usage; 2to3 replaces callable(x) with\n>  >  has_attr(x, \"__call__\"). Unfortunately, this breaks code that wants to\n>  >  run callable() on old-style classes (like test_builtin), because\n>  >  old-style classes don't have a __call__ attribute (new-style classes\n>  >  do, however).\n>  >\n>  >  How should this be handled? I'm tempted to just add __call__ to\n>  >  old-style classes for 2.6, but Neal Norwitz thought that might break\n>  >  some user code. Any other thoughts?\n>\n>  I don't see how this would break user code, as long as the __call__\n>  shows up for the *class* but not for the *instance*, and as long as it\n>  doesn't break users overriding __call__ in a classic class to make the\n>  instances callable.\n\nYep, I was only going to make it appear on the class. I'll go ahead\nand whip up a patch.\n\nCollin\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006934435014654743,
+          "NOT_SPAM": 0.9993065564985345
+        },
+        "confidence": 0.9917229690872281
+      }
+    },
+    "usage": {
+      "input_tokens": 531,
+      "output_tokens": 0
+    }
+  }
+}

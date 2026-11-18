@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Wrapping email in a digital security blanket\n\n\n\n\nUpdate\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 15, 2008\n\nPublished by \n\nSearchSecurity.com\n\n\n\n\n\n\n\n\n\n\n\n\n    Update\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTHIS ISSUE:\n  > From the Editor: \n Enigmail: Wrapping email in a digital security blanket\n\n\n\n\n\n\n\n\n\n\n\nFROM THE EDITOR\n\n\n\nEnigmail: Wrapping email in a digital security blanket\n[Scott Sidel, Contributor]\n\n  Secure communication is one of the fundamental pillars of information security. We don't want someone listening in on our phone calls or reading our emails, which is why we encrypt sensitive messages. One way to make our own email more secure is with Enigmail, an add-on to the Mozilla Thunderbird mail client that enables the sending and receiving of digitally signed and/or encrypted\n messages. \n\nIn order to use Enigmail, Thunderbird for email and an installation of an OpenPGP compliant key management software package are required, such as GNU Privacy Guard (GnuPG), which is an open source version of PGP for Windows, or MacPGP for the OS X platform. Enigmail works as an extension within Thunderbird and does a good job of hiding the complexity normally associated with using digital certificates and encryption. \n\nOnce Enigmail is configured, email that has been digitally signed by another user can be verified as authentic. In the mail client, a bar above the subject line of an email message will turn green when a digitally signed email has a valid signature from a trusted sender. It also allows outgoing messages to be digitally signed, verifying to others that the email they received was signed with your private digital key, something no one else but you possesses. \n\nEnigmail can also automatically encrypt and decrypt messages that have been encrypted using the OpenPGP standard. In transit, the encrypted emails are virtually unbreakable (and hence, unreadable to prying eyes), but upon entering the inbox, the messages can be automatically rendered into clear text. Enigmail handles the complexities of certificate lookups in the background, wrapping a simple-to-understand interface around what is typically a complex set of operations. \n\nUsing Enigmail and OpenPGP is a great way to gain email privacy without losing your mind. \n\n-- Scott Sidel is an ISSO with Lockheed Martin \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n SITE HIGHLIGHTS\n\n\n\n\n\n\n\n\n\nSet your 2008 information security training schedule\n\n        SearchSecurity.com and Information Security magazine host an abundance of live in-person events throughout the year. Not only are they highly educational, but also for qualified IT professionals, attendance is free! Find out when and where you can take advantage of one of these events and mark your calendar today! \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n PODCASTS & WEBCASTS\n\n\n\n\n\n\n\n\n\n\n\n\nWebcast: How to manage risk with a data loss prevention solution\n\n\nWHEN:  \nFeb 20th 2008, 2:00 p.m. (19:00 GMT)\n\n\nSPEAKERS:  \nSal Velasco, CTO of Intelligent Wave USA\n\n\n \nRussell Zitron, Vice President of Technical Services\n\n\nSPONSOR:  \nSoftware Engineering of America, Inc.\n\n\n \n\n\n>\nVIEW ALL PODCASTS & WEBCASTS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCONTACT US\nSales\nFor sales inquiries, please contact us at:\nllnmsnj@techtarget.com\n\nEditorial\n\n   \n    For feedback about any of our articles or to send us your article ideas, please contact us at:\n    \nvapopuz@techtarget.com\n\n\n\n \n\n\n\n\n\n\n\n\n\n\nGET E-MAIL UPDATES \nReceive Security-related news, tech tips, and more delivered directly to your Inbox. Sign-up by selecting one or more topics and submit your e-mail address below.\n\n\n\nSearchSecurity: Email Security\n\n\n\nSearchSecurity: Platform Security\n\n\n\nSearchSecurity: Network Security\n\n\n\n\n\n\n\n\nNot a Member? We'll activate your membership with your subscription.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nABOUT THIS E-NEWSLETTER\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n    This e-newsletter is published by SearchSecurity.com, a targeted Web site from TechTarget, The IT Media ROI Experts and events company.\n    Copyright 2008 TechTarget. All rights reserved.\n    \nIf you no longer wish to receive Updates on new site content from SearchSecurity.com go to unsubscribe: http://searchSecurity.techtarget.com/u?em=tjm%40cognosys.net&uid=2079970&cid=621567&track=NL-105\nPlease note, unsubscribe requests may take up to 24 hours to process; you may receive additional mailings during that time. A confirmation e-mail will be sent when your request has been successfully processed.   \n\n   Contact Us:\n   SearchSecurity.com\n   Member Services\n   117 Kendrick Street, Suite 800\n   Needham, MA 02494",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9385689220774189,
+          "SPAM": 0.061431077922581095
+        },
+        "confidence": 0.8771378441548379
+      }
+    },
+    "usage": {
+      "input_tokens": 1169,
+      "output_tokens": 0
+    }
+  }
+}

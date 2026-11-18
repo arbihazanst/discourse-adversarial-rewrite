@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [ILUG] Interest in getting a EEEPC?\n\nDimensions: 225 × 165 × 21~35 mm (8.9 × 6.5 × 0.9~1.4 in)  according to\nwikipedia \n\nthe variance in size i believe is that the biggest version has a bigger\nbattery pack.\n\nthe only protocol that i think is missing on this is bluetooth.\n\nused to have a psion myself so really hoping to get one of these little\nbeauties.  main difference barring colour screen is having access to linux\nand wifi.  used to get around 20-30 wpm on the psions keyboards so hope i\ncan replicate that on this keyboard.\n\ni only ever got about a week out of a psion on batteries but then i really\nused that little thing.\n\nmoylan\n\nOn 19/11/2007, Frank Peelo  wrote:\n>\n> Gary Pigott wrote:\n> > Isn't there a 10\" screen model due out soon too? The 7\" screen with the\n> huge\n> > bezel just looks a bit crap to me.\n>\n> How big is the machine? I went to\n>\n> http://www.asus.com/products.aspx?l1=24&l2=0&l3=0&l4=0&model=1907&modelmenu=1\n> and thereabouts, but didn't see dimensions. Only '7\" compact design' and\n> like that. If the machine was 7\" diagonal, that would be the same size\n> as my Psion 5ms or thereabouts, which would be OK. But I suspect it's\n> only the size of the screen.\n>\n> fp\n> (And the Psion goes 2 weeks on a couple of rechargeable AA batteries.\n> One of those, with a colour screen, now, that would be better.)\n>\n> --\n> Irish Linux Users' Group mailing list\n> About this list : http://mail.linux.ie/mailman/listinfo/ilug\n> Who we are : http://www.linux.ie/\n> Where we are : http://www.linux.ie/map/\n>\n\n\n\n-- \nEagles may soar but weasels don't get sucked into jet engines.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9455616929770345,
+          "SPAM": 0.05443830702296553
+        },
+        "confidence": 0.891123385954069
+      }
+    },
+    "usage": {
+      "input_tokens": 672,
+      "output_tokens": 0
+    }
+  }
+}

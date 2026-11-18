@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: FW: Semester 2 Textbook Orders....\n\nSorry sending this again..not sure if I selected plain text\n\n-----Original Message-----\nFrom: Bonham, Sharyn \nSent: Wednesday, 30 April 2008 11:57 a.m.\nTo: 'wwcnzu-wdv@massey.ac.nz'\nSubject: Semester 2 Textbook Orders....\n\n\nA reminder to all Semester 2 Instructors and Supervisor:\n\n\nBennetts Campus Bookstore will need to have your requests for Semester 2\ntextbook requirements by Friday the 2nd of May.  They cannot guarantee\nthat orders received after this date will arrive in time for the\nbeginning of the semester. \n \nPlease submit your order via internal mail to Josh Turnbull at Bennetts\nor email: hwq@bennets.co.nz\n\nThank you,\nSharyn Bonham\nReserves \nAuckland Campus Library",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0012035541947814038,
+          "NOT_SPAM": 0.9987964458052185
+        },
+        "confidence": 0.9865920335415705
+      }
+    },
+    "usage": {
+      "input_tokens": 323,
+      "output_tokens": 0
+    }
+  }
+}

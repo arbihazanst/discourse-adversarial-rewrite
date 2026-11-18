@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Fwd: Re: No SPF_FAIL flag, why?]\n\nOn Wed, 27 Feb 2008, Matt wrote:\n\n> The MTA never really sees whats in the headers.  It only adds to the\n> headers.  When an SMTP connection first begins the connecting MTA says\n> helo this such-and-such@such-n-such-domain.com.  Thats what SPF looks\n> at.  The MTA then adds that as the return path to the headers.\n\nActually there is a \"HELO hostname.domain\" field and then the\n\"RECPT FROM: rywc-kyo-zhrv@such-n-such-domain.com\" field.\nBoth can be tested with SPF but it is the second (AKA envelope-from)\nwhich results in the Return-path header\n\n>>> Return-path: \n>\n> That return path looks flaky.  I would think spamassassin would have\n> some way of since its not a valid domain consider it suspect.  Not\n> sure though.\n\nIf that accuratly represents the messages's envelope-from address\nthen the OP has a problem at the MTA level. The MTA should do the most\nbasic validation of the envelope-from (make sure that the domain name\nrepresents a valid domain via DNS).\nIn that case the message should have been blocked at the MTA and never\neven made it to SA.\n\n-- \nDave Funk                                  University of Iowa\n        College of Engineering\n319/335-5751   FAX: 319/384-0549           1256 Seamans Center\nSys_admin/Postmaster/cell_admin            Iowa City, IA 52242-1527\n#include \nBetter is not better, 'standard' is better. B{",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9643381260306266,
+          "SPAM": 0.03566187396937337
+        },
+        "confidence": 0.9286762520612533
+      }
+    },
+    "usage": {
+      "input_tokens": 554,
+      "output_tokens": 0
+    }
+  }
+}

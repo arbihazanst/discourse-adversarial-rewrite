@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Become a fortunate fellow\n\nDon't be desperate because of your small dimension - it's absolutely repairable!\nLet us give you some more male enhancement tips!\nhttp://milddear.com/\n\n\ncarefully cannabis plants, that she had been growingTottenham seemed to have a spot in the semifinals of thefrontrunner.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "SPAM": 0.9952372568515627,
+          "NOT_SPAM": 0.004762743148437392
+        },
+        "confidence": 0.9564054426228751
+      }
+    },
+    "usage": {
+      "input_tokens": 198,
+      "output_tokens": 0
+    }
+  }
+}

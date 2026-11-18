@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] [Distutils] Capsule Summary of Some\tPackaging/Deployment Technology Concerns\n\nOn Wed, Mar 19, 2008 at 6:15 PM, Jeff Rush  wrote:\n>  Frankly I'd like to see setuptools exploded, with those parts of general use\n>  folded back into the standard library, the creation of a set of\n>  non-implementation-specific documents of the distribution formats and\n>  behavior, leaving a small core of one implementation of how to do it and the\n>  door open for others to compete with their own implementation.\n\nIf I hazard an opinion seconding this sentiment. In my use of\nsetuptools, it definitely feels like it wants to be three (mostly)\nindependent projects:\n\n1) The project that standardizes the concept now embodied by eggs and\nprovides the basic machinery to work with them (find them, introspect\nmetadata, \"import\" them, etc.), but not install them per se. This is\ngenerally useful as common plug-in framework, if nothing else.\nCurrently, this \"run-time support\" functionality is in pkg_resources.\n2) The tool you can use to build eggs (but not install them per se).\nCurrently this is the setuptools extension to distutils.\n3) The tool for installing eggs (or their equivalent) and (optionally)\ntheir dependencies (optionally using remote hosts) as well as\nuninstalling. Currently this is easy_install (well, except for\nuninstalling, which is understandable quite difficult).\n\nFinally, there is the fourth and already separate project of PyPI:\n4) The hosted repository of publicly available eggs (or their\nequivalent). This should export any metadata required to resolve\ndependencies relatively cheeply.\n\nBreaking them apart will make it easier to have two separate projects\nfor building eggs (or their equivalents) -- one based on distutils and\nthe other replacing it. Even more importantly, it will make it\npossible for multiple installers to be developed that scratch\nparticular itches. Hopefully one would eventually emerge as the\nde-facto standard, but this will ultimately be decided by community\nadoption.\n\nAlex\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004934088275404761,
+          "NOT_SPAM": 0.9995065911724595
+        },
+        "confidence": 0.9938682763082158
+      }
+    },
+    "usage": {
+      "input_tokens": 649,
+      "output_tokens": 0
+    }
+  }
+}

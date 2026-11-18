@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: debt payment\n\n\nDo Not consolidate your debt   Eliminate it!\n\nLegally ELIMINATE your creditT card and other unsecured debt\n\n* WITHOUT ever making another payment to your creditors\n* WITHOUT it affecting your credit long-term\n* WITHOUT confrontation\n\nVisit www.freeplateworks.com\n\n\nThis IS NOT:\n\n* Bankruptcy\n* Consolidation\n* Or refinancing of any kind\n\nVisit here http://freeplateworks.com\n to learn how\n\n\n* Must have a minimum of $10K in combined household unsecured debt to apply. \n* Must be a US resident.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.02366776879656506,
+          "SPAM": 0.976332231203435
+        },
+        "confidence": 0.9526644624068701
+      }
+    },
+    "usage": {
+      "input_tokens": 282,
+      "output_tokens": 0
+    }
+  }
+}

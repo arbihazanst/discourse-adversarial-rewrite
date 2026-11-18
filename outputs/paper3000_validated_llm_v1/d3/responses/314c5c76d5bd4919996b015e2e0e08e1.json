@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Mail Sending problem\n\nOn Fri, Feb 08, 2008 at 04:04:04PM +0530, Goutam Baul wrote:\n\n> I have implemented SASL authetication. Trend Micro Net Suit is being used as\n> the anti spam/anti virus software. Since last few days I am finding that\n> some of the users (out of total 900+ users 3 has reported the issue so far)\n> are not able to send mail to any address outside of my domain. The log entry\n> that I am getting is something like\n> \n> Feb  8 15:54:29 mail postfix/smtpd[9334]: NOQUEUE: reject: RCPT from\n> unknown[59.183.54.228]: 554 : Recipient address\n> rejected: Access denied; from=\n> to= proto=SMTP helo=\n\nDid this user actually authenticate? All indications are that he or she\ndid not. Just because the server allows authentication, does not mean\nthat all users correctly configure their mail clients to use it.\n\n-- \n\tViktor.\n\nDisclaimer: off-list followups get on-list replies or get ignored.\nPlease do not ignore the \"Reply-To\" header.\n\nTo unsubscribe from the postfix-users list, visit\nhttp://www.postfix.org/lists.html or click the link below:\n\n\nIf my response solves your problem, the best way to thank me is to not\nsend an \"it worked, thanks\" follow-up. If you must respond, please put\n\"It worked, thanks\" in the \"Subject\" so I can delete these quickly.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006651074760045644,
+          "NOT_SPAM": 0.9993348925239954
+        },
+        "confidence": 0.9920211445460093
+      }
+    },
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 0
+    }
+  }
+}

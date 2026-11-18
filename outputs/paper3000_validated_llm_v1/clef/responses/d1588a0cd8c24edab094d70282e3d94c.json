@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [UAI] ICML 07 Workshop (Deadline Extended)\n\nThe workshop deadline for submission has been pushed back \none week due to several requests.  If those who have already \nsubmitted would like to make revisions, they may resubmit \ntheir paper before the new deadline.\n\nCall for Papers:\n\nICML Workshop on Constrained Optimization and Structured \nOutput Spaces\n-----------------------\n\nA large amount of machine learning research in recent years \nhas focused on domains with structured output spaces, such \nas protein secondary structure prediction, natural language \nparsing, and various applications in computer vision and \ninformation retrieval.  Graphical models provide powerful \ntools to utilize structure in these domains.  In addition, \nrecent work has focused on the use of standard supervised \nlearning techniques to solve these types of problems.\n\nAt the same time, mathematical programming in machine \nlearning continues to be a focus of intense research.  New \napplications and uses for support vector machines continue \nto be discovered.  Integer linear programming has worked its \nway into many interesting learning and inference algorithms. \nNew techniques for approximate constrained optimization have \nopened up the possibility of solving optimizations with \nexponential numbers of constraints.\n\nTo discuss the increasing cross-pollination of these two \nareas, ICML 2007 is hosting a workshop on Constrained \nOptimization and Structured Output Spaces.  For this \nworkshop we invite submission of papers on original research \nin the areas of constrained optimization and learning in \nstructured output spaces.  Submissions that address the \nfollowing questions are particularly sought after:\n\nOverview of Titular Areas:  There is a great deal of work on \nthe intersection of these two areas.  What are good examples \nof the state of the art in these areas?  On what \ndomains/types of problems has this convergence been \nsuccessful?  On what types of problems has it failed and \nwhy?  When it does fail, what other methods succeed?\n\nGenerality of Techniques:  Some of the applications used in \nthe literature require a great deal of specialization of the \ncandidate optimization technique.  To what extent can these \nspecialized techniques be generalized to solve other, \nseemingly unrelated problems?  On what types of problems \nwill the candidate technique fail even if it can be applied \nreadily?\n\nHeuristic vs. Exact Optimization:  Many of the techniques \nused for exact constrained optimization are still extremely \ntime consuming and often impractical.  When can heuristic \napproaches be used to give approximate solutions to these \noptimizations and when are they appropriate?  What heuristic \ntechniques are available?  What is the trade-off between \nheuristic solutions and exact ones in a given domain?\n\nApplications:  What are some large-scale, real-world \napplications on which these techniques have been applied \neffectively?  What are some as yet untested applications, \npreferably with publicly available datasets, that show \npromise?\n\nTheory:  What theoretical tools are available to categorize \nthese problems and analyze the solution techniques? How do \nthe different approaches to solving these problems relate to \neach other?\n\nSubmissions\n-----------------------\n\nSubmissions should be no longer than six pages in length, \nand should follow the ICML submission style guidelines. \nIdentifying information including names of authors, \naffiliations, and contact information should appear on the \nfirst page of the paper. Authors of accepted papers will be \ninvited to give a presentation of the work at the workshop \nand final papers will be published electronically on the \nworkshop web site.\n\nPlease go to:\n\nhttp://web.engr.orst.edu/~parker/icmlworkshop\n\nfor more information or to submit a paper.\n\nImportant Dates\n------------------------\n\nSubmissions Due:  30 April 2007 (Deadline Extended)\nNotification of Acceptance:  14 May 2007\nCamera-ready Papers Due:  28 May 2007\nWorkshop Date:  24 June 2007\n\nOrganizing Committee\n-----------------------\n\nThomas Dietterich - Oregon State University\nCharles Parker - Oregon State University\nEric Xing - Carnegie Mellon University\nScott Yih - Microsoft Research\n\nProgram Committee\n-----------------------\n\nUlf Brefeld, Humboldt-Universitt zu Berlin\nThomas Dietterich, Oregon State University\nLise Getoor, University of Maryland\nRong Jin, Michigan State University\nThorsten Joachims, Cornell University\nCharles Parker, Oregon State University\nDan Roth, University of Illinois, Champaign-Urbana\nPrasad Tadepalli, Oregon State University\nEric Xing, Carnegie Mellon University\nScott Yih, Microsoft Research\n_______________________________________________\nuai mailing list\nfaq@ENGR.ORST.EDU\nhttps://secure.engr.oregonstate.edu/mailman/listinfo/uai",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9421711155884839,
+          "SPAM": 0.05782888441151605
+        },
+        "confidence": 0.8843422311769678
+      }
+    },
+    "usage": {
+      "input_tokens": 1175,
+      "output_tokens": 0
+    }
+  }
+}

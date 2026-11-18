@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [python-win32] advice on architecting or program design in\tpython:\n\nTim Golden wrote:\n[... snip Elixir-based solution ...]\n\nI realise, rereading my post that it doesn't really solve\nyour concern about multiple loops etc. I doubt it's really\na problem, but in the spirit of the question, here's a raw\nsqlite solution, again Noddy and untested.\n\nYou've said you're newish to Python and while\nthere's no black magic here, I am being fairly free with\ngenerator expressions and getattr-fu. If you think the\napproach might be useful and need further explanation\nfeel free to ask.\n\n\nimport os, sys\nimport sqlite3\nimport wmi\n\nos.remove (\"c:/temp/wmi.db\")\ndb = sqlite3.connect (\"c:/temp/wmi.db\")\nclasses_wanted = [\"Win32_Process\", \"Win32_Service\"]\n\n#\n# Generate a dictionary of class name -> WMI class\n#\nc = wmi.WMI ()\nwmi_classes = dict (\n   (class_wanted, getattr (c, class_wanted)) \\\\\n     for class_wanted in classes_wanted\n)\n\n#\n# Create a simplistic Sqlite table for each WMI\n# class with one (untyped) column per attribute.\n#\nfor class_name, wmi_class in wmi_classes.items ():\n   db.execute (\"CREATE TABLE %s (%s)\" % (\n     class_name,\n     \", \".join (p for p in wmi_class.properties)\n   ))\n\ndb.commit ()\n\n#\n# For each WMI class, add all its instances as\n# rows to the corresponding sqlite table.\n#\nfor class_name, wmi_class in wmi_classes.items ():\n   db.executemany (\n     \"INSERT INTO %s (%s) VALUES (%s)\" % (\n       class_name,\n       \", \".join (p for p in wmi_class.properties),\n       \", \".join (\"?\" for p in wmi_class.properties)\n     ),\n     [[getattr (c, p) for p in c.properties] for c in wmi_class ()]\n   )\n\ndb.commit ()\n\n\n_______________________________________________\npython-win32 mailing list\nkpitck-aew45@python.org\nhttp://mail.python.org/mailman/listinfo/python-win32",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9442721040617261,
+          "SPAM": 0.055727895938273916
+        },
+        "confidence": 0.8885442081234523
+      }
+    },
+    "usage": {
+      "input_tokens": 672,
+      "output_tokens": 0
+    }
+  }
+}

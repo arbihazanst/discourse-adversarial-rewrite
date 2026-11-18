@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [opensuse] Setting up a mail server\n\nJohn wrote:\n> Sandy Drobic wrote:\n>> John wrote:\n>>> I am attempting to set up a mail server on a local Suse 10.3 box. I \n>>> am totally lost!!\n>>> Sorry if I'm being a bit slow.....\n>>\n>> You're saddling the horse from the wrong side. The first thing you \n>> need to do is to define what services should be available for what \n>> clients, everything else will follow that design.\n>>\n>> The usual questions are:\n>>\n>> Does this server accept mails directly from the internet?\n>>  - requires fixed ip and official domain name\n>>    possible but not recommended is a dialup with dyndns account\n> Well, yes I would like it too.... have a dyndns account with an adsl \n> connection...\n\nIn that case you probably won't have much problems receiving mails, but to \nsend mail you will have to use a relayhost because the majority of remote \nmailservers will refuse to accept mail from a client with a dynamic ip.\n\nOf course, the server should be running 24/7, and either the server is \ndirectly connected to the internet or, if set up behind a NAT router, you will \nneed to forward port 25 to your mailserver.\n\nYou should also check that your isp allows you to receive/send mails on port \n25 tcp. Some providers have started to block dynamic clients from that port \n(yes, even RECEIVING on port s25 :-/ ).\n\n>> Does this server provide mail services for internal LAN users only or \n>> does he relay for internet users?\n>>  - in that case you have to set up smtp authentication\n> Internet users....\n>>\n>> Do you require Webmail?\n>>  - that would need an imap server to connect to\n> That would be nice...\n>>\n>> Is this a private server only for your amusement or do you want to set \n>> up a company mailserver?\n> For learning, with a bit of amusement thrown in...  :-)\n> \n> Yep, it is mainly for learning purposes, also playing with web forms etc \n> etc...\n\nIn that case you (at least) need the following services:\n\n- Postfix (SMTP)\n- fetchmail (for polling remote pop/imap accounts)\n- UW-Imap/Courier/Cyrus/Dovecot (IMAP, Webmail)\n- Apache (Webmail, Monitoring of Services)\n- Squirrelmail (Webmail)\n- saslauthd (Authentication)\n\nTake the time to understand the basic concepts of Postfix, so you won't set up \nthe next abused spamzombie.\n\nhttp://www.postfix.org/BASIC_CONFIGURATION_README.html\nhttp://www.postfix.org/STANDARD_CONFIGURATION_README.html\nhttp://www.postfix.org/SOHO_README.html\n\nIn case of trouble have a look at:\nhttp://www.postfix.org/DEBUG_README.html\n\nEspecially, when you have questions:\nhttp://www.postfix.org/DEBUG_README.html#mail\n\n-- \nSandy\n\nList replies only please!\nPlease address PMs to: news-reply2 (@) japantest (.) homelinux (.) com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0013885801383457755,
+          "NOT_SPAM": 0.9986114198616541
+        },
+        "confidence": 0.9848174497654183
+      }
+    },
+    "usage": {
+      "input_tokens": 832,
+      "output_tokens": 0
+    }
+  }
+}

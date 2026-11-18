@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: filter per domain not working\n\n> > We have a script that processes email based upon domain.  It's a little > > wacky in that it can only handle one domain at a time.  The problem is > > that the script is receiving emails with multiple domains within the > > same email. >  > Define \"multiple domains\" in this context. Envelope recipients? Message > headers? Example? Logs? Here is the actual email sent from mta04.mxtest.com to mta03.mxtest.com (we own mxtext.com, .net, org and use them internally for testing).  It appears that mta4 is sending all three email addresses, two for one domain and one for the other, in a simple SMTP session call. This is what's being password to the filter. -f dubt@mxtest.net -- vxyb.cwckq@mxtest.com gary@mxtest.com dubt@mxtest.org Return-Path:  Received: from mta03.mxtest.com (unknown [10.80.71.4])         by mta03.mxtest.com (Postfix) with ESMTP id 761FB6C102;         Fri, 29 Feb 2008 22:00:52 -0800 (PST) Received: from mta04.mxtest.com (unknown [10.80.69.4])         (using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))         (No client certificate requested)         by mta03.mxtest.com (Postfix) with ESMTP id 61FF96C0F7;         Fri, 29 Feb 2008 22:00:52 -0800 (PST) Received: by mta04.mxtest.com (Postfix, from userid 124)         id 3E15B11C179; Fri, 29 Feb 2008 22:00:52 -0800 (PST) Received: from localhost (unknown [10.80.72.103])         by mta04.mxtest.com (Postfix) with ESMTP id F2AD011C16D;         Fri, 29 Feb 2008 22:00:51 -0800 (PST) Received: from c-67-164-10-244.hsd1.ca.comcast.net         (c-67-164-10-244.hsd1.ca.comcast.net [67.164.10.244]) by         webmail.mxtest.com (Horde MIME library) with HTTP; Fri, 29 Feb 2008         22:00:51 -0800 Message-ID: <20080229220051.ynmngnhbksswwc8k@webmail.mxtest.com> Date: Fri, 29 Feb 2008 22:00:51 -0800 From: dubt@mxtest.net To: dubt@mxtest.org, vxyb.cwckq@mxtest.com, dubt@mxtest.com Subject: test 2202 MIME-Version: 1.0 Content-Type: text/plain;         charset=ISO-8859-1;         DelSp=\"Yes\";         format=\"flowed\" Content-Disposition: inline Content-Transfer-Encoding: 7bit User-Agent: Internet Messaging Program (IMP) H3 (4.1.4) X-Virus-Scanned: ClamAV using ClamSMTP Gary -- mxtest.net ---------------------------------------------------------------- This message was sent using IMP, the Internet Messaging Program. The filter receives all 3 email addresses in a single call, regardless if we use filter:dummy or just filter. >  > > My understanding is that if we do content_filter=filtername (instead > > of content_filter=filtername:dummy) that it will operate on a per email > > address or domain, at least this was my understanding about a year ago. >  > This is correct. If no explicit nexthop is supplied, mail is grouped by > the domain (or email address) depending on the transport's destination > recipient limit (> 1 or = 1). >  > -- > \tViktor. >  > Disclaimer: off-list followups get on-list replies or get ignored. > Please do not ignore the \"Reply-To\" header. >  > To unsubscribe from the postfix-users list, visit > http://www.postfix.org/lists.html or click the link below: >  >  > If my response solves your problem, the best way to thank me is to not > send an \"it worked, thanks\" follow-up. If you must respond, please put > \"It worked, thanks\" in the \"Subject\" so I can delete these quickly.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0007490958455923236,
+          "NOT_SPAM": 0.9992509041544078
+        },
+        "confidence": 0.9911421539150959
+      }
+    },
+    "usage": {
+      "input_tokens": 1234,
+      "output_tokens": 0
+    }
+  }
+}

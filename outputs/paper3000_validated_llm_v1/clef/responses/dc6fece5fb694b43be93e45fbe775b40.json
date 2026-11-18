@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Fwd: [ILUG] iSCSI & Shared Storage Question\n\n---------- Forwarded message ----------\nFrom: John Moylan \nDate: Nov 15, 2007 11:33 AM\nSubject: Re: [ILUG] iSCSI & Shared Storage Question\nTo: evhq@clubi.ie, evhq@jakma.org\n\n\nSeems to be some confusion here bout GFS\n\nI disagree with Paul about veering off of paths etc. GFS serves a\nvalid purpose and is enterprise ready and well integrated into the\nRedhat/Centos Stack.\n\nIt is not an alternative to NFS, NFS would normally be run ontop of\nGFS. GFS just handles concurrency for reads/writes. You still have to\nreplicate your data - normally using whatever came with your SAN or\nsomething like Veritas's continuous access system.\n\nCLVM won't allow you to stripe accross SAN's in a fabic it just\napplies LVM changes the nodes in your SAN that get picked up on by all\nof the attached hosts.\n\nGood starting point (the redhat Cluster NFS cookbook)\nhttp://sources.redhat.com/cluster/doc/nfscookbook.pdf .\n\nMy previous advice stands, set up a lab and break and fix the system\nuntil you know it's strengths and weaknesses and are comfortable with\nthe idea of having to support it if something goes wrong - same goes\nfor any system though. - non clustered NFS included.\n\nJohn\n\n\nOn Nov 15, 2007 12:09 AM,   wrote:\n> On Wed, 14 Nov 2007, evhq@clubi.ie wrote:\n>\n> > NFS + rsync of your data to a backup NFS server, with manual failover is a\n> > really safe bet and will take very little time to setup and maintain..\n>\n> Oh, one thing to bear in mind that those distributed, multi-node FSes\n> don't necessarily provide redundancy (distributed redundancy isn't\n> entirely trivial).\n>\n> NFS and an automounter can provide the same effect (a consistent\n> namespace to a bunch of files spread across different machines).\n>\n> regards,\n> --\n> Paul Jakma      evhq@clubi.ie   evhq@jakma.org  Key ID: 64A2FF6A\n> Fortune:\n> NEWS FLASH!!\n> Today the East German pole-vault champion became the West German pole-vault\n> champion.\n>\n> --\n> Irish Linux Users' Group mailing list\n> About this list : http://mail.linux.ie/mailman/listinfo/ilug\n> Who we are : http://www.linux.ie/\n> Where we are : http://www.linux.ie/map/\n>\n>",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9561924993504841,
+          "SPAM": 0.04380750064951579
+        },
+        "confidence": 0.9123849987009682
+      }
+    },
+    "usage": {
+      "input_tokens": 761,
+      "output_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: RE: Case Study 2008 for Tony Steele,\tBusiness Modelling with Spreadsheets\n\nGreat Tony Thanks\nYes all is good\nbut\nMy mother is sicker so will go over again\n\nHope you are all well\n\nKind Regards Tony\n\n-----Original Message-----\nFrom: Tony Meyer [mailto:user2.1@gvc.ceas-challenge.cc] \nSent: Friday, 4 April 2008 10:45 p.m.\nTo: dgulw@maxnet.co.nz\nSubject: Re: Case Study 2008 for Tony Steele, Business Modelling with\nSpreadsheets\n\nHi Tony,\n\n> Hi Tony here is my case study\n\nReceived; thanks.  I should have both the exam and the case study  \nmarked by the end of Monday, and I'll email you all then with comments  \n& grades.\n\nHope all is well with you & the family.\n\nCheers,\nTony",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9709626465537916,
+          "SPAM": 0.0290373534462085
+        },
+        "confidence": 0.9419252931075832
+      }
+    },
+    "usage": {
+      "input_tokens": 361,
+      "output_tokens": 0
+    }
+  }
+}

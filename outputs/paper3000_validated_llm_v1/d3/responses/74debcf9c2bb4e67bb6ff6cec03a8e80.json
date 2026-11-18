@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: Perl problem (Scalar::Util)\n\n-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA1\n\nOn 02/29/2008 03:57 PM, Bill Landry wrote:\n| Steven Stern wrote:\n|> I'm getting the following error from various perl programs:\n|>\n|> $sa-update\n|> Use of uninitialized value in concatenation (.) or string at\n|> /usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/Scalar/Util.pm line 30.\n|>\n|> OK... maybe we need an update:\n|>\n|>\n|> [root@ccim-mx3 ~]# perl -MCPAN -e shell\n|> cpan> install Scalar::Util\n|> CPAN: Storable loaded ok\n|> Going to read /root/.cpan/Metadata\n|>   Database was generated on Fri, 29 Feb 2008 15:31:08 GMT\n|> Scalar::Util is up to date.\n|>\n|> Anyone have a solution?\n|>\n|\n| For some reason yum perl updates on Fedora 8 cause this to happen for\n| me.  Even though CPAN reports that you have the latest version of\n| Scalar:Util, you will still need to download, compile, and install\n| Scalar-List-Utils-1.19.tar.gz.  This should resolve the issue for you,\n| at least it has worked for me the last few perl updates.\n|\n| GL,\n|\n| Bill\n|\nI found out this also works:\n\n~ $cpan\n~  force install Scalar::Util\n- --\n\n~  Steve\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1.4.7 (GNU/Linux)\nComment: Using GnuPG with Fedora - http://enigmail.mozdev.org\n\niD8DBQFHyJzyeERILVgMyvARAvdWAJ9Br+Tb2elljt2QiOGIC4peiXgevgCfZ6md\nDVovqagwclYoUTF3q93YdR8=\n=dZWU\n-----END PGP SIGNATURE-----",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0004877329756089736,
+          "NOT_SPAM": 0.9995122670243911
+        },
+        "confidence": 0.9939306683991684
+      }
+    },
+    "usage": {
+      "input_tokens": 635,
+      "output_tokens": 0
+    }
+  }
+}

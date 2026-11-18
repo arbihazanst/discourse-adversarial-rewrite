@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Perl Jobs] Perl/Mason Web Developer (onsite), United States, NY, New York\n\nOnline URL for this job: http://jobs.perl.org/job/7420 To subscribe to this list, send mail to jobs-subscribe@perl.org. To unsubscribe, send mail to jobs-unsubscribe@perl.org. Posted: February 15, 2008 Job title: Perl/Mason Web Developer Company name: Shutterstock Location: United States, NY, New York Pay rate: DOE Travel: 0% Terms of employment: Salaried employee Hours: Full time Onsite: yes Description: Shutterstock.com is looking for a Perl/Mason web developer to join our tech team. We're a small, fun, and casual company with a startup culture. We're looking for experienced Perl programmers who can get complicated projects done efficiently. You should have a keen interest in and enthusiasm for high-traffic web sites and all the excitement they offer: optimization, load balancing, redundancy, failover, tiered architectures, etc. Applicants must be local to the New York area and able to work in the U.S. Required skills: At least 5 years experience with: * Perl * HTML / CSS / Javascript * MySQL * Linux Desired skills: * HTML::Mason * AJAX * layout / design * ImageMagick (and PerlMagick) * other languages (php, bash, C, etc.) * mod_perl / Apache * video editing * network filesystems * MySQL replication and optimization URL for more information: http://www.shutterstock.com/jobs.mhtml Contact information at: http://jobs.perl.org/job/7420#contact >From ziu.hcxgg@gmx.com  Sat Apr 26 15:48:51 2008 Message-ID: <47B42D57.8090408@gmx.com> Date: Thu, 14 Feb 2008 12:00:23 +0000 From: Rob Dixon  MIME-Version: 1.0 To: soiofdvxg@perl.org CC: \"jqqjqddcgd@gmail.com\"  Subject: Re: processing related elements in an array Content-Type: text/plain; charset=ISO-8859-1; format=flowed Content-Transfer-Encoding: 7bit jqqjqddcgd@gmail.com wrote:  > > Hey,  I hope someone can help me in calculating this: I can try. But your problem is poorly stated and I suspect you're mixing in parts of an imagined solution as well. It's best to describe the problem as cleanly as possible, as any prescriptions about the form of the solution can exclude a better option. Lets take a look. > My goal is to pass an array, @arr1 = (\"A\", \"C\") to a subroutine Reading ahead, it looks like these are the names of variables that you want to establish the values of. > and using another array, @arr2 = (\"B.aID = A.ID\", \"D.ID = A.dID\", > \"C.ID = B.cID\", \"E.cID = C.ID\")  > > use that to then simplify @arr2 to get @arr3 = (\"B = A\", \"D = A\", \"C > = B\", \"E = C\"), I think what you mean is a simple text edit:    my @arr3 = @arr2;    s/\\\\.\\\\S+// foreach @arr3; but perhaps there is more to it than that? > and then find any related elements in @arr3 to get @arr4 = (\"A = B = > C\", \"B = C = E\", \"D = A = B\"), Now here I'm lost. What determines this new list of equations? From @arr3 it is clear that \"A = B = C = D = E\", so what is special about the three triplets you have shown? > ------- > ie, >  > find what A equals, > A = B > A = D >  > find what C equals, > C = B > C = E As I said above, A and C are the values in @arr1. But why haven't we got A = B A = C A = D A = E because all of these are true. > find any similarities, > both contain B, so, > return A, B, C And what is a 'similarity'? If all of the five variables are equal why are they not all similar? > ------- >  > I apologize ahead for any confusions/headaches, if you can help me, > that would be great! It really looks like if you can state the problem more clearly you are most of the way to a solution. Perl cannot help you to find a solution, only to implement it. I hope this helps a little. Rob --dhijpgbdpcgmhlhololc Content-Type: message/rfc822 Content-Disposition: inline; filename=\"beginners_98773.ezm\"",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9378626728415401,
+          "SPAM": 0.06213732715845984
+        },
+        "confidence": 0.8757253456830802
+      }
+    },
+    "usage": {
+      "input_tokens": 1221,
+      "output_tokens": 0
+    }
+  }
+}

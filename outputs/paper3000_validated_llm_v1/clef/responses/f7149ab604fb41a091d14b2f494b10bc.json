@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: [Python-Dev] Proposed unittest changes\n\nOn Thu, Apr 17, 2008 at 7:59 AM, Michael Foord\n wrote:\n>  By etc I assume you mean:\n>\n>    assertLessThan\n>    assertGreaterThan\n>    assertLessThanOrEquals\n>    assertGreaterThanOrEquals\n\nThese names are used here:\n\nassertListEqual(self, list1, list2, msg=None):\nassertIn(self, a, b, msg=None):\nassertNotIn(self, a, b, msg=None):\nassertDictEqual(self, d1, d2, msg=None):\nassertSameElements(self, expected_seq, actual_seq, msg=None):\nassertMultiLineEqual(self, first, second, msg=None):\nassertLess(self, a, b, msg=None):\nassertLessEqual(self, a, b, msg=None):\nassertGreater(self, a, b, msg=None):\nassertGreaterEqual(self, a, b, msg=None):\nassertCommandSucceeds(self, command):\nassertCommandFails(self, command, regexes):\n\nI can look into making those open source, but it'd probably more\nefficient use of everyone's time to just reimplement them; most are\nonly a few lines. You can skip the assertCommand* ones, they're for\ntesting shell commands.\n\n\n>  Did you look at the other proposals?\n\nNot yet.\n\n>  * Decorator to make a function a TestCase\n\nBut what about TOOWTDI?\n\n>  * Convenience RunTests functions taking modules, suites and TestCases and\n> running them\n\nIf it addresses the most common reason why people have to hack this\nstuff, by all means.\n\n>  * Improved messages for assertEquals and assertNotEquals when an explicit\n> message is passed in\n\nSure.\n\n>  * Improved message when comparing lists/tuples with assertEquals\n\nI'd say do that in assertListEqual\n\n>  * The additional asserts that I suggested (In/NotIn, RaisesWithMessage,\n> Is/NotIs)\n\nSure. Google has In/NotIn\n\n>  I think that there is still work I can do on the docs even before any grand\n> renaming...\n\nGo ahead!\n\n-- \n--Guido van Rossum (home page: http://www.python.org/~guido/)\n_______________________________________________\nPython-Dev mailing list\nzvllln-eum@python.org\nhttp://mail.python.org/mailman/listinfo/python-dev\nUnsubscribe: http://mail.python.org/mailman/options/python-dev/python-dev%40tangomu.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9467151716672875,
+          "SPAM": 0.05328482833271258
+        },
+        "confidence": 0.8934303433345749
+      }
+    },
+    "usage": {
+      "input_tokens": 714,
+      "output_tokens": 0
+    }
+  }
+}

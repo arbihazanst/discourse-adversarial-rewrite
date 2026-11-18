@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: [Bug 4516] RCVD_BY_IP, RCVD_IN_BL_SPAMCOP_NET and RCVD_IN_SORBS_WEB are also applied to intermediate relays\n\nhttps://issues.apache.org/SpamAssassin/show_bug.cgi?id=4516\n\n\nuser7@gvc.ceas-challenge.cc changed:\n\n           What    |Removed                     |Added\n----------------------------------------------------------------------------\n             Status|NEW                         |RESOLVED\n         Resolution|                            |WONTFIX\n\n\n\n\n------- Additional Comments From user7@gvc.ceas-challenge.cc  2008-02-28 04:25 -------\nRCVD_BY_IP: has been removed\n\nRCVD_IN_BL_SPAMCOP_NET, RCVD_IN_SORBS_WEB: our opinion is that it makes sense\nfor these rules to fire if any of the untrusted relaying hosts hit these. I'm\nafraid that's just part of SA's design...\n\n\n\n------- You are receiving this mail because: -------\nYou are the assignee for the bug, or are watching the assignee.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.9315577118078737,
+          "SPAM": 0.06844228819212628
+        },
+        "confidence": 0.8631154236157474
+      }
+    },
+    "usage": {
+      "input_tokens": 387,
+      "output_tokens": 0
+    }
+  }
+}

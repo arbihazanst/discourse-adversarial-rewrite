@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: From Brooks Weeks\n\n\n\n\n\n\n\n\nB dgn u rcq y From On js line P sj har jyr ma zc cy\n\nGet FDA Me sr ds & Save up to 85%\n100% Legal P upr har eug macy - Or xl der Today! \n\nhttp://colonybear.com",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "clef-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "SPAM",
+        "probabilities": {
+          "NOT_SPAM": 0.023851362709668502,
+          "SPAM": 0.9761486372903315
+        },
+        "confidence": 0.952297274580663
+      }
+    },
+    "usage": {
+      "input_tokens": 225,
+      "output_tokens": 0
+    }
+  }
+}

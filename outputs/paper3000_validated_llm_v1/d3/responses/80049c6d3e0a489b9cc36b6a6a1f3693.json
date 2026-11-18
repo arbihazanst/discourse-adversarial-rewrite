@@ -1,0 +1,33 @@
+{
+  "request": {
+    "state": "Subject: Re: caller() info in DESTROY off?\n\nOn 03/10/2007, Elizabeth Mattijsen  wrote:\n> While investigating some issues with regards to object destruction, I\n> came upon this little oddity.  Take this program:\n>\n> = foo ================================================\n> sub Foo::DESTROY {\n>      (undef, $filename, $line) = caller;\n>      print \"called from $filename, line $line\\\\n\"\n> }\n>\n> my $foo = bless {}, 'Foo';\n> undef $foo;  # destruction *not* reported at this line\n>\n> my $bar;     # line at which destruction of object is reported\n\nWell, the destruction technically happens *after* the undef\ninstruction has finished. So the current COP points at the next\nstatement. Which might be far away... or might even not have a line\nnumber associated to it. That happens if the undef() call is done at\nthe end of an END block.\n\nI understand that might be not practical, but that's the first time I\nhear about this problem and I don't have really an idea about a\npossible and efficient solution.",
+    "questions": {
+      "spam": {
+        "type": "choice",
+        "instructions": "Classify this email as SPAM or NOT_SPAM based on its content.",
+        "criteria": {
+          "SPAM": "Unsolicited advertising, phishing, scams, fraudulent offers, or deceptive messages.",
+          "NOT_SPAM": "Legitimate personal, business, or informational correspondence."
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "d3-flash-q4",
+    "answers": {
+      "spam": {
+        "type": "choice",
+        "choice": "NOT_SPAM",
+        "probabilities": {
+          "SPAM": 0.0006439476100003577,
+          "NOT_SPAM": 0.9993560523899996
+        },
+        "confidence": 0.9922449392600797
+      }
+    },
+    "usage": {
+      "input_tokens": 385,
+      "output_tokens": 0
+    }
+  }
+}
