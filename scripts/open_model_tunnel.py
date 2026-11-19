@@ -1,13 +1,15 @@
 """Keep model port forwards open in this terminal until SSH exits or Ctrl+C."""
 import sys
 
-from check_model_tunnel import MODELS, tunnel
+from urllib.parse import urlsplit
+from check_model_tunnel import default_profile, routes, tunnel
 
 
 def main():
     try:
-        with tunnel() as ssh:
-            ports = ", ".join(str(port) for port in MODELS)
+        config = default_profile()
+        with tunnel(config) as ssh:
+            ports = ", ".join(str(urlsplit(r['url']).port) for r in routes(config).values())
             if ssh is None:
                 print(f"Semua port lokal ({ports}) sudah menerima koneksi. Gunakan sesi yang sudah aktif.")
                 return 0

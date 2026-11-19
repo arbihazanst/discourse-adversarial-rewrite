@@ -1,4 +1,4 @@
-# Pilot lokal — PPLX classifier dan evaluator
+# Experimenting melalui SSH — Clef/d3 classifier dan PPLX evaluator
 
 ## Membiarkan tunnel tetap aktif
 
@@ -14,18 +14,18 @@ Masukkan password jika diminta. Setelah muncul `Port lokal siap`, gunakan termin
 
 Dari root proyek di PowerShell, jalankan `.\experimenting\run_cli.bat --task tunnel` atau pilih menu utama **7**. Di Bash gunakan launcher `.sh` dengan argumen yang sama. Tambahkan `--dry-run` untuk melihat alamat tanpa membuka koneksi.
 
-Launcher memakai port lokal yang sudah tersedia dan membuka forward yang masih dibutuhkan. Jika diminta, ketik password di prompt OpenSSH. Tunnel yang dibuka launcher ditutup setelah pengujian. PPLX (11438), Clef (11439), dan d3 (11440) menerima pertanyaan refund melalui `/v1/systemone`. Gemma (11441) menerima pertanyaan RAG melalui `/v1/chat/completions`. Output menampilkan jawaban dan waktu tiap layanan. Menu ini terpisah dari konfigurasi pekerjaan `all`.
+Launcher memakai port lokal yang sudah tersedia dan membuka forward yang masih dibutuhkan. Jika diminta, ketik password di prompt OpenSSH. Tunnel yang dibuka launcher ditutup setelah pengujian. PPLX (11438), Clef (11439), dan d3 (11440) menerima pertanyaan refund melalui `/v1/systemone`. Gemma (11441) menerima pertanyaan RAG melalui `/v1/chat/completions`. Output menampilkan jawaban dan waktu tiap layanan. Menu ini membaca endpoint dan pemetaan SSH yang sama dengan pekerjaan `all`.
 
-Profil ini untuk menguji pipeline sebelum Clef/d3 tersedia di server. **PPLX memiliki dua peran dengan permintaan yang terpisah**:
+Profil experimenting memakai Clef/d3 sebagai classifier, PPLX sebagai evaluator dan Gemma sebagai generator. Pipeline serta dataset sama dengan main. Koneksi melewati SSH dari PC.
 
-| Peran | Model/layanan |
-|---|---|
-| Classifier SPAM/NOT_SPAM | Tool PPLX `server:pplxdeciderflash` |
-| Evaluator validitas rewrite | Tool PPLX yang sama, dengan rubrik dan kategori PASS/FAIL/UNCERTAIN |
-| Attacker LLM | `google/gemma-3-27b-it` melalui Open WebUI |
-| Attacker GAN | Generator SST lokal di CPU |
+| Layanan | Port PC | Port localhost server |
+|---|---:|---:|
+| PPLX | 11438 | 11438 |
+| Clef Flash | 11439 | 11439 |
+| d3 Flash | 11440 | 11440 |
+| Gemma | 11441 | 11441 |
 
-Open WebUI menggunakan `https://llms.si-lab.org/api/chat/completions`. Model penghubung tool PPLX adalah `google/gemma-3-27b-it`. Tidak ada panggilan Clef/d3, Ollama, atau port GPU lokal dari profil ini. Hasil pilot tidak mewakili robustness Clef/d3; classifier dan evaluator berbagi backend PPLX sehingga bukan penilaian yang independen.
+Launcher menjaga tunnel selama seluruh pekerjaan `all`. Login dilakukan melalui prompt OpenSSH jika diperlukan. Tunnel yang sudah aktif dipakai kembali. Untuk mengganti host SSH, port login atau port server, edit `ssh` pada profil aktif; URL model menentukan port lokal. Skrip `open_model_tunnel.py` memakai profil experimenting yang sama.
 
 ## Jalankan pilot 10 data
 
@@ -36,7 +36,7 @@ python -m pip install -r requirements.txt
 Copy-Item .env.example .env
 ```
 
-Jika `.env` sudah ada, cukup edit file itu; jangan menimpanya. Isi `OWUI_API_KEY` dengan key sendiri. Script membaca `.env` root secara otomatis.
+Profil default memakai API lokal melalui SSH. Kredensial login diminta OpenSSH di terminal. Jika endpoint memerlukan key, atur `key_env` melalui menu 5 dan isikan nilainya pada `.env`.
 
 ```powershell
 .\experimenting\run_cli.bat
@@ -69,22 +69,22 @@ Tanpa menu:
 .\experimenting\run_cli.bat --task all --retry-errors
 ```
 
-Dataset sama dengan main: `dataset/paper_baseline3000.csv`. Pilot memilih 5 SPAM + 5 NOT_SPAM original. Hanya SPAM yang terdeteksi SPAM oleh PPLX yang masuk rewrite; jumlah rewrite dapat kurang dari lima. Tidak ada penyeimbangan ulang untuk memaksa jumlah serangan tertentu.
+Dataset sama dengan main: `dataset/paper_baseline3000.csv`. Pilot memilih 5 SPAM + 5 NOT_SPAM original. Hanya SPAM yang terdeteksi SPAM oleh defender terkait yang masuk rewrite; jumlah rewrite dapat kurang dari lima. Tidak ada penyeimbangan ulang untuk memaksa jumlah serangan tertentu.
 
 ## Alur masing-masing cabang
 
 ```text
-Baseline PPLX -> true-positive SPAM
+Baseline Clef/d3 -> true-positive SPAM
   -> rewrite 1 (Gemma ATAU GAN)
   -> PPLX evaluator membandingkan original dengan rewrite
       INVALID -> catat kriteria gagal -> berhenti -> data berikutnya
       UNCERTAIN / NO_CHANGE -> catat terpisah -> berhenti
-      VALID -> PPLX classifier SPAM/NOT_SPAM
+      VALID -> Clef/d3 classifier SPAM/NOT_SPAM
           NOT_SPAM -> flip valid -> berhenti
           SPAM -> rewrite 2 dari kandidat pertama
               -> PPLX evaluator membandingkan ORIGINAL dengan rewrite 2
                   INVALID / UNCERTAIN / NO_CHANGE -> catat -> berhenti
-                  VALID -> PPLX classifier -> berhenti
+                  VALID -> Clef/d3 classifier -> berhenti
 ```
 
 Maksimal dua step berlaku untuk Gemma dan GAN. Error API atau respons tidak terverifikasi dicatat sebagai ERROR, bukan INVALID. Tidak ada klasifikasi jika validasi belum berhasil.
@@ -117,13 +117,13 @@ Laporan diperbarui setelah tiap tugas. Untuk memperbarui hasil lama tanpa API, g
 
 CSV kosong/header-only ditandai sebagai belum ada hasil, bukan hasil nol. `INVALID` merupakan keputusan validator, bukan error program. Jangan mengedit laporan untuk mengubah checkpoint.
 
-Folder berikut tetap menjadi **arsip teknis**; Anda tidak perlu membukanya untuk membaca hasil sehari-hari. Struktur dan identitas lama dipertahankan agar baseline/Gemma yang sudah selesai bisa di-resume tanpa mengulang inference.
+Folder berikut tetap menjadi **arsip teknis**; Anda tidak perlu membukanya untuk membaca hasil sehari-hari. Folder baru dipakai untuk profil tunnel agar endpoint dan revision terbaru memiliki checkpoint sendiri.
 
-Folder default, masing-masing dengan subfolder `pplx`:
+Folder default, masing-masing dengan subfolder `clef` dan `d3`:
 
-- `experimenting/outputs/validated_baseline_pilot10_v1`
-- `experimenting/outputs/validated_llm_pilot10_v1`
-- `experimenting/outputs/validated_gan_pilot10_v1`
+- `experimenting/outputs/tunnel_v1/pilot_baseline`
+- `experimenting/outputs/tunnel_v1/pilot_llm`
+- `experimenting/outputs/tunnel_v1/pilot_gan`
 
 Kedua cabang menghasilkan `step1_rewrites.csv`, `step2_rewrites.csv`, `validity_summary.csv`, `sample_results.csv`, `metrics.json`, dan CSV individual di `rewrites/step1` serta `rewrites/step2`. Kolom mencakup hasil setiap kriteria, alasan penolakan, status klasifikasi/skipped, serta waktu generation/validation/classification. Waktu adalah durasi tahap, bukan waktu GPU murni.
 
@@ -135,6 +135,6 @@ Jalankan perintah yang sama untuk resume. `--retry-errors` hanya mengulang tahap
 
 Konfigurasi dasar berada pada `experimenting/adaptive_config.json`; perubahan menu disimpan pada `experimenting/adaptive_local.json`. Profil lokal lama tanpa evaluator ditolak dengan petunjuk memilih konfigurasi baru. Gunakan `--config experimenting/adaptive_config.json` untuk memilih konfigurasi dasar secara eksplisit.
 
-Pilot mengizinkan revision backend belum terverifikasi dan menandainya `UNVERIFIED_WEIGHTS`. Metadata katalog tidak sama dengan revision bobot. Untuk hasil penelitian, audit manual sekitar 50 pasangan rewrite terlebih dahulu, lalu bekukan rubrik dan konfigurasi. Main memakai Clef/d3 untuk klasifikasi, sementara PPLX tetap evaluator.
+Pilot dan benchmark mengizinkan revision kosong dan mencatat `UNVERIFIED_WEIGHTS`. Gunakan folder hasil baru setelah mengganti bobot. Benchmark memakai `experimenting/outputs/tunnel_v1/full_llm` dan `full_gan`. Metadata katalog tidak sama dengan revision bobot. Untuk hasil penelitian, audit manual sekitar 50 pasangan rewrite terlebih dahulu, lalu bekukan rubrik dan konfigurasi. Main memakai Clef/d3 untuk klasifikasi, sementara PPLX tetap evaluator.
 
 Status validasi implementasi: tersedia pengujian offline dengan respons model simulasi untuk gate, dua step, retry, resume, parser tool dan pemisahan peran. Keberhasilan respons layanan nyata dan kualitas keputusan PPLX harus diverifikasi melalui pilot Anda.

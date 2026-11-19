@@ -2,17 +2,17 @@
   "profile": "main",
   "dataset": "dataset/paper_baseline3000.csv",
   "step1_bank": "dataset/paper_step1_bank.csv",
-  "output_dir": "outputs/paper3000_validated_llm_v1",
-  "gan_output_dir": "outputs/paper3000_validated_gan_v1",
+  "output_dir": "outputs/direct_v1/full_llm",
+  "gan_output_dir": "outputs/direct_v1/full_gan",
   "gan": {
     "resource_dir": ".cache/openattack_gan/AttackAssist.SGAN",
     "seed": 20261104
   },
   "attacker": {
-    "transport": "openai",
-    "url": "http://127.0.0.1:11441/v1/chat/completions",
     "model": "google/gemma-3-27b-it",
-    "revision": "gemma-3-27b-it",
+    "url": "http://127.0.0.1:11441/v1/chat/completions",
+    "transport": "openai",
+    "revision": "",
     "key_env": "",
     "temperature": 0.0,
     "max_tokens": 1024
@@ -22,49 +22,33 @@
       "model": "clef-flash-q4",
       "url": "http://127.0.0.1:11439/v1/systemone",
       "transport": "direct",
-      "revision": "clef-flash-q4;",
+      "revision": "",
       "key_env": ""
     },
     "d3": {
       "model": "d3-flash-q4",
       "url": "http://127.0.0.1:11440/v1/systemone",
       "transport": "direct",
-      "revision": "d3-flash-q4;",
+      "revision": "",
       "key_env": ""
     }
   },
   "default_model": "all",
-  "active_models": ["clef", "d3"],
-  "tool_pilot_output_dir": "outputs/validated_baseline_pilot10_v1",
+  "active_models": [
+    "clef",
+    "d3"
+  ],
+  "tool_pilot_output_dir": "outputs/direct_v1/pilot_baseline",
   "rewrite_evaluator": {
     "model": "perplexity-ai/pplx-decider-flash-v1.2",
     "url": "http://127.0.0.1:11438/v1/systemone",
     "transport": "direct",
-    "revision": "perplexity-ai/pplx-decider-flash-v1.2",
+    "revision": "",
     "key_env": "",
     "role": "pplx_validity",
     "rubric_version": "rewrite_validity_v1"
   },
   "protocol": "validity_gated_v1",
-  "tool_llm_pilot_output_dir": "outputs/validated_llm_pilot10_v1",
-  "tool_gan_pilot_output_dir": "outputs/validated_gan_pilot10_v1",
-  "service_pilot": {
-    "pplx": {
-      "model": "perplexity-ai/pplx-decider-flash-v1.2",
-      "url": "http://127.0.0.1:11438/v1/systemone"
-    },
-    "clef": {
-      "model": "clef-flash-q4",
-      "url": "http://127.0.0.1:11439/v1/systemone"
-    },
-    "d3": {
-      "model": "d3-flash-q4",
-      "url": "http://127.0.0.1:11440/v1/systemone"
-    },
-    "gemma": {
-      "model": "google/gemma-3-27b-it",
-      "url": "http://127.0.0.1:11441/v1/chat/completions"
-    }
-  },
-  "gan_archive": "dataset/gan_replay.csv"
+  "tool_llm_pilot_output_dir": "outputs/direct_v1/pilot_llm",
+  "tool_gan_pilot_output_dir": "outputs/direct_v1/pilot_gan"
 }

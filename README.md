@@ -1,20 +1,10 @@
 # Decision-model adversarial rewrite — main/server
 
-## Membiarkan tunnel tetap aktif
+## Koneksi main di server
 
-Dari root proyek, buka terminal pertama dan jalankan:
+Main mengakses layanan pada localhost server langsung. Pilih menu utama **7** atau jalankan `bash run_cli.sh --task tunnel` untuk menguji endpoint profil. Nama argumen `tunnel` dipertahankan untuk kompatibilitas CLI; profil main memakai koneksi HTTP langsung.
 
-```sh
-python scripts/open_model_tunnel.py
-```
-
-Masukkan password jika diminta. Setelah muncul `Port lokal siap`, gunakan terminal kedua untuk memanggil model atau menjalankan uji menu 7. Tunnel tetap aktif setelah uji selesai selama terminal pertama terbuka. Tekan Ctrl+C di terminal pertama untuk menghentikan forward milik skrip. Jika semua port sudah digunakan, periksa layanan dengan menu 7.
-
-## Uji tunnel SSH
-
-Dari root proyek di PowerShell, jalankan `.\run_cli.bat --task tunnel` atau pilih menu utama **7**. Di Bash gunakan launcher `.sh` dengan argumen yang sama. Tambahkan `--dry-run` untuk melihat alamat tanpa membuka koneksi.
-
-Launcher memakai port lokal yang sudah tersedia dan membuka forward yang masih dibutuhkan. Jika diminta, ketik password di prompt OpenSSH. Tunnel yang dibuka launcher ditutup setelah pengujian. PPLX (11438), Clef (11439), dan d3 (11440) menerima pertanyaan refund melalui `/v1/systemone`. Gemma (11441) menerima pertanyaan RAG melalui `/v1/chat/completions`. Output menampilkan jawaban dan waktu tiap layanan. Menu ini terpisah dari konfigurasi pekerjaan `all`.
+Pada pemeriksaan 19 November 2026, host SSH `37.60.243.124` menyediakan layanan pada 11438–11441. Jika kode dijalankan di host GPU lain, sesuaikan URL melalui menu 5 dengan port yang aktif di host tersebut.
 
 Main menjalankan **Clef dan d3 sebagai defender**, **PPLX sebagai evaluator validitas**, serta dua jalur rewrite terpisah: **Gemma 3** dan **GAN SST**. Setiap jalur maksimal dua step. PPLX tidak menjadi classifier spam/ham pada profil main.
 
@@ -28,18 +18,16 @@ cp .env.example .env
 bash run_cli.sh
 ```
 
-Isi `OWUI_API_KEY` pada `.env`. Script membaca file ini otomatis; jangan masukkan API key ke JSON konfigurasi.
+Endpoint default memakai API lokal tanpa key. Jika suatu layanan memerlukan autentikasi, isi variabel pada `key_env` dan simpan nilainya di `.env`.
 
-Pada menu **5 — Pengaturan**, periksa endpoint dan isi revision/checkpoint + quantization yang sebenarnya untuk setiap model. Endpoint dan model mengikuti profil JSON yang ditampilkan CLI. Main memerlukan revision yang terverifikasi, termasuk untuk pilot server; jangan mengisi revision palsu hanya untuk melewati pemeriksaan.
+| Peran | Model | Endpoint localhost |
+|---|---|---|
+| Clef | clef-flash-q4 | http://127.0.0.1:11439/v1/systemone |
+| d3 | d3-flash-q4 | http://127.0.0.1:11440/v1/systemone |
+| Gemma | google/gemma-3-27b-it | http://127.0.0.1:11441/v1/chat/completions |
+| PPLX evaluator | perplexity-ai/pplx-decider-flash-v1.2 | http://127.0.0.1:11438/v1/systemone |
 
-| Peran | Layanan default |
-|---|---|
-| Defender Clef | llama.cpp System One: `http://127.0.0.1:30005/v1/systemone` |
-| Defender d3 | llama.cpp System One: `http://127.0.0.1:30006/v1/systemone` |
-| Attacker Gemma 3 | SGLang: `http://127.0.0.1:30007/v1/chat/completions` |
-| Evaluator PPLX | Open WebUI: `https://llms.si-lab.org/api/chat/completions`, tool `server:pplxdeciderflash` |
-
-Model penghubung Open WebUI adalah `google/gemma-3-27b-it`; keputusan validitas harus berasal dari output tool PPLX yang terverifikasi, bukan jawaban chat Gemma. Clef/d3 dapat diubah ke Pipe Open WebUI jika Pipe sudah tersedia. CLI tidak menyalakan atau memindahkan container GPU.
+`revision` boleh kosong untuk pilot maupun benchmark. Run mencatat `UNVERIFIED_WEIGHTS` dan status yang sama dalam kontrak checkpoint. Isi revisi bobot sebenarnya bila diketahui. Jika bobot berganti, gunakan folder hasil baru atau isi revisinya agar hasil lama tidak dipakai ulang. Kesamaan ID model dan endpoint saja tidak menjamin kesamaan bobot.
 
 Konfigurasi dasar: `decision_models/adaptive_main.json`. Perubahan menu disimpan pada `decision_models/adaptive_local.json`, yang mendapat prioritas. Untuk memilih konfigurasi dasar secara eksplisit, tambahkan `--config decision_models/adaptive_main.json`.
 
@@ -115,7 +103,7 @@ Pip tidak mengunduh bobot GAN; persiapan otomatis dilakukan oleh CLI saat menjal
 
 CLI memperbarui laporan setelah tiap tugas, termasuk jika tugas mengembalikan error. Menu **4 → Perbarui ringkasan** atau `bash run_cli.sh --results` membangunnya dari hasil tersimpan tanpa inference. CSV kosong pada tugas yang belum dijalankan tidak berarti hasil nol. Laporan ini adalah salinan untuk dibaca; checkpoint dan artefak asli tetap di folder teknis berikut.
 
-Pilot disimpan pada `outputs/validated_baseline_pilot10_v1`, `outputs/validated_llm_pilot10_v1`, dan `outputs/validated_gan_pilot10_v1`. Benchmark menggunakan `outputs/paper3000_validated_llm_v1` dan `outputs/paper3000_validated_gan_v1`, dengan subfolder defender.
+Pilot disimpan dalam `outputs/direct_v1/pilot_baseline`, `pilot_llm`, dan `pilot_gan`. Benchmark memakai `outputs/direct_v1/full_llm` dan `full_gan`, dengan subfolder defender. Folder baru ini dipilih agar identitas endpoint dan revision terbaru tidak bertabrakan dengan checkpoint sebelumnya.
 
 | File | Isi |
 |---|---|

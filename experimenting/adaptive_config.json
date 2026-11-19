@@ -2,47 +2,63 @@
   "profile": "experimenting",
   "dataset": "dataset/paper_baseline3000.csv",
   "step1_bank": "dataset/paper_step1_bank.csv",
-  "output_dir": "experimenting/outputs/paper3000_validated_llm_v1",
+  "output_dir": "experimenting/outputs/tunnel_v1/full_llm",
   "attacker": {
-    "transport": "openai",
-    "url": "https://llms.si-lab.org/api/chat/completions",
     "model": "google/gemma-3-27b-it",
+    "url": "http://127.0.0.1:11441/v1/chat/completions",
+    "transport": "openai",
     "revision": "",
-    "key_env": "OWUI_API_KEY",
+    "key_env": "",
     "temperature": 0.0,
     "max_tokens": 1024
   },
   "defenders": {
-    "pplx": {
-      "transport": "tool",
-      "url": "https://llms.si-lab.org/api/chat/completions",
-      "model": "google/gemma-3-27b-it",
-      "tool_id": "server:pplxdeciderflash",
+    "clef": {
+      "model": "clef-flash-q4",
+      "url": "http://127.0.0.1:11439/v1/systemone",
+      "transport": "direct",
       "revision": "",
-      "key_env": "OWUI_API_KEY"
+      "key_env": ""
+    },
+    "d3": {
+      "model": "d3-flash-q4",
+      "url": "http://127.0.0.1:11440/v1/systemone",
+      "transport": "direct",
+      "revision": "",
+      "key_env": ""
     }
   },
-  "default_model": "pplx",
+  "default_model": "all",
   "active_models": [
-    "pplx"
+    "clef",
+    "d3"
   ],
-  "tool_pilot_output_dir": "experimenting/outputs/validated_baseline_pilot10_v1",
-  "gan_output_dir": "experimenting/outputs/paper3000_validated_gan_v1",
+  "tool_pilot_output_dir": "experimenting/outputs/tunnel_v1/pilot_baseline",
+  "gan_output_dir": "experimenting/outputs/tunnel_v1/full_gan",
   "gan": {
     "resource_dir": ".cache/openattack_gan/AttackAssist.SGAN",
     "seed": 20261104
   },
   "rewrite_evaluator": {
-    "transport": "tool",
-    "url": "https://llms.si-lab.org/api/chat/completions",
-    "model": "google/gemma-3-27b-it",
-    "tool_id": "server:pplxdeciderflash",
+    "model": "perplexity-ai/pplx-decider-flash-v1.2",
+    "url": "http://127.0.0.1:11438/v1/systemone",
+    "transport": "direct",
     "revision": "",
-    "key_env": "OWUI_API_KEY",
+    "key_env": "",
     "role": "pplx_validity",
     "rubric_version": "rewrite_validity_v1"
   },
   "protocol": "validity_gated_v1",
-  "tool_llm_pilot_output_dir": "experimenting/outputs/validated_llm_pilot10_v1",
-  "tool_gan_pilot_output_dir": "experimenting/outputs/validated_gan_pilot10_v1"
+  "tool_llm_pilot_output_dir": "experimenting/outputs/tunnel_v1/pilot_llm",
+  "tool_gan_pilot_output_dir": "experimenting/outputs/tunnel_v1/pilot_gan",
+  "ssh": {
+    "destination": "rinaldi@37.60.243.124",
+    "port": 28659,
+    "remote_ports": {
+      "pplx": 11438,
+      "clef": 11439,
+      "d3": 11440,
+      "gemma": 11441
+    }
+  }
 }

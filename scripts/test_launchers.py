@@ -22,6 +22,7 @@ class CliTests(unittest.TestCase):
     def setUp(self):
         self.main=cli.load_profile(cli.MAIN)
         self.exp=cli.load_profile(ROOT/'experimenting/adaptive_config.json')
+        mocked=patch('check_model_tunnel.tunnel',return_value=contextlib.nullcontext());mocked.start();self.addCleanup(mocked.stop)
         for name in ('prepare_gan_before_run','publish_results'):
             mocked=patch.object(cli,name,return_value=0);mocked.start();self.addCleanup(mocked.stop)
 
@@ -31,13 +32,14 @@ class CliTests(unittest.TestCase):
         self.assertEqual(actual,{'run_cli.bat','run_cli.sh','experimenting/run_cli.bat','experimenting/run_cli.sh'})
 
     def test_all_pilot_orders_baseline_before_independent_attacks(self):
-        plan=cli.build_plan(Path('exp.json'),self.exp,'pplx','pilot','all',retry=True)
+        plan=cli.build_plan(Path('exp.json'),self.exp,'all','pilot','all',retry=True)
         self.assertEqual([step for step,_,_ in plan],['baseline','llm','gan'])
         self.assertEqual(len({out for _,_,out in plan}),3)
-        for (step,cmd,out),attack in zip(plan,('none','llm','gan')):
-            self.assertEqual(cmd[cmd.index('--attack')+1],attack)
-            self.assertIn('--profile-routes',cmd)
+        self.assertIn('--baseline-only',plan[0][1])
+        for step,cmd,out in plan:
+            self.assertIn('--pilot',cmd)
             self.assertIn('--retry-errors',cmd)
+            self.assertNotIn('pilot_openwebui.py',str(cmd))
             self.assertTrue(out.is_relative_to(ROOT/'experimenting'))
 
     def test_full_plan_routes_selected_model_and_uses_resume(self):

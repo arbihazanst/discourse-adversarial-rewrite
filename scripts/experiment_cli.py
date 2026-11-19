@@ -184,6 +184,7 @@ def show_profile(config,path,selected):
     banner('DECISION RESEARCH | '+config['profile'].upper())
     field('Profil',path)
     field('Dataset',config['dataset'])
+    field('Koneksi','Langsung di server' if config['profile']=='main' else 'SSH tunnel' if config.get('ssh') else 'Endpoint profil')
     names=pipeline.selected_models(config,selected)
     for name in names:
         d=config['defenders'][name]
@@ -201,12 +202,13 @@ def show_profile(config,path,selected):
 def build_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
     validate_paths(config)
     pipeline.selected_models(config,selected)
-    if mode=='pilot' and config['profile']=='experimenting' and selected!='pplx':
+    tool_pilot=mode=='pilot' and config['profile']=='experimenting' and set(config['defenders'])=={'pplx'} and config['defenders']['pplx'].get('transport')=='tool'
+    if tool_pilot and selected!='pplx':
         raise ValueError('Pilot koneksi 10 data saat ini khusus PPLX. Pilih PPLX di Pengaturan; model lain tersedia di benchmark.')
     steps=['baseline']+(['llm','gan'] if task=='all' else [task] if task!='baseline' else [])
     plan=[]
     for step in steps:
-        if mode=='pilot' and config['profile']=='experimenting':
+        if tool_pilot:
             command=[sys.executable,str(HERE/'pilot_openwebui.py'),'--config',str(path),
                      '--profile-routes','--attack','none' if step=='baseline' else step]
         else:
@@ -215,7 +217,7 @@ def build_plan(path,config,selected,mode,task,retry=False,dry=False,check=False)
             if step=='baseline':
                 command=[item for item in command if item!='--reuse-step1']
                 command.append('--baseline-only')
-        if config.get('rewrite_evaluator') and not (mode=='pilot' and config['profile']=='experimenting'):
+        if config.get('rewrite_evaluator') and not tool_pilot:
             command+=['--output-dir',str(destination(config,mode,step))]
             if mode=='pilot':command.append('--pilot')
             if step!='baseline' and destination(config,mode,'baseline')!=destination(config,mode,step):
@@ -247,6 +249,13 @@ def prepare_gan_before_run(config,check=False):
 
 
 def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
+    from contextlib import nullcontext
+    from check_model_tunnel import tunnel
+    with (nullcontext() if dry else tunnel(config)):
+        return execute_connected_plan(path,config,selected,mode,task,retry,dry,check)
+
+
+def execute_connected_plan(path,config,selected,mode,task,retry=False,dry=False,check=False):
     plan=build_plan(path,config,selected,mode,task,retry,dry,check)
     banner('RENCANA EKSPERIMEN')
     field('Ukuran','Pilot 10 data' if mode=='pilot' else 'Benchmark seluruh dataset')
@@ -256,7 +265,7 @@ def execute_plan(path,config,selected,mode,task,retry=False,dry=False,check=Fals
     for index,(step,_,output) in enumerate(plan,1):
         print(f'{index}. '+dict(TASKS)[step])
     if task=='all':print('Gemma dan GAN menggunakan original yang sama; GAN tidak menyerang hasil Gemma.')
-    if mode=='full':print('Benchmark memerlukan revision/checkpoint model yang sebenarnya.')
+    if mode=='full':print('Revision kosong dicatat UNVERIFIED_WEIGHTS; ganti folder hasil setelah mengganti bobot.')
     from results_overview import report_dir
     field('Folder laporan',report_dir(config,mode))
     if task in {'gan','all'} and not dry:
@@ -411,7 +420,7 @@ def help_text(config):
     print('\nMulai: menu 1 -> Gemma + GAN -> Jalankan.')
     print('Lanjutkan error: menu 3 -> ukuran data yang sama -> pekerjaan yang sama.')
     print('Lihat CSV / evaluasi: menu 4. Ganti model / endpoint: menu 5.')
-    print('API key: isi OWUI_API_KEY di .env root proyek; tidak ditampilkan di menu.')
+    print('Koneksi mengikuti profil. Revision kosong dicatat UNVERIFIED_WEIGHTS. Isi key_env jika layanan memakai API key.')
     field('Panduan',pipeline.ROOT/('experimenting/README.md' if config['profile']=='experimenting' else 'README.md'))
 
 
@@ -424,22 +433,22 @@ def main(argv=None):
     parser.add_argument('--results',action='store_true',help='Build the flat results overview for --mode without any model calls')
     parser.add_argument('--mode',choices=('pilot','full'),default='pilot')
     parser.add_argument('--task',choices=('baseline','llm','gan','all','tunnel'),help='Jalankan tanpa menu interaktif')
-    parser.add_argument('--model',help='Defender: experimenting=pplx, main=clef/d3/all')
+    parser.add_argument('--model',help='Defender dari profil, default clef/d3/all')
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--check-server',action='store_true')
     parser.add_argument('--retry-errors',action='store_true')
     args=parser.parse_args(argv)
     if args.dry_run and args.check_server:parser.error('Pilih offline atau cek layanan, bukan keduanya.')
     if not args.task and (args.dry_run or args.check_server or args.retry_errors):parser.error('Gunakan --task bersama opsi eksekusi.')
-    if args.task=='tunnel':
-        if args.model or args.retry_errors:parser.error('Uji tunnel memeriksa empat layanan sekali.')
-        from check_model_tunnel import check
-        return check(dry=args.dry_run)
     local=LOCAL if args.profile=='main' else EXPERIMENT/'adaptive_local.json'
     default=MAIN if args.profile=='main' else EXPERIMENT/'adaptive_config.json'
     path=pipeline.rooted(args.config) if args.config else local if local.exists() else default
     config=load_profile(path)
     if config['profile']!=args.profile:raise ValueError('Profil JSON tidak sesuai CLI yang dibuka.')
+    if args.task=='tunnel':
+        if args.model or args.retry_errors:parser.error('Uji layanan memeriksa seluruh endpoint profil sekali.')
+        from check_model_tunnel import check
+        return check(dry=args.dry_run,config=config)
     validate_paths(config)
     selected=args.model or config.get('default_model','pplx')
     pipeline.selected_models(config,selected)
@@ -455,7 +464,7 @@ def main(argv=None):
         print('  4. Hasil CSV dan evaluasi')
         print('  5. Pengaturan model, endpoint, output, dan GAN')
         print('  6. Panduan singkat')
-        print('  7. Uji empat model lewat tunnel SSH')
+        print('  7. Uji layanan '+('langsung di server' if config['profile']=='main' else 'melalui tunnel SSH'))
         print('  0. Keluar')
         try:
             choice=input('\nPilih nomor: ').strip()
@@ -469,7 +478,7 @@ def main(argv=None):
             elif choice=='6':help_text(config)
             elif choice=='7':
                 from check_model_tunnel import check
-                check()
+                check(config=config)
             else:print('Pilih nomor yang tersedia.')
         except (ValueError,OSError,KeyError) as exc:print('\nTidak dapat melanjutkan:',exc)
         except KeyboardInterrupt:print('\nKembali ke menu. Hasil yang tersimpan tetap tersedia.')

@@ -145,6 +145,16 @@ class ValidityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'Clef/d3 only'):self.run_pipeline()
         self.assertEqual(self.calls,[])
 
+    def test_empty_revisions_support_both_branches_and_resume(self):
+        for route in [self.config['attacker'], self.config['rewrite_evaluator'], *self.config['defenders'].values()]:
+            route['revision']=''
+        for kind in ('llm','gan'):
+            with self.subTest(kind=kind):
+                self.assert_flow(kind)
+                folder,saved,ledger=self.load(kind)
+                self.assertEqual(saved['defender']['revision_status'],'UNVERIFIED_WEIGHTS')
+                self.assertEqual(saved['attack_contract']['validity']['evaluator']['revision'],'UNVERIFIED_WEIGHTS')
+
     def test_main_uses_only_clef_d3_classification_routes(self):
         self.config.update(profile='main',output_dir=str(self.root/'outputs/main'))
         self.config['defenders']={n:dict(transport='direct',url=f'http://mock/{n}',model=n,revision='test',key_env='') for n in ('clef','d3')}

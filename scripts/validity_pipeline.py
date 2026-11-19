@@ -21,14 +21,14 @@ class ValidityLedger(core.Ledger):
 
 def configuration(config):
     evaluator=config.get('rewrite_evaluator',{})
-    if evaluator.get('transport')!='direct' or evaluator.get('role')!='pplx_validity':
-        raise ValueError('Configure rewrite_evaluator as the PPLX tool with role=pplx_validity')
+    if evaluator.get('transport') not in {'direct','tool'} or evaluator.get('role')!='pplx_validity':
+        raise ValueError('Configure PPLX direct System One or tool with role=pplx_validity')
     if config['profile']=='main' and (set(config['defenders'])-{'clef','d3'}):
         raise ValueError('Main defenders must be Clef/d3 only; PPLX belongs in rewrite_evaluator')
     if config['profile']=='main' and any(d.get('transport') not in {'direct','openwebui'} for d in config['defenders'].values()):
         raise ValueError('Main Clef/d3 use direct System One or Open WebUI Pipe, not the PPLX tool')
-    if config['profile']=='experimenting' and set(config['defenders'])!={'pplx'}:
-        raise ValueError('This experimenting protocol uses PPLX only as defender; Clef/d3 run on main')
+    if config['profile']=='experimenting' and set(config['defenders'])!={'pplx'} and not (set(config['defenders']) <= {'clef','d3'} and all(d.get('transport')=='direct' for d in config['defenders'].values())):
+        raise ValueError('Experimenting requires PPLX or direct Clef/d3 defenders')
 
 
 def seconds(event):
@@ -218,7 +218,7 @@ def main(argv=None,config_override=None,attack_kind='llm'):
             core.atomic_json(ledger.folder/'run.json',dict(protocol='validity_gated_v1',attack_kind=attack_kind,
                 defender=defender,attack_contract=attack_contract,dataset=str(dataset),dataset_rows=len(rows),selected_sample_ids=selected,
                 baseline_only=args.baseline_only,identities=identities,experiment_purpose=config.get('experiment_purpose','validity_gated_benchmark'),
-                role_limitation='PPLX defender and evaluator share a backend; pilot only' if config['profile']=='experimenting' else 'PPLX evaluator; Clef/d3 defenders'))
+                role_limitation='PPLX defender and evaluator share a backend; pilot only' if 'pplx' in config['defenders'] else 'PPLX evaluator; Clef/d3 defenders'))
             try:
                 if source and (source/name/'run.json').exists():
                     from gan_pipeline import baseline_source,import_baseline

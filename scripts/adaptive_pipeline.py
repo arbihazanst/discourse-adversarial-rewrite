@@ -174,6 +174,9 @@ def validate_endpoint(config,attacker=False,live=False,timeout=30):
     if config['transport']=='tool':
         # Invalidate old tool checkpoints that did not actually request execution.
         config['tool_protocol']='legacy_fixed_spam_v2'
+    if not str(config.get('revision') or '').strip() and config['transport'] not in {'ollama','ollama_chat'}:
+        config['revision']='UNVERIFIED_WEIGHTS'
+        config['revision_status']='UNVERIFIED_WEIGHTS'
     if not live:
         return
     if not config.get('model'):
@@ -188,8 +191,8 @@ def validate_endpoint(config,attacker=False,live=False,timeout=30):
         if config.get('revision') and config['revision']!=revision:
             raise ValueError(f'Configured digest differs for {config["model"]}')
         config['revision']=revision
-    if not config.get('revision'):
-        raise ValueError(f'Set actual revision/checkpoint for {config["model"]}; it is part of resume identity')
+    if config.get('revision')=='UNVERIFIED_WEIGHTS':
+        print(f"{config['model']}: revision belum diketahui; tercatat sebagai UNVERIFIED_WEIGHTS. Gunakan folder baru setelah mengganti bobot.",flush=True)
     credentials(config)
 
 
@@ -203,7 +206,7 @@ def defender_payload(config,text):
             if '__EMAIL_TEXT__' not in json.dumps(config['template']):
                 raise ValueError('Native template must contain __EMAIL_TEXT__')
             return api.apply_text_marker(config['template'],text)
-        return api.systemone_payload(text)
+        return {'model':config['model'], **api.systemone_payload(text)}
     payload={'model':config['model'],'messages':[{'role':'user','content':text}],'stream':False}
     return payload
 
